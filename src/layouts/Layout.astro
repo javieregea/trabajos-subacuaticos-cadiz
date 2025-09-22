@@ -1,0 +1,59 @@
+---
+import '../styles/global.css'
+
+export interface Props {
+	title: string;
+	description?: string;
+	keywords?: string;
+}
+
+const { title, description = "Especialistas en soldadura subacuática y trabajos marítimos en Cádiz. Servicios profesionales de buceo industrial, reparación de cascos y soldadura hiperbárica 24/7.", keywords = "soldadura subacuática Cádiz, trabajos subacuáticos, buceo industrial, reparación cascos embarcaciones" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="keywords" content={keywords} />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:site_name" content="Trabajos Subacuáticos Cádiz" />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+
+		<!-- Local Business Schema -->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "LocalBusiness",
+				"name": "Trabajos Subacuáticos Cádiz",
+				"description": "Especialistas en soldadura subacuática y trabajos marítimos profesionales",
+				"address": {
+					"@type": "PostalAddress",
+					"addressLocality": "Cádiz",
+					"addressRegion": "Andalucía",
+					"addressCountry": "ES"
+				},
+				"areaServed": ["Cádiz", "Puerto de Santa María", "Jerez", "Andalucía"],
+				"serviceType": ["Soldadura Subacuática", "Buceo Industrial", "Reparación Naval", "Inspección Submarina"],
+				"telephone": "+34-XXX-XXX-XXX",
+				"openingHours": "Mo-Su 00:00-23:59"
+			}
+		</script>
+
+		<title>{title}</title>
+	</head>
+	<body class="bg-gray-50">
+		<slot />
+	</body>
+</html>

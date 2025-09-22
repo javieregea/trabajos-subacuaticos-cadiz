@@ -1,0 +1,65 @@
+---
+// Header component
+---
+
+<header class="bg-blue-900 text-white shadow-lg">
+  <nav class="container mx-auto px-4 py-4">
+    <div class="flex items-center justify-between">
+      <!-- Logo -->
+      <div class="flex items-center space-x-2">
+        <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
+          </svg>
+        </div>
+        <div>
+          <h1 class="text-xl font-bold">Trabajos Subacuáticos Cádiz</h1>
+          <p class="text-xs text-blue-200">Soldadura y Servicios Marítimos 24/7</p>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <div class="hidden md:flex space-x-6">
+        <a href="/" class="hover:text-blue-200 transition-colors">Inicio</a>
+        <a href="/servicios" class="hover:text-blue-200 transition-colors">Servicios</a>
+        <a href="/soldadura-subacuatica" class="hover:text-blue-200 transition-colors">Soldadura Subacuática</a>
+        <a href="/emergencias" class="hover:text-blue-200 transition-colors">Emergencias 24h</a>
+        <a href="/contacto" class="hover:text-blue-200 transition-colors">Contacto</a>
+      </div>
+
+      <!-- Emergency Contact -->
+      <div class="hidden lg:flex items-center space-x-2 bg-red-600 px-4 py-2 rounded-lg">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+        </svg>
+        <div class="text-sm">
+          <div class="font-semibold">Emergencia 24h</div>
+          <div>+34 XXX XXX XXX</div>
+        </div>
+      </div>
+
+      <!-- Mobile menu button -->
+      <button class="md:hidden" onclick="toggleMobileMenu()">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div id="mobile-menu" class="md:hidden mt-4 space-y-2 hidden">
+      <a href="/" class="block py-2 hover:text-blue-200">Inicio</a>
+      <a href="/servicios" class="block py-2 hover:text-blue-200">Servicios</a>
+      <a href="/soldadura-subacuatica" class="block py-2 hover:text-blue-200">Soldadura Subacuática</a>
+      <a href="/emergencias" class="block py-2 hover:text-blue-200">Emergencias 24h</a>
+      <a href="/contacto" class="block py-2 hover:text-blue-200">Contacto</a>
+    </div>
+  </nav>
+</header>
+
+<script>
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    menu.classList.toggle('hidden');
+  }
+</script>
