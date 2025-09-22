@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://trabajos-subacuaticos-cadiz.vercel.app/sitemap.xml
+
+# Specific directives for SEO
+Allow: /servicios
+Allow: /soldadura-subacuatica
+Allow: /emergencias
+Allow: /contacto
+
+# Block admin areas (if any in future)
+Disallow: /admin/
+Disallow: /_astro/
