@@ -9,6 +9,163 @@ import Footer from '../components/Footer.astro';
   description="Especialistas en soldadura subacuática certificada en Cádiz. Técnicas húmedas y secas, reparación de cascos, estructuras offshore y trabajos marítimos profesionales 24/7."
   keywords="soldadura subacuática Cádiz, soldadura hiperbárica, soldadura marina, reparación naval submarina, soldadura offshore Cádiz"
 >
+  <!-- Specific Service Schema for Underwater Welding -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": "https://trabajos-subacuaticos-cadiz.vercel.app/soldadura-subacuatica#service",
+      "name": "Soldadura Subacuática Profesional",
+      "alternateName": ["Soldadura Hiperbárica", "Soldadura Marina", "Soldadura Submarina"],
+      "description": "Servicios especializados de soldadura subacuática con técnicas húmedas y secas. Soldadura hiperbárica certificada para reparación de cascos, estructuras portuarias y trabajos offshore en Cádiz.",
+      "url": "https://trabajos-subacuaticos-cadiz.vercel.app/soldadura-subacuatica",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Trabajos Subacuáticos Cádiz",
+        "@id": "https://trabajos-subacuaticos-cadiz.vercel.app/#organization"
+      },
+      "serviceType": "Underwater Welding",
+      "category": ["Marine Welding", "Hyperbaric Welding", "Underwater Construction"],
+      "serviceArea": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": "36.5297",
+          "longitude": "-6.2921"
+        },
+        "geoRadius": "50000"
+      },
+      "availableChannel": [
+        {
+          "@type": "ServiceChannel",
+          "serviceUrl": "https://trabajos-subacuaticos-cadiz.vercel.app/contacto",
+          "serviceName": "Consulta y Presupuesto",
+          "availableLanguage": "es"
+        },
+        {
+          "@type": "ServiceChannel",
+          "servicePhone": "+34-XXX-XXX-XXX",
+          "serviceName": "Emergencias 24h",
+          "hoursAvailable": "24/7"
+        }
+      ],
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Soldadura Húmeda Subacuática",
+          "description": "Soldadura directa bajo el agua utilizando electrodos especiales resistentes al agua",
+          "category": "Wet Underwater Welding"
+        },
+        {
+          "@type": "Offer",
+          "name": "Soldadura Seca Hiperbárica",
+          "description": "Soldadura en cámara seca bajo presión para máxima calidad en trabajos estructurales críticos",
+          "category": "Dry Hyperbaric Welding"
+        },
+        {
+          "@type": "Offer",
+          "name": "Soldadura TIG Submarina",
+          "description": "Soldadura TIG especializada para trabajos de precisión bajo el agua",
+          "category": "Underwater TIG Welding"
+        },
+        {
+          "@type": "Offer",
+          "name": "Soldadura MIG Submarina",
+          "description": "Soldadura MIG para trabajos de alta productividad en ambiente submarino",
+          "category": "Underwater MIG Welding"
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Aplicaciones de Soldadura Subacuática",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Reparación de Cascos de Embarcaciones",
+              "description": "Soldadura de reparación en cascos sin necesidad de varada"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Reparación de Infraestructura Portuaria",
+              "description": "Soldadura en muelles, pilotes y estructuras de puerto"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Trabajos Offshore",
+              "description": "Soldadura en plataformas petrolíferas y parques eólicos marinos"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Emergencias Marítimas",
+              "description": "Reparaciones críticas y sellado de fisuras de emergencia"
+            }
+          }
+        ]
+      },
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Certificación AWS D3.6",
+          "value": "American Welding Society D3.6 Underwater Welding Specification"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Certificación EN ISO 15618",
+          "value": "European Standard for Underwater Welding Qualification"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Profundidad Máxima",
+          "value": "30 metros"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Tiempo de Respuesta Emergencia",
+          "value": "< 2 horas"
+        }
+      ]
+    }
+  </script>
+
+  <!-- Breadcrumb Navigation Schema -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://trabajos-subacuaticos-cadiz.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Servicios",
+          "item": "https://trabajos-subacuaticos-cadiz.vercel.app/servicios"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Soldadura Subacuática",
+          "item": "https://trabajos-subacuaticos-cadiz.vercel.app/soldadura-subacuatica"
+        }
+      ]
+    }
+  </script>
+
   <Header />
 
   <main>

@@ -9,6 +9,28 @@ import Footer from '../components/Footer.astro';
   description="Servicios profesionales de soldadura subacuática, buceo industrial, inspección de cascos, reparación naval y mantenimiento portuario en Cádiz. Especialistas certificados 24/7."
   keywords="servicios soldadura subacuática Cádiz, buceo industrial, inspección cascos buques, reparación embarcaciones, corte subacuático, mantenimiento portuario, soldadura hiperbárica"
 >
+  <!-- Breadcrumb Navigation Schema -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://trabajos-subacuaticos-cadiz.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Servicios",
+          "item": "https://trabajos-subacuaticos-cadiz.vercel.app/servicios"
+        }
+      ]
+    }
+  </script>
+
   <Header />
 
   <main>

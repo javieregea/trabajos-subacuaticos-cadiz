@@ -36,24 +36,195 @@ const canonicalURL = canonical || `https://trabajos-subacuaticos-cadiz.vercel.ap
 		<meta property="twitter:title" content={title} />
 		<meta property="twitter:description" content={description} />
 
-		<!-- Local Business Schema -->
+		<!-- Enhanced Local Business & Organization Schema -->
 		<script type="application/ld+json">
-			{
-				"@context": "https://schema.org",
-				"@type": "LocalBusiness",
-				"name": "Trabajos Subacuáticos Cádiz",
-				"description": "Especialistas en soldadura subacuática y trabajos marítimos profesionales",
-				"address": {
-					"@type": "PostalAddress",
-					"addressLocality": "Cádiz",
-					"addressRegion": "Andalucía",
-					"addressCountry": "ES"
-				},
-				"areaServed": ["Cádiz", "Puerto de Santa María", "Jerez", "Andalucía"],
-				"serviceType": ["Soldadura Subacuática", "Buceo Industrial", "Reparación Naval", "Inspección Submarina"],
-				"telephone": "+34-XXX-XXX-XXX",
-				"openingHours": "Mo-Su 00:00-23:59"
-			}
+			[
+				{
+					"@context": "https://schema.org",
+					"@type": ["LocalBusiness", "Organization"],
+					"@id": "https://trabajos-subacuaticos-cadiz.vercel.app/#organization",
+					"name": "Trabajos Subacuáticos Cádiz",
+					"alternateName": "Soldadura Subacuática Cádiz",
+					"description": "Especialistas certificados en soldadura subacuática, buceo industrial, reparación naval e inspección submarina. Servicio 24/7 en puerto de Cádiz y Estrecho de Gibraltar.",
+					"url": "https://trabajos-subacuaticos-cadiz.vercel.app",
+					"logo": "https://trabajos-subacuaticos-cadiz.vercel.app/favicon.svg",
+					"image": "https://trabajos-subacuaticos-cadiz.vercel.app/favicon.svg",
+					"address": {
+						"@type": "PostalAddress",
+						"addressLocality": "Cádiz",
+						"addressRegion": "Andalucía",
+						"addressCountry": "ES",
+						"postalCode": "11001"
+					},
+					"geo": {
+						"@type": "GeoCoordinates",
+						"latitude": "36.5297",
+						"longitude": "-6.2921"
+					},
+					"areaServed": [
+						{
+							"@type": "City",
+							"name": "Cádiz"
+						},
+						{
+							"@type": "City",
+							"name": "Puerto de Santa María"
+						},
+						{
+							"@type": "City",
+							"name": "Jerez de la Frontera"
+						},
+						{
+							"@type": "City",
+							"name": "El Puerto de Santa María"
+						},
+						{
+							"@type": "City",
+							"name": "Rota"
+						}
+					],
+					"telephone": "+34-XXX-XXX-XXX",
+					"email": "info@trabajossubacuaticoscadiz.es",
+					"openingHours": "Mo-Su 00:00-23:59",
+					"openingHoursSpecification": [
+						{
+							"@type": "OpeningHoursSpecification",
+							"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+							"opens": "00:00",
+							"closes": "23:59"
+						}
+					],
+					"hasOfferCatalog": {
+						"@type": "OfferCatalog",
+						"name": "Servicios de Soldadura Subacuática y Trabajos Marítimos",
+						"itemListElement": [
+							{
+								"@type": "Offer",
+								"itemOffered": {
+									"@type": "Service",
+									"name": "Soldadura Subacuática",
+									"description": "Soldadura hiperbárica profesional con técnicas húmedas y secas bajo el agua",
+									"serviceType": "Soldadura Submarina",
+									"category": "Marine Welding"
+								}
+							},
+							{
+								"@type": "Offer",
+								"itemOffered": {
+									"@type": "Service",
+									"name": "Buceo Industrial",
+									"description": "Servicios profesionales de buceo comercial para inspección y mantenimiento submarino",
+									"serviceType": "Commercial Diving",
+									"category": "Industrial Diving"
+								}
+							},
+							{
+								"@type": "Offer",
+								"itemOffered": {
+									"@type": "Service",
+									"name": "Inspección de Cascos",
+									"description": "Inspección visual y técnica de cascos de embarcaciones y estructuras marinas",
+									"serviceType": "Hull Inspection",
+									"category": "Marine Inspection"
+								}
+							},
+							{
+								"@type": "Offer",
+								"itemOffered": {
+									"@type": "Service",
+									"name": "Reparación Naval",
+									"description": "Reparación a flote de embarcaciones, cascos, hélices y estructuras navales",
+									"serviceType": "Ship Repair",
+									"category": "Naval Repair"
+								}
+							},
+							{
+								"@type": "Offer",
+								"itemOffered": {
+									"@type": "Service",
+									"name": "Emergencias Marítimas 24h",
+									"description": "Servicio de emergencia inmediata para reparaciones críticas y soldadura urgente",
+									"serviceType": "Emergency Marine Services",
+									"category": "Emergency Services"
+								}
+							},
+							{
+								"@type": "Offer",
+								"itemOffered": {
+									"@type": "Service",
+									"name": "Corte Subacuático",
+									"description": "Corte oxicorte, plasma y térmico subacuático para trabajos de salvamento",
+									"serviceType": "Underwater Cutting",
+									"category": "Marine Cutting"
+								}
+							}
+						]
+					},
+					"knowsAbout": [
+						"Soldadura Subacuática",
+						"Soldadura Hiperbárica",
+						"Buceo Industrial",
+						"Buceo Comercial",
+						"Inspección Submarina",
+						"Reparación Naval",
+						"Soldadura Marina",
+						"Trabajos Offshore",
+						"Emergencias Marítimas",
+						"Corte Subacuático",
+						"Soldadura TIG Submarina",
+						"Soldadura MIG Submarina",
+						"Soldadura Electrodo Revestido",
+						"Inspección de Cascos",
+						"Reparación de Embarcaciones",
+						"Mantenimiento Portuario"
+					],
+					"hasCredential": [
+						{
+							"@type": "EducationalOccupationalCredential",
+							"credentialCategory": "certification",
+							"name": "AWS D3.6 Underwater Welding",
+							"description": "American Welding Society D3.6 Specification for Underwater Welding"
+						},
+						{
+							"@type": "EducationalOccupationalCredential",
+							"credentialCategory": "certification",
+							"name": "EN ISO 15618 Underwater Welding",
+							"description": "European Standard for Qualification Testing of Welders for Underwater Welding"
+						},
+						{
+							"@type": "EducationalOccupationalCredential",
+							"credentialCategory": "certification",
+							"name": "DNV GL Standards",
+							"description": "Det Norske Veritas Germanischer Lloyd certification for offshore welding"
+						},
+						{
+							"@type": "EducationalOccupationalCredential",
+							"credentialCategory": "certification",
+							"name": "Lloyd's Register Certification",
+							"description": "Lloyd's Register marine and offshore welding certification"
+						}
+					],
+					"slogan": "Soldadura Subacuática Profesional 24/7 en Cádiz",
+					"foundingDate": "2000",
+					"employee": {
+						"@type": "Person",
+						"jobTitle": "Soldador Subacuático Certificado"
+					},
+					"makesOffer": [
+						{
+							"@type": "Offer",
+							"name": "Consulta Gratuita",
+							"description": "Evaluación gratuita de proyectos de soldadura subacuática"
+						},
+						{
+							"@type": "Offer",
+							"name": "Servicio de Emergencia",
+							"description": "Respuesta inmediata en menos de 2 horas para emergencias marítimas",
+							"availability": "24/7"
+						}
+					]
+				}
+			]
 		</script>
 
 		<title>{title}</title>
