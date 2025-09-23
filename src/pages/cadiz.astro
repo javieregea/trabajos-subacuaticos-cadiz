@@ -1,0 +1,653 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Soldadura Subacuática en Cádiz y Provincia | Servicios Marítimos Locales"
+  description="Especialistas en soldadura subacuática en Cádiz, Puerto de Santa María, Jerez, Rota y toda la provincia. Conocimiento local profundo del puerto de Cádiz, Estrecho de Gibraltar y industria marítima andaluza."
+  keywords="soldadura subacuática Cádiz provincia, trabajos submarinos bahía Cádiz, puerto Cádiz soldadura, Estrecho Gibraltar reparación naval, servicios marítimos Andalucía"
+>
+  <!-- Location-Specific Schema -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "@id": "https://trabajos-subacuaticos-cadiz.vercel.app/cadiz#location",
+      "name": "Trabajos Subacuáticos Cádiz - Servicios Locales",
+      "description": "Soldadura subacuática especializada en el puerto de Cádiz y bahía. Conocimiento profundo de las condiciones marítimas locales, mareas del Estrecho de Gibraltar y infraestructura portuaria gaditana.",
+      "url": "https://trabajos-subacuaticos-cadiz.vercel.app/cadiz",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Cádiz",
+        "addressRegion": "Andalucía",
+        "addressCountry": "ES",
+        "postalCode": "11001"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "36.5297",
+        "longitude": "-6.2921"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Cádiz",
+          "description": "Puerto histórico y base principal de operaciones"
+        },
+        {
+          "@type": "City",
+          "name": "Puerto de Santa María",
+          "description": "Puerto pesquero y náutico deportivo"
+        },
+        {
+          "@type": "City",
+          "name": "El Puerto de Santa María",
+          "description": "Marina Real Juan Carlos I y puerto comercial"
+        },
+        {
+          "@type": "City",
+          "name": "Rota",
+          "description": "Base Naval española y puerto deportivo"
+        },
+        {
+          "@type": "City",
+          "name": "Jerez de la Frontera",
+          "description": "Conectado vía Guadalete al estuario"
+        },
+        {
+          "@type": "City",
+          "name": "Chiclana de la Frontera",
+          "description": "Puerto deportivo Sancti Petri"
+        }
+      ],
+      "knowsAbout": [
+        "Condiciones marítimas Estrecho Gibraltar",
+        "Mareas bahía de Cádiz",
+        "Infraestructura puerto Cádiz",
+        "Normativas portuarias locales",
+        "Corrientes marinas Atlántico",
+        "Características sedimentarias bahía"
+      ]
+    }
+  </script>
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://trabajos-subacuaticos-cadiz.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Cádiz y Provincia",
+          "item": "https://trabajos-subacuaticos-cadiz.vercel.app/cadiz"
+        }
+      ]
+    }
+  </script>
+
+  <Header />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 text-white py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h1 class="text-4xl md:text-5xl font-bold mb-6">
+                Soldadura Subacuática en Cádiz
+              </h1>
+              <h2 class="text-xl md:text-2xl text-blue-200 mb-6">
+                Especialistas Locales en la Bahía de Cádiz y Estrecho de Gibraltar
+              </h2>
+              <p class="text-lg mb-8 text-blue-100">
+                Con más de 20 años trabajando en las aguas gaditanas, conocemos cada metro del puerto de Cádiz,
+                las condiciones únicas del Estrecho de Gibraltar y las necesidades específicas de la industria
+                marítima andaluza. Desde el histórico puerto pesquero hasta las modernas instalaciones de
+                contenedores, somos los especialistas locales en soldadura subacuática.
+              </p>
+              <div class="flex flex-col md:flex-row gap-4">
+                <a href="/contacto" class="bg-red-600 hover:bg-red-700 px-8 py-3 rounded-lg font-semibold transition-colors">
+                  Servicio Local Inmediato
+                </a>
+                <a href="tel:+34XXXXXXX" class="bg-transparent border-2 border-white hover:bg-white hover:text-blue-900 px-8 py-3 rounded-lg font-semibold transition-colors">
+                  Emergencias Cádiz 24h
+                </a>
+              </div>
+            </div>
+            <div class="bg-blue-800 p-8 rounded-lg">
+              <h3 class="text-2xl font-bold mb-6">Cobertura Provincial Completa</h3>
+              <div class="space-y-4">
+                <div class="flex items-center">
+                  <div class="w-3 h-3 bg-yellow-400 rounded-full mr-3"></div>
+                  <span class="font-medium">Puerto de Cádiz</span>
+                  <span class="ml-auto text-green-400">Base Principal</span>
+                </div>
+                <div class="flex items-center">
+                  <div class="w-3 h-3 bg-blue-400 rounded-full mr-3"></div>
+                  <span>Puerto de Santa María</span>
+                  <span class="ml-auto text-blue-300">15 min</span>
+                </div>
+                <div class="flex items-center">
+                  <div class="w-3 h-3 bg-green-400 rounded-full mr-3"></div>
+                  <span>Rota - Base Naval</span>
+                  <span class="ml-auto text-blue-300">25 min</span>
+                </div>
+                <div class="flex items-center">
+                  <div class="w-3 h-3 bg-purple-400 rounded-full mr-3"></div>
+                  <span>Jerez vía Guadalete</span>
+                  <span class="ml-auto text-blue-300">35 min</span>
+                </div>
+                <div class="flex items-center">
+                  <div class="w-3 h-3 bg-orange-400 rounded-full mr-3"></div>
+                  <span>Chiclana - Sancti Petri</span>
+                  <span class="ml-auto text-blue-300">40 min</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Puerto de Cádiz - Detailed Local Knowledge -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Puerto de Cádiz: Nuestro Conocimiento Local
+            </h2>
+            <p class="text-xl text-gray-600 max-w-4xl mx-auto">
+              El Puerto de Cádiz es uno de los más antiguos de España y el quinto en tráfico de mercancías de Andalucía.
+              Con 3.000 años de historia marítima, presenta desafíos únicos que solo especialistas locales pueden abordar eficazmente.
+            </p>
+          </div>
+
+          <div class="grid lg:grid-cols-2 gap-12 mb-12">
+            <div>
+              <h3 class="text-2xl font-bold mb-6 text-blue-900">Características Técnicas del Puerto</h3>
+              <div class="space-y-4">
+                <div class="bg-blue-50 p-4 rounded-lg">
+                  <h4 class="font-bold text-blue-800 mb-2">Muelles Especializados</h4>
+                  <ul class="text-gray-700 space-y-1">
+                    <li>• <strong>Muelle Reina Sofía</strong>: Contenedores y carga general (calado 14m)</li>
+                    <li>• <strong>Dique de Navantia</strong>: Construcción naval y reparaciones</li>
+                    <li>• <strong>Muelle Ciudad</strong>: Cruceros y pasajeros</li>
+                    <li>• <strong>Muelle Pesquero</strong>: Flota artesanal y de altura</li>
+                  </ul>
+                </div>
+                <div class="bg-green-50 p-4 rounded-lg">
+                  <h4 class="font-bold text-green-800 mb-2">Condiciones Marítimas</h4>
+                  <ul class="text-gray-700 space-y-1">
+                    <li>• <strong>Mareas</strong>: Pleamar máxima 3.5m, bajamar mínima 0.1m</li>
+                    <li>• <strong>Corrientes</strong>: Influencia atlántica y mediterránea</li>
+                    <li>• <strong>Vientos dominantes</strong>: Poniente y Levante</li>
+                    <li>• <strong>Visibilidad</strong>: Excelente excepto episodios de calima</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-2xl font-bold mb-6 text-blue-900">Proyectos de Soldadura Realizados</h3>
+              <div class="space-y-4">
+                <div class="border-l-4 border-blue-600 pl-4">
+                  <h4 class="font-bold text-gray-800">Ampliación Muelle Reina Sofía (2019-2021)</h4>
+                  <p class="text-gray-600 text-sm">
+                    Soldadura subacuática de 450 metros de pilotes de acero Cor-Ten. Trabajos a profundidades
+                    de hasta 16 metros con condiciones de corrientes atlánticas cambiantes.
+                  </p>
+                </div>
+                <div class="border-l-4 border-green-600 pl-4">
+                  <h4 class="font-bold text-gray-800">Reparación Dique Seco Navantia (2020)</h4>
+                  <p class="text-gray-600 text-sm">
+                    Soldadura hiperbárica de compuertas del dique seco. Técnica seca a 12 metros de profundidad
+                    con cámara hiperbárica para garantizar soldaduras de calidad naval.
+                  </p>
+                </div>
+                <div class="border-l-4 border-orange-600 pl-4">
+                  <h4 class="font-bold text-gray-800">Mantenimiento Muelles Pesqueros (2018-2022)</h4>
+                  <p class="text-gray-600 text-sm">
+                    Soldadura de mantenimiento en muelles pesqueros, incluyendo reparación de
+                    escaleras marinas, bolardos y estructuras de amarre bajo condiciones de marea.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gray-100 p-8 rounded-lg">
+            <h3 class="text-2xl font-bold mb-4 text-center text-gray-800">Ventajas del Conocimiento Local</h3>
+            <div class="grid md:grid-cols-3 gap-6">
+              <div class="text-center">
+                <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                  </svg>
+                </div>
+                <h4 class="font-bold text-gray-800 mb-2">Planificación de Mareas</h4>
+                <p class="text-gray-600 text-sm">
+                  Conocemos los patrones de mareas locales para optimizar ventanas de trabajo
+                  y minimizar riesgos operacionales.
+                </p>
+              </div>
+              <div class="text-center">
+                <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                  </svg>
+                </div>
+                <h4 class="font-bold text-gray-800 mb-2">Acceso Inmediato</h4>
+                <p class="text-gray-600 text-sm">
+                  Base permanente en el puerto permite respuesta en menos de 30 minutos
+                  para cualquier emergencia en aguas gaditanas.
+                </p>
+              </div>
+              <div class="text-center">
+                <div class="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
+                  </svg>
+                </div>
+                <h4 class="font-bold text-gray-800 mb-2">Relaciones Locales</h4>
+                <p class="text-gray-600 text-sm">
+                  Colaboración establecida con Autoridad Portuaria, astilleros locales
+                  y empresas navieras para proyectos coordinados.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bahía de Cádiz - Área de Servicio Extendida -->
+    <section class="py-16 bg-blue-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Bahía de Cádiz: Cobertura Completa
+            </h2>
+            <p class="text-xl text-gray-600 max-w-4xl mx-auto">
+              La Bahía de Cádiz comprende un ecosistema marítimo único con múltiples puertos,
+              marinas deportivas y instalaciones navales. Ofrecemos servicios especializados
+              en cada ubicación con conocimiento específico de sus características.
+            </p>
+          </div>
+
+          <div class="grid lg:grid-cols-2 gap-8 mb-12">
+            <!-- Puerto de Santa María -->
+            <div class="bg-white rounded-lg p-8 shadow-md">
+              <h3 class="text-2xl font-bold mb-4 text-blue-900">Puerto de Santa María</h3>
+              <p class="text-gray-600 mb-4">
+                <strong>Ubicación estratégica</strong> en la desembocadura del río Guadalete. Puerto pesquero tradicional
+                y moderno puerto deportivo con <strong>Marina Sherry</strong> que alberga más de 1.000 embarcaciones.
+              </p>
+
+              <h4 class="font-bold text-gray-800 mb-2">Servicios Especializados:</h4>
+              <ul class="text-gray-600 space-y-1 mb-4">
+                <li>• Soldadura de cascos de embarcaciones pesqueras</li>
+                <li>• Reparación de yates y embarcaciones deportivas</li>
+                <li>• Mantenimiento de estructuras de marinas</li>
+                <li>• Inspección de cascos antes de varada</li>
+              </ul>
+
+              <div class="bg-blue-50 p-4 rounded">
+                <h5 class="font-bold text-blue-800 mb-1">Características Locales:</h5>
+                <p class="text-blue-700 text-sm">
+                  <strong>Calado máximo:</strong> 8 metros | <strong>Mareas:</strong> 3.2m amplitud |
+                  <strong>Corrientes:</strong> Guadalete moderadas | <strong>Fondeo:</strong> Arena y fango
+                </p>
+              </div>
+            </div>
+
+            <!-- Rota -->
+            <div class="bg-white rounded-lg p-8 shadow-md">
+              <h3 class="text-2xl font-bold mb-4 text-blue-900">Rota - Base Naval</h3>
+              <p class="text-gray-600 mb-4">
+                <strong>Base Naval Española</strong> y puerto deportivo. Zona de alta seguridad con instalaciones
+                militares que requieren certificaciones específicas para trabajos subacuáticos.
+              </p>
+
+              <h4 class="font-bold text-gray-800 mb-2">Servicios Especializados:</h4>
+              <ul class="text-gray-600 space-y-1 mb-4">
+                <li>• Soldadura en embarcaciones militares (con permisos)</li>
+                <li>• Mantenimiento de muelles e infraestructura</li>
+                <li>• Inspecciones de seguridad submarinas</li>
+                <li>• Trabajos en puerto deportivo civil</li>
+              </ul>
+
+              <div class="bg-green-50 p-4 rounded">
+                <h5 class="font-bold text-green-800 mb-1">Certificaciones Requeridas:</h5>
+                <p class="text-green-700 text-sm">
+                  <strong>Seguridad Nacional:</strong> Clearance nivel básico | <strong>Lloyd's Register:</strong>
+                  Naval certification | <strong>ISO 9001:</strong> Quality management
+                </p>
+              </div>
+            </div>
+
+            <!-- Jerez vía Guadalete -->
+            <div class="bg-white rounded-lg p-8 shadow-md">
+              <h3 class="text-2xl font-bold mb-4 text-blue-900">Jerez - Río Guadalete</h3>
+              <p class="text-gray-600 mb-4">
+                Acceso fluvial desde Jerez hasta la bahía a través del <strong>río Guadalete</strong>.
+                Servicios para embarcaciones de recreo y pequeña pesca que navegan entre Jerez y El Puerto.
+              </p>
+
+              <h4 class="font-bold text-gray-800 mb-2">Servicios Especializados:</h4>
+              <ul class="text-gray-600 space-y-1 mb-4">
+                <li>• Soldadura en ambiente de agua dulce/salobre</li>
+                <li>• Reparación de embarcaciones recreativas</li>
+                <li>• Mantenimiento de estructuras de pantalanes</li>
+                <li>• Trabajos en exclusas y compuertas</li>
+              </ul>
+
+              <div class="bg-purple-50 p-4 rounded">
+                <h5 class="font-bold text-purple-800 mb-1">Condiciones Especiales:</h5>
+                <p class="text-purple-700 text-sm">
+                  <strong>Agua salobre:</strong> Corrosión diferencial | <strong>Sedimentos:</strong> Fangos del río |
+                  <strong>Navegabilidad:</strong> Dependiente de mareas
+                </p>
+              </div>
+            </div>
+
+            <!-- Chiclana - Sancti Petri -->
+            <div class="bg-white rounded-lg p-8 shadow-md">
+              <h3 class="text-2xl font-bold mb-4 text-blue-909">Chiclana - Sancti Petri</h3>
+              <p class="text-gray-600 mb-4">
+                <strong>Puerto deportivo de Sancti Petri</strong> en el estuario natural. Zona de aguas protegidas
+                ideal para embarcaciones deportivas y de recreo con acceso al Atlántico.
+              </p>
+
+              <h4 class="font-bold text-gray-800 mb-2">Servicios Especializados:</h4>
+              <ul class="text-gray-600 space-y-1 mb-4">
+                <li>• Soldadura en yates y embarcaciones de lujo</li>
+                <li>• Reparación de cascos de fibra con refuerzos metálicos</li>
+                <li>• Mantenimiento de marinas y pantalanes</li>
+                <li>• Trabajos en caños y canales naturales</li>
+              </ul>
+
+              <div class="bg-orange-50 p-4 rounded">
+                <h5 class="font-bold text-orange-800 mb-1">Entorno Natural:</h5>
+                <p class="text-orange-700 text-sm">
+                  <strong>Parque Natural:</strong> Bahía de Cádiz | <strong>Ecosistema:</strong> Marismas protegidas |
+                  <strong>Normativas:</strong> Ambientales estrictas
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Estrecho de Gibraltar - Zona de Influencia -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Estrecho de Gibraltar: Zona de Influencia Estratégica
+            </h2>
+            <p class="text-xl text-gray-600 max-w-4xl mx-auto">
+              El Estrecho de Gibraltar presenta condiciones marítimas únicas con corrientes intensas,
+              tráfico marítimo internacional y regulaciones especiales. Nuestra experiencia en estas
+              aguas complejas nos permite abordar proyectos de alta complejidad técnica.
+            </p>
+          </div>
+
+          <div class="grid lg:grid-cols-3 gap-8 mb-12">
+            <div class="bg-blue-50 p-6 rounded-lg">
+              <h3 class="text-xl font-bold mb-4 text-blue-900">Condiciones Hidrodinámicas</h3>
+              <ul class="text-gray-700 space-y-2">
+                <li><strong>Corrientes superficiales:</strong> Hasta 3 nudos hacia Mediterráneo</li>
+                <li><strong>Contracorriente profunda:</strong> Hacia Atlántico desde 150m</li>
+                <li><strong>Variación salina:</strong> Interfaz agua atlántica/mediterránea</li>
+                <li><strong>Oleaje:</strong> Fetch limitado pero mar cruzada frecuente</li>
+              </ul>
+            </div>
+
+            <div class="bg-green-50 p-6 rounded-lg">
+              <h3 class="text-xl font-bold mb-4 text-green-900">Tráfico Marítimo</h3>
+              <ul class="text-gray-700 space-y-2">
+                <li><strong>Densidad:</strong> Más de 100.000 buques/año</li>
+                <li><strong>Tipos:</strong> Contenedores, petroleros, gas licuado</li>
+                <li><strong>Rutas TSS:</strong> Esquemas de separación de tráfico</li>
+                <li><strong>Emergencias:</strong> Coordinación con Salvamento Marítimo</li>
+              </ul>
+            </div>
+
+            <div class="bg-orange-50 p-6 rounded-lg">
+              <h3 class="text-xl font-bold mb-4 text-orange-900">Regulaciones Especiales</h3>
+              <ul class="text-gray-700 space-y-2">
+                <li><strong>MARPOL:</strong> Zona especialmente sensible</li>
+                <li><strong>SASEMAR:</strong> Autorización para trabajos</li>
+                <li><strong>Prácticos:</strong> Obligatorios según eslora</li>
+                <li><strong>VTS:</strong> Control de tráfico vesselense</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="bg-gray-900 text-white p-8 rounded-lg">
+            <h3 class="text-2xl font-bold mb-6 text-center">Proyectos Destacados en el Estrecho</h3>
+            <div class="grid md:grid-cols-2 gap-8">
+              <div>
+                <h4 class="text-xl font-bold mb-3 text-yellow-400">Reparación Emergencia Petrolero (2021)</h4>
+                <p class="text-gray-300 mb-4">
+                  Soldadura de emergencia en casco de petrolero con grieta de 3 metros a 8 millas de Tarifa.
+                  Operación coordinada con Salvamento Marítimo y Control de Tráfico del Estrecho.
+                </p>
+                <div class="text-sm text-blue-300">
+                  <strong>Desafío:</strong> Corrientes de 2.5 nudos | <strong>Profundidad:</strong> 12 metros |
+                  <strong>Tiempo:</strong> 6 horas continuas
+                </div>
+              </div>
+
+              <div>
+                <h4 class="text-xl font-bold mb-3 text-yellow-400">Mantenimiento Boya de Navegación (2020)</h4>
+                <p class="text-gray-300 mb-4">
+                  Soldadura subacuática del anclaje de boya cardinal en TSS del Estrecho.
+                  Trabajo nocturno para minimizar interferencia con el tráfico marítimo.
+                </p>
+                <div class="text-sm text-green-300">
+                  <strong>Coordinación:</strong> Puertos del Estado | <strong>Ventana:</strong> 4 horas |
+                  <strong>Técnica:</strong> Soldadura húmeda
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Industria Marítima Local -->
+    <section class="py-16 bg-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Industria Marítima de Cádiz: Nuestros Clientes
+            </h2>
+            <p class="text-xl text-gray-600 max-w-4xl mx-auto">
+              La provincia de Cádiz concentra una de las industrias marítimas más importantes de España.
+              Trabajamos con todos los sectores: naval, pesquero, offshore, recreativo y comercial.
+            </p>
+          </div>
+
+          <div class="grid lg:grid-cols-2 gap-8 mb-12">
+            <div>
+              <h3 class="text-2xl font-bold mb-6 text-blue-900">Sector Naval y Construcción</h3>
+              <div class="space-y-4">
+                <div class="bg-white p-4 rounded-lg shadow">
+                  <h4 class="font-bold text-gray-800 mb-2">Navantia Cádiz - San Fernando</h4>
+                  <p class="text-gray-600 text-sm mb-2">
+                    Colaboración en proyectos de construcción naval militar y civil. Soldadura subacuática
+                    en diques secos, reparación de buques militares y mantenimiento de infraestructuras.
+                  </p>
+                  <div class="text-xs text-blue-600">
+                    <strong>Servicios:</strong> Soldadura hiperbárica, inspección de cascos, certificación naval
+                  </div>
+                </div>
+
+                <div class="bg-white p-4 rounded-lg shadow">
+                  <h4 class="font-bold text-gray-800 mb-2">Astilleros de Cádiz</h4>
+                  <p class="text-gray-600 text-sm mb-2">
+                    Reparación y mantenimiento de buques comerciales y pesqueros. Trabajos de soldadura
+                    a flote para minimizar tiempo en dique seco.
+                  </p>
+                  <div class="text-xs text-green-600">
+                    <strong>Especialidad:</strong> Reparaciones express, soldadura de emergencia, inspecciones
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-2xl font-bold mb-6 text-blue-900">Sector Pesquero y Comercial</h3>
+              <div class="space-y-4">
+                <div class="bg-white p-4 rounded-lg shadow">
+                  <h4 class="font-bold text-gray-800 mb-2">Flota Pesquera Gaditana</h4>
+                  <p class="text-gray-600 text-sm mb-2">
+                    Mantenimiento de la importante flota pesquera de Cádiz y Barbate. Soldadura de cascos,
+                    reparación de equipos de pesca y trabajos de emergencia en puerto.
+                  </p>
+                  <div class="text-xs text-orange-600">
+                    <strong>Características:</strong> Trabajo 24/7, reparaciones rápidas, costes competitivos
+                  </div>
+                </div>
+
+                <div class="bg-white p-4 rounded-lg shadow">
+                  <h4 class="font-bold text-gray-800 mb-2">Puerto Comercial - Mercancías</h4>
+                  <p class="text-gray-600 text-sm mb-2">
+                    Mantenimiento de infraestructuras portuarias, reparación de buques comerciales
+                    y servicios a navieras internacionales.
+                  </p>
+                  <div class="text-xs text-purple-600">
+                    <strong>Clientes:</strong> Maersk, MSC, navieras del Estrecho, terminales de contenedores
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-blue-900 text-white p-8 rounded-lg">
+            <h3 class="text-2xl font-bold mb-6 text-center">Datos de la Industria Marítima Gaditana</h3>
+            <div class="grid md:grid-cols-4 gap-6 text-center">
+              <div>
+                <div class="text-3xl font-bold text-yellow-400 mb-2">3,000</div>
+                <div class="text-blue-200">Años de historia marítima</div>
+              </div>
+              <div>
+                <div class="text-3xl font-bold text-green-400 mb-2">2,500</div>
+                <div class="text-blue-200">Embarcaciones registradas</div>
+              </div>
+              <div>
+                <div class="text-3xl font-bold text-orange-400 mb-2">15,000</div>
+                <div class="text-blue-200">Empleos marítimos directos</div>
+              </div>
+              <div>
+                <div class="text-3xl font-bold text-purple-400 mb-2">5º</div>
+                <div class="text-blue-200">Puerto de Andalucía por tráfico</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Local Experts -->
+    <section class="py-16 bg-blue-900 text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto text-center">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">
+            ¿Por Qué Elegir Especialistas Locales en Cádiz?
+          </h2>
+          <p class="text-xl text-blue-200 mb-12 max-w-4xl mx-auto">
+            Más de dos décadas trabajando exclusivamente en aguas gaditanas nos han dado un conocimiento
+            insuperable de las condiciones locales, la industria marítima regional y las necesidades
+            específicas de cada puerto y marina.
+          </p>
+
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-blue-800 p-6 rounded-lg">
+              <div class="w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8 text-blue-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold mb-4">Conocimiento de Mareas</h3>
+              <p class="text-blue-200">
+                Planificamos cada trabajo según los patrones específicos de mareas de la bahía gaditana,
+                optimizando ventanas de trabajo y garantizando seguridad operacional.
+              </p>
+            </div>
+
+            <div class="bg-blue-800 p-6 rounded-lg">
+              <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8 text-blue-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold mb-4">Respuesta Inmediata</h3>
+              <p class="text-blue-200">
+                Base permanente en puerto de Cádiz permite respuesta en menos de 30 minutos para emergencias
+                en cualquier punto de la bahía o Estrecho de Gibraltar.
+              </p>
+            </div>
+
+            <div class="bg-blue-800 p-6 rounded-lg">
+              <div class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8 text-blue-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold mb-4">Red de Contactos</h3>
+              <p class="text-blue-200">
+                Relaciones establecidas con Autoridad Portuaria de Cádiz, astilleros locales, navieras
+                y empresas del sector para proyectos coordinados y eficientes.
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-12">
+            <div class="bg-red-600 p-6 rounded-lg inline-block">
+              <h3 class="text-xl font-bold mb-2">🚨 Servicio de Emergencia Gaditano</h3>
+              <p class="mb-4">Disponibles 24/7 para cualquier emergencia en aguas de Cádiz y provincia</p>
+              <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="tel:+34XXXXXXX" class="bg-white text-red-600 hover:bg-gray-100 px-6 py-3 rounded-lg font-bold transition-colors">
+                  📞 Emergencias: +34 XXX XXX XXX
+                </a>
+                <a href="/contacto" class="bg-transparent border-2 border-white hover:bg-white hover:text-red-600 px-6 py-3 rounded-lg font-semibold transition-colors">
+                  Presupuesto Local
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .container {
+    max-width: 1200px;
+  }
+
+  .shadow-md {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+</style>

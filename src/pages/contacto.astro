@@ -194,33 +194,407 @@ import Footer from '../components/Footer.astro';
       </div>
     </section>
 
-    <!-- Map Section -->
+    <!-- Detailed Location Coverage -->
     <section class="py-16 bg-gray-100">
       <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto text-center">
-          <h2 class="text-3xl font-bold mb-8 text-gray-800">Área de Cobertura</h2>
-          <div class="bg-white p-8 rounded-lg shadow-md">
-            <div class="bg-blue-100 h-64 rounded-lg flex items-center justify-center">
-              <div class="text-center">
-                <svg class="w-16 h-16 text-blue-600 mx-auto mb-4" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
-                </svg>
-                <p class="text-blue-800 font-semibold">Bahía de Cádiz</p>
-                <p class="text-blue-600 text-sm">Servicios en toda Andalucía</p>
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold mb-4 text-gray-800">Cobertura Geográfica Detallada</h2>
+            <p class="text-lg text-gray-600 max-w-4xl mx-auto">
+              Ofrecemos servicios especializados de soldadura subacuática en toda la provincia de Cádiz
+              y zonas adyacentes. Nuestro conocimiento local profundo nos permite optimizar tiempos de
+              respuesta y adaptar técnicas a las condiciones específicas de cada puerto y marina.
+            </p>
+          </div>
+
+          <!-- Primary Service Area -->
+          <div class="mb-12">
+            <h3 class="text-2xl font-bold mb-6 text-blue-900 text-center">Zona de Servicio Principal - Respuesta Inmediata</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                  </svg>
+                </div>
+                <h4 class="font-bold text-gray-800 mb-2 text-center">Cádiz Capital</h4>
+                <ul class="text-gray-600 text-sm space-y-1">
+                  <li>• Puerto comercial y pesquero</li>
+                  <li>• Astilleros Navantia</li>
+                  <li>• Diques secos y varaderos</li>
+                  <li>• Marina deportiva</li>
+                  <li>• <strong>Tiempo respuesta:</strong> 15 min</li>
+                </ul>
+              </div>
+
+              <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                  </svg>
+                </div>
+                <h4 class="font-bold text-gray-800 mb-2 text-center">Puerto de Santa María</h4>
+                <ul class="text-gray-600 text-sm space-y-1">
+                  <li>• Puerto pesquero tradicional</li>
+                  <li>• Marina Sherry (1000+ amarres)</li>
+                  <li>• Astilleros privados</li>
+                  <li>• Club Náutico</li>
+                  <li>• <strong>Tiempo respuesta:</strong> 25 min</li>
+                </ul>
+              </div>
+
+              <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                  </svg>
+                </div>
+                <h4 class="font-bold text-gray-800 mb-2 text-center">Rota</h4>
+                <ul class="text-gray-600 text-sm space-y-1">
+                  <li>• Base Naval Española</li>
+                  <li>• Puerto deportivo civil</li>
+                  <li>• Marina Internacional</li>
+                  <li>• Instalaciones militares</li>
+                  <li>• <strong>Tiempo respuesta:</strong> 30 min</li>
+                </ul>
+              </div>
+
+              <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                  </svg>
+                </div>
+                <h4 class="font-bold text-gray-800 mb-2 text-center">San Fernando</h4>
+                <ul class="text-gray-600 text-sm space-y-1">
+                  <li>• Arsenal de la Carraca</li>
+                  <li>• Escuela Naval Militar</li>
+                  <li>• Caños y marismas</li>
+                  <li>• Puerto de Gallineras</li>
+                  <li>• <strong>Tiempo respuesta:</strong> 20 min</li>
+                </ul>
               </div>
             </div>
-            <div class="mt-6 grid md:grid-cols-3 gap-4 text-sm text-gray-600">
+          </div>
+
+          <!-- Extended Service Area -->
+          <div class="mb-12">
+            <h3 class="text-2xl font-bold mb-6 text-green-900 text-center">Zona de Servicio Extendida - Programado y Emergencias</h3>
+            <div class="grid md:grid-cols-3 gap-6">
+              <div class="bg-green-50 p-6 rounded-lg border-2 border-green-200">
+                <h4 class="font-bold text-green-800 mb-3">Costa Noroeste</h4>
+                <ul class="text-gray-700 space-y-2">
+                  <li><strong>Jerez de la Frontera</strong> - Acceso vía río Guadalete</li>
+                  <li><strong>Sanlúcar de Barrameda</strong> - Desembocadura Guadalquivir</li>
+                  <li><strong>Chipiona</strong> - Puerto pesquero y deportivo</li>
+                  <li><strong>Rota</strong> - Extensión costa norte</li>
+                </ul>
+                <div class="mt-4 p-3 bg-green-100 rounded">
+                  <p class="text-green-800 text-sm"><strong>Tiempo respuesta:</strong> 45-60 minutos</p>
+                </div>
+              </div>
+
+              <div class="bg-blue-50 p-6 rounded-lg border-2 border-blue-200">
+                <h4 class="font-bold text-blue-800 mb-3">Costa Sur</h4>
+                <ul class="text-gray-700 space-y-2">
+                  <li><strong>Chiclana de la Frontera</strong> - Puerto Sancti Petri</li>
+                  <li><strong>Conil de la Frontera</strong> - Puerto pesquero</li>
+                  <li><strong>Barbate</strong> - Puerto atunero</li>
+                  <li><strong>Zahara de los Atunes</strong> - Puerto deportivo</li>
+                </ul>
+                <div class="mt-4 p-3 bg-blue-100 rounded">
+                  <p class="text-blue-800 text-sm"><strong>Tiempo respuesta:</strong> 50-75 minutos</p>
+                </div>
+              </div>
+
+              <div class="bg-orange-50 p-6 rounded-lg border-2 border-orange-200">
+                <h4 class="font-bold text-orange-800 mb-3">Estrecho de Gibraltar</h4>
+                <ul class="text-gray-700 space-y-2">
+                  <li><strong>Tarifa</strong> - Puerto pesquero y comercial</li>
+                  <li><strong>Algeciras</strong> - Gran puerto comercial</li>
+                  <li><strong>La Línea</strong> - Puerto deportivo</li>
+                  <li><strong>Gibraltar</strong> - Aguas internacionales</li>
+                </ul>
+                <div class="mt-4 p-3 bg-orange-100 rounded">
+                  <p class="text-orange-800 text-sm"><strong>Tiempo respuesta:</strong> 60-90 minutos</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Emergency Coverage -->
+          <div class="bg-red-50 border-2 border-red-200 p-8 rounded-lg">
+            <h3 class="text-2xl font-bold mb-4 text-red-900 text-center">Cobertura de Emergencias 24/7</h3>
+            <div class="grid md:grid-cols-2 gap-8">
               <div>
-                <strong>Zona Principal:</strong><br>
-                Cádiz, Puerto de Santa María, El Puerto, Rota
+                <h4 class="font-bold text-red-800 mb-3">Andalucía Occidental</h4>
+                <p class="text-gray-700 mb-3">
+                  Para emergencias marítimas críticas, extendemos nuestros servicios a toda Andalucía Occidental,
+                  incluyendo las provincias de Huelva y Sevilla (zona costera y fluvial).
+                </p>
+                <ul class="text-gray-700 space-y-1">
+                  <li>• <strong>Huelva</strong> - Puerto comercial y pesquero</li>
+                  <li>• <strong>Palos de la Frontera</strong> - Puerto de Palos</li>
+                  <li>• <strong>Isla Cristina</strong> - Flota pesquera</li>
+                  <li>• <strong>Sevilla</strong> - Puerto fluvial del Guadalquivir</li>
+                </ul>
               </div>
               <div>
-                <strong>Zona Extendida:</strong><br>
-                Jerez, Chiclana, Conil, Barbate
+                <h4 class="font-bold text-red-800 mb-3">Portugal Sur</h4>
+                <p class="text-gray-700 mb-3">
+                  Colaboramos con empresas portuguesas para emergencias en la costa sur de Portugal,
+                  especialmente en la región del Algarve cercana al Estrecho.
+                </p>
+                <ul class="text-gray-700 space-y-1">
+                  <li>• <strong>Vila Real de Santo António</strong></li>
+                  <li>• <strong>Tavira</strong> - Puerto pesquero</li>
+                  <li>• <strong>Faro</strong> - Puerto comercial</li>
+                  <li>• <strong>Portimão</strong> - Marina internacional</li>
+                </ul>
+              </div>
+            </div>
+            <div class="text-center mt-6">
+              <div class="bg-red-600 text-white p-4 rounded-lg inline-block">
+                <p class="text-lg font-bold mb-2">🚨 Para emergencias fuera de Cádiz</p>
+                <p class="text-red-100">Tiempo de respuesta: 2-4 horas según ubicación</p>
+                <p class="text-red-100">Coordinación con equipos locales disponible</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Methods by Service Type -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold mb-4 text-gray-800">Métodos de Contacto por Tipo de Servicio</h2>
+            <p class="text-lg text-gray-600">
+              Diferentes tipos de trabajos requieren diferentes enfoques de comunicación.
+              Optimizamos nuestros canales de contacto para cada situación específica.
+            </p>
+          </div>
+
+          <div class="grid lg:grid-cols-3 gap-8">
+            <!-- Emergency Contact -->
+            <div class="bg-red-50 border-2 border-red-200 p-6 rounded-lg">
+              <div class="text-center mb-6">
+                <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                  </svg>
+                </div>
+                <h3 class="text-xl font-bold text-red-700">Emergencias Marítimas</h3>
+              </div>
+
+              <div class="space-y-4">
+                <div class="bg-white p-4 rounded border border-red-200">
+                  <h4 class="font-bold text-red-800 mb-2">📞 Línea Directa 24/7</h4>
+                  <p class="text-red-600 font-bold text-lg">+34 XXX XXX XXX</p>
+                  <p class="text-gray-600 text-sm mt-1">Respuesta inmediata, técnico de guardia</p>
+                </div>
+
+                <div class="bg-white p-4 rounded border border-red-200">
+                  <h4 class="font-bold text-red-800 mb-2">📧 Email Urgente</h4>
+                  <p class="text-red-600">emergencia@trabajossubacuaticos.com</p>
+                  <p class="text-gray-600 text-sm mt-1">Respuesta en 15 minutos</p>
+                </div>
+
+                <div class="bg-white p-4 rounded border border-red-200">
+                  <h4 class="font-bold text-red-800 mb-2">📱 WhatsApp Emergencias</h4>
+                  <p class="text-red-600">+34 XXX XXX XXX</p>
+                  <p class="text-gray-600 text-sm mt-1">Fotos/videos de la situación</p>
+                </div>
+              </div>
+
+              <div class="mt-4 p-3 bg-red-100 rounded">
+                <p class="text-red-800 text-sm font-medium">
+                  ⚡ Tipos de emergencia: Grietas en cascos, soldaduras críticas, reparaciones urgentes,
+                  accidentes marítimos, fallos estructurales.
+                </p>
+              </div>
+            </div>
+
+            <!-- Scheduled Services -->
+            <div class="bg-blue-50 border-2 border-blue-200 p-6 rounded-lg">
+              <div class="text-center mb-6">
+                <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/>
+                  </svg>
+                </div>
+                <h3 class="text-xl font-bold text-blue-700">Servicios Programados</h3>
+              </div>
+
+              <div class="space-y-4">
+                <div class="bg-white p-4 rounded border border-blue-200">
+                  <h4 class="font-bold text-blue-800 mb-2">📧 Email Comercial</h4>
+                  <p class="text-blue-600">info@trabajossubacuaticos.com</p>
+                  <p class="text-gray-600 text-sm mt-1">Presupuestos detallados en 24h</p>
+                </div>
+
+                <div class="bg-white p-4 rounded border border-blue-200">
+                  <h4 class="font-bold text-blue-800 mb-2">📞 Oficina Técnica</h4>
+                  <p class="text-blue-600">+34 XXX XXX XXX</p>
+                  <p class="text-gray-600 text-sm mt-1">Lun-Vie 8:00-18:00, Sáb 9:00-14:00</p>
+                </div>
+
+                <div class="bg-white p-4 rounded border border-blue-200">
+                  <h4 class="font-bold text-blue-800 mb-2">📋 Formulario Web</h4>
+                  <p class="text-blue-600">Formulario detallado arriba</p>
+                  <p class="text-gray-600 text-sm mt-1">Incluye fotos y especificaciones</p>
+                </div>
+              </div>
+
+              <div class="mt-4 p-3 bg-blue-100 rounded">
+                <p class="text-blue-800 text-sm font-medium">
+                  🔧 Servicios: Soldadura subacuática, inspección de cascos, reparación naval,
+                  buceo industrial, mantenimiento programado.
+                </p>
+              </div>
+            </div>
+
+            <!-- Consultancy & Quotes -->
+            <div class="bg-green-50 border-2 border-green-200 p-6 rounded-lg">
+              <div class="text-center mb-6">
+                <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                  </svg>
+                </div>
+                <h3 class="text-xl font-bold text-green-700">Consultoría y Presupuestos</h3>
+              </div>
+
+              <div class="space-y-4">
+                <div class="bg-white p-4 rounded border border-green-200">
+                  <h4 class="font-bold text-green-800 mb-2">👨‍💼 Consultor Senior</h4>
+                  <p class="text-green-600">+34 XXX XXX XXX</p>
+                  <p class="text-gray-600 text-sm mt-1">Proyectos complejos y grandes contratos</p>
+                </div>
+
+                <div class="bg-white p-4 rounded border border-green-200">
+                  <h4 class="font-bold text-green-800 mb-2">📊 Departamento Técnico</h4>
+                  <p class="text-green-600">tecnico@trabajossubacuaticos.com</p>
+                  <p class="text-gray-600 text-sm mt-1">Especificaciones técnicas y normativas</p>
+                </div>
+
+                <div class="bg-white p-4 rounded border border-green-200">
+                  <h4 class="font-bold text-green-800 mb-2">🏢 Visitas a Obra</h4>
+                  <p class="text-green-600">Coordinamos cita previa</p>
+                  <p class="text-gray-600 text-sm mt-1">Evaluación in-situ gratuita</p>
+                </div>
+              </div>
+
+              <div class="mt-4 p-3 bg-green-100 rounded">
+                <p class="text-green-800 text-sm font-medium">
+                  💼 Especialidades: Proyectos offshore, certificaciones navieras,
+                  consultorías técnicas, estudios de viabilidad.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Local Office Hours and Availability -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold mb-4 text-gray-800">Horarios y Disponibilidad Local</h2>
+            <p class="text-lg text-gray-600">
+              Nuestros horarios están adaptados a las necesidades del sector marítimo gaditano,
+              considerando mareas, condiciones meteorológicas y actividad portuaria.
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-white p-8 rounded-lg shadow-md">
+              <h3 class="text-2xl font-bold mb-6 text-blue-900">Horarios de Oficina - Puerto de Cádiz</h3>
+
+              <div class="space-y-4">
+                <div class="flex justify-between items-center border-b pb-2">
+                  <span class="font-medium text-gray-700">Lunes - Viernes</span>
+                  <span class="text-blue-600">07:00 - 19:00</span>
+                </div>
+                <div class="flex justify-between items-center border-b pb-2">
+                  <span class="font-medium text-gray-700">Sábado</span>
+                  <span class="text-blue-600">08:00 - 15:00</span>
+                </div>
+                <div class="flex justify-between items-center border-b pb-2">
+                  <span class="font-medium text-gray-700">Domingo</span>
+                  <span class="text-green-600">Solo emergencias</span>
+                </div>
+                <div class="flex justify-between items-center border-b pb-2">
+                  <span class="font-medium text-gray-700">Festivos</span>
+                  <span class="text-green-600">Solo emergencias</span>
+                </div>
+              </div>
+
+              <div class="mt-6 p-4 bg-blue-50 rounded">
+                <h4 class="font-bold text-blue-800 mb-2">📍 Ubicación Oficina Principal</h4>
+                <p class="text-gray-700">
+                  <strong>Muelle Pesquero de Cádiz</strong><br>
+                  Puerto de Cádiz, s/n<br>
+                  11001 Cádiz, España
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg shadow-md">
+              <h3 class="text-2xl font-bold mb-6 text-red-900">Disponibilidad 24/7 Emergencias</h3>
+
+              <div class="space-y-4">
+                <div class="bg-red-50 p-4 rounded border border-red-200">
+                  <h4 class="font-bold text-red-800 mb-2">Guardia Nocturna</h4>
+                  <p class="text-gray-700">20:00 - 07:00 todos los días</p>
+                  <p class="text-red-600 text-sm">Técnico de guardia en puerto</p>
+                </div>
+
+                <div class="bg-red-50 p-4 rounded border border-red-200">
+                  <h4 class="font-bold text-red-800 mb-2">Fines de Semana</h4>
+                  <p class="text-gray-700">Sábado 15:00 - Lunes 07:00</p>
+                  <p class="text-red-600 text-sm">Equipo de emergencia activo</p>
+                </div>
+
+                <div class="bg-red-50 p-4 rounded border border-red-200">
+                  <h4 class="font-bold text-red-800 mb-2">Días Festivos</h4>
+                  <p class="text-gray-700">Cobertura completa 24 horas</p>
+                  <p class="text-red-600 text-sm">Sin recargo por festivos</p>
+                </div>
+              </div>
+
+              <div class="mt-6 p-4 bg-yellow-50 rounded border border-yellow-200">
+                <h4 class="font-bold text-yellow-800 mb-2">⚠️ Condiciones Meteorológicas</h4>
+                <p class="text-gray-700 text-sm">
+                  Trabajos suspendidos con viento mayor a 25 nudos, oleaje mayor a 1.5m o visibilidad menor a 500m.
+                  Evaluación continua de condiciones para reanudar operaciones.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 bg-blue-900 text-white p-8 rounded-lg text-center">
+            <h3 class="text-2xl font-bold mb-4">🌊 Planificación según Mareas de Cádiz</h3>
+            <p class="text-blue-200 mb-4">
+              Optimizamos nuestros trabajos según las mareas de la bahía gaditana. Los horarios pueden
+              ajustarse para aprovechar las mejores condiciones de pleamar o bajamar según el tipo de trabajo.
+            </p>
+            <div class="grid md:grid-cols-3 gap-4 text-sm">
+              <div>
+                <strong class="text-yellow-400">Pleamar Alta</strong><br>
+                <span class="text-blue-300">Ideal para soldadura profunda</span>
               </div>
               <div>
-                <strong>Emergencias:</strong><br>
-                Toda Andalucía y Portugal Sur
+                <strong class="text-yellow-400">Media Marea</strong><br>
+                <span class="text-blue-300">Condiciones estables generales</span>
+              </div>
+              <div>
+                <strong class="text-yellow-400">Bajamar</strong><br>
+                <span class="text-blue-300">Acceso a estructuras expuestas</span>
               </div>
             </div>
           </div>
