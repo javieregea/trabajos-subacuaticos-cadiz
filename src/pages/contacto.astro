@@ -1,0 +1,247 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Contacto | Trabajos Subacuáticos Cádiz - Soldadura Marina 24/7"
+  description="Contacte con especialistas en soldadura subacuática en Cádiz. Servicios de emergencia 24/7, presupuestos gratuitos. Llame ahora para trabajos marítimos profesionales."
+  keywords="contacto soldadura subacuática Cádiz, presupuesto buceo industrial, emergencias marítimas Cádiz, teléfono trabajos submarinos"
+>
+  <Header />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 text-white py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">
+            Contacto
+          </h1>
+          <p class="text-xl md:text-2xl mb-8 text-blue-100">
+            Estamos disponibles 24/7 para emergencias marítimas
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Information -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="grid lg:grid-cols-2 gap-12">
+
+            <!-- Contact Form -->
+            <div>
+              <h2 class="text-3xl font-bold mb-8 text-gray-800">Solicitar Presupuesto</h2>
+
+              <form class="space-y-6" action="#" method="POST">
+                <div class="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label for="nombre" class="block text-sm font-medium text-gray-700 mb-2">Nombre *</label>
+                    <input type="text" id="nombre" name="nombre" required
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                  </div>
+                  <div>
+                    <label for="empresa" class="block text-sm font-medium text-gray-700 mb-2">Empresa</label>
+                    <input type="text" id="empresa" name="empresa"
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                  </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label for="telefono" class="block text-sm font-medium text-gray-700 mb-2">Teléfono *</label>
+                    <input type="tel" id="telefono" name="telefono" required
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                  </div>
+                  <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                    <input type="email" id="email" name="email"
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                  </div>
+                </div>
+
+                <div>
+                  <label for="servicio" class="block text-sm font-medium text-gray-700 mb-2">Tipo de Servicio *</label>
+                  <select id="servicio" name="servicio" required
+                          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    <option value="">Seleccione un servicio</option>
+                    <option value="soldadura-subacuatica">Soldadura Subacuática</option>
+                    <option value="inspeccion-cascos">Inspección de Cascos</option>
+                    <option value="reparacion-naval">Reparación Naval</option>
+                    <option value="buceo-industrial">Buceo Industrial</option>
+                    <option value="emergencia">Emergencia 24h</option>
+                    <option value="otro">Otro</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label for="ubicacion" class="block text-sm font-medium text-gray-700 mb-2">Ubicación del Trabajo</label>
+                  <input type="text" id="ubicacion" name="ubicacion" placeholder="Puerto, coordenadas o dirección"
+                         class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                </div>
+
+                <div>
+                  <label for="urgencia" class="block text-sm font-medium text-gray-700 mb-2">Urgencia</label>
+                  <select id="urgencia" name="urgencia"
+                          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    <option value="normal">Normal (1-3 días)</option>
+                    <option value="urgente">Urgente (24-48 horas)</option>
+                    <option value="emergencia">Emergencia (inmediato)</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label for="mensaje" class="block text-sm font-medium text-gray-700 mb-2">Descripción del Trabajo *</label>
+                  <textarea id="mensaje" name="mensaje" rows="5" required placeholder="Describa detalladamente el trabajo a realizar, tipo de embarcación, dimensiones, etc."
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></textarea>
+                </div>
+
+                <div class="flex items-center">
+                  <input type="checkbox" id="acepto" name="acepto" required class="mr-2">
+                  <label for="acepto" class="text-sm text-gray-600">
+                    Acepto la <a href="/politica-privacidad" class="text-blue-600 hover:underline">política de privacidad</a> *
+                  </label>
+                </div>
+
+                <button type="submit"
+                        class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors">
+                  Enviar Solicitud
+                </button>
+              </form>
+            </div>
+
+            <!-- Contact Information -->
+            <div>
+              <h2 class="text-3xl font-bold mb-8 text-gray-800">Información de Contacto</h2>
+
+              <!-- Emergency Contact -->
+              <div class="bg-red-50 border-l-4 border-red-500 p-6 mb-8">
+                <div class="flex items-center mb-2">
+                  <svg class="w-6 h-6 text-red-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                  </svg>
+                  <h3 class="text-lg font-bold text-red-700">Emergencias 24h</h3>
+                </div>
+                <p class="text-red-700 font-semibold text-xl">+34 XXX XXX XXX</p>
+                <p class="text-red-600 text-sm mt-1">Respuesta inmediata para emergencias marítimas</p>
+              </div>
+
+              <!-- Regular Contact -->
+              <div class="space-y-6">
+                <div class="flex items-start">
+                  <svg class="w-6 h-6 text-blue-600 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                  </svg>
+                  <div>
+                    <h4 class="font-semibold text-gray-800">Teléfono Principal</h4>
+                    <p class="text-gray-600">+34 XXX XXX XXX</p>
+                    <p class="text-sm text-gray-500">Lunes a Domingo 8:00 - 20:00</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start">
+                  <svg class="w-6 h-6 text-blue-600 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                  </svg>
+                  <div>
+                    <h4 class="font-semibold text-gray-800">Email</h4>
+                    <p class="text-gray-600">info@trabajos-subacuaticos-cadiz.com</p>
+                    <p class="text-sm text-gray-500">Respuesta en 24h</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start">
+                  <svg class="w-6 h-6 text-blue-600 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                  </svg>
+                  <div>
+                    <h4 class="font-semibold text-gray-800">Área de Servicio</h4>
+                    <p class="text-gray-600">Cádiz y Bahía de Cádiz</p>
+                    <p class="text-sm text-gray-500">Puerto de Santa María, Jerez, El Puerto, Rota</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start">
+                  <svg class="w-6 h-6 text-blue-600 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                  </svg>
+                  <div>
+                    <h4 class="font-semibold text-gray-800">Horarios</h4>
+                    <p class="text-gray-600">24 horas / 7 días</p>
+                    <p class="text-sm text-gray-500">Emergencias disponibles siempre</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Services Quick Links -->
+              <div class="mt-8 bg-blue-50 p-6 rounded-lg">
+                <h4 class="font-semibold text-blue-900 mb-4">Servicios Principales</h4>
+                <div class="space-y-2">
+                  <a href="/soldadura-subacuatica" class="block text-blue-700 hover:text-blue-900 text-sm">→ Soldadura Subacuática</a>
+                  <a href="/servicios" class="block text-blue-700 hover:text-blue-900 text-sm">→ Inspección de Cascos</a>
+                  <a href="/servicios" class="block text-blue-700 hover:text-blue-900 text-sm">→ Buceo Industrial</a>
+                  <a href="/emergencias" class="block text-blue-700 hover:text-blue-900 text-sm">→ Emergencias 24h</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="py-16 bg-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl font-bold mb-8 text-gray-800">Área de Cobertura</h2>
+          <div class="bg-white p-8 rounded-lg shadow-md">
+            <div class="bg-blue-100 h-64 rounded-lg flex items-center justify-center">
+              <div class="text-center">
+                <svg class="w-16 h-16 text-blue-600 mx-auto mb-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                </svg>
+                <p class="text-blue-800 font-semibold">Bahía de Cádiz</p>
+                <p class="text-blue-600 text-sm">Servicios en toda Andalucía</p>
+              </div>
+            </div>
+            <div class="mt-6 grid md:grid-cols-3 gap-4 text-sm text-gray-600">
+              <div>
+                <strong>Zona Principal:</strong><br>
+                Cádiz, Puerto de Santa María, El Puerto, Rota
+              </div>
+              <div>
+                <strong>Zona Extendida:</strong><br>
+                Jerez, Chiclana, Conil, Barbate
+              </div>
+              <div>
+                <strong>Emergencias:</strong><br>
+                Toda Andalucía y Portugal Sur
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .container {
+    max-width: 1200px;
+  }
+
+  .shadow-md {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+
+  input:focus, select:focus, textarea:focus {
+    outline: none;
+  }
+</style>

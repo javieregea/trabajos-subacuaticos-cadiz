@@ -5,9 +5,12 @@ export interface Props {
 	title: string;
 	description?: string;
 	keywords?: string;
+	canonical?: string;
 }
 
-const { title, description = "Especialistas en soldadura subacuática y trabajos marítimos en Cádiz. Servicios profesionales de buceo industrial, reparación de cascos y soldadura hiperbárica 24/7.", keywords = "soldadura subacuática Cádiz, trabajos subacuáticos, buceo industrial, reparación cascos embarcaciones" } = Astro.props;
+const { title, description = "Especialistas en soldadura subacuática y trabajos marítimos en Cádiz. Servicios profesionales de buceo industrial, reparación de cascos y soldadura hiperbárica 24/7.", keywords = "soldadura subacuática Cádiz, trabajos subacuáticos, buceo industrial, reparación cascos embarcaciones", canonical } = Astro.props;
+
+const canonicalURL = canonical || `https://trabajos-subacuaticos-cadiz.vercel.app${Astro.url.pathname}`;
 ---
 
 <!doctype html>
@@ -18,10 +21,12 @@ const { title, description = "Especialistas en soldadura subacuática y trabajos
 		<meta name="keywords" content={keywords} />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="canonical" href={canonicalURL} />
 		<meta name="generator" content={Astro.generator} />
 
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content="website" />
+		<meta property="og:url" content={canonicalURL} />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:site_name" content="Trabajos Subacuáticos Cádiz" />
