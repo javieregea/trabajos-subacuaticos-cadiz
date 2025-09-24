@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import CallToAction from '../../components/CallToAction.astro';
+import InternalLinks from '../../components/InternalLinks.astro';
 ---
 
 <Layout
@@ -243,6 +244,11 @@ import CallToAction from '../../components/CallToAction.astro';
               </div>
             </div>
           </section>
+
+          <!-- Smart Internal Links -->
+          <div class="mt-12">
+            <InternalLinks currentPage="blog-cuando-inspeccionar" context="blog" maxLinks={4} />
+          </div>
 
           <!-- CTA Section -->
           <div class="mt-12 bg-blue-900 text-white p-8 rounded-lg text-center">

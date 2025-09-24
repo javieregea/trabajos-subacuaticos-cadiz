@@ -1,0 +1,277 @@
+---
+export interface Props {
+  currentPage: string;
+  context?: 'service' | 'blog' | 'location' | 'emergency';
+  maxLinks?: number;
+}
+
+const { currentPage, context = 'service', maxLinks = 6 } = Astro.props;
+
+// Strategic internal linking matrix
+const linkingMatrix = {
+  // Blog Articles
+  'blog-cuando-inspeccionar': {
+    title: 'Cuándo Inspeccionar Cascos',
+    description: 'Plazos obligatorios, multas y cumplimiento normativo',
+    url: '/blog/cuando-inspeccionar-casco-embarcacion',
+    keywords: ['plazos', 'multas', 'obligatorio', 'normativa'],
+    intent: 'high',
+    related: ['inspeccion-cascos', 'blog-normativas', 'emergencias']
+  },
+  'blog-comparativa': {
+    title: 'Submarina vs Varada: Ahorro 75-93%',
+    description: 'Comparativa completa de costes, tiempos y ventajas reales',
+    url: '/blog/diferencias-inspeccion-submarina-vs-varada',
+    keywords: ['ahorro', 'costes', 'comparativa', 'varada'],
+    intent: 'high',
+    related: ['inspeccion-cascos', 'blog-cuando-inspeccionar', 'reparacion-naval']
+  },
+  'blog-normativas': {
+    title: 'Normativas 2024: SOLAS, MARPOL, RD',
+    description: 'Todas las normativas actualizadas, sociedades clasificación',
+    url: '/blog/normativas-inspeccion-cascos-buques-2024',
+    keywords: ['SOLAS', 'MARPOL', 'normativas', 'clasificación'],
+    intent: 'high',
+    related: ['blog-cuando-inspeccionar', 'inspeccion-cascos', 'servicios']
+  },
+  'blog-index': {
+    title: 'Blog Técnico Especializado',
+    description: 'Guías actualizadas sobre inspección, normativas y trabajos navales',
+    url: '/blog/',
+    keywords: ['guías', 'técnico', 'especializado'],
+    intent: 'medium',
+    related: ['blog-cuando-inspeccionar', 'blog-comparativa', 'blog-normativas']
+  },
+
+  // Main Services
+  'inspeccion-cascos': {
+    title: 'Inspección Cascos Certificada',
+    description: 'Sin varada, 80% ahorro, validez 100% legal todas sociedades',
+    url: '/inspeccion-cascos',
+    keywords: ['inspección', 'certificada', 'ahorro'],
+    intent: 'commercial',
+    related: ['blog-cuando-inspeccionar', 'blog-comparativa', 'emergencias']
+  },
+  'soldadura-subacuatica': {
+    title: 'Soldadura Subacuática Profesional',
+    description: 'Técnicas húmedas y secas, certificación AWS D3.6',
+    url: '/soldadura-subacuatica',
+    keywords: ['soldadura', 'submarina', 'profesional'],
+    intent: 'commercial',
+    related: ['reparacion-naval', 'emergencias', 'inspeccion-cascos']
+  },
+  'reparacion-naval': {
+    title: 'Reparación Naval Submarina',
+    description: 'Cascos, hélices, estructuras. Disponible 24/7 para emergencias',
+    url: '/reparacion-naval',
+    keywords: ['reparación', 'naval', 'cascos'],
+    intent: 'commercial',
+    related: ['soldadura-subacuatica', 'inspeccion-cascos', 'blog-comparativa']
+  },
+  'emergencias': {
+    title: 'Emergencias Marítimas 24/7',
+    description: 'Respuesta inmediata < 2h, toda la bahía de Cádiz',
+    url: '/emergencias',
+    keywords: ['emergencias', '24/7', 'inmediata'],
+    intent: 'urgent',
+    related: ['soldadura-subacuatica', 'reparacion-naval', 'blog-cuando-inspeccionar']
+  },
+
+  // Locations
+  'cadiz': {
+    title: 'Trabajos Subacuáticos Cádiz',
+    description: 'Servicios profesionales en puerto de Cádiz y bahía',
+    url: '/cadiz',
+    keywords: ['Cádiz', 'puerto', 'bahía'],
+    intent: 'local',
+    related: ['puerto-algeciras', 'inspeccion-cascos', 'servicios']
+  },
+  'puerto-algeciras': {
+    title: 'Puerto Algeciras - Terminal Europa',
+    description: 'Trabajos especializados en el mayor puerto de España',
+    url: '/puerto-algeciras',
+    keywords: ['Algeciras', 'terminal', 'puerto'],
+    intent: 'local',
+    related: ['cadiz', 'reparacion-naval', 'soldadura-subacuatica']
+  },
+
+  // General
+  'servicios': {
+    title: 'Todos los Servicios',
+    description: 'Inspección, soldadura, reparación y trabajos especializados',
+    url: '/servicios',
+    keywords: ['servicios', 'completos', 'especializados'],
+    intent: 'navigation',
+    related: ['inspeccion-cascos', 'soldadura-subacuatica', 'reparacion-naval']
+  },
+  'contacto': {
+    title: 'Contacto y Presupuestos',
+    description: 'Solicite presupuesto gratuito. Respuesta en 2 horas',
+    url: '/contacto',
+    keywords: ['contacto', 'presupuesto', 'gratuito'],
+    intent: 'conversion',
+    related: ['emergencias', 'inspeccion-cascos', 'servicios']
+  }
+};
+
+// Get smart suggestions based on current page and context
+function getSmartLinks(currentPage: string, context: string, maxLinks: number) {
+  const currentPageData = linkingMatrix[currentPage];
+  if (!currentPageData) return [];
+
+  let suggestions = [];
+
+  // Add direct related pages
+  if (currentPageData.related) {
+    currentPageData.related.forEach(relatedKey => {
+      if (linkingMatrix[relatedKey]) {
+        suggestions.push({
+          ...linkingMatrix[relatedKey],
+          relevance: 'high'
+        });
+      }
+    });
+  }
+
+  // Add contextual suggestions based on page type
+  if (context === 'blog') {
+    // For blog pages, suggest main services
+    ['inspeccion-cascos', 'emergencias', 'contacto'].forEach(key => {
+      if (key !== currentPage && linkingMatrix[key] && !suggestions.find(s => s.url === linkingMatrix[key].url)) {
+        suggestions.push({
+          ...linkingMatrix[key],
+          relevance: 'medium'
+        });
+      }
+    });
+  } else if (context === 'service') {
+    // For service pages, suggest blog content
+    ['blog-cuando-inspeccionar', 'blog-comparativa', 'blog-normativas'].forEach(key => {
+      if (linkingMatrix[key] && !suggestions.find(s => s.url === linkingMatrix[key].url)) {
+        suggestions.push({
+          ...linkingMatrix[key],
+          relevance: 'medium'
+        });
+      }
+    });
+  }
+
+  // Limit results
+  return suggestions.slice(0, maxLinks);
+}
+
+const smartLinks = getSmartLinks(currentPage, context, maxLinks);
+---
+
+{smartLinks.length > 0 && (
+  <section class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+    <h3 class="text-lg font-bold text-gray-900 mb-4">
+      {context === 'blog' ? '📖 Información Relacionada' :
+       context === 'service' ? '🔗 También le Puede Interesar' :
+       context === 'emergency' ? '🚨 Servicios Relacionados' :
+       '🎯 Contenido Recomendado'}
+    </h3>
+
+    <div class="grid md:grid-cols-2 gap-4">
+      {smartLinks.map(link => (
+        <div class={`bg-white p-4 rounded-lg shadow-sm border-l-4 ${
+          link.intent === 'high' ? 'border-red-500' :
+          link.intent === 'commercial' ? 'border-blue-500' :
+          link.intent === 'urgent' ? 'border-orange-500' :
+          'border-gray-400'
+        } hover:shadow-md transition-shadow`}>
+          <h4 class="font-bold text-gray-800 mb-2">
+            <a href={link.url} class={`hover:underline ${
+              link.intent === 'high' ? 'text-red-700' :
+              link.intent === 'commercial' ? 'text-blue-700' :
+              link.intent === 'urgent' ? 'text-orange-700' :
+              'text-gray-700'
+            }`}>
+              {link.title}
+            </a>
+          </h4>
+          <p class="text-gray-600 text-sm mb-3">{link.description}</p>
+
+          <div class="flex items-center justify-between">
+            <span class={`text-xs px-2 py-1 rounded ${
+              link.intent === 'high' ? 'bg-red-100 text-red-700' :
+              link.intent === 'commercial' ? 'bg-blue-100 text-blue-700' :
+              link.intent === 'urgent' ? 'bg-orange-100 text-orange-700' :
+              'bg-gray-100 text-gray-700'
+            }`}>
+              {link.intent === 'high' ? 'High Intent' :
+               link.intent === 'commercial' ? 'Servicio' :
+               link.intent === 'urgent' ? 'Emergencia' :
+               'Información'}
+            </span>
+
+            <a href={link.url} class={`text-sm font-semibold hover:underline ${
+              link.intent === 'urgent' ? 'text-red-600' : 'text-blue-600'
+            }`}>
+              {link.intent === 'urgent' ? '🚨 Ver ahora' : 'Leer más →'}
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Strategic CTA based on context -->
+    {context === 'blog' && (
+      <div class="mt-6 bg-blue-900 text-white p-4 rounded-lg">
+        <div class="flex items-center justify-between">
+          <div>
+            <h4 class="font-bold mb-1">¿Necesita Asesoramiento Técnico?</h4>
+            <p class="text-blue-200 text-sm">Consulta gratuita con nuestros especialistas</p>
+          </div>
+          <div class="flex gap-2">
+            <a href="/contacto" class="bg-green-600 hover:bg-green-700 px-4 py-2 rounded text-sm font-semibold transition-colors">
+              Consultar
+            </a>
+            <a href="tel:+34614405061" class="bg-red-600 hover:bg-red-700 px-4 py-2 rounded text-sm font-semibold transition-colors">
+              Llamar
+            </a>
+          </div>
+        </div>
+      </div>
+    )}
+
+    {context === 'service' && (
+      <div class="mt-6 bg-green-900 text-white p-4 rounded-lg">
+        <div class="flex items-center justify-between">
+          <div>
+            <h4 class="font-bold mb-1">🎯 Información Especializada</h4>
+            <p class="text-green-200 text-sm">Guías técnicas para tomar decisiones informadas</p>
+          </div>
+          <div>
+            <a href="/blog/" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded text-sm font-semibold transition-colors">
+              Ver Blog Técnico
+            </a>
+          </div>
+        </div>
+      </div>
+    )}
+  </section>
+)}
+
+<style>
+  /* Ensure smooth interactions */
+  div {
+    transition: all 0.2s ease;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+
+    .flex {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+</style>

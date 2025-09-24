@@ -1,9 +1,9 @@
 // Centralized business information for NAP consistency
 export const businessInfo = {
   name: "Trabajos Subacuáticos Cádiz",
-  phone: "+34 614 406 061",
+  phone: "+34 614 405 061",
   email: "info@trabajossubacuaticoscadiz.es",
-  emergencyPhone: "+34 614 406 061",
+  emergencyPhone: "+34 614 405 061",
   address: {
     street: "Muelle de la Cabezuela, 12",
     city: "Cádiz",
