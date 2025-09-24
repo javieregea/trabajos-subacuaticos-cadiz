@@ -1,0 +1,201 @@
+---
+import { businessInfo } from '../data/businessInfo.js';
+
+export interface Props {
+  location?: string;
+  servicePage?: string;
+}
+
+const { location, servicePage } = Astro.props;
+
+const locationData = location ? businessInfo.maritimeZones[location] : null;
+const canonicalUrl = `https://trabajos-subacuaticos-cadiz.vercel.app${Astro.url.pathname}`;
+---
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "ProfessionalService"],
+  "@id": `${canonicalUrl}#localbusiness`,
+  "name": businessInfo.name,
+  "alternateName": "Soldadura Subacuática Cádiz",
+  "description": `Servicios especializados de soldadura subacuática y buceo industrial en ${location || 'Cádiz y provincia'}. Conocimiento local profundo de condiciones marítimas.`,
+  "url": canonicalUrl,
+  "telephone": businessInfo.phone,
+  "email": businessInfo.email,
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": businessInfo.address.street,
+    "addressLocality": businessInfo.address.city,
+    "addressRegion": businessInfo.address.region,
+    "postalCode": businessInfo.address.postalCode,
+    "addressCountry": businessInfo.address.country
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": businessInfo.coordinates.lat,
+    "longitude": businessInfo.coordinates.lng
+  },
+  "areaServed": businessInfo.serviceAreas.map(area => ({
+    "@type": "City",
+    "name": area,
+    "containedInPlace": {
+      "@type": "AdministrativeArea",
+      "name": "Cádiz"
+    }
+  })),
+  "serviceArea": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": businessInfo.coordinates.lat,
+      "longitude": businessInfo.coordinates.lng
+    },
+    "geoRadius": "50000"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": `Servicios de Soldadura Subacuática en ${location || 'Cádiz'}`,
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Soldadura Subacuática",
+          "description": `Soldadura hiperbárica profesional en ${location || 'aguas de Cádiz'}`,
+          "serviceType": "Underwater Welding",
+          "areaServed": location || "Cádiz y provincia"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Buceo Industrial",
+          "description": `Servicios de buceo comercial especializados en ${location || 'Bahía de Cádiz'}`,
+          "serviceType": "Commercial Diving",
+          "areaServed": location || "Cádiz y provincia"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Emergencias Marítimas 24h",
+          "description": `Respuesta inmediata para emergencias en ${location || 'puerto de Cádiz y Estrecho'}`,
+          "serviceType": "Emergency Marine Services",
+          "availability": "24/7"
+        }
+      }
+    ]
+  },
+  "openingHours": "Mo-Su 00:00-23:59",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "00:00",
+      "closes": "23:59"
+    }
+  ],
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "telephone": businessInfo.phone,
+      "contactType": "customer service",
+      "availableLanguage": ["Spanish", "English"],
+      "areaServed": "ES"
+    },
+    {
+      "@type": "ContactPoint",
+      "telephone": businessInfo.emergencyPhone,
+      "contactType": "emergency",
+      "availableLanguage": ["Spanish", "English"],
+      "areaServed": "ES",
+      "hoursAvailable": "24/7"
+    }
+  ],
+  "hasCredential": businessInfo.certifications.map(cert => ({
+    "@type": "EducationalOccupationalCredential",
+    "credentialCategory": "certification",
+    "name": cert
+  })),
+  "knowsAbout": [
+    `Soldadura subacuática en ${location || 'Cádiz'}`,
+    `Condiciones marítimas ${location || 'Bahía de Cádiz'}`,
+    `Buceo industrial ${location || 'puerto de Cádiz'}`,
+    "Soldadura hiperbárica",
+    "Reparación naval",
+    "Emergencias marítimas",
+    "Inspección submarina"
+  ],
+  "makesOffer": [
+    {
+      "@type": "Offer",
+      "name": "Consulta Gratuita",
+      "description": `Evaluación gratuita de proyectos en ${location || 'Cádiz'}`,
+      "price": "0",
+      "priceCurrency": "EUR"
+    },
+    {
+      "@type": "Offer",
+      "name": "Servicio de Emergencia",
+      "description": `Respuesta inmediata en ${location || 'aguas gaditanas'}`,
+      "availability": "24/7"
+    }
+  ]
+})}>
+</script>
+
+{location && locationData && (
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Place",
+    "@id": `${canonicalUrl}#place-${location.toLowerCase().replace(/\s+/g, '-')}`,
+    "name": location,
+    "description": `Zona de operaciones marítimas especializada en ${location}`,
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": businessInfo.coordinates.lat,
+      "longitude": businessInfo.coordinates.lng
+    },
+    "containedInPlace": {
+      "@type": "City",
+      "name": "Cádiz",
+      "containedInPlace": {
+        "@type": "AdministrativeArea",
+        "name": "Andalucía"
+      }
+    },
+    "additionalProperty": locationData.zones.map(zone => ({
+      "@type": "PropertyValue",
+      "name": "zona_operacion",
+      "value": zone
+    }))
+  })}>
+  </script>
+)}
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${canonicalUrl}#webpage`,
+  "url": canonicalUrl,
+  "name": `${servicePage || 'Soldadura Subacuática'} en ${location || 'Cádiz'} | ${businessInfo.name}`,
+  "description": `Servicios profesionales de ${servicePage?.toLowerCase() || 'soldadura subacuática'} en ${location || 'Cádiz y provincia'}. Especialistas locales con más de 20 años de experiencia.`,
+  "isPartOf": {
+    "@type": "WebSite",
+    "@id": "https://trabajos-subacuaticos-cadiz.vercel.app/#website"
+  },
+  "about": {
+    "@type": "Service",
+    "name": servicePage || "Soldadura Subacuática",
+    "serviceArea": {
+      "@type": "City",
+      "name": location || "Cádiz"
+    }
+  },
+  "mainEntity": {
+    "@id": `${canonicalUrl}#localbusiness`
+  }
+})}>
+</script>

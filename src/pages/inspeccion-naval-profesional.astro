@@ -1,0 +1,1442 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CallToAction from '../components/CallToAction.astro';
+import OptimizedImage from '../components/OptimizedImage.astro';
+import LocalSchema from '../components/LocalSchema.astro';
+import { businessInfo } from '../data/businessInfo.js';
+
+const title = "Inspección Naval Profesional | Certificación Lloyd's Register y DNV GL | Cádiz";
+const description = "Servicios de inspección naval certificada en Cádiz: inspección de cascos, sistemas propulsivos, certificaciones de navegabilidad y auditorías de cumplimiento normativo.";
+const canonical = "https://trabajossubacuaticoscadiz.es/inspeccion-naval-profesional";
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "author": {
+    "@type": "Organization",
+    "name": businessInfo.name,
+    "url": "https://trabajossubacuaticoscadiz.es"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": businessInfo.name,
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://trabajossubacuaticoscadiz.es/logo-empresa.webp"
+    }
+  },
+  "datePublished": "2024-01-15",
+  "dateModified": "2024-01-15",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": canonical
+  },
+  "articleSection": "Inspección Naval",
+  "keywords": "inspección naval, certificación marítima, Lloyd's Register, DNV GL, inspección cascos, navegabilidad"
+};
+---
+
+<Layout title={title} description={description} canonical={canonical}>
+  <LocalSchema data={schemaData} />
+
+  <Header />
+
+  <main class="container">
+    <!-- Hero Section -->
+    <section class="hero-article">
+      <div class="hero-content">
+        <h1>Inspección Naval Profesional Certificada</h1>
+        <p class="hero-subtitle">Servicios de inspección técnica naval con certificaciones internacionales Lloyd's Register, DNV GL y Bureau Veritas para garantizar la navegabilidad y seguridad marítima</p>
+
+        <div class="hero-meta">
+          <span class="reading-time">⏱️ Lectura: 15 min</span>
+          <span class="certification">🏆 Certificado Internacional</span>
+          <span class="coverage">🌊 Cobertura: Bahía de Cádiz</span>
+        </div>
+
+        <div class="emergency-banner">
+          <p><strong>🔍 ¿Necesitas inspección naval urgente?</strong></p>
+          <p>Disponibles 24/7 para inspecciones de emergencia y certificaciones urgentes</p>
+          <a href="tel:+34614406061" class="emergency-btn">Contactar Ahora: +34 614 406 061</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Table of Contents -->
+    <section class="table-of-contents">
+      <h2>Índice de Contenidos</h2>
+      <nav>
+        <ol>
+          <li><a href="#que-es-inspeccion-naval">¿Qué es la inspección naval profesional?</a></li>
+          <li><a href="#tipos-inspecciones">Tipos de inspecciones navales</a></li>
+          <li><a href="#certificaciones-internacionales">Certificaciones internacionales</a></li>
+          <li><a href="#inspeccion-cascos">Inspección de cascos y estructuras</a></li>
+          <li><a href="#sistemas-propulsivos">Sistemas propulsivos y maquinaria</a></li>
+          <li><a href="#equipos-seguridad">Equipos de seguridad y navegación</a></li>
+          <li><a href="#normativas-aplicables">Normativas y estándares aplicables</a></li>
+          <li><a href="#tecnologias-inspeccion">Tecnologías de inspección avanzadas</a></li>
+          <li><a href="#procedimientos-cadiz">Procedimientos en puertos de Cádiz</a></li>
+          <li><a href="#costes-plazos">Costes y plazos de inspección</a></li>
+        </ol>
+      </nav>
+    </section>
+
+    <!-- Main Content -->
+    <article class="article-content">
+
+      <!-- Section 1: Introduction -->
+      <section id="que-es-inspeccion-naval" class="content-section">
+        <h2>¿Qué es la Inspección Naval Profesional?</h2>
+
+        <div class="content-with-sidebar">
+          <div class="main-content">
+            <p>La <strong>inspección naval profesional</strong> es un proceso técnico especializado que evalúa el estado, seguridad y cumplimiento normativo de embarcaciones comerciales, garantizando su aptitud para la navegación y operación segura en aguas internacionales.</p>
+
+            <p>Nuestro equipo de inspectores certificados realiza evaluaciones exhaustivas según estándares internacionales, emitiendo certificados de navegabilidad y recomendaciones técnicas para el mantenimiento preventivo y correctivo.</p>
+
+            <div class="inspection-overview">
+              <h3>🔍 Alcance de la Inspección Naval</h3>
+
+              <div class="scope-grid">
+                <div class="scope-item">
+                  <h4>Inspección Estructural</h4>
+                  <ul>
+                    <li>Casco y superestructura</li>
+                    <li>Soldaduras y uniones</li>
+                    <li>Corrosión y fatiga</li>
+                    <li>Sistemas de estanqueidad</li>
+                  </ul>
+                </div>
+
+                <div class="scope-item">
+                  <h4>Sistemas Mecánicos</h4>
+                  <ul>
+                    <li>Propulsión principal</li>
+                    <li>Sistemas auxiliares</li>
+                    <li>Gobierno y maniobra</li>
+                    <li>Generación eléctrica</li>
+                  </ul>
+                </div>
+
+                <div class="scope-item">
+                  <h4>Seguridad Marítima</h4>
+                  <ul>
+                    <li>Equipos de salvamento</li>
+                    <li>Sistemas contraincendios</li>
+                    <li>Navegación y comunicaciones</li>
+                    <li>Procedimientos de emergencia</li>
+                  </ul>
+                </div>
+
+                <div class="scope-item">
+                  <h4>Cumplimiento Normativo</h4>
+                  <ul>
+                    <li>SOLAS Convention</li>
+                    <li>MARPOL Regulations</li>
+                    <li>MLC (Maritime Labour)</li>
+                    <li>ISM Code</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="statistics-section">
+              <h3>📊 Estadísticas de Inspección Naval en España</h3>
+
+              <div class="stats-grid">
+                <div class="stat-card">
+                  <div class="stat-number">85%</div>
+                  <div class="stat-label">Buques aprueban primera inspección</div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-number">15%</div>
+                  <div class="stat-label">Requieren correcciones menores</div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-number">3-5</div>
+                  <div class="stat-label">Días promedio inspección completa</div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-number">24h</div>
+                  <div class="stat-label">Emisión certificado provisional</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <aside class="sidebar">
+            <div class="inspection-quote-box">
+              <h4>💼 Solicitar Inspección</h4>
+              <p>Presupuesto personalizado sin compromiso</p>
+              <form class="quote-form">
+                <div class="form-group">
+                  <label>Tipo de embarcación:</label>
+                  <select required>
+                    <option value="">Seleccionar...</option>
+                    <option value="cargo">Buque de carga</option>
+                    <option value="tanker">Petrolero/Tanque</option>
+                    <option value="passenger">Transporte pasajeros</option>
+                    <option value="fishing">Pesquero</option>
+                    <option value="offshore">Offshore/Industrial</option>
+                    <option value="yacht">Yate/Recreativo</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Eslora (metros):</label>
+                  <input type="number" placeholder="ej: 45" min="5" max="400" required>
+                </div>
+                <div class="form-group">
+                  <label>Tipo de inspección:</label>
+                  <select required>
+                    <option value="">Seleccionar...</option>
+                    <option value="annual">Inspección anual</option>
+                    <option value="intermediate">Inspección intermedia</option>
+                    <option value="renewal">Renovación certificado</option>
+                    <option value="damage">Post-siniestro</option>
+                    <option value="purchase">Pre-compra</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Ubicación:</label>
+                  <select required>
+                    <option value="">Seleccionar puerto...</option>
+                    <option value="cadiz">Puerto de Cádiz</option>
+                    <option value="algeciras">Puerto de Algeciras</option>
+                    <option value="puerto-real">Puerto Real</option>
+                    <option value="rota">Base Naval Rota</option>
+                    <option value="sevilla">Puerto de Sevilla</option>
+                  </select>
+                </div>
+                <button type="submit" class="btn-primary">Solicitar Presupuesto</button>
+              </form>
+            </div>
+
+            <div class="certifications-box">
+              <h4>🏆 Nuestras Certificaciones</h4>
+              <ul class="cert-list">
+                <li>✅ Lloyd's Register Surveyor</li>
+                <li>✅ DNV GL Marine Surveyor</li>
+                <li>✅ Bureau Veritas Inspector</li>
+                <li>✅ ABS Certified Surveyor</li>
+                <li>✅ Germanischer Lloyd</li>
+                <li>✅ RINA Marine Inspector</li>
+              </ul>
+              <p class="cert-note">Certificaciones internacionales reconocidas mundialmente</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- Section 2: Types of Naval Inspections -->
+      <section id="tipos-inspecciones" class="content-section">
+        <h2>Tipos de Inspecciones Navales</h2>
+
+        <p>Según la normativa internacional y el tipo de certificación requerida, existen diferentes modalidades de inspección naval, cada una con objetivos específicos y periodicidad establecida.</p>
+
+        <div class="inspection-types">
+
+          <div class="inspection-category">
+            <h3>🗓️ Inspecciones Obligatorias Periódicas</h3>
+
+            <div class="inspection-grid">
+              <div class="inspection-card mandatory">
+                <h4>Inspección Anual (Annual Survey)</h4>
+                <div class="inspection-details">
+                  <p><strong>Frecuencia:</strong> Cada 12 meses (±3 meses)</p>
+                  <p><strong>Duración:</strong> 2-3 días</p>
+                  <p><strong>Alcance:</strong> Verificación general del estado</p>
+
+                  <h5>Elementos inspeccionados:</h5>
+                  <ul>
+                    <li>Casco exterior (línea de flotación)</li>
+                    <li>Equipos de seguridad y salvamento</li>
+                    <li>Sistemas contraincendios</li>
+                    <li>Equipos de navegación</li>
+                    <li>Maquinaria principal y auxiliar</li>
+                    <li>Sistemas de gobierno</li>
+                  </ul>
+
+                  <div class="cost-indicator">
+                    <strong>Coste aproximado:</strong> €2,500 - €4,500
+                  </div>
+                </div>
+              </div>
+
+              <div class="inspection-card mandatory">
+                <h4>Inspección Intermedia (Intermediate Survey)</h4>
+                <div class="inspection-details">
+                  <p><strong>Frecuencia:</strong> Entre 2º y 3º año</p>
+                  <p><strong>Duración:</strong> 3-5 días</p>
+                  <p><strong>Alcance:</strong> Inspección detallada estructural</p>
+
+                  <h5>Elementos inspeccionados:</h5>
+                  <ul>
+                    <li>Inspección en dique seco</li>
+                    <li>Casco completo (exterior/interior)</li>
+                    <li>Sistemas de propulsión</li>
+                    <li>Tanques y espacios de carga</li>
+                    <li>Estructura del buque</li>
+                    <li>Ensayos no destructivos (END)</li>
+                  </ul>
+
+                  <div class="cost-indicator">
+                    <strong>Coste aproximado:</strong> €8,000 - €15,000
+                  </div>
+                </div>
+              </div>
+
+              <div class="inspection-card mandatory">
+                <h4>Inspección de Renovación (Renewal Survey)</h4>
+                <div class="inspection-details">
+                  <p><strong>Frecuencia:</strong> Cada 5 años</p>
+                  <p><strong>Duración:</strong> 5-10 días</p>
+                  <p><strong>Alcance:</strong> Inspección exhaustiva completa</p>
+
+                  <h5>Elementos inspeccionados:</h5>
+                  <ul>
+                    <li>Inspección completa en dique seco</li>
+                    <li>Análisis estructural detallado</li>
+                    <li>Pruebas de presión y estanqueidad</li>
+                    <li>Calibración de equipos</li>
+                    <li>Ensayos destructivos si necesario</li>
+                    <li>Actualización a nuevas normativas</li>
+                  </ul>
+
+                  <div class="cost-indicator">
+                    <strong>Coste aproximado:</strong> €15,000 - €35,000
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="inspection-category">
+            <h3>🚨 Inspecciones de Emergencia y Especiales</h3>
+
+            <div class="inspection-grid">
+              <div class="inspection-card emergency">
+                <h4>Inspección Post-Siniestro</h4>
+                <div class="inspection-details">
+                  <p><strong>Activación:</strong> Tras accidente/avería</p>
+                  <p><strong>Urgencia:</strong> 24-48 horas</p>
+
+                  <h5>Casos típicos:</h5>
+                  <ul>
+                    <li>Colisiones y varadas</li>
+                    <li>Averías estructurales</li>
+                    <li>Incendios a bordo</li>
+                    <li>Fallos de propulsión</li>
+                  </ul>
+
+                  <div class="emergency-contact">
+                    <strong>📞 Inspección urgente:</strong>
+                    <a href="tel:+34614406061">+34 614 406 061</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="inspection-card commercial">
+                <h4>Inspección Pre-Compra</h4>
+                <div class="inspection-details">
+                  <p><strong>Objetivo:</strong> Valoración estado real</p>
+                  <p><strong>Duración:</strong> 3-7 días</p>
+
+                  <h5>Incluye:</h5>
+                  <ul>
+                    <li>Evaluación estructural completa</li>
+                    <li>Estado de maquinaria</li>
+                    <li>Valoración comercial</li>
+                    <li>Recomendaciones de mejora</li>
+                    <li>Estimación costes reparación</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="inspection-card commercial">
+                <h4>Auditoría de Cumplimiento</h4>
+                <div class="inspection-details">
+                  <p><strong>Objetivo:</strong> Verificación normativa</p>
+                  <p><strong>Duración:</strong> 2-4 días</p>
+
+                  <h5>Normativas verificadas:</h5>
+                  <ul>
+                    <li>ISM Code (Safety Management)</li>
+                    <li>ISPS Code (Security)</li>
+                    <li>MLC (Maritime Labour)</li>
+                    <li>STCW (Training & Certification)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="inspection-calendar">
+          <h3>📅 Calendario de Inspecciones Típico</h3>
+
+          <div class="calendar-timeline">
+            <div class="timeline-year">
+              <h4>Año 1</h4>
+              <div class="timeline-events">
+                <div class="event initial">Inspección inicial</div>
+                <div class="event annual">Inspección anual</div>
+              </div>
+            </div>
+
+            <div class="timeline-year">
+              <h4>Año 2</h4>
+              <div class="timeline-events">
+                <div class="event annual">Inspección anual</div>
+              </div>
+            </div>
+
+            <div class="timeline-year">
+              <h4>Año 3</h4>
+              <div class="timeline-events">
+                <div class="event intermediate">Inspección intermedia</div>
+                <div class="event annual">Inspección anual</div>
+              </div>
+            </div>
+
+            <div class="timeline-year">
+              <h4>Año 4</h4>
+              <div class="timeline-events">
+                <div class="event annual">Inspección anual</div>
+              </div>
+            </div>
+
+            <div class="timeline-year">
+              <h4>Año 5</h4>
+              <div class="timeline-events">
+                <div class="event renewal">Inspección renovación</div>
+                <div class="event note">Nuevo ciclo 5 años</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: International Certifications -->
+      <section id="certificaciones-internacionales" class="content-section">
+        <h2>Certificaciones Internacionales y Sociedades de Clasificación</h2>
+
+        <p>Las sociedades de clasificación son organizaciones técnicas independientes que establecen y mantienen estándares técnicos para el diseño, construcción y mantenimiento de buques y estructuras offshore.</p>
+
+        <div class="classification-societies">
+          <h3>🏛️ Principales Sociedades de Clasificación Mundial</h3>
+
+          <div class="societies-grid">
+            <div class="society-card premium">
+              <div class="society-header">
+                <h4>Lloyd's Register (LR)</h4>
+                <span class="founded">Fundada: 1760</span>
+              </div>
+              <div class="society-content">
+                <p><strong>Origen:</strong> Reino Unido</p>
+                <p><strong>Especialización:</strong> Buques comerciales, offshore, naval</p>
+
+                <h5>Servicios principales:</h5>
+                <ul>
+                  <li>Clasificación de buques mercantes</li>
+                  <li>Inspección de estructuras offshore</li>
+                  <li>Certificación ISO y normativas</li>
+                  <li>Consultoría técnica naval</li>
+                </ul>
+
+                <div class="market-presence">
+                  <strong>Presencia global:</strong> 240 oficinas en 78 países
+                </div>
+
+                <div class="certification-areas">
+                  <h5>Áreas de certificación:</h5>
+                  <div class="cert-tags">
+                    <span class="cert-tag">Commercial Vessels</span>
+                    <span class="cert-tag">Offshore</span>
+                    <span class="cert-tag">Naval Defence</span>
+                    <span class="cert-tag">Yachts</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="society-card premium">
+              <div class="society-header">
+                <h4>DNV GL</h4>
+                <span class="founded">Fundada: 1864</span>
+              </div>
+              <div class="society-content">
+                <p><strong>Origen:</strong> Noruega</p>
+                <p><strong>Especialización:</strong> Energía marítima, offshore, renovables</p>
+
+                <h5>Servicios principales:</h5>
+                <ul>
+                  <li>Clasificación y certificación naval</li>
+                  <li>Evaluación riesgos técnicos</li>
+                  <li>Consultoría en sostenibilidad</li>
+                  <li>Digitalización marítima</li>
+                </ul>
+
+                <div class="market-presence">
+                  <strong>Presencia global:</strong> 300 oficinas en 100 países
+                </div>
+
+                <div class="certification-areas">
+                  <h5>Innovaciones destacadas:</h5>
+                  <div class="cert-tags">
+                    <span class="cert-tag">Smart Ships</span>
+                    <span class="cert-tag">Green Maritime</span>
+                    <span class="cert-tag">Autonomous Vessels</span>
+                    <span class="cert-tag">Alternative Fuels</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="society-card">
+              <div class="society-header">
+                <h4>American Bureau of Shipping (ABS)</h4>
+                <span class="founded">Fundada: 1862</span>
+              </div>
+              <div class="society-content">
+                <p><strong>Origen:</strong> Estados Unidos</p>
+                <p><strong>Especialización:</strong> Offshore, GNL, tecnología naval</p>
+
+                <h5>Fortalezas:</h5>
+                <ul>
+                  <li>Liderazgo en buques GNL</li>
+                  <li>Tecnología offshore avanzada</li>
+                  <li>Investigación e innovación</li>
+                  <li>Ciberseguridad marítima</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="society-card">
+              <div class="society-header">
+                <h4>Bureau Veritas (BV)</h4>
+                <span class="founded">Fundada: 1828</span>
+              </div>
+              <div class="society-content">
+                <p><strong>Origen:</strong> Francia</p>
+                <p><strong>Especialización:</strong> Industria, construcción, transporte</p>
+
+                <h5>Servicios integrados:</h5>
+                <ul>
+                  <li>Inspección y certificación</li>
+                  <li>Ensayos de laboratorio</li>
+                  <li>Auditorías de sistemas</li>
+                  <li>Formación técnica</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="society-card">
+              <div class="society-header">
+                <h4>RINA</h4>
+                <span class="founded">Fundada: 1861</span>
+              </div>
+              <div class="society-content">
+                <p><strong>Origen:</strong> Italia</p>
+                <p><strong>Especialización:</strong> Innovación tecnológica, sostenibilidad</p>
+
+                <h5>Áreas de excelencia:</h5>
+                <ul>
+                  <li>Buques de pasajeros</li>
+                  <li>Tecnologías emergentes</li>
+                  <li>Eficiencia energética</li>
+                  <li>Digitalización naval</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="society-card">
+              <div class="society-header">
+                <h4>ClassNK</h4>
+                <span class="founded">Fundada: 1899</span>
+              </div>
+              <div class="society-content">
+                <p><strong>Origen:</strong> Japón</p>
+                <p><strong>Especialización:</strong> Construcción naval, tecnología asiática</p>
+
+                <h5>Innovación japonesa:</h5>
+                <ul>
+                  <li>Eficiencia constructiva</li>
+                  <li>Tecnología de materiales</li>
+                  <li>Automatización naval</li>
+                  <li>Estándares de calidad</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="certification-process">
+          <h3>📋 Proceso de Certificación Internacional</h3>
+
+          <div class="process-flow">
+            <div class="process-step">
+              <div class="step-icon">1</div>
+              <div class="step-content">
+                <h4>Solicitud Inicial</h4>
+                <ul>
+                  <li>Documentación técnica del buque</li>
+                  <li>Planos de construcción</li>
+                  <li>Especificaciones de equipamiento</li>
+                  <li>Historial de inspecciones previas</li>
+                </ul>
+                <div class="step-duration">Duración: 3-5 días</div>
+              </div>
+            </div>
+
+            <div class="process-step">
+              <div class="step-icon">2</div>
+              <div class="step-content">
+                <h4>Revisión Documental</h4>
+                <ul>
+                  <li>Verificación de planos y cálculos</li>
+                  <li>Comprobación normativas aplicables</li>
+                  <li>Plan de inspección específico</li>
+                  <li>Identificación de puntos críticos</li>
+                </ul>
+                <div class="step-duration">Duración: 5-10 días</div>
+              </div>
+            </div>
+
+            <div class="process-step">
+              <div class="step-icon">3</div>
+              <div class="step-content">
+                <h4>Inspección Física</h4>
+                <ul>
+                  <li>Inspección en dique seco</li>
+                  <li>Verificación estructural</li>
+                  <li>Pruebas de equipamiento</li>
+                  <li>Ensayos no destructivos</li>
+                </ul>
+                <div class="step-duration">Duración: 3-7 días</div>
+              </div>
+            </div>
+
+            <div class="process-step">
+              <div class="step-icon">4</div>
+              <div class="step-content">
+                <h4>Evaluación Final</h4>
+                <ul>
+                  <li>Análisis de resultados</li>
+                  <li>Informe técnico detallado</li>
+                  <li>Recomendaciones de mejora</li>
+                  <li>Emisión de certificados</li>
+                </ul>
+                <div class="step-duration">Duración: 2-5 días</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="certification-comparison">
+          <h3>📊 Comparativa de Certificaciones por Tipo de Buque</h3>
+
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Tipo de Buque</th>
+                <th>Sociedad Recomendada</th>
+                <th>Coste Aproximado</th>
+                <th>Duración Proceso</th>
+                <th>Validez Internacional</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Buque de Carga General</td>
+                <td>Lloyd's Register / DNV GL</td>
+                <td>€15,000 - €25,000</td>
+                <td>15-20 días</td>
+                <td>✅ Mundial</td>
+              </tr>
+              <tr>
+                <td>Petrolero / Químico</td>
+                <td>ABS / DNV GL</td>
+                <td>€25,000 - €45,000</td>
+                <td>20-30 días</td>
+                <td>✅ Mundial</td>
+              </tr>
+              <tr>
+                <td>Buque de Pasajeros</td>
+                <td>RINA / Lloyd's Register</td>
+                <td>€30,000 - €60,000</td>
+                <td>25-35 días</td>
+                <td>✅ Mundial</td>
+              </tr>
+              <tr>
+                <td>Pesquero Comercial</td>
+                <td>Bureau Veritas / DNV GL</td>
+                <td>€8,000 - €15,000</td>
+                <td>10-15 días</td>
+                <td>✅ UE + Internacional</td>
+              </tr>
+              <tr>
+                <td>Offshore / Plataforma</td>
+                <td>DNV GL / Lloyd's Register</td>
+                <td>€50,000 - €150,000</td>
+                <td>30-60 días</td>
+                <td>✅ Mundial</td>
+              </tr>
+              <tr>
+                <td>Yacht / Recreativo</td>
+                <td>RINA / Bureau Veritas</td>
+                <td>€5,000 - €20,000</td>
+                <td>8-12 días</td>
+                <td>✅ Mundial</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="cta-section">
+        <div class="cta-content">
+          <h2>🔍 Inspección Naval Profesional en Cádiz</h2>
+          <p>Equipo certificado por las principales sociedades de clasificación mundial. Disponibles 24/7 para inspecciones de emergencia y certificaciones urgentes.</p>
+
+          <div class="cta-features">
+            <div class="feature-item">
+              <span class="feature-icon">🏆</span>
+              <span>Certificaciones Internacionales</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">⚡</span>
+              <span>Respuesta Inmediata</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">📋</span>
+              <span>Informes Detallados</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">🌍</span>
+              <span>Validez Internacional</span>
+            </div>
+          </div>
+
+          <div class="cta-buttons">
+            <a href="tel:+34614406061" class="btn-primary large">
+              📞 Contactar Inspector: +34 614 406 061
+            </a>
+            <a href="/contacto" class="btn-secondary large">
+              📋 Solicitar Presupuesto Detallado
+            </a>
+          </div>
+
+          <p class="cta-note">Presupuesto gratuito • Certificaciones reconocidas mundialmente • Disponibilidad 24/7</p>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .hero-article {
+    background: linear-gradient(135deg, #0c4a6e 0%, #075985 100%);
+    color: white;
+    padding: 60px 0;
+    margin-bottom: 40px;
+  }
+
+  .hero-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+
+  .hero-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+    line-height: 1.5;
+  }
+
+  .hero-meta {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+  }
+
+  .hero-meta span {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+  }
+
+  .emergency-banner {
+    background: #dc2626;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  .emergency-btn {
+    display: inline-block;
+    background: white;
+    color: #dc2626;
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 10px;
+    transition: transform 0.2s;
+  }
+
+  .emergency-btn:hover {
+    transform: scale(1.05);
+  }
+
+  .table-of-contents {
+    background: #f8fafc;
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+  }
+
+  .table-of-contents h2 {
+    color: #0c4a6e;
+    margin-bottom: 20px;
+  }
+
+  .table-of-contents ol {
+    list-style: none;
+    counter-reset: item;
+  }
+
+  .table-of-contents li {
+    counter-increment: item;
+    margin-bottom: 8px;
+  }
+
+  .table-of-contents li::before {
+    content: counter(item) ". ";
+    color: #0c4a6e;
+    font-weight: 600;
+  }
+
+  .table-of-contents a {
+    color: #374151;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .table-of-contents a:hover {
+    color: #0c4a6e;
+  }
+
+  .content-section {
+    margin-bottom: 50px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .content-section h2 {
+    color: #0c4a6e;
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+    border-left: 4px solid #0c4a6e;
+    padding-left: 20px;
+  }
+
+  .content-with-sidebar {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+
+  .main-content {
+    font-size: 1.1rem;
+    line-height: 1.7;
+  }
+
+  .sidebar {
+    position: sticky;
+    top: 20px;
+  }
+
+  .scope-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin: 25px 0;
+  }
+
+  .scope-item {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 25px;
+  }
+
+  .scope-item h4 {
+    color: #0c4a6e;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+  }
+
+  .scope-item ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .scope-item li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 6px;
+  }
+
+  .scope-item li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #0c4a6e;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin: 25px 0;
+  }
+
+  .stat-card {
+    background: linear-gradient(135deg, #0c4a6e, #075985);
+    color: white;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  .stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .stat-label {
+    font-size: 0.9rem;
+    opacity: 0.9;
+  }
+
+  .inspection-quote-box {
+    background: #0c4a6e;
+    color: white;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+  }
+
+  .quote-form {
+    margin-top: 20px;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+  }
+
+  .form-group input,
+  .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #374151;
+  }
+
+  .btn-primary {
+    background: #dc2626;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    width: 100%;
+    transition: background 0.2s;
+  }
+
+  .btn-primary:hover {
+    background: #b91c1c;
+  }
+
+  .certifications-box {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 25px;
+  }
+
+  .certifications-box h4 {
+    color: #0c4a6e;
+    margin-bottom: 15px;
+  }
+
+  .cert-list {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .cert-list li {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+  }
+
+  .cert-note {
+    font-size: 0.8rem;
+    color: #6b7280;
+    margin-top: 15px;
+    font-style: italic;
+  }
+
+  .inspection-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+    margin: 25px 0;
+  }
+
+  .inspection-card {
+    border-radius: 10px;
+    padding: 25px;
+    background: white;
+  }
+
+  .inspection-card.mandatory {
+    border: 2px solid #059669;
+    border-left: 6px solid #059669;
+  }
+
+  .inspection-card.emergency {
+    border: 2px solid #dc2626;
+    border-left: 6px solid #dc2626;
+  }
+
+  .inspection-card.commercial {
+    border: 2px solid #0c4a6e;
+    border-left: 6px solid #0c4a6e;
+  }
+
+  .inspection-card h4 {
+    color: #0c4a6e;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+  }
+
+  .inspection-details p {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+  }
+
+  .inspection-details h5 {
+    color: #374151;
+    margin: 15px 0 10px 0;
+    font-size: 1rem;
+  }
+
+  .cost-indicator {
+    background: #f0f9ff;
+    border: 1px solid #0ea5e9;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 15px;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  .emergency-contact {
+    background: #fee2e2;
+    border: 1px solid #dc2626;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 15px;
+    text-align: center;
+  }
+
+  .emergency-contact a {
+    color: #dc2626;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .calendar-timeline {
+    display: flex;
+    gap: 20px;
+    margin: 25px 0;
+    overflow-x: auto;
+    padding: 20px 0;
+  }
+
+  .timeline-year {
+    min-width: 200px;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .timeline-year h4 {
+    color: #0c4a6e;
+    margin-bottom: 15px;
+  }
+
+  .timeline-events {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .event {
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+
+  .event.initial {
+    background: #dcfce7;
+    color: #166534;
+  }
+
+  .event.annual {
+    background: #dbeafe;
+    color: #1e40af;
+  }
+
+  .event.intermediate {
+    background: #fef3c7;
+    color: #92400e;
+  }
+
+  .event.renewal {
+    background: #fce7f3;
+    color: #be185d;
+  }
+
+  .event.note {
+    background: #f3f4f6;
+    color: #374151;
+    font-style: italic;
+  }
+
+  .societies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 25px;
+    margin: 30px 0;
+  }
+
+  .society-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .society-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  .society-card.premium {
+    border: 2px solid #0c4a6e;
+  }
+
+  .society-header {
+    background: linear-gradient(135deg, #0c4a6e, #075985);
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .society-header h4 {
+    margin: 0;
+    font-size: 1.3rem;
+  }
+
+  .founded {
+    font-size: 0.85rem;
+    opacity: 0.8;
+  }
+
+  .society-content {
+    padding: 25px;
+  }
+
+  .society-content p {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+  }
+
+  .society-content h5 {
+    color: #0c4a6e;
+    margin: 15px 0 10px 0;
+  }
+
+  .society-content ul {
+    margin-bottom: 15px;
+  }
+
+  .market-presence {
+    background: #f0f9ff;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 15px 0;
+    font-size: 0.9rem;
+  }
+
+  .cert-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+  }
+
+  .cert-tag {
+    background: #0c4a6e;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+
+  .process-flow {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin: 30px 0;
+  }
+
+  .process-step {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 25px;
+    text-align: center;
+  }
+
+  .step-icon {
+    background: #0c4a6e;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 auto 20px auto;
+  }
+
+  .step-content h4 {
+    color: #0c4a6e;
+    margin-bottom: 15px;
+  }
+
+  .step-duration {
+    background: #f0f9ff;
+    padding: 8px;
+    border-radius: 5px;
+    margin-top: 15px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #0c4a6e;
+  }
+
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .comparison-table th {
+    background: #0c4a6e;
+    color: white;
+    font-weight: 600;
+  }
+
+  .comparison-table tr:hover {
+    background: #f8fafc;
+  }
+
+  .cta-section {
+    background: linear-gradient(135deg, #0c4a6e 0%, #075985 100%);
+    color: white;
+    padding: 60px 40px;
+    border-radius: 15px;
+    text-align: center;
+    margin: 50px 0;
+  }
+
+  .cta-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+
+  .cta-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+  }
+
+  .cta-features {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+
+  .feature-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+  }
+
+  .feature-icon {
+    font-size: 1.3rem;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary.large,
+  .btn-secondary.large {
+    padding: 18px 36px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+  }
+
+  .btn-primary.large {
+    background: #dc2626;
+    color: white;
+  }
+
+  .btn-secondary.large {
+    background: white;
+    color: #0c4a6e;
+  }
+
+  .btn-primary:hover {
+    background: #b91c1c;
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary:hover {
+    background: #f8fafc;
+    transform: translateY(-2px);
+  }
+
+  .cta-note {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 20px;
+  }
+
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .content-with-sidebar {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    .scope-grid,
+    .stats-grid,
+    .inspection-grid,
+    .societies-grid,
+    .process-flow {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-content h1 {
+      font-size: 2rem;
+    }
+
+    .hero-meta {
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .calendar-timeline {
+      flex-direction: column;
+    }
+
+    .timeline-year {
+      min-width: auto;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .cta-features {
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .comparison-table {
+      font-size: 0.85rem;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+      padding: 10px;
+    }
+  }
+</style>

@@ -1,0 +1,621 @@
+---
+import Layout from '../layouts/Layout.astro';
+import LocalSchema from '../components/LocalSchema.astro';
+import BusinessContact from '../components/BusinessContact.astro';
+import CallToAction from '../components/CallToAction.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import BlogSnippets from '../components/BlogSnippets.astro';
+---
+
+<Layout
+  title="Inspección de Cascos Submarina en Cádiz | Certificados y Transparencia Total"
+  description="Inspección submarina profesional de cascos de embarcaciones en Cádiz. Proceso transparente, informes certificados, inspección visual y técnica según normativas internacionales. Evite varada innecesaria."
+  keywords="inspección cascos Cádiz, inspección submarina embarcaciones, certificación cascos buques, inspección visual subacuática, informes técnicos navales, inspección sin varada Cádiz"
+>
+  <!-- Service-Specific Schema -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": "https://trabajos-subacuaticos-cadiz.vercel.app/inspeccion-cascos#service",
+      "name": "Inspección Submarina de Cascos",
+      "alternateName": ["Inspección Visual Subacuática", "Certificación de Cascos", "Inspección Naval Submarina"],
+      "description": "Servicio profesional de inspección submarina de cascos de embarcaciones con proceso transparente, informes certificados y cumplimiento de normativas internacionales sin necesidad de varada.",
+      "url": "https://trabajos-subacuaticos-cadiz.vercel.app/inspeccion-cascos",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Trabajos Subacuáticos Cádiz",
+        "@id": "https://trabajos-subacuaticos-cadiz.vercel.app/#organization"
+      },
+      "serviceType": "Marine Hull Inspection",
+      "category": ["Marine Inspection", "Underwater Survey", "Hull Certification"],
+      "serviceArea": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": "36.5297",
+          "longitude": "-6.2921"
+        },
+        "geoRadius": "50000"
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Inspección Visual Completa",
+          "description": "Inspección visual detallada del estado general del casco",
+          "priceRange": "€€"
+        },
+        {
+          "@type": "Offer",
+          "name": "Inspección Técnica Certificada",
+          "description": "Inspección con ensayos no destructivos y certificación oficial",
+          "priceRange": "€€€"
+        },
+        {
+          "@type": "Offer",
+          "name": "Inspección de Emergencia",
+          "description": "Inspección urgente post-accidente o daños",
+          "availability": "24/7"
+        }
+      ],
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Certificaciones",
+          "value": "Lloyd's Register, DNV GL, Bureau Veritas"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Normativas",
+          "value": "SOLAS, MLC, MARPOL, Directivas UE"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Tiempo Inspección",
+          "value": "2-6 horas según eslora"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Entrega Informe",
+          "value": "24-48 horas"
+        }
+      ]
+    }
+  </script>
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://trabajos-subacuaticos-cadiz.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Servicios",
+          "item": "https://trabajos-subacuaticos-cadiz.vercel.app/servicios"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Inspección de Cascos",
+          "item": "https://trabajos-subacuaticos-cadiz.vercel.app/inspeccion-cascos"
+        }
+      ]
+    }
+  </script>
+
+  <Header />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-green-900 via-green-800 to-green-900 text-white py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h1 class="text-4xl md:text-5xl font-bold mb-6">
+                Inspección de Cascos Submarina
+              </h1>
+              <h2 class="text-xl md:text-2xl text-green-200 mb-6">
+                Certificación Oficial sin Varada - Proceso Transparente
+              </h2>
+              <p class="text-lg mb-8 text-green-100">
+                Evite costes de varada innecesarios con nuestro servicio de inspección submarina
+                certificada. Proceso transparente, informes detallados en 24-48h y cumplimiento
+                de todas las normativas internacionales. Más de 1,500 inspecciones realizadas
+                en aguas gaditanas con 100% de aceptación por sociedades de clasificación.
+              </p>
+              <div class="flex flex-col md:flex-row gap-4">
+                <a href="/contacto" class="bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-lg font-semibold transition-colors">
+                  Solicitar Inspección
+                </a>
+                <a href="tel:+34614406061" class="bg-transparent border-2 border-white hover:bg-white hover:text-green-900 px-8 py-3 rounded-lg font-semibold transition-colors">
+                  Consulta Técnica: +34 614 406 061
+                </a>
+              </div>
+            </div>
+            <div class="bg-green-800 p-8 rounded-lg">
+              <h3 class="text-2xl font-bold mb-6">Ventajas vs Varada Tradicional</h3>
+              <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                  <span class="text-green-200">🚢 Sin sacar del agua</span>
+                  <span class="text-yellow-400 font-bold">-80% coste</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="text-green-200">⏱️ Inspección mismo día</span>
+                  <span class="text-yellow-400 font-bold">-90% tiempo</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="text-green-200">📋 Informe 24-48h</span>
+                  <span class="text-yellow-400 font-bold">+50% rapidez</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="text-green-200">✅ Mismo valor legal</span>
+                  <span class="text-yellow-400 font-bold">100% válido</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Transparent Process -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Nuestro Proceso Transparente de Inspección
+            </h2>
+            <p class="text-xl text-gray-600 max-w-4xl mx-auto">
+              Cada inspección sigue un protocolo estricto y transparente. Le mantenemos informado
+              en cada paso y puede solicitar presenciar toda la inspección desde embarcación de apoyo.
+            </p>
+          </div>
+
+          <div class="grid lg:grid-cols-2 gap-12">
+            <!-- Process Steps -->
+            <div>
+              <h3 class="text-2xl font-bold mb-8 text-green-900">Proceso Paso a Paso</h3>
+
+              <div class="space-y-6">
+                <div class="flex">
+                  <div class="flex-shrink-0 w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white font-bold mr-4">1</div>
+                  <div>
+                    <h4 class="text-lg font-bold text-gray-800 mb-2">Planificación y Coordinación</h4>
+                    <p class="text-gray-600 mb-2">
+                      <strong>Duración:</strong> 30-60 minutos previos
+                    </p>
+                    <ul class="text-gray-600 text-sm space-y-1">
+                      <li>• Revisión documentación embarcación y historial</li>
+                      <li>• Coordinación con capitán/armador para acceso</li>
+                      <li>• Verificación condiciones meteorológicas y mareas</li>
+                      <li>• Preparación equipo especializado según tipo de casco</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="flex">
+                  <div class="flex-shrink-0 w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white font-bold mr-4">2</div>
+                  <div>
+                    <h4 class="text-lg font-bold text-gray-800 mb-2">Inspección Visual Exterior</h4>
+                    <p class="text-gray-600 mb-2">
+                      <strong>Duración:</strong> 1-3 horas según eslora
+                    </p>
+                    <ul class="text-gray-600 text-sm space-y-1">
+                      <li>• Recorrido sistemático de toda la obra viva</li>
+                      <li>• Fotografía digital de alta resolución de anomalías</li>
+                      <li>• Medición de espesores con ultrasonidos (puntos críticos)</li>
+                      <li>• Inspección hélices, timón, bocinas y pasamuros</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="flex">
+                  <div class="flex-shrink-0 w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white font-bold mr-4">3</div>
+                  <div>
+                    <h4 class="text-lg font-bold text-gray-800 mb-2">Ensayos No Destructivos (END)</h4>
+                    <p class="text-gray-600 mb-2">
+                      <strong>Duración:</strong> 30-90 minutos adicionales
+                    </p>
+                    <ul class="text-gray-600 text-sm space-y-1">
+                      <li>• Ultrasonidos para medición espesores de chapa</li>
+                      <li>• Líquidos penetrantes en soldaduras críticas</li>
+                      <li>• Partículas magnéticas en elementos ferrosos</li>
+                      <li>• Pruebas de dureza en reparaciones previas</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="flex">
+                  <div class="flex-shrink-0 w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white font-bold mr-4">4</div>
+                  <div>
+                    <h4 class="text-lg font-bold text-gray-800 mb-2">Documentación e Informe</h4>
+                    <p class="text-gray-600 mb-2">
+                      <strong>Entrega:</strong> 24-48 horas
+                    </p>
+                    <ul class="text-gray-600 text-sm space-y-1">
+                      <li>• Informe técnico detallado con fotografías</li>
+                      <li>• Planos de ubicación de defectos y mediciones</li>
+                      <li>• Recomendaciones de reparación priorizadas</li>
+                      <li>• Certificado de inspección firmado y sellado</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- What We Inspect -->
+            <div>
+              <h3 class="text-2xl font-bold mb-8 text-green-900">Elementos Inspeccionados</h3>
+
+              <div class="space-y-6">
+                <div class="bg-gray-50 p-6 rounded-lg">
+                  <h4 class="text-lg font-bold text-gray-800 mb-3">🛡️ Estructura del Casco</h4>
+                  <ul class="text-gray-600 space-y-2">
+                    <li><strong>Chapas del forro:</strong> Corrosión, deformaciones, fisuras</li>
+                    <li><strong>Soldaduras:</strong> Integridad, penetración, defectos</li>
+                    <li><strong>Refuerzos:</strong> Cuadernas, varengas, longitudinales</li>
+                    <li><strong>Línea de flotación:</strong> Zona crítica de corrosión</li>
+                  </ul>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-lg">
+                  <h4 class="text-lg font-bold text-gray-800 mb-3">⚓ Elementos de Propulsión</h4>
+                  <ul class="text-gray-600 space-y-2">
+                    <li><strong>Hélices:</strong> Palas, núcleo, equilibrado, cavitación</li>
+                    <li><strong>Eje de cola:</strong> Alineación, desgaste, corrosión</li>
+                    <li><strong>Bocina:</strong> Cojinetes, sellado, fijaciones</li>
+                    <li><strong>Timón:</strong> Pala, mecha, herrajes, actuadores</li>
+                  </ul>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-lg">
+                  <h4 class="text-lg font-bold text-gray-800 mb-3">🔧 Sistemas y Accesorios</h4>
+                  <ul class="text-gray-600 space-y-2">
+                    <li><strong>Pasamuros:</strong> Válvulas, sellado, corrosión</li>
+                    <li><strong>Tomas de mar:</strong> Rejillas, válvulas, tuberías</li>
+                    <li><strong>Ánodos:</strong> Estado, fijación, eficacia</li>
+                    <li><strong>Pinturas:</strong> Adherencia, ampollas, desprendimientos</li>
+                  </ul>
+                </div>
+
+                <div class="bg-green-50 p-6 rounded-lg border border-green-200">
+                  <h4 class="text-lg font-bold text-green-800 mb-3">✅ Garantía de Transparencia</h4>
+                  <ul class="text-green-700 space-y-2">
+                    <li><strong>Acceso total:</strong> Presenciar inspección desde embarcación</li>
+                    <li><strong>Fotografías en tiempo real:</strong> Ver hallazgos inmediatamente</li>
+                    <li><strong>Explicación técnica:</strong> Aclaramos cualquier duda</li>
+                    <li><strong>Segunda opinión:</strong> Disponible si se solicita</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Types of Inspections -->
+    <section class="py-16 bg-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Tipos de Inspección Submarina
+            </h2>
+            <p class="text-xl text-gray-600 max-w-4xl mx-auto">
+              Adaptamos la inspección a sus necesidades específicas, desde inspecciones
+              rutinarias hasta certificaciones oficiales para sociedades de clasificación.
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-8">
+            <!-- Basic Visual Inspection -->
+            <div class="bg-white p-8 rounded-lg shadow-md">
+              <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/>
+                  <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold mb-4 text-center">Inspección Visual Básica</h3>
+              <div class="mb-4">
+                <span class="text-2xl font-bold text-blue-600">€150-300</span>
+                <span class="text-gray-500">/embarcación</span>
+              </div>
+              <ul class="text-gray-600 space-y-2 mb-6">
+                <li>✅ Inspección visual completa</li>
+                <li>✅ Fotografías digitales</li>
+                <li>✅ Informe básico estado general</li>
+                <li>✅ Recomendaciones mantenimiento</li>
+                <li>✅ Válido para seguros básicos</li>
+              </ul>
+              <div class="text-center">
+                <span class="text-sm text-gray-500">⏱️ Duración: 1-2 horas</span>
+              </div>
+            </div>
+
+            <!-- Technical Certified Inspection -->
+            <div class="bg-white p-8 rounded-lg shadow-md border-2 border-green-500">
+              <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+              <div class="text-center mb-4">
+                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">MÁS POPULAR</span>
+              </div>
+              <h3 class="text-xl font-bold mb-4 text-center">Inspección Técnica Certificada</h3>
+              <div class="mb-4">
+                <span class="text-2xl font-bold text-green-600">€400-800</span>
+                <span class="text-gray-500">/embarcación</span>
+              </div>
+              <ul class="text-gray-600 space-y-2 mb-6">
+                <li>✅ Todo lo anterior +</li>
+                <li>✅ Ensayos no destructivos (END)</li>
+                <li>✅ Medición espesores ultrasonidos</li>
+                <li>✅ Certificado oficial firmado</li>
+                <li>✅ Válido sociedades clasificación</li>
+                <li>✅ Cumple normativas SOLAS/MLC</li>
+              </ul>
+              <div class="text-center">
+                <span class="text-sm text-gray-500">⏱️ Duración: 2-4 horas</span>
+              </div>
+            </div>
+
+            <!-- Emergency Inspection -->
+            <div class="bg-white p-8 rounded-lg shadow-md">
+              <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold mb-4 text-center">Inspección de Emergencia</h3>
+              <div class="mb-4">
+                <span class="text-2xl font-bold text-red-600">€200-500</span>
+                <span class="text-gray-500">/urgencia</span>
+              </div>
+              <ul class="text-gray-600 space-y-2 mb-6">
+                <li>✅ Disponible 24/7</li>
+                <li>✅ Evaluación post-accidente</li>
+                <li>✅ Inspección daños específicos</li>
+                <li>✅ Informe inmediato oral</li>
+                <li>✅ Certificado navegabilidad temporal</li>
+                <li>✅ Coordinación con seguros</li>
+              </ul>
+              <div class="text-center">
+                <span class="text-sm text-gray-500">⏱️ Respuesta: < 2 horas</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center mt-12">
+            <div class="bg-blue-50 p-6 rounded-lg inline-block">
+              <h4 class="text-lg font-bold text-blue-900 mb-2">💰 Ahorro vs Varada Tradicional</h4>
+              <p class="text-blue-800 mb-4">
+                Una varada para inspección puede costar €1,500-€5,000. Nuestras inspecciones
+                submarinas ofrecen el mismo valor legal por una fracción del coste.
+              </p>
+              <div class="grid md:grid-cols-3 gap-4 text-sm">
+                <div>
+                  <strong class="text-blue-900">Embarcación 12m:</strong><br>
+                  <span class="text-blue-700">Ahorro: €1,200-€2,000</span>
+                </div>
+                <div>
+                  <strong class="text-blue-900">Embarcación 20m:</strong><br>
+                  <span class="text-blue-700">Ahorro: €2,500-€4,000</span>
+                </div>
+                <div>
+                  <strong class="text-blue-900">Embarcación +30m:</strong><br>
+                  <span class="text-blue-700">Ahorro: €4,000-€8,000</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications and Compliance -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Certificaciones y Normativas de Cumplimiento
+            </h2>
+            <p class="text-xl text-gray-600 max-w-4xl mx-auto">
+              Nuestras inspecciones cumplen con todas las normativas nacionales e internacionales.
+              Certificados aceptados por todas las sociedades de clasificación y aseguradoras.
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-12">
+            <div>
+              <h3 class="text-2xl font-bold mb-6 text-blue-900">Sociedades de Clasificación</h3>
+              <div class="space-y-4">
+                <div class="flex items-center p-4 bg-blue-50 rounded-lg">
+                  <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mr-4">
+                    <span class="text-white font-bold">LR</span>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-blue-800">Lloyd's Register</h4>
+                    <p class="text-blue-700 text-sm">Certificación para buques comerciales y yates</p>
+                  </div>
+                </div>
+
+                <div class="flex items-center p-4 bg-green-50 rounded-lg">
+                  <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mr-4">
+                    <span class="text-white font-bold">GL</span>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-green-800">DNV GL</h4>
+                    <p class="text-green-700 text-sm">Estándar para industria offshore y marina</p>
+                  </div>
+                </div>
+
+                <div class="flex items-center p-4 bg-orange-50 rounded-lg">
+                  <div class="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center mr-4">
+                    <span class="text-white font-bold">BV</span>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-orange-800">Bureau Veritas</h4>
+                    <p class="text-orange-700 text-sm">Inspecciones para flota comercial francesa</p>
+                  </div>
+                </div>
+
+                <div class="flex items-center p-4 bg-purple-50 rounded-lg">
+                  <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center mr-4">
+                    <span class="text-white font-bold">ABS</span>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-purple-800">American Bureau of Shipping</h4>
+                    <p class="text-purple-700 text-sm">Estándar americano para inspecciones marinas</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-2xl font-bold mb-6 text-green-900">Normativas de Cumplimiento</h3>
+              <div class="space-y-6">
+                <div class="bg-gray-50 p-6 rounded-lg">
+                  <h4 class="font-bold text-gray-800 mb-3">📋 Normativas Internacionales</h4>
+                  <ul class="text-gray-600 space-y-2">
+                    <li><strong>SOLAS:</strong> Safety of Life at Sea - Seguridad navegación</li>
+                    <li><strong>MARPOL:</strong> Marine Pollution - Prevención contaminación</li>
+                    <li><strong>MLC:</strong> Maritime Labour Convention - Condiciones trabajo</li>
+                    <li><strong>STCW:</strong> Standards Training Certification Watchkeeping</li>
+                  </ul>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-lg">
+                  <h4 class="font-bold text-gray-800 mb-3">🇪🇸 Normativa Nacional Española</h4>
+                  <ul class="text-gray-600 space-y-2">
+                    <li><strong>RD 1185/2006:</strong> Inspección embarcaciones recreo</li>
+                    <li><strong>RD 543/2007:</strong> Trabajos subacuáticos profesionales</li>
+                    <li><strong>Orden FOM/1194/2015:</strong> Inspecciones buques mercantes</li>
+                    <li><strong>UNE-EN 14141:</strong> Servicios de buceo científico</li>
+                  </ul>
+                </div>
+
+                <div class="bg-green-50 p-6 rounded-lg border border-green-200">
+                  <h4 class="font-bold text-green-800 mb-3">✅ Garantía de Validez</h4>
+                  <p class="text-green-700 mb-2">
+                    <strong>100% de aceptación</strong> por sociedades de clasificación
+                  </p>
+                  <p class="text-green-700 text-sm">
+                    En nuestros 20+ años de experiencia, nunca se ha rechazado uno de nuestros
+                    certificados de inspección submarina por parte de aseguradoras o autoridades marítimas.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Content Snippets -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-12">📚 Información Complementaria</h2>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <BlogSnippets variant="comparison" size="medium" />
+            </div>
+            <div>
+              <BlogSnippets variant="regulations" size="medium" />
+            </div>
+          </div>
+
+          <div class="mt-8">
+            <BlogSnippets variant="emergency" size="large" />
+          </div>
+
+          <!-- Quick Blog Links -->
+          <div class="mt-12 bg-white p-8 rounded-lg shadow-lg">
+            <h3 class="text-xl font-bold text-blue-900 mb-6">📖 Guías Técnicas Recomendadas</h3>
+            <div class="grid md:grid-cols-3 gap-6">
+              <div>
+                <h4 class="font-bold text-gray-800 mb-2">Cuándo Inspeccionar</h4>
+                <p class="text-gray-600 text-sm mb-3">
+                  Plazos obligatorios según SOLAS, MARPOL y normativa española. Evite multas.
+                </p>
+                <a href="/blog/cuando-inspeccionar-casco-embarcacion" class="text-blue-600 hover:text-blue-800 font-medium text-sm">
+                  → Leer guía completa
+                </a>
+              </div>
+              <div>
+                <h4 class="font-bold text-gray-800 mb-2">Submarina vs Varada</h4>
+                <p class="text-gray-600 text-sm mb-3">
+                  Comparativa completa: costes, tiempos y ventajas de cada método.
+                </p>
+                <a href="/blog/diferencias-inspeccion-submarina-vs-varada" class="text-blue-600 hover:text-blue-800 font-medium text-sm">
+                  → Ver comparativa
+                </a>
+              </div>
+              <div>
+                <h4 class="font-bold text-gray-800 mb-2">Normativas 2024</h4>
+                <p class="text-gray-600 text-sm mb-3">
+                  Todas las normativas actualizadas: SOLAS, RD español y sociedades clasificación.
+                </p>
+                <a href="/blog/normativas-inspeccion-cascos-buques-2024" class="text-blue-600 hover:text-blue-800 font-medium text-sm">
+                  → Consultar normativas
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-green-900 text-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold mb-6">¿Necesita Inspección de Cascos Certificada?</h2>
+        <p class="text-xl mb-8 text-green-100 max-w-3xl mx-auto">
+          Evite costes de varada innecesarios. Inspección submarina certificada con proceso
+          transparente y entrega de informe en 24-48 horas. Válido para todas las sociedades de clasificación.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/contacto" class="bg-blue-600 hover:bg-blue-700 px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
+            Solicitar Presupuesto Gratuito
+          </a>
+          <a href="tel:+34614406061" class="bg-transparent border-2 border-white hover:bg-white hover:text-green-900 px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
+            Consulta Técnica: +34 614 406 061
+          </a>
+        </div>
+        <div class="mt-8 text-green-200">
+          <p class="mb-2">✅ Presupuesto gratuito en 2 horas</p>
+          <p class="mb-2">✅ Disponible toda la bahía de Cádiz</p>
+          <p>✅ Certificaciones internacionales válidas</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .container {
+    max-width: 1200px;
+  }
+
+  .shadow-md {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+</style>

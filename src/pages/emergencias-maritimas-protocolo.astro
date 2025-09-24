@@ -1,0 +1,1599 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CallToAction from '../components/CallToAction.astro';
+import OptimizedImage from '../components/OptimizedImage.astro';
+import LocalSchema from '../components/LocalSchema.astro';
+import { businessInfo } from '../data/businessInfo.js';
+
+const title = "Emergencias Marítimas: Protocolo de Actuación 24/7 | Respuesta Inmediata Cádiz";
+const description = "Protocolo completo de emergencias marítimas en Cádiz: respuesta inmediata, salvamento, reparaciones de urgencia y coordinación con Salvamento Marítimo. Disponible 24/7.";
+const canonical = "https://trabajossubacuaticoscadiz.es/emergencias-maritimas-protocolo";
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "author": {
+    "@type": "Organization",
+    "name": businessInfo.name,
+    "url": "https://trabajossubacuaticoscadiz.es"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": businessInfo.name,
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://trabajossubacuaticoscadiz.es/logo-empresa.webp"
+    }
+  },
+  "datePublished": "2024-01-15",
+  "dateModified": "2024-01-15",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": canonical
+  },
+  "articleSection": "Emergencias Marítimas",
+  "keywords": "emergencias marítimas, salvamento marítimo, reparaciones urgentes, protocolo emergencia, Cádiz, respuesta inmediata"
+};
+---
+
+<Layout title={title} description={description} canonical={canonical}>
+  <LocalSchema data={schemaData} />
+
+  <Header />
+
+  <main class="container">
+    <!-- Emergency Hero Section -->
+    <section class="emergency-hero">
+      <div class="hero-content">
+        <div class="emergency-badge">
+          <span class="pulse">🚨</span>
+          <span>EMERGENCIAS 24/7</span>
+        </div>
+        <h1>Protocolo de Emergencias Marítimas</h1>
+        <p class="hero-subtitle">Respuesta inmediata ante emergencias navales en la Bahía de Cádiz, Estrecho de Gibraltar y puertos andaluces. Coordinación directa con Salvamento Marítimo.</p>
+
+        <div class="emergency-contact-main">
+          <div class="emergency-numbers">
+            <div class="emergency-primary">
+              <h3>📞 LÍNEA DE EMERGENCIA</h3>
+              <a href="tel:+34614406061" class="emergency-number">+34 614 406 061</a>
+              <p>Disponible 24 horas, 365 días</p>
+            </div>
+            <div class="emergency-secondary">
+              <h4>Coordinación oficial:</h4>
+              <p><strong>Salvamento Marítimo:</strong> <a href="tel:900202202">900 202 202</a></p>
+              <p><strong>Puerto de Cádiz:</strong> <a href="tel:956224000">956 224 000</a></p>
+              <p><strong>Puerto Algeciras:</strong> <a href="tel:956585400">956 585 400</a></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="response-metrics">
+          <div class="metric">
+            <span class="metric-number">< 2h</span>
+            <span class="metric-label">Tiempo respuesta</span>
+          </div>
+          <div class="metric">
+            <span class="metric-number">24/7</span>
+            <span class="metric-label">Disponibilidad</span>
+          </div>
+          <div class="metric">
+            <span class="metric-number">25</span>
+            <span class="metric-label">Millas náuticas</span>
+          </div>
+          <div class="metric">
+            <span class="metric-number">15+</span>
+            <span class="metric-label">Años experiencia</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Action Guide -->
+    <section class="quick-action-guide">
+      <h2>🚨 Guía de Actuación Inmediata</h2>
+
+      <div class="action-steps">
+        <div class="step immediate">
+          <div class="step-number urgent">1</div>
+          <div class="step-content">
+            <h3>SEGURIDAD INMEDIATA</h3>
+            <ul>
+              <li>🔴 Evaluar riesgo para la vida</li>
+              <li>🔴 Activar equipos de salvamento</li>
+              <li>🔴 Comunicar posición exacta</li>
+              <li>🔴 Contactar Salvamento Marítimo</li>
+            </ul>
+            <div class="contact-box">
+              <strong>CONTACTO INMEDIATO:</strong>
+              <a href="tel:+34614406061">+34 614 406 061</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="step assessment">
+          <div class="step-number warning">2</div>
+          <div class="step-content">
+            <h3>EVALUACIÓN TÉCNICA</h3>
+            <ul>
+              <li>🟡 Inspección visual submarina</li>
+              <li>🟡 Evaluación daños estructurales</li>
+              <li>🟡 Análisis estabilidad</li>
+              <li>🟡 Plan de reparación urgente</li>
+            </ul>
+            <div class="time-estimate">
+              <strong>Tiempo estimado:</strong> 30-60 minutos
+            </div>
+          </div>
+        </div>
+
+        <div class="step intervention">
+          <div class="step-number action">3</div>
+          <div class="step-content">
+            <h3>INTERVENCIÓN TÉCNICA</h3>
+            <ul>
+              <li>🟢 Reparación temporal</li>
+              <li>🟢 Soldadura submarina urgente</li>
+              <li>🟢 Taponamiento vías de agua</li>
+              <li>🟢 Estabilización estructura</li>
+            </ul>
+            <div class="time-estimate">
+              <strong>Tiempo estimado:</strong> 2-8 horas
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Table of Contents -->
+    <section class="table-of-contents">
+      <h2>Índice de Contenidos</h2>
+      <nav>
+        <ol>
+          <li><a href="#tipos-emergencias">Tipos de emergencias marítimas</a></li>
+          <li><a href="#protocolos-respuesta">Protocolos de respuesta por tipo</a></li>
+          <li><a href="#coordinacion-organismos">Coordinación con organismos oficiales</a></li>
+          <li><a href="#equipamiento-emergencia">Equipamiento de emergencia</a></li>
+          <li><a href="#casos-reales">Casos reales de intervención</a></li>
+          <li><a href="#zonas-cobertura">Zonas de cobertura y tiempos</a></li>
+          <li><a href="#costes-urgencia">Costes y modalidades de urgencia</a></li>
+          <li><a href="#prevencion">Prevención y preparación</a></li>
+        </ol>
+      </nav>
+    </section>
+
+    <!-- Main Content -->
+    <article class="article-content">
+
+      <!-- Section 1: Types of Maritime Emergencies -->
+      <section id="tipos-emergencias" class="content-section">
+        <h2>Tipos de Emergencias Marítimas</h2>
+
+        <p>Las emergencias marítimas se clasifican según su gravedad, impacto y tipo de respuesta requerida. Nuestro protocolo de actuación está diseñado para proporcionar respuesta especializada según cada tipo de emergencia.</p>
+
+        <div class="emergency-categories">
+
+          <div class="emergency-category critical">
+            <div class="category-header">
+              <h3>🔴 EMERGENCIAS CRÍTICAS</h3>
+              <span class="priority-badge">PRIORIDAD 1</span>
+            </div>
+
+            <div class="emergency-types-grid">
+              <div class="emergency-type">
+                <h4>💥 Colisiones y Abordajes</h4>
+                <div class="emergency-details">
+                  <p><strong>Características:</strong></p>
+                  <ul>
+                    <li>Daños estructurales severos</li>
+                    <li>Riesgo de hundimiento inmediato</li>
+                    <li>Posibles víctimas a bordo</li>
+                    <li>Derrame de combustible</li>
+                  </ul>
+
+                  <p><strong>Respuesta inmediata:</strong></p>
+                  <ul class="response-actions">
+                    <li>⚡ Activación protocolo salvamento</li>
+                    <li>⚡ Evaluación vías de agua</li>
+                    <li>⚡ Soldadura submarina urgente</li>
+                    <li>⚡ Coordinación evacuación</li>
+                  </ul>
+
+                  <div class="case-example critical-case">
+                    <strong>Caso real (2023):</strong> Colisión de carguero en canal de acceso a Cádiz. Respuesta en 45 minutos, sellado de vía de agua principal en 3 horas. Buque salvado sin víctimas.
+                  </div>
+                </div>
+              </div>
+
+              <div class="emergency-type">
+                <h4>🌊 Varadas Graves</h4>
+                <div class="emergency-details">
+                  <p><strong>Características:</strong></p>
+                  <ul>
+                    <li>Buque encallado en zona rocosa</li>
+                    <li>Daños en casco por impacto</li>
+                    <li>Riesgo ambiental por carga</li>
+                    <li>Condiciones meteorológicas adversas</li>
+                  </ul>
+
+                  <p><strong>Respuesta especializada:</strong></p>
+                  <ul class="response-actions">
+                    <li>⚡ Inspección submarina completa</li>
+                    <li>⚡ Evaluación integridad estructural</li>
+                    <li>⚡ Plan de reflotemiento</li>
+                    <li>⚡ Reparaciones temporales</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="emergency-type">
+                <h4>🔥 Incendios a Bordo</h4>
+                <div class="emergency-details">
+                  <p><strong>Impacto submarino:</strong></p>
+                  <ul>
+                    <li>Daños en casco por calor extremo</li>
+                    <li>Deformación de estructuras</li>
+                    <li>Necesidad de enfriamiento submarino</li>
+                    <li>Inspección post-incendio</li>
+                  </ul>
+
+                  <p><strong>Intervención técnica:</strong></p>
+                  <ul class="response-actions">
+                    <li>⚡ Enfriamiento externo del casco</li>
+                    <li>⚡ Evaluación daños térmicos</li>
+                    <li>⚡ Reparación soldaduras afectadas</li>
+                    <li>⚡ Certificación navegabilidad</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="emergency-type">
+                <h4>⚓ Averías de Propulsión</h4>
+                <div class="emergency-details">
+                  <p><strong>Situaciones críticas:</strong></p>
+                  <ul>
+                    <li>Pérdida total de propulsión</li>
+                    <li>Buque a la deriva</li>
+                    <li>Riesgo de colisión</li>
+                    <li>Condiciones de mar adversas</li>
+                  </ul>
+
+                  <p><strong>Soluciones de emergencia:</strong></p>
+                  <ul class="response-actions">
+                    <li>⚡ Inspección hélice y timón</li>
+                    <li>⚡ Reparación eje propulsor</li>
+                    <li>⚡ Soldadura submarina urgente</li>
+                    <li>⚡ Instalación sistemas auxiliares</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="emergency-category medium">
+            <div class="category-header">
+              <h3>🟡 EMERGENCIAS MEDIAS</h3>
+              <span class="priority-badge">PRIORIDAD 2</span>
+            </div>
+
+            <div class="medium-emergencies">
+              <div class="emergency-item">
+                <h4>💧 Vías de Agua Menores</h4>
+                <p>Filtraciones controladas que requieren reparación preventiva</p>
+                <ul>
+                  <li>Tiempo respuesta: 2-4 horas</li>
+                  <li>Soldadura submarina localizada</li>
+                  <li>Sin riesgo inmediato</li>
+                </ul>
+              </div>
+
+              <div class="emergency-item">
+                <h4>🔧 Averías de Equipamiento</h4>
+                <p>Fallos en sistemas no críticos para la navegación</p>
+                <ul>
+                  <li>Reparación equipos sumergidos</li>
+                  <li>Mantenimiento preventivo</li>
+                  <li>Reemplazo componentes</li>
+                </ul>
+              </div>
+
+              <div class="emergency-item">
+                <h4>🏗️ Daños Estructurales Menores</h4>
+                <p>Deterioro gradual que requiere atención programada</p>
+                <ul>
+                  <li>Inspección detallada</li>
+                  <li>Plan de reparación</li>
+                  <li>Monitoreo continuo</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="emergency-category low">
+            <div class="category-header">
+              <h3>🟢 EMERGENCIAS MENORES</h3>
+              <span class="priority-badge">PRIORIDAD 3</span>
+            </div>
+
+            <div class="low-emergencies">
+              <p>Situaciones que requieren atención técnica pero sin riesgo inmediato:</p>
+              <ul>
+                <li>Pérdida de pintura antiincrustante</li>
+                <li>Corrosión superficial</li>
+                <li>Mantenimiento preventivo programado</li>
+                <li>Inspecciones regulares</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: Response Protocols -->
+      <section id="protocolos-respuesta" class="content-section">
+        <h2>Protocolos de Respuesta por Tipo de Emergencia</h2>
+
+        <p>Cada tipo de emergencia marítima requiere un protocolo específico de actuación. Hemos desarrollado procedimientos estandarizados basados en normativa internacional y nuestra experiencia de 15 años.</p>
+
+        <div class="protocols-container">
+
+          <div class="protocol-card">
+            <div class="protocol-header emergency">
+              <h3>🚨 PROTOCOLO: VÍAS DE AGUA</h3>
+              <span class="protocol-code">PROTO-001</span>
+            </div>
+
+            <div class="protocol-timeline">
+              <div class="timeline-phase immediate">
+                <h4>FASE 1: RESPUESTA INMEDIATA (0-30 min)</h4>
+                <div class="phase-actions">
+                  <div class="action-group">
+                    <h5>📞 Comunicaciones:</h5>
+                    <ul>
+                      <li>Contacto con el buque afectado</li>
+                      <li>Confirmación posición GPS</li>
+                      <li>Evaluación gravedad inicial</li>
+                      <li>Notificación Salvamento Marítimo</li>
+                    </ul>
+                  </div>
+
+                  <div class="action-group">
+                    <h5>🚁 Movilización:</h5>
+                    <ul>
+                      <li>Activación equipo de emergencia</li>
+                      <li>Preparación equipamiento</li>
+                      <li>Desplazamiento a puerto</li>
+                      <li>Coordinación medios navales</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="timeline-phase assessment">
+                <h4>FASE 2: EVALUACIÓN TÉCNICA (30-90 min)</h4>
+                <div class="phase-actions">
+                  <div class="action-group">
+                    <h5>🤿 Inspección submarina:</h5>
+                    <ul>
+                      <li>Localización exacta de la vía de agua</li>
+                      <li>Medición dimensiones del daño</li>
+                      <li>Evaluación accesibilidad</li>
+                      <li>Análisis estructura circundante</li>
+                    </ul>
+                  </div>
+
+                  <div class="action-group">
+                    <h5>📋 Plan de actuación:</h5>
+                    <ul>
+                      <li>Selección método reparación</li>
+                      <li>Cálculo material necesario</li>
+                      <li>Estimación tiempo trabajo</li>
+                      <li>Evaluación riesgos</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="timeline-phase intervention">
+                <h4>FASE 3: INTERVENCIÓN (90 min - 6h)</h4>
+                <div class="phase-actions">
+                  <div class="action-group">
+                    <h5>🔧 Reparación temporal:</h5>
+                    <ul>
+                      <li>Taponamiento inmediato</li>
+                      <li>Colocación chapa temporal</li>
+                      <li>Soldadura submarina perimetral</li>
+                      <li>Prueba estanqueidad</li>
+                    </ul>
+                  </div>
+
+                  <div class="action-group">
+                    <h5>✅ Verificación:</h5>
+                    <ul>
+                      <li>Inspección calidad soldadura</li>
+                      <li>Prueba presión</li>
+                      <li>Monitoreo 24h</li>
+                      <li>Certificado provisional</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="protocol-resources">
+              <h4>Recursos necesarios:</h4>
+              <div class="resources-grid">
+                <div class="resource-item">
+                  <strong>Personal:</strong> 2 buzos soldadores + 1 supervisor
+                </div>
+                <div class="resource-item">
+                  <strong>Equipamiento:</strong> Soldadura submarina + material taponamiento
+                </div>
+                <div class="resource-item">
+                  <strong>Embarcación:</strong> Lancha de trabajo con grúa
+                </div>
+                <div class="resource-item">
+                  <strong>Tiempo estimado:</strong> 4-8 horas
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="protocol-card">
+            <div class="protocol-header critical">
+              <h3>⚓ PROTOCOLO: AVERÍAS PROPULSIÓN</h3>
+              <span class="protocol-code">PROTO-002</span>
+            </div>
+
+            <div class="protocol-content">
+              <div class="diagnosis-steps">
+                <h4>Diagnóstico inicial (30 min):</h4>
+                <ol>
+                  <li><strong>Inspección visual externa:</strong> Hélice, timón, bocina</li>
+                  <li><strong>Evaluación eje propulsor:</strong> Alineación, fisuras</li>
+                  <li><strong>Revisión sistemas auxiliares:</strong> Gobierno, estabilización</li>
+                  <li><strong>Análisis vibraciones:</strong> Detección desalineaciones</li>
+                </ol>
+              </div>
+
+              <div class="repair-options">
+                <h4>Opciones de reparación:</h4>
+                <div class="repair-grid">
+                  <div class="repair-option">
+                    <h5>🔧 Reparación in-situ</h5>
+                    <ul>
+                      <li>Soldadura submarina de eje</li>
+                      <li>Enderezado de hélice</li>
+                      <li>Reemplazo componentes menores</li>
+                    </ul>
+                    <div class="option-time">Tiempo: 4-12 horas</div>
+                  </div>
+
+                  <div class="repair-option">
+                    <h5>🏗️ Reparación en dique</h5>
+                    <ul>
+                      <li>Desmontaje completo</li>
+                      <li>Reparación en taller</li>
+                      <li>Reemplazo eje propulsor</li>
+                    </ul>
+                    <div class="option-time">Tiempo: 2-5 días</div>
+                  </div>
+
+                  <div class="repair-option">
+                    <h5>🚤 Solución temporal</h5>
+                    <ul>
+                      <li>Hélice de proa auxiliar</li>
+                      <li>Remolque asistido</li>
+                      <li>Navegación limitada</li>
+                    </ul>
+                    <div class="option-time">Tiempo: 1-2 horas</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: Coordination with Official Organisms -->
+      <section id="coordinacion-organismos" class="content-section">
+        <h2>Coordinación con Organismos Oficiales</h2>
+
+        <p>La respuesta eficaz ante emergencias marítimas requiere coordinación estrecha con organismos oficiales. Mantenemos comunicación directa y protocolos establecidos con todas las autoridades competentes.</p>
+
+        <div class="organisms-grid">
+
+          <div class="organism-card primary">
+            <div class="organism-header">
+              <h3>🚁 Salvamento Marítimo</h3>
+              <span class="organism-type">ORGANISMO PRINCIPAL</span>
+            </div>
+            <div class="organism-content">
+              <div class="contact-info">
+                <p><strong>Emergencias 24h:</strong> <a href="tel:900202202">900 202 202</a></p>
+                <p><strong>MRCC Tarifa:</strong> <a href="tel:956684740">956 684 740</a></p>
+                <p><strong>Centro Cádiz:</strong> <a href="tel:956214253">956 214 253</a></p>
+              </div>
+
+              <h4>Protocolos de coordinación:</h4>
+              <ul>
+                <li>Notificación inmediata de emergencias</li>
+                <li>Intercambio información técnica</li>
+                <li>Coordinación medios de salvamento</li>
+                <li>Apoyo helicóptero/patrulleras</li>
+              </ul>
+
+              <div class="coordination-example">
+                <strong>Procedimiento estándar:</strong>
+                <ol>
+                  <li>Recepción alerta emergencia</li>
+                  <li>Contacto simultáneo cliente + SASEMAR</li>
+                  <li>Intercambio datos posición/situación</li>
+                  <li>Coordinación desplazamiento medios</li>
+                  <li>Comunicación continua durante intervención</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <div class="organism-card">
+            <div class="organism-header">
+              <h3>⚓ Capitanía Marítima</h3>
+              <span class="organism-type">AUTORIDAD PORTUARIA</span>
+            </div>
+            <div class="organism-content">
+              <div class="contact-info">
+                <p><strong>Capitanía Cádiz:</strong> <a href="tel:956224000">956 224 000</a></p>
+                <p><strong>Capitanía Algeciras:</strong> <a href="tel:956585400">956 585 400</a></p>
+              </div>
+
+              <h4>Áreas de coordinación:</h4>
+              <ul>
+                <li>Autorización trabajos en puerto</li>
+                <li>Control tráfico marítimo</li>
+                <li>Certificación reparaciones</li>
+                <li>Investigación accidentes</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="organism-card">
+            <div class="organism-header">
+              <h3>🛡️ Guardia Civil</h3>
+              <span class="organism-type">SEGURIDAD MARÍTIMA</span>
+            </div>
+            <div class="organism-content">
+              <div class="contact-info">
+                <p><strong>SEPRONA Cádiz:</strong> <a href="tel:956007310">956 007 310</a></p>
+                <p><strong>Puesto Algeciras:</strong> <a href="tel:956604142">956 604 142</a></p>
+              </div>
+
+              <h4>Colaboración en:</h4>
+              <ul>
+                <li>Seguridad en aguas territoriales</li>
+                <li>Control actividades subacuáticas</li>
+                <li>Protección medio ambiente</li>
+                <li>Apoyo logístico especializado</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="organism-card">
+            <div class="organism-header">
+              <h3>🏭 Autoridades Portuarias</h3>
+              <span class="organism-type">GESTIÓN PORTUARIA</span>
+            </div>
+            <div class="organism-content">
+              <div class="port-authorities">
+                <div class="port-item">
+                  <h5>Puerto de Cádiz</h5>
+                  <p><strong>Control:</strong> <a href="tel:956224000">956 224 000</a></p>
+                  <p><strong>Servicios:</strong> Acceso muelles, grúas, diques</p>
+                </div>
+
+                <div class="port-item">
+                  <h5>Puerto de Algeciras</h5>
+                  <p><strong>Control:</strong> <a href="tel:956585400">956 585 400</a></p>
+                  <p><strong>Servicios:</strong> Terminal contenedores, astilleros</p>
+                </div>
+
+                <div class="port-item">
+                  <h5>Puerto Real</h5>
+                  <p><strong>Control:</strong> <a href="tel:956832711">956 832 711</a></p>
+                  <p><strong>Servicios:</strong> Astilleros especializados</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="emergency-network">
+          <h3>🌐 Red de Comunicaciones de Emergencia</h3>
+
+          <div class="communication-flow">
+            <div class="comm-step">
+              <div class="comm-icon">📱</div>
+              <div class="comm-content">
+                <h4>Recepción Alerta</h4>
+                <p>Cliente → Nuestro Centro de Control</p>
+                <span class="comm-time">0-2 min</span>
+              </div>
+            </div>
+
+            <div class="comm-arrow">→</div>
+
+            <div class="comm-step">
+              <div class="comm-icon">📡</div>
+              <div class="comm-content">
+                <h4>Notificación Automática</h4>
+                <p>SASEMAR + Capitanía + Cliente</p>
+                <span class="comm-time">2-5 min</span>
+              </div>
+            </div>
+
+            <div class="comm-arrow">→</div>
+
+            <div class="comm-step">
+              <div class="comm-icon">🚁</div>
+              <div class="comm-content">
+                <h4>Coordinación Medios</h4>
+                <p>Activación recursos oficiales</p>
+                <span class="comm-time">5-15 min</span>
+              </div>
+            </div>
+
+            <div class="comm-arrow">→</div>
+
+            <div class="comm-step">
+              <div class="comm-icon">⚡</div>
+              <div class="comm-content">
+                <h4>Intervención</h4>
+                <p>Respuesta coordinada</p>
+                <span class="comm-time">15-120 min</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Emergency CTA Section -->
+      <section class="emergency-cta-section">
+        <div class="emergency-cta-content">
+          <div class="emergency-alert">
+            <span class="pulse-large">🚨</span>
+            <h2>¿EMERGENCIA MARÍTIMA AHORA?</h2>
+          </div>
+
+          <p>No esperes. Cada minuto cuenta en una emergencia marítima.</p>
+
+          <div class="emergency-actions">
+            <a href="tel:+34614406061" class="btn-emergency-large">
+              📞 LLAMAR EMERGENCIA
+              <span>+34 614 406 061</span>
+            </a>
+
+            <div class="alternative-contacts">
+              <p><strong>Si no respondes:</strong></p>
+              <p>📧 Email: <a href="mailto:emergencias@trabajossubacuaticoscadiz.es">emergencias@trabajossubacuaticoscadiz.es</a></p>
+              <p>📟 WhatsApp: <a href="https://wa.me/34614406061">+34 614 406 061</a></p>
+            </div>
+          </div>
+
+          <div class="response-commitment">
+            <div class="commitment-item">
+              <span class="commitment-icon">⚡</span>
+              <span>Respuesta < 2 horas</span>
+            </div>
+            <div class="commitment-item">
+              <span class="commitment-icon">🌍</span>
+              <span>Cobertura 25 millas náuticas</span>
+            </div>
+            <div class="commitment-item">
+              <span class="commitment-icon">🏆</span>
+              <span>15+ años experiencia</span>
+            </div>
+            <div class="commitment-item">
+              <span class="commitment-icon">🛡️</span>
+              <span>Certificación internacional</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .emergency-hero {
+    background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+    color: white;
+    padding: 60px 0;
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .emergency-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    opacity: 0.3;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .emergency-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px 20px;
+    border-radius: 25px;
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+
+  .pulse {
+    animation: pulse 1.5s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+
+  .hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.1;
+  }
+
+  .hero-subtitle {
+    font-size: 1.4rem;
+    margin-bottom: 40px;
+    opacity: 0.9;
+    line-height: 1.5;
+  }
+
+  .emergency-contact-main {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+  }
+
+  .emergency-numbers {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: start;
+  }
+
+  .emergency-primary {
+    text-align: center;
+  }
+
+  .emergency-primary h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #fbbf24;
+  }
+
+  .emergency-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 5px;
+    transition: transform 0.2s;
+  }
+
+  .emergency-number:hover {
+    transform: scale(1.05);
+  }
+
+  .emergency-secondary h4 {
+    color: #fbbf24;
+    margin-bottom: 10px;
+  }
+
+  .emergency-secondary p {
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+  }
+
+  .emergency-secondary a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .response-metrics {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  .metric {
+    text-align: center;
+  }
+
+  .metric-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fbbf24;
+  }
+
+  .metric-label {
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+
+  .quick-action-guide {
+    background: #fef2f2;
+    border: 2px solid #fecaca;
+    border-radius: 15px;
+    padding: 40px;
+    margin-bottom: 40px;
+  }
+
+  .quick-action-guide h2 {
+    color: #dc2626;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+  }
+
+  .action-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+  }
+
+  .step {
+    background: white;
+    border-radius: 10px;
+    padding: 25px;
+    border-left: 5px solid;
+  }
+
+  .step.immediate {
+    border-left-color: #dc2626;
+  }
+
+  .step.assessment {
+    border-left-color: #f59e0b;
+  }
+
+  .step.intervention {
+    border-left-color: #059669;
+  }
+
+  .step-number {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin: 0 auto 15px auto;
+    color: white;
+  }
+
+  .step-number.urgent {
+    background: #dc2626;
+  }
+
+  .step-number.warning {
+    background: #f59e0b;
+  }
+
+  .step-number.action {
+    background: #059669;
+  }
+
+  .step-content h3 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #374151;
+  }
+
+  .contact-box {
+    background: #dc2626;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 15px;
+  }
+
+  .contact-box a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .time-estimate {
+    background: #f3f4f6;
+    padding: 8px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #374151;
+  }
+
+  .table-of-contents {
+    background: #f8fafc;
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+  }
+
+  .table-of-contents h2 {
+    color: #dc2626;
+    margin-bottom: 20px;
+  }
+
+  .table-of-contents ol {
+    list-style: none;
+    counter-reset: item;
+  }
+
+  .table-of-contents li {
+    counter-increment: item;
+    margin-bottom: 8px;
+  }
+
+  .table-of-contents li::before {
+    content: counter(item) ". ";
+    color: #dc2626;
+    font-weight: 600;
+  }
+
+  .table-of-contents a {
+    color: #374151;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .table-of-contents a:hover {
+    color: #dc2626;
+  }
+
+  .content-section {
+    margin-bottom: 50px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .content-section h2 {
+    color: #dc2626;
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+    border-left: 4px solid #dc2626;
+    padding-left: 20px;
+  }
+
+  .emergency-categories {
+    margin: 30px 0;
+  }
+
+  .emergency-category {
+    margin-bottom: 40px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid;
+  }
+
+  .emergency-category.critical {
+    border-color: #dc2626;
+  }
+
+  .emergency-category.medium {
+    border-color: #f59e0b;
+  }
+
+  .emergency-category.low {
+    border-color: #059669;
+  }
+
+  .category-header {
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+  }
+
+  .emergency-category.critical .category-header {
+    background: linear-gradient(135deg, #dc2626, #991b1b);
+  }
+
+  .emergency-category.medium .category-header {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+  }
+
+  .emergency-category.low .category-header {
+    background: linear-gradient(135deg, #059669, #047857);
+  }
+
+  .priority-badge {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  .emergency-types-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 25px;
+    padding: 30px;
+    background: white;
+  }
+
+  .emergency-type {
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 25px;
+  }
+
+  .emergency-type h4 {
+    color: #dc2626;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+  }
+
+  .emergency-details p {
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #374151;
+  }
+
+  .emergency-details ul {
+    margin-bottom: 20px;
+  }
+
+  .response-actions {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .response-actions li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 5px;
+    color: #dc2626;
+    font-weight: 500;
+  }
+
+  .response-actions li::before {
+    content: "⚡";
+    position: absolute;
+    left: 0;
+  }
+
+  .critical-case {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 15px;
+    font-style: italic;
+  }
+
+  .medium-emergencies,
+  .low-emergencies {
+    padding: 30px;
+    background: white;
+  }
+
+  .emergency-item {
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .emergency-item h4 {
+    color: #f59e0b;
+    margin-bottom: 10px;
+  }
+
+  .protocols-container {
+    margin: 30px 0;
+  }
+
+  .protocol-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    overflow: hidden;
+  }
+
+  .protocol-header {
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+  }
+
+  .protocol-header.emergency {
+    background: linear-gradient(135deg, #dc2626, #991b1b);
+  }
+
+  .protocol-header.critical {
+    background: linear-gradient(135deg, #7c2d12, #92400e);
+  }
+
+  .protocol-code {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 5px 12px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  .protocol-timeline {
+    padding: 30px;
+  }
+
+  .timeline-phase {
+    margin-bottom: 30px;
+    border-left: 4px solid;
+    padding-left: 20px;
+  }
+
+  .timeline-phase.immediate {
+    border-left-color: #dc2626;
+  }
+
+  .timeline-phase.assessment {
+    border-left-color: #f59e0b;
+  }
+
+  .timeline-phase.intervention {
+    border-left-color: #059669;
+  }
+
+  .timeline-phase h4 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+  }
+
+  .phase-actions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .action-group {
+    background: #f8fafc;
+    border-radius: 8px;
+    padding: 20px;
+  }
+
+  .action-group h5 {
+    color: #374151;
+    margin-bottom: 10px;
+  }
+
+  .protocol-resources {
+    background: #f8fafc;
+    padding: 30px;
+    border-top: 1px solid #e5e7eb;
+  }
+
+  .resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+  }
+
+  .resource-item {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  .protocol-content {
+    padding: 30px;
+  }
+
+  .diagnosis-steps {
+    margin-bottom: 30px;
+  }
+
+  .diagnosis-steps ol {
+    margin-top: 15px;
+  }
+
+  .diagnosis-steps li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+  }
+
+  .repair-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 15px;
+  }
+
+  .repair-option {
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 20px;
+  }
+
+  .repair-option h5 {
+    color: #dc2626;
+    margin-bottom: 10px;
+  }
+
+  .option-time {
+    background: #dc2626;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .organisms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 25px;
+    margin: 30px 0;
+  }
+
+  .organism-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .organism-card.primary {
+    border: 2px solid #dc2626;
+  }
+
+  .organism-header {
+    background: linear-gradient(135deg, #374151, #1f2937);
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .organism-card.primary .organism-header {
+    background: linear-gradient(135deg, #dc2626, #991b1b);
+  }
+
+  .organism-type {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 600;
+  }
+
+  .organism-content {
+    padding: 25px;
+  }
+
+  .contact-info {
+    background: #f8fafc;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+
+  .contact-info p {
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+  }
+
+  .contact-info a {
+    color: #dc2626;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .coordination-example {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 15px;
+  }
+
+  .coordination-example ol {
+    margin-top: 10px;
+  }
+
+  .coordination-example li {
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+  }
+
+  .port-authorities {
+    margin-top: 15px;
+  }
+
+  .port-item {
+    background: #f8fafc;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+
+  .port-item h5 {
+    color: #dc2626;
+    margin-bottom: 8px;
+  }
+
+  .port-item p {
+    margin-bottom: 3px;
+    font-size: 0.9rem;
+  }
+
+  .port-item a {
+    color: #dc2626;
+    text-decoration: none;
+  }
+
+  .communication-flow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+  }
+
+  .comm-step {
+    background: white;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    min-width: 180px;
+  }
+
+  .comm-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+
+  .comm-content h4 {
+    color: #dc2626;
+    margin-bottom: 8px;
+    font-size: 1rem;
+  }
+
+  .comm-content p {
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+    color: #6b7280;
+  }
+
+  .comm-time {
+    background: #dc2626;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    font-weight: 600;
+  }
+
+  .comm-arrow {
+    font-size: 1.5rem;
+    color: #dc2626;
+    font-weight: bold;
+  }
+
+  .emergency-cta-section {
+    background: linear-gradient(135deg, #dc2626 0%, #7f1d1d 100%);
+    color: white;
+    padding: 60px 40px;
+    border-radius: 15px;
+    text-align: center;
+    margin: 50px 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .emergency-cta-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 10px,
+      rgba(255, 255, 255, 0.05) 10px,
+      rgba(255, 255, 255, 0.05) 20px
+    );
+  }
+
+  .emergency-cta-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .emergency-alert {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+
+  .pulse-large {
+    font-size: 3rem;
+    animation: pulse 1s infinite;
+  }
+
+  .emergency-cta-content h2 {
+    font-size: 2.5rem;
+    margin: 0;
+  }
+
+  .emergency-cta-content > p {
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    opacity: 0.9;
+  }
+
+  .emergency-actions {
+    margin-bottom: 40px;
+  }
+
+  .btn-emergency-large {
+    display: inline-block;
+    background: #fbbf24;
+    color: #1f2937;
+    padding: 20px 40px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .btn-emergency-large:hover {
+    background: #f59e0b;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .btn-emergency-large span {
+    display: block;
+    font-size: 1.1rem;
+    margin-top: 5px;
+  }
+
+  .alternative-contacts {
+    margin-top: 20px;
+  }
+
+  .alternative-contacts p {
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+  }
+
+  .alternative-contacts a {
+    color: #fbbf24;
+    text-decoration: none;
+  }
+
+  .response-commitment {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+
+  .commitment-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+  }
+
+  .commitment-icon {
+    font-size: 1.2rem;
+  }
+
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .hero-content h1 {
+      font-size: 2.5rem;
+    }
+
+    .emergency-numbers {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .response-metrics {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .action-steps {
+      grid-template-columns: 1fr;
+    }
+
+    .emergency-types-grid,
+    .organisms-grid,
+    .phase-actions,
+    .repair-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .communication-flow {
+      flex-direction: column;
+    }
+
+    .comm-arrow {
+      transform: rotate(90deg);
+    }
+
+    .emergency-cta-content h2 {
+      font-size: 2rem;
+    }
+
+    .response-commitment {
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .timeline-phase {
+      border-left: none;
+      border-top: 4px solid;
+      padding-left: 0;
+      padding-top: 15px;
+    }
+  }
+</style>

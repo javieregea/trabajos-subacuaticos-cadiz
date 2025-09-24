@@ -7,5 +7,12 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
+  },
+  image: {
+    formats: ['webp', 'avif'],
+    quality: 80
+  },
+  build: {
+    inlineStylesheets: 'auto'
   }
 });

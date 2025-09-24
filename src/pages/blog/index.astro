@@ -1,0 +1,379 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import CallToAction from '../../components/CallToAction.astro';
+---
+
+<Layout
+  title="Blog Inspección Cascos y Trabajos Subacuáticos | Guías Técnicas Profesionales"
+  description="Guías técnicas y normativas actualizadas sobre inspección de cascos, soldadura submarina y trabajos navales. Contenido especializado para armadores y navieras."
+  keywords="blog inspección cascos, guías técnicas navales, normativas marítimas, soldadura submarina, trabajos subacuáticos"
+>
+  <!-- Blog Schema -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "Blog Técnico Trabajos Subacuáticos Cádiz",
+      "description": "Guías técnicas y normativas sobre inspección de cascos, soldadura submarina y trabajos navales profesionales",
+      "url": "https://trabajos-subacuaticos-cadiz.vercel.app/blog/",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Trabajos Subacuáticos Cádiz"
+      },
+      "mainEntity": [
+        {
+          "@type": "BlogPosting",
+          "headline": "¿Cuándo Inspeccionar el Casco de mi Embarcación?",
+          "url": "https://trabajos-subacuaticos-cadiz.vercel.app/blog/cuando-inspeccionar-casco-embarcacion"
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Inspección Submarina vs Varada: Comparativa Completa",
+          "url": "https://trabajos-subacuaticos-cadiz.vercel.app/blog/diferencias-inspeccion-submarina-vs-varada"
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Normativas Inspección Cascos Buques 2024",
+          "url": "https://trabajos-subacuaticos-cadiz.vercel.app/blog/normativas-inspeccion-cascos-buques-2024"
+        }
+      ]
+    }
+  </script>
+
+  <Header />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-blue-900 to-green-900 text-white py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">
+            Guías Técnicas Especializadas
+          </h1>
+          <p class="text-xl md:text-2xl mb-8 text-blue-100">
+            Conocimiento experto en inspección de cascos, normativas marítimas y trabajos subacuáticos.
+            Contenido actualizado para armadores, navieras y profesionales del sector naval.
+          </p>
+          <div class="bg-white/10 p-6 rounded-lg">
+            <div class="grid md:grid-cols-3 gap-4 text-center">
+              <div>
+                <div class="text-2xl font-bold text-yellow-400">20+ Años</div>
+                <div class="text-blue-200">experiencia sector</div>
+              </div>
+              <div>
+                <div class="text-2xl font-bold text-yellow-400">1,500+</div>
+                <div class="text-blue-200">inspecciones realizadas</div>
+              </div>
+              <div>
+                <div class="text-2xl font-bold text-yellow-400">100%</div>
+                <div class="text-blue-200">normativas actualizadas</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Articles -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-12">📚 Guías Más Consultadas</h2>
+
+          <div class="grid md:grid-cols-3 gap-8">
+            <!-- Article 1 -->
+            <article class="bg-white border rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+              <div class="bg-gradient-to-r from-red-600 to-red-700 p-6">
+                <h3 class="text-xl font-bold text-white mb-2">
+                  ¿Cuándo Inspeccionar el Casco?
+                </h3>
+                <p class="text-red-100 text-sm">
+                  Plazos obligatorios y consecuencias
+                </p>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center text-sm text-gray-500 mb-3">
+                  <span>⏱️ 4 min lectura</span>
+                  <span class="mx-2">•</span>
+                  <span>🎯 High Intent</span>
+                </div>
+                <p class="text-gray-600 mb-4">
+                  Guía completa sobre plazos obligatorios de inspección según normativas españolas e
+                  internacionales. Evite multas de hasta €60.101.
+                </p>
+                <div class="space-y-2 mb-4">
+                  <div class="flex items-center text-sm">
+                    <span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                    <span>Embarcaciones comerciales SOLAS</span>
+                  </div>
+                  <div class="flex items-center text-sm">
+                    <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                    <span>Flota pesquera y recreo</span>
+                  </div>
+                  <div class="flex items-center text-sm">
+                    <span class="w-2 h-2 bg-orange-500 rounded-full mr-2"></span>
+                    <span>Inspecciones de emergencia</span>
+                  </div>
+                </div>
+                <a href="/blog/cuando-inspeccionar-casco-embarcacion"
+                   class="inline-block bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-lg font-semibold transition-colors">
+                  Leer Guía Completa
+                </a>
+              </div>
+            </article>
+
+            <!-- Article 2 -->
+            <article class="bg-white border rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+              <div class="bg-gradient-to-r from-green-600 to-blue-600 p-6">
+                <h3 class="text-xl font-bold text-white mb-2">
+                  Submarina vs Varada
+                </h3>
+                <p class="text-green-100 text-sm">
+                  Comparativa costes y ventajas
+                </p>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center text-sm text-gray-500 mb-3">
+                  <span>⏱️ 6 min lectura</span>
+                  <span class="mx-2">•</span>
+                  <span>💰 ROI Focus</span>
+                </div>
+                <p class="text-gray-600 mb-4">
+                  Análisis completo: ahorro del 75-93% con inspección submarina vs varada tradicional.
+                  Casos reales y cálculos detallados.
+                </p>
+                <div class="space-y-2 mb-4">
+                  <div class="flex items-center text-sm">
+                    <span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                    <span>Ahorro 80% costes totales</span>
+                  </div>
+                  <div class="flex items-center text-sm">
+                    <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                    <span>90% menos tiempo fuera servicio</span>
+                  </div>
+                  <div class="flex items-center text-sm">
+                    <span class="w-2 h-2 bg-orange-500 rounded-full mr-2"></span>
+                    <span>100% validez legal</span>
+                  </div>
+                </div>
+                <a href="/blog/diferencias-inspeccion-submarina-vs-varada"
+                   class="inline-block bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg font-semibold transition-colors">
+                  Ver Comparativa
+                </a>
+              </div>
+            </article>
+
+            <!-- Article 3 -->
+            <article class="bg-white border rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+              <div class="bg-gradient-to-r from-blue-600 to-purple-600 p-6">
+                <h3 class="text-xl font-bold text-white mb-2">
+                  Normativas 2024
+                </h3>
+                <p class="text-blue-100 text-sm">
+                  SOLAS, MARPOL y RD español
+                </p>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center text-sm text-gray-500 mb-3">
+                  <span>⏱️ 8 min lectura</span>
+                  <span class="mx-2">•</span>
+                  <span>📋 Compliance</span>
+                </div>
+                <p class="text-gray-600 mb-4">
+                  Guía actualizada de todas las normativas aplicables en 2024. SOLAS, MARPOL, RD español
+                  y sociedades de clasificación.
+                </p>
+                <div class="space-y-2 mb-4">
+                  <div class="flex items-center text-sm">
+                    <span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                    <span>Normativas internacionales</span>
+                  </div>
+                  <div class="flex items-center text-sm">
+                    <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                    <span>Legislación española</span>
+                  </div>
+                  <div class="flex items-center text-sm">
+                    <span class="w-2 h-2 bg-orange-500 rounded-full mr-2"></span>
+                    <span>Sanciones hasta €120.202</span>
+                  </div>
+                </div>
+                <a href="/blog/normativas-inspeccion-cascos-buques-2024"
+                   class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-semibold transition-colors">
+                  Consultar Normativas
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Links -->
+    <section class="py-16 bg-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-12">🔗 Enlaces Rápidos por Tema</h2>
+
+          <div class="grid md:grid-cols-3 gap-8">
+            <!-- Inspection Links -->
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+              <h3 class="text-xl font-bold text-blue-900 mb-4">🔍 Inspección de Cascos</h3>
+              <ul class="space-y-3">
+                <li>
+                  <a href="/inspeccion-cascos" class="text-blue-600 hover:text-blue-800 hover:underline">
+                    → Servicio de Inspección Certificada
+                  </a>
+                </li>
+                <li>
+                  <a href="/blog/cuando-inspeccionar-casco-embarcacion#inspeccion-urgente" class="text-blue-600 hover:text-blue-800 hover:underline">
+                    → Cuándo es Urgente Inspeccionar
+                  </a>
+                </li>
+                <li>
+                  <a href="/blog/diferencias-inspeccion-submarina-vs-varada#ahorro-costes" class="text-blue-600 hover:text-blue-800 hover:underline">
+                    → Calculadora de Ahorro
+                  </a>
+                </li>
+                <li>
+                  <a href="/blog/normativas-inspeccion-cascos-buques-2024#sociedades-clasificacion" class="text-blue-600 hover:text-blue-800 hover:underline">
+                    → Sociedades de Clasificación
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Regulations Links -->
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+              <h3 class="text-xl font-bold text-green-900 mb-4">📋 Normativas y Cumplimiento</h3>
+              <ul class="space-y-3">
+                <li>
+                  <a href="/blog/normativas-inspeccion-cascos-buques-2024#solas-2024" class="text-green-600 hover:text-green-800 hover:underline">
+                    → SOLAS 2024 Actualizaciones
+                  </a>
+                </li>
+                <li>
+                  <a href="/blog/normativas-inspeccion-cascos-buques-2024#rd-espanol" class="text-green-600 hover:text-green-800 hover:underline">
+                    → RD 1185/2006 España
+                  </a>
+                </li>
+                <li>
+                  <a href="/blog/cuando-inspeccionar-casco-embarcacion#multas-sanciones" class="text-green-600 hover:text-green-800 hover:underline">
+                    → Multas y Sanciones 2024
+                  </a>
+                </li>
+                <li>
+                  <a href="/blog/normativas-inspeccion-cascos-buques-2024#checklist" class="text-green-600 hover:text-green-800 hover:underline">
+                    → Lista Verificación Cumplimiento
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Services Links -->
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+              <h3 class="text-xl font-bold text-orange-900 mb-4">⚓ Otros Servicios</h3>
+              <ul class="space-y-3">
+                <li>
+                  <a href="/soldadura-subacuatica" class="text-orange-600 hover:text-orange-800 hover:underline">
+                    → Soldadura Subacuática
+                  </a>
+                </li>
+                <li>
+                  <a href="/reparacion-naval" class="text-orange-600 hover:text-orange-800 hover:underline">
+                    → Reparación Naval
+                  </a>
+                </li>
+                <li>
+                  <a href="/emergencias" class="text-orange-600 hover:text-orange-800 hover:underline">
+                    → Servicios de Emergencia 24h
+                  </a>
+                </li>
+                <li>
+                  <a href="/puerto-algeciras" class="text-orange-600 hover:text-orange-800 hover:underline">
+                    → Trabajos Puerto Algeciras
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-12">❓ Preguntas Frecuentes</h2>
+
+          <div class="space-y-6">
+            <div class="bg-blue-50 p-6 rounded-lg">
+              <h3 class="font-bold text-blue-900 mb-3">¿Qué tipo de contenido publican en el blog?</h3>
+              <p class="text-blue-800">
+                Publicamos guías técnicas especializadas sobre inspección de cascos, normativas marítimas,
+                soldadura submarina y trabajos navales. Todo el contenido está actualizado y revisado por
+                nuestros técnicos con más de 20 años de experiencia.
+              </p>
+            </div>
+
+            <div class="bg-green-50 p-6 rounded-lg">
+              <h3 class="font-bold text-green-900 mb-3">¿Con qué frecuencia actualizan las normativas?</h3>
+              <p class="text-green-800">
+                Las normativas se revisan trimestralmente y se actualizan inmediatamente cuando hay cambios
+                en SOLAS, MARPOL, RD español o sociedades de clasificación. Mantenemos contacto directo con
+                autoridades marítimas para estar al día.
+              </p>
+            </div>
+
+            <div class="bg-orange-50 p-6 rounded-lg">
+              <h3 class="font-bold text-orange-900 mb-3">¿Puedo solicitar un tema específico para el blog?</h3>
+              <p class="text-orange-800">
+                Sí, valoramos las sugerencias de nuestros clientes. Si tiene dudas técnicas específicas o
+                necesita información sobre algún aspecto concreto, contáctenos y evaluaremos crear contenido
+                sobre ese tema.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-blue-900 text-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold mb-6">¿Necesita Asesoramiento Técnico Personalizado?</h2>
+        <p class="text-xl mb-8 text-blue-100 max-w-3xl mx-auto">
+          Nuestro equipo técnico está disponible para resolver dudas específicas sobre inspecciones,
+          normativas y trabajos subacuáticos. Consulta gratuita en 2 horas.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <CallToAction variant="emergency" size="lg" text="CONSULTA TÉCNICA" subtext="Respuesta 2h" />
+          <a href="/contacto" class="bg-green-600 hover:bg-green-700 px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
+            Solicitar Presupuesto
+          </a>
+        </div>
+        <div class="mt-8 text-blue-200">
+          <p>✅ 20+ años experiencia • ✅ Todas las certificaciones • ✅ Asesoramiento gratuito</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .container {
+    max-width: 1200px;
+  }
+
+  article {
+    transition: transform 0.2s ease;
+  }
+
+  article:hover {
+    transform: translateY(-5px);
+  }
+</style>

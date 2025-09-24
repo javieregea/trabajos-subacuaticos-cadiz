@@ -1,0 +1,572 @@
+---
+import Layout from '../layouts/Layout.astro';
+import LocalSchema from '../components/LocalSchema.astro';
+import BusinessContact from '../components/BusinessContact.astro';
+import CallToAction from '../components/CallToAction.astro';
+---
+
+<Layout
+  title="Reparación Naval Subacuática en Cádiz | Especialistas en Soldadura y Mantenimiento"
+  description="Servicios especializados de reparación naval subacuática en Cádiz. Soldadura submarina, reparación de cascos, hélices y estructuras portuarias. Disponibles 24/7 para emergencias navales."
+  canonical="https://trabajossubacuaticoscadiz.vercel.app/reparacion-naval"
+>
+
+<!-- Breadcrumb Navigation -->
+<nav class="bg-gray-50 border-b" aria-label="Breadcrumb">
+  <div class="container mx-auto px-4 py-3">
+    <ol class="flex items-center space-x-2 text-sm">
+      <li><a href="/" class="text-blue-600 hover:text-blue-800">Inicio</a></li>
+      <li><span class="text-gray-400">/</span></li>
+      <li><a href="/servicios" class="text-blue-600 hover:text-blue-800">Servicios</a></li>
+      <li><span class="text-gray-400">/</span></li>
+      <li class="text-gray-600 font-medium">Reparación Naval</li>
+    </ol>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="bg-gradient-to-r from-blue-900 via-blue-800 to-blue-700 text-white py-20">
+  <div class="container mx-auto px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">
+        Reparación Naval Subacuática
+      </h1>
+      <p class="text-xl md:text-2xl mb-8 text-blue-100">
+        Expertos en reparación submarina de embarcaciones comerciales, pesqueras e industriales
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#contacto-rapido" class="bg-red-600 hover:bg-red-700 px-8 py-3 rounded-lg font-semibold transition-colors">
+          Emergencia 24h
+        </a>
+        <a href="#presupuesto" class="bg-white text-blue-900 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-colors">
+          Solicitar Presupuesto
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Servicios Principales -->
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-12">Servicios de Reparación Naval Completos</h2>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div class="bg-gray-50 p-6 rounded-lg">
+          <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Reparación de Cascos</h3>
+          <p class="text-gray-600">Soldadura submarina y parches en cascos de embarcaciones comerciales y pesqueras.</p>
+        </div>
+
+        <div class="bg-gray-50 p-6 rounded-lg">
+          <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Sistemas de Propulsión</h3>
+          <p class="text-gray-600">Reparación y mantenimiento de hélices, timones y sistemas de dirección.</p>
+        </div>
+
+        <div class="bg-gray-50 p-6 rounded-lg">
+          <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Estructuras Portuarias</h3>
+          <p class="text-gray-600">Mantenimiento de muelles, pilotes y estructuras de atraque submarinas.</p>
+        </div>
+
+        <div class="bg-gray-50 p-6 rounded-lg">
+          <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.293l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clip-rule="evenodd"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Sistemas de Anclaje</h3>
+          <p class="text-gray-600">Instalación y reparación de cadenas, anclas y sistemas de fondeo.</p>
+        </div>
+
+        <div class="bg-gray-50 p-6 rounded-lg">
+          <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Emergencias 24/7</h3>
+          <p class="text-gray-600">Respuesta inmediata para reparaciones urgentes y situaciones de emergencia.</p>
+        </div>
+
+        <div class="bg-gray-50 p-6 rounded-lg">
+          <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
+              <path fill-rule="evenodd" d="M4 5a2 2 0 012-2v1a2 2 0 002 2h4a2 2 0 002-2V3a2 2 0 012 2v6.5A2.5 2.5 0 0115.5 14H5a2 2 0 01-2-2V5zm8 2.5a.5.5 0 01.5-.5h2a.5.5 0 010 1h-2a.5.5 0 01-.5-.5zm0 2a.5.5 0 01.5-.5h2a.5.5 0 010 1h-2a.5.5 0 01-.5-.5zm0 2a.5.5 0 01.5-.5h2a.5.5 0 010 1h-2a.5.5 0 01-.5-.5zM6 8a.5.5 0 01.5-.5h1a.5.5 0 010 1h-1A.5.5 0 016 8zm0 2a.5.5 0 01.5-.5h1a.5.5 0 010 1h-1A.5.5 0 016 10zm0 2a.5.5 0 01.5-.5h1a.5.5 0 010 1h-1A.5.5 0 016 12z" clip-rule="evenodd"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Mantenimiento Preventivo</h3>
+          <p class="text-gray-600">Programas de mantenimiento regular para flotas comerciales y navieras.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Proceso de Reparación -->
+<section class="py-16 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-12">Nuestro Proceso de Reparación Naval</h2>
+
+      <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+        <div>
+          <h3 class="text-2xl font-bold mb-6">Metodología Profesional Paso a Paso</h3>
+          <p class="text-gray-600 mb-6">
+            Seguimos un protocolo riguroso desarrollado durante más de 15 años de experiencia en reparación naval subacuática,
+            garantizando la máxima calidad y seguridad en cada intervención.
+          </p>
+
+          <div class="space-y-4">
+            <div class="flex items-start">
+              <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm mr-4 mt-1">1</div>
+              <div>
+                <h4 class="font-semibold mb-1">Evaluación y Diagnóstico</h4>
+                <p class="text-gray-600 text-sm">Inspección submarina completa con cámara HD y documentación fotográfica</p>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm mr-4 mt-1">2</div>
+              <div>
+                <h4 class="font-semibold mb-1">Planificación Técnica</h4>
+                <p class="text-gray-600 text-sm">Diseño de solución específica y selección de materiales apropiados</p>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm mr-4 mt-1">3</div>
+              <div>
+                <h4 class="font-semibold mb-1">Preparación del Área</h4>
+                <p class="text-gray-600 text-sm">Limpieza, preparación de superficie y montaje de equipos</p>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm mr-4 mt-1">4</div>
+              <div>
+                <h4 class="font-semibold mb-1">Ejecución de Reparación</h4>
+                <p class="text-gray-600 text-sm">Soldadura submarina, instalación de parches o reparación estructural</p>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm mr-4 mt-1">5</div>
+              <div>
+                <h4 class="font-semibold mb-1">Control de Calidad</h4>
+                <p class="text-gray-600 text-sm">Pruebas de estanqueidad y verificación de integridad estructural</p>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm mr-4 mt-1">6</div>
+              <div>
+                <h4 class="font-semibold mb-1">Entrega y Garantía</h4>
+                <p class="text-gray-600 text-sm">Documentación completa y garantía de 12 meses en todas las reparaciones</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white p-8 rounded-lg shadow-lg">
+          <h3 class="text-xl font-bold mb-6">Transparencia Total en Costes</h3>
+
+          <div class="space-y-6">
+            <div class="border-b pb-4">
+              <h4 class="font-semibold text-lg mb-2">Reparaciones Menores</h4>
+              <div class="flex justify-between items-center mb-2">
+                <span class="text-gray-600">Parches pequeños, soldaduras puntuales</span>
+                <span class="font-bold text-blue-600">€180-350</span>
+              </div>
+              <ul class="text-sm text-gray-500 space-y-1">
+                <li>• Inspección incluida</li>
+                <li>• Material básico incluido</li>
+                <li>• Garantía 6 meses</li>
+              </ul>
+            </div>
+
+            <div class="border-b pb-4">
+              <h4 class="font-semibold text-lg mb-2">Reparaciones Estándar</h4>
+              <div class="flex justify-between items-center mb-2">
+                <span class="text-gray-600">Reparación de cascos, hélices</span>
+                <span class="font-bold text-blue-600">€450-950</span>
+              </div>
+              <ul class="text-sm text-gray-500 space-y-1">
+                <li>• Evaluación técnica completa</li>
+                <li>• Materiales certificados</li>
+                <li>• Garantía 12 meses</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="font-semibold text-lg mb-2">Reparaciones Complejas</h4>
+              <div class="flex justify-between items-center mb-2">
+                <span class="text-gray-600">Estructuras grandes, emergencias</span>
+                <span class="font-bold text-blue-600">€1.200-3.500</span>
+              </div>
+              <ul class="text-sm text-gray-500 space-y-1">
+                <li>• Estudio de ingeniería</li>
+                <li>• Materiales especializados</li>
+                <li>• Garantía 24 meses</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="mt-6 p-4 bg-blue-50 rounded-lg">
+            <p class="text-sm text-blue-800">
+              <strong>Sin sorpresas:</strong> Presupuesto cerrado antes del inicio.
+              Incluye materiales, mano de obra y certificación.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Tipos de Embarcaciones -->
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-12">Tipos de Embarcaciones que Reparamos</h2>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div class="text-center p-6 border rounded-lg hover:shadow-lg transition-shadow">
+          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold mb-2">Buques Mercantes</h3>
+          <p class="text-sm text-gray-600">Cargueros, portacontenedores, tanqueros y buques de carga general</p>
+        </div>
+
+        <div class="text-center p-6 border rounded-lg hover:shadow-lg transition-shadow">
+          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V4a2 2 0 00-2-2H6zm1 2a1 1 0 000 2h6a1 1 0 100-2H7zm6 7a1 1 0 011 1v3a1 1 0 11-2 0v-3a1 1 0 011-1zm-3 3a1 1 0 100 2h.01a1 1 0 100-2H10zm-4 1a1 1 0 011-1h.01a1 1 0 110 2H7a1 1 0 01-1-1zm1-4a1 1 0 100 2h.01a1 1 0 100-2H7zm2 1a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1zm4-4a1 1 0 100 2h.01a1 1 0 100-2H13zM9 9a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1zM7 8a1 1 0 000 2h.01a1 1 0 000-2H7z" clip-rule="evenodd"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold mb-2">Flota Pesquera</h3>
+          <p class="text-sm text-gray-600">Arrastreros, palangreros, cerqueros y embarcaciones de pesca artesanal</p>
+        </div>
+
+        <div class="text-center p-6 border rounded-lg hover:shadow-lg transition-shadow">
+          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold mb-2">Embarcaciones Industriales</h3>
+          <p class="text-sm text-gray-600">Remolcadores, dragas, plataformas offshore y buques de suministro</p>
+        </div>
+
+        <div class="text-center p-6 border rounded-lg hover:shadow-lg transition-shadow">
+          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M5 2a1 1 0 011 1v1h1a1 1 0 010 2H6v1a1 1 0 01-2 0V6H3a1 1 0 010-2h1V3a1 1 0 011-1zm0 10a1 1 0 011 1v1h1a1 1 0 110 2H6v1a1 1 0 11-2 0v-1H3a1 1 0 110-2h1v-1a1 1 0 011-1zM12 2a1 1 0 01.967.744L14.146 7.2 17.5 9.134a1 1 0 010 1.732L14.146 12.8l-1.179 4.456a1 1 0 01-1.934 0L9.854 12.8 6.5 10.866a1 1 0 010-1.732L9.854 7.2l1.179-4.456A1 1 0 0112 2z" clip-rule="evenodd"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold mb-2">Embarcaciones Militares</h3>
+          <p class="text-sm text-gray-600">Fragatas, patrulleros, buques auxiliares y embarcaciones de la Armada</p>
+        </div>
+      </div>
+
+      <div class="bg-gray-50 p-8 rounded-lg">
+        <h3 class="text-2xl font-bold mb-6">Experiencia Comprobada en Puertos Andaluces</h3>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h4 class="font-semibold mb-4">Principales Puertos de Operación:</h4>
+            <ul class="space-y-2 text-gray-600">
+              <li class="flex items-center">
+                <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                Puerto de Algeciras - Terminal Europa y TTI
+              </li>
+              <li class="flex items-center">
+                <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                Puerto de Cádiz - Zona Franca y puerto comercial
+              </li>
+              <li class="flex items-center">
+                <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                Puerto de Huelva - Terminal industrial y petroquímica
+              </li>
+              <li class="flex items-center">
+                <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                Base Naval de Rota - Apoyo a flota militar
+              </li>
+              <li class="flex items-center">
+                <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                Puerto de Málaga - Terminal de cruceros y comercial
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Casos de Éxito Recientes:</h4>
+            <ul class="space-y-2 text-gray-600">
+              <li>• Reparación urgente de fisura en petrolero (48h)</li>
+              <li>• Mantenimiento anual flota pesquera (25 embarcaciones)</li>
+              <li>• Reparación de hélice dañada en ferry (12h)</li>
+              <li>• Soldadura submarina en dique flotante</li>
+              <li>• Reparación de estructura portuaria dañada por temporal</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Tecnología y Equipamiento -->
+<section class="py-16 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-12">Tecnología y Equipamiento Avanzado</h2>
+
+      <div class="grid md:grid-cols-3 gap-8 mb-12">
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <h3 class="text-xl font-semibold mb-4">Soldadura Submarina</h3>
+          <ul class="space-y-2 text-gray-600">
+            <li>• Equipos de soldadura húmeda AWS D3.6</li>
+            <li>• Electrodos especializados para ambiente marino</li>
+            <li>• Sistema de video HD para documentación</li>
+            <li>• Pruebas de calidad en tiempo real</li>
+          </ul>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <h3 class="text-xl font-semibold mb-4">Equipos de Buceo</h3>
+          <ul class="space-y-2 text-gray-600">
+            <li>• Cascos de comunicación superficie-buzo</li>
+            <li>• Trajes secos de protección térmica</li>
+            <li>• Sistemas de aire comprimido certificados</li>
+            <li>• Equipos de emergencia y rescate</li>
+          </ul>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <h3 class="text-xl font-semibold mb-4">Herramientas Submarinas</h3>
+          <ul class="space-y-2 text-gray-600">
+            <li>• Taladros y amoladoras sumergibles</li>
+            <li>• Sistemas de corte por plasma subacuático</li>
+            <li>• Llaves hidráulicas de alta potencia</li>
+            <li>• Sistemas de elevación y posicionamiento</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bg-white p-8 rounded-lg shadow-lg">
+        <h3 class="text-2xl font-bold mb-6 text-center">Certificaciones y Normativas</h3>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h4 class="font-semibold mb-4">Certificaciones Internacionales:</h4>
+            <ul class="space-y-2 text-gray-600">
+              <li class="flex items-center">
+                <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                Lloyd's Register - Soldadura submarina
+              </li>
+              <li class="flex items-center">
+                <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                AWS D3.6 - Especificaciones de soldadura
+              </li>
+              <li class="flex items-center">
+                <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                IMCA - Buceo comercial internacional
+              </li>
+              <li class="flex items-center">
+                <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                ISO 9001 - Gestión de calidad
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Normativas de Cumplimiento:</h4>
+            <ul class="space-y-2 text-gray-600">
+              <li class="flex items-center">
+                <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                SOLAS - Seguridad de la vida humana en el mar
+              </li>
+              <li class="flex items-center">
+                <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                MARPOL - Prevención contaminación marina
+              </li>
+              <li class="flex items-center">
+                <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                Capitanía Marítima - Autorizaciones locales
+              </li>
+              <li class="flex items-center">
+                <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                Puertos del Estado - Trabajos portuarios
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contacto Rápido -->
+<section id="contacto-rapido" class="py-16 bg-blue-900 text-white">
+  <div class="container mx-auto px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-8">¿Necesita Reparación Naval Urgente?</h2>
+      <p class="text-xl mb-8 text-blue-100">
+        Disponemos de equipos de emergencia 24/7 para atender averías críticas
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-6 mb-8">
+        <div class="bg-blue-800 p-6 rounded-lg">
+          <h3 class="font-semibold mb-2">Llamada Directa</h3>
+          <p class="text-blue-200 text-sm mb-3">Respuesta inmediata para emergencias</p>
+          <a href="tel:+34614406061" class="text-2xl font-bold text-yellow-400">+34 614 406 061</a>
+        </div>
+
+        <div class="bg-blue-800 p-6 rounded-lg">
+          <h3 class="font-semibold mb-2">WhatsApp 24h</h3>
+          <p class="text-blue-200 text-sm mb-3">Envío de fotos y consultas rápidas</p>
+          <a href="https://wa.me/34614406061" class="inline-block bg-green-600 hover:bg-green-700 px-4 py-2 rounded-lg transition-colors">
+            Abrir Chat
+          </a>
+        </div>
+
+        <div class="bg-blue-800 p-6 rounded-lg">
+          <h3 class="font-semibold mb-2">Email Técnico</h3>
+          <p class="text-blue-200 text-sm mb-3">Para presupuestos y consultas técnicas</p>
+          <a href="mailto:reparaciones@trabajossubacuaticoscadiz.es" class="text-yellow-400 break-all">
+            reparaciones@trabajossubacuaticoscadiz.es
+          </a>
+        </div>
+      </div>
+
+      <div id="presupuesto" class="bg-white text-gray-900 p-8 rounded-lg">
+        <h3 class="text-2xl font-bold mb-6">Solicitar Presupuesto de Reparación</h3>
+        <form class="grid md:grid-cols-2 gap-4">
+          <input type="text" placeholder="Nombre de la empresa" class="p-3 border rounded-lg">
+          <input type="email" placeholder="Email de contacto" class="p-3 border rounded-lg">
+          <input type="tel" placeholder="Teléfono" class="p-3 border rounded-lg">
+          <select class="p-3 border rounded-lg">
+            <option>Tipo de embarcación</option>
+            <option>Buque mercante</option>
+            <option>Embarcación pesquera</option>
+            <option>Embarcación industrial</option>
+            <option>Embarcación militar</option>
+            <option>Otro</option>
+          </select>
+          <textarea placeholder="Descripción del problema o reparación necesaria" class="p-3 border rounded-lg md:col-span-2 h-24"></textarea>
+          <div class="md:col-span-2">
+            <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+              Enviar Solicitud de Presupuesto
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Reparación Naval Subacuática",
+  "description": "Servicios especializados de reparación naval subacuática en Cádiz y Andalucía. Soldadura submarina, reparación de cascos, hélices y estructuras portuarias.",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Trabajos Subacuáticos Cádiz",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Cádiz",
+      "addressRegion": "Andalucía",
+      "addressCountry": "ES"
+    },
+    "telephone": "+34-614-406-061",
+    "email": "info@trabajossubacuaticoscadiz.es"
+  },
+  "areaServed": [
+    {
+      "@type": "Place",
+      "name": "Puerto de Algeciras"
+    },
+    {
+      "@type": "Place",
+      "name": "Puerto de Cádiz"
+    },
+    {
+      "@type": "Place",
+      "name": "Puerto de Huelva"
+    },
+    {
+      "@type": "Place",
+      "name": "Base Naval de Rota"
+    },
+    {
+      "@type": "Place",
+      "name": "Puerto de Málaga"
+    }
+  ],
+  "serviceType": "Reparación Naval",
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Reparaciones Menores",
+      "description": "Parches pequeños y soldaduras puntuales",
+      "priceRange": "€180-350"
+    },
+    {
+      "@type": "Offer",
+      "name": "Reparaciones Estándar",
+      "description": "Reparación de cascos y hélices",
+      "priceRange": "€450-950"
+    },
+    {
+      "@type": "Offer",
+      "name": "Reparaciones Complejas",
+      "description": "Estructuras grandes y emergencias",
+      "priceRange": "€1200-3500"
+    }
+  ]
+}
+</script>
+
+</Layout>

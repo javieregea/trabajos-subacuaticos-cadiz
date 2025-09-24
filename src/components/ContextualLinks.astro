@@ -1,0 +1,88 @@
+---
+import { linkingStrategy } from '../data/linkingStrategy.js';
+
+export interface Props {
+  text: string;
+  currentPage: string;
+  className?: string;
+}
+
+const { text, currentPage, className = '' } = Astro.props;
+
+// Get contextual patterns for current page
+const pageData = linkingStrategy.services[currentPage] ||
+                 linkingStrategy.locations[currentPage] ||
+                 linkingStrategy.hubs[currentPage];
+
+// Build contextual links map
+const contextualLinks = new Map();
+
+// Add page-specific contextual links
+if (pageData?.contextualLinks) {
+  pageData.contextualLinks.forEach(link => {
+    contextualLinks.set(link.anchor.toLowerCase(), link.url);
+  });
+}
+
+// Add global contextual patterns
+linkingStrategy.contextualPatterns.serviceToLocation.forEach(pattern => {
+  if (pattern.from === currentPage) {
+    contextualLinks.set(pattern.anchor.toLowerCase(), pattern.to);
+  }
+});
+
+linkingStrategy.contextualPatterns.locationToService.forEach(pattern => {
+  if (pattern.from === currentPage) {
+    contextualLinks.set(pattern.anchor.toLowerCase(), pattern.to);
+  }
+});
+
+linkingStrategy.contextualPatterns.serviceToService.forEach(pattern => {
+  if (pattern.from === currentPage) {
+    contextualLinks.set(pattern.anchor.toLowerCase(), pattern.to);
+  }
+});
+
+// Process text and create links
+function processTextWithLinks(text) {
+  let processedText = text;
+
+  // Sort by length (longest first) to avoid partial matches
+  const sortedAnchors = Array.from(contextualLinks.keys())
+    .sort((a, b) => b.length - a.length);
+
+  sortedAnchors.forEach(anchor => {
+    const url = contextualLinks.get(anchor);
+    const regex = new RegExp(`\\b${anchor}\\b`, 'gi');
+
+    processedText = processedText.replace(regex, (match) => {
+      return `<a href="${url}" class="contextual-link font-medium text-blue-600 hover:text-blue-800 hover:underline transition-colors" title="Ver más sobre ${match}">${match}</a>`;
+    });
+  });
+
+  return processedText;
+}
+
+const processedText = processTextWithLinks(text);
+---
+
+<div class={`contextual-content ${className}`} set:html={processedText} />
+
+<style>
+  .contextual-content :global(.contextual-link) {
+    position: relative;
+    text-decoration: none;
+    border-bottom: 1px dotted #3b82f6;
+  }
+
+  .contextual-content :global(.contextual-link:hover) {
+    border-bottom: 1px solid #1d4ed8;
+  }
+
+  .contextual-content :global(.contextual-link::after) {
+    content: '🔗';
+    font-size: 0.7em;
+    margin-left: 2px;
+    opacity: 0.6;
+  }
+</style>

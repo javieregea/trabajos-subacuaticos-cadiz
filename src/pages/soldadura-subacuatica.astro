@@ -2,6 +2,11 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import LocalSchema from '../components/LocalSchema.astro';
+import BusinessContact from '../components/BusinessContact.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
+import ContextualLinks from '../components/ContextualLinks.astro';
+import CallToAction from '../components/CallToAction.astro';
 ---
 
 <Layout
@@ -9,6 +14,8 @@ import Footer from '../components/Footer.astro';
   description="Especialistas en soldadura subacuática certificada en Cádiz. Técnicas húmedas y secas, reparación de cascos, estructuras offshore y trabajos marítimos profesionales 24/7."
   keywords="soldadura subacuática Cádiz, soldadura hiperbárica, soldadura marina, reparación naval submarina, soldadura offshore Cádiz"
 >
+  <LocalSchema location="Puerto de Cádiz" servicePage="Soldadura Subacuática" />
+
   <!-- Specific Service Schema for Underwater Welding -->
   <script type="application/ld+json">
     {
@@ -44,7 +51,7 @@ import Footer from '../components/Footer.astro';
         },
         {
           "@type": "ServiceChannel",
-          "servicePhone": "+34-XXX-XXX-XXX",
+          "servicePhone": "+34-614-406-061",
           "serviceName": "Emergencias 24h",
           "hoursAvailable": "24/7"
         }
@@ -180,11 +187,9 @@ import Footer from '../components/Footer.astro';
             Técnicas avanzadas de soldadura marina en Cádiz
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/contacto" class="bg-red-600 hover:bg-red-700 px-8 py-3 rounded-lg font-semibold transition-colors">
+            <CallToAction variant="emergency" size="lg" text="LLAMAR AHORA" subtext="Soldadura Subacuática" />
+            <a href="/contacto" class="bg-green-600 hover:bg-green-700 px-8 py-3 rounded-lg font-semibold transition-colors text-white">
               Solicitar Presupuesto
-            </a>
-            <a href="tel:+34XXXXXXXXX" class="bg-transparent border-2 border-white hover:bg-white hover:text-blue-900 px-8 py-3 rounded-lg font-semibold transition-colors">
-              Llamar Ahora: +34 XXX XXX XXX
             </a>
           </div>
         </div>
@@ -299,6 +304,18 @@ import Footer from '../components/Footer.astro';
               </p>
             </div>
           </div>
+
+          <!-- CTA Section 2 -->
+          <div class="text-center mt-12">
+            <div class="bg-blue-900 text-white p-8 rounded-lg">
+              <h3 class="text-2xl font-bold mb-4">¿Necesita Soldadura Subacuática Profesional?</h3>
+              <p class="text-blue-200 mb-6">Especialistas certificados en técnicas húmedas y secas disponibles 24/7</p>
+              <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <CallToAction variant="emergency" size="lg" text="LLAMAR AHORA" subtext="Respuesta Inmediata" />
+                <CallToAction variant="secondary" size="lg" text="PRESUPUESTO" phoneOnly={false} showPhone={false} />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -342,20 +359,26 @@ import Footer from '../components/Footer.astro';
       </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="py-16 bg-blue-900 text-white">
+    <!-- CTA Section 3 -->
+    <section class="py-16 bg-red-600 text-white">
       <div class="container mx-auto px-4 text-center">
-        <h2 class="text-3xl font-bold mb-6">¿Necesita Soldadura Subacuática Profesional?</h2>
-        <p class="text-xl mb-8 text-blue-100">
-          Contacte con nuestros especialistas para una evaluación gratuita
+        <h2 class="text-3xl font-bold mb-6">🚨 Soldadura Subacuática de Emergencia</h2>
+        <p class="text-xl mb-8 text-red-100">
+          Técnicos especializados disponibles 24/7 - Respuesta inmediata en toda la bahía de Cádiz
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/contacto" class="bg-red-600 hover:bg-red-700 px-8 py-3 rounded-lg font-semibold transition-colors">
-            Solicitar Presupuesto
+          <CallToAction variant="emergency" size="xl" text="LLAMAR AHORA" subtext="Emergencia 24h" className="bg-white text-red-600 hover:bg-gray-100" />
+          <a href="/contacto" class="bg-transparent border-2 border-white hover:bg-white hover:text-red-600 px-8 py-4 rounded-lg font-semibold transition-colors text-lg">
+            Presupuesto Gratuito
           </a>
-          <a href="/emergencias" class="bg-transparent border-2 border-white hover:bg-white hover:text-blue-900 px-8 py-3 rounded-lg font-semibold transition-colors">
-            Emergencias 24h
-          </a>
+        </div>
+      </div>
+    </section>
+    <!-- Related Links Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <RelatedLinks currentPage="soldadura-subacuatica" type="all" limit={8} />
         </div>
       </div>
     </section>

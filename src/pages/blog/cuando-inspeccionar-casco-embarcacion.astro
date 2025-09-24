@@ -1,0 +1,286 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import CallToAction from '../../components/CallToAction.astro';
+---
+
+<Layout
+  title="¿Cuándo Inspeccionar el Casco de mi Embarcación? | Guía Completa 2024"
+  description="Descubre cuándo es obligatorio inspeccionar el casco de tu embarcación, qué normativas aplicar y cómo evitar sanciones. Guía actualizada 2024 para armadores profesionales."
+  keywords="cuando inspeccionar casco embarcación, inspección obligatoria cascos, normativa inspección naval, certificación cascos buques"
+>
+  <!-- Article Schema -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "¿Cuándo Inspeccionar el Casco de mi Embarcación? Guía Completa 2024",
+      "description": "Guía completa sobre cuándo es obligatorio inspeccionar el casco de embarcaciones según normativas españolas e internacionales",
+      "image": "https://trabajos-subacuaticos-cadiz.vercel.app/images/inspeccion-casco-blog.jpg",
+      "author": {
+        "@type": "Organization",
+        "name": "Trabajos Subacuáticos Cádiz"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Trabajos Subacuáticos Cádiz",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://trabajos-subacuaticos-cadiz.vercel.app/logo.png"
+        }
+      },
+      "datePublished": "2024-01-15",
+      "dateModified": "2024-01-15",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://trabajos-subacuaticos-cadiz.vercel.app/blog/cuando-inspeccionar-casco-embarcacion"
+      }
+    }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "¿Cada cuánto tiempo debo inspeccionar el casco de mi embarcación comercial?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Las embarcaciones comerciales deben inspeccionar el casco cada 12 meses según SOLAS, aunque varía según tipo de buque y bandera. Embarcaciones de pasaje cada 12 meses, cargueros cada 60 meses con inspecciones intermedias."
+        }
+      }, {
+        "@type": "Question",
+        "name": "¿Es válida la inspección submarina del casco sin varar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí, la inspección submarina es totalmente válida y aceptada por todas las sociedades de clasificación cuando la realiza un inspector certificado. Cumple las mismas normativas que una inspección en seco."
+        }
+      }, {
+        "@type": "Question",
+        "name": "¿Qué ocurre si no inspecciono el casco en los plazos establecidos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Navegar sin certificado de inspección válido puede resultar en multas de 3.005€ a 60.101€, retención del buque, invalidez del seguro y responsabilidad civil en caso de accidente."
+        }
+      }]
+    }
+  </script>
+
+  <Header />
+
+  <main>
+    <!-- Hero Article -->
+    <article class="bg-gradient-to-r from-blue-900 to-blue-800 text-white py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <nav class="mb-6 text-sm" aria-label="Breadcrumb">
+            <a href="/" class="text-blue-200 hover:text-white">Inicio</a>
+            <span class="mx-2 text-blue-300">/</span>
+            <a href="/blog" class="text-blue-200 hover:text-white">Blog</a>
+            <span class="mx-2 text-blue-300">/</span>
+            <span class="text-white">Cuándo Inspeccionar Cascos</span>
+          </nav>
+
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">
+            ¿Cuándo Inspeccionar el Casco de mi Embarcación?
+          </h1>
+          <p class="text-xl text-blue-100 mb-8">
+            Guía completa sobre plazos obligatorios, normativas y consecuencias de no cumplir
+            con las inspecciones de cascos según la legislación española e internacional.
+          </p>
+          <div class="flex items-center text-blue-200 text-sm">
+            <span>📅 Actualizado: Enero 2024</span>
+            <span class="mx-3">•</span>
+            <span>⏱️ Lectura: 4 min</span>
+            <span class="mx-3">•</span>
+            <span>👨‍⚓ Para armadores profesionales</span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Content -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <!-- Quick Alert -->
+          <div class="bg-red-50 border-l-4 border-red-400 p-6 mb-8">
+            <div class="flex">
+              <div class="flex-shrink-0">
+                <span class="text-red-400 text-2xl">⚠️</span>
+              </div>
+              <div class="ml-3">
+                <h3 class="text-lg font-bold text-red-800">Atención Armadores</h3>
+                <p class="text-red-700">
+                  <strong>Navegar sin certificado de inspección válido puede costar hasta €60.101 en multas</strong>
+                  más retención del buque. Verifica tu situación ahora.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Main Content -->
+          <div class="prose prose-lg max-w-none">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Plazos Obligatorios por Tipo de Embarcación</h2>
+
+            <h3 class="text-xl font-bold text-blue-900 mb-4">🚢 Embarcaciones Comerciales (SOLAS)</h3>
+            <div class="bg-blue-50 p-6 rounded-lg mb-6">
+              <ul class="space-y-3">
+                <li><strong>Buques de pasaje:</strong> Inspección anual del casco (12 meses máximo)</li>
+                <li><strong>Buques de carga:</strong> Inspección cada 60 meses con inspecciones intermedias a los 30 meses</li>
+                <li><strong>Petroleros:</strong> Inspección anual obligatoria + inspección intermedia</li>
+                <li><strong>Buques especiales:</strong> Según certificación específica (consultar sociedad clasificación)</li>
+              </ul>
+            </div>
+
+            <h3 class="text-xl font-bold text-blue-900 mb-4">🎣 Embarcaciones Pesqueras</h3>
+            <div class="bg-green-50 p-6 rounded-lg mb-6">
+              <ul class="space-y-3">
+                <li><strong>Pesqueros > 24m:</strong> Inspección anual obligatoria</li>
+                <li><strong>Pesqueros 12-24m:</strong> Inspección cada 24 meses</li>
+                <li><strong>Embarcaciones artesanales:</strong> Inspección cada 60 meses (renovación licencia)</li>
+              </ul>
+            </div>
+
+            <h3 class="text-xl font-bold text-blue-900 mb-4">⚓ Embarcaciones de Recreo</h3>
+            <div class="bg-orange-50 p-6 rounded-lg mb-6">
+              <ul class="space-y-3">
+                <li><strong>Yates > 24m:</strong> Inspección cada 12 meses (MCA/Ensign)</li>
+                <li><strong>Embarcaciones 12-24m:</strong> Inspección cada 60 meses</li>
+                <li><strong>Embarcaciones < 12m:</strong> Sin inspección obligatoria (recomendada cada 24 meses)</li>
+              </ul>
+            </div>
+
+            <h2 class="text-2xl font-bold text-gray-900 mb-6 mt-12">Cuándo es URGENTE Inspeccionar</h2>
+
+            <div class="bg-red-50 p-6 rounded-lg mb-8">
+              <h4 class="font-bold text-red-800 mb-4">🚨 Inspección Inmediata Obligatoria:</h4>
+              <ul class="text-red-700 space-y-2">
+                <li>• <strong>Tras colisión o varada:</strong> Antes de continuar navegando</li>
+                <li>• <strong>Daños por temporal:</strong> Si hay impactos contra muelles/rocas</li>
+                <li>• <strong>Aviso de otros navegantes:</strong> Observación de daños externos</li>
+                <li>• <strong>Alarmas de sentina frecuentes:</strong> Posible entrada de agua</li>
+                <li>• <strong>Vibraciones anómalas:</strong> Posible daño en hélice/eje</li>
+              </ul>
+            </div>
+
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Consecuencias de NO Inspeccionar</h2>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+              <div class="bg-gray-50 p-6 rounded-lg">
+                <h4 class="font-bold text-gray-800 mb-3">💰 Sanciones Económicas</h4>
+                <ul class="text-gray-600 space-y-2 text-sm">
+                  <li>• Multas: €3.005 - €60.101</li>
+                  <li>• Costes inmovilización</li>
+                  <li>• Pérdida de ingresos comerciales</li>
+                  <li>• Invalidez seguro marítimo</li>
+                </ul>
+              </div>
+              <div class="bg-gray-50 p-6 rounded-lg">
+                <h4 class="font-bold text-gray-800 mb-3">⚖️ Responsabilidades Legales</h4>
+                <ul class="text-gray-600 space-y-2 text-sm">
+                  <li>• Responsabilidad civil total</li>
+                  <li>• Reclamaciones tripulación</li>
+                  <li>• Daños medioambientales</li>
+                  <li>• Pérdida licencias navegación</li>
+                </ul>
+              </div>
+            </div>
+
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Ventajas de la Inspección Submarina</h2>
+
+            <div class="bg-green-50 p-6 rounded-lg mb-8">
+              <div class="grid md:grid-cols-3 gap-4">
+                <div class="text-center">
+                  <div class="text-3xl mb-2">💰</div>
+                  <h4 class="font-bold text-green-800">Ahorro 80%</h4>
+                  <p class="text-green-700 text-sm">vs varada tradicional</p>
+                </div>
+                <div class="text-center">
+                  <div class="text-3xl mb-2">⏱️</div>
+                  <h4 class="font-bold text-green-800">2-4 horas</h4>
+                  <p class="text-green-700 text-sm">vs 2-5 días varada</p>
+                </div>
+                <div class="text-center">
+                  <div class="text-3xl mb-2">✅</div>
+                  <h4 class="font-bold text-green-800">100% Válido</h4>
+                  <p class="text-green-700 text-sm">Todas las sociedades</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Section -->
+          <section class="mt-12 bg-gray-50 p-8 rounded-lg">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Preguntas Frecuentes</h2>
+
+            <div class="space-y-6">
+              <div class="border-b border-gray-200 pb-4">
+                <h3 class="font-bold text-gray-800 mb-2">¿Puedo navegar mientras espero la inspección?</h3>
+                <p class="text-gray-600">
+                  NO. Si el certificado ha caducado, navegar es ilegal y conlleva multas automáticas.
+                  La inspección debe realizarse antes del vencimiento del certificado anterior.
+                </p>
+              </div>
+
+              <div class="border-b border-gray-200 pb-4">
+                <h3 class="font-bold text-gray-800 mb-2">¿Qué documentos necesito para la inspección?</h3>
+                <p class="text-gray-600">
+                  Certificado de navegabilidad, póliza de seguro vigente, último informe de inspección,
+                  documentación de reparaciones realizadas y rol de despacho actualizado.
+                </p>
+              </div>
+
+              <div>
+                <h3 class="font-bold text-gray-800 mb-2">¿Cuánto cuesta una inspección submarina certificada?</h3>
+                <p class="text-gray-600">
+                  Entre €400-800 para embarcaciones estándar vs €1.500-5.000 de una varada tradicional.
+                  El ahorro es del 70-85% manteniendo la misma validez legal.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- CTA Section -->
+          <div class="mt-12 bg-blue-900 text-white p-8 rounded-lg text-center">
+            <h3 class="text-2xl font-bold mb-4">¿Necesita Inspección de Cascos Urgente?</h3>
+            <p class="text-blue-100 mb-6">
+              Evite multas y problemas legales. Inspección submarina certificada en 24-48h.
+              Válida para todas las sociedades de clasificación y aseguradoras.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <CallToAction variant="emergency" size="lg" text="INSPECCIÓN URGENTE" subtext="Disponible 24/7" />
+              <a href="/inspeccion-cascos" class="bg-green-600 hover:bg-green-700 px-8 py-3 rounded-lg font-semibold transition-colors">
+                Ver Precios y Proceso
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .container {
+    max-width: 1200px;
+  }
+
+  .prose h2, .prose h3, .prose h4 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .prose ul {
+    margin: 1rem 0;
+  }
+
+  .prose li {
+    margin: 0.5rem 0;
+  }
+</style>

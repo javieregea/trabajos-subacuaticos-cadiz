@@ -1,0 +1,899 @@
+---
+export interface Props {
+  title?: string;
+  items: Array<{
+    type: 'image' | 'video' | 'before-after';
+    src: string;
+    alt: string;
+    caption?: string;
+    beforeSrc?: string;
+    beforeAlt?: string;
+    videoThumbnail?: string;
+    duration?: string;
+  }>;
+  layout?: 'grid' | 'carousel' | 'masonry';
+  showCaptions?: boolean;
+}
+
+const {
+  title = "Galería Multimedia",
+  items,
+  layout = 'grid',
+  showCaptions = true
+} = Astro.props;
+---
+
+<div class="multimedia-gallery" data-layout={layout}>
+  {title && <h3 class="gallery-title">{title}</h3>}
+
+  <div class="gallery-container">
+    {items.map((item, index) => (
+      <div class="gallery-item" data-type={item.type}>
+
+        {/* Regular Image */}
+        {item.type === 'image' && (
+          <div class="media-wrapper" data-lightbox="gallery" data-index={index}>
+            <img
+              src={item.src}
+              alt={item.alt}
+              loading="lazy"
+              class="gallery-image"
+            />
+            <div class="media-overlay">
+              <div class="overlay-content">
+                <span class="zoom-icon">🔍</span>
+                <span class="media-type">Imagen</span>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Video */}
+        {item.type === 'video' && (
+          <div class="media-wrapper video-wrapper" data-video={item.src} data-index={index}>
+            <div class="video-thumbnail">
+              <img
+                src={item.videoThumbnail || '/images/video-placeholder.webp'}
+                alt={item.alt}
+                loading="lazy"
+                class="gallery-image"
+              />
+              <div class="play-overlay">
+                <div class="play-button">
+                  <span class="play-icon">▶️</span>
+                </div>
+                {item.duration && (
+                  <div class="video-duration">{item.duration}</div>
+                )}
+              </div>
+            </div>
+            <div class="media-overlay">
+              <div class="overlay-content">
+                <span class="zoom-icon">▶️</span>
+                <span class="media-type">Video</span>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Before/After Comparison */}
+        {item.type === 'before-after' && (
+          <div class="media-wrapper before-after-wrapper" data-index={index}>
+            <div class="before-after-container">
+              <div class="before-after-images">
+                <img
+                  src={item.beforeSrc}
+                  alt={item.beforeAlt || 'Antes'}
+                  class="before-image"
+                  loading="lazy"
+                />
+                <img
+                  src={item.src}
+                  alt={item.alt}
+                  class="after-image"
+                  loading="lazy"
+                />
+              </div>
+              <div class="slider-control">
+                <div class="slider-handle">
+                  <span class="handle-icon">⟷</span>
+                </div>
+              </div>
+              <div class="comparison-labels">
+                <span class="before-label">Antes</span>
+                <span class="after-label">Después</span>
+              </div>
+            </div>
+            <div class="media-overlay">
+              <div class="overlay-content">
+                <span class="zoom-icon">🔄</span>
+                <span class="media-type">Antes/Después</span>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Caption */}
+        {showCaptions && item.caption && (
+          <div class="media-caption">
+            <p>{item.caption}</p>
+          </div>
+        )}
+      </div>
+    ))}
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox-modal" id="lightbox">
+    <div class="lightbox-content">
+      <button class="lightbox-close" aria-label="Cerrar">&times;</button>
+      <button class="lightbox-prev" aria-label="Anterior">‹</button>
+      <button class="lightbox-next" aria-label="Siguiente">›</button>
+
+      <div class="lightbox-media-container">
+        <img class="lightbox-image" alt="" />
+        <video class="lightbox-video" controls>
+          <source type="video/mp4" />
+          Tu navegador no soporta el elemento video.
+        </video>
+        <div class="lightbox-before-after">
+          <div class="lightbox-comparison">
+            <img class="lightbox-before" alt="" />
+            <img class="lightbox-after" alt="" />
+            <div class="lightbox-slider">
+              <div class="lightbox-handle">⟷</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lightbox-caption"></div>
+      <div class="lightbox-counter"></div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .multimedia-gallery {
+    margin: 30px 0;
+  }
+
+  .gallery-title {
+    color: #1e40af;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .gallery-container {
+    display: grid;
+    gap: 20px;
+  }
+
+  /* Grid Layout */
+  .multimedia-gallery[data-layout="grid"] .gallery-container {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  /* Carousel Layout */
+  .multimedia-gallery[data-layout="carousel"] .gallery-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    padding-bottom: 10px;
+  }
+
+  .multimedia-gallery[data-layout="carousel"] .gallery-item {
+    flex: 0 0 300px;
+    scroll-snap-align: start;
+  }
+
+  /* Masonry Layout */
+  .multimedia-gallery[data-layout="masonry"] .gallery-container {
+    columns: 3;
+    column-gap: 20px;
+  }
+
+  .multimedia-gallery[data-layout="masonry"] .gallery-item {
+    break-inside: avoid;
+    margin-bottom: 20px;
+  }
+
+  .gallery-item {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  .media-wrapper {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+  }
+
+  .gallery-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .media-wrapper:hover .gallery-image {
+    transform: scale(1.05);
+  }
+
+  .media-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(30, 64, 175, 0.8),
+      rgba(29, 78, 216, 0.8)
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .media-wrapper:hover .media-overlay {
+    opacity: 1;
+  }
+
+  .overlay-content {
+    text-align: center;
+    color: white;
+  }
+
+  .zoom-icon {
+    display: block;
+    font-size: 2rem;
+    margin-bottom: 8px;
+  }
+
+  .media-type {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* Video Specific Styles */
+  .video-wrapper .video-thumbnail {
+    position: relative;
+  }
+
+  .play-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .play-button {
+    background: rgba(0, 0, 0, 0.7);
+    border: 3px solid white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+  }
+
+  .play-button:hover {
+    transform: scale(1.1);
+  }
+
+  .play-icon {
+    font-size: 1.5rem;
+    margin-left: 3px;
+  }
+
+  .video-duration {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  /* Before/After Comparison Styles */
+  .before-after-container {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+  }
+
+  .before-after-images {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .before-image,
+  .after-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .after-image {
+    clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%);
+    transition: clip-path 0.3s ease;
+  }
+
+  .slider-control {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background: white;
+    cursor: ew-resize;
+  }
+
+  .slider-handle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border: 2px solid #1e40af;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .handle-icon {
+    color: #1e40af;
+    font-weight: bold;
+  }
+
+  .comparison-labels {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .before-label,
+  .after-label {
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  /* Caption Styles */
+  .media-caption {
+    padding: 15px;
+    background: white;
+  }
+
+  .media-caption p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #374151;
+    line-height: 1.5;
+  }
+
+  /* Lightbox Styles */
+  .lightbox-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    overflow: auto;
+  }
+
+  .lightbox-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .lightbox-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    margin: auto;
+  }
+
+  .lightbox-close,
+  .lightbox-prev,
+  .lightbox-next {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1001;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+  }
+
+  .lightbox-close:hover,
+  .lightbox-prev:hover,
+  .lightbox-next:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+  .lightbox-close {
+    top: -50px;
+    right: 0;
+  }
+
+  .lightbox-prev {
+    left: -60px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .lightbox-next {
+    right: -60px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .lightbox-media-container {
+    position: relative;
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .lightbox-image,
+  .lightbox-video {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    display: none;
+  }
+
+  .lightbox-image.active,
+  .lightbox-video.active {
+    display: block;
+  }
+
+  .lightbox-before-after {
+    display: none;
+    position: relative;
+    max-width: 100%;
+    max-height: 80vh;
+  }
+
+  .lightbox-before-after.active {
+    display: block;
+  }
+
+  .lightbox-comparison {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    overflow: hidden;
+  }
+
+  .lightbox-before,
+  .lightbox-after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .lightbox-after {
+    clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%);
+  }
+
+  .lightbox-slider {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background: white;
+    cursor: ew-resize;
+  }
+
+  .lightbox-handle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border: 2px solid #1e40af;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    color: #1e40af;
+    font-weight: bold;
+  }
+
+  .lightbox-caption {
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 1rem;
+  }
+
+  .lightbox-counter {
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .multimedia-gallery[data-layout="grid"] .gallery-container {
+      grid-template-columns: 1fr;
+    }
+
+    .multimedia-gallery[data-layout="masonry"] .gallery-container {
+      columns: 1;
+    }
+
+    .multimedia-gallery[data-layout="carousel"] .gallery-item {
+      flex: 0 0 280px;
+    }
+
+    .gallery-image {
+      height: 200px;
+    }
+
+    .lightbox-prev,
+    .lightbox-next {
+      left: 10px;
+      right: 10px;
+      top: auto;
+      bottom: 60px;
+      transform: none;
+    }
+
+    .lightbox-next {
+      left: auto;
+      right: 10px;
+    }
+
+    .lightbox-close {
+      top: 10px;
+      right: 10px;
+    }
+
+    .lightbox-comparison {
+      height: 40vh;
+    }
+  }
+
+  /* Accessibility */
+  @media (prefers-reduced-motion: reduce) {
+    .gallery-item,
+    .gallery-image,
+    .media-overlay,
+    .play-button,
+    .after-image {
+      transition: none;
+    }
+  }
+
+  /* Focus styles for keyboard navigation */
+  .media-wrapper:focus {
+    outline: 2px solid #1e40af;
+    outline-offset: 2px;
+  }
+
+  .lightbox-close:focus,
+  .lightbox-prev:focus,
+  .lightbox-next:focus {
+    outline: 2px solid white;
+    outline-offset: 2px;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const galleries = document.querySelectorAll('.multimedia-gallery');
+
+    galleries.forEach(gallery => {
+      initializeGallery(gallery);
+    });
+  });
+
+  function initializeGallery(gallery) {
+    const items = gallery.querySelectorAll('.media-wrapper');
+    const lightbox = gallery.querySelector('#lightbox');
+    const lightboxImage = lightbox.querySelector('.lightbox-image');
+    const lightboxVideo = lightbox.querySelector('.lightbox-video');
+    const lightboxBeforeAfter = lightbox.querySelector('.lightbox-before-after');
+    const lightboxBefore = lightbox.querySelector('.lightbox-before');
+    const lightboxAfter = lightbox.querySelector('.lightbox-after');
+    const lightboxCaption = lightbox.querySelector('.lightbox-caption');
+    const lightboxCounter = lightbox.querySelector('.lightbox-counter');
+    const closeBtn = lightbox.querySelector('.lightbox-close');
+    const prevBtn = lightbox.querySelector('.lightbox-prev');
+    const nextBtn = lightbox.querySelector('.lightbox-next');
+
+    let currentIndex = 0;
+    let galleryItems = [];
+
+    // Initialize gallery items
+    items.forEach((item, index) => {
+      const type = item.closest('.gallery-item').dataset.type;
+      const caption = item.closest('.gallery-item').querySelector('.media-caption p')?.textContent || '';
+
+      let itemData = {
+        type: type,
+        caption: caption,
+        index: index
+      };
+
+      if (type === 'image') {
+        itemData.src = item.querySelector('img').src;
+        itemData.alt = item.querySelector('img').alt;
+      } else if (type === 'video') {
+        itemData.src = item.dataset.video;
+        itemData.alt = item.querySelector('img').alt;
+      } else if (type === 'before-after') {
+        itemData.beforeSrc = item.querySelector('.before-image').src;
+        itemData.afterSrc = item.querySelector('.after-image').src;
+        itemData.beforeAlt = item.querySelector('.before-image').alt;
+        itemData.afterAlt = item.querySelector('.after-image').alt;
+      }
+
+      galleryItems.push(itemData);
+
+      // Add click handler
+      item.addEventListener('click', () => {
+        openLightbox(index);
+      });
+
+      // Add keyboard support
+      item.setAttribute('tabindex', '0');
+      item.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openLightbox(index);
+        }
+      });
+    });
+
+    // Initialize before/after sliders
+    initializeBeforeAfterSliders(gallery);
+
+    function openLightbox(index) {
+      currentIndex = index;
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      showLightboxItem(currentIndex);
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+
+      // Pause any playing videos
+      if (lightboxVideo.style.display !== 'none') {
+        lightboxVideo.pause();
+      }
+    }
+
+    function showLightboxItem(index) {
+      const item = galleryItems[index];
+
+      // Hide all media types
+      lightboxImage.style.display = 'none';
+      lightboxVideo.style.display = 'none';
+      lightboxBeforeAfter.style.display = 'none';
+
+      // Show appropriate media type
+      if (item.type === 'image') {
+        lightboxImage.src = item.src;
+        lightboxImage.alt = item.alt;
+        lightboxImage.style.display = 'block';
+      } else if (item.type === 'video') {
+        const source = lightboxVideo.querySelector('source');
+        source.src = item.src;
+        lightboxVideo.load();
+        lightboxVideo.style.display = 'block';
+      } else if (item.type === 'before-after') {
+        lightboxBefore.src = item.beforeSrc;
+        lightboxBefore.alt = item.beforeAlt;
+        lightboxAfter.src = item.afterSrc;
+        lightboxAfter.alt = item.afterAlt;
+        lightboxBeforeAfter.style.display = 'block';
+        initializeLightboxBeforeAfter();
+      }
+
+      // Update caption and counter
+      lightboxCaption.textContent = item.caption;
+      lightboxCounter.textContent = `${index + 1} / ${galleryItems.length}`;
+    }
+
+    function nextItem() {
+      currentIndex = (currentIndex + 1) % galleryItems.length;
+      showLightboxItem(currentIndex);
+    }
+
+    function prevItem() {
+      currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+      showLightboxItem(currentIndex);
+    }
+
+    // Event listeners
+    closeBtn.addEventListener('click', closeLightbox);
+    nextBtn.addEventListener('click', nextItem);
+    prevBtn.addEventListener('click', prevItem);
+
+    // Close on outside click
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('active')) return;
+
+      switch(e.key) {
+        case 'Escape':
+          closeLightbox();
+          break;
+        case 'ArrowLeft':
+          prevItem();
+          break;
+        case 'ArrowRight':
+          nextItem();
+          break;
+      }
+    });
+
+    function initializeLightboxBeforeAfter() {
+      const slider = lightbox.querySelector('.lightbox-slider');
+      const afterImage = lightbox.querySelector('.lightbox-after');
+      const comparison = lightbox.querySelector('.lightbox-comparison');
+
+      let isDragging = false;
+
+      function updateSlider(x) {
+        const rect = comparison.getBoundingClientRect();
+        const percentage = Math.max(0, Math.min(100, (x - rect.left) / rect.width * 100));
+
+        slider.style.left = percentage + '%';
+        afterImage.style.clipPath = `polygon(${percentage}% 0%, 100% 0%, 100% 100%, ${percentage}% 100%)`;
+      }
+
+      slider.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        e.preventDefault();
+      });
+
+      comparison.addEventListener('mousemove', (e) => {
+        if (isDragging) {
+          updateSlider(e.clientX);
+        }
+      });
+
+      document.addEventListener('mouseup', () => {
+        isDragging = false;
+      });
+
+      // Touch support
+      slider.addEventListener('touchstart', (e) => {
+        isDragging = true;
+        e.preventDefault();
+      });
+
+      comparison.addEventListener('touchmove', (e) => {
+        if (isDragging) {
+          updateSlider(e.touches[0].clientX);
+          e.preventDefault();
+        }
+      });
+
+      document.addEventListener('touchend', () => {
+        isDragging = false;
+      });
+    }
+  }
+
+  function initializeBeforeAfterSliders(gallery) {
+    const beforeAfterItems = gallery.querySelectorAll('.before-after-wrapper');
+
+    beforeAfterItems.forEach(wrapper => {
+      const container = wrapper.querySelector('.before-after-container');
+      const slider = wrapper.querySelector('.slider-control');
+      const afterImage = wrapper.querySelector('.after-image');
+
+      let isDragging = false;
+
+      function updateSlider(x) {
+        const rect = container.getBoundingClientRect();
+        const percentage = Math.max(0, Math.min(100, (x - rect.left) / rect.width * 100));
+
+        slider.style.left = percentage + '%';
+        afterImage.style.clipPath = `polygon(${percentage}% 0%, 100% 0%, 100% 100%, ${percentage}% 100%)`;
+      }
+
+      slider.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        e.preventDefault();
+      });
+
+      container.addEventListener('mousemove', (e) => {
+        if (isDragging) {
+          updateSlider(e.clientX);
+        }
+      });
+
+      document.addEventListener('mouseup', () => {
+        isDragging = false;
+      });
+
+      // Touch support
+      slider.addEventListener('touchstart', (e) => {
+        isDragging = true;
+        e.preventDefault();
+      });
+
+      container.addEventListener('touchmove', (e) => {
+        if (isDragging) {
+          updateSlider(e.touches[0].clientX);
+          e.preventDefault();
+        }
+      });
+
+      document.addEventListener('touchend', () => {
+        isDragging = false;
+      });
+    });
+  }
+</script>

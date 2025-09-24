@@ -2,6 +2,11 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import LocalSchema from '../components/LocalSchema.astro';
+import LocalContent from '../components/LocalContent.astro';
+import BusinessContact from '../components/BusinessContact.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
+import CallToAction from '../components/CallToAction.astro';
 ---
 
 <Layout
@@ -9,6 +14,8 @@ import Footer from '../components/Footer.astro';
   description="Especialistas en soldadura subacuática, reparación de cascos, buceo industrial y trabajos marítimos en Cádiz. Servicios de emergencia 24/7 en puerto y bahía de Cádiz."
   keywords="trabajos subacuáticos Cádiz, soldadura subacuática Cádiz, buceo industrial, reparación cascos embarcaciones, soldadura hiperbárica, buzos certificados Andalucía, servicios marítimos Cádiz, emergencia marina 24h"
 >
+  <LocalSchema location="Bahía de Cádiz" servicePage="Trabajos Subacuáticos" />
+
   <!-- FAQ Schema for Common Underwater Welding Questions -->
   <script type="application/ld+json">
     {
@@ -103,9 +110,7 @@ import Footer from '../components/Footer.astro';
             en el puerto de Cádiz y Estrecho de Gibraltar.
           </p>
           <div class="flex flex-col md:flex-row gap-4 justify-center">
-            <a href="/contacto" class="bg-red-600 hover:bg-red-700 px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
-              Emergencia 24h: +34 XXX XXX XXX
-            </a>
+            <CallToAction variant="emergency" size="xl" text="LLAMAR AHORA" subtext="Emergencia 24h" />
             <a href="/servicios" class="bg-blue-600 hover:bg-blue-700 px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
               Ver Servicios
             </a>
@@ -355,12 +360,65 @@ import Footer from '../components/Footer.astro';
           o solicite nuestro servicio de emergencia 24 horas
         </p>
         <div class="flex flex-col md:flex-row gap-4 justify-center">
-          <a href="tel:+34XXXXXXX" class="bg-red-600 hover:bg-red-700 px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
-            Llamar Ahora: +34 XXX XXX XXX
-          </a>
+          <CallToAction variant="emergency" size="xl" text="LLAMAR AHORA" subtext="Especialistas 24h" />
           <a href="/contacto" class="bg-transparent border-2 border-white hover:bg-white hover:text-blue-900 px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
             Solicitar Presupuesto
           </a>
+        </div>
+      </div>
+    </section>
+    <!-- Local Content Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <LocalContent showZones={true} showEmergency={true} showDivingSpots={true} />
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Contacto Directo - Bahía de Cádiz
+            </h2>
+            <p class="text-xl text-gray-600">
+              Base permanente en puerto de Cádiz para respuesta inmediata
+            </p>
+          </div>
+          <div class="grid lg:grid-cols-2 gap-8">
+            <BusinessContact />
+            <div class="bg-blue-50 p-6 rounded-lg">
+              <h3 class="text-xl font-bold mb-4 text-blue-900">Cobertura Geográfica</h3>
+              <div class="space-y-3 text-sm text-blue-800">
+                <p><strong>🏛️ Puerto de Cádiz:</strong> Base principal - Respuesta inmediata</p>
+                <p><strong>🌊 Bahía de Cádiz:</strong> 15 millas náuticas - 30 min respuesta</p>
+                <p><strong>⚓ Puerto de Santa María:</strong> 8 millas - 25 min respuesta</p>
+                <p><strong>🚢 Estrecho de Gibraltar:</strong> 25 millas - 60 min respuesta</p>
+                <p><strong>🔧 Rota Base Naval:</strong> 12 millas - 35 min respuesta</p>
+                <p><strong>📡 Canal VHF 16/12:</strong> Comunicación directa con base</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Strategic Internal Links Hub -->
+    <section class="py-16 bg-white border-t border-gray-200">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">
+              🔗 Descubre Nuestros Servicios y Ubicaciones
+            </h2>
+            <p class="text-xl text-gray-600">
+              Navegación inteligente para encontrar exactamente lo que necesitas
+            </p>
+          </div>
+          <RelatedLinks currentPage="index" type="all" limit={12} />
         </div>
       </div>
     </section>

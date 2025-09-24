@@ -1,0 +1,155 @@
+---
+export interface Props {
+  variant?: 'inspection' | 'regulations' | 'comparison' | 'emergency';
+  size?: 'small' | 'medium' | 'large';
+  showCTA?: boolean;
+}
+
+const { variant = 'inspection', size = 'medium', showCTA = true } = Astro.props;
+---
+
+{variant === 'inspection' && (
+  <div class={`bg-blue-50 rounded-lg border-l-4 border-blue-600 ${size === 'small' ? 'p-4' : size === 'medium' ? 'p-6' : 'p-8'}`}>
+    <h3 class="text-lg font-bold text-blue-900 mb-3">🔍 ¿Necesita Inspección de Cascos Certificada?</h3>
+    <p class="text-blue-800 text-sm mb-4">
+      Inspección submarina profesional sin varada. Ahorro del 80% vs varada tradicional con 100% validez legal.
+      Certificado aceptado por todas las sociedades de clasificación.
+    </p>
+    <ul class="text-blue-700 text-xs space-y-1 mb-4">
+      <li>✅ Inspección certificada en 2-4 horas</li>
+      <li>✅ Informe técnico en 24-48h</li>
+      <li>✅ Válido Lloyd's Register, DNV GL, ABS, Bureau Veritas</li>
+      <li>✅ Disponible toda la bahía de Cádiz</li>
+    </ul>
+    {showCTA && (
+      <div class="flex gap-2">
+        <a href="/inspeccion-cascos" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded text-sm font-semibold transition-colors">
+          Ver Precios
+        </a>
+        <a href="tel:+34614406061" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded text-sm font-semibold transition-colors">
+          Llamar Ahora
+        </a>
+      </div>
+    )}
+  </div>
+)}
+
+{variant === 'regulations' && (
+  <div class={`bg-red-50 rounded-lg border-l-4 border-red-600 ${size === 'small' ? 'p-4' : size === 'medium' ? 'p-6' : 'p-8'}`}>
+    <h3 class="text-lg font-bold text-red-900 mb-3">⚠️ Normativas 2024: Evite Multas de hasta €120.202</h3>
+    <p class="text-red-800 text-sm mb-4">
+      Las nuevas normativas SOLAS 2024 y RD español endurecen las sanciones por navegar sin certificado válido.
+      Verifique el cumplimiento de su embarcación.
+    </p>
+    <ul class="text-red-700 text-xs space-y-1 mb-4">
+      <li>🚨 SOLAS: Inspección anual obligatoria buques comerciales</li>
+      <li>🚨 MARPOL: Certificación medioambiental</li>
+      <li>🚨 RD 1185/2006: Embarcaciones recreo > 12m</li>
+      <li>🚨 Multas: €3.005 - €120.202 según gravedad</li>
+    </ul>
+    {showCTA && (
+      <div class="flex gap-2">
+        <a href="/blog/normativas-inspeccion-cascos-buques-2024" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-semibold transition-colors">
+          Ver Normativas
+        </a>
+        <a href="/contacto" class="bg-orange-600 hover:bg-orange-700 text-white px-4 py-2 rounded text-sm font-semibold transition-colors">
+          Verificar Cumplimiento
+        </a>
+      </div>
+    )}
+  </div>
+)}
+
+{variant === 'comparison' && (
+  <div class={`bg-green-50 rounded-lg border-l-4 border-green-600 ${size === 'small' ? 'p-4' : size === 'medium' ? 'p-6' : 'p-8'}`}>
+    <h3 class="text-lg font-bold text-green-900 mb-3">💰 Inspección Submarina: Ahorro del 75-93% vs Varada</h3>
+    <p class="text-green-800 text-sm mb-4">
+      Compare costes reales: inspección submarina €400-800 vs varada tradicional €2.650-9.200.
+      Mismo valor legal, 90% menos tiempo fuera de servicio.
+    </p>
+    <div class="grid grid-cols-2 gap-4 text-xs mb-4">
+      <div class="bg-white p-3 rounded">
+        <h4 class="font-bold text-green-800">🤿 Inspección Submarina</h4>
+        <ul class="text-green-700 space-y-1">
+          <li>• Coste: €400-800</li>
+          <li>• Tiempo: 2-4 horas</li>
+          <li>• Pérdida ingresos: €0</li>
+        </ul>
+      </div>
+      <div class="bg-white p-3 rounded">
+        <h4 class="font-bold text-red-800">🏗️ Varada Tradicional</h4>
+        <ul class="text-red-700 space-y-1">
+          <li>• Coste: €2.650-9.200</li>
+          <li>• Tiempo: 2-5 días</li>
+          <li>• Pérdida ingresos: €1.000-10.000</li>
+        </ul>
+      </div>
+    </div>
+    {showCTA && (
+      <div class="flex gap-2">
+        <a href="/blog/diferencias-inspeccion-submarina-vs-varada" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded text-sm font-semibold transition-colors">
+          Ver Comparativa
+        </a>
+        <a href="/contacto" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded text-sm font-semibold transition-colors">
+          Calcular Ahorro
+        </a>
+      </div>
+    )}
+  </div>
+)}
+
+{variant === 'emergency' && (
+  <div class={`bg-yellow-50 rounded-lg border-l-4 border-yellow-600 ${size === 'small' ? 'p-4' : size === 'medium' ? 'p-6' : 'p-8'}`}>
+    <h3 class="text-lg font-bold text-yellow-900 mb-3">🚨 Inspección de Emergencia 24/7</h3>
+    <p class="text-yellow-800 text-sm mb-4">
+      ¿Su certificado ha vencido o necesita inspección post-accidente? Servicio de emergencia disponible
+      24/7 en toda la bahía de Cádiz. Respuesta en menos de 2 horas.
+    </p>
+    <ul class="text-yellow-700 text-xs space-y-1 mb-4">
+      <li>🚨 Disponible 24 horas, 365 días al año</li>
+      <li>🚨 Respuesta en menos de 2 horas</li>
+      <li>🚨 Inspección post-accidente inmediata</li>
+      <li>🚨 Certificado temporal para continuar navegando</li>
+    </ul>
+    {showCTA && (
+      <div class="flex gap-2">
+        <a href="tel:+34614406061" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-semibold transition-colors">
+          🚨 Llamar Emergencia
+        </a>
+        <a href="/emergencias" class="bg-orange-600 hover:bg-orange-700 text-white px-4 py-2 rounded text-sm font-semibold transition-colors">
+          Ver Servicios 24h
+        </a>
+      </div>
+    )}
+  </div>
+)}
+
+<style>
+  /* Ensure proper spacing and responsive design */
+  div {
+    transition: all 0.3s ease;
+  }
+
+  div:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  ul li {
+    position: relative;
+  }
+
+  a {
+    transition: all 0.2s ease;
+  }
+
+  @media (max-width: 640px) {
+    .flex {
+      flex-direction: column;
+    }
+
+    .grid-cols-2 {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,730 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import LocalSchema from '../components/LocalSchema.astro';
+import LocalContent from '../components/LocalContent.astro';
+import BusinessContact from '../components/BusinessContact.astro';
+import CallToAction from '../components/CallToAction.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
+---
+
+<Layout
+  title="Trabajos Subacuáticos Puerto de Algeciras | Servicios Especializados para Navieras"
+  description="Servicios profesionales de soldadura subacuática, inspección de cascos y reparación naval en Puerto de Algeciras. Atendemos Terminal Europa, TTI y todas las navieras del mayor puerto de España."
+  canonical="https://trabajossubacuaticoscadiz.vercel.app/puerto-algeciras"
+>
+  <LocalSchema location="Puerto de Algeciras" servicePage="Soldadura Subacuática" />
+
+  <Header />
+
+<!-- Breadcrumb Navigation -->
+<nav class="bg-gray-50 border-b" aria-label="Breadcrumb">
+  <div class="container mx-auto px-4 py-3">
+    <ol class="flex items-center space-x-2 text-sm">
+      <li><a href="/" class="text-blue-600 hover:text-blue-800">Inicio</a></li>
+      <li><span class="text-gray-400">/</span></li>
+      <li><a href="/servicios" class="text-blue-600 hover:text-blue-800">Ubicaciones</a></li>
+      <li><span class="text-gray-400">/</span></li>
+      <li class="text-gray-600 font-medium">Puerto de Algeciras</li>
+    </ol>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="bg-gradient-to-r from-blue-900 via-blue-800 to-blue-700 text-white py-20">
+  <div class="container mx-auto px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">
+        Trabajos Subacuáticos Puerto de Algeciras
+      </h1>
+      <p class="text-xl md:text-2xl mb-8 text-blue-100">
+        Servicios especializados para el mayor puerto de España y el Mediterráneo
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#contacto-algeciras" class="bg-red-600 hover:bg-red-700 px-8 py-3 rounded-lg font-semibold transition-colors">
+          Contacto Directo TTI/Terminal Europa
+        </a>
+        <a href="#servicios-navieras" class="bg-white text-blue-900 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-colors">
+          Servicios para Navieras
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Datos del Puerto -->
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-12">Puerto de Algeciras: Hub Marítimo Internacional</h2>
+
+      <div class="grid md:grid-cols-3 gap-8 mb-12">
+        <div class="text-center p-6 bg-gray-50 rounded-lg">
+          <div class="text-3xl font-bold text-blue-600 mb-2">108.1M TEUs</div>
+          <p class="text-gray-600">Contenedores anuales - 4º puerto mundial</p>
+        </div>
+        <div class="text-center p-6 bg-gray-50 rounded-lg">
+          <div class="text-3xl font-bold text-blue-600 mb-2">16,000</div>
+          <p class="text-gray-600">Buques al año - 44 buques/día</p>
+        </div>
+        <div class="text-center p-6 bg-gray-50 rounded-lg">
+          <div class="text-3xl font-bold text-blue-600 mb-2">450 Ha</div>
+          <p class="text-gray-600">Superficie total del puerto</p>
+        </div>
+      </div>
+
+      <div class="bg-blue-50 p-8 rounded-lg">
+        <h3 class="text-2xl font-bold mb-6">Nuestra Presencia en Algeciras</h3>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h4 class="font-semibold mb-4">Experiencia Local:</h4>
+            <ul class="space-y-2 text-gray-700">
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span><strong>12 años</strong> trabajando en terminales de Algeciras</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span><strong>850+</strong> intervenciones realizadas en el puerto</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span><strong>Acreditación</strong> de seguridad portuaria ISPS</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span><strong>Respuesta 24h</strong> para emergencias en todas las terminales</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Terminales Atendidas:</h4>
+            <ul class="space-y-2 text-gray-700">
+              <li>• <strong>Terminal Europa (TTI)</strong> - APM Terminals</li>
+              <li>• <strong>Terminal de Contenedores (TTIA)</strong></li>
+              <li>• <strong>Isla Verde Exterior</strong> - Terminal multipropósito</li>
+              <li>• <strong>Campamento</strong> - Terminal ro-ro</li>
+              <li>• <strong>Puerto de Algeciras (APA)</strong> - Gestión portuaria</li>
+              <li>• <strong>Zona de fondeo</strong> - Bahía de Algeciras</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Servicios Específicos -->
+<section id="servicios-navieras" class="py-16 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-12">Servicios Especializados para Navieras de Algeciras</h2>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Inspección Express de Cascos</h3>
+          <p class="text-gray-600 mb-4">Inspecciones rápidas para buques con escalas cortas. Certificado en 4-8 horas.</p>
+          <div class="text-sm text-gray-500">
+            <strong>Tiempo típico:</strong> 4-8 horas<br>
+            <strong>Precio desde:</strong> €280-450
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Reparaciones de Emergencia</h3>
+          <p class="text-gray-600 mb-4">Soldadura submarina urgente, parches temporales y reparaciones críticas.</p>
+          <div class="text-sm text-gray-500">
+            <strong>Disponibilidad:</strong> 24/7<br>
+            <strong>Respuesta:</strong> 2-4 horas
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Limpieza de Cascos Industriales</h3>
+          <p class="text-gray-600 mb-4">Eliminación de fouling marino para optimizar eficiencia de combustible.</p>
+          <div class="text-sm text-gray-500">
+            <strong>Ahorro combustible:</strong> 8-15%<br>
+            <strong>Duración:</strong> 6-12 horas
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.293l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clip-rule="evenodd"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Mantenimiento de Hélices</h3>
+          <p class="text-gray-600 mb-4">Reparación, pulido y balanceado de hélices sin necesidad de dique seco.</p>
+          <div class="text-sm text-gray-500">
+            <strong>Ahorro tiempo:</strong> 70% vs dique<br>
+            <strong>Disponibilidad:</strong> En puerto
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Instalación de Anodos</h3>
+          <p class="text-gray-600 mb-4">Protección catódica para cascos, minimizando corrosión en ambiente marino.</p>
+          <div class="text-sm text-gray-500">
+            <strong>Vida útil:</strong> 24-36 meses<br>
+            <strong>Instalación:</strong> 2-6 horas
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
+              <path fill-rule="evenodd" d="M4 5a2 2 0 012-2v1a2 2 0 002 2h4a2 2 0 002-2V3a2 2 0 012 2v6.5A2.5 2.5 0 0115.5 14H5a2 2 0 01-2-2V5zm8 2.5a.5.5 0 01.5-.5h2a.5.5 0 010 1h-2a.5.5 0 01-.5-.5zm0 2a.5.5 0 01.5-.5h2a.5.5 0 010 1h-2a.5.5 0 01-.5-.5zm0 2a.5.5 0 01.5-.5h2a.5.5 0 010 1h-2a.5.5 0 01-.5-.5zM6 8a.5.5 0 01.5-.5h1a.5.5 0 010 1h-1A.5.5 0 016 8zm0 2a.5.5 0 01.5-.5h1a.5.5 0 010 1h-1A.5.5 0 016 10zm0 2a.5.5 0 01.5-.5h1a.5.5 0 010 1h-1A.5.5 0 016 12z" clip-rule="evenodd"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Contratos de Mantenimiento</h3>
+          <p class="text-gray-600 mb-4">Programas anuales para navieras con múltiples escalas en Algeciras.</p>
+          <div class="text-sm text-gray-500">
+            <strong>Descuento:</strong> 15-25%<br>
+            <strong>Prioridad:</strong> Servicio preferente
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Navieras Principales -->
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-12">Principales Navieras que Operan en Algeciras</h2>
+
+      <div class="grid md:grid-cols-2 gap-12 mb-12">
+        <div>
+          <h3 class="text-2xl font-bold mb-6">Líneas Regulares de Contenedores</h3>
+          <div class="space-y-4">
+            <div class="border-l-4 border-blue-600 pl-4">
+              <h4 class="font-semibold">Maersk Line</h4>
+              <p class="text-gray-600 text-sm">Líder mundial - 3-4 escalas semanales</p>
+              <p class="text-xs text-gray-500">Ruta: Asia-Europa vía Suez</p>
+            </div>
+            <div class="border-l-4 border-blue-600 pl-4">
+              <h4 class="font-semibold">MSC (Mediterranean Shipping Company)</h4>
+              <p class="text-gray-600 text-sm">2ª naviera mundial - 5-6 escalas semanales</p>
+              <p class="text-xs text-gray-500">Hub principal para el Mediterráneo</p>
+            </div>
+            <div class="border-l-4 border-blue-600 pl-4">
+              <h4 class="font-semibold">CMA CGM</h4>
+              <p class="text-gray-600 text-sm">Naviera francesa - 2-3 escalas semanales</p>
+              <p class="text-xs text-gray-500">Conexiones África-Europa</p>
+            </div>
+            <div class="border-l-4 border-blue-600 pl-4">
+              <h4 class="font-semibold">COSCO Shipping</h4>
+              <p class="text-gray-600 text-sm">Naviera china - 4-5 escalas semanales</p>
+              <p class="text-xs text-gray-500">Ruta directa Asia-Europa</p>
+            </div>
+            <div class="border-l-4 border-blue-600 pl-4">
+              <h4 class="font-semibold">Hapag-Lloyd</h4>
+              <p class="text-gray-600 text-sm">Naviera alemana - 2-3 escalas semanales</p>
+              <p class="text-xs text-gray-500">Servicio premium Asia-Europa</p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-2xl font-bold mb-6">Otras Líneas Marítimas</h3>
+          <div class="space-y-4">
+            <div class="border-l-4 border-green-600 pl-4">
+              <h4 class="font-semibold">Acciona Trasmediterránea</h4>
+              <p class="text-gray-600 text-sm">Ferry Algeciras-Tánger/Ceuta</p>
+              <p class="text-xs text-gray-500">Múltiples escalas diarias</p>
+            </div>
+            <div class="border-l-4 border-green-600 pl-4">
+              <h4 class="font-semibold">FRS (Förde Reederei Seetouristik)</h4>
+              <p class="text-gray-600 text-sm">Fast ferry Algeciras-Tánger</p>
+              <p class="text-xs text-gray-500">Servicio rápido 1 hora</p>
+            </div>
+            <div class="border-l-4 border-green-600 pl-4">
+              <h4 class="font-semibold">Naviera Armas</h4>
+              <p class="text-gray-600 text-sm">Conexión con Canarias y África</p>
+              <p class="text-xs text-gray-500">Servicios regulares semanales</p>
+            </div>
+            <div class="border-l-4 border-green-600 pl-4">
+              <h4 class="font-semibold">Inter Shipping</h4>
+              <p class="text-gray-600 text-sm">Ferry Algeciras-Tánger Med</p>
+              <p class="text-xs text-gray-500">Servicio de carga y pasajeros</p>
+            </div>
+            <div class="border-l-4 border-green-600 pl-4">
+              <h4 class="font-semibold">Baleària</h4>
+              <p class="text-gray-600 text-sm">Conexiones Mediterráneo occidental</p>
+              <p class="text-xs text-gray-500">Servicios estacionales intensivos</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-blue-50 p-8 rounded-lg">
+        <h3 class="text-2xl font-bold mb-6">Ventajas para Navieras en Algeciras</h3>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div>
+            <h4 class="font-semibold mb-3 flex items-center">
+              <svg class="w-5 h-5 text-blue-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              Ubicación Estratégica
+            </h4>
+            <ul class="text-sm text-gray-600 space-y-1">
+              <li>• Punto de encuentro África-Europa</li>
+              <li>• Acceso directo Mediterráneo-Atlántico</li>
+              <li>• 14 km del continente africano</li>
+              <li>• Zona de servicios del Estrecho</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-3 flex items-center">
+              <svg class="w-5 h-5 text-blue-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              Eficiencia Operativa
+            </h4>
+            <ul class="text-sm text-gray-600 space-y-1">
+              <li>• Operaciones 24/7 todo el año</li>
+              <li>• Tiempo de escala optimizado</li>
+              <li>• Servicios integrados en puerto</li>
+              <li>• Respuesta inmediata emergencias</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-3 flex items-center">
+              <svg class="w-5 h-5 text-blue-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M3 5a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2h-2.22l.123.489.804.804A1 1 0 0113 18H7a1 1 0 01-.707-1.707l.804-.804L7.22 15H5a2 2 0 01-2-2V5zm5.771 7H5V5h10v7H8.771z" clip-rule="evenodd"/>
+              </svg>
+              Tecnología Avanzada
+            </h4>
+            <ul class="text-sm text-gray-600 space-y-1">
+              <li>• Equipos submarinos especializados</li>
+              <li>• Documentación digital inmediata</li>
+              <li>• Certificaciones internacionales</li>
+              <li>• Comunicación multiidioma</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Condiciones Marítimas -->
+<section class="py-16 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-12">Condiciones Marítimas de la Bahía de Algeciras</h2>
+
+      <div class="grid md:grid-cols-2 gap-12 mb-12">
+        <div>
+          <h3 class="text-2xl font-bold mb-6">Características del Entorno Marino</h3>
+          <div class="space-y-6">
+            <div>
+              <h4 class="font-semibold mb-2">Profundidad y Batimetría:</h4>
+              <ul class="text-gray-600 space-y-1">
+                <li>• <strong>Calado máximo:</strong> 18-22 metros en terminales principales</li>
+                <li>• <strong>Zona de fondeo:</strong> 30-50 metros de profundidad</li>
+                <li>• <strong>Canal de acceso:</strong> Dragado a -16 metros bajo BM</li>
+                <li>• <strong>Dársenas interiores:</strong> 12-16 metros según terminal</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="font-semibold mb-2">Corrientes y Mareas:</h4>
+              <ul class="text-gray-600 space-y-1">
+                <li>• <strong>Rango mareal:</strong> 0.8-1.2 metros (mareas semidiurnas)</li>
+                <li>• <strong>Corrientes dominantes:</strong> E-W 0.5-1.5 nudos</li>
+                <li>• <strong>Corrientes de densidad:</strong> Intercambio Atlántico-Mediterráneo</li>
+                <li>• <strong>Períodos óptimos:</strong> Mareas muertas para trabajos submarinos</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="font-semibold mb-2">Condiciones Atmosféricas:</h4>
+              <ul class="text-gray-600 space-y-1">
+                <li>• <strong>Viento dominante:</strong> Poniente (W) y Levante (E)</li>
+                <li>• <strong>Períodos de calma:</strong> 40% del año</li>
+                <li>• <strong>Visibilidad submarina:</strong> 3-8 metros promedio</li>
+                <li>• <strong>Temperatura agua:</strong> 16°C-24°C año completo</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-2xl font-bold mb-6">Planificación de Trabajos Submarinos</h3>
+
+          <div class="bg-white p-6 rounded-lg shadow-lg mb-6">
+            <h4 class="font-semibold mb-4">Condiciones Óptimas de Trabajo:</h4>
+            <div class="space-y-3">
+              <div class="flex justify-between items-center p-3 bg-green-50 rounded">
+                <span class="font-medium">Viento</span>
+                <span class="text-green-700 font-semibold">menor 15 nudos</span>
+              </div>
+              <div class="flex justify-between items-center p-3 bg-green-50 rounded">
+                <span class="font-medium">Oleaje</span>
+                <span class="text-green-700 font-semibold">menor 1 metro</span>
+              </div>
+              <div class="flex justify-between items-center p-3 bg-green-50 rounded">
+                <span class="font-medium">Corriente</span>
+                <span class="text-green-700 font-semibold">menor 1 nudo</span>
+              </div>
+              <div class="flex justify-between items-center p-3 bg-green-50 rounded">
+                <span class="font-medium">Visibilidad</span>
+                <span class="text-green-700 font-semibold">mayor 2 metros</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h4 class="font-semibold mb-4">Ventana Operativa Típica:</h4>
+            <div class="space-y-3 text-sm">
+              <div>
+                <strong>Primavera-Otoño (Óptimo):</strong>
+                <p class="text-gray-600">75% días operativos. Condiciones estables, visibilidad máxima.</p>
+              </div>
+              <div>
+                <strong>Verano (Bueno):</strong>
+                <p class="text-gray-600">65% días operativos. Levante ocasional, aguas más cálidas.</p>
+              </div>
+              <div>
+                <strong>Invierno (Limitado):</strong>
+                <p class="text-gray-600">45% días operativos. Temporales de poniente, planificación crítica.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Precios Específicos -->
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-12">Tarifas Especiales para Puerto de Algeciras</h2>
+
+      <div class="grid md:grid-cols-3 gap-8 mb-12">
+        <div class="bg-gray-50 p-6 rounded-lg border">
+          <h3 class="text-xl font-bold mb-4 text-center">Servicios Express</h3>
+          <div class="text-center mb-4">
+            <div class="text-2xl font-bold text-blue-600">€180-350</div>
+            <div class="text-sm text-gray-500">Escalas cortas 4-8h</div>
+          </div>
+          <ul class="space-y-2 text-sm">
+            <li class="flex items-center">
+              <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Inspección visual completa
+            </li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Informe fotográfico digital
+            </li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Reparaciones menores incluidas
+            </li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Sin costes adicionales puerto
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-blue-50 p-6 rounded-lg border-2 border-blue-300">
+          <div class="text-center mb-2">
+            <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-xs">MÁS POPULAR</span>
+          </div>
+          <h3 class="text-xl font-bold mb-4 text-center">Servicios Estándar</h3>
+          <div class="text-center mb-4">
+            <div class="text-2xl font-bold text-blue-600">€450-850</div>
+            <div class="text-sm text-gray-500">Servicios completos</div>
+          </div>
+          <ul class="space-y-2 text-sm">
+            <li class="flex items-center">
+              <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Inspección técnica detallada
+            </li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Soldadura submarina media
+            </li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Limpieza de cascos parcial
+            </li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Certificación clase naviera
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-gray-50 p-6 rounded-lg border">
+          <h3 class="text-xl font-bold mb-4 text-center">Contratos Anuales</h3>
+          <div class="text-center mb-4">
+            <div class="text-2xl font-bold text-blue-600">-20%</div>
+            <div class="text-sm text-gray-500">Descuento garantizado</div>
+          </div>
+          <ul class="space-y-2 text-sm">
+            <li class="flex items-center">
+              <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Prioridad de servicio
+            </li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Planificación anticipada
+            </li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Soporte técnico 24/7
+            </li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Facturación consolidada
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bg-yellow-50 border border-yellow-200 p-6 rounded-lg">
+        <h3 class="font-semibold mb-3 flex items-center text-yellow-800">
+          <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+          </svg>
+          Importante para Agentes y Navieras
+        </h3>
+        <ul class="space-y-2 text-sm text-yellow-800">
+          <li>• <strong>Tarifa especial nocturna:</strong> +30% entre 22:00-06:00</li>
+          <li>• <strong>Servicios domingos/festivos:</strong> +25% sobre tarifa base</li>
+          <li>• <strong>Condiciones meteorológicas adversas:</strong> Evaluación caso por caso</li>
+          <li>• <strong>Trabajos de emergencia:</strong> Respuesta garantizada 2-4 horas</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contacto Algeciras -->
+<section id="contacto-algeciras" class="py-16 bg-blue-900 text-white">
+  <div class="container mx-auto px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-8">Contacto Directo Puerto de Algeciras</h2>
+      <p class="text-xl mb-8 text-blue-100">
+        Oficina operativa 24/7 en terminal para respuesta inmediata
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-8 mb-8">
+        <div class="bg-blue-800 p-6 rounded-lg">
+          <h3 class="font-semibold mb-4">Contacto Directo Terminal</h3>
+          <div class="space-y-3 text-left">
+            <div class="flex items-center">
+              <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+              </svg>
+              <div>
+                <div class="font-semibold text-yellow-400">+34 614 406 061</div>
+                <div class="text-sm text-blue-200">Línea directa TTI/Terminal Europa</div>
+              </div>
+            </div>
+
+            <div class="flex items-center">
+              <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+              </svg>
+              <div>
+                <div class="font-semibold">algeciras@trabajossubacuaticoscadiz.es</div>
+                <div class="text-sm text-blue-200">Email específico puerto Algeciras</div>
+              </div>
+            </div>
+
+            <div class="flex items-center">
+              <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+              </svg>
+              <div>
+                <div class="font-semibold">Terminal Europa</div>
+                <div class="text-sm text-blue-200">Muelle Isla Verde Exterior, Algeciras</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-blue-800 p-6 rounded-lg">
+          <h3 class="font-semibold mb-4">Coordinación con Agentes</h3>
+          <div class="space-y-3 text-left">
+            <div class="flex items-center">
+              <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
+              </svg>
+              <div>
+                <div class="font-semibold">Agentes Marítimos</div>
+                <div class="text-sm text-blue-200">Coordinación directa con consignatarios</div>
+              </div>
+            </div>
+
+            <div class="flex items-center">
+              <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
+                <path fill-rule="evenodd" d="M4 5a2 2 0 012-2v1a2 2 0 002 2h4a2 2 0 002-2V3a2 2 0 012 2v6.5A2.5 2.5 0 0115.5 14H5a2 2 0 01-2-2V5zm8 2.5a.5.5 0 01.5-.5h2a.5.5 0 010 1h-2a.5.5 0 01-.5-.5zm0 2a.5.5 0 01.5-.5h2a.5.5 0 010 1h-2a.5.5 0 01-.5-.5zm0 2a.5.5 0 01.5-.5h2a.5.5 0 010 1h-2a.5.5 0 01-.5-.5zM6 8a.5.5 0 01.5-.5h1a.5.5 0 010 1h-1A.5.5 0 016 8zm0 2a.5.5 0 01.5-.5h1a.5.5 0 010 1h-1A.5.5 0 016 10zm0 2a.5.5 0 01.5-.5h1a.5.5 0 010 1h-1A.5.5 0 016 12z" clip-rule="evenodd"/>
+              </svg>
+              <div>
+                <div class="font-semibold">Documentación</div>
+                <div class="text-sm text-blue-200">Certificados internacionales inmediatos</div>
+              </div>
+            </div>
+
+            <div class="flex items-center">
+              <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.293l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clip-rule="evenodd"/>
+              </svg>
+              <div>
+                <div class="font-semibold">Facturación</div>
+                <div class="text-sm text-blue-200">Directa o través del agente consignatario</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white text-gray-900 p-8 rounded-lg">
+        <h3 class="text-2xl font-bold mb-6">Solicitud de Servicio Express Algeciras</h3>
+        <form class="grid md:grid-cols-2 gap-4">
+          <input type="text" placeholder="Nombre del buque" class="p-3 border rounded-lg">
+          <input type="text" placeholder="IMO/Matrícula" class="p-3 border rounded-lg">
+          <select class="p-3 border rounded-lg">
+            <option>Terminal de atraque</option>
+            <option>Terminal Europa (TTI)</option>
+            <option>Terminal Contenedores (TTIA)</option>
+            <option>Isla Verde Exterior</option>
+            <option>Campamento (Ro-Ro)</option>
+            <option>Zona de fondeo</option>
+            <option>Otro - especificar</option>
+          </select>
+          <input type="datetime-local" placeholder="Hora estimada llegada" class="p-3 border rounded-lg">
+          <input type="text" placeholder="Agente marítimo" class="p-3 border rounded-lg">
+          <input type="email" placeholder="Email contacto" class="p-3 border rounded-lg">
+          <textarea placeholder="Tipo de servicio requerido y urgencia" class="p-3 border rounded-lg md:col-span-2 h-24"></textarea>
+          <div class="md:col-span-2">
+            <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+              Enviar Solicitud Urgente
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Trabajos Subacuáticos Puerto de Algeciras",
+  "description": "Servicios especializados de soldadura subacuática, inspección de cascos y reparación naval en Puerto de Algeciras para navieras internacionales.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Terminal Europa, Muelle Isla Verde Exterior",
+    "addressLocality": "Algeciras",
+    "addressRegion": "Cádiz",
+    "postalCode": "11207",
+    "addressCountry": "ES"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 36.1408,
+    "longitude": -5.4500
+  },
+  "telephone": "+34-614-406-061",
+  "email": "algeciras@trabajossubacuaticoscadiz.es",
+  "url": "https://trabajossubacuaticoscadiz.vercel.app/puerto-algeciras",
+  "openingHours": "Mo-Su 00:00-24:00",
+  "serviceArea": {
+    "@type": "Place",
+    "name": "Puerto de Algeciras y Bahía"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Servicios Puerto Algeciras",
+    "itemListElement": [
+      {
+        "@type": "OfferCatalog",
+        "name": "Inspección Express de Cascos",
+        "itemListElement": {
+          "@type": "Offer",
+          "description": "Inspecciones rápidas para buques con escalas cortas",
+          "priceRange": "€280-450"
+        }
+      },
+      {
+        "@type": "OfferCatalog",
+        "name": "Reparaciones de Emergencia",
+        "itemListElement": {
+          "@type": "Offer",
+          "description": "Soldadura submarina urgente y reparaciones críticas",
+          "availability": "24/7"
+        }
+      }
+    ]
+  }
+}
+</script>
+
+</Layout>

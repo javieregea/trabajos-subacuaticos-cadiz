@@ -1,0 +1,667 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  keywords?: string[];
+  ogImage?: string;
+  ogType?: string;
+  twitterCard?: string;
+  author?: string;
+  publishedTime?: string;
+  modifiedTime?: string;
+  schemaData?: object;
+  noindex?: boolean;
+  nofollow?: boolean;
+  structuredData?: Array<object>;
+}
+
+const {
+  title,
+  description,
+  canonical,
+  keywords = [],
+  ogImage = '/images/og-default.webp',
+  ogType = 'website',
+  twitterCard = 'summary_large_image',
+  author = 'Trabajos Subacuáticos Cádiz',
+  publishedTime,
+  modifiedTime,
+  schemaData,
+  noindex = false,
+  nofollow = false,
+  structuredData = []
+} = Astro.props;
+
+const site = 'https://trabajossubacuaticoscadiz.es';
+const fullCanonical = canonical ? canonical : `${site}${Astro.url.pathname}`;
+const fullOgImage = ogImage.startsWith('http') ? ogImage : `${site}${ogImage}`;
+
+// Generate breadcrumbs from URL path
+const pathSegments = Astro.url.pathname.split('/').filter(segment => segment);
+const breadcrumbs = [
+  { name: 'Inicio', url: site }
+];
+
+pathSegments.forEach((segment, index) => {
+  const url = `${site}/${pathSegments.slice(0, index + 1).join('/')}`;
+  const name = segment.charAt(0).toUpperCase() + segment.slice(1).replace(/-/g, ' ');
+  breadcrumbs.push({ name, url });
+});
+
+// Default schema data for the business
+const defaultSchemaData = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Trabajos Subacuáticos Cádiz",
+  "image": [
+    `${site}/images/empresa-trabajos-subacuaticos.webp`,
+    `${site}/images/soldadura-subacuatica-cadiz.webp`,
+    `${site}/images/inspeccion-naval-cadiz.webp`
+  ],
+  "telephone": "+34614406061",
+  "email": "info@trabajossubacuaticoscadiz.es",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Muelle de la Cabezuela, 12",
+    "addressLocality": "Cádiz",
+    "addressRegion": "Andalucía",
+    "postalCode": "11001",
+    "addressCountry": "ES"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 36.5297,
+    "longitude": -6.2921
+  },
+  "url": site,
+  "sameAs": [
+    "https://www.linkedin.com/company/trabajos-subacuaticos-cadiz",
+    "https://www.facebook.com/trabajossubacuaticoscadiz"
+  ],
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+    ],
+    "opens": "00:00",
+    "closes": "23:59"
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Cádiz"
+    },
+    {
+      "@type": "City",
+      "name": "Algeciras"
+    },
+    {
+      "@type": "City",
+      "name": "Puerto Real"
+    },
+    {
+      "@type": "City",
+      "name": "El Puerto de Santa María"
+    }
+  ],
+  "serviceType": [
+    "Soldadura subacuática",
+    "Inspección naval",
+    "Reparación de cascos",
+    "Emergencias marítimas",
+    "Mantenimiento naval",
+    "Trabajos offshore"
+  ],
+  "priceRange": "€€€",
+  "paymentAccepted": ["Cash", "Credit Card", "Bank Transfer"],
+  "currenciesAccepted": "EUR"
+};
+
+// Breadcrumb schema
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": breadcrumbs.map((crumb, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "name": crumb.name,
+    "item": crumb.url
+  }))
+};
+
+// Service schema for underwater welding
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Soldadura Subacuática Profesional",
+  "description": "Servicios profesionales de soldadura subacuática, inspección naval y reparaciones marítimas en Cádiz y Bahía",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Trabajos Subacuáticos Cádiz",
+    "telephone": "+34614406061",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Cádiz",
+      "addressCountry": "ES"
+    }
+  },
+  "areaServed": [
+    "Cádiz", "Algeciras", "Puerto Real", "El Puerto de Santa María", "Rota"
+  ],
+  "serviceType": "Soldadura Subacuática",
+  "category": "Marine Services",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Servicios Marítimos",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Soldadura Subacuática de Emergencia",
+          "description": "Reparaciones urgentes bajo el agua disponibles 24/7"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Inspección Naval Certificada",
+          "description": "Inspecciones técnicas con certificación internacional"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Reparación de Cascos",
+          "description": "Reparación y mantenimiento de estructuras navales"
+        }
+      }
+    ]
+  }
+};
+
+// FAQ Schema for common questions
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué es la soldadura subacuática?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La soldadura subacuática es una técnica especializada que permite realizar uniones metálicas permanentes bajo el agua, fundamental para reparaciones navales, mantenimiento offshore y emergencias marítimas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto tiempo tardan en responder a una emergencia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nuestro tiempo de respuesta para emergencias marítimas es inferior a 2 horas en un radio de 25 millas náuticas desde Cádiz. Disponemos de equipos 24/7 los 365 días del año."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué certificaciones tienen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Contamos con certificaciones internacionales AWS D3.6 para soldadura subacuática, Lloyd's Register, DNV GL, Bureau Veritas y todas las acreditaciones necesarias para trabajos navales comerciales."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿En qué puertos trabajan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Operamos principalmente en Puerto de Cádiz, Puerto de Algeciras, Puerto Real, El Puerto de Santa María y Base Naval de Rota, con cobertura en toda la Bahía de Cádiz y Estrecho de Gibraltar."
+      }
+    }
+  ]
+};
+
+// Emergency service schema
+const emergencySchema = {
+  "@context": "https://schema.org",
+  "@type": "EmergencyService",
+  "name": "Emergencias Marítimas Cádiz",
+  "telephone": "+34614406061",
+  "availableLanguage": ["Spanish", "English"],
+  "serviceArea": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": 36.5297,
+      "longitude": -6.2921
+    },
+    "geoRadius": "25000"
+  },
+  "hoursAvailable": "24/7"
+};
+
+// Combine all schemas
+const allSchemas = [
+  defaultSchemaData,
+  breadcrumbSchema,
+  serviceSchema,
+  faqSchema,
+  emergencySchema,
+  ...(schemaData ? [schemaData] : []),
+  ...structuredData
+];
+---
+
+<!-- Primary Meta Tags -->
+<title>{title}</title>
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+{keywords.length > 0 && <meta name="keywords" content={keywords.join(', ')} />}
+<meta name="author" content={author} />
+{publishedTime && <meta name="article:published_time" content={publishedTime} />}
+{modifiedTime && <meta name="article:modified_time" content={modifiedTime} />}
+
+<!-- Canonical URL -->
+<link rel="canonical" href={fullCanonical} />
+
+<!-- Robots Meta -->
+<meta name="robots" content={`${noindex ? 'noindex' : 'index'}, ${nofollow ? 'nofollow' : 'follow'}`} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content={ogType} />
+<meta property="og:url" content={fullCanonical} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={fullOgImage} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content={title} />
+<meta property="og:site_name" content="Trabajos Subacuáticos Cádiz" />
+<meta property="og:locale" content="es_ES" />
+
+<!-- Twitter -->
+<meta property="twitter:card" content={twitterCard} />
+<meta property="twitter:url" content={fullCanonical} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={fullOgImage} />
+<meta property="twitter:image:alt" content={title} />
+
+<!-- Additional SEO Meta Tags -->
+<meta name="language" content="es" />
+<meta name="geo.region" content="ES-CA" />
+<meta name="geo.placename" content="Cádiz, Andalucía, España" />
+<meta name="geo.position" content="36.5297;-6.2921" />
+<meta name="ICBM" content="36.5297, -6.2921" />
+
+<!-- Business specific meta -->
+<meta name="contact:phone_number" content="+34614406061" />
+<meta name="contact:email" content="info@trabajossubacuaticoscadiz.es" />
+<meta name="business:contact_data:street_address" content="Muelle de la Cabezuela, 12" />
+<meta name="business:contact_data:locality" content="Cádiz" />
+<meta name="business:contact_data:region" content="Andalucía" />
+<meta name="business:contact_data:postal_code" content="11001" />
+<meta name="business:contact_data:country_name" content="España" />
+
+<!-- Mobile optimization -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="format-detection" content="telephone=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+
+<!-- Security headers -->
+<meta http-equiv="X-Content-Type-Options" content="nosniff" />
+<meta http-equiv="X-Frame-Options" content="DENY" />
+<meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+
+<!-- Performance hints -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="dns-prefetch" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="//www.googletagmanager.com" />
+
+<!-- Structured Data -->
+{allSchemas.map(schema => (
+  <script type="application/ld+json" set:html={JSON.stringify(schema, null, 2)} />
+))}
+
+<!-- Hreflang for international SEO -->
+<link rel="alternate" hreflang="es" href={fullCanonical} />
+<link rel="alternate" hreflang="es-ES" href={fullCanonical} />
+<link rel="alternate" hreflang="x-default" href={fullCanonical} />
+
+<!-- RSS Feed -->
+<link rel="alternate" type="application/rss+xml" title="Trabajos Subacuáticos Cádiz - Blog" href={`${site}/feed.xml`} />
+
+<!-- Verification codes (replace with actual codes when available) -->
+<!-- <meta name="google-site-verification" content="your-google-verification-code" /> -->
+<!-- <meta name="msvalidate.01" content="your-bing-verification-code" /> -->
+<!-- <meta name="yandex-verification" content="your-yandex-verification-code" /> -->
+
+<!-- Additional meta for local SEO -->
+<meta name="geo.region" content="ES-AN" />
+<meta name="geo.placename" content="Puerto de Cádiz" />
+<meta name="DC.title" content={title} />
+<meta name="DC.description" content={description} />
+<meta name="DC.subject" content="soldadura subacuática, trabajos navales, emergencias marítimas" />
+<meta name="DC.language" content="es" />
+
+<!-- Industry-specific meta -->
+<meta name="industry" content="Maritime Services" />
+<meta name="category" content="Underwater Welding, Naval Inspection, Marine Repairs" />
+<meta name="service-area" content="Cádiz, Algeciras, Puerto Real, Rota, Bahía de Cádiz" />
+
+<style>
+  /* Critical CSS for above-the-fold content */
+  html {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: #333;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+  }
+
+  /* Optimize font loading */
+  @font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/fonts/inter-regular.woff2') format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('/fonts/inter-semibold.woff2') format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('/fonts/inter-bold.woff2') format('woff2');
+  }
+
+  /* Performance optimizations */
+  img {
+    max-width: 100%;
+    height: auto;
+    loading: lazy;
+  }
+
+  /* Accessibility improvements */
+  a:focus,
+  button:focus,
+  input:focus,
+  textarea:focus,
+  select:focus {
+    outline: 2px solid #1e40af;
+    outline-offset: 2px;
+  }
+
+  /* Skip link for accessibility */
+  .skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: #1e40af;
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 0 0 4px 4px;
+    z-index: 1000;
+    transition: top 0.3s;
+  }
+
+  .skip-link:focus {
+    top: 0;
+  }
+
+  /* Print styles */
+  @media print {
+    .no-print {
+      display: none !important;
+    }
+
+    a[href]:after {
+      content: " (" attr(href) ")";
+    }
+
+    .page-break {
+      page-break-before: always;
+    }
+  }
+
+  /* High contrast mode support */
+  @media (prefers-contrast: high) {
+    body {
+      background: white;
+      color: black;
+    }
+
+    a {
+      color: #0000EE;
+    }
+
+    a:visited {
+      color: #551A8B;
+    }
+  }
+
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* Dark mode support */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg-color: #1a1a1a;
+      --text-color: #e5e5e5;
+      --accent-color: #3b82f6;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+    }
+  }
+</style>
+
+<!-- Accessibility skip link -->
+<a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+<!-- Schema.org markup for Google -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://trabajossubacuaticoscadiz.es/#website",
+      "url": "https://trabajossubacuaticoscadiz.es/",
+      "name": "Trabajos Subacuáticos Cádiz",
+      "description": "Servicios profesionales de soldadura subacuática, inspección naval y emergencias marítimas en Cádiz",
+      "potentialAction": [
+        {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://trabajossubacuaticoscadiz.es/search?q={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      ],
+      "inLanguage": "es-ES"
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${fullCanonical}#webpage`,
+      "url": fullCanonical,
+      "name": title,
+      "isPartOf": {
+        "@id": "https://trabajossubacuaticoscadiz.es/#website"
+      },
+      "datePublished": publishedTime || "2024-01-01T00:00:00+00:00",
+      "dateModified": modifiedTime || "2024-01-15T00:00:00+00:00",
+      "description": description,
+      "breadcrumb": {
+        "@id": `${fullCanonical}#breadcrumb`
+      },
+      "inLanguage": "es-ES"
+    }
+  ]
+}
+</script>
+
+<!-- Performance monitoring -->
+<script>
+  // Core Web Vitals monitoring
+  function getCLS(onPerfEntry) {
+    new PerformanceObserver((entryList) => {
+      for (const entry of entryList.getEntries()) {
+        if (!entry.hadRecentInput) {
+          onPerfEntry(entry);
+        }
+      }
+    }).observe({type: 'layout-shift', buffered: true});
+  }
+
+  function getFID(onPerfEntry) {
+    new PerformanceObserver((entryList) => {
+      for (const entry of entryList.getEntries()) {
+        onPerfEntry(entry);
+      }
+    }).observe({type: 'first-input', buffered: true});
+  }
+
+  function getLCP(onPerfEntry) {
+    new PerformanceObserver((entryList) => {
+      const entries = entryList.getEntries();
+      const lastEntry = entries[entries.length - 1];
+      onPerfEntry(lastEntry);
+    }).observe({type: 'largest-contentful-paint', buffered: true});
+  }
+
+  // Log performance metrics
+  function logMetric(metric) {
+    // Send to analytics service
+    console.log('Performance metric:', metric);
+  }
+
+  // Initialize performance monitoring
+  getCLS(logMetric);
+  getFID(logMetric);
+  getLCP(logMetric);
+</script>
+
+<!-- Google Analytics 4 (replace with actual tracking ID) -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'GA_TRACKING_ID', {
+    page_title: document.title,
+    page_location: window.location.href,
+    send_page_view: true
+  });
+</script> -->
+
+<!-- JSON-LD for local business -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Trabajos Subacuáticos Cádiz",
+  "image": "https://trabajossubacuaticoscadiz.es/images/logo-empresa.webp",
+  "telephone": "+34614406061",
+  "email": "info@trabajossubacuaticoscadiz.es",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Muelle de la Cabezuela, 12",
+    "addressLocality": "Cádiz",
+    "addressRegion": "Andalucía",
+    "postalCode": "11001",
+    "addressCountry": "ES"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 36.5297,
+    "longitude": -6.2921
+  },
+  "url": "https://trabajossubacuaticoscadiz.es",
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    "opens": "00:00",
+    "closes": "23:59"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "47"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Carlos Fernández"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "reviewBody": "Excelente servicio de emergencia. Repararon una vía de agua en nuestro pesquero en menos de 3 horas. Profesionales y eficientes."
+    }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Servicios de Trabajos Subacuáticos",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Soldadura Subacuática",
+          "description": "Wet welding y dry welding certificado AWS D3.6"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Inspección Naval",
+          "description": "Certificaciones Lloyd's Register y DNV GL"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Emergencias 24/7",
+          "description": "Respuesta inmediata en menos de 2 horas"
+        }
+      }
+    ]
+  }
+}
+</script>

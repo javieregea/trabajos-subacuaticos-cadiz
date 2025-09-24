@@ -2,6 +2,11 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import LocalSchema from '../components/LocalSchema.astro';
+import BusinessContact from '../components/BusinessContact.astro';
+import CallToAction from '../components/CallToAction.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
+import { businessInfo } from '../data/businessInfo.js';
 ---
 
 <Layout
@@ -9,6 +14,8 @@ import Footer from '../components/Footer.astro';
   description="Servicio de emergencia 24/7 para soldadura subacuática y reparaciones marinas urgentes en Cádiz. Respuesta inmediata < 2 horas. Buzos certificados disponibles."
   keywords="emergencia soldadura subacuática Cádiz, soldador subacuático urgente 24h, servicio emergencia marina, reparación urgente casco, buzos emergencia Cádiz"
 >
+  <LocalSchema location="Cádiz y Estrecho Gibraltar" servicePage="Emergencias Marítimas" />
+
   <Header />
 
   <main>
@@ -32,9 +39,7 @@ import Footer from '../components/Footer.astro';
             reparaciones de cascos y trabajos marítimos críticos en Cádiz y Estrecho de Gibraltar.
           </p>
           <div class="flex flex-col md:flex-row gap-4 justify-center">
-            <a href="tel:+34XXXXXXX" class="bg-white text-red-600 hover:bg-gray-100 px-8 py-4 rounded-lg font-bold text-xl transition-colors">
-              📞 LLAMAR AHORA: +34 XXX XXX XXX
-            </a>
+            <CallToAction variant="emergency" size="xl" text="📞 LLAMAR AHORA" subtext="Emergencia Marina 24h" className="bg-white text-red-600 hover:bg-gray-100" />
             <a href="#respuesta-inmediata" class="bg-transparent border-2 border-white hover:bg-white hover:text-red-600 px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
               Respuesta Inmediata
             </a>
@@ -372,8 +377,8 @@ import Footer from '../components/Footer.astro';
           Nuestro equipo está listo para actuar inmediatamente.
         </p>
         <div class="flex flex-col md:flex-row gap-4 justify-center">
-          <a href="tel:+34XXXXXXX" class="bg-white text-red-600 hover:bg-gray-100 px-8 py-4 rounded-lg font-bold text-xl transition-colors">
-            📞 EMERGENCIA: +34 XXX XXX XXX
+          <a href="tel:+34614406061" class="bg-white text-red-600 hover:bg-gray-100 px-8 py-4 rounded-lg font-bold text-xl transition-colors">
+            📞 EMERGENCIA: +34 614 406 061
           </a>
           <a href="mailto:emergencia@trabajossubacuaticos.com" class="bg-transparent border-2 border-white hover:bg-white hover:text-red-600 px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
             📧 emergencia@trabajossubacuaticos.com

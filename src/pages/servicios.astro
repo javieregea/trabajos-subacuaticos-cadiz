@@ -1,5 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import LocalSchema from '../components/LocalSchema.astro';
+import BusinessContact from '../components/BusinessContact.astro';
+import CallToAction from '../components/CallToAction.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 ---
@@ -9,6 +13,8 @@ import Footer from '../components/Footer.astro';
   description="Servicios profesionales de soldadura subacuática, buceo industrial, inspección de cascos, reparación naval y mantenimiento portuario en Cádiz. Especialistas certificados 24/7."
   keywords="servicios soldadura subacuática Cádiz, buceo industrial, inspección cascos buques, reparación embarcaciones, corte subacuático, mantenimiento portuario, soldadura hiperbárica"
 >
+  <LocalSchema location="Bahía de Cádiz" servicePage="Servicios Marítimos" />
+
   <!-- Breadcrumb Navigation Schema -->
   <script type="application/ld+json">
     {
@@ -101,6 +107,11 @@ import Footer from '../components/Footer.astro';
                 </ul>
               </div>
             </div>
+
+            <!-- CTA en sección soldadura -->
+            <div class="mt-6 text-center">
+              <CallToAction variant="primary" size="md" text="LLAMAR AHORA" subtext="Soldadura Profesional" />
+            </div>
           </div>
 
           <!-- Inspección de Cascos -->
@@ -146,6 +157,11 @@ import Footer from '../components/Footer.astro';
                   <li>• Recomendaciones reparación</li>
                 </ul>
               </div>
+            </div>
+
+            <!-- CTA en sección inspección -->
+            <div class="mt-6 text-center">
+              <CallToAction variant="secondary" size="md" text="LLAMAR AHORA" subtext="Inspección Profesional" />
             </div>
           </div>
 
@@ -371,9 +387,7 @@ import Footer from '../components/Footer.astro';
             </div>
           </div>
 
-          <a href="tel:+34XXXXXXX" class="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors inline-block">
-            Llamar Emergencia: +34 XXX XXX XXX
-          </a>
+          <CallToAction variant="emergency" size="lg" text="LLAMAR AHORA" subtext="Emergencia 24h" />
         </div>
       </div>
     </section>
@@ -392,7 +406,7 @@ import Footer from '../components/Footer.astro';
           <a href="/contacto" class="bg-white text-blue-900 hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
             Solicitar Presupuesto
           </a>
-          <a href="tel:+34XXXXXXX" class="bg-transparent border-2 border-white hover:bg-white hover:text-blue-900 px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
+          <a href="tel:+34614406061" class="bg-transparent border-2 border-white hover:bg-white hover:text-blue-900 px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
             Llamar Ahora
           </a>
         </div>

@@ -2,6 +2,10 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import LocalContent from '../components/LocalContent.astro';
+import BusinessContact from '../components/BusinessContact.astro';
+import CallToAction from '../components/CallToAction.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
 ---
 
 <Layout
@@ -120,7 +124,7 @@ import Footer from '../components/Footer.astro';
                 <a href="/contacto" class="bg-red-600 hover:bg-red-700 px-8 py-3 rounded-lg font-semibold transition-colors">
                   Servicio Local Inmediato
                 </a>
-                <a href="tel:+34XXXXXXX" class="bg-transparent border-2 border-white hover:bg-white hover:text-blue-900 px-8 py-3 rounded-lg font-semibold transition-colors">
+                <a href="tel:+34614406061" class="bg-transparent border-2 border-white hover:bg-white hover:text-blue-900 px-8 py-3 rounded-lg font-semibold transition-colors">
                   Emergencias Cádiz 24h
                 </a>
               </div>
@@ -471,6 +475,37 @@ import Footer from '../components/Footer.astro';
       </div>
     </section>
 
+    <!-- Local SEO Content Integration -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <LocalContent location="Puerto de Cádiz" showZones={true} showEmergency={true} showDivingSpots={true} />
+        </div>
+      </div>
+    </section>
+
+    <!-- Business Contact Section -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="grid lg:grid-cols-2 gap-8">
+            <BusinessContact />
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h3 class="text-xl font-bold mb-4 text-gray-800">Rutas de Acceso Marítimo</h3>
+              <div class="space-y-3 text-sm text-gray-600">
+                <p><strong>🚢 Canal Principal Bahía Cádiz:</strong> 15 millas náuticas - Profundidad 18m</p>
+                <p><strong>⚓ Zona de Fondeo Puerto:</strong> Coordinates 36°31'N 6°17'W - Arena limpia</p>
+                <p><strong>🧭 Entrada Puerto Cádiz:</strong> Rumbo 045° - Alineación torres del puerto</p>
+                <p><strong>📡 VHF Canal 12:</strong> Control Puerto Cádiz - Operativo 24h</p>
+                <p><strong>🌊 TSS Estrecho:</strong> Esquema separación tráfico - Vigilancia radar</p>
+                <p><strong>⛽ Suministros:</strong> Combustible, agua dulce, aceite hidráulico</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Industria Marítima Local -->
     <section class="py-16 bg-gray-100">
       <div class="container mx-auto px-4">
@@ -625,8 +660,8 @@ import Footer from '../components/Footer.astro';
               <h3 class="text-xl font-bold mb-2">🚨 Servicio de Emergencia Gaditano</h3>
               <p class="mb-4">Disponibles 24/7 para cualquier emergencia en aguas de Cádiz y provincia</p>
               <div class="flex flex-col md:flex-row gap-4 justify-center">
-                <a href="tel:+34XXXXXXX" class="bg-white text-red-600 hover:bg-gray-100 px-6 py-3 rounded-lg font-bold transition-colors">
-                  📞 Emergencias: +34 XXX XXX XXX
+                <a href="tel:+34614406061" class="bg-white text-red-600 hover:bg-gray-100 px-6 py-3 rounded-lg font-bold transition-colors">
+                  📞 Emergencias: +34 614 406 061
                 </a>
                 <a href="/contacto" class="bg-transparent border-2 border-white hover:bg-white hover:text-red-600 px-6 py-3 rounded-lg font-semibold transition-colors">
                   Presupuesto Local
@@ -634,6 +669,15 @@ import Footer from '../components/Footer.astro';
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Location-Specific Internal Links -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <RelatedLinks currentPage="cadiz" type="all" limit={10} />
         </div>
       </div>
     </section>

@@ -1,0 +1,123 @@
+---
+import { businessInfo } from '../data/businessInfo.js';
+
+export interface Props {
+  location?: string;
+  showZones?: boolean;
+  showEmergency?: boolean;
+  showDivingSpots?: boolean;
+}
+
+const { location, showZones = false, showEmergency = false, showDivingSpots = false } = Astro.props;
+
+const locationData = location ? businessInfo.maritimeZones[location] : null;
+---
+
+<div class="bg-white border border-gray-200 rounded-lg p-6">
+  {location && locationData && (
+    <div class="mb-6">
+      <h3 class="text-xl font-bold text-blue-900 mb-3">
+        Servicios Especializados en {location}
+      </h3>
+
+      <div class="grid md:grid-cols-2 gap-4">
+        <div>
+          <h4 class="font-semibold text-gray-800 mb-2">Zonas de Operación:</h4>
+          <ul class="space-y-1">
+            {locationData.zones.map(zone => (
+              <li class="text-sm text-gray-600">
+                📍 {zone}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-gray-800 mb-2">Servicios Disponibles:</h4>
+          <ul class="space-y-1">
+            {locationData.services.map(service => (
+              <li class="text-sm text-gray-600">
+                ⚡ {service}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  )}
+
+  {showZones && (
+    <div class="mb-6">
+      <h3 class="text-xl font-bold text-blue-900 mb-3">
+        Áreas de Servicio en la Provincia de Cádiz
+      </h3>
+
+      <div class="grid md:grid-cols-3 gap-4">
+        {businessInfo.serviceAreas.map(area => (
+          <div class="bg-blue-50 p-3 rounded-lg border border-blue-200">
+            <h4 class="font-semibold text-blue-800">{area}</h4>
+            <p class="text-sm text-blue-600 mt-1">
+              Soldadura subacuática, inspección y reparación naval
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  )}
+
+  {showEmergency && (
+    <div class="mb-6">
+      <h3 class="text-xl font-bold text-red-800 mb-3">
+        🚨 Zonas de Respuesta de Emergencia
+      </h3>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {businessInfo.emergencyZones.map(zone => (
+          <div class="bg-red-50 border border-red-200 rounded-lg p-4">
+            <h4 class="font-semibold text-red-800">{zone.name}</h4>
+            <div class="text-sm text-red-600 mt-2 space-y-1">
+              <p>📡 Radio: {zone.radius}</p>
+              <p>⏱️ Tiempo respuesta: {zone.responseTime}</p>
+              <p>📍 Coord: {zone.coordinates.lat}, {zone.coordinates.lng}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-4 p-4 bg-red-100 border border-red-300 rounded-lg">
+        <p class="text-red-800 font-semibold">
+          📞 Emergencias 24h: {businessInfo.emergencyPhone}
+        </p>
+        <p class="text-sm text-red-700 mt-1">
+          Respuesta inmediata para soldadura subacuática de emergencia, reparaciones críticas y buceo de rescate
+        </p>
+      </div>
+    </div>
+  )}
+
+  {showDivingSpots && (
+    <div class="mb-6">
+      <h3 class="text-xl font-bold text-blue-900 mb-3">
+        🤿 Puntos de Buceo Industrial Especializados
+      </h3>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {businessInfo.divingSpots.map(spot => (
+          <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+            <h4 class="font-semibold text-blue-800">{spot.name}</h4>
+            <div class="text-sm text-blue-600 mt-2 space-y-1">
+              <p>🌊 Profundidad: {spot.depth}</p>
+              <p>📍 {spot.coordinates.lat}, {spot.coordinates.lng}</p>
+              <div class="mt-2">
+                <p class="font-medium text-blue-700">Servicios:</p>
+                {spot.services.map(service => (
+                  <p class="text-xs">• {service}</p>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  )}
+</div>
