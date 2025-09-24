@@ -1,0 +1,118 @@
+---
+export interface Props {
+  size?: 'sm' | 'md' | 'lg' | 'xl';
+  color?: string;
+  className?: string;
+  variant?: 'filled' | 'outline';
+}
+
+const {
+  size = 'md',
+  color = 'currentColor',
+  className = '',
+  variant = 'filled'
+} = Astro.props;
+
+// Tamaños predefinidos
+const sizes = {
+  sm: 'w-4 h-4',
+  md: 'w-6 h-6',
+  lg: 'w-8 h-8',
+  xl: 'w-12 h-12'
+};
+
+const sizeClass = sizes[size];
+---
+
+<svg
+  class={`${sizeClass} ${className}`}
+  viewBox="0 0 32 32"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+  aria-label="Ancla - Logo Trabajos Subacuáticos Cádiz"
+>
+  <!-- Barra superior del ancla -->
+  <rect
+    x="8"
+    y="4"
+    width="16"
+    height="2.5"
+    rx="1.25"
+    fill={variant === 'filled' ? color : 'none'}
+    stroke={variant === 'outline' ? color : 'none'}
+    stroke-width={variant === 'outline' ? '1.5' : '0'}
+  />
+
+  <!-- Asta vertical del ancla -->
+  <rect
+    x="14.75"
+    y="6.5"
+    width="2.5"
+    height="16"
+    fill={variant === 'filled' ? color : 'none'}
+    stroke={variant === 'outline' ? color : 'none'}
+    stroke-width={variant === 'outline' ? '1.5' : '0'}
+  />
+
+  <!-- Anillo del ancla -->
+  <circle
+    cx="16"
+    cy="12"
+    r="3"
+    stroke={color}
+    stroke-width="2"
+    fill="none"
+  />
+
+  <!-- Brazo izquierdo del ancla -->
+  <path
+    d="M16 22.5 C12 22.5, 8 24.5, 8 28 L8 29 C8 29.8, 8.7 30.5, 9.5 30.5 C10.3 30.5, 11 29.8, 11 29 L11 28 C11 26, 13 25, 16 25"
+    stroke={color}
+    stroke-width="2.5"
+    fill="none"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+
+  <!-- Brazo derecho del ancla -->
+  <path
+    d="M16 22.5 C20 22.5, 24 24.5, 24 28 L24 29 C24 29.8, 23.3 30.5, 22.5 30.5 C21.7 30.5, 21 29.8, 21 29 L21 28 C21 26, 19 25, 16 25"
+    stroke={color}
+    stroke-width="2.5"
+    fill="none"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+
+  <!-- Garfio izquierdo superior -->
+  <path
+    d="M8 28 L6 26"
+    stroke={color}
+    stroke-width="2"
+    stroke-linecap="round"
+  />
+
+  <!-- Garfio izquierdo inferior -->
+  <path
+    d="M8 28 L6 30"
+    stroke={color}
+    stroke-width="2"
+    stroke-linecap="round"
+  />
+
+  <!-- Garfio derecho superior -->
+  <path
+    d="M24 28 L26 26"
+    stroke={color}
+    stroke-width="2"
+    stroke-linecap="round"
+  />
+
+  <!-- Garfio derecho inferior -->
+  <path
+    d="M24 28 L26 30"
+    stroke={color}
+    stroke-width="2"
+    stroke-linecap="round"
+  />
+</svg>

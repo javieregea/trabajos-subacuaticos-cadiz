@@ -6,6 +6,7 @@ import CallToAction from '../components/CallToAction.astro';
 import RelatedLinks from '../components/RelatedLinks.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import AnchorLogo from '../components/AnchorLogo.astro';
 ---
 
 <Layout
@@ -41,9 +42,28 @@ import Footer from '../components/Footer.astro';
 
   <main>
     <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-blue-800 to-blue-600 text-white py-16">
-      <div class="container mx-auto px-4">
+    <section class="bg-gradient-to-r from-blue-800 to-blue-600 text-white py-16 relative">
+      <!-- Anclas decorativas de fondo -->
+      <div class="absolute inset-0 opacity-5 overflow-hidden">
+        <div class="absolute top-10 left-10">
+          <AnchorLogo size="xl" color="white" variant="outline" className="rotate-12" />
+        </div>
+        <div class="absolute top-20 right-20">
+          <AnchorLogo size="lg" color="white" variant="outline" className="-rotate-12" />
+        </div>
+        <div class="absolute bottom-10 left-1/4">
+          <AnchorLogo size="lg" color="white" variant="outline" className="rotate-45" />
+        </div>
+        <div class="absolute bottom-16 right-1/3">
+          <AnchorLogo size="md" color="white" variant="outline" className="-rotate-24" />
+        </div>
+      </div>
+
+      <div class="container mx-auto px-4 relative z-10">
         <div class="max-w-4xl mx-auto text-center">
+          <div class="flex justify-center mb-6">
+            <AnchorLogo size="xl" color="white" variant="outline" />
+          </div>
           <h1 class="text-3xl md:text-5xl font-bold mb-6">
             Servicios Especializados en Soldadura Subacuática
           </h1>
@@ -58,6 +78,12 @@ import Footer from '../components/Footer.astro';
     <!-- Services Grid -->
     <section class="py-16 bg-white">
       <div class="container mx-auto px-4">
+        <!-- Separador con ancla -->
+        <div class="text-center mb-12">
+          <AnchorLogo size="lg" color="#1e40af" variant="filled" />
+          <div class="w-24 h-px bg-blue-600 mx-auto mt-4"></div>
+        </div>
+
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
 
           <!-- Soldadura Subacuática -->
@@ -69,8 +95,8 @@ import Footer from '../components/Footer.astro';
                 </svg>
               </div>
               <div>
-                <h2 class="text-2xl font-bold text-gray-900 mb-2">Soldadura Subacuática</h2>
-                <p class="text-blue-600 font-medium">Soldadura hiperbárica certificada</p>
+                <h2 class="text-2xl font-bold text-gray-900 mb-2">🔥 Soldadura Subacuática</h2>
+                <p class="text-blue-600 font-medium">⚡ Soldadura hiperbárica certificada</p>
               </div>
             </div>
 
@@ -85,25 +111,25 @@ import Footer from '../components/Footer.astro';
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <h3 class="font-semibold text-gray-900 mb-2">Técnicas de Soldadura:</h3>
+                <h3 class="font-semibold text-gray-900 mb-2">🛠️ Técnicas de Soldadura:</h3>
                 <ul class="text-sm text-gray-600 space-y-1">
-                  <li>• Soldadura electrodo revestido</li>
-                  <li>• Soldadura TIG subacuática</li>
-                  <li>• Soldadura MIG submarina</li>
-                  <li>• Soldadura arco sumergido</li>
-                  <li>• Soldadura aluminio marino</li>
-                  <li>• Soldadura acero inoxidable</li>
+                  <li>⚡ Soldadura electrodo revestido</li>
+                  <li>🔧 Soldadura TIG subacuática</li>
+                  <li>🔥 Soldadura MIG submarina</li>
+                  <li>⚙️ Soldadura arco sumergido</li>
+                  <li>🌊 Soldadura aluminio marino</li>
+                  <li>✨ Soldadura acero inoxidable</li>
                 </ul>
               </div>
               <div>
-                <h3 class="font-semibold text-gray-900 mb-2">Aplicaciones:</h3>
+                <h3 class="font-semibold text-gray-900 mb-2">🎯 Aplicaciones:</h3>
                 <ul class="text-sm text-gray-600 space-y-1">
-                  <li>• Reparación cascos embarcaciones</li>
-                  <li>• Estructuras portuarias</li>
-                  <li>• Trabajos offshore</li>
-                  <li>• Soldadura estructural marina</li>
-                  <li>• Reparación tuberías submarinas</li>
-                  <li>• Trabajos de astillero</li>
+                  <li>🚢 Reparación cascos embarcaciones</li>
+                  <li>🏗️ Estructuras portuarias</li>
+                  <li>🌊 Trabajos offshore</li>
+                  <li>⚓ Soldadura estructural marina</li>
+                  <li>🔧 Reparación tuberías submarinas</li>
+                  <li>🏭 Trabajos de astillero</li>
                 </ul>
               </div>
             </div>
@@ -123,8 +149,8 @@ import Footer from '../components/Footer.astro';
                 </svg>
               </div>
               <div>
-                <h2 class="text-2xl font-bold text-gray-900 mb-2">Inspección de Cascos</h2>
-                <p class="text-green-600 font-medium">Control técnico submarino</p>
+                <h2 class="text-2xl font-bold text-gray-900 mb-2">🔍 Inspección de Cascos</h2>
+                <p class="text-green-600 font-medium">📋 Control técnico submarino</p>
               </div>
             </div>
 
@@ -136,25 +162,25 @@ import Footer from '../components/Footer.astro';
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <h3 class="font-semibold text-gray-900 mb-2">Tipos de Inspección:</h3>
+                <h3 class="font-semibold text-gray-900 mb-2">🔎 Tipos de Inspección:</h3>
                 <ul class="text-sm text-gray-600 space-y-1">
-                  <li>• Inspección visual subacuática</li>
-                  <li>• Control END submarino</li>
-                  <li>• Inspección estructuras offshore</li>
-                  <li>• Control soldaduras submarinas</li>
-                  <li>• Inspección cascos buques</li>
-                  <li>• Evaluación daños</li>
+                  <li>👁️ Inspección visual subacuática</li>
+                  <li>🧪 Control END submarino</li>
+                  <li>🌊 Inspección estructuras offshore</li>
+                  <li>🔍 Control soldaduras submarinas</li>
+                  <li>🚢 Inspección cascos buques</li>
+                  <li>📊 Evaluación daños</li>
                 </ul>
               </div>
               <div>
-                <h3 class="font-semibold text-gray-900 mb-2">Documentación:</h3>
+                <h3 class="font-semibold text-gray-900 mb-2">📄 Documentación:</h3>
                 <ul class="text-sm text-gray-600 space-y-1">
-                  <li>• Informes técnicos detallados</li>
-                  <li>• Certificaciones navieras</li>
-                  <li>• Fotografía submarina</li>
-                  <li>• Vídeo inspección</li>
-                  <li>• Planos de daños</li>
-                  <li>• Recomendaciones reparación</li>
+                  <li>📋 Informes técnicos detallados</li>
+                  <li>🏆 Certificaciones navieras</li>
+                  <li>📷 Fotografía submarina</li>
+                  <li>🎥 Vídeo inspección</li>
+                  <li>📐 Planos de daños</li>
+                  <li>💡 Recomendaciones reparación</li>
                 </ul>
               </div>
             </div>
@@ -174,8 +200,8 @@ import Footer from '../components/Footer.astro';
                 </svg>
               </div>
               <div>
-                <h2 class="text-2xl font-bold text-gray-900 mb-2">Reparación Naval</h2>
-                <p class="text-orange-600 font-medium">Reparación a flote y varadero</p>
+                <h2 class="text-2xl font-bold text-gray-900 mb-2">🔧 Reparación Naval</h2>
+                <p class="text-orange-600 font-medium">⚓ Reparación a flote y varadero</p>
               </div>
             </div>
 
@@ -187,25 +213,25 @@ import Footer from '../components/Footer.astro';
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <h3 class="font-semibold text-gray-900 mb-2">Reparaciones Principales:</h3>
+                <h3 class="font-semibold text-gray-900 mb-2">🛠️ Reparaciones Principales:</h3>
                 <ul class="text-sm text-gray-600 space-y-1">
-                  <li>• Reparación cascos bajo agua</li>
-                  <li>• Reparación hélices y timones</li>
-                  <li>• Reparación pontones flotantes</li>
-                  <li>• Trabajos en astilleros</li>
-                  <li>• Mantenimiento naval</li>
-                  <li>• Reparación embarcaderos</li>
+                  <li>🚢 Reparación cascos bajo agua</li>
+                  <li>🌀 Reparación hélices y timones</li>
+                  <li>⛵ Reparación pontones flotantes</li>
+                  <li>🏭 Trabajos en astilleros</li>
+                  <li>⚙️ Mantenimiento naval</li>
+                  <li>🏗️ Reparación embarcaderos</li>
                 </ul>
               </div>
               <div>
-                <h3 class="font-semibold text-gray-900 mb-2">Especialidades:</h3>
+                <h3 class="font-semibold text-gray-900 mb-2">⭐ Especialidades:</h3>
                 <ul class="text-sm text-gray-600 space-y-1">
-                  <li>• Reflotamientos</li>
-                  <li>• Trabajos en varaderos</li>
-                  <li>• Reparación grúas portuarias</li>
-                  <li>• Mantenimiento diques secos</li>
-                  <li>• Reparación defensas portuarias</li>
-                  <li>• Servicios emergencia marítima</li>
+                  <li>🆙 Reflotamientos</li>
+                  <li>🏗️ Trabajos en varaderos</li>
+                  <li>🏗️ Reparación grúas portuarias</li>
+                  <li>🔧 Mantenimiento diques secos</li>
+                  <li>🛡️ Reparación defensas portuarias</li>
+                  <li>🚨 Servicios emergencia marítima</li>
                 </ul>
               </div>
             </div>
@@ -220,8 +246,8 @@ import Footer from '../components/Footer.astro';
                 </svg>
               </div>
               <div>
-                <h2 class="text-2xl font-bold text-gray-900 mb-2">Buceo Industrial</h2>
-                <p class="text-purple-600 font-medium">Buceo comercial certificado</p>
+                <h2 class="text-2xl font-bold text-gray-900 mb-2">🤿 Buceo Industrial</h2>
+                <p class="text-purple-600 font-medium">🏅 Buceo comercial certificado</p>
               </div>
             </div>
 
@@ -233,25 +259,25 @@ import Footer from '../components/Footer.astro';
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <h3 class="font-semibold text-gray-900 mb-2">Servicios de Buceo:</h3>
+                <h3 class="font-semibold text-gray-900 mb-2">🌊 Servicios de Buceo:</h3>
                 <ul class="text-sm text-gray-600 space-y-1">
-                  <li>• Buceo comercial profesional</li>
-                  <li>• Limpieza cascos embarcaciones</li>
-                  <li>• Trabajos portuarios submarinos</li>
-                  <li>• Mantenimiento offshore</li>
-                  <li>• Servicios buceo industrial</li>
-                  <li>• Trabajos dragado portuario</li>
+                  <li>👨‍💼 Buceo comercial profesional</li>
+                  <li>🧽 Limpieza cascos embarcaciones</li>
+                  <li>⚓ Trabajos portuarios submarinos</li>
+                  <li>🌊 Mantenimiento offshore</li>
+                  <li>🏭 Servicios buceo industrial</li>
+                  <li>⛏️ Trabajos dragado portuario</li>
                 </ul>
               </div>
               <div>
-                <h3 class="font-semibold text-gray-900 mb-2">Especialidades:</h3>
+                <h3 class="font-semibold text-gray-900 mb-2">🎖️ Especialidades:</h3>
                 <ul class="text-sm text-gray-600 space-y-1">
-                  <li>• Buzos soldadores homologados</li>
-                  <li>• Inspección visual subacuática</li>
-                  <li>• Mantenimiento boyas señalización</li>
-                  <li>• Trabajos cimentación marina</li>
-                  <li>• Trabajos anclajes submarinos</li>
-                  <li>• Emergencia buceo profesional</li>
+                  <li>🔥 Buzos soldadores homologados</li>
+                  <li>👁️ Inspección visual subacuática</li>
+                  <li>🔴 Mantenimiento boyas señalización</li>
+                  <li>🏗️ Trabajos cimentación marina</li>
+                  <li>⚓ Trabajos anclajes submarinos</li>
+                  <li>🚨 Emergencia buceo profesional</li>
                 </ul>
               </div>
             </div>
@@ -266,8 +292,8 @@ import Footer from '../components/Footer.astro';
                 </svg>
               </div>
               <div>
-                <h2 class="text-2xl font-bold text-gray-900 mb-2">Corte Subacuático</h2>
-                <p class="text-red-600 font-medium">Corte térmico submarino</p>
+                <h2 class="text-2xl font-bold text-gray-900 mb-2">✂️ Corte Subacuático</h2>
+                <p class="text-red-600 font-medium">🔥 Corte térmico submarino</p>
               </div>
             </div>
 
@@ -279,25 +305,25 @@ import Footer from '../components/Footer.astro';
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <h3 class="font-semibold text-gray-900 mb-2">Técnicas de Corte:</h3>
+                <h3 class="font-semibold text-gray-900 mb-2">⚡ Técnicas de Corte:</h3>
                 <ul class="text-sm text-gray-600 space-y-1">
-                  <li>• Corte oxicorte subacuático</li>
-                  <li>• Corte plasma submarino</li>
-                  <li>• Corte térmico bajo agua</li>
-                  <li>• Corte con electrodo</li>
-                  <li>• Corte arco-aire</li>
-                  <li>• Demolición controlada</li>
+                  <li>🔥 Corte oxicorte subacuático</li>
+                  <li>⚡ Corte plasma submarino</li>
+                  <li>🌡️ Corte térmico bajo agua</li>
+                  <li>🔌 Corte con electrodo</li>
+                  <li>💨 Corte arco-aire</li>
+                  <li>💥 Demolición controlada</li>
                 </ul>
               </div>
               <div>
-                <h3 class="font-semibold text-gray-900 mb-2">Aplicaciones:</h3>
+                <h3 class="font-semibold text-gray-900 mb-2">🎯 Aplicaciones:</h3>
                 <ul class="text-sm text-gray-600 space-y-1">
-                  <li>• Trabajos de salvamento</li>
-                  <li>• Demolición estructuras marinas</li>
-                  <li>• Desguace naval submarino</li>
-                  <li>• Corte chapas blindaje</li>
-                  <li>• Trabajos de emergencia</li>
-                  <li>• Preparación soldadura</li>
+                  <li>🆘 Trabajos de salvamento</li>
+                  <li>💥 Demolición estructuras marinas</li>
+                  <li>♻️ Desguace naval submarino</li>
+                  <li>🛡️ Corte chapas blindaje</li>
+                  <li>🚨 Trabajos de emergencia</li>
+                  <li>🔧 Preparación soldadura</li>
                 </ul>
               </div>
             </div>
@@ -312,8 +338,8 @@ import Footer from '../components/Footer.astro';
                 </svg>
               </div>
               <div>
-                <h2 class="text-2xl font-bold text-gray-900 mb-2">Mantenimiento Portuario</h2>
-                <p class="text-indigo-600 font-medium">Infraestructuras marítimas</p>
+                <h2 class="text-2xl font-bold text-gray-900 mb-2">🏗️ Mantenimiento Portuario</h2>
+                <p class="text-indigo-600 font-medium">⚓ Infraestructuras marítimas</p>
               </div>
             </div>
 
@@ -325,25 +351,25 @@ import Footer from '../components/Footer.astro';
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <h3 class="font-semibold text-gray-900 mb-2">Infraestructuras:</h3>
+                <h3 class="font-semibold text-gray-900 mb-2">🏭 Infraestructuras:</h3>
                 <ul class="text-sm text-gray-600 space-y-1">
-                  <li>• Mantenimiento portuario subacuático</li>
-                  <li>• Reparación muelles puerto</li>
-                  <li>• Mantenimiento rompeolas</li>
-                  <li>• Reparación compuertas esclusas</li>
-                  <li>• Trabajos portuarios especializados</li>
-                  <li>• Inspección estructuras portuarias</li>
+                  <li>🌊 Mantenimiento portuario subacuático</li>
+                  <li>🏗️ Reparación muelles puerto</li>
+                  <li>🌊 Mantenimiento rompeolas</li>
+                  <li>🚪 Reparación compuertas esclusas</li>
+                  <li>⚓ Trabajos portuarios especializados</li>
+                  <li>🔍 Inspección estructuras portuarias</li>
                 </ul>
               </div>
               <div>
-                <h3 class="font-semibold text-gray-900 mb-2">Servicios Especiales:</h3>
+                <h3 class="font-semibold text-gray-900 mb-2">⭐ Servicios Especiales:</h3>
                 <ul class="text-sm text-gray-600 space-y-1">
-                  <li>• Mantenimiento offshore</li>
-                  <li>• Trabajos cimentación marina</li>
-                  <li>• Soldadura estructuras metálicas marinas</li>
-                  <li>• Reparación petroleros tanques</li>
-                  <li>• Trabajos dragado portuario</li>
-                  <li>• Servicios emergencia marítima</li>
+                  <li>🌊 Mantenimiento offshore</li>
+                  <li>🏗️ Trabajos cimentación marina</li>
+                  <li>🔥 Soldadura estructuras metálicas marinas</li>
+                  <li>⛽ Reparación petroleros tanques</li>
+                  <li>⛏️ Trabajos dragado portuario</li>
+                  <li>🚨 Servicios emergencia marítima</li>
                 </ul>
               </div>
             </div>
@@ -353,13 +379,16 @@ import Footer from '../components/Footer.astro';
     </section>
 
     <!-- Emergency Section -->
-    <section class="bg-red-50 py-16">
+    <section class="bg-red-50 py-16 relative">
+      <!-- Ancla decorativa de fondo -->
+      <div class="absolute top-10 right-10 opacity-10">
+        <AnchorLogo size="xl" color="#dc2626" variant="outline" className="rotate-12" />
+      </div>
+
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto text-center">
           <div class="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-6">
-            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
-            </svg>
+            <AnchorLogo size="lg" color="white" variant="outline" />
           </div>
           <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Servicio de Emergencia 24 Horas

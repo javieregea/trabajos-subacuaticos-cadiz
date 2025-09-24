@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css'
+import MobileBottomActions from '../components/MobileBottomActions.astro';
 
 export interface Props {
 	title: string;
@@ -20,7 +21,14 @@ const canonicalURL = canonical || `https://trabajos-subacuaticos-cadiz.vercel.ap
 		<meta name="description" content={description} />
 		<meta name="keywords" content={keywords} />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- Favicon -->
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon.svg" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon.svg" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/favicon.svg" />
+		<link rel="manifest" href="/site.webmanifest" />
+		<meta name="theme-color" content="#1e40af" />
+
 		<link rel="canonical" href={canonicalURL} />
 		<meta name="generator" content={Astro.generator} />
 
@@ -256,5 +264,6 @@ const canonicalURL = canonical || `https://trabajos-subacuaticos-cadiz.vercel.ap
 	</head>
 	<body class="bg-gray-50">
 		<slot />
+		<MobileBottomActions />
 	</body>
 </html>
