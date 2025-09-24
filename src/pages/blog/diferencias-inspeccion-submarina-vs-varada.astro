@@ -84,8 +84,8 @@ import CallToAction from '../../components/CallToAction.astro';
               <tbody>
                 <tr class="border-b bg-green-50">
                   <td class="p-4 font-semibold">Coste Inspección</td>
-                  <td class="p-4 text-center text-green-600 font-bold">€400-800</td>
-                  <td class="p-4 text-center text-red-600 font-bold">€1.500-5.000</td>
+                  <td class="p-4 text-center text-green-600 font-bold">Bajo</td>
+                  <td class="p-4 text-center text-red-600 font-bold">Alto</td>
                   <td class="p-4 text-center text-green-600 font-bold">70-85%</td>
                 </tr>
                 <tr class="border-b">
@@ -96,26 +96,26 @@ import CallToAction from '../../components/CallToAction.astro';
                 </tr>
                 <tr class="border-b bg-green-50">
                   <td class="p-4 font-semibold">Pérdida Ingresos/día</td>
-                  <td class="p-4 text-center text-green-600 font-bold">€0</td>
-                  <td class="p-4 text-center text-red-600 font-bold">€500-2.000</td>
+                  <td class="p-4 text-center text-green-600 font-bold">Ninguna</td>
+                  <td class="p-4 text-center text-red-600 font-bold">Alta</td>
                   <td class="p-4 text-center text-green-600 font-bold">100%</td>
                 </tr>
                 <tr class="border-b">
                   <td class="p-4 font-semibold">Manipulación/Grúa</td>
-                  <td class="p-4 text-center text-green-600 font-bold">€0</td>
-                  <td class="p-4 text-center text-red-600 font-bold">€300-1.200</td>
+                  <td class="p-4 text-center text-green-600 font-bold">No necesario</td>
+                  <td class="p-4 text-center text-red-600 font-bold">Obligatorio</td>
                   <td class="p-4 text-center text-green-600 font-bold">100%</td>
                 </tr>
                 <tr class="border-b bg-green-50">
                   <td class="p-4 font-semibold">Lavado Alta Presión</td>
                   <td class="p-4 text-center text-green-600 font-bold">No necesario</td>
-                  <td class="p-4 text-center text-red-600 font-bold">€150-400</td>
+                  <td class="p-4 text-center text-red-600 font-bold">Obligatorio</td>
                   <td class="p-4 text-center text-green-600 font-bold">100%</td>
                 </tr>
                 <tr class="border-b">
                   <td class="p-4 font-semibold">Transporte/Desplazamiento</td>
                   <td class="p-4 text-center text-green-600 font-bold">Mínimo</td>
-                  <td class="p-4 text-center text-red-600 font-bold">€200-600</td>
+                  <td class="p-4 text-center text-red-600 font-bold">Alto</td>
                   <td class="p-4 text-center text-green-600 font-bold">80%</td>
                 </tr>
                 <tr class="border-b bg-green-50">
@@ -126,8 +126,12 @@ import CallToAction from '../../components/CallToAction.astro';
                 </tr>
                 <tr class="bg-yellow-50 font-bold">
                   <td class="p-4">TOTAL (embarcación 20m)</td>
-                  <td class="p-4 text-center text-green-600 text-lg">€400-800</td>
-                  <td class="p-4 text-center text-red-600 text-lg">€2.650-9.200</td>
+                  <td class="p-4 text-center text-green-600 text-lg">
+                    <a href="/contacto" class="bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded text-sm font-semibold transition-colors">
+                      Consultar Precio
+                    </a>
+                  </td>
+                  <td class="p-4 text-center text-red-600 text-lg">Muy Alto</td>
                   <td class="p-4 text-center text-green-600 text-lg">75-85%</td>
                 </tr>
               </tbody>
@@ -141,7 +145,7 @@ import CallToAction from '../../components/CallToAction.astro';
               <div class="space-y-3">
                 <div class="flex justify-between">
                   <span>Coste total:</span>
-                  <span class="font-bold text-green-600">€400-800</span>
+                  <span class="font-bold text-green-600">Bajo</span>
                 </div>
                 <div class="flex justify-between">
                   <span>Tiempo:</span>
@@ -149,7 +153,7 @@ import CallToAction from '../../components/CallToAction.astro';
                 </div>
                 <div class="flex justify-between">
                   <span>Pérdida ingresos:</span>
-                  <span class="font-bold text-green-600">€0</span>
+                  <span class="font-bold text-green-600">Ninguna</span>
                 </div>
                 <div class="flex justify-between">
                   <span>Validez:</span>
@@ -163,7 +167,7 @@ import CallToAction from '../../components/CallToAction.astro';
               <div class="space-y-3">
                 <div class="flex justify-between">
                   <span>Coste total:</span>
-                  <span class="font-bold text-red-600">€2.650-9.200</span>
+                  <span class="font-bold text-red-600">Muy Alto</span>
                 </div>
                 <div class="flex justify-between">
                   <span>Tiempo:</span>
@@ -171,7 +175,7 @@ import CallToAction from '../../components/CallToAction.astro';
                 </div>
                 <div class="flex justify-between">
                   <span>Pérdida ingresos:</span>
-                  <span class="font-bold text-red-600">€1.000-10.000</span>
+                  <span class="font-bold text-red-600">Muy Alta</span>
                 </div>
                 <div class="flex justify-between">
                   <span>Validez:</span>
@@ -198,23 +202,26 @@ import CallToAction from '../../components/CallToAction.astro';
                 <div class="bg-blue-50 p-4 rounded">
                   <h4 class="font-bold text-blue-800">Varada Tradicional</h4>
                   <ul class="text-blue-700 text-sm mt-2">
-                    <li>• Coste: €1.500-3.500</li>
+                    <li>• Coste directo: Alto</li>
                     <li>• Tiempo: 2-3 días</li>
-                    <li>• Pérdida pesca: €800-1.500/día</li>
-                    <li>• Total: €3.100-7.000</li>
+                    <li>• Pérdida pesca: Muy alta/día</li>
+                    <li>• Coste total: Muy elevado</li>
                   </ul>
                 </div>
                 <div class="bg-green-50 p-4 rounded">
                   <h4 class="font-bold text-green-800">Inspección Submarina</h4>
                   <ul class="text-green-700 text-sm mt-2">
-                    <li>• Coste: €400-600</li>
+                    <li>• Coste: Bajo - <a href="/contacto" class="text-green-600 hover:underline font-semibold">Consultar precio</a></li>
                     <li>• Tiempo: 2-3 horas</li>
-                    <li>• Pérdida pesca: €0</li>
-                    <li>• Total: €400-600</li>
+                    <li>• Pérdida pesca: Ninguna</li>
+                    <li>• Coste total: Mínimo</li>
                   </ul>
                 </div>
                 <div class="text-center p-2 bg-yellow-100 rounded">
-                  <span class="font-bold text-yellow-800">Ahorro: €2.700-6.400 (87%)</span>
+                  <div class="font-bold text-yellow-800 mb-2">Ahorro: 80-90%</div>
+                  <a href="tel:+34614405061" class="bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded text-sm font-semibold transition-colors">
+                    LLAMAR AHORA
+                  </a>
                 </div>
               </div>
             </div>
@@ -226,23 +233,26 @@ import CallToAction from '../../components/CallToAction.astro';
                 <div class="bg-blue-50 p-4 rounded">
                   <h4 class="font-bold text-blue-800">Varada Tradicional</h4>
                   <ul class="text-blue-700 text-sm mt-2">
-                    <li>• Coste: €3.000-8.000</li>
+                    <li>• Coste directo: Muy alto</li>
                     <li>• Tiempo: 3-5 días</li>
-                    <li>• Pérdida operativa: €2.000-5.000/día</li>
-                    <li>• Total: €9.000-33.000</li>
+                    <li>• Pérdida operativa: Crítica/día</li>
+                    <li>• Coste total: Extremo</li>
                   </ul>
                 </div>
                 <div class="bg-green-50 p-4 rounded">
                   <h4 class="font-bold text-green-800">Inspección Submarina</h4>
                   <ul class="text-green-700 text-sm mt-2">
-                    <li>• Coste: €600-1.000</li>
+                    <li>• Coste: Reducido - <a href="/contacto" class="text-green-600 hover:underline font-semibold">Consultar precio</a></li>
                     <li>• Tiempo: 3-5 horas</li>
-                    <li>• Pérdida operativa: €0</li>
-                    <li>• Total: €600-1.000</li>
+                    <li>• Pérdida operativa: Ninguna</li>
+                    <li>• Coste total: Mínimo</li>
                   </ul>
                 </div>
                 <div class="text-center p-2 bg-yellow-100 rounded">
-                  <span class="font-bold text-yellow-800">Ahorro: €8.400-32.000 (93%)</span>
+                  <div class="font-bold text-yellow-800 mb-2">Ahorro: 90-95%</div>
+                  <a href="tel:+34614405061" class="bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded text-sm font-semibold transition-colors">
+                    LLAMAR AHORA
+                  </a>
                 </div>
               </div>
             </div>
@@ -254,23 +264,26 @@ import CallToAction from '../../components/CallToAction.astro';
                 <div class="bg-blue-50 p-4 rounded">
                   <h4 class="font-bold text-blue-800">Varada Tradicional</h4>
                   <ul class="text-blue-700 text-sm mt-2">
-                    <li>• Coste: €800-2.500</li>
+                    <li>• Coste: Alto</li>
                     <li>• Tiempo: 1-2 días</li>
                     <li>• Incomodidad: Alta</li>
-                    <li>• Total: €800-2.500</li>
+                    <li>• Coste total: Elevado</li>
                   </ul>
                 </div>
                 <div class="bg-green-50 p-4 rounded">
                   <h4 class="font-bold text-green-800">Inspección Submarina</h4>
                   <ul class="text-green-700 text-sm mt-2">
-                    <li>• Coste: €300-500</li>
+                    <li>• Coste: Reducido - <a href="/contacto" class="text-green-600 hover:underline font-semibold">Consultar precio</a></li>
                     <li>• Tiempo: 1-2 horas</li>
                     <li>• Incomodidad: Mínima</li>
-                    <li>• Total: €300-500</li>
+                    <li>• Coste total: Mínimo</li>
                   </ul>
                 </div>
                 <div class="text-center p-2 bg-yellow-100 rounded">
-                  <span class="font-bold text-yellow-800">Ahorro: €500-2.000 (80%)</span>
+                  <div class="font-bold text-yellow-800 mb-2">Ahorro: 75-85%</div>
+                  <a href="tel:+34614405061" class="bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded text-sm font-semibold transition-colors">
+                    LLAMAR AHORA
+                  </a>
                 </div>
               </div>
             </div>
@@ -349,9 +362,9 @@ import CallToAction from '../../components/CallToAction.astro';
               <h3 class="text-xl font-bold text-blue-900 mb-4">Naviera Pesquera Gaditana</h3>
               <div class="space-y-3">
                 <p><strong>Flota:</strong> 15 arrastreros (18-28m)</p>
-                <p><strong>Antes (varada):</strong> €45.000/año en inspecciones</p>
-                <p><strong>Ahora (submarina):</strong> €9.000/año</p>
-                <p class="text-green-600 font-bold">Ahorro anual: €36.000 (80%)</p>
+                <p><strong>Antes (varada):</strong> Coste muy alto anual</p>
+                <p><strong>Ahora (submarina):</strong> Coste reducido anual</p>
+                <p class="text-green-600 font-bold">Ahorro anual: 80% - <a href="/contacto" class="text-green-600 hover:underline">Calcular su ahorro</a></p>
                 <p class="text-sm text-gray-600">
                   "Además del ahorro, no perdemos días de pesca. Es la mejor decisión
                   que hemos tomado para optimizar operaciones."
