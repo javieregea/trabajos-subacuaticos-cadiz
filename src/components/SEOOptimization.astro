@@ -33,7 +33,7 @@ const {
   structuredData = []
 } = Astro.props;
 
-const site = 'https://trabajossubacuaticoscadiz.es';
+const site = 'https://trabajossubacuaticoscadiz.com';
 const fullCanonical = canonical ? canonical : `${site}${Astro.url.pathname}`;
 const fullOgImage = ogImage.startsWith('http') ? ogImage : `${site}${ogImage}`;
 
@@ -60,7 +60,7 @@ const defaultSchemaData = {
     `${site}/images/inspeccion-naval-cadiz.webp`
   ],
   "telephone": "+34614405061",
-  "email": "info@trabajossubacuaticoscadiz.es",
+  "email": "info@trabajossubacuaticoscadiz.com",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Muelle de la Cabezuela, 12",
@@ -298,7 +298,7 @@ const allSchemas = [
 
 <!-- Business specific meta -->
 <meta name="contact:phone_number" content="+34614405061" />
-<meta name="contact:email" content="info@trabajossubacuaticoscadiz.es" />
+<meta name="contact:email" content="info@trabajossubacuaticoscadiz.com" />
 <meta name="business:contact_data:street_address" content="Muelle de la Cabezuela, 12" />
 <meta name="business:contact_data:locality" content="Cádiz" />
 <meta name="business:contact_data:region" content="Andalucía" />
@@ -495,8 +495,8 @@ const allSchemas = [
   "@graph": [
     {
       "@type": "WebSite",
-      "@id": "https://trabajossubacuaticoscadiz.es/#website",
-      "url": "https://trabajossubacuaticoscadiz.es/",
+      "@id": "https://trabajossubacuaticoscadiz.com/#website",
+      "url": "https://trabajossubacuaticoscadiz.com/",
       "name": "Trabajos Subacuáticos Cádiz",
       "description": "Servicios profesionales de soldadura subacuática, inspección naval y emergencias marítimas en Cádiz",
       "potentialAction": [
@@ -504,7 +504,7 @@ const allSchemas = [
           "@type": "SearchAction",
           "target": {
             "@type": "EntryPoint",
-            "urlTemplate": "https://trabajossubacuaticoscadiz.es/search?q={search_term_string}"
+            "urlTemplate": "https://trabajossubacuaticoscadiz.com/search?q={search_term_string}"
           },
           "query-input": "required name=search_term_string"
         }
@@ -517,7 +517,7 @@ const allSchemas = [
       "url": fullCanonical,
       "name": title,
       "isPartOf": {
-        "@id": "https://trabajossubacuaticoscadiz.es/#website"
+        "@id": "https://trabajossubacuaticoscadiz.com/#website"
       },
       "datePublished": publishedTime || "2024-01-01T00:00:00+00:00",
       "dateModified": modifiedTime || "2024-01-15T00:00:00+00:00",
@@ -591,9 +591,9 @@ const allSchemas = [
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "Trabajos Subacuáticos Cádiz",
-  "image": "https://trabajossubacuaticoscadiz.es/images/logo-empresa.webp",
+  "image": "https://trabajossubacuaticoscadiz.com/images/logo-empresa.webp",
   "telephone": "+34614405061",
-  "email": "info@trabajossubacuaticoscadiz.es",
+  "email": "info@trabajossubacuaticoscadiz.com",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Muelle de la Cabezuela, 12",
@@ -607,7 +607,7 @@ const allSchemas = [
     "latitude": 36.5297,
     "longitude": -6.2921
   },
-  "url": "https://trabajossubacuaticoscadiz.es",
+  "url": "https://trabajossubacuaticoscadiz.com",
   "openingHoursSpecification": {
     "@type": "OpeningHoursSpecification",
     "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
