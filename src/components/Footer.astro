@@ -1,5 +1,6 @@
 ---
 // Footer component
+import AnchorLogo from './AnchorLogo.astro';
 ---
 
 <footer class="bg-gray-900 text-white">
@@ -7,7 +8,10 @@
     <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
       <!-- Company Info -->
       <div class="col-span-1 md:col-span-2">
-        <h3 class="text-xl font-bold mb-4">Trabajos Subacuáticos Cádiz</h3>
+        <div class="flex items-center mb-4">
+          <AnchorLogo size="md" color="white" variant="outline" className="mr-3" />
+          <h3 class="text-xl font-bold">Trabajos Subacuáticos Cádiz</h3>
+        </div>
         <p class="text-gray-300 mb-4">
           Especialistas en soldadura subacuática, buceo industrial y servicios marítimos profesionales.
           Disponibles 24/7 para emergencias en la bahía de Cádiz y el Estrecho de Gibraltar.
@@ -81,10 +85,18 @@
       </div>
     </div>
 
+    <!-- Separador con ancla -->
+    <div class="flex justify-center mt-8 mb-6">
+      <AnchorLogo size="sm" color="#6b7280" variant="outline" />
+    </div>
+
     <!-- Bottom Bar -->
-    <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
+    <div class="border-t border-gray-800 pt-8 text-center text-sm text-gray-400">
       <div class="flex flex-col md:flex-row justify-between items-center">
-        <p>&copy; 2024 Trabajos Subacuáticos Cádiz. Todos los derechos reservados.</p>
+        <div class="flex items-center">
+          <AnchorLogo size="sm" color="#6b7280" variant="filled" className="mr-2" />
+          <p>&copy; 2024 Trabajos Subacuáticos Cádiz. Todos los derechos reservados.</p>
+        </div>
         <div class="flex space-x-4 mt-2 md:mt-0">
           <a href="/politica-privacidad" class="hover:text-white">Política de Privacidad</a>
           <a href="/terminos" class="hover:text-white">Términos de Servicio</a>
