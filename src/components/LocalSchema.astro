@@ -9,7 +9,7 @@ export interface Props {
 const { location, servicePage } = Astro.props;
 
 const locationData = location ? businessInfo.maritimeZones[location] : null;
-const canonicalUrl = `https://trabajos-subacuaticos-cadiz.vercel.app${Astro.url.pathname}`;
+const canonicalUrl = `https://www.trabajossubacuaticoscadiz.com${Astro.url.pathname}`;
 ---
 
 <script type="application/ld+json" set:html={JSON.stringify({
@@ -184,7 +184,7 @@ const canonicalUrl = `https://trabajos-subacuaticos-cadiz.vercel.app${Astro.url.
   "description": `Servicios profesionales de ${servicePage?.toLowerCase() || 'soldadura subacuática'} en ${location || 'Cádiz y provincia'}. Especialistas locales con más de 20 años de experiencia.`,
   "isPartOf": {
     "@type": "WebSite",
-    "@id": "https://trabajos-subacuaticos-cadiz.vercel.app/#website"
+    "@id": "https://www.trabajossubacuaticoscadiz.com/#website"
   },
   "about": {
     "@type": "Service",
