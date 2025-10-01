@@ -1,0 +1,380 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+---
+
+<Layout
+  title="Trabajos de Salvamento Marino Cádiz | Rescate Urgente 24/7"
+  description="Empresa especializada en salvamento marino y recuperación de embarcaciones en Cádiz. Rescate de pecios, liberación de hélices, corte de emergencia. Disponibles 24/7."
+  keywords="salvamento marino Cádiz, rescate embarcaciones, recuperación pecios, salvamento náutico, reflotar barcos Cádiz"
+>
+  <!-- Schema.org Markup para SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Trabajos de Salvamento Marino",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Trabajos Subacuáticos Cádiz",
+      "telephone": "+34-614-405-061",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Cádiz",
+        "addressCountry": "ES"
+      }
+    },
+    "areaServed": "Cádiz",
+    "availableChannel": {
+      "@type": "ServiceChannel",
+      "servicePhone": {
+        "@type": "ContactPoint",
+        "telephone": "+34-614-405-061",
+        "contactType": "Emergency Service",
+        "availableLanguage": ["Spanish", "English"]
+      }
+    }
+  }
+  </script>
+
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-r from-blue-900 to-cyan-900 text-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">
+        Trabajos de Salvamento Marino en Cádiz
+      </h1>
+      <p class="text-xl md:text-2xl mb-8 text-blue-100">
+        Especialistas en rescate y recuperación de embarcaciones. Respuesta inmediata 24/7 para emergencias náuticas.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a
+          href="tel:+34614405061"
+          class="inline-flex items-center justify-center bg-white text-blue-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-50 transition-colors shadow-lg"
+        >
+          🚨 Emergencia: +34 614 405 061
+        </a>
+        <a
+          href="/contacto"
+          class="inline-flex items-center justify-center bg-blue-700 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-600 transition-colors"
+        >
+          Solicitar Presupuesto
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Descripción General -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-12 items-start">
+        <div>
+          <h2 class="text-3xl font-bold text-gray-900 mb-6">
+            Salvamento Profesional de Embarcaciones
+          </h2>
+          <p class="text-gray-700 mb-4">
+            Los <strong>trabajos de salvamento marino</strong> requieren experiencia técnica, equipamiento especializado y capacidad de respuesta inmediata. Nuestro equipo en Cádiz cuenta con <strong>buzos profesionales certificados</strong> y maquinaria específica para operaciones de rescate y recuperación náutica.
+          </p>
+          <p class="text-gray-700 mb-4">
+            Realizamos operaciones de <strong>salvamento de embarcaciones hundidas</strong>, reflotamiento de barcos semisumergidos, liberación de hélices y timones atrapados, corte de estructuras metálicas para facilitar el rescate y recuperación de pecios.
+          </p>
+          <p class="text-gray-700 mb-4">
+            Operamos en el <strong>Golfo de Cádiz, Bahía de Algeciras, Estrecho de Gibraltar</strong> y toda la costa atlántica andaluza. Disponibilidad 24/7 los 365 días del año con tiempo de respuesta inferior a 2 horas para emergencias.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-2xl font-bold text-blue-900 mb-6">
+            ¿Qué Incluyen los Trabajos de Salvamento?
+          </h3>
+          <p class="text-gray-700 mb-4">
+            Las operaciones de salvamento marino combinan <strong>buceo profesional, ingeniería naval y equipamiento de elevación</strong> para rescatar embarcaciones en situaciones de emergencia. Cada operación requiere una evaluación técnica previa y un plan de acción específico.
+          </p>
+          <p class="text-gray-700 mb-4">
+            Utilizamos técnicas de <strong>reflotamiento con bolsas de elevación</strong> (lift bags) de hasta 10 toneladas, bombas de achique de alta capacidad (200-500 litros/minuto), equipos de corte térmico subacuático y sistemas de tracción controlada.
+          </p>
+          <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
+            <h4 class="font-bold text-blue-900 mb-2">⚓ Capacidades de Salvamento</h4>
+            <ul class="space-y-2 text-gray-700">
+              <li>• Embarcaciones hasta 25 metros de eslora</li>
+              <li>• Profundidades de trabajo: hasta 50 metros</li>
+              <li>• Bolsas de elevación: 1-10 toneladas</li>
+              <li>• Tiempo de respuesta: menos de 2 horas</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Aplicaciones -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">
+        Tipos de Operaciones de Salvamento
+      </h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow">
+          <div class="text-4xl mb-4">⛵</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Reflotamiento de Embarcaciones</h3>
+          <p class="text-gray-700 mb-4">
+            Recuperación de barcos hundidos o semisumergidos mediante bolsas de elevación, sellado de vías de agua y achique controlado.
+          </p>
+          <ul class="space-y-2 text-gray-600">
+            <li>✓ Veleros y yates de recreo</li>
+            <li>✓ Embarcaciones de pesca hundidas</li>
+            <li>✓ Lanchas y zodiac semisumergidas</li>
+          </ul>
+        </div>
+
+        <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow">
+          <div class="text-4xl mb-4">🔧</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Liberación de Hélices y Timones</h3>
+          <p class="text-gray-700 mb-4">
+            Corte de cabos, redes y cadenas enredadas en propulsión, liberación de anclas atrapadas y desencallamiento de quillas.
+          </p>
+          <ul class="space-y-2 text-gray-600">
+            <li>✓ Corte de redes de pesca enredadas</li>
+            <li>✓ Liberación de anclas atascadas en rocas</li>
+            <li>✓ Extracción de objetos trabados en hélices</li>
+          </ul>
+        </div>
+
+        <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow">
+          <div class="text-4xl mb-4">🚢</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Rescate de Pecios y Estructuras</h3>
+          <p class="text-gray-700 mb-4">
+            Corte y desmontaje de embarcaciones siniestradas, recuperación de restos náufragos y limpieza de obstáculos submarinos.
+          </p>
+          <ul class="space-y-2 text-gray-600">
+            <li>✓ Corte térmico de estructuras metálicas</li>
+            <li>✓ Desmantelamiento controlado de pecios</li>
+            <li>✓ Recuperación de piezas valiosas</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proceso de Trabajo -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">
+        Proceso de Operación de Salvamento
+      </h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-gray-50 p-8 rounded-xl">
+          <div class="flex items-start gap-4 mb-6">
+            <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">1</div>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">Evaluación de Emergencia</h3>
+              <p class="text-gray-700">
+                Contacto telefónico inmediato para recabar información: ubicación exacta, tipo de embarcación, profundidad, estado actual y condiciones meteorológicas. Movilización del equipo en menos de 2 horas.
+              </p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 mb-6">
+            <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">2</div>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">Inspección Submarina</h3>
+              <p class="text-gray-700">
+                Inspección subacuática completa con vídeo para identificar daños, puntos de entrada de agua, estado estructural y obstáculos. Evaluación de riesgos y viabilidad técnica de la operación.
+              </p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 mb-6">
+            <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">3</div>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">Plan de Salvamento</h3>
+              <p class="text-gray-700">
+                Diseño del plan de acción específico: selección de técnica (reflotamiento, elevación, corte), cálculo de flotabilidad necesaria, identificación de puntos de sujeción y secuencia de operaciones.
+              </p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">4</div>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">Ejecución y Recuperación</h3>
+              <p class="text-gray-700">
+                Ejecución controlada del plan: instalación de bolsas de elevación, sellado de vías de agua, achique progresivo o corte de estructuras. Monitoreo continuo de estabilidad y seguridad durante toda la operación.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 p-8 rounded-xl">
+          <h3 class="text-2xl font-bold text-blue-900 mb-6">Equipamiento Especializado</h3>
+          <div class="space-y-4">
+            <div class="flex items-start gap-3">
+              <span class="text-blue-600 text-xl">✓</span>
+              <div>
+                <h4 class="font-bold text-gray-900">Bolsas de Elevación (Lift Bags)</h4>
+                <p class="text-gray-700">Capacidades de 500kg, 1 tonelada, 2 toneladas, 5 toneladas y 10 toneladas para reflotamiento controlado.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="text-blue-600 text-xl">✓</span>
+              <div>
+                <h4 class="font-bold text-gray-900">Bombas de Achique</h4>
+                <p class="text-gray-700">Bombas sumergibles de 200-500 litros/minuto con mangueras de gran diámetro para desagüe rápido.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="text-blue-600 text-xl">✓</span>
+              <div>
+                <h4 class="font-bold text-gray-900">Equipos de Corte Térmico</h4>
+                <p class="text-gray-700">Oxicorte, corte plasma y corte térmico subacuático para desmantelar estructuras metálicas atrapadas.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="text-blue-600 text-xl">✓</span>
+              <div>
+                <h4 class="font-bold text-gray-900">Sistemas de Tracción</h4>
+                <p class="text-gray-700">Cabrestantes y polipastos de hasta 5 toneladas para desencallamiento y arrastre controlado.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="text-blue-600 text-xl">✓</span>
+              <div>
+                <h4 class="font-bold text-gray-900">ROV con Cámara 4K</h4>
+                <p class="text-gray-700">Vehículo submarino operado remotamente para inspección previa y monitoreo durante operaciones complejas.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cuándo Contactarnos -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">
+        ¿Cuándo Necesita Salvamento Marino?
+      </h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white p-6 rounded-xl shadow-md">
+          <div class="text-3xl mb-3">🌊</div>
+          <h3 class="font-bold text-gray-900 mb-2">Hundimiento</h3>
+          <p class="text-gray-600 text-sm">
+            Embarcación hundida o semisumergida que requiere reflotamiento urgente antes de daños mayores.
+          </p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-md">
+          <div class="text-3xl mb-3">⚓</div>
+          <h3 class="font-bold text-gray-900 mb-2">Encallamiento</h3>
+          <p class="text-gray-600 text-sm">
+            Embarcación varada en bancos de arena, rocas o bajos que necesita liberación sin daños estructurales.
+          </p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-md">
+          <div class="text-3xl mb-3">🪢</div>
+          <h3 class="font-bold text-gray-900 mb-2">Hélice Atrapada</h3>
+          <p class="text-gray-600 text-sm">
+            Redes, cabos o cadenas enredadas en hélice o timón que impiden la navegación.
+          </p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-md">
+          <div class="text-3xl mb-3">⛴️</div>
+          <h3 class="font-bold text-gray-900 mb-2">Colisión</h3>
+          <p class="text-gray-600 text-sm">
+            Daños por colisión que requieren evaluación submarina urgente y posible sellado de vías de agua.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="bg-gradient-to-r from-blue-900 to-cyan-900 text-white py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">
+        ¿Necesita Salvamento Marino de Urgencia?
+      </h2>
+      <p class="text-xl mb-8 text-blue-100">
+        Respondemos en menos de 2 horas. Equipo de rescate disponible 24/7 los 365 días del año en Cádiz.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="tel:+34614405061"
+          class="inline-flex items-center justify-center bg-white text-blue-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-50 transition-colors shadow-lg"
+        >
+          🚨 Emergencia: +34 614 405 061
+        </a>
+        <a
+          href="/contacto"
+          class="inline-flex items-center justify-center bg-blue-700 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-600 transition-colors border-2 border-white"
+        >
+          Solicitar Presupuesto Gratuito
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Internal Linking -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-8">Servicios Relacionados</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <a href="/corte-termico-bajo-agua" class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+          <h3 class="text-lg font-bold text-blue-900 mb-2">🔥 Corte Térmico Bajo Agua</h3>
+          <p class="text-gray-600">Tecnología de oxiarco para corte de materiales complejos en salvamento.</p>
+        </a>
+        <a href="/corte-oxicorte-subacuatico" class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+          <h3 class="text-lg font-bold text-blue-900 mb-2">🔥 Corte Oxicorte Subacuático</h3>
+          <p class="text-gray-600">Corte con oxígeno para aceros al carbono y demoliciones submarinas.</p>
+        </a>
+        <a href="/corte-plasma-submarino" class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+          <h3 class="text-lg font-bold text-blue-900 mb-2">⚡ Corte Plasma Submarino</h3>
+          <p class="text-gray-600">Precisión en acero inoxidable y aluminio con corte plasma bajo agua.</p>
+        </a>
+        <a href="/buceo-comercial-certificado" class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+          <h3 class="text-lg font-bold text-blue-900 mb-2">🤿 Buceo Comercial Certificado</h3>
+          <p class="text-gray-600">Buzos profesionales IMCA para operaciones de rescate.</p>
+        </a>
+        <a href="/inspeccion-visual-subacuatica" class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+          <h3 class="text-lg font-bold text-blue-900 mb-2">📹 Inspección Visual Subacuática</h3>
+          <p class="text-gray-600">Evaluación de daños con vídeo 4K antes de operaciones de salvamento.</p>
+        </a>
+        <a href="/soldadura-subacuatica-mojada" class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+          <h3 class="text-lg font-bold text-blue-900 mb-2">⚡ Soldadura Subacuática Mojada</h3>
+          <p class="text-gray-600">Sellado de vías de agua y reparaciones urgentes durante salvamento.</p>
+        </a>
+        <a href="/reparacion-cascos-bajo-agua" class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+          <h3 class="text-lg font-bold text-blue-900 mb-2">🛠️ Reparación de Cascos</h3>
+          <p class="text-gray-600">Reparación de cascos dañados sin necesidad de varada.</p>
+        </a>
+        <a href="/reparacion-helices" class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+          <h3 class="text-lg font-bold text-blue-900 mb-2">🔧 Reparación de Hélices</h3>
+          <p class="text-gray-600">Reparación y liberación de hélices atrapadas o dañadas.</p>
+        </a>
+        <a href="/trabajos-portuarios" class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+          <h3 class="text-lg font-bold text-blue-900 mb-2">⚓ Trabajos Portuarios</h3>
+          <p class="text-gray-600">Instalación y mantenimiento de infraestructuras portuarias sumergidas.</p>
+        </a>
+        <a href="/mantenimiento-offshore" class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+          <h3 class="text-lg font-bold text-blue-900 mb-2">🌊 Mantenimiento Offshore</h3>
+          <p class="text-gray-600">Servicio especializado para plataformas y parques eólicos marinos.</p>
+        </a>
+        <a href="/limpieza-cascos" class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+          <h3 class="text-lg font-bold text-blue-900 mb-2">🧽 Limpieza de Cascos</h3>
+          <p class="text-gray-600">Eliminación de fouling marino para optimizar rendimiento.</p>
+        </a>
+        <a href="/trabajos-astilleros" class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+          <h3 class="text-lg font-bold text-blue-900 mb-2">🏭 Trabajos en Astilleros</h3>
+          <p class="text-gray-600">Apoyo subacuático durante construcción y reparación naval.</p>
+        </a>
+        <a href="/inspeccion-ultrasonidos-subacuatica" class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+          <h3 class="text-lg font-bold text-blue-900 mb-2">🔊 Control END Submarino</h3>
+          <p class="text-gray-600">Ensayos no destructivos bajo agua para evaluación de daños.</p>
+        </a>
+        <a href="/certificaciones-navieras" class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+          <h3 class="text-lg font-bold text-blue-900 mb-2">📋 Certificaciones Navieras</h3>
+          <p class="text-gray-600">Información sobre normativas ABS, DNV, Lloyd's Register y Bureau Veritas.</p>
+        </a>
+        <a href="/contacto" class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+          <h3 class="text-lg font-bold text-blue-900 mb-2">📞 Contacto</h3>
+          <p class="text-gray-600">Solicite asistencia inmediata para emergencias de salvamento.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
