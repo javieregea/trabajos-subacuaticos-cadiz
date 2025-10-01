@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import CallToAction from '../../components/CallToAction.astro';
+import InternalLinks from '../../components/InternalLinks.astro';
 ---
 
 <Layout
@@ -383,6 +384,15 @@ import CallToAction from '../../components/CallToAction.astro';
               </p>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Internal Links -->
+    <section class="py-8 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <InternalLinks currentPage="blog-normativas" context="blog" maxLinks={6} />
         </div>
       </div>
     </section>

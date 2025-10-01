@@ -9,14 +9,48 @@ const { currentPage, context = 'service', maxLinks = 6 } = Astro.props;
 
 // Strategic internal linking matrix
 const linkingMatrix = {
-  // Blog Articles
+  // Blog Articles - TOFU (Educational)
+  'blog-soldadura-subacuatica': {
+    title: '¿Qué es la Soldadura Subacuática?',
+    description: 'Guía completa: funcionamiento, tipos, equipamiento y aplicaciones',
+    url: '/blog/que-es-soldadura-subacuatica',
+    keywords: ['soldadura', 'subacuática', 'qué es', 'cómo funciona'],
+    intent: 'tofu',
+    related: ['soldadura-subacuatica', 'blog-trabajos-subacuaticos', 'blog-corrosion-marina']
+  },
+  'blog-corrosion-marina': {
+    title: 'Tipos de Corrosión Marina',
+    description: '7 tipos de corrosión más peligrosos y cómo prevenirlos',
+    url: '/blog/corrosion-marina-embarcaciones',
+    keywords: ['corrosión', 'marina', 'tipos', 'prevención'],
+    intent: 'tofu',
+    related: ['blog-mantenimiento-preventivo', 'inspeccion-cascos', 'blog-soldadura-subacuatica']
+  },
+  'blog-trabajos-subacuaticos': {
+    title: '¿Qué son los Trabajos Subacuáticos?',
+    description: 'Guía completa de buceo industrial y servicios submarinos',
+    url: '/blog/que-son-trabajos-subacuaticos-industriales',
+    keywords: ['trabajos subacuáticos', 'buceo industrial', 'servicios'],
+    intent: 'tofu',
+    related: ['servicios', 'blog-soldadura-subacuatica', 'reparacion-naval']
+  },
+  'blog-mantenimiento-preventivo': {
+    title: 'Mantenimiento Preventivo Embarcaciones',
+    description: 'Calendario completo y ahorra hasta 80% en reparaciones',
+    url: '/blog/mantenimiento-preventivo-embarcaciones',
+    keywords: ['mantenimiento', 'preventivo', 'ahorro', 'calendario'],
+    intent: 'tofu',
+    related: ['blog-corrosion-marina', 'blog-cuando-inspeccionar', 'inspeccion-cascos']
+  },
+
+  // Blog Articles - MOFU/BOFU (High Intent)
   'blog-cuando-inspeccionar': {
     title: 'Cuándo Inspeccionar Cascos',
     description: 'Plazos obligatorios, multas y cumplimiento normativo',
     url: '/blog/cuando-inspeccionar-casco-embarcacion',
     keywords: ['plazos', 'multas', 'obligatorio', 'normativa'],
     intent: 'high',
-    related: ['inspeccion-cascos', 'blog-normativas', 'emergencias']
+    related: ['inspeccion-cascos', 'blog-normativas', 'blog-mantenimiento-preventivo']
   },
   'blog-comparativa': {
     title: 'Submarina vs Varada: Ahorro 75-93%',
@@ -32,7 +66,7 @@ const linkingMatrix = {
     url: '/blog/normativas-inspeccion-cascos-buques-2024',
     keywords: ['SOLAS', 'MARPOL', 'normativas', 'clasificación'],
     intent: 'high',
-    related: ['blog-cuando-inspeccionar', 'inspeccion-cascos', 'servicios']
+    related: ['blog-cuando-inspeccionar', 'inspeccion-cascos', 'blog-mantenimiento-preventivo']
   },
   'blog-index': {
     title: 'Blog Técnico Especializado',
@@ -40,7 +74,7 @@ const linkingMatrix = {
     url: '/blog/',
     keywords: ['guías', 'técnico', 'especializado'],
     intent: 'medium',
-    related: ['blog-cuando-inspeccionar', 'blog-comparativa', 'blog-normativas']
+    related: ['blog-soldadura-subacuatica', 'blog-corrosion-marina', 'blog-trabajos-subacuaticos']
   },
 
   // Main Services
@@ -135,18 +169,35 @@ function getSmartLinks(currentPage: string, context: string, maxLinks: number) {
 
   // Add contextual suggestions based on page type
   if (context === 'blog') {
-    // For blog pages, suggest main services
-    ['inspeccion-cascos', 'emergencias', 'contacto'].forEach(key => {
-      if (key !== currentPage && linkingMatrix[key] && !suggestions.find(s => s.url === linkingMatrix[key].url)) {
-        suggestions.push({
-          ...linkingMatrix[key],
-          relevance: 'medium'
-        });
-      }
-    });
+    // For TOFU blog pages, suggest other TOFU + main services
+    const tofuPages = ['blog-soldadura-subacuatica', 'blog-corrosion-marina', 'blog-trabajos-subacuaticos', 'blog-mantenimiento-preventivo'];
+    const highIntentPages = ['blog-cuando-inspeccionar', 'blog-comparativa', 'blog-normativas'];
+    const servicePages = ['inspeccion-cascos', 'emergencias', 'contacto'];
+
+    // If current is TOFU, suggest other TOFU + high intent + services
+    if (tofuPages.includes(currentPage)) {
+      [...tofuPages, ...highIntentPages, ...servicePages].forEach(key => {
+        if (key !== currentPage && linkingMatrix[key] && !suggestions.find(s => s.url === linkingMatrix[key].url)) {
+          suggestions.push({
+            ...linkingMatrix[key],
+            relevance: tofuPages.includes(key) ? 'high' : 'medium'
+          });
+        }
+      });
+    } else {
+      // For high intent pages, suggest TOFU + services
+      [...tofuPages, ...servicePages].forEach(key => {
+        if (key !== currentPage && linkingMatrix[key] && !suggestions.find(s => s.url === linkingMatrix[key].url)) {
+          suggestions.push({
+            ...linkingMatrix[key],
+            relevance: 'medium'
+          });
+        }
+      });
+    }
   } else if (context === 'service') {
-    // For service pages, suggest blog content
-    ['blog-cuando-inspeccionar', 'blog-comparativa', 'blog-normativas'].forEach(key => {
+    // For service pages, suggest relevant TOFU + high intent blog content
+    ['blog-soldadura-subacuatica', 'blog-corrosion-marina', 'blog-trabajos-subacuaticos', 'blog-mantenimiento-preventivo', 'blog-cuando-inspeccionar', 'blog-comparativa', 'blog-normativas'].forEach(key => {
       if (linkingMatrix[key] && !suggestions.find(s => s.url === linkingMatrix[key].url)) {
         suggestions.push({
           ...linkingMatrix[key],
@@ -175,6 +226,7 @@ const smartLinks = getSmartLinks(currentPage, context, maxLinks);
     <div class="grid md:grid-cols-2 gap-4">
       {smartLinks.map(link => (
         <div class={`bg-white p-4 rounded-lg shadow-sm border-l-4 ${
+          link.intent === 'tofu' ? 'border-purple-500' :
           link.intent === 'high' ? 'border-red-500' :
           link.intent === 'commercial' ? 'border-blue-500' :
           link.intent === 'urgent' ? 'border-orange-500' :
@@ -182,6 +234,7 @@ const smartLinks = getSmartLinks(currentPage, context, maxLinks);
         } hover:shadow-md transition-shadow`}>
           <h4 class="font-bold text-gray-800 mb-2">
             <a href={link.url} class={`hover:underline ${
+              link.intent === 'tofu' ? 'text-purple-700' :
               link.intent === 'high' ? 'text-red-700' :
               link.intent === 'commercial' ? 'text-blue-700' :
               link.intent === 'urgent' ? 'text-orange-700' :
@@ -194,19 +247,22 @@ const smartLinks = getSmartLinks(currentPage, context, maxLinks);
 
           <div class="flex items-center justify-between">
             <span class={`text-xs px-2 py-1 rounded ${
+              link.intent === 'tofu' ? 'bg-purple-100 text-purple-700' :
               link.intent === 'high' ? 'bg-red-100 text-red-700' :
               link.intent === 'commercial' ? 'bg-blue-100 text-blue-700' :
               link.intent === 'urgent' ? 'bg-orange-100 text-orange-700' :
               'bg-gray-100 text-gray-700'
             }`}>
-              {link.intent === 'high' ? 'High Intent' :
+              {link.intent === 'tofu' ? '🎓 Educativo' :
+               link.intent === 'high' ? 'High Intent' :
                link.intent === 'commercial' ? 'Servicio' :
                link.intent === 'urgent' ? 'Emergencia' :
                'Información'}
             </span>
 
             <a href={link.url} class={`text-sm font-semibold hover:underline ${
-              link.intent === 'urgent' ? 'text-red-600' : 'text-blue-600'
+              link.intent === 'urgent' ? 'text-red-600' :
+              link.intent === 'tofu' ? 'text-purple-600' : 'text-blue-600'
             }`}>
               {link.intent === 'urgent' ? '🚨 Ver ahora' : 'Leer más →'}
             </a>

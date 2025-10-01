@@ -1,21 +1,15 @@
 ---
 // Header component
-import AnchorLogo from './AnchorLogo.astro';
+import Logo from './Logo.astro';
 ---
 
-<header class="bg-blue-900 text-white shadow-lg fixed top-0 left-0 right-0 z-50">
-  <nav class="container mx-auto px-4 py-4">
+<header class="bg-blue-900 text-white shadow-lg fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="main-header">
+  <nav class="container mx-auto px-4 py-2">
     <div class="flex items-center justify-between">
       <!-- Logo -->
-      <div class="flex items-center space-x-2">
-        <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
-          <AnchorLogo size="md" color="white" variant="outline" />
-        </div>
-        <div>
-          <h1 class="text-xl font-bold">Trabajos Subacuáticos Cádiz</h1>
-          <p class="text-xs text-blue-200">Soldadura y Servicios Marítimos 24/7</p>
-        </div>
-      </div>
+      <a href="/" class="flex items-center space-x-3 hover:opacity-90 transition-opacity">
+        <Logo size="small" className="header-logo w-32 md:w-40" />
+      </a>
 
       <!-- Navigation -->
       <div class="hidden md:flex space-x-6">
@@ -28,7 +22,7 @@ import AnchorLogo from './AnchorLogo.astro';
       </div>
 
       <!-- Emergency Contact -->
-      <div class="hidden lg:flex items-center space-x-2 bg-red-600 px-4 py-2 rounded-lg">
+      <a href="tel:+34614405061" class="hidden lg:flex items-center space-x-2 bg-red-700 hover:bg-red-800 px-4 py-2 rounded-lg transition-colors shadow-lg pulse-effect">
         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
           <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
         </svg>
@@ -36,11 +30,11 @@ import AnchorLogo from './AnchorLogo.astro';
           <div class="font-semibold">Emergencia 24h</div>
           <div>+34 614 405 061</div>
         </div>
-      </div>
+      </a>
 
       <!-- Mobile CTA and menu -->
       <div class="md:hidden flex items-center space-x-2">
-        <a href="tel:+34614405061" class="bg-red-600 hover:bg-red-700 px-3 py-2 rounded text-xs font-semibold transition-colors flex items-center space-x-1">
+        <a href="tel:+34614405061" class="bg-red-700 hover:bg-red-800 px-3 py-2 rounded text-xs font-semibold transition-colors flex items-center space-x-1 pulse-effect shadow-md">
           <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
             <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
           </svg>
@@ -55,7 +49,7 @@ import AnchorLogo from './AnchorLogo.astro';
     </div>
 
     <!-- Mobile Navigation -->
-    <div id="mobile-menu" class="md:hidden mt-4 space-y-2 hidden bg-blue-100 rounded-lg p-4 shadow-lg">
+    <div id="mobile-menu" class="md:hidden mt-3 space-y-1 hidden bg-blue-100 rounded-lg p-3 shadow-lg">
       <a href="/" class="block py-2 text-blue-900 hover:text-blue-600 border-b border-blue-200 last:border-b-0 font-medium">Inicio</a>
       <a href="/servicios" class="block py-2 text-blue-900 hover:text-blue-600 border-b border-blue-200 last:border-b-0 font-medium">Servicios</a>
       <a href="/soldadura-subacuatica" class="block py-2 text-blue-900 hover:text-blue-600 border-b border-blue-200 last:border-b-0 font-medium">Soldadura Subacuática</a>
@@ -95,5 +89,93 @@ import AnchorLogo from './AnchorLogo.astro';
         toggleMobileMenu();
       });
     }
+
+    // Header scroll behavior - make compact on scroll
+    let lastScrollTop = 0;
+    const header = document.getElementById('main-header');
+    const nav = header.querySelector('nav');
+
+    window.addEventListener('scroll', function() {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (scrollTop > 50) {
+        header.classList.add('scrolled');
+        nav.classList.remove('py-2');
+        nav.classList.add('py-1');
+      } else {
+        header.classList.remove('scrolled');
+        nav.classList.remove('py-1');
+        nav.classList.add('py-2');
+      }
+
+      lastScrollTop = scrollTop;
+    });
   });
 </script>
+
+<style>
+  /* Pulse effect for emergency buttons */
+  .pulse-effect {
+    animation: pulse-red 2s infinite;
+  }
+
+  @keyframes pulse-red {
+    0% {
+      box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(239, 68, 68, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+    }
+  }
+
+  /* Header scrolled state */
+  #main-header.scrolled {
+    background: rgba(30, 58, 138, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  #main-header.scrolled .pulse-effect {
+    background: #b91c1c !important;
+  }
+
+  #main-header.scrolled .pulse-effect:hover {
+    background: #991b1b !important;
+  }
+
+  /* Logo gradient animation */
+  .logo-gradient {
+    background: linear-gradient(45deg, #dc2626, #ef4444);
+    background-size: 200% 200%;
+    animation: gradientShift 3s ease infinite;
+  }
+
+  @keyframes gradientShift {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  /* Mobile responsive improvements */
+  @media (max-width: 768px) {
+    #main-header nav {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+
+    #main-header.scrolled nav {
+      padding-top: 0.25rem;
+      padding-bottom: 0.25rem;
+    }
+
+    .logo-container h1 {
+      font-size: 1rem;
+    }
+  }
+</style>

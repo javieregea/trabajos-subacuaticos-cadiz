@@ -1,0 +1,574 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CallToAction from '../components/CallToAction.astro';
+import AnchorLogo from '../components/AnchorLogo.astro';
+---
+
+<Layout
+  title="Corte Subacuático en Cádiz | Oxicorte y Plasma Submarino 24/7"
+  description="Especialistas en corte subacuático en el puerto de Cádiz. Oxicorte, plasma y térmico bajo agua para demolición, salvamento y emergencias marítimas."
+  keywords="corte subacuático Cádiz, oxicorte submarino, corte plasma bajo agua, demolición submarina, salvamento marítimo, corte térmico, emergencias marinas Cádiz"
+>
+  <!-- Local Business Schema -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Corte Subacuático Cádiz - Oxicorte y Plasma Submarino",
+      "image": "https://trabajossubacuaticoscadiz.com/images/corte-subacuatico.jpg",
+      "@id": "https://trabajossubacuaticoscadiz.com/corte-subacuatico",
+      "url": "https://trabajossubacuaticoscadiz.com/corte-subacuatico",
+      "telephone": "+34614405061",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Puerto de Cádiz",
+        "addressLocality": "Cádiz",
+        "postalCode": "11006",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 36.5298,
+        "longitude": -6.2943
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+        ],
+        "opens": "00:00",
+        "closes": "23:59"
+      },
+      "serviceArea": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": 36.5298,
+          "longitude": -6.2943
+        },
+        "geoRadius": "100000"
+      },
+      "priceRange": "€€€",
+      "description": "Servicios especializados de corte subacuático en el puerto de Cádiz. Oxicorte, plasma y térmico submarino para demolición, salvamento y trabajos de emergencia."
+    }
+  </script>
+
+  <!-- Service Schema -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Servicios de Corte Subacuático",
+      "description": "Corte profesional bajo agua incluyendo oxicorte, plasma y térmico submarino para demolición, salvamento y trabajos de emergencia en Cádiz",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Trabajos Subacuáticos Cádiz"
+      },
+      "serviceType": "Corte Subacuático",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Servicios de Corte Submarino",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Oxicorte Subacuático"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Corte Plasma Submarino"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Demolición Submarina"
+            }
+          }
+        ]
+      }
+    }
+  </script>
+
+  <Header />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-red-800 to-red-600 text-white py-20 relative overflow-hidden">
+      <div class="absolute inset-0 opacity-10">
+        <div class="absolute top-20 left-12">
+          <AnchorLogo size="xl" color="white" variant="outline" className="rotate-12" />
+        </div>
+        <div class="absolute bottom-16 right-8">
+          <AnchorLogo size="lg" color="white" variant="outline" className="-rotate-45" />
+        </div>
+      </div>
+
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+          <div class="flex justify-center mb-6">
+            <AnchorLogo size="xl" color="white" variant="outline" />
+          </div>
+          <h1 class="text-4xl md:text-6xl font-bold mb-6">
+            Corte Subacuático en Cádiz
+          </h1>
+          <h2 class="text-xl md:text-2xl text-red-200 mb-8">
+            Oxicorte, Plasma y Térmico Submarino - Demolición y Salvamento
+          </h2>
+          <p class="text-lg md:text-xl mb-8 text-red-100">
+            Especialistas en corte subacuático en el puerto de Cádiz. Oxicorte submarino,
+            plasma y térmico bajo agua para demolición, salvamento y emergencias.
+            <span class="font-semibold text-yellow-300">Disponibles 24/7</span>
+          </p>
+          <div class="flex flex-col md:flex-row gap-4 justify-center">
+            <CallToAction variant="emergency" size="xl" text="LLAMAR AHORA" subtext="Corte de Emergencia" />
+            <a href="#servicios-corte" class="bg-red-600 hover:bg-red-700 px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
+              Ver Servicios
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Servicios de Corte Section -->
+    <section id="servicios-corte" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <div class="flex justify-center mb-6">
+            <AnchorLogo size="lg" color="#dc2626" variant="filled" />
+          </div>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Servicios de Corte Subacuático en Cádiz
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Más de 20 años especializados en corte submarino en el puerto de Cádiz,
+            estrecho de Gibraltar y costa atlántica andaluza
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Oxicorte Subacuático -->
+          <div class="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-shadow">
+            <div class="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Oxicorte Subacuático</h3>
+            <p class="text-gray-600 mb-4">
+              Corte oxiacetilénico submarino para aceros navales y estructuras metálicas.
+              Técnica más versátil y eficiente para cortes precisos bajo el agua.
+            </p>
+            <ul class="text-sm text-gray-500 space-y-1">
+              <li>• Corte aceros hasta 300mm</li>
+              <li>• Precisión milimétrica</li>
+              <li>• Profundidad hasta 30m</li>
+              <li>• Equipos especializados</li>
+            </ul>
+          </div>
+
+          <!-- Corte Plasma Submarino -->
+          <div class="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-shadow">
+            <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Corte Plasma Submarino</h3>
+            <p class="text-gray-600 mb-4">
+              Tecnología plasma submarina para corte limpio de aceros inoxidables,
+              aluminio y aleaciones marinas. Mayor velocidad y calidad de corte.
+            </p>
+            <ul class="text-sm text-gray-500 space-y-1">
+              <li>• Corte inoxidable marino</li>
+              <li>• Aleaciones especiales</li>
+              <li>• Corte limpio y preciso</li>
+              <li>• Alta velocidad</li>
+            </ul>
+          </div>
+
+          <!-- Corte Térmico -->
+          <div class="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-shadow">
+            <div class="w-12 h-12 bg-orange-600 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M13.477 14.89A6 6 0 015.11 6.524l8.367 8.368zm1.414-1.414L6.524 5.11a6 6 0 018.367 8.367zM18 10a8 8 0 11-16 0 8 8 0 0116 0z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Corte Térmico Bajo Agua</h3>
+            <p class="text-gray-600 mb-4">
+              Corte térmico especializado para estructuras de gran espesor.
+              Ideal para demolición de pilotes y estructuras portuarias masivas.
+            </p>
+            <ul class="text-sm text-gray-500 space-y-1">
+              <li>• Estructuras gran espesor</li>
+              <li>• Demolición pilotes</li>
+              <li>• Trabajo en hormigón armado</li>
+              <li>• Cortes de emergencia</li>
+            </ul>
+          </div>
+
+          <!-- Demolición Submarina -->
+          <div class="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-shadow">
+            <div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h4a1 1 0 010 2H6.414l2.293 2.293a1 1 0 01-1.414 1.414L5 6.414V8a1 1 0 01-2 0V4zm9 1a1 1 0 010-2h4a1 1 0 011 1v4a1 1 0 01-2 0V6.414l-2.293 2.293a1 1 0 11-1.414-1.414L13.586 5H12zm-9 7a1 1 0 012 0v1.586l2.293-2.293a1 1 0 111.414 1.414L6.414 15H8a1 1 0 010 2H4a1 1 0 01-1-1v-4zm13-1a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 010-2h1.586l-2.293-2.293a1 1 0 111.414-1.414L15.586 13H14a1 1 0 01-1-1z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Demolición Submarina</h3>
+            <p class="text-gray-600 mb-4">
+              Demolición controlada de estructuras submarinas obsoletas.
+              Desmantelamiento de muelles, pilotes y estructuras portuarias.
+            </p>
+            <ul class="text-sm text-gray-500 space-y-1">
+              <li>• Demolición controlada</li>
+              <li>• Desmantelamiento muelles</li>
+              <li>• Eliminación pilotes</li>
+              <li>• Estructuras obsoletas</li>
+            </ul>
+          </div>
+
+          <!-- Salvamento Marítimo -->
+          <div class="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-shadow">
+            <div class="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M8 5a1 1 0 100 2h5.586l-1.293 1.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L13.586 5H8zM12 15a1 1 0 100-2H6.414l1.293-1.293a1 1 0 10-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L6.414 15H12z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Trabajos de Salvamento</h3>
+            <p class="text-gray-600 mb-4">
+              Corte de emergencia para operaciones de salvamento marítimo.
+              Liberación de embarcaciones encalladas y trabajos críticos.
+            </p>
+            <ul class="text-sm text-gray-500 space-y-1">
+              <li>• Salvamento embarcaciones</li>
+              <li>• Liberación anclas</li>
+              <li>• Cortes de emergencia</li>
+              <li>• Operaciones de rescate</li>
+            </ul>
+          </div>
+
+          <!-- Emergencias 24h -->
+          <div class="bg-red-50 p-6 rounded-lg hover:shadow-lg transition-shadow border-2 border-red-200">
+            <div class="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-3 text-red-700">Corte de Emergencia 24h</h3>
+            <p class="text-gray-700 mb-4">
+              Servicio 24/7 para cortes de emergencia en el puerto de Cádiz.
+              Respuesta inmediata para situaciones críticas y salvamento marítimo.
+            </p>
+            <ul class="text-sm text-red-600 space-y-1 font-medium">
+              <li>• Respuesta < 60 minutos</li>
+              <li>• Servicio 24/7/365</li>
+              <li>• Equipo de emergencia</li>
+              <li>• Puerto de Cádiz</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tecnología y Equipos -->
+    <section class="py-16 bg-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Tecnología Avanzada de Corte Submarino
+            </h2>
+            <p class="text-xl text-gray-600">
+              Equipos especializados y técnicas certificadas para cada tipo de material
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Técnicas de Corte -->
+            <div class="bg-white p-8 rounded-lg shadow-lg">
+              <h3 class="text-2xl font-bold mb-6 text-red-700">Técnicas de Corte Especializadas</h3>
+              <div class="space-y-4">
+                <div class="flex items-start space-x-3">
+                  <span class="flex-shrink-0 w-6 h-6 bg-red-600 rounded-full flex items-center justify-center text-white text-sm font-bold">🔥</span>
+                  <div>
+                    <h4 class="font-semibold">Oxicorte Exotérmico</h4>
+                    <p class="text-gray-600 text-sm">Varillas especiales para corte rápido de aceros gruesos</p>
+                  </div>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <span class="flex-shrink-0 w-6 h-6 bg-red-600 rounded-full flex items-center justify-center text-white text-sm font-bold">⚡</span>
+                  <div>
+                    <h4 class="font-semibold">Plasma Hiperbárico</h4>
+                    <p class="text-gray-600 text-sm">Corte plasma en ambiente seco bajo presión</p>
+                  </div>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <span class="flex-shrink-0 w-6 h-6 bg-red-600 rounded-full flex items-center justify-center text-white text-sm font-bold">🔧</span>
+                  <div>
+                    <h4 class="font-semibold">Corte por Arco Aire</h4>
+                    <p class="text-gray-600 text-sm">Técnica para fundiciones y materiales especiales</p>
+                  </div>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <span class="flex-shrink-0 w-6 h-6 bg-red-600 rounded-full flex items-center justify-center text-white text-sm font-bold">💎</span>
+                  <div>
+                    <h4 class="font-semibold">Diamante Submarino</h4>
+                    <p class="text-gray-600 text-sm">Corte de precisión en hormigón y materiales duros</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Materiales y Aplicaciones -->
+            <div class="bg-white p-8 rounded-lg shadow-lg">
+              <h3 class="text-2xl font-bold mb-6 text-blue-700">Materiales y Aplicaciones</h3>
+              <div class="space-y-4">
+                <div class="flex items-start space-x-3">
+                  <span class="flex-shrink-0 w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center text-white text-sm font-bold">🛡️</span>
+                  <div>
+                    <h4 class="font-semibold">Aceros Navales</h4>
+                    <p class="text-gray-600 text-sm">Corte especializado en aceros de construcción naval</p>
+                  </div>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <span class="flex-shrink-0 w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center text-white text-sm font-bold">✨</span>
+                  <div>
+                    <h4 class="font-semibold">Aceros Inoxidables</h4>
+                    <p class="text-gray-600 text-sm">Corte plasma para aceros resistentes a corrosión</p>
+                  </div>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <span class="flex-shrink-0 w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center text-white text-sm font-bold">🏗️</span>
+                  <div>
+                    <h4 class="font-semibold">Estructuras Mixtas</h4>
+                    <p class="text-gray-600 text-sm">Hormigón armado y estructuras compuestas</p>
+                  </div>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <span class="flex-shrink-0 w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center text-white text-sm font-bold">⚙️</span>
+                  <div>
+                    <h4 class="font-semibold">Aleaciones Marinas</h4>
+                    <p class="text-gray-600 text-sm">Bronce, latón y aleaciones especiales</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Proceso de Trabajo -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Proceso de Corte Subacuático
+            </h2>
+            <p class="text-xl text-gray-600">
+              Metodología profesional y protocolos de seguridad para cada proyecto
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="text-center p-6 bg-gray-50 rounded-lg">
+              <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span class="text-white font-bold text-xl">1</span>
+              </div>
+              <h3 class="text-lg font-semibold mb-3">Inspección</h3>
+              <p class="text-gray-600">Evaluación submarina del material, espesor y condiciones del corte</p>
+            </div>
+
+            <div class="text-center p-6 bg-gray-50 rounded-lg">
+              <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span class="text-white font-bold text-xl">2</span>
+              </div>
+              <h3 class="text-lg font-semibold mb-3">Planificación</h3>
+              <p class="text-gray-600">Selección de técnica de corte y preparación de equipos especializados</p>
+            </div>
+
+            <div class="text-center p-6 bg-gray-50 rounded-lg">
+              <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span class="text-white font-bold text-xl">3</span>
+              </div>
+              <h3 class="text-lg font-semibold mb-3">Ejecución</h3>
+              <p class="text-gray-600">Corte preciso con técnicas apropiadas y medidas de seguridad</p>
+            </div>
+
+            <div class="text-center p-6 bg-gray-50 rounded-lg">
+              <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span class="text-white font-bold text-xl">4</span>
+              </div>
+              <h3 class="text-lg font-semibold mb-3">Acabado</h3>
+              <p class="text-gray-600">Limpieza de restos y verificación de corte según especificaciones</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Aplicaciones Industriales -->
+    <section class="py-16 bg-red-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Aplicaciones del Corte Subacuático
+            </h2>
+            <p class="text-xl text-gray-600">
+              Soluciones profesionales para la industria marítima y portuaria de Cádiz
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-lg shadow-md text-center">
+              <div class="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <span class="text-white font-bold">⚓</span>
+              </div>
+              <h3 class="text-lg font-semibold mb-2">Liberación de Anclas</h3>
+              <p class="text-gray-600 text-sm">Corte de cadenas y elementos enganchados</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-md text-center">
+              <div class="w-12 h-12 bg-orange-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <span class="text-white font-bold">🚢</span>
+              </div>
+              <h3 class="text-lg font-semibold mb-2">Modificación Cascos</h3>
+              <p class="text-gray-600 text-sm">Apertura de tomas de mar y pasos de casco</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-md text-center">
+              <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <span class="text-white font-bold">🏗️</span>
+              </div>
+              <h3 class="text-lg font-semibold mb-2">Demolición Portuaria</h3>
+              <p class="text-gray-600 text-sm">Eliminación de estructuras obsoletas</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-md text-center">
+              <div class="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <span class="text-white font-bold">🔧</span>
+              </div>
+              <h3 class="text-lg font-semibold mb-2">Preparación Soldadura</h3>
+              <p class="text-gray-600 text-sm">Biselado y preparación para <a href="/soldadura-subacuatica" class="text-blue-600 hover:text-blue-800 hover:underline transition-colors">soldadura subacuática</a></p>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-md text-center">
+              <div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <span class="text-white font-bold">⚡</span>
+              </div>
+              <h3 class="text-lg font-semibold mb-2">Instalaciones Offshore</h3>
+              <p class="text-gray-600 text-sm">Modificación plataformas y estructuras</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-md text-center">
+              <div class="w-12 h-12 bg-yellow-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <span class="text-white font-bold">🛠️</span>
+              </div>
+              <h3 class="text-lg font-semibold mb-2">Trabajos de Emergencia</h3>
+              <p class="text-gray-600 text-sm">Cortes críticos para salvamento marítimo</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ventajas Competitivas -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              ¿Por Qué Elegir Nuestro Servicio de Corte Subacuático?
+            </h2>
+            <p class="text-xl text-gray-600">
+              Ventajas técnicas y operativas que nos distinguen en Cádiz
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0 w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center">
+                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold mb-2">Múltiples Técnicas</h3>
+                <p class="text-gray-600">Oxicorte, plasma, térmico y diamante según necesidades específicas</p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0 w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center">
+                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold mb-2">Respuesta Rápida</h3>
+                <p class="text-gray-600">Disponibilidad 24/7 con respuesta en menos de 60 minutos</p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0 w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center">
+                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold mb-2">Ubicación Estratégica</h3>
+                <p class="text-gray-600">Base en puerto de Cádiz con cobertura en estrecho de Gibraltar</p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0 w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center">
+                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold mb-2">Especialistas Certificados</h3>
+                <p class="text-gray-600">Técnicos con certificaciones internacionales en corte submarino</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="bg-red-700 text-white py-16">
+      <div class="container mx-auto px-4 text-center">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">
+            ¿Necesita Servicios de Corte Subacuático en Cádiz?
+          </h2>
+          <p class="text-xl text-red-200 mb-8">
+            Especialistas en oxicorte, plasma y térmico submarino disponibles 24/7.
+            Demolición, salvamento y trabajos de emergencia en el puerto de Cádiz.
+          </p>
+          <div class="flex flex-col md:flex-row gap-4 justify-center mb-8">
+            <CallToAction variant="emergency" size="xl" text="LLAMAR AHORA" subtext="Corte de Emergencia" />
+            <CallToAction variant="quote" size="xl" text="CONSULTAR PRECIO" subtext="Presupuesto Gratuito" />
+          </div>
+          <div class="text-center">
+            <CallToAction variant="whatsapp" size="lg" text="WHATSAPP" subtext="Consulta Inmediata" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

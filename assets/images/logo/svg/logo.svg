@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" aria-labelledby="logo-title">
+  <title id="logo-title">Trabajos Subacuáticos Cádiz</title>
+  <defs>
+    <style>
+      .cls-1 { fill: #006494; }
+      .cls-text {
+        fill: #003554;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 700;
+      }
+      .cls-text-main { font-size: 80px; }
+      .cls-text-sub { font-size: 90px; }
+      .cls-text-city { font-size: 120px; }
+    </style>
+  </defs>
+
+  <!-- Diving Helmet Icon -->
+  <g id="helmet" transform="translate(100, 100)">
+    <!-- Waves -->
+    <path class="cls-1" d="M 20,180 Q 40,170 60,180 T 100,180 T 140,180" stroke="#006494" stroke-width="10" fill="none"/>
+    <path class="cls-1" d="M 20,200 Q 40,190 60,200 T 100,200 T 140,200" stroke="#006494" stroke-width="10" fill="none"/>
+    <path class="cls-1" d="M 20,220 Q 40,210 60,220 T 100,220 T 140,220" stroke="#006494" stroke-width="10" fill="none"/>
+
+    <!-- Helmet base -->
+    <circle class="cls-1" cx="80" cy="80" r="60" fill="none" stroke="#006494" stroke-width="12"/>
+    <circle class="cls-1" cx="80" cy="80" r="40" fill="none" stroke="#006494" stroke-width="12"/>
+
+    <!-- Helmet window -->
+    <circle class="cls-1" cx="80" cy="80" r="30" fill="none" stroke="#006494" stroke-width="8"/>
+    <line class="cls-1" x1="55" y1="80" x2="105" y2="80" stroke="#006494" stroke-width="8"/>
+    <line class="cls-1" x1="80" y1="55" x2="80" y2="105" stroke="#006494" stroke-width="8"/>
+
+    <!-- Helmet top valve -->
+    <rect class="cls-1" x="70" y="10" width="20" height="15" rx="3" fill="#006494"/>
+
+    <!-- Helmet side bolts -->
+    <circle class="cls-1" cx="30" cy="80" r="8" fill="#006494"/>
+    <circle class="cls-1" cx="130" cy="80" r="8" fill="#006494"/>
+
+    <!-- Helmet neck ring -->
+    <path class="cls-1" d="M 40,130 Q 80,145 120,130" stroke="#006494" stroke-width="12" fill="none"/>
+    <circle class="cls-1" cx="50" cy="125" r="8" fill="#006494"/>
+    <circle class="cls-1" cx="110" cy="125" r="8" fill="#006494"/>
+  </g>
+
+  <!-- Text -->
+  <text class="cls-text cls-text-main" x="300" y="140">TRABAJOS</text>
+  <text class="cls-text cls-text-sub" x="300" y="235">SUBACUÁTICOS</text>
+  <text class="cls-text cls-text-city" x="300" y="350">CÁDIZ</text>
+</svg>

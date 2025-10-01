@@ -1,0 +1,509 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CallToAction from '../components/CallToAction.astro';
+import AnchorLogo from '../components/AnchorLogo.astro';
+---
+
+<Layout
+  title="Reparación de Embarcaciones en Cádiz | Soldadura Naval a Flote 24/7"
+  description="Especialistas en reparación naval a flote en el puerto de Cádiz. Soldadura de cascos, reparación de hélices y timones sin varar la embarcación. Servicio 24h."
+  keywords="reparación embarcaciones Cádiz, soldadura naval, reparación cascos, reparación hélices, astilleros Cádiz, varaderos bahía Cádiz, reparación a flote, timones embarcaciones"
+>
+  <!-- Local Business Schema -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Reparación de Embarcaciones Cádiz - Trabajos Subacuáticos",
+      "image": "https://trabajossubacuaticoscadiz.com/images/reparacion-embarcaciones.jpg",
+      "@id": "https://trabajossubacuaticoscadiz.com/reparacion-embarcaciones",
+      "url": "https://trabajossubacuaticoscadiz.com/reparacion-embarcaciones",
+      "telephone": "+34614405061",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Puerto de Cádiz",
+        "addressLocality": "Cádiz",
+        "postalCode": "11006",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 36.5298,
+        "longitude": -6.2943
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+        ],
+        "opens": "00:00",
+        "closes": "23:59"
+      },
+      "serviceArea": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": 36.5298,
+          "longitude": -6.2943
+        },
+        "geoRadius": "50000"
+      },
+      "priceRange": "€€€",
+      "description": "Servicios especializados de reparación naval a flote en el puerto de Cádiz. Soldadura de cascos, reparación de hélices, timones y estructuras navales sin necesidad de varar."
+    }
+  </script>
+
+  <!-- Service Schema -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Reparación de Embarcaciones a Flote",
+      "description": "Servicio completo de reparación naval en Cádiz incluyendo soldadura de cascos, reparación de hélices, timones y estructuras navales directamente en el agua",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Trabajos Subacuáticos Cádiz"
+      },
+      "serviceType": "Reparación Naval",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Servicios de Reparación Naval",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Reparación de Cascos a Flote"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Reparación de Hélices Submarinas"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Reparación de Timones"
+            }
+          }
+        ]
+      }
+    }
+  </script>
+
+  <Header />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-orange-800 to-orange-600 text-white py-20 relative overflow-hidden">
+      <div class="absolute inset-0 opacity-10">
+        <div class="absolute top-20 left-12">
+          <AnchorLogo size="xl" color="white" variant="outline" className="rotate-12" />
+        </div>
+        <div class="absolute bottom-16 right-8">
+          <AnchorLogo size="lg" color="white" variant="outline" className="-rotate-45" />
+        </div>
+      </div>
+
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+          <div class="flex justify-center mb-6">
+            <AnchorLogo size="xl" color="white" variant="outline" />
+          </div>
+          <h1 class="text-4xl md:text-6xl font-bold mb-6">
+            Reparación de Embarcaciones en Cádiz
+          </h1>
+          <h2 class="text-xl md:text-2xl text-orange-200 mb-8">
+            Soldadura Naval y Reparaciones a Flote - Sin Varar su Embarcación
+          </h2>
+          <p class="text-lg md:text-xl mb-8 text-orange-100">
+            Especialistas en reparación naval en el puerto de Cádiz. Soldamos cascos,
+            reparamos hélices y timones directamente en el agua.
+            <span class="font-semibold text-yellow-300">Disponibles 24/7</span>
+          </p>
+          <div class="flex flex-col md:flex-row gap-4 justify-center">
+            <CallToAction variant="emergency" size="xl" text="LLAMAR AHORA" subtext="Reparación Urgente" />
+            <a href="#servicios-reparacion" class="bg-orange-600 hover:bg-orange-700 px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
+              Ver Servicios
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Servicios de Reparación Section -->
+    <section id="servicios-reparacion" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <div class="flex justify-center mb-6">
+            <AnchorLogo size="lg" color="#ea580c" variant="filled" />
+          </div>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Servicios de Reparación Naval en Cádiz
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Más de 20 años especializados en reparación a flote en el puerto de Cádiz,
+            bahía gaditana y astilleros de Andalucía
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Reparación de Cascos -->
+          <div class="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-shadow">
+            <div class="w-12 h-12 bg-orange-600 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Soldadura de Cascos a Flote</h3>
+            <p class="text-gray-600 mb-4">
+              Reparación de fisuras, agujeros y daños en cascos de embarcaciones directamente en el agua.
+              Soldadura subacuática certificada para aceros navales y aleaciones marinas.
+            </p>
+            <ul class="text-sm text-gray-500 space-y-1">
+              <li>• Reparación fisuras casco</li>
+              <li>• Soldadura placas emergencia</li>
+              <li>• Refuerzo estructuras navales</li>
+              <li>• Soldadura aceros marinos</li>
+            </ul>
+          </div>
+
+          <!-- Reparación de Hélices -->
+          <div class="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-shadow">
+            <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Reparación de Hélices</h3>
+            <p class="text-gray-600 mb-4">
+              Reparación y enderezado de hélices dañadas. Soldadura especializada en bronce,
+              acero inoxidable y aleaciones propulsoras sin desmontar la hélice.
+            </p>
+            <ul class="text-sm text-gray-500 space-y-1">
+              <li>• Enderezado palas hélice</li>
+              <li>• Soldadura bronce marino</li>
+              <li>• Reparación cavitación</li>
+              <li>• Equilibrado dinámico</li>
+            </ul>
+          </div>
+
+          <!-- Reparación de Timones -->
+          <div class="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-shadow">
+            <div class="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.293l-3-3a1 1 0 00-1.414-1.414L9 5.586 7.707 4.293a1 1 0 00-1.414 1.414L8.586 8 6.293 10.293a1 1 0 101.414 1.414L9 10.414l.293.293a1 1 0 001.414-1.414L10.414 9l1.293-1.293a1 1 0 000-1.414z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Reparación de Timones</h3>
+            <p class="text-gray-600 mb-4">
+              Soldadura y reparación de timones, codaste y sistema de gobierno.
+              Trabajos en acero naval, bronce y aleaciones resistentes al agua salada.
+            </p>
+            <ul class="text-sm text-gray-500 space-y-1">
+              <li>• Soldadura pala timón</li>
+              <li>• Reparación codaste</li>
+              <li>• Refuerzo mecha timón</li>
+              <li>• Soldadura bisagras</li>
+            </ul>
+          </div>
+
+          <!-- Trabajos en Astilleros -->
+          <div class="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-shadow">
+            <div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M4 3a2 2 0 100 4h12a2 2 0 100-4H4z"/>
+                <path fill-rule="evenodd" d="M3 8a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Trabajos en Astilleros</h3>
+            <p class="text-gray-600 mb-4">
+              Reparaciones navales en astilleros y varaderos de Cádiz. Soldadura naval,
+              modificaciones estructurales y mantenimiento de embarcaciones en seco.
+            </p>
+            <ul class="text-sm text-gray-500 space-y-1">
+              <li>• Soldadura en astilleros</li>
+              <li>• Modificaciones casco</li>
+              <li>• Reparación varadero</li>
+              <li>• Trabajos en seco</li>
+            </ul>
+          </div>
+
+          <!-- Mantenimiento Naval -->
+          <div class="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-shadow">
+            <div class="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Mantenimiento Naval</h3>
+            <p class="text-gray-600 mb-4">
+              Mantenimiento preventivo y correctivo de estructuras navales.
+              Inspección, soldadura y reparación programada para prolongar vida útil.
+            </p>
+            <ul class="text-sm text-gray-500 space-y-1">
+              <li>• Mantenimiento programado</li>
+              <li>• Inspección estructural</li>
+              <li>• Soldadura preventiva</li>
+              <li>• Certificaciones navales</li>
+            </ul>
+          </div>
+
+          <!-- Emergencias Navales -->
+          <div class="bg-red-50 p-6 rounded-lg hover:shadow-lg transition-shadow border-2 border-red-200">
+            <div class="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-3 text-red-700">Reparaciones de Emergencia</h3>
+            <p class="text-gray-700 mb-4">
+              Servicio 24/7 para reparaciones navales urgentes en el puerto de Cádiz.
+              Respuesta inmediata para averías críticas y situaciones de emergencia.
+            </p>
+            <ul class="text-sm text-red-600 space-y-1 font-medium">
+              <li>• Respuesta < 90 minutos</li>
+              <li>• Servicio 24/7/365</li>
+              <li>• Equipo de emergencia</li>
+              <li>• Puerto de Cádiz</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tecnología y Métodos -->
+    <section class="py-16 bg-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Tecnología Avanzada en Reparación Naval
+            </h2>
+            <p class="text-xl text-gray-600">
+              Equipos especializados y métodos certificados para garantizar reparaciones duraderas
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Métodos de Soldadura -->
+            <div class="bg-white p-8 rounded-lg shadow-lg">
+              <h3 class="text-2xl font-bold mb-6 text-orange-700">Métodos de Soldadura Naval</h3>
+              <div class="space-y-4">
+                <div class="flex items-start space-x-3">
+                  <span class="flex-shrink-0 w-6 h-6 bg-orange-600 rounded-full flex items-center justify-center text-white text-sm font-bold">1</span>
+                  <div>
+                    <h4 class="font-semibold">Soldadura Subacuática MMA</h4>
+                    <p class="text-gray-600 text-sm">Electrodo revestido para reparaciones rápidas a flote</p>
+                  </div>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <span class="flex-shrink-0 w-6 h-6 bg-orange-600 rounded-full flex items-center justify-center text-white text-sm font-bold">2</span>
+                  <div>
+                    <h4 class="font-semibold">Soldadura TIG Submarina</h4>
+                    <p class="text-gray-600 text-sm">Alta calidad para aleaciones especiales y aceros inoxidables</p>
+                  </div>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <span class="flex-shrink-0 w-6 h-6 bg-orange-600 rounded-full flex items-center justify-center text-white text-sm font-bold">3</span>
+                  <div>
+                    <h4 class="font-semibold">Soldadura Hiperbárica</h4>
+                    <p class="text-gray-600 text-sm">Ambiente seco bajo presión para soldaduras críticas</p>
+                  </div>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <span class="flex-shrink-0 w-6 h-6 bg-orange-600 rounded-full flex items-center justify-center text-white text-sm font-bold">4</span>
+                  <div>
+                    <h4 class="font-semibold">Soldadura Convencional</h4>
+                    <p class="text-gray-600 text-sm">Trabajos en astilleros y varaderos de Cádiz</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Ventajas Técnicas -->
+            <div class="bg-white p-8 rounded-lg shadow-lg">
+              <h3 class="text-2xl font-bold mb-6 text-blue-700">Ventajas de la Reparación a Flote</h3>
+              <div class="space-y-4">
+                <div class="flex items-start space-x-3">
+                  <span class="flex-shrink-0 w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center text-white text-sm font-bold">€</span>
+                  <div>
+                    <h4 class="font-semibold">Ahorro Económico</h4>
+                    <p class="text-gray-600 text-sm">Evita costes de grúa, varada y estancia en astillero</p>
+                  </div>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <span class="flex-shrink-0 w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center text-white text-sm font-bold">⏱</span>
+                  <div>
+                    <h4 class="font-semibold">Menor Tiempo de Parada</h4>
+                    <p class="text-gray-600 text-sm">Reparación directa sin esperas de astillero</p>
+                  </div>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <span class="flex-shrink-0 w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center text-white text-sm font-bold">🌊</span>
+                  <div>
+                    <h4 class="font-semibold">Disponibilidad Inmediata</h4>
+                    <p class="text-gray-600 text-sm">Trabajo en su ubicación habitual de amarre</p>
+                  </div>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <span class="flex-shrink-0 w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center text-white text-sm font-bold">✓</span>
+                  <div>
+                    <h4 class="font-semibold">Menor Riesgo</h4>
+                    <p class="text-gray-600 text-sm">Sin maniobras de izada y traslado de la embarcación</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Proceso de Trabajo -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Proceso de Reparación Naval
+            </h2>
+            <p class="text-xl text-gray-600">
+              Metodología profesional adaptada a las condiciones del puerto de Cádiz
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="text-center p-6 bg-gray-50 rounded-lg">
+              <div class="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span class="text-white font-bold text-xl">1</span>
+              </div>
+              <h3 class="text-lg font-semibold mb-3">Evaluación</h3>
+              <p class="text-gray-600">Inspección subacuática detallada del daño y planificación de la reparación</p>
+            </div>
+
+            <div class="text-center p-6 bg-gray-50 rounded-lg">
+              <div class="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span class="text-white font-bold text-xl">2</span>
+              </div>
+              <h3 class="text-lg font-semibold mb-3">Preparación</h3>
+              <p class="text-gray-600">Limpieza de superficie, preparación de materiales y zona de trabajo</p>
+            </div>
+
+            <div class="text-center p-6 bg-gray-50 rounded-lg">
+              <div class="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span class="text-white font-bold text-xl">3</span>
+              </div>
+              <h3 class="text-lg font-semibold mb-3">Reparación</h3>
+              <p class="text-gray-600">Soldadura y reparación con técnicas apropiadas para cada material</p>
+            </div>
+
+            <div class="text-center p-6 bg-gray-50 rounded-lg">
+              <div class="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span class="text-white font-bold text-xl">4</span>
+              </div>
+              <h3 class="text-lg font-semibold mb-3">Control</h3>
+              <p class="text-gray-600">Inspección final, pruebas de estanqueidad y certificación del trabajo</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Zonas de Cobertura -->
+    <section class="py-16 bg-blue-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Cobertura Geográfica - Bahía de Cádiz
+            </h2>
+            <p class="text-xl text-gray-600">
+              Servicio de reparación naval en principales puertos y marinas de la bahía
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-lg shadow-md text-center">
+              <div class="w-12 h-12 bg-orange-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <span class="text-white font-bold">🏛️</span>
+              </div>
+              <h3 class="text-lg font-semibold mb-2">Puerto de Cádiz</h3>
+              <p class="text-gray-600 text-sm">Base principal • Respuesta inmediata</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-md text-center">
+              <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <span class="text-white font-bold">⚓</span>
+              </div>
+              <h3 class="text-lg font-semibold mb-2">Puerto de Santa María</h3>
+              <p class="text-gray-600 text-sm">8 millas náuticas • 25 min respuesta</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-md text-center">
+              <div class="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <span class="text-white font-bold">🚢</span>
+              </div>
+              <h3 class="text-lg font-semibold mb-2">Base Naval de Rota</h3>
+              <p class="text-gray-600 text-sm">12 millas náuticas • 35 min respuesta</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-md text-center">
+              <div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <span class="text-white font-bold">🏗️</span>
+              </div>
+              <h3 class="text-lg font-semibold mb-2">Astilleros de Cádiz</h3>
+              <p class="text-gray-600 text-sm">Trabajos en seco • Colaboración astilleros</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-md text-center">
+              <div class="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <span class="text-white font-bold">🌊</span>
+              </div>
+              <h3 class="text-lg font-semibold mb-2">Estrecho Gibraltar</h3>
+              <p class="text-gray-600 text-sm">25 millas náuticas • 60 min respuesta</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-md text-center">
+              <div class="w-12 h-12 bg-yellow-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <span class="text-white font-bold">⛵</span>
+              </div>
+              <h3 class="text-lg font-semibold mb-2">Marinas y Clubes</h3>
+              <p class="text-gray-600 text-sm">Bahía de Cádiz • Trabajo en marinas</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="bg-orange-700 text-white py-16">
+      <div class="container mx-auto px-4 text-center">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">
+            ¿Necesita Reparar su Embarcación en Cádiz?
+          </h2>
+          <p class="text-xl text-orange-200 mb-8">
+            No espere más. Reparamos su embarcación directamente en el agua,
+            ahorrándole tiempo y dinero. Disponibles 24/7 en el puerto de Cádiz.
+          </p>
+          <div class="flex flex-col md:flex-row gap-4 justify-center mb-8">
+            <CallToAction variant="emergency" size="xl" text="LLAMAR AHORA" subtext="Reparación Inmediata" />
+            <CallToAction variant="quote" size="xl" text="CONSULTAR PRECIO" subtext="Presupuesto Gratuito" />
+          </div>
+          <div class="text-center">
+            <CallToAction variant="whatsapp" size="lg" text="WHATSAPP" subtext="Consulta Rápida" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

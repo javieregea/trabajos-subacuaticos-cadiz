@@ -22,10 +22,10 @@ const canonicalURL = canonical || `https://www.trabajossubacuaticoscadiz.com${As
 		<meta name="keywords" content={keywords} />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<!-- Favicon -->
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" type="image/png" sizes="32x32" href="/favicon.svg" />
-		<link rel="icon" type="image/png" sizes="16x16" href="/favicon.svg" />
-		<link rel="apple-touch-icon" sizes="180x180" href="/favicon.svg" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/images/logo/favicon-32.png" />
+		<link rel="icon" type="image/png" sizes="64x64" href="/images/logo/favicon-64.png" />
+		<link rel="icon" type="image/png" sizes="128x128" href="/images/logo/favicon-128.png" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/images/logo/apple-touch-icon.png" />
 		<link rel="manifest" href="/site.webmanifest" />
 		<meta name="theme-color" content="#1e40af" />
 
@@ -51,7 +51,7 @@ const canonicalURL = canonical || `https://www.trabajossubacuaticoscadiz.com${As
 		</style>
 
 		<!-- Preload critical resources -->
-		<link rel="preload" href="/favicon.svg" as="image" type="image/svg+xml" />
+		<link rel="preload" href="/images/logo/header.webp" as="image" type="image/webp" />
 
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content="website" />
@@ -59,11 +59,17 @@ const canonicalURL = canonical || `https://www.trabajossubacuaticoscadiz.com${As
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:site_name" content="Trabajos Subacuáticos Cádiz" />
+		<meta property="og:image" content="https://www.trabajossubacuaticoscadiz.com/images/logo/og-image.png" />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:image:alt" content="Trabajos Subacuáticos Cádiz - Soldadura Subacuática Profesional" />
 
 		<!-- Twitter -->
 		<meta property="twitter:card" content="summary_large_image" />
 		<meta property="twitter:title" content={title} />
 		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content="https://www.trabajossubacuaticoscadiz.com/images/logo/og-image.png" />
+		<meta property="twitter:image:alt" content="Trabajos Subacuáticos Cádiz - Soldadura Subacuática Profesional" />
 
 		<!-- Enhanced Local Business & Organization Schema -->
 		<script type="application/ld+json">
@@ -76,8 +82,8 @@ const canonicalURL = canonical || `https://www.trabajossubacuaticoscadiz.com${As
 					"alternateName": "Soldadura Subacuática Cádiz",
 					"description": "Especialistas certificados en soldadura subacuática, buceo industrial, reparación naval e inspección submarina. Servicio 24/7 en puerto de Cádiz y Estrecho de Gibraltar.",
 					"url": "https://www.trabajossubacuaticoscadiz.com",
-					"logo": "https://www.trabajossubacuaticoscadiz.com/favicon.svg",
-					"image": "https://www.trabajossubacuaticoscadiz.com/favicon.svg",
+					"logo": "https://www.trabajossubacuaticoscadiz.com/images/logo/header.png",
+					"image": "https://www.trabajossubacuaticoscadiz.com/images/logo/og-image.png",
 					"address": {
 						"@type": "PostalAddress",
 						"addressLocality": "Cádiz",

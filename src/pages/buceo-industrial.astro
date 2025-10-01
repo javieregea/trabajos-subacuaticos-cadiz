@@ -1,0 +1,508 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CallToAction from '../components/CallToAction.astro';
+import AnchorLogo from '../components/AnchorLogo.astro';
+---
+
+<Layout
+  title="Buceo Industrial en Cádiz | Servicios Comerciales Submarinos 24/7"
+  description="Especialistas en buceo industrial y comercial en el puerto de Cádiz. Inspección, limpieza, mantenimiento de estructuras portuarias y offshore. Buzos certificados."
+  keywords="buceo industrial Cádiz, buceo comercial, buzos profesionales Cádiz, inspección submarina, limpieza cascos, mantenimiento portuario, buceo offshore, soldadura submarina"
+>
+  <!-- Local Business Schema -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Buceo Industrial Cádiz - Servicios Comerciales Submarinos",
+      "image": "https://trabajossubacuaticoscadiz.com/images/buceo-industrial.jpg",
+      "@id": "https://trabajossubacuaticoscadiz.com/buceo-industrial",
+      "url": "https://trabajossubacuaticoscadiz.com/buceo-industrial",
+      "telephone": "+34614405061",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Puerto de Cádiz",
+        "addressLocality": "Cádiz",
+        "postalCode": "11006",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 36.5298,
+        "longitude": -6.2943
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+        ],
+        "opens": "00:00",
+        "closes": "23:59"
+      },
+      "serviceArea": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": 36.5298,
+          "longitude": -6.2943
+        },
+        "geoRadius": "75000"
+      },
+      "priceRange": "€€€",
+      "description": "Servicios especializados de buceo industrial en el puerto de Cádiz. Buzos comerciales certificados para inspección, limpieza, mantenimiento y trabajos submarinos."
+    }
+  </script>
+
+  <!-- Service Schema -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Servicios de Buceo Industrial",
+      "description": "Buceo comercial profesional en Cádiz incluyendo inspección submarina, limpieza de cascos, mantenimiento portuario y trabajos offshore",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Trabajos Subacuáticos Cádiz"
+      },
+      "serviceType": "Buceo Industrial",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Servicios de Buceo Comercial",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Inspección Submarina"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Limpieza de Cascos"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Mantenimiento Portuario"
+            }
+          }
+        ]
+      }
+    }
+  </script>
+
+  <Header />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-purple-800 to-purple-600 text-white py-20 relative overflow-hidden">
+      <div class="absolute inset-0 opacity-10">
+        <div class="absolute top-20 left-12">
+          <AnchorLogo size="xl" color="white" variant="outline" className="rotate-12" />
+        </div>
+        <div class="absolute bottom-16 right-8">
+          <AnchorLogo size="lg" color="white" variant="outline" className="-rotate-45" />
+        </div>
+      </div>
+
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+          <div class="flex justify-center mb-6">
+            <AnchorLogo size="xl" color="white" variant="outline" />
+          </div>
+          <h1 class="text-4xl md:text-6xl font-bold mb-6">
+            Buceo Industrial en Cádiz
+          </h1>
+          <h2 class="text-xl md:text-2xl text-purple-200 mb-8">
+            Servicios Comerciales Submarinos Profesionales - Buzos Certificados
+          </h2>
+          <p class="text-lg md:text-xl mb-8 text-purple-100">
+            Especialistas en buceo industrial en el puerto de Cádiz. Inspección submarina,
+            limpieza de cascos y mantenimiento de estructuras portuarias.
+            <span class="font-semibold text-yellow-300">Disponibles 24/7</span>
+          </p>
+          <div class="flex flex-col md:flex-row gap-4 justify-center">
+            <CallToAction variant="emergency" size="xl" text="LLAMAR AHORA" subtext="Buceo Urgente" />
+            <a href="#servicios-buceo" class="bg-purple-600 hover:bg-purple-700 px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
+              Ver Servicios
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Servicios de Buceo Section -->
+    <section id="servicios-buceo" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <div class="flex justify-center mb-6">
+            <AnchorLogo size="lg" color="#7c3aed" variant="filled" />
+          </div>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Servicios de Buceo Industrial en Cádiz
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Más de 20 años de experiencia en buceo comercial en el puerto de Cádiz,
+            bahía gaditana y plataformas offshore
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Inspección Submarina -->
+          <div class="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-shadow">
+            <div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Inspección Submarina</h3>
+            <p class="text-gray-600 mb-4">
+              Inspección visual y técnica de cascos, estructuras portuarias y instalaciones submarinas.
+              Documentación fotográfica y videográfica profesional.
+            </p>
+            <ul class="text-sm text-gray-500 space-y-1">
+              <li>• Inspección visual cascos</li>
+              <li>• Evaluación estructural</li>
+              <li>• Documentación técnica</li>
+              <li>• Informes certificados</li>
+            </ul>
+          </div>
+
+          <!-- Limpieza de Cascos -->
+          <div class="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-shadow">
+            <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Limpieza de Cascos</h3>
+            <p class="text-gray-600 mb-4">
+              Limpieza profesional de cascos de embarcaciones. Eliminación de incrustaciones marinas,
+              biofilm y fouling para optimizar rendimiento y eficiencia.
+            </p>
+            <ul class="text-sm text-gray-500 space-y-1">
+              <li>• Limpieza profesional</li>
+              <li>• Eliminación fouling</li>
+              <li>• Tratamiento antifouling</li>
+              <li>• Mantenimiento preventivo</li>
+            </ul>
+          </div>
+
+          <!-- Mantenimiento Portuario -->
+          <div class="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-shadow">
+            <div class="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Mantenimiento Portuario</h3>
+            <p class="text-gray-600 mb-4">
+              Mantenimiento de infraestructuras portuarias, muelles, pilotes y estructuras submarinas
+              en el puerto de Cádiz y instalaciones portuarias de Andalucía.
+            </p>
+            <ul class="text-sm text-gray-500 space-y-1">
+              <li>• Inspección pilotes</li>
+              <li>• Limpieza estructuras</li>
+              <li>• Mantenimiento muelles</li>
+              <li>• Trabajos portuarios</li>
+            </ul>
+          </div>
+
+          <!-- Trabajos Offshore -->
+          <div class="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-shadow">
+            <div class="w-12 h-12 bg-orange-600 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Trabajos Offshore</h3>
+            <p class="text-gray-600 mb-4">
+              Servicios de buceo en plataformas petrolíferas, parques eólicos marinos
+              y estructuras offshore en el Estrecho de Gibraltar y costa atlántica.
+            </p>
+            <ul class="text-sm text-gray-500 space-y-1">
+              <li>• Buceo en plataformas</li>
+              <li>• Inspección offshore</li>
+              <li>• Mantenimiento marino</li>
+              <li>• Trabajos en altura</li>
+            </ul>
+          </div>
+
+          <!-- Soldadura Submarina -->
+          <div class="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-shadow">
+            <div class="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Soldadura Submarina</h3>
+            <p class="text-gray-600 mb-4">
+              Buzos soldadores certificados para trabajos de soldadura subacuática.
+              Reparación de estructuras navales y trabajos especializados bajo el agua.
+            </p>
+            <ul class="text-sm text-gray-500 space-y-1">
+              <li>• <a href="/soldadura-subacuatica" class="text-blue-600 hover:text-blue-800 hover:underline transition-colors">Soldadura subacuática</a></li>
+              <li>• <a href="/soldadura-electrodo-revestido" class="text-blue-600 hover:text-blue-800 hover:underline transition-colors">Electrodo revestido</a></li>
+              <li>• <a href="/soldadura-tig-subacuatica" class="text-blue-600 hover:text-blue-800 hover:underline transition-colors">TIG submarina</a></li>
+              <li>• <a href="/soldadura-mig-submarina" class="text-blue-600 hover:text-blue-800 hover:underline transition-colors">MIG submarina</a></li>
+            </ul>
+          </div>
+
+          <!-- Emergencias Marítimas -->
+          <div class="bg-red-50 p-6 rounded-lg hover:shadow-lg transition-shadow border-2 border-red-200">
+            <div class="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-3 text-red-700">Emergencias Marítimas</h3>
+            <p class="text-gray-700 mb-4">
+              Servicio 24/7 para emergencias submarinas en el puerto de Cádiz.
+              Respuesta inmediata para situaciones críticas y trabajos urgentes.
+            </p>
+            <ul class="text-sm text-red-600 space-y-1 font-medium">
+              <li>• Respuesta < 60 minutos</li>
+              <li>• Servicio 24/7/365</li>
+              <li>• Equipo de emergencia</li>
+              <li>• Puerto de Cádiz</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certificaciones y Seguridad -->
+    <section class="py-16 bg-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Certificaciones y Protocolos de Seguridad
+            </h2>
+            <p class="text-xl text-gray-600">
+              Buzos profesionales con certificaciones internacionales y cumplimiento normativo
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Certificaciones -->
+            <div class="bg-white p-8 rounded-lg shadow-lg">
+              <h3 class="text-2xl font-bold mb-6 text-purple-700">Certificaciones Profesionales</h3>
+              <div class="space-y-4">
+                <div class="flex items-start space-x-3">
+                  <span class="flex-shrink-0 w-6 h-6 bg-purple-600 rounded-full flex items-center justify-center text-white text-sm font-bold">✓</span>
+                  <div>
+                    <h4 class="font-semibold">ACDE (Asociación Comercial de Buzos de España)</h4>
+                    <p class="text-gray-600 text-sm">Certificación oficial buceo comercial en España</p>
+                  </div>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <span class="flex-shrink-0 w-6 h-6 bg-purple-600 rounded-full flex items-center justify-center text-white text-sm font-bold">✓</span>
+                  <div>
+                    <h4 class="font-semibold">IMCA (International Marine Contractors Association)</h4>
+                    <p class="text-gray-600 text-sm">Estándares internacionales buceo comercial</p>
+                  </div>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <span class="flex-shrink-0 w-6 h-6 bg-purple-600 rounded-full flex items-center justify-center text-white text-sm font-bold">✓</span>
+                  <div>
+                    <h4 class="font-semibold">AWS D3.6 Underwater Welding</h4>
+                    <p class="text-gray-600 text-sm">Certificación soldadura subacuática AWS</p>
+                  </div>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <span class="flex-shrink-0 w-6 h-6 bg-purple-600 rounded-full flex items-center justify-center text-white text-sm font-bold">✓</span>
+                  <div>
+                    <h4 class="font-semibold">Lloyd's Register Inspection</h4>
+                    <p class="text-gray-600 text-sm">Inspección y certificación naval</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Protocolos de Seguridad -->
+            <div class="bg-white p-8 rounded-lg shadow-lg">
+              <h3 class="text-2xl font-bold mb-6 text-blue-700">Protocolos de Seguridad</h3>
+              <div class="space-y-4">
+                <div class="flex items-start space-x-3">
+                  <span class="flex-shrink-0 w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center text-white text-sm font-bold">🛡️</span>
+                  <div>
+                    <h4 class="font-semibold">Buceo en Parejas</h4>
+                    <p class="text-gray-600 text-sm">Siempre dos buzos en el agua para máxima seguridad</p>
+                  </div>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <span class="flex-shrink-0 w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center text-white text-sm font-bold">📡</span>
+                  <div>
+                    <h4 class="font-semibold">Comunicación Continua</h4>
+                    <p class="text-gray-600 text-sm">Radio comunicación permanente superficie-fondo</p>
+                  </div>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <span class="flex-shrink-0 w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center text-white text-sm font-bold">⚕️</span>
+                  <div>
+                    <h4 class="font-semibold">Equipo Médico</h4>
+                    <p class="text-gray-600 text-sm">Oxígeno de emergencia y personal sanitario</p>
+                  </div>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <span class="flex-shrink-0 w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center text-white text-sm font-bold">🔧</span>
+                  <div>
+                    <h4 class="font-semibold">Equipo Redundante</h4>
+                    <p class="text-gray-600 text-sm">Sistemas de respaldo en compresores y equipos</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Equipamiento Profesional -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Equipamiento Profesional de Buceo
+            </h2>
+            <p class="text-xl text-gray-600">
+              Tecnología avanzada para garantizar seguridad y eficiencia en cada inmersión
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="text-center p-6 bg-gray-50 rounded-lg">
+              <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span class="text-white font-bold text-xl">🤿</span>
+              </div>
+              <h3 class="text-lg font-semibold mb-3">Cascos de Buceo</h3>
+              <p class="text-gray-600">Kirby Morgan SuperLite 27 y cascos de comunicación profesional</p>
+            </div>
+
+            <div class="text-center p-6 bg-gray-50 rounded-lg">
+              <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span class="text-white font-bold text-xl">🔧</span>
+              </div>
+              <h3 class="text-lg font-semibold mb-3">Compresores</h3>
+              <p class="text-gray-600">Compresores de alta presión Bauer y sistemas de filtrado</p>
+            </div>
+
+            <div class="text-center p-6 bg-gray-50 rounded-lg">
+              <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span class="text-white font-bold text-xl">📹</span>
+              </div>
+              <h3 class="text-lg font-semibold mb-3">Cámaras</h3>
+              <p class="text-gray-600">Sistemas de vídeo submarino HD para documentación técnica</p>
+            </div>
+
+            <div class="text-center p-6 bg-gray-50 rounded-lg">
+              <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span class="text-white font-bold text-xl">⚡</span>
+              </div>
+              <h3 class="text-lg font-semibold mb-3">Soldadura</h3>
+              <p class="text-gray-600">Equipos de soldadura subacuática MMA, TIG y MIG</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Zonas de Cobertura -->
+    <section class="py-16 bg-purple-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Áreas de Servicio - Buceo Industrial Cádiz
+            </h2>
+            <p class="text-xl text-gray-600">
+              Cobertura completa en aguas gaditanas y plataforma continental atlántica
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-lg shadow-md text-center">
+              <div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <span class="text-white font-bold">🏛️</span>
+              </div>
+              <h3 class="text-lg font-semibold mb-2">Puerto de Cádiz</h3>
+              <p class="text-gray-600 text-sm">Base principal • Servicio inmediato</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-md text-center">
+              <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <span class="text-white font-bold">🌊</span>
+              </div>
+              <h3 class="text-lg font-semibold mb-2">Bahía de Cádiz</h3>
+              <p class="text-gray-600 text-sm">Radio 15 millas • 30 min respuesta</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-md text-center">
+              <div class="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <span class="text-white font-bold">⚓</span>
+              </div>
+              <h3 class="text-lg font-semibold mb-2">Puerto Santa María</h3>
+              <p class="text-gray-600 text-sm">8 millas náuticas • 25 min</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-md text-center">
+              <div class="w-12 h-12 bg-orange-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <span class="text-white font-bold">🚢</span>
+              </div>
+              <h3 class="text-lg font-semibold mb-2">Estrecho Gibraltar</h3>
+              <p class="text-gray-600 text-sm">25 millas • Trabajos offshore</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-md text-center">
+              <div class="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <span class="text-white font-bold">⚡</span>
+              </div>
+              <h3 class="text-lg font-semibold mb-2">Parques Eólicos</h3>
+              <p class="text-gray-600 text-sm">Costa atlántica • Mantenimiento</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-md text-center">
+              <div class="w-12 h-12 bg-yellow-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <span class="text-white font-bold">🏗️</span>
+              </div>
+              <h3 class="text-lg font-semibold mb-2">Plataformas</h3>
+              <p class="text-gray-600 text-sm">Golfo de Cádiz • Inspecciones</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="bg-purple-700 text-white py-16">
+      <div class="container mx-auto px-4 text-center">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">
+            ¿Necesita Servicios de Buceo Industrial en Cádiz?
+          </h2>
+          <p class="text-xl text-purple-200 mb-8">
+            Buzos profesionales certificados disponibles 24/7. Inspección, limpieza,
+            mantenimiento y trabajos especializados en el puerto de Cádiz.
+          </p>
+          <div class="flex flex-col md:flex-row gap-4 justify-center mb-8">
+            <CallToAction variant="emergency" size="xl" text="LLAMAR AHORA" subtext="Buceo de Emergencia" />
+            <CallToAction variant="quote" size="xl" text="CONSULTAR PRECIO" subtext="Presupuesto Gratuito" />
+          </div>
+          <div class="text-center">
+            <CallToAction variant="whatsapp" size="lg" text="WHATSAPP" subtext="Consulta Inmediata" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

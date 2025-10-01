@@ -1,0 +1,775 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import CallToAction from '../../components/CallToAction.astro';
+import InternalLinks from '../../components/InternalLinks.astro';
+---
+
+<Layout
+  title="Mantenimiento Preventivo de Embarcaciones | Guía Completa 2024 Cádiz"
+  description="Guía completa de mantenimiento preventivo para embarcaciones: inspecciones, protección anticorrosiva, limpieza de cascos y calendario de mantenimiento. Ahorre costes y evite averías."
+  keywords="mantenimiento preventivo embarcaciones, mantenimiento barcos, cuidado casco barco, inspección preventiva marina"
+>
+  <!-- Article Schema -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Mantenimiento Preventivo de Embarcaciones: Guía Completa 2024",
+      "description": "Guía completa sobre mantenimiento preventivo de embarcaciones: inspecciones, protección anticorrosiva, calendario y mejores prácticas",
+      "image": "https://www.trabajossubacuaticoscadiz.com/images/mantenimiento-preventivo-blog.jpg",
+      "author": {
+        "@type": "Organization",
+        "name": "Trabajos Subacuáticos Cádiz"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Trabajos Subacuáticos Cádiz",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.trabajossubacuaticoscadiz.com/logo.png"
+        }
+      },
+      "datePublished": "2024-02-01",
+      "dateModified": "2024-02-01",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.trabajossubacuaticoscadiz.com/blog/mantenimiento-preventivo-embarcaciones"
+      }
+    }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "¿Qué es el mantenimiento preventivo de embarcaciones?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Es un programa sistemático de inspecciones y tareas de mantenimiento programadas para prevenir averías, extender la vida útil de la embarcación y mantener su valor. Incluye revisiones regulares del casco, motor, sistemas eléctricos y protección anticorrosiva."
+        }
+      }, {
+        "@type": "Question",
+        "name": "¿Con qué frecuencia debo hacer mantenimiento preventivo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Depende del tipo de embarcación y uso. Como norma general: inspección visual mensual, limpieza de casco cada 3-6 meses, inspección subacuática profesional semestral, y revisión completa anual. Embarcaciones comerciales requieren frecuencias mayores según normativa."
+        }
+      }, {
+        "@type": "Question",
+        "name": "¿Cuánto se ahorra con mantenimiento preventivo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El mantenimiento preventivo reduce costes de reparación en un 70-80% y previene averías catastróficas. Una inversión de 1€ en prevención ahorra 10€ en reparaciones correctivas, además de evitar pérdidas de ingresos por inoperatividad."
+        }
+      }]
+    }
+  </script>
+
+  <Header />
+
+  <main>
+    <!-- Hero Article -->
+    <article class="bg-gradient-to-r from-green-900 via-teal-900 to-blue-900 text-white py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <nav class="mb-6 text-sm" aria-label="Breadcrumb">
+            <a href="/" class="text-green-200 hover:text-white">Inicio</a>
+            <span class="mx-2 text-green-300">/</span>
+            <a href="/blog" class="text-green-200 hover:text-white">Blog</a>
+            <span class="mx-2 text-green-300">/</span>
+            <span class="text-white">Mantenimiento Preventivo</span>
+          </nav>
+
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">
+            Mantenimiento Preventivo de Embarcaciones: Guía Completa
+          </h1>
+          <p class="text-xl text-green-100 mb-8">
+            Aprende cómo crear un programa de mantenimiento preventivo efectivo que prolongue la vida
+            de tu embarcación, reduzca costes hasta un 80% y evite averías costosas. Guía práctica paso a paso.
+          </p>
+          <div class="flex items-center text-green-200 text-sm">
+            <span>📅 Actualizado: Febrero 2024</span>
+            <span class="mx-3">•</span>
+            <span>⏱️ Lectura: 10 min</span>
+            <span class="mx-3">•</span>
+            <span>🎯 Contenido TOFU - Educativo</span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Content -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <!-- Quick Stats -->
+          <div class="bg-gradient-to-r from-green-50 to-blue-50 border-l-4 border-green-500 p-6 mb-8">
+            <div class="grid md:grid-cols-3 gap-4 text-center">
+              <div>
+                <div class="text-3xl font-bold text-green-600 mb-1">70-80%</div>
+                <div class="text-sm text-gray-700">Reducción de costes de reparación</div>
+              </div>
+              <div>
+                <div class="text-3xl font-bold text-blue-600 mb-1">10:1</div>
+                <div class="text-sm text-gray-700">ROI prevención vs reparación</div>
+              </div>
+              <div>
+                <div class="text-3xl font-bold text-teal-600 mb-1">+40%</div>
+                <div class="text-sm text-gray-700">Mayor valor de reventa</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Main Content -->
+          <div class="prose prose-lg max-w-none">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">¿Qué es el Mantenimiento Preventivo?</h2>
+
+            <p class="text-lg text-gray-700 mb-6">
+              El <strong>mantenimiento preventivo</strong> es un programa sistemático de inspecciones y tareas
+              programadas diseñado para <strong>prevenir averías antes de que ocurran</strong>, extender la vida
+              útil de la embarcación, mantener su valor de mercado y garantizar la seguridad de la tripulación.
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+              <div class="bg-red-50 p-6 rounded-lg border-2 border-red-200">
+                <h3 class="text-xl font-bold text-red-900 mb-3">❌ Mantenimiento Reactivo (Malo)</h3>
+                <ul class="space-y-2 text-sm text-gray-700">
+                  <li>✗ Esperar a que algo se rompa</li>
+                  <li>✗ Reparaciones de emergencia 10x más caras</li>
+                  <li>✗ Averías en momentos críticos</li>
+                  <li>✗ Daños secundarios extensivos</li>
+                  <li>✗ Pérdida de valor del barco</li>
+                  <li>✗ Estrés y preocupación constante</li>
+                </ul>
+              </div>
+
+              <div class="bg-green-50 p-6 rounded-lg border-2 border-green-200">
+                <h3 class="text-xl font-bold text-green-900 mb-3">✅ Mantenimiento Preventivo (Bueno)</h3>
+                <ul class="space-y-2 text-sm text-gray-700">
+                  <li>✓ Detectar problemas temprano</li>
+                  <li>✓ Reparaciones planificadas económicas</li>
+                  <li>✓ Máxima fiabilidad operativa</li>
+                  <li>✓ Sin daños colaterales</li>
+                  <li>✓ Mantiene valor de mercado</li>
+                  <li>✓ Tranquilidad y seguridad</li>
+                </ul>
+              </div>
+            </div>
+
+            <h2 class="text-3xl font-bold text-gray-900 mb-6 mt-12">Beneficios del Mantenimiento Preventivo</h2>
+
+            <div class="space-y-4 mb-8">
+              <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
+                <h4 class="font-bold text-blue-900 mb-2">💰 Ahorro Económico</h4>
+                <p class="text-gray-700 text-sm">
+                  Reducción del 70-80% en costes de reparación. Una bomba de achique que cuesta 300€ reparar
+                  preventivamente, puede costar 3,000€+ si falla y causa inundación del compartimento motor.
+                  El ROI típico es 10:1 (por cada euro invertido en prevención, ahorras 10€ en reparaciones).
+                </p>
+              </div>
+
+              <div class="bg-green-50 p-6 rounded-lg border-l-4 border-green-500">
+                <h4 class="font-bold text-green-900 mb-2">⚓ Mayor Fiabilidad</h4>
+                <p class="text-gray-700 text-sm">
+                  Reducción del 90% de averías inesperadas. Para embarcaciones comerciales esto significa
+                  no perder charters, viajes de pesca o rutas programadas. Para yates de recreo, significa
+                  disfrutar sin preocupaciones.
+                </p>
+              </div>
+
+              <div class="bg-orange-50 p-6 rounded-lg border-l-4 border-orange-500">
+                <h4 class="font-bold text-orange-900 mb-2">📈 Conservación de Valor</h4>
+                <p class="text-gray-700 text-sm">
+                  Embarcaciones con historial documentado de mantenimiento preventivo conservan hasta un
+                  40% más de valor de reventa. Los compradores pagan premium por barcos bien mantenidos
+                  con registros completos.
+                </p>
+              </div>
+
+              <div class="bg-purple-50 p-6 rounded-lg border-l-4 border-purple-500">
+                <h4 class="font-bold text-purple-900 mb-2">🛡️ Seguridad</h4>
+                <p class="text-gray-700 text-sm">
+                  Previene accidentes marítimos graves: incendios por fallos eléctricos, hundimientos
+                  por fugas no detectadas, varadas por fallos de motor, etc. La seguridad de la tripulación
+                  es invaluable.
+                </p>
+              </div>
+
+              <div class="bg-red-50 p-6 rounded-lg border-l-4 border-red-500">
+                <h4 class="font-bold text-red-900 mb-2">📋 Cumplimiento Normativo</h4>
+                <p class="text-gray-700 text-sm">
+                  Mantiene certificaciones vigentes (SOLAS, MARPOL, RD español), evita multas por incumplimiento,
+                  mantiene validez de seguros y cumple requisitos de sociedades de clasificación.
+                </p>
+              </div>
+            </div>
+
+            <h2 class="text-3xl font-bold text-gray-900 mb-6 mt-12">Calendario de Mantenimiento Preventivo</h2>
+
+            <!-- Monthly Maintenance -->
+            <div class="bg-yellow-50 border-l-4 border-yellow-500 p-6 mb-6">
+              <h3 class="text-2xl font-bold text-yellow-900 mb-4">📅 MENSUAL (Cada 30 días)</h3>
+
+              <div class="space-y-3">
+                <div>
+                  <h4 class="font-bold text-gray-800 mb-2">🔍 Inspección Visual del Casco</h4>
+                  <ul class="text-sm space-y-1 text-gray-700 ml-4">
+                    <li>• Línea de flotación: buscar manchas de óxido, decoloración</li>
+                    <li>• Verificar tomas de mar y válvulas de fondo</li>
+                    <li>• Revisar ánodos de sacrificio (reemplazar si consumo >50%)</li>
+                    <li>• Inspeccionar hélice y timón (vibraciones, daños)</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 class="font-bold text-gray-800 mb-2">⚙️ Sistema Motor</h4>
+                  <ul class="text-sm space-y-1 text-gray-700 ml-4">
+                    <li>• Revisar niveles: aceite motor, refrigerante, líquido hidráulico</li>
+                    <li>• Verificar filtros: combustible, aceite, aire</li>
+                    <li>• Inspeccionar correas y mangueras (grietas, desgaste)</li>
+                    <li>• Comprobar batería: carga, terminales limpios, nivel electrolito</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 class="font-bold text-gray-800 mb-2">🔌 Sistema Eléctrico</h4>
+                  <ul class="text-sm space-y-1 text-gray-700 ml-4">
+                    <li>• Probar luces de navegación y seguridad</li>
+                    <li>• Verificar funcionamiento bombas de achique</li>
+                    <li>• Inspeccionar conexiones eléctricas (corrosión)</li>
+                    <li>• Comprobar equipos electrónicos y comunicación</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 class="font-bold text-gray-800 mb-2">🧯 Seguridad</h4>
+                  <ul class="text-sm space-y-1 text-gray-700 ml-4">
+                    <li>• Verificar extintores (presión, caducidad)</li>
+                    <li>• Revisar chalecos salvavidas y aros</li>
+                    <li>• Comprobar bengalas y equipo de emergencia</li>
+                    <li>• Probar alarmas y sistemas de detección</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quarterly Maintenance -->
+            <div class="bg-blue-50 border-l-4 border-blue-500 p-6 mb-6">
+              <h3 class="text-2xl font-bold text-blue-900 mb-4">📅 TRIMESTRAL (Cada 3 meses)</h3>
+
+              <div class="space-y-3">
+                <div>
+                  <h4 class="font-bold text-gray-800 mb-2">🌊 Limpieza de Casco</h4>
+                  <p class="text-sm text-gray-700 mb-2">
+                    <strong>CRÍTICO:</strong> Limpieza profesional submarina del casco para eliminar
+                    bioincrustaciones (algas, mejillones, percebes).
+                  </p>
+                  <ul class="text-sm space-y-1 text-gray-700 ml-4">
+                    <li>• Ahorro combustible: 15-30% con casco limpio</li>
+                    <li>• Mayor velocidad: recupera 2-5 nudos perdidos</li>
+                    <li>• Prevención corrosión bajo bioincrustaciones</li>
+                    <li>• Coste: 200-500€ (vs 2,000-4,000€ varada)</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 class="font-bold text-gray-800 mb-2">🔧 Mantenimiento Motor</h4>
+                  <ul class="text-sm space-y-1 text-gray-700 ml-4">
+                    <li>• Cambio aceite motor y filtro</li>
+                    <li>• Reemplazo filtros combustible</li>
+                    <li>• Limpieza intercooler y radiador</li>
+                    <li>• Ajuste tensión correas</li>
+                    <li>• Purga sistema combustible diesel</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 class="font-bold text-gray-800 mb-2">⚓ Sistemas Auxiliares</h4>
+                  <ul class="text-sm space-y-1 text-gray-700 ml-4">
+                    <li>• Servicio winches y molinetes</li>
+                    <li>• Lubricación cables y cadenas</li>
+                    <li>• Revisión sistema de achique completo</li>
+                    <li>• Inspección sistema de dirección</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Semiannual Maintenance -->
+            <div class="bg-green-50 border-l-4 border-green-500 p-6 mb-6">
+              <h3 class="text-2xl font-bold text-green-900 mb-4">📅 SEMESTRAL (Cada 6 meses)</h3>
+
+              <div class="space-y-3">
+                <div>
+                  <h4 class="font-bold text-gray-800 mb-2">🤿 Inspección Subacuática Profesional</h4>
+                  <p class="text-sm text-gray-700 mb-2">
+                    <strong>OBLIGATORIA:</strong> Inspección completa realizada por buzo certificado.
+                  </p>
+                  <ul class="text-sm space-y-1 text-gray-700 ml-4">
+                    <li>• Inspección visual detallada del casco completo</li>
+                    <li>• Medición espesores (ultrasonido en zonas críticas)</li>
+                    <li>• Detección temprana corrosión, grietas, deformaciones</li>
+                    <li>• Revisión hélice, eje, timón, válvulas</li>
+                    <li>• Informe fotográfico completo + certificado</li>
+                    <li>• Coste: 400-800€ (vs 3,000-6,000€ varada)</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 class="font-bold text-gray-800 mb-2">🛡️ Protección Anticorrosiva</h4>
+                  <ul class="text-sm space-y-1 text-gray-700 ml-4">
+                    <li>• Inspección completa ánodos de sacrificio</li>
+                    <li>• Reemplazo si consumo >50%</li>
+                    <li>• Verificación continuidad eléctrica protección catódica</li>
+                    <li>• Evaluación estado pintura anticorrosiva</li>
+                    <li>• Retoques localizados si necesario</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 class="font-bold text-gray-800 mb-2">🔩 Propulsión y Gobierno</h4>
+                  <ul class="text-sm space-y-1 text-gray-700 ml-4">
+                    <li>• Inspección alineación eje propulsor</li>
+                    <li>• Verificación prensaestopas / sello eje</li>
+                    <li>• Revisión cojinetes bocina</li>
+                    <li>• Inspección sistema de gobierno completo</li>
+                    <li>• Equilibrado hélice si vibraciones</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Annual Maintenance -->
+            <div class="bg-purple-50 border-l-4 border-purple-500 p-6 mb-6">
+              <h3 class="text-2xl font-bold text-purple-900 mb-4">📅 ANUAL (Cada 12 meses)</h3>
+
+              <div class="space-y-3">
+                <div>
+                  <h4 class="font-bold text-gray-800 mb-2">📋 Inspección Certificada Completa</h4>
+                  <p class="text-sm text-gray-700 mb-2">
+                    <strong>OBLIGATORIA para embarcaciones comerciales SOLAS.</strong> Recomendada para todas.
+                  </p>
+                  <ul class="text-sm space-y-1 text-gray-700 ml-4">
+                    <li>• Inspección completa por sociedad de clasificación</li>
+                    <li>• Pruebas END (ultrasonido, partículas magnéticas)</li>
+                    <li>• Certificación estructural válida para seguros</li>
+                    <li>• Verificación cumplimiento normativas vigentes</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 class="font-bold text-gray-800 mb-2">🎨 Renovación Protecciones</h4>
+                  <ul class="text-sm space-y-1 text-gray-700 ml-4">
+                    <li>• Renovación pintura antiincrustante (según desgaste)</li>
+                    <li>• Reemplazo total ánodos de sacrificio</li>
+                    <li>• Tratamiento anticorrosivo zonas críticas</li>
+                    <li>• Aplicación inhibidores corrosión sistemas internos</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 class="font-bold text-gray-800 mb-2">⚙️ Overhaul Sistemas</h4>
+                  <ul class="text-sm space-y-1 text-gray-700 ml-4">
+                    <li>• Servicio completo motor principal (según horas)</li>
+                    <li>• Revisión completa sistema eléctrico</li>
+                    <li>• Overhaul generador auxiliar</li>
+                    <li>• Renovación mangueras y racores (>5 años)</li>
+                    <li>• Actualización software equipos electrónicos</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 class="font-bold text-gray-800 mb-2">🧪 Pruebas y Certificaciones</h4>
+                  <ul class="text-sm space-y-1 text-gray-700 ml-4">
+                    <li>• Prueba estanqueidad mamparos</li>
+                    <li>• Certificación equipos contraincendios</li>
+                    <li>• Recarga extintores</li>
+                    <li>• Renovación bengalas (caducadas)</li>
+                    <li>• Certificado de navegabilidad actualizado</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <h2 class="text-3xl font-bold text-gray-900 mb-6 mt-12">Lista de Verificación Mantenimiento</h2>
+
+            <div class="bg-gray-50 p-6 rounded-lg mb-8">
+              <h3 class="text-xl font-bold text-gray-800 mb-4">✅ Checklist Descargable</h3>
+
+              <div class="grid md:grid-cols-2 gap-4">
+                <div class="bg-white p-4 rounded border">
+                  <h4 class="font-bold text-blue-900 mb-3">Casco y Estructura</h4>
+                  <ul class="text-sm space-y-1">
+                    <li>☐ Inspección visual exterior completa</li>
+                    <li>☐ Verificar tomas de mar y válvulas</li>
+                    <li>☐ Revisar compartimentos internos (humedad)</li>
+                    <li>☐ Comprobar integridad soldaduras</li>
+                    <li>☐ Estado pintura y recubrimientos</li>
+                    <li>☐ Ánodos de sacrificio (consumo)</li>
+                  </ul>
+                </div>
+
+                <div class="bg-white p-4 rounded border">
+                  <h4 class="font-bold text-green-900 mb-3">Propulsión</h4>
+                  <ul class="text-sm space-y-1">
+                    <li>☐ Motor: niveles fluidos, fugas</li>
+                    <li>☐ Transmisión: aceite, funcionamiento</li>
+                    <li>☐ Hélice: daños, equilibrado</li>
+                    <li>☐ Eje: alineación, prensaestopas</li>
+                    <li>☐ Timón: juego, desgaste</li>
+                    <li>☐ Sistema dirección completo</li>
+                  </ul>
+                </div>
+
+                <div class="bg-white p-4 rounded border">
+                  <h4 class="font-bold text-orange-900 mb-3">Sistemas Eléctricos</h4>
+                  <ul class="text-sm space-y-1">
+                    <li>☐ Baterías: carga, terminales, cables</li>
+                    <li>☐ Generador: funcionamiento, servicio</li>
+                    <li>☐ Cuadro eléctrico: conexiones, fusibles</li>
+                    <li>☐ Luces navegación operativas</li>
+                    <li>☐ Electrónica: GPS, radio, sonda</li>
+                    <li>☐ Sistema achique automático</li>
+                  </ul>
+                </div>
+
+                <div class="bg-white p-4 rounded border">
+                  <h4 class="font-bold text-red-900 mb-3">Seguridad</h4>
+                  <ul class="text-sm space-y-1">
+                    <li>☐ Extintores: presión, caducidad</li>
+                    <li>☐ Chalecos salvavidas (todos)</li>
+                    <li>☐ Aros salvavidas y rabiza</li>
+                    <li>☐ Bengalas en fecha</li>
+                    <li>☐ Botiquín completo actualizado</li>
+                    <li>☐ Balsa salvavidas certificada</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <h2 class="text-3xl font-bold text-gray-900 mb-6 mt-12">Costes: Preventivo vs Correctivo</h2>
+
+            <div class="bg-red-50 border-2 border-red-300 p-6 rounded-lg mb-8">
+              <h3 class="text-xl font-bold text-red-800 mb-4">💸 Comparativa de Costes Reales</h3>
+
+              <div class="space-y-4">
+                <div class="bg-white p-4 rounded-lg">
+                  <div class="grid md:grid-cols-3 gap-4">
+                    <div>
+                      <strong class="text-gray-800">Ejemplo 1: Corrosión</strong>
+                    </div>
+                    <div class="text-green-600">
+                      <strong>Preventivo:</strong> 300€
+                      <p class="text-xs">Inspección + tratamiento localizado</p>
+                    </div>
+                    <div class="text-red-600">
+                      <strong>Correctivo:</strong> 4,500€
+                      <p class="text-xs">Reparación perforación + soldadura</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bg-white p-4 rounded-lg">
+                  <div class="grid md:grid-cols-3 gap-4">
+                    <div>
+                      <strong class="text-gray-800">Ejemplo 2: Motor</strong>
+                    </div>
+                    <div class="text-green-600">
+                      <strong>Preventivo:</strong> 400€
+                      <p class="text-xs">Cambio aceite + filtros + revisión</p>
+                    </div>
+                    <div class="text-red-600">
+                      <strong>Correctivo:</strong> 8,000€
+                      <p class="text-xs">Reconstrucción motor por falta aceite</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bg-white p-4 rounded-lg">
+                  <div class="grid md:grid-cols-3 gap-4">
+                    <div>
+                      <strong class="text-gray-800">Ejemplo 3: Hélice</strong>
+                    </div>
+                    <div class="text-green-600">
+                      <strong>Preventivo:</strong> 200€
+                      <p class="text-xs">Limpieza + equilibrado</p>
+                    </div>
+                    <div class="text-red-600">
+                      <strong>Correctivo:</strong> 3,500€
+                      <p class="text-xs">Hélice nueva + eje dañado por vibración</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bg-white p-4 rounded-lg">
+                  <div class="grid md:grid-cols-3 gap-4">
+                    <div>
+                      <strong class="text-gray-800">Ejemplo 4: Válvulas</strong>
+                    </div>
+                    <div class="text-green-600">
+                      <strong>Preventivo:</strong> 150€
+                      <p class="text-xs">Revisión + lubricación + juntas</p>
+                    </div>
+                    <div class="text-red-600">
+                      <strong>Correctivo:</strong> 12,000€
+                      <p class="text-xs">Inundación compartimento + daños equipos</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-4 p-4 bg-yellow-100 rounded">
+                <p class="text-center font-bold text-yellow-900">
+                  ⚠️ Ratio promedio: <span class="text-2xl">1:10</span> - Por cada 1€ en prevención, ahorras 10€ en reparaciones
+                </p>
+              </div>
+            </div>
+
+            <h2 class="text-3xl font-bold text-gray-900 mb-6 mt-12">Programa de Mantenimiento Profesional</h2>
+
+            <div class="bg-gradient-to-r from-blue-50 to-green-50 p-6 rounded-lg mb-8">
+              <h3 class="text-xl font-bold text-gray-800 mb-4">🔧 Servicios Profesionales en Cádiz</h3>
+
+              <div class="space-y-4">
+                <div class="bg-white p-4 rounded-lg border-l-4 border-blue-500">
+                  <h4 class="font-bold text-blue-900 mb-2">📦 Paquete BÁSICO - Embarcaciones Recreo</h4>
+                  <ul class="text-sm space-y-1 text-gray-700 mb-3">
+                    <li>✓ Limpieza casco trimestral (4 al año)</li>
+                    <li>✓ Inspección subacuática semestral (2 al año)</li>
+                    <li>✓ Revisión ánodos y protección anticorrosiva</li>
+                    <li>✓ Informe fotográfico digital cada servicio</li>
+                  </ul>
+                  <div class="text-blue-900">
+                    <strong>Desde 890€/año</strong> <span class="text-sm text-gray-600">(ahorro 25% vs servicios individuales)</span>
+                  </div>
+                </div>
+
+                <div class="bg-white p-4 rounded-lg border-l-4 border-green-500">
+                  <h4 class="font-bold text-green-900 mb-2">📦 Paquete PROFESIONAL - Flota Comercial/Pesquera</h4>
+                  <ul class="text-sm space-y-1 text-gray-700 mb-3">
+                    <li>✓ Limpieza casco mensual (12 al año)</li>
+                    <li>✓ Inspección END trimestral (4 al año)</li>
+                    <li>✓ Inspección certificada anual sociedades clasificación</li>
+                    <li>✓ Protección anticorrosiva completa</li>
+                    <li>✓ Mantenimiento preventivo motor y sistemas</li>
+                    <li>✓ Servicio de emergencia 24/7 prioritario</li>
+                    <li>✓ Documentación completa para auditorías</li>
+                  </ul>
+                  <div class="text-green-900">
+                    <strong>Desde 2,890€/año</strong> <span class="text-sm text-gray-600">(ahorro 30% + prioridad emergencias)</span>
+                  </div>
+                </div>
+
+                <div class="bg-white p-4 rounded-lg border-l-4 border-orange-500">
+                  <h4 class="font-bold text-orange-900 mb-2">📦 Paquete PREMIUM - Yates +24m</h4>
+                  <ul class="text-sm space-y-1 text-gray-700 mb-3">
+                    <li>✓ Todo lo incluido en Profesional</li>
+                    <li>✓ Gestor de mantenimiento dedicado</li>
+                    <li>✓ Limpieza casco quincenal alta temporada</li>
+                    <li>✓ Inspecciones técnicas ilimitadas</li>
+                    <li>✓ Coordinación con astilleros y proveedores</li>
+                    <li>✓ Servicio concierge marino</li>
+                    <li>✓ Disponibilidad internacional (coordinamos servicios)</li>
+                  </ul>
+                  <div class="text-orange-900">
+                    <strong>Presupuesto personalizado</strong> <span class="text-sm text-gray-600">(según eslora y necesidades)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <h2 class="text-3xl font-bold text-gray-900 mb-6 mt-12">Errores Comunes a Evitar</h2>
+
+            <div class="bg-yellow-50 p-6 rounded-lg mb-8">
+              <h3 class="text-xl font-bold text-yellow-900 mb-4">❌ Los 7 Errores Más Costosos</h3>
+
+              <div class="space-y-3">
+                <div class="flex items-start">
+                  <span class="text-red-500 text-2xl mr-3">1.</span>
+                  <div>
+                    <strong class="text-gray-800">No limpiar el casco regularmente</strong>
+                    <p class="text-sm text-gray-600">
+                      Resultado: +25% consumo combustible, pérdida 3-5 nudos velocidad, corrosión acelerada.
+                      Coste anual extra: 2,000-5,000€ solo en combustible.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex items-start">
+                  <span class="text-red-500 text-2xl mr-3">2.</span>
+                  <div>
+                    <strong class="text-gray-800">Ignorar ánodos de sacrificio consumidos</strong>
+                    <p class="text-sm text-gray-600">
+                      Resultado: Corrosión galvánica severa en hélice, eje, timón. Reparación: 3,000-8,000€.
+                      Prevención: reemplazar ánodos (150-300€).
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex items-start">
+                  <span class="text-red-500 text-2xl mr-3">3.</span>
+                  <div>
+                    <strong class="text-gray-800">Retrasar cambios de aceite</strong>
+                    <p class="text-sm text-gray-600">
+                      Resultado: Desgaste acelerado motor, posible gripado. Overhaul motor: 8,000-15,000€.
+                      Prevención: cambio aceite cada 100-200 horas (300-500€).
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex items-start">
+                  <span class="text-red-500 text-2xl mr-3">4.</span>
+                  <div>
+                    <strong class="text-gray-800">No inspeccionar regularmente bajo la línea de flotación</strong>
+                    <p class="text-sm text-gray-600">
+                      Resultado: Corrosión, grietas, fugas no detectadas hasta etapa crítica.
+                      Reparación: 2,000-10,000€. Prevención: inspección semestral (400-600€).
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex items-start">
+                  <span class="text-red-500 text-2xl mr-3">5.</span>
+                  <div>
+                    <strong class="text-gray-800">Usar productos de limpieza inadecuados</strong>
+                    <p class="text-sm text-gray-600">
+                      Resultado: Daño a gelcoat, pintura, juntas de goma. Repintado completo: 5,000-20,000€.
+                      Usar solo productos náuticos certificados.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex items-start">
+                  <span class="text-red-500 text-2xl mr-3">6.</span>
+                  <div>
+                    <strong class="text-gray-800">Almacenar embarcación sin preparación</strong>
+                    <p class="text-sm text-gray-600">
+                      Resultado: Baterías arruinadas, sistemas congelados, moho, corrosión interna.
+                      Daños: 1,000-3,000€. Preparación correcta: 300-500€.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex items-start">
+                  <span class="text-red-500 text-2xl mr-3">7.</span>
+                  <div>
+                    <strong class="text-gray-800">No documentar el mantenimiento</strong>
+                    <p class="text-sm text-gray-600">
+                      Resultado: Pérdida 20-40% valor reventa, problemas con seguros, dificultad demostrar
+                      cumplimiento normativo. Mantén registros detallados con fechas y fotografías.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Section -->
+          <section class="mt-12 bg-gray-50 p-8 rounded-lg">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Preguntas Frecuentes</h2>
+
+            <div class="space-y-6">
+              <div class="border-b border-gray-200 pb-4">
+                <h3 class="font-bold text-gray-800 mb-2">¿Puedo hacer yo mismo el mantenimiento preventivo?</h3>
+                <p class="text-gray-600">
+                  Tareas básicas sí (inspección visual, niveles, limpieza cubierta), pero trabajos técnicos
+                  como inspección subacuática, soldaduras, END y certificaciones DEBEN ser realizados por
+                  profesionales certificados. Razones: seguridad, garantías, validez legal, seguros.
+                </p>
+              </div>
+
+              <div class="border-b border-gray-200 pb-4">
+                <h3 class="font-bold text-gray-800 mb-2">¿El mantenimiento preventivo afecta la garantía?</h3>
+                <p class="text-gray-600">
+                  Al contrario, es requisito para mantener la garantía válida. Todos los fabricantes exigen
+                  mantenimiento según manual. No hacerlo invalida la garantía. Además, seguros marítimos
+                  requieren mantenimiento documentado para validez de póliza.
+                </p>
+              </div>
+
+              <div class="border-b border-gray-200 pb-4">
+                <h3 class="font-bold text-gray-800 mb-2">¿Cuánto tiempo lleva el mantenimiento semestral?</h3>
+                <p class="text-gray-600">
+                  Una inspección subacuática completa con limpieza de casco toma 3-6 horas para embarcaciones
+                  hasta 15m, 6-8 horas para 15-24m. Lo mejor: no requiere sacar el barco del agua, puedes
+                  seguir operando el mismo día.
+                </p>
+              </div>
+
+              <div>
+                <h3 class="font-bold text-gray-800 mb-2">¿Ofrecen financiación de programas de mantenimiento?</h3>
+                <p class="text-gray-600">
+                  Sí, ofrecemos pago mensual/trimestral para programas anuales. También aceptamos pagos
+                  con tarjeta, transferencia y cheques náuticos. El mantenimiento preventivo se paga solo
+                  con el ahorro en combustible y reparaciones evitadas.
+                </p>
+                <div class="flex gap-3 mt-3">
+                  <a href="/contacto" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded text-sm font-semibold transition-colors">
+                    Solicitar Programa Personalizado
+                  </a>
+                  <a href="tel:+34614405061" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded text-sm font-semibold transition-colors">
+                    LLAMAR AHORA
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Smart Internal Links -->
+          <div class="mt-12">
+            <InternalLinks currentPage="blog-mantenimiento-preventivo" context="blog" maxLinks={4} />
+          </div>
+
+          <!-- CTA Section -->
+          <div class="mt-12 bg-gradient-to-r from-green-900 via-teal-900 to-blue-900 text-white p-8 rounded-lg text-center">
+            <h3 class="text-2xl font-bold mb-4">Programa de Mantenimiento Preventivo Profesional</h3>
+            <p class="text-green-100 mb-6">
+              Protege tu inversión con nuestro programa completo de mantenimiento preventivo. Ahorra hasta
+              un 80% en reparaciones, aumenta 40% el valor de reventa y navega con tranquilidad total.
+              Inspecciones certificadas, limpieza profesional, protección anticorrosiva y servicio 24/7.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <CallToAction variant="emergency" size="lg" text="INSPECCIÓN GRATUITA" subtext="Evaluamos tu embarcación" />
+              <a href="/contacto" class="bg-green-600 hover:bg-green-700 px-8 py-3 rounded-lg font-semibold transition-colors">
+                Ver Paquetes y Precios
+              </a>
+            </div>
+            <div class="mt-6 text-green-200 text-sm">
+              ✅ Paquetes desde 890€/año • ✅ Ahorro 25-30% vs servicios individuales • ✅ Financiación disponible
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .container {
+    max-width: 1200px;
+  }
+
+  .prose h2, .prose h3, .prose h4 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .prose ul {
+    margin: 1rem 0;
+  }
+
+  .prose li {
+    margin: 0.5rem 0;
+  }
+
+  .prose p {
+    margin: 1rem 0;
+  }
+</style>

@@ -1,0 +1,65 @@
+---
+/**
+ * Logo Component - Trabajos Subacuáticos Cádiz
+ *
+ * Componente reutilizable para el logo de la empresa.
+ * Usa picture element con WebP + PNG fallback para mejor rendimiento.
+ * Incluye versiones retina (@2x) para pantallas de alta resolución.
+ *
+ * Props:
+ * - version: 'v1' | 'v2' | 'default' (default usa v2)
+ * - size: 'small' | 'medium' | 'large' (default: medium)
+ * - className: clases CSS adicionales
+ */
+
+export interface Props {
+  version?: 'v1' | 'v2' | 'default';
+  size?: 'small' | 'medium' | 'large';
+  className?: string;
+}
+
+const { version = 'default', size = 'medium', className = '' } = Astro.props;
+
+// Determinar qué logo usar
+const logoPath = version === 'default' ? '/images/logo' : `/images/logo/${version}`;
+
+// Configurar dimensiones según el tamaño
+const dimensions = {
+  small: { width: 150, height: 100 },
+  medium: { width: 300, height: 200 },
+  large: { width: 600, height: 400 }
+};
+
+const { width, height } = dimensions[size];
+---
+
+<picture class={className}>
+  <!-- WebP para navegadores modernos -->
+  <source
+    srcset={`${logoPath}/header.webp 1x, ${logoPath}/header@2x.webp 2x`}
+    type="image/webp"
+  />
+
+  <!-- PNG fallback -->
+  <img
+    src={`${logoPath}/header.png`}
+    srcset={`${logoPath}/header.png 1x, ${logoPath}/header@2x.png 2x`}
+    alt="Trabajos Subacuáticos Cádiz - Soldadura Subacuática y Buceo Industrial"
+    width={width}
+    height={height}
+    loading="eager"
+    decoding="async"
+  />
+</picture>
+
+<style>
+  picture {
+    display: inline-block;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+</style>
