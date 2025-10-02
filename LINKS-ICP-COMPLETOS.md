@@ -2,16 +2,14 @@
 
 ## 📍 Dominio Production
 
-**Base URL:** https://trabajos-subacuaticos-cadiz.vercel.app
-
-*(Si tienes dominio custom, reemplaza por tu dominio)*
+**Base URL:** https://www.trabajossubacuaticoscadiz.com
 
 ---
 
 ## 🎯 LANDINGS PRINCIPALES ICP (7 páginas)
 
 ### 1. **Servicios para Agentes Marítimos y Consignatarias**
-**URL:** https://trabajos-subacuaticos-cadiz.vercel.app/servicios-agentes-maritimos
+**URL:** https://www.trabajossubacuaticoscadiz.com/servicios-agentes-maritimos
 
 **Target ICP:** Consignatarias, agentes marítimos, ship agents
 **Keywords principales:**
@@ -28,7 +26,7 @@
 ---
 
 ### 2. **Servicios para Navieras y Armadores**
-**URL:** https://trabajos-subacuaticos-cadiz.vercel.app/servicios-navieras
+**URL:** https://www.trabajossubacuaticoscadiz.com/servicios-navieras
 
 **Target ICP:** Navieras, armadores, ship owners, fleet managers
 **Keywords principales:**
@@ -46,7 +44,7 @@
 ---
 
 ### 3. **Servicios para Empresas de Construcción**
-**URL:** https://trabajos-subacuaticos-cadiz.vercel.app/servicios-constructoras
+**URL:** https://www.trabajossubacuaticoscadiz.com/servicios-constructoras
 
 **Target ICP:** Empresas de construcción, constructoras civiles, subcontratistas
 **Keywords principales:**
@@ -63,7 +61,7 @@
 ---
 
 ### 4. **Obras Portuarias y Construcción de Muelles**
-**URL:** https://trabajos-subacuaticos-cadiz.vercel.app/obras-portuarias
+**URL:** https://www.trabajossubacuaticoscadiz.com/obras-portuarias
 
 **Target ICP:** Autoridades portuarias, gestores de puertos, marinas
 **Keywords principales:**
@@ -80,7 +78,7 @@
 ---
 
 ### 5. **Obra Civil Subacuática**
-**URL:** https://trabajos-subacuaticos-cadiz.vercel.app/obra-civil-subacuatica
+**URL:** https://www.trabajossubacuaticoscadiz.com/obra-civil-subacuatica
 
 **Target ICP:** Ingenierías, constructoras de obra civil, ministerio fomento
 **Keywords principales:**
@@ -97,7 +95,7 @@
 ---
 
 ### 6. **Emisarios Submarinos y Sistemas EDAR**
-**URL:** https://trabajos-subacuaticos-cadiz.vercel.app/emisarios-submarinos
+**URL:** https://www.trabajossubacuaticoscadiz.com/emisarios-submarinos
 
 **Target ICP:** Gestoras EDAR, Ayuntamientos, empresas agua, desaladoras
 **Keywords principales:**
@@ -115,7 +113,7 @@
 ---
 
 ### 7. **Obras en Pantanos, Presas y Embalses**
-**URL:** https://trabajos-subacuaticos-cadiz.vercel.app/obras-pantanos-embalses
+**URL:** https://www.trabajossubacuaticoscadiz.com/obras-pantanos-embalses
 
 **Target ICP:** Confederaciones Hidrográficas, gestores embalses, CHG, DGA
 **Keywords principales:**
@@ -133,7 +131,7 @@
 
 ## 🏠 HOME PAGE (Actualizada)
 
-**URL:** https://trabajos-subacuaticos-cadiz.vercel.app
+**URL:** https://www.trabajossubacuaticoscadiz.com
 
 **Nueva Sección:** "Servicios Especializados por Sector"
 - 3 cards principales (Agentes, Navieras, Constructoras)
@@ -152,132 +150,344 @@
 
 ---
 
-## 🎯 ESTRATEGIA DE KEYWORDS
+## 🎯 ESTRATEGIA DE KEYWORDS POR ICP
 
-### High Intent Keywords (por landing):
-
-**Agentes Marítimos:**
+### **AGENTES MARÍTIMOS** (High Intent Keywords)
+```
 - "inspección buques urgente Cádiz"
 - "reparación barcos sin varada"
 - "consignataria servicios submarinos"
 - "emergencia buques puerto Cádiz"
+- "in water survey Cádiz"
+- "clasificadora inspección underwater"
+- "P&I club informes submarinos"
+```
 
-**Navieras:**
+### **NAVIERAS** (Commercial Intent)
+```
 - "contrato mantenimiento flota"
 - "limpieza cascos buques programa"
 - "mantenimiento preventivo naviera"
-- "servicios flotas comerciales"
+- "servicios flotas comerciales Cádiz"
+- "fleet management underwater"
+- "optimización consumo combustible buques"
+```
 
-**Constructoras:**
+### **CONSTRUCTORAS** (B2B Intent)
+```
 - "obra bolsa submarina"
 - "subcontrata pilotaje submarino"
 - "cimentaciones puentes bajo agua"
 - "soldadura estructural submarina"
+- "hormigonado subacuático H-400"
+- "obra civil marítima Andalucía"
+```
 
-**Obras Portuarias:**
+### **OBRAS PORTUARIAS** (Infrastructure)
+```
 - "construcción muelles submarinos"
 - "reparación pilotes puerto"
 - "instalación pantalanes"
 - "mantenimiento infraestructura portuaria"
+- "obras marítimas Cádiz"
+- "construcción puerto deportivo"
+```
 
-**Obra Civil:**
+### **OBRA CIVIL** (Engineering)
+```
 - "hormigonado subacuático"
 - "cimentaciones marinas puentes"
 - "obra civil bajo agua"
 - "pilotaje submarino presas"
+- "túneles sumergidos construcción"
+- "EHE-08 hormigón subacuático"
+```
 
-**Emisarios:**
+### **EMISARIOS** (Municipal/Industrial)
+```
 - "inspección ROV emisarios"
 - "mantenimiento EDAR submarino"
 - "limpieza difusores emisarios"
 - "reparación colectores marinos"
+- "emisarios submarinos desaladora"
+- "vertido marino RD 1290/2012"
+```
 
-**Presas/Embalses:**
+### **PRESAS/EMBALSES** (Government)
+```
 - "inspección compuertas presas"
 - "tomas agua embalses mantenimiento"
 - "trabajos subacuáticos CHG"
 - "reparación presas sin desembalse"
+- "inspección Confederación Hidrográfica"
+- "RD 9/2008 presas trabajos"
+```
 
 ---
 
-## 🔗 INTERNAL LINKING SCHEMA
+## 🔗 INTERNAL LINKING SCHEMA COMPLETO
 
-### Desde Home a ICPs:
-- Sección destacada "Servicios por Sector"
-- Links directos en hero secundario
-- Breadcrumbs en footer
+### **HUB PRINCIPAL (Home)**
+```
+/
+├── /servicios-agentes-maritimos
+├── /servicios-navieras
+├── /servicios-constructoras
+├── /obras-portuarias
+├── /obra-civil-subacuatica
+├── /emisarios-submarinos
+└── /obras-pantanos-embalses
+```
 
-### Entre ICPs:
-- Cross-linking temático (Navieras ↔ Agentes Marítimos)
-- Links contextuales en contenido
-- Related services en footer de cada página
+### **Cross-Linking entre ICPs:**
 
-### A Servicios Existentes:
-- Soldadura subacuática (25 menciones)
-- Inspección de cascos (22 menciones)
-- Buceo industrial (18 menciones)
-- Reparación naval (20 menciones)
-- Limpieza de cascos (15 menciones)
+**Agentes Marítimos →**
+- → Servicios Navieras (flotas recurrentes)
+- → Obras Portuarias (coordinación puerto)
+- → Trabajos Salvamento (emergencias graves)
+
+**Navieras →**
+- → Agentes Marítimos (servicios puntuales)
+- → Limpieza Cascos (optimización fuel)
+- → Inspección Cascos (IWS programados)
+
+**Constructoras →**
+- → Obra Civil Subacuática (proyectos grandes)
+- → Obras Portuarias (infraestructura)
+- → Soldadura Subacuática (estructural)
+
+**Obras Portuarias →**
+- → Obra Civil Subacuática (cimentaciones)
+- → Servicios Constructoras (subcontrata)
+- → Emisarios Submarinos (tomas agua)
+
+**Obra Civil →**
+- → Obras Pantanos (presas/azudes)
+- → Obras Portuarias (muelles)
+- → Servicios Constructoras (partner)
+
+**Emisarios →**
+- → Obra Civil Subacuática (instalación)
+- → Inspección Visual (ROV)
+- → Informes Técnicos (certificación)
+
+**Presas/Embalses →**
+- → Obra Civil Subacuática (obras hidráulicas)
+- → Inspección Cascos (técnica similar)
+- → Soldadura Subacuática (compuertas)
+
+### **Links a Servicios Core (desde todas las ICPs):**
+- /soldadura-subacuatica (25 menciones totales)
+- /inspeccion-cascos (22 menciones)
+- /buceo-industrial (18 menciones)
+- /reparacion-embarcaciones (20 menciones)
+- /limpieza-cascos (15 menciones)
+- /informes-tecnicos-submarinos (18 menciones)
+- /certificaciones-navieras (12 menciones)
+- /control-end-submarino (10 menciones)
 
 ---
 
-## 📈 SEO ON-PAGE
+## 📈 SEO ON-PAGE CHECKLIST
 
-Todas las landings incluyen:
-- ✅ Title tag optimizado (< 60 caracteres)
-- ✅ Meta description CTR-optimized (< 160 caracteres)
+Todas las 7 landings ICP incluyen:
+
+### **Meta Tags:**
+- ✅ Title tag optimizado (< 60 caracteres) con "Urgente 24/7"
+- ✅ Meta description CTR (< 160 caracteres) con CTA
+- ✅ Keywords meta tag con LSI keywords
+- ✅ Canonical URL correcta
+
+### **Estructura HTML:**
 - ✅ H1 único con keyword principal
-- ✅ H2/H3 estructura jerárquica
-- ✅ Schema.org Service markup
-- ✅ Open Graph tags
-- ✅ Canonical URLs
-- ✅ Alt text en imágenes
-- ✅ Internal linking estratégico
-- ✅ CTAs múltiples por página
+- ✅ H2/H3 jerarquía lógica (min 3 H2)
+- ✅ Estructura semántica (header/main/section/footer)
+- ✅ Lists (ul/ol) para mejor legibilidad
+
+### **Schema Markup:**
+- ✅ LocalBusiness Schema
+- ✅ Service Schema específico
+- ✅ BreadcrumbList
+- ✅ Organization Schema
+
+### **Performance:**
+- ✅ Lazy loading imágenes
+- ✅ WebP format
+- ✅ Minified CSS/JS
+- ✅ Critical CSS inline
+
+### **UX/Conversión:**
+- ✅ CTA principal above the fold
+- ✅ CTA secundario mid-page
+- ✅ CTA terciario footer
+- ✅ Formulario contacto visible
+- ✅ Teléfono/email destacados
+- ✅ Tiempo respuesta visible (< 2h)
 
 ---
 
-## 🚀 PRÓXIMOS PASOS RECOMENDADOS
+## 🚀 DEPLOYMENT STATUS
 
-1. **Search Console:**
-   - Indexar manualmente las 7 nuevas URLs
-   - Enviar sitemap actualizado
-   - Solicitar crawling prioritario
-
-2. **Analytics:**
-   - Configurar eventos de conversión por ICP
-   - Trackear formularios por tipo de cliente
-   - Medir tiempo en página por landing
-
-3. **Link Building:**
-   - Directorio empresas Cádiz
-   - Asociaciones marítimas
-   - Cámaras de comercio
-   - Listados navieras/consignatarias
-
-4. **Content Marketing:**
-   - Blog posts específicos por ICP
-   - Casos de éxito con clientes reales
-   - Guías técnicas descargables
-
-5. **Local SEO:**
-   - Google Business Profile optimizado
-   - Reviews de clientes B2B
-   - Fotos trabajos en puerto Cádiz
+✅ **GitHub:** https://github.com/javieregea/trabajos-subacuaticos-cadiz
+✅ **Production:** https://www.trabajossubacuaticoscadiz.com
+✅ **Build:** 58 páginas compiladas sin errores
+✅ **Commits:** 2 commits realizados con todas las landings
 
 ---
 
-## 📞 CONTACTO Y CONVERSIÓN
+## 📋 PRÓXIMOS PASOS RECOMENDADOS
 
-Cada landing incluye:
-- **CTA principal:** Emergencia 24/7
-- **CTA secundario:** Solicitar presupuesto
-- **VHF directo:** Canal 16/12 mencionado
-- **Tiempo respuesta:** < 2 horas destacado
-- **Áreas cobertura:** Específicas por servicio
+### **1. Search Console (PRIORIDAD ALTA)**
+```bash
+# Indexar manualmente las 7 nuevas URLs:
+1. https://www.trabajossubacuaticoscadiz.com/servicios-agentes-maritimos
+2. https://www.trabajossubacuaticoscadiz.com/servicios-navieras
+3. https://www.trabajossubacuaticoscadiz.com/servicios-constructoras
+4. https://www.trabajossubacuaticoscadiz.com/obras-portuarias
+5. https://www.trabajossubacuaticoscadiz.com/obra-civil-subacuatica
+6. https://www.trabajossubacuaticoscadiz.com/emisarios-submarinos
+7. https://www.trabajossubacuaticoscadiz.com/obras-pantanos-embalses
+
+# Acciones:
+- Enviar sitemap.xml actualizado
+- Solicitar indexación manual vía URL Inspection
+- Verificar mobile usability
+- Comprobar Core Web Vitals
+```
+
+### **2. Google Analytics**
+```javascript
+// Configurar eventos de conversión por ICP:
+- form_submit_agentes_maritimos
+- form_submit_navieras
+- form_submit_constructoras
+- cta_emergency_click
+- phone_click_by_icp
+- plan_selection (para navieras)
+
+// Goals a trackear:
+- Tiempo en página > 2 min
+- Scroll depth > 75%
+- Clicks en internal links
+- Downloads (si añades PDFs)
+```
+
+### **3. Link Building Específico**
+
+**Para Agentes Marítimos:**
+- Directorio ANAVE (Asociación Navieras Españolas)
+- Colegio Agentes Consignatarios Cádiz
+- Puerto de Cádiz - Directorio proveedores
+- Shipping Spain directorios
+
+**Para Navieras:**
+- Lloyd's List directorio servicios
+- TradeWinds supplier directory
+- Puertos del Estado - Catálogo servicios
+
+**Para Constructoras:**
+- SEOPAN (Asociación Empresas Constructoras)
+- Colegio Ingenieros Caminos Cádiz
+- Registro Oficial PME
+
+**Para EDAR/Emisarios:**
+- AEAS (Asociación Española Abastecimiento Saneamiento)
+- Ayuntamientos con EDAR
+- Confederación Hidrográfica Guadalquivir
+
+### **4. Content Marketing por ICP**
+
+**Blog Posts Sugeridos:**
+```
+1. "Guía Completa: Inspección de Buques Sin Varada para Consignatarias"
+2. "ROI de Contratos de Mantenimiento para Flotas Comerciales"
+3. "Normativa Obra Civil Subacuática: ROM 0.0-01 Explicada"
+4. "Cómo Elegir Empresa para Emisarios EDAR: Checklist Técnico"
+5. "Trabajos en Presas CHG: Normativa y Mejores Prácticas 2025"
+```
+
+### **5. Local SEO B2B**
+
+**Google Business Profile:**
+- Categorías: Marine engineer, Welding service, Industrial contractor
+- Fotos: Trabajos en puerto Cádiz por tipo de ICP
+- Posts semanales con casos de uso
+- Reviews de clientes B2B (pedir a consignatarias)
+
+**Directorios Locales:**
+- Cámara Comercio Cádiz
+- CEOE Cádiz - Directorio empresas
+- Andalucía Emprende
+- Junta Andalucía - Catálogo proveedores
 
 ---
 
-**Generado con Claude Code**
-**Fecha:** 2025-10-02
-**Versión:** 1.0
+## 📊 KPIs A MEDIR (por ICP)
+
+### **Agentes Marítimos:**
+- Formularios enviados desde landing
+- Llamadas emergencia < 2h
+- Presupuestos solicitados
+- Tiempo medio respuesta
+
+### **Navieras:**
+- Descargas propuesta contratos
+- Reuniones agendadas
+- Planes seleccionados (B/P/E)
+- Valor promedio contrato
+
+### **Constructoras:**
+- Solicitudes oferta técnica
+- Reuniones proyecto
+- Proyectos adjudicados
+- Valor obra promedio
+
+### **Obras Portuarias:**
+- Contactos autoridades portuarias
+- Licitaciones participadas
+- Adjudicaciones ganadas
+
+### **Emisarios/Presas:**
+- Contactos ayuntamientos
+- Contratos mantenimiento
+- Inspecciones realizadas
+
+---
+
+## 💰 CONVERSIÓN Y PRICING
+
+### **Modelos de Negocio por ICP:**
+
+**Agentes Marítimos:**
+- Transaccional (por servicio)
+- Urgencias premium +50%
+- Descuento 10% clientes recurrentes
+
+**Navieras:**
+- Contratos anuales (MRR)
+- 3 tiers pricing
+- Descuentos volumen hasta 35%
+
+**Constructoras:**
+- Licitaciones (proyecto)
+- Subcontrata especializada
+- Modelo partnership largo plazo
+
+**Obras Portuarias:**
+- Proyectos grandes (> 100K€)
+- Licitaciones públicas
+- Mantenimiento recurrente
+
+**Emisarios/EDAR:**
+- Contratos mantenimiento (desde 4.5K€/año)
+- Inspecciones reglamentarias
+- Emergencias 24/7
+
+---
+
+**Documento generado:** 2025-10-02
+**Web:** https://www.trabajossubacuaticoscadiz.com
+**GitHub:** https://github.com/javieregea/trabajos-subacuaticos-cadiz
+**Versión:** 2.0 (Dominio actualizado)
+
+🤖 Generated with Claude Code
