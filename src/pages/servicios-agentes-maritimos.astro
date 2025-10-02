@@ -1,0 +1,351 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import LocalSchema from '../components/LocalSchema.astro';
+import CallToAction from '../components/CallToAction.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
+---
+
+<Layout
+  title="Servicios Submarinos para Agentes Marítimos Cádiz | Consignatarias 24/7"
+  description="Servicios especializados de buceo industrial y soldadura subacuática para consignatarias y agentes marítimos en Cádiz. Inspecciones, reparaciones urgentes y trabajos submarinos certificados."
+  keywords="agentes marítimos Cádiz, consignatarias puerto Cádiz, servicios submarinos buques, inspección cascos consignatarias, reparación urgente embarcaciones, buceo industrial agentes marítimos"
+>
+  <LocalSchema location="Puerto de Cádiz" servicePage="Servicios Agentes Marítimos" />
+
+  <!-- Service Schema for Maritime Agents -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Servicios Submarinos para Agentes Marítimos y Consignatarias",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Trabajos Subacuáticos Cádiz"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Cádiz"
+      },
+      "description": "Servicios especializados de buceo industrial, soldadura subacuática e inspección de cascos para consignatarias y agentes marítimos en el puerto de Cádiz.",
+      "serviceType": "Servicios Submarinos Comerciales"
+    }
+  </script>
+
+  <Header />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">
+            Servicios Submarinos para Agentes Marítimos y Consignatarias 24/7
+          </h1>
+          <p class="text-xl md:text-2xl text-blue-100 mb-8">
+            Soluciones rápidas y certificadas para buques en puerto de Cádiz.
+            Inspecciones, reparaciones urgentes y trabajos submarinos profesionales.
+          </p>
+          <div class="flex flex-col md:flex-row gap-4 justify-center">
+            <CallToAction variant="emergency" size="xl" text="EMERGENCIA BUQUES" subtext="Respuesta &lt; 2h" />
+            <a href="#servicios" class="bg-blue-600 hover:bg-blue-700 px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
+              Ver Servicios Especializados
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Benefits for Maritime Agents -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+            Por Qué las Consignatarias Confían en Nuestros Servicios
+          </h2>
+
+          <div class="grid md:grid-cols-3 gap-8 mb-12">
+            <div class="text-center">
+              <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold mb-2">Respuesta Inmediata</h3>
+              <p class="text-gray-600">Equipo de guardia 24/7 en puerto de Cádiz. Respuesta en menos de 2 horas para emergencias navieras.</p>
+            </div>
+
+            <div class="text-center">
+              <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold mb-2">Certificaciones Internacionales</h3>
+              <p class="text-gray-600">Homologados por Lloyd's Register, DNV GL y clasificadoras internacionales. <a href="/certificaciones-navieras" class="text-blue-600 hover:underline">Informes certificados</a>.</p>
+            </div>
+
+            <div class="text-center">
+              <div class="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold mb-2">Sin Varada</h3>
+              <p class="text-gray-600">Reparaciones y mantenimiento a flote. Ahorro de tiempo y costes de astillero para sus clientes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Specialized Services -->
+    <section id="servicios" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">
+            Servicios Especializados para Agentes Marítimos
+          </h2>
+          <p class="text-xl text-gray-600 text-center mb-12">
+            Soluciones integrales para buques mercantes, tanqueros, portacontenedores y flota comercial
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <!-- Inspección Pre-Carga -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h3 class="text-2xl font-bold mb-4 text-blue-900">📋 Inspección de Cascos Pre-Carga</h3>
+              <p class="text-gray-700 mb-4">
+                <a href="/inspeccion-cascos" class="text-blue-600 hover:underline">Inspecciones submarinas certificadas</a> antes de carga/descarga.
+                Detección de daños, grietas, corrosión y verificación de integridad estructural.
+              </p>
+              <ul class="space-y-2 text-gray-600 mb-4">
+                <li>✓ <a href="/inspeccion-visual-subacuatica" class="text-blue-600 hover:underline">Inspección visual completa</a> de obra viva</li>
+                <li>✓ <a href="/control-end-submarino" class="text-green-600 hover:underline">Ensayos no destructivos (END)</a> submarinos</li>
+                <li>✓ <a href="/informes-tecnicos-submarinos" class="text-orange-600 hover:underline">Informes técnicos certificados</a> con fotografías</li>
+                <li>✓ Verificación de anodos y protección catódica</li>
+                <li>✓ Medición de espesores de casco</li>
+              </ul>
+              <a href="/inspeccion-cascos" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-semibold">
+                Más info inspecciones
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+
+            <!-- Reparaciones Urgentes -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h3 class="text-2xl font-bold mb-4 text-red-900">🔧 Reparaciones Urgentes a Flote</h3>
+              <p class="text-gray-700 mb-4">
+                <a href="/soldadura-subacuatica" class="text-red-600 hover:underline">Soldadura subacuática</a> y reparaciones de emergencia 24/7.
+                Evite demoras costosas con reparaciones inmediatas en puerto.
+              </p>
+              <ul class="space-y-2 text-gray-600 mb-4">
+                <li>✓ <a href="/soldadura-electrodo-revestido" class="text-blue-600 hover:underline">Soldadura hiperbárica húmeda/seca</a></li>
+                <li>✓ <a href="/reparacion-cascos-bajo-agua" class="text-orange-600 hover:underline">Reparación grietas y fisuras</a> en cascos</li>
+                <li>✓ Sellado de vías de agua urgentes</li>
+                <li>✓ <a href="/reparacion-helices" class="text-green-600 hover:underline">Reparación hélices y timones</a></li>
+                <li>✓ Trabajos en tomas de mar y válvulas</li>
+              </ul>
+              <a href="/emergencias" class="inline-flex items-center text-red-600 hover:text-red-800 font-semibold">
+                Protocolo emergencias
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+
+            <!-- Limpieza y Mantenimiento -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h3 class="text-2xl font-bold mb-4 text-green-900">🧽 Limpieza de Cascos Programada</h3>
+              <p class="text-gray-700 mb-4">
+                <a href="/limpieza-cascos" class="text-green-600 hover:underline">Limpieza profesional de cascos</a> para optimizar consumo de combustible.
+                Mantenimiento preventivo de obra viva según calendarios navieros.
+              </p>
+              <ul class="space-y-2 text-gray-600 mb-4">
+                <li>✓ Hidrolavado de alta presión submarino</li>
+                <li>✓ Eliminación de organismos marinos (fouling)</li>
+                <li>✓ <a href="/mantenimiento-naval" class="text-blue-600 hover:underline">Mantenimiento de hélices y ejes</a></li>
+                <li>✓ Limpieza de tomas de mar y rejillas</li>
+                <li>✓ Programación según escalas en Cádiz</li>
+              </ul>
+              <a href="/limpieza-cascos" class="inline-flex items-center text-green-600 hover:text-green-800 font-semibold">
+                Servicios de limpieza
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+
+            <!-- Salvamento y Reflotamiento -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h3 class="text-2xl font-bold mb-4 text-purple-900">⚓ Salvamento y Reflotamiento</h3>
+              <p class="text-gray-700 mb-4">
+                <a href="/trabajos-salvamento" class="text-purple-600 hover:underline">Operaciones de salvamento marino</a> y reflotamiento de embarcaciones.
+                Experiencia en buques varados y situaciones complejas.
+              </p>
+              <ul class="space-y-2 text-gray-600 mb-4">
+                <li>✓ Evaluación de daños y plan de salvamento</li>
+                <li>✓ <a href="/corte-subacuatico" class="text-red-600 hover:underline">Corte subacuático</a> para liberación</li>
+                <li>✓ Sellado de compartimentos inundados</li>
+                <li>✓ Reflotamiento con pontones/globos</li>
+                <li>✓ Coordinación con autoridades portuarias</li>
+              </ul>
+              <a href="/trabajos-salvamento" class="inline-flex items-center text-purple-600 hover:text-purple-800 font-semibold">
+                Info salvamento marino
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Coverage and Response Time -->
+    <section class="py-16 bg-blue-900 text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+            Cobertura Inmediata en Puertos Andaluces
+          </h2>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-blue-800 p-6 rounded-lg">
+              <h3 class="text-2xl font-bold mb-4">📍 Zonas de Cobertura</h3>
+              <ul class="space-y-3">
+                <li><strong>Puerto de Cádiz:</strong> Base permanente - Respuesta inmediata</li>
+                <li><strong>Puerto Bahía Algeciras:</strong> 25 millas - 60 min</li>
+                <li><strong>Puerto de Sevilla:</strong> 60 millas - 2h</li>
+                <li><strong>Puerto Huelva:</strong> 70 millas - 2.5h</li>
+                <li><strong>Puerto Málaga:</strong> 95 millas - 3h</li>
+                <li><strong>Estrecho Gibraltar:</strong> Disponibilidad 24/7</li>
+              </ul>
+            </div>
+
+            <div class="bg-blue-800 p-6 rounded-lg">
+              <h3 class="text-2xl font-bold mb-4">⚡ Tiempos de Respuesta</h3>
+              <ul class="space-y-3">
+                <li>🚨 <strong>Emergencias:</strong> &lt; 2 horas en puerto Cádiz</li>
+                <li>📋 <strong>Inspecciones programadas:</strong> 24-48h</li>
+                <li>🔧 <strong>Reparaciones planificadas:</strong> Según escala</li>
+                <li>🧽 <strong>Limpiezas:</strong> Coordinación con consignataria</li>
+                <li>📞 <strong>Canal VHF:</strong> 16/12 comunicación directa</li>
+                <li>📧 <strong>Presupuestos:</strong> &lt; 4 horas respuesta</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+            Ventajas Competitivas para Consignatarias
+          </h2>
+
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="text-center">
+              <div class="text-4xl mb-4">💰</div>
+              <h3 class="text-xl font-bold mb-3">Ahorro de Costes</h3>
+              <p class="text-gray-600">
+                Reparaciones a flote eliminan gastos de varada, astillero y tiempos muertos.
+                Hasta 70% de ahorro vs reparación en seco.
+              </p>
+            </div>
+
+            <div class="text-center">
+              <div class="text-4xl mb-4">⏱️</div>
+              <h3 class="text-xl font-bold mb-3">Rapidez Operativa</h3>
+              <p class="text-gray-600">
+                Inspecciones completas en 2-4 horas. Reparaciones urgentes sin demoras en calendario de escalas.
+              </p>
+            </div>
+
+            <div class="text-center">
+              <div class="text-4xl mb-4">📜</div>
+              <h3 class="text-xl font-bold mb-3">Documentación Certificada</h3>
+              <p class="text-gray-600">
+                <a href="/informes-tecnicos-submarinos" class="text-blue-600 hover:underline">Informes técnicos</a> válidos para clasificadoras, P&I clubs y aseguradoras internacionales.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Case Studies / Vessel Types -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+            Tipos de Buques Atendidos
+          </h2>
+
+          <div class="grid md:grid-cols-4 gap-6">
+            <div class="bg-white p-4 rounded-lg shadow text-center">
+              <div class="text-3xl mb-2">🚢</div>
+              <h4 class="font-bold">Buques Mercantes</h4>
+              <p class="text-sm text-gray-600 mt-2">Cargueros, bulk carriers, generales</p>
+            </div>
+
+            <div class="bg-white p-4 rounded-lg shadow text-center">
+              <div class="text-3xl mb-2">🛢️</div>
+              <h4 class="font-bold">Tanqueros</h4>
+              <p class="text-sm text-gray-600 mt-2">Petroleros, químicos, gaseros</p>
+            </div>
+
+            <div class="bg-white p-4 rounded-lg shadow text-center">
+              <div class="text-3xl mb-2">📦</div>
+              <h4 class="font-bold">Portacontenedores</h4>
+              <p class="text-sm text-gray-600 mt-2">Feeder, Panamax, Post-Panamax</p>
+            </div>
+
+            <div class="bg-white p-4 rounded-lg shadow text-center">
+              <div class="text-3xl mb-2">🚗</div>
+              <h4 class="font-bold">RoRo / Ferries</h4>
+              <p class="text-sm text-gray-600 mt-2">Car carriers, pasaje, carga rodada</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-blue-900 to-blue-700 text-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+          ¿Necesita Servicios Submarinos para su Buque?
+        </h2>
+        <p class="text-xl text-blue-200 mb-8 max-w-3xl mx-auto">
+          Contacte ahora para presupuesto inmediato o servicio de emergencia 24/7 en puerto de Cádiz
+        </p>
+        <div class="flex flex-col md:flex-row gap-4 justify-center">
+          <CallToAction variant="emergency" size="xl" text="EMERGENCIA 24H" subtext="Respuesta inmediata" />
+          <a href="/contacto" class="bg-transparent border-2 border-white hover:bg-white hover:text-blue-900 px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
+            Solicitar Presupuesto
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Services Links -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-12">
+            Servicios Relacionados
+          </h2>
+          <RelatedLinks currentPage="servicios-agentes-maritimos" type="services" limit={8} />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

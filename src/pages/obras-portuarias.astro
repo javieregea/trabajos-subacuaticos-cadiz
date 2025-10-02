@@ -1,0 +1,343 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import LocalSchema from '../components/LocalSchema.astro';
+import CallToAction from '../components/CallToAction.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
+---
+
+<Layout
+  title="Obras Portuarias Submarinas Cádiz | Construcción Muelles Urgente 24/7"
+  description="Especialistas en obras portuarias submarinas, construcción y reparación de muelles, pilotes, pantalanes y estructuras portuarias en Cádiz. Buceo industrial certificado para puertos."
+  keywords="obras portuarias Cádiz, construcción muelles submarinos, reparación pilotes puerto, trabajos submarinos portuarios, buceo industrial puertos, mantenimiento infraestructura portuaria"
+>
+  <LocalSchema location="Puerto de Cádiz" servicePage="Obras Portuarias" />
+
+  <!-- Service Schema -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Obras Portuarias Submarinas y Construcción de Muelles",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Trabajos Subacuáticos Cádiz"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Cádiz"
+      },
+      "description": "Servicios especializados en obras portuarias submarinas, construcción y mantenimiento de muelles, pilotes y estructuras portuarias.",
+      "serviceType": "Obras Portuarias Submarinas"
+    }
+  </script>
+
+  <Header />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-slate-900 to-slate-700 text-white py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">
+            Obras Portuarias Submarinas y Construcción de Muelles Urgente
+          </h1>
+          <p class="text-xl md:text-2xl text-slate-100 mb-8">
+            Especialistas en construcción, reparación y mantenimiento de infraestructuras portuarias submarinas.
+            Pilotes, pantalanes, muelles y defensas. Servicio 24/7.
+          </p>
+          <div class="flex flex-col md:flex-row gap-4 justify-center">
+            <CallToAction variant="emergency" size="xl" text="OBRAS URGENTES" subtext="Equipo 24/7" />
+            <a href="#servicios" class="bg-slate-600 hover:bg-slate-700 px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
+              Ver Servicios Portuarios
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Services -->
+    <section id="servicios" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">
+            Servicios Especializados en Obras Portuarias
+          </h2>
+          <p class="text-xl text-gray-600 text-center mb-12">
+            Soluciones integrales para infraestructuras portuarias con tecnología submarina avanzada
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <!-- Construcción de Muelles -->
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h3 class="text-2xl font-bold mb-4 text-slate-900">🏗️ Construcción de Muelles y Pantalanes</h3>
+              <p class="text-gray-700 mb-4">
+                Construcción submarina de estructuras portuarias. Instalación de pilotes, vigas de apoyo,
+                defensas y sistemas de amarre. <a href="/soldadura-subacuatica" class="text-blue-600 hover:underline">Soldadura hiperbárica certificada</a>.
+              </p>
+              <ul class="space-y-2 text-gray-600 mb-4">
+                <li>✓ Hinca de pilotes metálicos submarinos</li>
+                <li>✓ <a href="/soldadura-electrodo-revestido" class="text-blue-600 hover:underline">Soldadura estructural submarina</a></li>
+                <li>✓ Instalación de vigas y travesaños</li>
+                <li>✓ Montaje de defensas y bolardos</li>
+                <li>✓ Hormigonado subacuático H-400</li>
+                <li>✓ Anclajes al fondo marino</li>
+              </ul>
+              <div class="bg-blue-50 p-4 rounded mt-4">
+                <p class="text-sm text-blue-900"><strong>🔧 Equipamiento:</strong> Pontona con martillo diesel, equipos de soldadura hiperbárica, grúa marina 50 ton</p>
+              </div>
+            </div>
+
+            <!-- Reparación de Estructuras -->
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h3 class="text-2xl font-bold mb-4 text-orange-900">🔧 Reparación de Estructuras Portuarias</h3>
+              <p class="text-gray-700 mb-4">
+                Reparación y refuerzo de muelles, pilotes dañados y estructuras corroídas.
+                <a href="/inspeccion-visual-subacuatica" class="text-orange-600 hover:underline">Inspección técnica</a> y soluciones de refuerzo estructural.
+              </p>
+              <ul class="space-y-2 text-gray-600 mb-4">
+                <li>✓ <a href="/inspeccion-cascos" class="text-blue-600 hover:underline">Inspección de pilotes y cimentaciones</a></li>
+                <li>✓ Reparación de pilotes corroídos</li>
+                <li>✓ Refuerzo con encamisado metálico</li>
+                <li>✓ <a href="/soldadura-subacuatica" class="text-red-600 hover:underline">Soldadura de grietas estructurales</a></li>
+                <li>✓ Protección catódica y anodos</li>
+                <li>✓ <a href="/informes-tecnicos-submarinos" class="text-green-600 hover:underline">Informes de estado estructural</a></li>
+              </ul>
+              <div class="bg-orange-50 p-4 rounded mt-4">
+                <p class="text-sm text-orange-900"><strong>⚡ Respuesta:</strong> Evaluación estructural en &lt; 4h. Reparaciones urgentes 24/7</p>
+              </div>
+            </div>
+
+            <!-- Mantenimiento Preventivo -->
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h3 class="text-2xl font-bold mb-4 text-green-900">🔍 Inspección y Mantenimiento Portuario</h3>
+              <p class="text-gray-700 mb-4">
+                Programas de <a href="/mantenimiento-naval" class="text-green-600 hover:underline">mantenimiento preventivo</a> para infraestructuras portuarias.
+                Inspecciones periódicas según normativa ROM y Puertos del Estado.
+              </p>
+              <ul class="space-y-2 text-gray-600 mb-4">
+                <li>✓ <a href="/inspeccion-visual-subacuatica" class="text-blue-600 hover:underline">Inspecciones visuales reglamentarias</a></li>
+                <li>✓ <a href="/control-end-submarino" class="text-green-600 hover:underline">Ensayos no destructivos END</a></li>
+                <li>✓ Medición de espesores anticorrosión</li>
+                <li>✓ Limpieza de estructuras y biofouling</li>
+                <li>✓ Verificación de anodos y protección</li>
+                <li>✓ Planes de mantenimiento a medida</li>
+              </ul>
+              <div class="bg-green-50 p-4 rounded mt-4">
+                <p class="text-sm text-green-900"><strong>📅 Periodicidad:</strong> Inspecciones anuales ROM 0.0-01. Planes personalizados</p>
+              </div>
+            </div>
+
+            <!-- Dragados y Excavación -->
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h3 class="text-2xl font-bold mb-4 text-blue-900">⚓ Dragados y Excavación Submarina</h3>
+              <p class="text-gray-700 mb-4">
+                Excavación submarina para cimentaciones portuarias. Dragados de mantenimiento,
+                limpieza de fondos y preparación de lechos para obras marítimas.
+              </p>
+              <ul class="space-y-2 text-gray-600 mb-4">
+                <li>✓ Excavación para pilotes y zapatas</li>
+                <li>✓ Dragados de mantenimiento en muelles</li>
+                <li>✓ Limpieza de fondos portuarios</li>
+                <li>✓ Nivelación de lechos marinos</li>
+                <li>✓ Extracción de escombros y obstáculos</li>
+                <li>✓ <a href="/corte-subacuatico" class="text-red-600 hover:underline">Corte y demolición submarina</a></li>
+              </ul>
+              <div class="bg-blue-50 p-4 rounded mt-4">
+                <p class="text-sm text-blue-900"><strong>🚜 Equipos:</strong> Airlift, bomba sumergible 600m³/h, hidrolavado alta presión</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Infrastructure Types -->
+    <section class="py-16 bg-slate-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-12">
+            Infraestructuras Portuarias que Atendemos
+          </h2>
+
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-lg shadow">
+              <h3 class="text-xl font-bold mb-3">🏗️ Muelles y Pantalanes</h3>
+              <ul class="text-sm text-gray-600 space-y-1">
+                <li>• Muelles de atraque comercial</li>
+                <li>• Pantalanes deportivos</li>
+                <li>• Fingers de amarre</li>
+                <li>• Muelles ro-ro y ferrys</li>
+                <li>• Terminales de cruceros</li>
+              </ul>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow">
+              <h3 class="text-xl font-bold mb-3">🔩 Elementos Estructurales</h3>
+              <ul class="text-sm text-gray-600 space-y-1">
+                <li>• Pilotes metálicos HEB/tubulares</li>
+                <li>• Tablestacas y muros pantalla</li>
+                <li>• Vigas de coronación</li>
+                <li>• Defensas y amortiguadores</li>
+                <li>• Escalas y plataformas</li>
+              </ul>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow">
+              <h3 class="text-xl font-bold mb-3">⚓ Obras Auxiliares</h3>
+              <ul class="text-sm text-gray-600 space-y-1">
+                <li>• Duques de Alba</li>
+                <li>• Cimentaciones submarinas</li>
+                <li>• Emisarios y conducciones</li>
+                <li>• Tomas de agua portuarias</li>
+                <li>• Sistemas anticontaminación</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Capabilities -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-12">
+            Capacidades Técnicas y Certificaciones
+          </h2>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-slate-50 p-6 rounded-lg">
+              <h3 class="text-xl font-bold mb-4 text-slate-900">🎓 Certificaciones y Homologaciones</h3>
+              <ul class="space-y-2 text-gray-700">
+                <li>✓ <a href="/certificaciones-navieras" class="text-blue-600 hover:underline">Homologación Lloyd's Register</a> soldadores submarinos</li>
+                <li>✓ Certificación AWS D3.6 soldadura submarina</li>
+                <li>✓ ISO 9001 gestión calidad obras marítimas</li>
+                <li>✓ Autorización Puertos del Estado</li>
+                <li>✓ Registro ROPME (Registro Oficial PME)</li>
+                <li>✓ Buzos nivel 2A y 3A AEUB</li>
+              </ul>
+            </div>
+
+            <div class="bg-slate-50 p-6 rounded-lg">
+              <h3 class="text-xl font-bold mb-4 text-slate-900">⚙️ Equipamiento Especializado</h3>
+              <ul class="space-y-2 text-gray-700">
+                <li>✓ Pontona con martillo hidráulico 180kJ</li>
+                <li>✓ Equipos soldadura 600A hiperbárica</li>
+                <li>✓ Grúa marina 50 ton radio 20m</li>
+                <li>✓ ROV inspección hasta 100m</li>
+                <li>✓ Sistema buceo autónomo/superficie</li>
+                <li>✓ Cámara hiperbárica descompresión</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Port Coverage -->
+    <section class="py-16 bg-slate-900 text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-12">
+            Puertos Atendidos en Andalucía
+          </h2>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <h3 class="text-xl font-bold mb-4">🏛️ Puertos de Interés General</h3>
+              <ul class="space-y-3">
+                <li><strong>Puerto de Cádiz:</strong> Base permanente - Obras en curso</li>
+                <li><strong>Bahía de Algeciras:</strong> Servicio completo 2h</li>
+                <li><strong>Puerto de Sevilla:</strong> Disponible 3h</li>
+                <li><strong>Puerto de Huelva:</strong> Cobertura 3h</li>
+                <li><strong>Puerto de Málaga:</strong> Servicio bajo demanda</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="text-xl font-bold mb-4">⚓ Puertos Deportivos y Marinas</h3>
+              <ul class="space-y-3">
+                <li><strong>Puerto Sherry:</strong> Mantenimiento regular</li>
+                <li><strong>Marina Puerto de Santa María:</strong> Servicio semanal</li>
+                <li><strong>Puerto Deportivo Rota:</strong> Contratos mantenimiento</li>
+                <li><strong>Sancti Petri:</strong> Inspecciones programadas</li>
+                <li><strong>Conil - Barbate:</strong> Bajo demanda</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Process -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-12">
+            Proceso de Ejecución de Obras Portuarias
+          </h2>
+
+          <div class="grid md:grid-cols-4 gap-6">
+            <div class="text-center">
+              <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">1</div>
+              <h3 class="font-bold mb-2">Inspección Inicial</h3>
+              <p class="text-sm text-gray-600">Evaluación técnica submarina y levantamiento topográfico del lecho</p>
+            </div>
+
+            <div class="text-center">
+              <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">2</div>
+              <h3 class="font-bold mb-2">Proyecto Ejecutivo</h3>
+              <p class="text-sm text-gray-600">Plan de obra, memoria de calidades y presupuesto detallado</p>
+            </div>
+
+            <div class="text-center">
+              <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">3</div>
+              <h3 class="font-bold mb-2">Ejecución</h3>
+              <p class="text-sm text-gray-600">Trabajos submarinos con control de calidad continuo ROM 0.5-05</p>
+            </div>
+
+            <div class="text-center">
+              <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">4</div>
+              <h3 class="font-bold mb-2">Certificación Final</h3>
+              <p class="text-sm text-gray-600"><a href="/informes-tecnicos-submarinos" class="text-blue-600 hover:underline">Informe técnico</a> certificado y garantía obra</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-slate-900 to-slate-700 text-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+          ¿Necesita Obras Portuarias Submarinas?
+        </h2>
+        <p class="text-xl text-slate-200 mb-8 max-w-3xl mx-auto">
+          Presupuesto sin compromiso en 24h. Servicio de emergencia disponible 24/7 para reparaciones urgentes
+        </p>
+        <div class="flex flex-col md:flex-row gap-4 justify-center">
+          <CallToAction variant="emergency" size="xl" text="EMERGENCIA PORTUARIA" subtext="Respuesta 24/7" />
+          <a href="/contacto" class="bg-transparent border-2 border-white hover:bg-white hover:text-slate-900 px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
+            Solicitar Presupuesto
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Links -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-12">
+            Servicios Relacionados
+          </h2>
+          <RelatedLinks currentPage="obras-portuarias" type="services" limit={8} />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

@@ -1,0 +1,367 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import LocalSchema from '../components/LocalSchema.astro';
+import CallToAction from '../components/CallToAction.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
+---
+
+<Layout
+  title="Emisarios Submarinos Cádiz | Mantenimiento Colectores Urgente 24/7"
+  description="Especialistas en emisarios submarinos: instalación, inspección, reparación y mantenimiento de colectores marinos. Servicios certificados para EDAR y plantas depuradoras en Cádiz."
+  keywords="emisarios submarinos Cádiz, mantenimiento colectores marinos, reparación emisarios EDAR, inspección tuberías submarinas, limpieza difusores emisarios, vertido marino"
+>
+  <LocalSchema location="Cádiz y Bahía" servicePage="Emisarios Submarinos" />
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Emisarios Submarinos - Instalación y Mantenimiento",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Trabajos Subacuáticos Cádiz"
+      },
+      "areaServed": {
+        "@type": "State",
+        "name": "Andalucía"
+      },
+      "description": "Servicios especializados en emisarios submarinos: instalación, inspección ROV, reparación y mantenimiento de colectores y difusores marinos.",
+      "serviceType": "Emisarios Submarinos"
+    }
+  </script>
+
+  <Header />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-teal-900 to-teal-700 text-white py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">
+            Emisarios Submarinos: Instalación y Mantenimiento Urgente 24/7
+          </h1>
+          <p class="text-xl md:text-2xl text-teal-100 mb-8">
+            Especialistas en emisarios marinos, colectores submarinos y difusores EDAR.
+            Inspección ROV, reparación y limpieza de sistemas de vertido al mar.
+          </p>
+          <div class="flex flex-col md:flex-row gap-4 justify-center">
+            <CallToAction variant="emergency" size="xl" text="EMERGENCIA EMISARIO" subtext="Respuesta inmediata" />
+            <a href="#servicios" class="bg-teal-600 hover:bg-teal-700 px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
+              Ver Servicios EDAR
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Services -->
+    <section id="servicios" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">
+            Servicios Especializados en Emisarios Submarinos
+          </h2>
+          <p class="text-xl text-gray-600 text-center mb-12">
+            Soluciones integrales para empresas gestoras de EDAR, ayuntamientos e industrias
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <!-- Inspección ROV -->
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h3 class="text-2xl font-bold mb-4 text-teal-900">📹 Inspección ROV de Emisarios</h3>
+              <p class="text-gray-700 mb-4">
+                <a href="/inspeccion-visual-subacuatica" class="text-teal-600 hover:underline">Inspección completa con ROV</a> de tuberías submarinas, difusores y sistemas de vertido.
+                Video HD y <a href="/informes-tecnicos-submarinos" class="text-blue-600 hover:underline">informes técnicos certificados</a>.
+              </p>
+              <ul class="space-y-2 text-gray-600 mb-4">
+                <li>✓ Inspección interna con ROV crawler</li>
+                <li>✓ Inspección externa tubería submarina</li>
+                <li>✓ Verificación estado difusores</li>
+                <li>✓ Detección de obstrucciones</li>
+                <li>✓ Control sedimentación y fouling</li>
+                <li>✓ Video 4K georeferenciado</li>
+                <li>✓ <a href="/informes-tecnicos-submarinos" class="text-orange-600 hover:underline">Informe técnico con ortofotografías</a></li>
+              </ul>
+              <div class="bg-teal-50 p-4 rounded mt-4">
+                <p class="text-sm text-teal-900"><strong>🤖 Equipos:</strong> ROV inspección 300m, sonar multihaz, cámara 4K</p>
+              </div>
+            </div>
+
+            <!-- Reparación y Mantenimiento -->
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h3 class="text-2xl font-bold mb-4 text-orange-900">🔧 Reparación de Colectores Marinos</h3>
+              <p class="text-gray-700 mb-4">
+                Reparación urgente de emisarios dañados. <a href="/soldadura-subacuatica" class="text-orange-600 hover:underline">Soldadura submarina</a>,
+                sellado de fugas y refuerzo estructural de tuberías bajo agua.
+              </p>
+              <ul class="space-y-2 text-gray-600 mb-4">
+                <li>✓ <a href="/soldadura-electrodo-revestido" class="text-blue-600 hover:underline">Soldadura de grietas y fisuras</a></li>
+                <li>✓ Sellado de juntas defectuosas</li>
+                <li>✓ Reparación de bridas submarinas</li>
+                <li>✓ Encamisado de tramos dañados</li>
+                <li>✓ Sustitución difusores rotos</li>
+                <li>✓ Refuerzo con FRP submarino</li>
+                <li>✓ Restauración protección catódica</li>
+              </ul>
+              <div class="bg-orange-50 p-4 rounded mt-4">
+                <p class="text-sm text-orange-900"><strong>⚡ Urgencias:</strong> Equipo 24/7 para reparaciones críticas sin parada EDAR</p>
+              </div>
+            </div>
+
+            <!-- Limpieza y Desobstrucción -->
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h3 class="text-2xl font-bold mb-4 text-blue-900">🧽 Limpieza de Difusores</h3>
+              <p class="text-gray-700 mb-4">
+                Limpieza submarina de difusores obstruidos, eliminación de biofouling y sedimentos.
+                Restauración de caudales de diseño en emisarios.
+              </p>
+              <ul class="space-y-2 text-gray-600 mb-4">
+                <li>✓ Hidrolavado alta presión 400 bar</li>
+                <li>✓ Limpieza mecánica difusores</li>
+                <li>✓ Eliminación de incrustaciones calcáreas</li>
+                <li>✓ Desobstrucción boquillas</li>
+                <li>✓ <a href="/limpieza-cascos" class="text-green-600 hover:underline">Limpieza biofouling marino</a></li>
+                <li>✓ Aspiración de sedimentos</li>
+                <li>✓ Verificación caudales post-limpieza</li>
+              </ul>
+              <div class="bg-blue-50 p-4 rounded mt-4">
+                <p class="text-sm text-blue-900"><strong>📊 Resultados:</strong> Restauración 95% capacidad. Mejora dilución</p>
+              </div>
+            </div>
+
+            <!-- Instalación Nueva -->
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h3 class="text-2xl font-bold mb-4 text-green-900">🏗️ Instalación de Emisarios</h3>
+              <p class="text-gray-700 mb-4">
+                Instalación completa de nuevos emisarios submarinos. Tendido de tubería,
+                anclaje, lastrado y montaje de difusores. <a href="/obra-civil-subacuatica" class="text-green-600 hover:underline">Obra civil submarina</a> certificada.
+              </p>
+              <ul class="space-y-2 text-gray-600 mb-4">
+                <li>✓ Batimetría y levantamiento del trazado</li>
+                <li>✓ Excavación de zanja submarina</li>
+                <li>✓ Tendido de tubería PEAD/GRP</li>
+                <li>✓ <a href="/soldadura-subacuatica" class="text-red-600 hover:underline">Soldadura de juntas submarinas</a></li>
+                <li>✓ Lastrado con bloques hormigón</li>
+                <li>✓ Instalación de difusores y boquillas</li>
+                <li>✓ Pruebas hidráulicas y puesta en marcha</li>
+              </ul>
+              <div class="bg-green-50 p-4 rounded mt-4">
+                <p class="text-sm text-green-900"><strong>📐 Diseño:</strong> Modelización dispersión, cálculo dilución, DBO cumplimiento</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Specs -->
+    <section class="py-16 bg-teal-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-12">
+            Tipos de Emisarios y Aplicaciones
+          </h2>
+
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow">
+              <h3 class="text-xl font-bold mb-4 text-teal-900">🏭 EDAR Municipales</h3>
+              <ul class="space-y-2 text-gray-600">
+                <li>• Emisarios urbanos tratamiento 2º</li>
+                <li>• Vertido aguas depuradas EDAR</li>
+                <li>• Colectores pluviales</li>
+                <li>• Aliviaderos de tormenta</li>
+                <li>• Difusores multi-puerto</li>
+                <li>• Diámetros DN 400-2000mm</li>
+              </ul>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow">
+              <h3 class="text-xl font-bold mb-4 text-blue-900">⚙️ Industriales</h3>
+              <ul class="space-y-2 text-gray-600">
+                <li>• Agua de refrigeración centrales</li>
+                <li>• Salmuera desaladoras</li>
+                <li>• Efluentes industria química</li>
+                <li>• Plantas regasificación GNL</li>
+                <li>• Vertidos térmicos</li>
+                <li>• Tuberías HDPE/acero/GRP</li>
+              </ul>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow">
+              <h3 class="text-xl font-bold mb-4 text-green-900">🌊 Tomas de Agua</h3>
+              <ul class="space-y-2 text-gray-600">
+                <li>• Captaciones desaladoras</li>
+                <li>• Tomas de agua industrial</li>
+                <li>• Bocatomas marinas</li>
+                <li>• Pozos de captación playa</li>
+                <li>• Sistemas antimedusas</li>
+                <li>• Filtros submarinos</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Compliance and Standards -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-12">
+            Normativa y Cumplimiento Ambiental
+          </h2>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h3 class="text-xl font-bold mb-4 text-teal-900">📋 Normativa Aplicable</h3>
+              <ul class="space-y-2 text-gray-700">
+                <li>✓ Directiva Marco del Agua (DMA)</li>
+                <li>✓ RD 1290/2012 vertidos al mar</li>
+                <li>✓ Ley 22/2011 residuos y aguas</li>
+                <li>✓ ROM 0.0-01 obras marítimas</li>
+                <li>✓ Autorización vertido DEMARCACIÓN</li>
+                <li>✓ Estudio dispersión y dilución</li>
+                <li>✓ Normativa CEDEX emisarios</li>
+              </ul>
+            </div>
+
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h3 class="text-xl font-bold mb-4 text-blue-900">🔬 Control de Calidad</h3>
+              <ul class="space-y-2 text-gray-700">
+                <li>✓ <a href="/control-end-submarino" class="text-green-600 hover:underline">Ensayos no destructivos END</a></li>
+                <li>✓ Pruebas hidráulicas presión</li>
+                <li>✓ Mediciones caudal in situ</li>
+                <li>✓ Control dilución efluente</li>
+                <li>✓ Muestreo agua receptora</li>
+                <li>✓ <a href="/informes-tecnicos-submarinos" class="text-orange-600 hover:underline">Informes conformidad vertido</a></li>
+                <li>✓ Certificación ISO 14001</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Emission Outfalls Covered -->
+    <section class="py-16 bg-teal-900 text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-12">
+            Emisarios Atendidos en Andalucía
+          </h2>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <h3 class="text-xl font-bold mb-4">🏛️ Provincia de Cádiz</h3>
+              <ul class="space-y-2">
+                <li>✓ <strong>EDAR Cádiz-San Fernando:</strong> Mantenimiento regular</li>
+                <li>✓ <strong>EDAR Puerto Real:</strong> Inspecciones anuales</li>
+                <li>✓ <strong>EDAR Chiclana:</strong> Limpieza difusores</li>
+                <li>✓ <strong>EDAR Conil:</strong> Reparación 2024</li>
+                <li>✓ <strong>EDAR Barbate:</strong> ROV semestral</li>
+                <li>✓ <strong>Desaladora Bajo Almanzora:</strong> Salmuera</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="text-xl font-bold mb-4">🌊 Otras Provincias</h3>
+              <ul class="space-y-2">
+                <li>✓ <strong>EDAR Málaga Oeste:</strong> Servicio bajo demanda</li>
+                <li>✓ <strong>EDAR Marbella:</strong> Inspecciones</li>
+                <li>✓ <strong>EDAR Almería Este:</strong> Mantenimiento</li>
+                <li>✓ <strong>Central Térmica Los Barrios:</strong> Refrigeración</li>
+                <li>✓ <strong>Desaladora Marbella:</strong> Captación y vertido</li>
+                <li>✓ <strong>Puerto Huelva:</strong> Emisarios industriales</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Maintenance Programs -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-12">
+            Programas de Mantenimiento Preventivo
+          </h2>
+
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-teal-50 p-6 rounded-lg">
+              <h3 class="text-xl font-bold mb-3 text-teal-900">📅 Plan Básico</h3>
+              <p class="text-sm text-gray-600 mb-4">Para emisarios con baja carga orgánica</p>
+              <ul class="space-y-2 text-sm text-gray-700">
+                <li>✓ Inspección ROV anual</li>
+                <li>✓ Limpieza difusores cada 2 años</li>
+                <li>✓ Verificación anodos</li>
+                <li>✓ Informe estado conservación</li>
+                <li>✓ <strong>Precio:</strong> Desde 4.500€/año</li>
+              </ul>
+            </div>
+
+            <div class="bg-blue-50 p-6 rounded-lg border-2 border-blue-600">
+              <h3 class="text-xl font-bold mb-3 text-blue-900">⭐ Plan Estándar</h3>
+              <p class="text-sm text-gray-600 mb-4">Recomendado para EDAR municipales</p>
+              <ul class="space-y-2 text-sm text-gray-700">
+                <li>✓ Inspección ROV semestral</li>
+                <li>✓ Limpieza difusores anual</li>
+                <li>✓ <a href="/mantenimiento-naval" class="text-blue-600 hover:underline">Mantenimiento preventivo</a></li>
+                <li>✓ Mediciones caudal/dilución</li>
+                <li>✓ Asistencia 24h emergencias</li>
+                <li>✓ <strong>Precio:</strong> Desde 9.800€/año</li>
+              </ul>
+            </div>
+
+            <div class="bg-green-50 p-6 rounded-lg">
+              <h3 class="text-xl font-bold mb-3 text-green-900">💎 Plan Premium</h3>
+              <p class="text-sm text-gray-600 mb-4">Para emisarios críticos industriales</p>
+              <ul class="space-y-2 text-sm text-gray-700">
+                <li>✓ Inspección trimestral ROV+buzo</li>
+                <li>✓ Limpieza semestral completa</li>
+                <li>✓ Control calidad continuo</li>
+                <li>✓ Reparaciones incluidas &lt; 5000€</li>
+                <li>✓ Ingeniero asignado 24/7</li>
+                <li>✓ <strong>Precio:</strong> Consultar</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-teal-900 to-teal-700 text-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+          ¿Necesita Servicios para su Emisario Submarino?
+        </h2>
+        <p class="text-xl text-teal-100 mb-8 max-w-3xl mx-auto">
+          Diagnóstico gratuito con inspección ROV. Presupuesto sin compromiso en 24h. Emergencias atendidas en &lt; 4 horas
+        </p>
+        <div class="flex flex-col md:flex-row gap-4 justify-center">
+          <CallToAction variant="emergency" size="xl" text="EMERGENCIA EMISARIO" subtext="Equipo ROV 24/7" />
+          <a href="/contacto" class="bg-transparent border-2 border-white hover:bg-white hover:text-teal-900 px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
+            Solicitar Inspección
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Links -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-12">
+            Servicios Relacionados
+          </h2>
+          <RelatedLinks currentPage="emisarios-submarinos" type="services" limit={8} />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

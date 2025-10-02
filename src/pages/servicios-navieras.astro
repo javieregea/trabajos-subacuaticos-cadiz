@@ -1,0 +1,376 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import LocalSchema from '../components/LocalSchema.astro';
+import CallToAction from '../components/CallToAction.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
+---
+
+<Layout
+  title="Servicios para Navieras Cádiz | Mantenimiento Flotas Urgente 24/7"
+  description="Servicios especializados para navieras y armadores: inspección de flotas, reparaciones a flote, limpieza de cascos, mantenimiento preventivo. Contratos anuales con descuento para flotas comerciales."
+  keywords="servicios navieras Cádiz, mantenimiento flotas comerciales, inspección buques naviera, reparación flota a flote, contratos mantenimiento buques, armadores Cádiz"
+>
+  <LocalSchema location="Puerto de Cádiz" servicePage="Servicios para Navieras" />
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Servicios Submarinos para Navieras y Propietarios de Buques",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Trabajos Subacuáticos Cádiz"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Cádiz"
+      },
+      "description": "Servicios integrales de mantenimiento submarino para navieras: inspección, reparación y limpieza de flotas comerciales.",
+      "serviceType": "Mantenimiento Submarino para Navieras"
+    }
+  </script>
+
+  <Header />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-indigo-900 to-indigo-700 text-white py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">
+            Servicios Submarinos para Navieras y Armadores 24/7
+          </h1>
+          <p class="text-xl md:text-2xl text-indigo-100 mb-8">
+            Partner técnico para mantenimiento de flotas comerciales. Inspecciones, reparaciones y limpieza a flote.
+            Contratos anuales con descuentos especiales para navieras.
+          </p>
+          <div class="flex flex-col md:flex-row gap-4 justify-center">
+            <CallToAction variant="emergency" size="xl" text="FLOTA EMERGENCIA" subtext="Respuesta &lt; 2h" />
+            <a href="#contratos" class="bg-indigo-600 hover:bg-indigo-700 px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
+              Ver Contratos Flota
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fleet Contracts -->
+    <section id="contratos" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">
+            Contratos de Mantenimiento para Flotas
+          </h2>
+          <p class="text-xl text-gray-600 text-center mb-12">
+            Planes integrales con descuentos por volumen y prioridad de atención
+          </p>
+
+          <div class="grid md:grid-cols-3 gap-8">
+            <!-- Plan Básico -->
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h3 class="text-2xl font-bold mb-4 text-indigo-900">📋 Plan Básico</h3>
+              <p class="text-sm text-gray-600 mb-4">Para flotas 3-5 buques</p>
+              <ul class="space-y-2 text-gray-700 mb-6">
+                <li>✓ <a href="/inspeccion-cascos" class="text-blue-600 hover:underline">Inspección anual cascos</a></li>
+                <li>✓ <a href="/limpieza-cascos" class="text-green-600 hover:underline">Limpieza semestral</a></li>
+                <li>✓ <a href="/informes-tecnicos-submarinos" class="text-orange-600 hover:underline">Informes técnicos</a></li>
+                <li>✓ 10% descuento reparaciones</li>
+                <li>✓ Respuesta emergencias 4h</li>
+                <li>✓ Coordinación con clasificadora</li>
+              </ul>
+              <div class="bg-indigo-50 p-4 rounded">
+                <p class="text-sm text-indigo-900"><strong>Desde 18.000€/año/buque</strong></p>
+                <p class="text-xs text-gray-600 mt-1">Precio según eslora y tipo</p>
+              </div>
+            </div>
+
+            <!-- Plan Premium -->
+            <div class="bg-indigo-100 p-6 rounded-lg border-2 border-indigo-600">
+              <div class="bg-indigo-600 text-white px-3 py-1 rounded-full text-xs font-bold inline-block mb-3">MÁS POPULAR</div>
+              <h3 class="text-2xl font-bold mb-4 text-indigo-900">⭐ Plan Premium</h3>
+              <p class="text-sm text-gray-600 mb-4">Para flotas 6-15 buques</p>
+              <ul class="space-y-2 text-gray-700 mb-6">
+                <li>✓ Inspección trimestral completa</li>
+                <li>✓ Limpieza cada 4 meses</li>
+                <li>✓ <a href="/mantenimiento-naval" class="text-purple-600 hover:underline">Mantenimiento preventivo</a></li>
+                <li>✓ 20% descuento reparaciones</li>
+                <li>✓ Respuesta emergencias &lt; 2h</li>
+                <li>✓ Ingeniero asignado 24/7</li>
+                <li>✓ Soporte clasificadoras/P&I</li>
+                <li>✓ Seguimiento digital flota</li>
+              </ul>
+              <div class="bg-indigo-600 text-white p-4 rounded">
+                <p class="text-sm font-bold">Desde 14.500€/año/buque</p>
+                <p class="text-xs mt-1">20% ahorro vs individual</p>
+              </div>
+            </div>
+
+            <!-- Plan Enterprise -->
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h3 class="text-2xl font-bold mb-4 text-green-900">💎 Plan Enterprise</h3>
+              <p class="text-sm text-gray-600 mb-4">Flotas > 15 buques</p>
+              <ul class="space-y-2 text-gray-700 mb-6">
+                <li>✓ Inspección mensual programada</li>
+                <li>✓ Limpieza bimestral</li>
+                <li>✓ Mantenimiento integral</li>
+                <li>✓ 30% descuento reparaciones</li>
+                <li>✓ Equipo dedicado 24/7</li>
+                <li>✓ Cobertura multi-puerto</li>
+                <li>✓ Gestión documental completa</li>
+                <li>✓ SLA garantizado 1h</li>
+                <li>✓ Dashboard tiempo real</li>
+              </ul>
+              <div class="bg-green-50 p-4 rounded">
+                <p class="text-sm text-green-900"><strong>Precio personalizado</strong></p>
+                <p class="text-xs text-gray-600 mt-1">Hasta 35% ahorro global</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Services -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+            Servicios Especializados para Flotas
+          </h2>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <!-- Inspecciones Programadas -->
+            <div class="bg-white p-6 rounded-lg shadow">
+              <h3 class="text-2xl font-bold mb-4 text-blue-900">📋 Inspecciones Programadas</h3>
+              <p class="text-gray-700 mb-4">
+                <a href="/inspeccion-cascos" class="text-blue-600 hover:underline">Inspecciones reglamentarias</a> coordinadas con escalas de flota.
+                Sincronización perfecta con Special Surveys y renovaciones de clase.
+              </p>
+              <ul class="space-y-2 text-gray-600 mb-4">
+                <li>✓ <a href="/inspeccion-visual-subacuatica" class="text-blue-600 hover:underline">Inspección IACS compliant</a></li>
+                <li>✓ In-Water Survey (IWS) clasificadoras</li>
+                <li>✓ <a href="/control-end-submarino" class="text-green-600 hover:underline">Ultrasonidos espesores</a></li>
+                <li>✓ Medición corrosión anódica</li>
+                <li>✓ <a href="/informes-tecnicos-submarinos" class="text-orange-600 hover:underline">Informes Lloyd's, DNV, ABS</a></li>
+                <li>✓ Coordinación con surveyor</li>
+                <li>✓ Documentación P&I Club</li>
+              </ul>
+            </div>
+
+            <!-- Limpieza Optimizada -->
+            <div class="bg-white p-6 rounded-lg shadow">
+              <h3 class="text-2xl font-bold mb-4 text-green-900">🧽 Limpieza Optimizada Cascos</h3>
+              <p class="text-gray-700 mb-4">
+                <a href="/limpieza-cascos" class="text-green-600 hover:underline">Programa de limpieza</a> sincronizado con rutas.
+                Reducción consumo combustible hasta 15% y mejora velocidad.
+              </p>
+              <ul class="space-y-2 text-gray-600 mb-4">
+                <li>✓ Limpieza en escalas programadas</li>
+                <li>✓ Hidrolavado ecológico sin dañar pintura</li>
+                <li>✓ Eliminación biofouling completa</li>
+                <li>✓ Limpieza hélices y toberas</li>
+                <li>✓ Medición rugosidad post-limpieza</li>
+                <li>✓ Certificado eco-cleaning</li>
+                <li>✓ ROI demostrable &lt; 6 meses</li>
+              </ul>
+            </div>
+
+            <!-- Reparaciones Flota -->
+            <div class="bg-white p-6 rounded-lg shadow">
+              <h3 class="text-2xl font-bold mb-4 text-orange-900">🔧 Reparaciones a Flote</h3>
+              <p class="text-gray-700 mb-4">
+                <a href="/reparacion-embarcaciones" class="text-orange-600 hover:underline">Reparaciones sin varada</a>.
+                Evite costes de astillero y pérdida de ingresos por inmovilización.
+              </p>
+              <ul class="space-y-2 text-gray-600 mb-4">
+                <li>✓ <a href="/soldadura-subacuatica" class="text-red-600 hover:underline">Soldadura hiperbárica certificada</a></li>
+                <li>✓ <a href="/reparacion-cascos-bajo-agua" class="text-blue-600 hover:underline">Reparación grietas cascos</a></li>
+                <li>✓ <a href="/reparacion-helices" class="text-orange-600 hover:underline">Enderezado hélices</a></li>
+                <li>✓ Sellado de vías de agua</li>
+                <li>✓ Reparación tomas de mar</li>
+                <li>✓ Cambio anodos zinc/aluminio</li>
+                <li>✓ Garantía trabajos 12 meses</li>
+              </ul>
+            </div>
+
+            <!-- Mantenimiento Predictivo -->
+            <div class="bg-white p-6 rounded-lg shadow">
+              <h3 class="text-2xl font-bold mb-4 text-purple-900">📊 Mantenimiento Predictivo</h3>
+              <p class="text-gray-700 mb-4">
+                <a href="/mantenimiento-naval" class="text-purple-600 hover:underline">Sistema de seguimiento</a> con IA
+                para predecir necesidades de mantenimiento antes de fallos.
+              </p>
+              <ul class="space-y-2 text-gray-600 mb-4">
+                <li>✓ Dashboard digital tiempo real</li>
+                <li>✓ Histórico completo por buque</li>
+                <li>✓ Alertas preventivas automáticas</li>
+                <li>✓ Planificación optimizada escalas</li>
+                <li>✓ Análisis coste-beneficio continuo</li>
+                <li>✓ Integración con CMMS naviera</li>
+                <li>✓ Reporting mensual ejecutivo</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fleet Types -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-12">
+            Tipos de Flotas Atendidas
+          </h2>
+
+          <div class="grid md:grid-cols-4 gap-6">
+            <div class="text-center bg-gray-50 p-6 rounded-lg">
+              <div class="text-4xl mb-3">📦</div>
+              <h3 class="font-bold mb-2">Portacontenedores</h3>
+              <p class="text-sm text-gray-600">Feeder, Panamax, Post-Panamax, ULCS</p>
+            </div>
+
+            <div class="text-center bg-gray-50 p-6 rounded-lg">
+              <div class="text-4xl mb-3">🛢️</div>
+              <h3 class="font-bold mb-2">Tanqueros</h3>
+              <p class="text-sm text-gray-600">Crude, product, chemical, LNG/LPG</p>
+            </div>
+
+            <div class="text-center bg-gray-50 p-6 rounded-lg">
+              <div class="text-4xl mb-3">⚓</div>
+              <h3 class="font-bold mb-2">Bulk Carriers</h3>
+              <p class="text-sm text-gray-600">Handysize, Panamax, Capesize</p>
+            </div>
+
+            <div class="text-center bg-gray-50 p-6 rounded-lg">
+              <div class="text-4xl mb-3">🚢</div>
+              <h3 class="font-bold mb-2">Multipurpose</h3>
+              <p class="text-sm text-gray-600">General cargo, RoRo, multi-purpose</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Value Proposition -->
+    <section class="py-16 bg-indigo-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-12">
+            Ventajas para Navieras y Armadores
+          </h2>
+
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow">
+              <div class="text-3xl mb-3">💰</div>
+              <h3 class="text-xl font-bold mb-3">Ahorro Operativo</h3>
+              <ul class="text-sm text-gray-600 space-y-2">
+                <li>• Reducción 70% vs reparación en seco</li>
+                <li>• Limpieza cascos: -15% consumo fuel</li>
+                <li>• Sin costes astillero/varada</li>
+                <li>• Descuentos por volumen flota</li>
+                <li>• Optimización cash flow mantenimiento</li>
+              </ul>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow">
+              <div class="text-3xl mb-3">⏱️</div>
+              <h3 class="text-xl font-bold mb-3">Disponibilidad Flota</h3>
+              <ul class="text-sm text-gray-600 space-y-2">
+                <li>• Cero días off-hire por mantenimiento</li>
+                <li>• Trabajos en escalas comerciales</li>
+                <li>• Reparaciones paralelas a carga</li>
+                <li>• Maximización utilización buques</li>
+                <li>• Cumplimiento schedule garantizado</li>
+              </ul>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow">
+              <div class="text-3xl mb-3">📜</div>
+              <h3 class="text-xl font-bold mb-3">Compliance Asegurado</h3>
+              <ul class="text-sm text-gray-600 space-y-2">
+                <li>• Informes IACS compliant</li>
+                <li>• Documentación P&I actualizada</li>
+                <li>• Renovaciones clase sin problemas</li>
+                <li>• Trazabilidad completa trabajos</li>
+                <li>• Soporte PSC inspections</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Port Coverage -->
+    <section class="py-16 bg-indigo-900 text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-12">
+            Cobertura Portuaria para Flotas
+          </h2>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <h3 class="text-xl font-bold mb-4">🏛️ Puertos Principales</h3>
+              <ul class="space-y-3">
+                <li><strong>Puerto de Cádiz:</strong> Base permanente - 0h</li>
+                <li><strong>Bahía Algeciras:</strong> Equipo local - 1h</li>
+                <li><strong>Puerto de Sevilla:</strong> Servicio regular - 2h</li>
+                <li><strong>Puerto de Huelva:</strong> Cobertura - 2.5h</li>
+                <li><strong>Puerto de Málaga:</strong> Bajo demanda - 3h</li>
+                <li><strong>Islas Canarias:</strong> Socios locales - 24h</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="text-xl font-bold mb-4">🌍 Escalas Internacionales</h3>
+              <ul class="space-y-3">
+                <li><strong>Lisboa/Sines:</strong> Partner portugués - 12h</li>
+                <li><strong>Tánger Med:</strong> Colaborador Marruecos</li>
+                <li><strong>Gibraltar:</strong> Servicio regular</li>
+                <li><strong>Ceuta/Melilla:</strong> Bajo demanda</li>
+                <li><strong>Med Occidental:</strong> Red partners</li>
+                <li><strong>Otros puertos:</strong> Coordinación global</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-indigo-900 to-indigo-700 text-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+          ¿Gestiona una Flota Comercial?
+        </h2>
+        <p class="text-xl text-indigo-100 mb-8 max-w-3xl mx-auto">
+          Solicite propuesta personalizada para su flota. Ahorro garantizado desde primer año.
+          Reunión con Technical Manager sin compromiso.
+        </p>
+        <div class="flex flex-col md:flex-row gap-4 justify-center">
+          <CallToAction variant="emergency" size="xl" text="EMERGENCIA FLOTA" subtext="Respuesta 2h" />
+          <a href="/contacto" class="bg-transparent border-2 border-white hover:bg-white hover:text-indigo-900 px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
+            Propuesta Personalizada
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Links -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-12">
+            Servicios Relacionados
+          </h2>
+          <RelatedLinks currentPage="servicios-navieras" type="services" limit={8} />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

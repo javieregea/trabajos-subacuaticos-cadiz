@@ -1,0 +1,595 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import CallToAction from '../../components/CallToAction.astro';
+import InternalLinks from '../../components/InternalLinks.astro';
+---
+
+<Layout
+  title="¿Cuándo Necesito Inspeccionar el Casco? | Guía Decisión 2024"
+  description="Señales de alerta, frecuencia recomendada por tipo de embarcación y cuándo elegir inspección visual vs END completo. Guía decisión inspección cascos 2024."
+  keywords="cuándo inspeccionar casco embarcación, señales daño casco, frecuencia inspección naval, inspección visual vs END"
+>
+  <!-- Article Schema -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "¿Cuándo Necesito Inspeccionar el Casco de mi Embarcación? Guía Decisión 2024",
+      "description": "Guía completa para decidir cuándo inspeccionar el casco: señales de alerta, frecuencia recomendada y tipo de inspección necesaria",
+      "image": "https://www.trabajossubacuaticoscadiz.com/images/cuando-inspeccion-blog.jpg",
+      "author": {
+        "@type": "Organization",
+        "name": "Trabajos Subacuáticos Cádiz"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Trabajos Subacuáticos Cádiz",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.trabajossubacuaticoscadiz.com/logo.png"
+        }
+      },
+      "datePublished": "2024-01-15",
+      "dateModified": "2024-01-15",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.trabajossubacuaticoscadiz.com/blog/cuando-necesito-inspeccion-casco-embarcacion"
+      }
+    }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "¿Con qué frecuencia debo inspeccionar el casco de mi embarcación?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Depende del tipo: embarcaciones comerciales cada 12 meses obligatorio, pesqueros según eslora (12-24 meses), recreo >24m anual, recreo <24m cada 2-3 años recomendado. Uso intensivo o aguas tropicales requiere inspecciones más frecuentes."
+        }
+      }, {
+        "@type": "Question",
+        "name": "¿Cuándo necesito inspección visual vs inspección END completa?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Inspección visual: mantenimiento preventivo rutinario, pre-compra embarcaciones <15 años, seguimiento daños conocidos. END completo: embarcaciones >20 años, daños estructurales sospechosos, certificaciones críticas, detección corrosión interna, pre-compra embarcaciones profesionales."
+        }
+      }, {
+        "@type": "Question",
+        "name": "¿Qué señales indican que necesito inspección urgente del casco?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Señales de alarma: alarmas sentina frecuentes, vibraciones anómalas nuevas, grietas visibles crecientes, ósmosis ampollas extensas, corrosión visible avanzada, impactos/colisiones recientes, deformaciones estructura, cambios comportamiento navegación."
+        }
+      }]
+    }
+  </script>
+
+  <Header />
+
+  <main>
+    <!-- Hero Article -->
+    <article class="bg-gradient-to-r from-teal-900 to-cyan-900 text-white py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <nav class="mb-6 text-sm" aria-label="Breadcrumb">
+            <a href="/" class="text-teal-200 hover:text-white">Inicio</a>
+            <span class="mx-2 text-teal-300">/</span>
+            <a href="/blog" class="text-teal-200 hover:text-white">Blog</a>
+            <span class="mx-2 text-teal-300">/</span>
+            <span class="text-white">Cuándo Necesito Inspección Casco</span>
+          </nav>
+
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">
+            ¿Cuándo Necesito Inspeccionar el Casco?
+          </h1>
+          <p class="text-xl text-teal-100 mb-8">
+            Guía de decisión completa: señales de alerta que indican inspección urgente, frecuencia
+            recomendada por tipo de embarcación y cómo elegir entre inspección visual o END completo.
+          </p>
+          <div class="flex items-center text-teal-200 text-sm">
+            <span>📅 Actualizado: Enero 2024</span>
+            <span class="mx-3">•</span>
+            <span>⏱️ Lectura: 6 min</span>
+            <span class="mx-3">•</span>
+            <span>🎯 Guía decisión</span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Content -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <!-- Quick Alert -->
+          <div class="bg-red-50 border-l-4 border-red-400 p-6 mb-8">
+            <div class="flex">
+              <div class="flex-shrink-0">
+                <span class="text-red-400 text-2xl">🚨</span>
+              </div>
+              <div class="ml-3">
+                <h3 class="text-lg font-bold text-red-800">Atención: Señales de Alarma</h3>
+                <p class="text-red-700">
+                  <strong>Si nota alarmas sentina frecuentes, vibraciones nuevas o grietas visibles</strong>,
+                  necesita <a href="/inspeccion-visual-subacuatica" class="text-blue-600 hover:underline">inspección urgente</a>
+                  antes de continuar navegando. El coste de prevención es infinitamente menor que reparar daño mayor.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Main Content -->
+          <div class="prose prose-lg max-w-none">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Señales de Alerta: Inspección URGENTE</h2>
+
+            <p class="text-gray-700 mb-6">
+              Estas señales indican posibles daños estructurales que requieren inspección inmediata antes de
+              continuar navegando. Ignorarlas puede comprometer la seguridad de la embarcación y tripulación.
+            </p>
+
+            <div class="space-y-6 mb-12">
+              <div class="bg-red-50 p-6 rounded-lg border-l-4 border-red-600">
+                <h3 class="text-xl font-bold text-red-900 mb-4">🚨 Alarmas Críticas Inmediatas</h3>
+                <div class="space-y-4">
+                  <div>
+                    <h4 class="font-bold text-red-800">Alarmas Sentina Frecuentes o Agua Visible</h4>
+                    <p class="text-gray-700 text-sm mb-2">
+                      Si las bombas sentina actúan con mayor frecuencia de lo habitual o nota agua donde no debería
+                      haberla, hay entrada activa. Puede ser fisura, pasacasco suelto, junta abierta o perforación.
+                    </p>
+                    <p class="text-red-700 text-sm font-bold">
+                      → Inspección urgente 24-48h. No navegar largas distancias hasta confirmar origen.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 class="font-bold text-red-800">Vibraciones Anómalas o Nuevas</h4>
+                    <p class="text-gray-700 text-sm mb-2">
+                      Vibraciones que antes no existían pueden indicar daño en hélice (pala rota, deformada),
+                      eje doblado, o incluso fisura casco en zona de bocina. Las vibraciones propagan daño rápidamente.
+                    </p>
+                    <p class="text-red-700 text-sm font-bold">
+                      → Inspección inmediata. Uso continuado puede agravar daño estructural progresivamente.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 class="font-bold text-red-800">Tras Colisión, Varada o Impacto</h4>
+                    <p class="text-gray-700 text-sm mb-2">
+                      Cualquier impacto significativo (colisión con objeto, varada, golpe contra muelle/rocas, impacto
+                      contenedor deriva) requiere inspección aunque no se vea daño externo. Pueden existir fisuras
+                      internas, deformaciones o delaminaciones no visibles en superficie.
+                    </p>
+                    <p class="text-red-700 text-sm font-bold">
+                      → Inspección obligatoria antes de continuar navegación. Exigible por seguro.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 class="font-bold text-red-800">Grietas Visibles o Crecientes</h4>
+                    <p class="text-gray-700 text-sm mb-2">
+                      Grietas que nota desde cubierta o crecen visiblemente son síntoma de fatiga material o
+                      esfuerzos excesivos. En cascos GRP: gelcoat agrietado extenso puede indicar delaminación.
+                      En acero: grietas progresan por fatiga.
+                    </p>
+                    <p class="text-red-700 text-sm font-bold">
+                      → <a href="/control-end-submarino" class="text-blue-600 hover:underline">Inspección END urgente</a>
+                      para evaluar profundidad y extensión real.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-orange-50 p-6 rounded-lg border-l-4 border-orange-600">
+                <h3 class="text-xl font-bold text-orange-900 mb-4">⚠️ Señales Importantes (1-2 Semanas)</h3>
+                <ul class="space-y-3 text-gray-700">
+                  <li>
+                    <strong>Ósmosis con ampollas extensas:</strong> Si aumentan en número/tamaño, el fenómeno
+                    está activo. Riesgo de delaminación progresiva. Inspección + evaluación tratamiento necesario.
+                  </li>
+                  <li>
+                    <strong>Corrosión visible avanzada:</strong> Áreas con corrosión profunda, picaduras extensas
+                    o adelgazamiento visible del material requieren evaluación de espesores residuales y reparación.
+                  </li>
+                  <li>
+                    <strong>Deformaciones estructura:</strong> Mamparos abombados, planchas deformadas, cuadernas
+                    torcidas indican sobreesfuerzos o daño estructural progresivo.
+                  </li>
+                  <li>
+                    <strong>Cambios comportamiento navegación:</strong> Si la embarcación navega diferente (escora
+                    anómala, gobierno duro, inestabilidad nueva), puede haber daño estructural o desalineación.
+                  </li>
+                  <li>
+                    <strong>Avisos de otros navegantes:</strong> Si alguien reporta ver daños externos que usted
+                    no puede ver desde cubierta (abolladuras, deformaciones bajo línea flotación).
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <h2 class="text-2xl font-bold text-gray-900 mb-6 mt-12">Frecuencia Recomendada por Tipo</h2>
+
+            <p class="text-gray-700 mb-6">
+              Aunque no existan señales de alerta, la inspección preventiva periódica detecta problemas incipientes
+              antes de que se conviertan en reparaciones costosas o comprometan la seguridad.
+            </p>
+
+            <div class="space-y-6 mb-12">
+              <div class="bg-blue-50 p-6 rounded-lg">
+                <h3 class="text-xl font-bold text-blue-900 mb-4">🚢 Embarcaciones Comerciales</h3>
+                <div class="space-y-4">
+                  <div>
+                    <strong class="text-blue-800">Buques Carga General (>500 GT):</strong>
+                    <p class="text-gray-700 text-sm">
+                      <strong>Obligatorio:</strong> Inspección anual + inspección intermedia (30 meses) + renovación (60 meses).
+                      Según SOLAS y sociedad clasificación. <a href="/inspeccion-cascos" class="text-blue-600 hover:underline">Inspección submarina</a>
+                      válida para annual survey en muchas sociedades.
+                    </p>
+                  </div>
+                  <div>
+                    <strong class="text-blue-800">Buques Pasaje:</strong>
+                    <p class="text-gray-700 text-sm">
+                      <strong>Obligatorio:</strong> Inspección casco cada 12 meses sin excepciones. Mayor exigencia
+                      por transporte personas. Requiere certificación completa.
+                    </p>
+                  </div>
+                  <div>
+                    <strong class="text-blue-800">Embarcaciones Trabajo (Offshore, Remolcadores):</strong>
+                    <p class="text-gray-700 text-sm">
+                      <strong>Recomendado:</strong> Inspección cada 12-18 meses. Trabajo duro requiere seguimiento
+                      estructural frecuente. <a href="/mantenimiento-offshore" class="text-blue-600 hover:underline">Inspecciones offshore</a>
+                      pueden realizarse en ubicación operativa.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-green-50 p-6 rounded-lg">
+                <h3 class="text-xl font-bold text-green-900 mb-4">🎣 Embarcaciones Pesqueras</h3>
+                <div class="space-y-4">
+                  <div>
+                    <strong class="text-green-800">Pesqueros >24 metros:</strong>
+                    <p class="text-gray-700 text-sm">
+                      <strong>Obligatorio:</strong> Inspección anual. Trabajo intensivo y condiciones duras exigen
+                      seguimiento estricto. Válida inspección submarina certificada.
+                    </p>
+                  </div>
+                  <div>
+                    <strong class="text-green-800">Pesqueros 12-24 metros:</strong>
+                    <p class="text-gray-700 text-sm">
+                      <strong>Obligatorio:</strong> Inspección cada 24 meses mínimo según normativa pesquera española.
+                      <strong>Recomendado:</strong> Anual si uso intensivo (>200 días/año mar).
+                    </p>
+                  </div>
+                  <div>
+                    <strong class="text-green-800">Embarcaciones Artesanales <12m:</strong>
+                    <p class="text-gray-700 text-sm">
+                      <strong>Recomendado:</strong> Cada 2-3 años o al renovar licencia pesca. Más frecuente si
+                      aguas tropicales (fouling agresivo) o uso diario intensivo.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-purple-50 p-6 rounded-lg">
+                <h3 class="text-xl font-bold text-purple-900 mb-4">⚓ Embarcaciones Recreo</h3>
+                <div class="space-y-4">
+                  <div>
+                    <strong class="text-purple-800">Yates Comerciales >24m (Charter):</strong>
+                    <p class="text-gray-700 text-sm">
+                      <strong>Obligatorio:</strong> Inspección anual según MCA/LY3 o Ensign. Exigido por certificación
+                      comercial. Inspección submarina válida entre varadas si aprobado por flag state.
+                    </p>
+                  </div>
+                  <div>
+                    <strong class="text-purple-800">Veleros/Motoras 12-24m Uso Frecuente:</strong>
+                    <p class="text-gray-700 text-sm">
+                      <strong>Recomendado:</strong> Cada 2-3 años mínimo. Anual si uso intensivo (>100 días/año)
+                      o navegación travesías largas. Pre-travesía larga siempre recomendable.
+                    </p>
+                  </div>
+                  <div>
+                    <strong class="text-purple-800">Embarcaciones <12m Uso Esporádico:</strong>
+                    <p class="text-gray-700 text-sm">
+                      <strong>Recomendado:</strong> Cada 3-5 años o pre-compra. Más frecuente si permanece en agua
+                      todo el año (vs guardado en seco).
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-yellow-50 p-6 rounded-lg">
+                <h3 class="text-xl font-bold text-yellow-900 mb-4">⚡ Factores que Aumentan Frecuencia</h3>
+                <ul class="space-y-2 text-gray-700">
+                  <li><strong>• Edad embarcación:</strong> >20 años → inspección anual recomendada independientemente del tipo</li>
+                  <li><strong>• Aguas tropicales/cálidas:</strong> Fouling agresivo, corrosión acelerada → +50% frecuencia</li>
+                  <li><strong>• Uso intensivo:</strong> >150 días/año operación → inspecciones anuales obligadas</li>
+                  <li><strong>• Permanencia en agua:</strong> Todo el año en agua vs guardado seco invierno</li>
+                  <li><strong>• Historial problemas:</strong> Embarcaciones con reparaciones previas requieren seguimiento</li>
+                  <li><strong>• Navegación altura:</strong> Travesías oceánicas vs navegación costera diurna</li>
+                </ul>
+              </div>
+            </div>
+
+            <h2 class="text-2xl font-bold text-gray-900 mb-6 mt-12">¿Inspección Visual o END Completo?</h2>
+
+            <p class="text-gray-700 mb-6">
+              No todas las inspecciones requieren el mismo nivel de detalle técnico. Elegir correctamente entre
+              inspección visual o ensayos no destructivos (END) completos ahorra tiempo y dinero sin comprometer seguridad.
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+              <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-600">
+                <h3 class="text-xl font-bold text-blue-900 mb-4">👁️ Inspección Visual Suficiente</h3>
+                <div class="space-y-3 text-sm">
+                  <div>
+                    <h4 class="font-bold text-blue-800">Cuándo es Suficiente:</h4>
+                    <ul class="text-gray-700 space-y-1 mt-2">
+                      <li>• Mantenimiento preventivo rutinario</li>
+                      <li>• Embarcaciones <15 años sin historial problemas</li>
+                      <li>• Pre-compra embarcaciones recreo estándar</li>
+                      <li>• Seguimiento periódico sin síntomas</li>
+                      <li>• Evaluación fouling y obra viva general</li>
+                      <li>• Inspección post-limpieza para verificar</li>
+                    </ul>
+                  </div>
+                  <div class="mt-4">
+                    <h4 class="font-bold text-blue-800">Qué Incluye:</h4>
+                    <ul class="text-gray-700 space-y-1 mt-2">
+                      <li>• Inspección visual completa obra viva</li>
+                      <li>• Evaluación general estado casco</li>
+                      <li>• Detección daños visibles superficiales</li>
+                      <li>• Verificación ánodos, pasacascos</li>
+                      <li>• Estado hélice, timón, eje</li>
+                      <li>• Documentación fotográfica digital</li>
+                      <li>• <a href="/informes-tecnicos-subacuaticos" class="text-blue-600 hover:underline">Informe técnico</a> con observaciones</li>
+                    </ul>
+                  </div>
+                  <div class="mt-4 bg-white p-4 rounded">
+                    <p class="text-blue-700 font-bold">Coste: Base</p>
+                    <p class="text-gray-600 text-xs">Tiempo: 1-2 horas según eslora</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-orange-50 p-6 rounded-lg border-l-4 border-orange-600">
+                <h3 class="text-xl font-bold text-orange-900 mb-4">🔬 END Completo Necesario</h3>
+                <div class="space-y-3 text-sm">
+                  <div>
+                    <h4 class="font-bold text-orange-800">Cuándo es Necesario:</h4>
+                    <ul class="text-gray-700 space-y-1 mt-2">
+                      <li>• Embarcaciones >20 años (fatiga material)</li>
+                      <li>• Síntomas daño estructural (grietas, vibraciones)</li>
+                      <li>• Pre-compra embarcaciones profesionales/comerciales</li>
+                      <li>• <a href="/certificaciones-navieras" class="text-blue-600 hover:underline">Certificaciones</a> críticas exigidas</li>
+                      <li>• Detección corrosión interna no visible</li>
+                      <li>• Post-reparación estructural (validación)</li>
+                      <li>• Embarcaciones con historial daños</li>
+                      <li>• Evaluación pre-seguro alto valor</li>
+                    </ul>
+                  </div>
+                  <div class="mt-4">
+                    <h4 class="font-bold text-orange-800">Qué Incluye Adicionalmente:</h4>
+                    <ul class="text-gray-700 space-y-1 mt-2">
+                      <li>• <a href="/control-end-submarino" class="text-blue-600 hover:underline">Ultrasonidos medición espesores</a></li>
+                      <li>• Detección fisuras internas (UT/MT)</li>
+                      <li>• Mapeo corrosión áreas críticas</li>
+                      <li>• Evaluación integridad soldaduras</li>
+                      <li>• Medición potenciales electroquímicos</li>
+                      <li>• Análisis delaminaciones GRP</li>
+                      <li>• Informe técnico certificado extenso</li>
+                    </ul>
+                  </div>
+                  <div class="mt-4 bg-white p-4 rounded">
+                    <p class="text-orange-700 font-bold">Coste: 2-3x Visual</p>
+                    <p class="text-gray-600 text-xs">Tiempo: 4-8 horas según alcance</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Inspección con o sin Varada</h2>
+
+            <div class="bg-gradient-to-r from-teal-50 to-cyan-50 p-6 rounded-lg mb-8">
+              <h3 class="text-xl font-bold text-teal-900 mb-4">Inspección Submarina vs Varada</h3>
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h4 class="font-bold text-teal-800 mb-3">Inspección Submarina (Sin Varar)</h4>
+                  <div class="space-y-2 text-sm">
+                    <p class="text-gray-700">
+                      <strong>Ventajas:</strong> 80% más económico, 1 día vs 1 semana, sin interrumpir operación,
+                      válida para mayoría certificaciones, en ubicación actual.
+                    </p>
+                    <p class="text-gray-700">
+                      <strong>Limitaciones:</strong> Meteorología dependiente, visibilidad limitada aguas turbias,
+                      algunas sociedades exigen varada periódica (cada X años).
+                    </p>
+                    <p class="text-teal-700 font-bold mt-3">
+                      ✅ Ideal: inspecciones periódicas, pre-compra, seguimiento, urgencias
+                    </p>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="font-bold text-cyan-800 mb-3">Inspección en Varada</h4>
+                  <div class="space-y-2 text-sm">
+                    <p class="text-gray-700">
+                      <strong>Ventajas:</strong> Visibilidad total, accesibilidad completa, condiciones ideales END,
+                      permite reparaciones inmediatas, todas certificaciones válidas.
+                    </p>
+                    <p class="text-gray-700">
+                      <strong>Limitaciones:</strong> Coste elevado (grúa + dique), 1-2 semanas tiempo, interrupción
+                      operativa completa, requiere planificación.
+                    </p>
+                    <p class="text-cyan-700 font-bold mt-3">
+                      ✅ Ideal: inspecciones quinquenales obligatorias, mantenimiento integral programado
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Coste Inspección vs Coste Reparación Tardía</h2>
+
+            <div class="bg-yellow-50 p-6 rounded-lg border-l-4 border-yellow-600 mb-8">
+              <h3 class="font-bold text-yellow-900 mb-4">💰 Análisis Coste-Beneficio Real</h3>
+              <div class="space-y-4">
+                <div>
+                  <h4 class="font-bold text-gray-800">Ejemplo 1: Grieta Detectada Temprano</h4>
+                  <div class="grid md:grid-cols-2 gap-4 text-sm mt-2">
+                    <div class="bg-white p-4 rounded">
+                      <strong class="text-green-700">Con Inspección Preventiva:</strong>
+                      <ul class="text-gray-700 mt-2 space-y-1">
+                        <li>• Inspección visual: Coste base</li>
+                        <li>• Grieta 5cm detectada inicio</li>
+                        <li>• <a href="/reparacion-cascos-bajo-agua" class="text-blue-600 hover:underline">Reparación inmediata</a>: Coste bajo</li>
+                        <li>• Total: Coste controlado</li>
+                      </ul>
+                    </div>
+                    <div class="bg-red-100 p-4 rounded">
+                      <strong class="text-red-700">Sin Inspección (2 años después):</strong>
+                      <ul class="text-gray-700 mt-2 space-y-1">
+                        <li>• Grieta propagada 40cm</li>
+                        <li>• Afectación estructural extensa</li>
+                        <li>• Requiere varada + refuerzos</li>
+                        <li>• Total: 10-15x coste preventivo</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <h4 class="font-bold text-gray-800">Ejemplo 2: Corrosión Interna</h4>
+                  <div class="grid md:grid-cols-2 gap-4 text-sm mt-2">
+                    <div class="bg-white p-4 rounded">
+                      <strong class="text-green-700">Con END Periódico:</strong>
+                      <ul class="text-gray-700 mt-2 space-y-1">
+                        <li>• <a href="/control-end-submarino" class="text-blue-600 hover:underline">Ultrasonidos</a> detectan adelgazamiento 20%</li>
+                        <li>• Tratamiento anticorrosivo preventivo</li>
+                        <li>• Monitoreo periódico evolución</li>
+                        <li>• Vida útil extendida años</li>
+                      </ul>
+                    </div>
+                    <div class="bg-red-100 p-4 rounded">
+                      <strong class="text-red-700">Sin END (corrosión avanzada):</strong>
+                      <ul class="text-gray-700 mt-2 space-y-1">
+                        <li>• Adelgazamiento crítico 60%</li>
+                        <li>• Requiere reemplazo planchas completas</li>
+                        <li>• Varada prolongada + soldadura</li>
+                        <li>• Total: 20-30x coste inspección</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <p class="text-yellow-800 font-bold text-center mt-6">
+                  La inspección preventiva periódica se paga sola detectando un solo problema a tiempo.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Section -->
+          <section class="mt-12 bg-gray-50 p-8 rounded-lg">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Preguntas Frecuentes</h2>
+
+            <div class="space-y-6">
+              <div class="border-b border-gray-200 pb-4">
+                <h3 class="font-bold text-gray-800 mb-2">¿Puedo inspeccionar yo mismo el casco desde fuera del agua?</h3>
+                <p class="text-gray-600">
+                  Desde cubierta solo ve línea de flotación hacia arriba. El 80% de problemas críticos están en obra
+                  viva sumergida (corrosión, grietas bajo agua, ósmosis, fouling). La inspección profesional submarina
+                  es esencial para diagnóstico real del estado del casco.
+                </p>
+              </div>
+
+              <div class="border-b border-gray-200 pb-4">
+                <h3 class="font-bold text-gray-800 mb-2">¿La inspección submarina daña la pintura antiincrustante?</h3>
+                <p class="text-gray-600">
+                  No. La <a href="/inspeccion-visual-subacuatica" class="text-blue-600 hover:underline">inspección visual submarina</a>
+                  profesional es no invasiva. Se realiza por observación cercana, medición y fotografía sin contacto
+                  abrasivo. Los END (ultrasonidos) tampoco dañan pintura. Solo limpieza mecánica previa a reparación
+                  afecta pintura en zona específica.
+                </p>
+              </div>
+
+              <div class="border-b border-gray-200 pb-4">
+                <h3 class="font-bold text-gray-800 mb-2">¿Puedo usar el informe de inspección para el seguro?</h3>
+                <p class="text-gray-600">
+                  Sí, los <a href="/informes-tecnicos-subacuaticos" class="text-blue-600 hover:underline">informes técnicos de inspección submarina</a>
+                  profesionales son válidos para aseguradoras. Para pólizas nuevas o renovaciones de embarcaciones
+                  +15 años, muchas aseguradoras exigen inspección reciente (&lt;12 meses). El informe puede reducir
+                  prima al demostrar buen mantenimiento.
+                </p>
+              </div>
+
+              <div>
+                <h3 class="font-bold text-gray-800 mb-2">¿Qué pasa si la inspección detecta problemas?</h3>
+                <p class="text-gray-600">
+                  El inspector entrega informe detallado con observaciones, clasificación por gravedad (crítico/importante/menor)
+                  y recomendaciones de actuación. Usted decide qué reparar, cuándo y cómo. Para problemas críticos
+                  ofrecemos presupuesto reparación inmediato. Detectar temprano permite planificar y presupuestar
+                  reparaciones sin urgencias costosas.
+                </p>
+                <div class="flex gap-3 mt-3">
+                  <a href="/contacto" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded text-sm font-semibold transition-colors">
+                    Solicitar Inspección
+                  </a>
+                  <a href="tel:+34614405061" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded text-sm font-semibold transition-colors">
+                    LLAMAR +34 614 405 061
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Smart Internal Links -->
+          <div class="mt-12">
+            <InternalLinks currentPage="blog-cuando-inspeccion" context="blog" maxLinks={4} />
+          </div>
+
+          <!-- CTA Section -->
+          <div class="mt-12 bg-gradient-to-r from-teal-900 to-cyan-900 text-white p-8 rounded-lg text-center">
+            <h3 class="text-2xl font-bold mb-4">¿Necesita Inspección de Casco?</h3>
+            <p class="text-teal-100 mb-6">
+              Inspección visual o END completo según su necesidad. Informe técnico detallado en 24-48h.
+              Detecte problemas antes de que sean reparaciones costosas. Servicio en toda Cádiz.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <CallToAction variant="emergency" size="lg" text="INSPECCIÓN URGENTE" subtext="Disponible 24/7" />
+              <a href="/inspeccion-visual-subacuatica" class="bg-white text-teal-900 hover:bg-teal-50 px-8 py-3 rounded-lg font-semibold transition-colors">
+                Ver Servicios Inspección
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .container {
+    max-width: 1200px;
+  }
+
+  .prose h2, .prose h3, .prose h4 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .prose ul {
+    margin: 1rem 0;
+  }
+
+  .prose li {
+    margin: 0.5rem 0;
+  }
+</style>

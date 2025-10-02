@@ -1,0 +1,409 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import LocalSchema from '../components/LocalSchema.astro';
+import CallToAction from '../components/CallToAction.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
+---
+
+<Layout
+  title="Trabajos Submarinos Constructoras | Obra en Bolsa Urgente 24/7"
+  description="Especialistas en trabajos subacuáticos para empresas de construcción: obra en bolsa, cimentaciones marinas, pilotaje submarino, soldadura estructural. Partner técnico certificado."
+  keywords="obra en bolsa submarina, trabajos submarinos constructoras, cimentaciones marinas, pilotaje submarino, obra civil marítima, construcción bajo agua"
+>
+  <LocalSchema location="Andalucía" servicePage="Servicios para Constructoras" />
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Trabajos Submarinos para Empresas de Construcción",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Trabajos Subacuáticos Cádiz"
+      },
+      "areaServed": {
+        "@type": "State",
+        "name": "Andalucía"
+      },
+      "description": "Servicios especializados en trabajos submarinos para constructoras: obra en bolsa, cimentaciones, pilotaje y estructuras bajo agua.",
+      "serviceType": "Obra Submarina para Constructoras"
+    }
+  </script>
+
+  <Header />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-yellow-700 to-yellow-600 text-white py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">
+            Trabajos Submarinos para Constructoras | Obra en Bolsa Urgente
+          </h1>
+          <p class="text-xl md:text-2xl text-yellow-100 mb-8">
+            Partner técnico especializado en obra submarina: cimentaciones marinas, pilotaje, soldadura estructural,
+            hormigonado bajo agua. Equipos propios y experiencia en grandes proyectos.
+          </p>
+          <div class="flex flex-col md:flex-row gap-4 justify-center">
+            <CallToAction variant="emergency" size="xl" text="OBRA URGENTE" subtext="Equipo 24/7" />
+            <a href="#servicios" class="bg-yellow-800 hover:bg-yellow-900 px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
+              Ver Servicios Técnicos
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us for Construction -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+            Por Qué Constructoras Nos Eligen Como Partner
+          </h2>
+
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="text-center">
+              <div class="w-16 h-16 bg-yellow-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold mb-3">Equipos Propios</h3>
+              <p class="text-gray-600">
+                Maquinaria pesada propia: pontonas, martillos pilotadores, ROV, equipos soldadura.
+                Sin dependencia de alquileres externos.
+              </p>
+            </div>
+
+            <div class="text-center">
+              <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold mb-3">Personal Cualificado</h3>
+              <p class="text-gray-600">
+                Buzos nivel 3A, soldadores AWS certificados, ingenieros civiles colegiados.
+                Equipo estable con experiencia > 15 años.
+              </p>
+            </div>
+
+            <div class="text-center">
+              <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold mb-3">Seguro RC Alto</h3>
+              <p class="text-gray-600">
+                Póliza RC obra 10M€. Todo riesgo construcción. Cumplimiento Ley Subcontratación 32/2006.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Services -->
+    <section id="servicios" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">
+            Servicios Submarinos para Obra Civil
+          </h2>
+          <p class="text-xl text-gray-600 text-center mb-12">
+            Subcontratas especializadas para grandes proyectos de infraestructura
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <!-- Pilotaje y Cimentaciones -->
+            <div class="bg-white p-6 rounded-lg shadow">
+              <h3 class="text-2xl font-bold mb-4 text-yellow-900">🔨 Pilotaje y Cimentaciones</h3>
+              <p class="text-gray-700 mb-4">
+                Hinca de pilotes metálicos y hormigón bajo agua. <a href="/obra-civil-subacuatica" class="text-yellow-600 hover:underline">Cimentaciones profundas</a>
+                para puentes, muelles y estructuras marítimas.
+              </p>
+              <ul class="space-y-2 text-gray-600 mb-4">
+                <li>✓ Hinca pilotes HEB 200-1000</li>
+                <li>✓ Pilotes tubulares Ø600-2000mm</li>
+                <li>✓ Micropilotaje submarino</li>
+                <li>✓ Tablestacas Larssen/Hoesch</li>
+                <li>✓ Jet-grouting submarino</li>
+                <li>✓ Pilotes prefabricados hormigón</li>
+                <li>✓ Control verticalidad &lt; 1/200</li>
+              </ul>
+              <div class="bg-yellow-50 p-4 rounded mt-4">
+                <p class="text-sm text-yellow-900"><strong>⚙️ Equipos:</strong> Martillo diesel 180kJ, vibrador 1600kN, pontona 150 ton</p>
+              </div>
+            </div>
+
+            <!-- Soldadura Estructural -->
+            <div class="bg-white p-6 rounded-lg shadow">
+              <h3 class="text-2xl font-bold mb-4 text-red-900">🔥 Soldadura Estructural Submarina</h3>
+              <p class="text-gray-700 mb-4">
+                <a href="/soldadura-subacuatica" class="text-red-600 hover:underline">Soldadura hiperbárica certificada</a> AWS D3.6.
+                Uniones estructurales acero S235-S355, inoxidables y aluminio marino.
+              </p>
+              <ul class="space-y-2 text-gray-600 mb-4">
+                <li>✓ <a href="/soldadura-electrodo-revestido" class="text-blue-600 hover:underline">SMAW húmeda/seca</a></li>
+                <li>✓ <a href="/soldadura-tig-subacuatica" class="text-green-600 hover:underline">TIG hiperbárica</a></li>
+                <li>✓ Soldadura a tope/ángulo</li>
+                <li>✓ Espesores hasta 80mm</li>
+                <li>✓ Calificación WPS 3.6-2017</li>
+                <li>✓ <a href="/control-end-submarino" class="text-orange-600 hover:underline">Control END radiográfico</a></li>
+                <li>✓ Garantía estructural 10 años</li>
+              </ul>
+              <div class="bg-red-50 p-4 rounded mt-4">
+                <p class="text-sm text-red-900"><strong>🎓 Certificación:</strong> Soldadores AWS D3.6, Lloyd's Register, DNV GL</p>
+              </div>
+            </div>
+
+            <!-- Hormigonado Bajo Agua -->
+            <div class="bg-white p-6 rounded-lg shadow">
+              <h3 class="text-2xl font-bold mb-4 text-blue-900">🚧 Hormigonado Subacuático</h3>
+              <p class="text-gray-700 mb-4">
+                Hormigones especiales bajo agua H-400/H-500. Técnica tremie, bombeo y colado directo.
+                Cumplimiento EHE-08 y Eurocódigo 2.
+              </p>
+              <ul class="space-y-2 text-gray-600 mb-4">
+                <li>✓ Tremie profundidad hasta 40m</li>
+                <li>✓ Bombeo hormigón 100m³/h</li>
+                <li>✓ Hormigones autocompactantes</li>
+                <li>✓ Aditivos antilavado Sika/Basf</li>
+                <li>✓ Control fraguado submarino</li>
+                <li>✓ Resistencias 40-50 MPa</li>
+                <li>✓ Certificación laboratorio ENAC</li>
+              </ul>
+              <div class="bg-blue-50 p-4 rounded mt-4">
+                <p class="text-sm text-blue-900"><strong>📊 Calidad:</strong> Probetas testigo, esclerómetro, UNE-EN 12390</p>
+              </div>
+            </div>
+
+            <!-- Excavación y Dragado -->
+            <div class="bg-white p-6 rounded-lg shadow">
+              <h3 class="text-2xl font-bold mb-4 text-green-900">⚓ Excavación y Dragado</h3>
+              <p class="text-gray-700 mb-4">
+                Excavación submarina para cimentaciones, dragados de obra,
+                nivelación de lechos y preparación de fondos marinos.
+              </p>
+              <ul class="space-y-2 text-gray-600 mb-4">
+                <li>✓ Excavación mecánica hasta 20m</li>
+                <li>✓ Airlift caudal 800m³/h</li>
+                <li>✓ Dragado aspiración succión</li>
+                <li>✓ Chorro agua alta presión</li>
+                <li>✓ Excavación roca fragmentada</li>
+                <li>✓ <a href="/corte-subacuatico" class="text-red-600 hover:underline">Voladura submarina controlada</a></li>
+                <li>✓ Batimetría control volúmenes</li>
+              </ul>
+              <div class="bg-green-50 p-4 rounded mt-4">
+                <p class="text-sm text-green-900"><strong>📐 Precisión:</strong> Topografía submarina RTK, ± 5cm cota</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Types -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-12">
+            Tipos de Proyectos y Referencias
+          </h2>
+
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-yellow-50 p-6 rounded-lg">
+              <h3 class="text-xl font-bold mb-4 text-yellow-900">🌉 Puentes y Viaductos</h3>
+              <ul class="space-y-2 text-sm text-gray-700">
+                <li>• Pilas y estribos en cauces</li>
+                <li>• Cimentaciones profundas</li>
+                <li>• Encofrados perdidos</li>
+                <li>• Dovelas prefabricadas</li>
+                <li><strong>Referencias:</strong></li>
+                <li>- Puente Bahía Cádiz (2018)</li>
+                <li>- Viaducto Guadalete A-381</li>
+                <li>- Puente Río San Pedro</li>
+              </ul>
+            </div>
+
+            <div class="bg-blue-50 p-6 rounded-lg">
+              <h3 class="text-xl font-bold mb-4 text-blue-900">🏗️ Infraestructura Portuaria</h3>
+              <ul class="space-y-2 text-sm text-gray-700">
+                <li>• <a href="/obras-portuarias" class="text-blue-600 hover:underline">Muelles comerciales</a></li>
+                <li>• Pantalanes y fingers</li>
+                <li>• Duques de alba</li>
+                <li>• Defensas y bolardos</li>
+                <li><strong>Referencias:</strong></li>
+                <li>- Ampliación Puerto Cádiz</li>
+                <li>- Terminal Cruceros Málaga</li>
+                <li>- Puerto Deportivo Rota</li>
+              </ul>
+            </div>
+
+            <div class="bg-green-50 p-6 rounded-lg">
+              <h3 class="text-xl font-bold mb-4 text-green-900">💧 Obras Hidráulicas</h3>
+              <ul class="space-y-2 text-sm text-gray-700">
+                <li>• <a href="/obras-pantanos-embalses" class="text-green-600 hover:underline">Presas y azudes</a></li>
+                <li>• <a href="/emisarios-submarinos" class="text-cyan-600 hover:underline">Emisarios EDAR</a></li>
+                <li>• Tomas de agua industrial</li>
+                <li>• Canales y esclusas</li>
+                <li><strong>Referencias:</strong></li>
+                <li>- EDAR Cádiz-San Fernando</li>
+                <li>- Presa Barbate refuerzo</li>
+                <li>- Desaladora Marbella</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Subcontracting Process -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-12">
+            Proceso de Subcontrata Submarino
+          </h2>
+
+          <div class="grid md:grid-cols-5 gap-4">
+            <div class="text-center">
+              <div class="w-12 h-12 bg-yellow-600 rounded-full flex items-center justify-center mx-auto mb-3 text-white font-bold">1</div>
+              <h4 class="font-bold mb-2">Licitación</h4>
+              <p class="text-sm text-gray-600">Análisis pliego. Oferta técnico-económica 72h</p>
+            </div>
+
+            <div class="text-center">
+              <div class="w-12 h-12 bg-yellow-600 rounded-full flex items-center justify-center mx-auto mb-3 text-white font-bold">2</div>
+              <h4 class="font-bold mb-2">Contrato</h4>
+              <p class="text-sm text-gray-600">Documentación LOPD. Seguro RC. PRL subcontrata</p>
+            </div>
+
+            <div class="text-center">
+              <div class="w-12 h-12 bg-yellow-600 rounded-full flex items-center justify-center mx-auto mb-3 text-white font-bold">3</div>
+              <h4 class="font-bold mb-2">Coordinación</h4>
+              <p class="text-sm text-gray-600">Plan trabajos. Reuniones obra. Interfaz contratista</p>
+            </div>
+
+            <div class="text-center">
+              <div class="w-12 h-12 bg-yellow-600 rounded-full flex items-center justify-center mx-auto mb-3 text-white font-bold">4</div>
+              <h4 class="font-bold mb-2">Ejecución</h4>
+              <p class="text-sm text-gray-600">Trabajo submarino. Control calidad. Partes diarios</p>
+            </div>
+
+            <div class="text-center">
+              <div class="w-12 h-12 bg-yellow-600 rounded-full flex items-center justify-center mx-auto mb-3 text-white font-bold">5</div>
+              <h4 class="font-bold mb-2">Entrega</h4>
+              <p class="text-sm text-gray-600"><a href="/informes-tecnicos-submarinos" class="text-blue-600 hover:underline">Informe final</a>. Garantías. Certificación</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Compliance and Documentation -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-12">
+            Documentación y Cumplimiento Legal
+          </h2>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h3 class="text-xl font-bold mb-4 text-yellow-900">📋 Documentación Obligatoria</h3>
+              <ul class="space-y-2 text-gray-700">
+                <li>✓ <strong>Ley Subcontratación 32/2006:</strong> Registro subcontratistas. Libro subcontratación</li>
+                <li>✓ <strong>PRL:</strong> Plan seguridad aprobado. CAE vigente. Coordinación actividades</li>
+                <li>✓ <strong>Seguros:</strong> RC 10M€. Todo riesgo construcción. Decenales según obra</li>
+                <li>✓ <strong>Calidad:</strong> ISO 9001. Homologación Fomento. Procedimientos certificados</li>
+                <li>✓ <strong>Laboral:</strong> TC1/TC2 al día. Contratos registrados. Formación específica</li>
+              </ul>
+            </div>
+
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h3 class="text-xl font-bold mb-4 text-blue-900">✅ Certificaciones Técnicas</h3>
+              <ul class="space-y-2 text-gray-700">
+                <li>✓ <strong>Soldadura:</strong> <a href="/certificaciones-navieras" class="text-blue-600 hover:underline">AWS D3.6, EN ISO 15618</a></li>
+                <li>✓ <strong>Buceo:</strong> AEUB nivel 3A. Formación hiperbárica. Certificado aptitud</li>
+                <li>✓ <strong>END:</strong> Nivel II UT, MT, PT según UNE-EN ISO 9712</li>
+                <li>✓ <strong>Maquinaria:</strong> Certificados CE. ITV. Revisiones RITE</li>
+                <li>✓ <strong>Calidad:</strong> Laboratorio ENAC. Trazabilidad materiales. Procedimientos</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Areas -->
+    <section class="py-16 bg-yellow-900 text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-12">
+            Ámbito de Actuación Nacional
+          </h2>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <h3 class="text-xl font-bold mb-4">🗺️ Zona Principal (0-100km)</h3>
+              <ul class="space-y-2">
+                <li>✓ <strong>Andalucía Occidental:</strong> Cádiz, Huelva, Sevilla, Córdoba</li>
+                <li>✓ <strong>Costa del Sol:</strong> Málaga, Marbella, Estepona</li>
+                <li>✓ <strong>Bahía Algeciras:</strong> Campo Gibraltar, La Línea</li>
+                <li>✓ <strong>Extremadura:</strong> Badajoz (embalses), provincia completa</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="text-xl font-bold mb-4">🌍 Desplazamiento Nacional</h3>
+              <ul class="space-y-2">
+                <li>✓ <strong>Levante:</strong> Valencia, Alicante, Murcia</li>
+                <li>✓ <strong>Cataluña:</strong> Barcelona, Tarragona (grandes obras)</li>
+                <li>✓ <strong>Cantábrico:</strong> Asturias, Cantabria (bajo consulta)</li>
+                <li>✓ <strong>Islas:</strong> Baleares, Canarias (proyectos > 300K€)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-yellow-700 to-yellow-600 text-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+          ¿Necesita Subcontrata Especializada Submarina?
+        </h2>
+        <p class="text-xl text-yellow-100 mb-8 max-w-3xl mx-auto">
+          Oferta técnico-económica en 48-72h. Toda documentación legal incluida. Referencias verificables.
+          Reunión técnica sin compromiso.
+        </p>
+        <div class="flex flex-col md:flex-row gap-4 justify-center">
+          <CallToAction variant="emergency" size="xl" text="OBRA URGENTE" subtext="Respuesta 24h" />
+          <a href="/contacto" class="bg-transparent border-2 border-white hover:bg-white hover:text-yellow-700 px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
+            Solicitar Oferta Técnica
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Links -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-12">
+            Servicios Relacionados
+          </h2>
+          <RelatedLinks currentPage="servicios-constructoras" type="services" limit={8} />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

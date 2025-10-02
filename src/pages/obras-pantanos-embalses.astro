@@ -1,0 +1,377 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import LocalSchema from '../components/LocalSchema.astro';
+import CallToAction from '../components/CallToAction.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
+---
+
+<Layout
+  title="Obras en Pantanos y Embalses | Trabajos Subacuáticos Urgentes 24/7"
+  description="Especialistas en trabajos subacuáticos en embalses, pantanos y presas: inspección de compuertas, reparación de tomas, limpieza de rejillas. Servicios para CHG y Confederaciones Hidrográficas."
+  keywords="trabajos embalses, inspección presas, reparación compuertas pantanos, buceo embalses, obras hidráulicas subacuáticas, tomas de agua embalses, inspección presas Andalucía"
+>
+  <LocalSchema location="Andalucía y Extremadura" servicePage="Obras Pantanos y Embalses" />
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Obras Subacuáticas en Pantanos y Embalses",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Trabajos Subacuáticos Cádiz"
+      },
+      "areaServed": [
+        {
+          "@type": "State",
+          "name": "Andalucía"
+        },
+        {
+          "@type": "State",
+          "name": "Extremadura"
+        }
+      ],
+      "description": "Servicios especializados en trabajos subacuáticos para presas, embalses y pantanos: inspección, reparación y mantenimiento de infraestructuras hidráulicas.",
+      "serviceType": "Obras Subacuáticas en Embalses"
+    }
+  </script>
+
+  <Header />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-cyan-900 to-cyan-700 text-white py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">
+            Trabajos Subacuáticos en Pantanos y Embalses Urgente 24/7
+          </h1>
+          <p class="text-xl md:text-2xl text-cyan-100 mb-8">
+            Especialistas en inspección y mantenimiento de presas, compuertas, tomas de agua y obras hidráulicas.
+            Servicios certificados para Confederaciones Hidrográficas y gestores de embalses.
+          </p>
+          <div class="flex flex-col md:flex-row gap-4 justify-center">
+            <CallToAction variant="emergency" size="xl" text="EMERGENCIA PRESA" subtext="Respuesta 24h" />
+            <a href="#servicios" class="bg-cyan-600 hover:bg-cyan-700 px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
+              Ver Servicios Hidráulicos
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Services -->
+    <section id="servicios" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">
+            Servicios Especializados en Embalses y Presas
+          </h2>
+          <p class="text-xl text-gray-600 text-center mb-12">
+            Trabajos subacuáticos certificados para infraestructuras hidráulicas críticas
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <!-- Inspección de Presas -->
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h3 class="text-2xl font-bold mb-4 text-cyan-900">🔍 Inspección de Presas y Diques</h3>
+              <p class="text-gray-700 mb-4">
+                <a href="/inspeccion-visual-subacuatica" class="text-cyan-600 hover:underline">Inspecciones reglamentarias</a> de paramentos, coronación sumergida,
+                pie de presa y cimentación. <a href="/informes-tecnicos-submarinos" class="text-blue-600 hover:underline">Informes técnicos certificados</a> para CHG.
+              </p>
+              <ul class="space-y-2 text-gray-600 mb-4">
+                <li>✓ Inspección paramento aguas arriba</li>
+                <li>✓ Verificación juntas y sellados</li>
+                <li>✓ Detección filtraciones y surgencias</li>
+                <li>✓ <a href="/control-end-submarino" class="text-green-600 hover:underline">Ensayos END en hormigón</a></li>
+                <li>✓ Batimetría con sonar multihaz</li>
+                <li>✓ Inspección ROV hasta 80m</li>
+                <li>✓ <a href="/informes-tecnicos-submarinos" class="text-orange-600 hover:underline">Informes Norma Técnica Seguridad Presas</a></li>
+              </ul>
+              <div class="bg-cyan-50 p-4 rounded mt-4">
+                <p class="text-sm text-cyan-900"><strong>📋 Normativa:</strong> RD 9/2008 Reglamento Seguridad Presas. Inspecciones anuales/quinquenales</p>
+              </div>
+            </div>
+
+            <!-- Compuertas y Desagües -->
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h3 class="text-2xl font-bold mb-4 text-orange-900">⚙️ Compuertas y Desagües de Fondo</h3>
+              <p class="text-gray-700 mb-4">
+                Inspección, <a href="/mantenimiento-naval" class="text-orange-600 hover:underline">mantenimiento</a> y reparación de compuertas,
+                válvulas y mecanismos hidráulicos sumergidos. Trabajos sin vaciado del embalse.
+              </p>
+              <ul class="space-y-2 text-gray-600 mb-4">
+                <li>✓ Inspección compuertas Taintor/vagón</li>
+                <li>✓ Limpieza de ranuras y guías</li>
+                <li>✓ Reparación sellos de goma</li>
+                <li>✓ <a href="/soldadura-subacuatica" class="text-red-600 hover:underline">Soldadura de grietas en acero</a></li>
+                <li>✓ Lubricación mecanismos sumergidos</li>
+                <li>✓ Sustitución anclajes y pernos</li>
+                <li>✓ Pruebas de estanqueidad</li>
+              </ul>
+              <div class="bg-orange-50 p-4 rounded mt-4">
+                <p class="text-sm text-orange-900"><strong>🔧 Ventaja:</strong> Reparaciones sin desembalse. Ahorro 90% costes vs vaciado</p>
+              </div>
+            </div>
+
+            <!-- Tomas de Agua -->
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h3 class="text-2xl font-bold mb-4 text-green-900">💧 Tomas de Agua y Torres</h3>
+              <p class="text-gray-700 mb-4">
+                Mantenimiento de torres de toma, limpieza de rejillas y reparación de conducciones.
+                Garantía de suministro sin interrupciones para abastecimiento urbano.
+              </p>
+              <ul class="space-y-2 text-gray-600 mb-4">
+                <li>✓ Limpieza rejillas y cribas</li>
+                <li>✓ Inspección torres de toma selectiva</li>
+                <li>✓ Desobstrucción de captaciones</li>
+                <li>✓ Reparación de tuberías sumergidas</li>
+                <li>✓ <a href="/limpieza-cascos" class="text-cyan-600 hover:underline">Eliminación biofouling</a></li>
+                <li>✓ Instalación sensores calidad agua</li>
+                <li>✓ Mantenimiento válvulas mariposa</li>
+              </ul>
+              <div class="bg-green-50 p-4 rounded mt-4">
+                <p class="text-sm text-green-900"><strong>⏱️ Disponibilidad:</strong> Servicio urgente 24h. Garantía suministro continuo</p>
+              </div>
+            </div>
+
+            <!-- Obras Hidráulicas -->
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h3 class="text-2xl font-bold mb-4 text-blue-900">🏗️ Obras Hidráulicas Sumergidas</h3>
+              <p class="text-gray-700 mb-4">
+                <a href="/obra-civil-subacuatica" class="text-blue-600 hover:underline">Construcción y reparación</a> de obras auxiliares:
+                azudes, canales, obras de toma y conducción. Hormigonado subacuático certificado.
+              </p>
+              <ul class="space-y-2 text-gray-600 mb-4">
+                <li>✓ Reparación azudes y vertederos</li>
+                <li>✓ Refuerzo de muros y estribos</li>
+                <li>✓ Hormigonado bajo agua H-400</li>
+                <li>✓ <a href="/corte-subacuatico" class="text-red-600 hover:underline">Demolición submarina controlada</a></li>
+                <li>✓ Impermeabilización pantallas</li>
+                <li>✓ Anclajes al sustrato rocoso</li>
+                <li>✓ Escolleras de protección</li>
+              </ul>
+              <div class="bg-blue-50 p-4 rounded mt-4">
+                <p class="text-sm text-blue-900"><strong>🎓 Certificación:</strong> Equipos homologados CHG, DGA, CHE. Ingenieros colegiados</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reservoirs Covered -->
+    <section class="py-16 bg-cyan-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-12">
+            Embalses y Presas Atendidos
+          </h2>
+
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow">
+              <h3 class="text-xl font-bold mb-4 text-cyan-900">💧 Cuenca Guadalquivir (CHG)</h3>
+              <ul class="space-y-2 text-sm text-gray-600">
+                <li>• Embalse Barbate (Cádiz)</li>
+                <li>• Embalse Guadalcacín (Cádiz)</li>
+                <li>• Presa Bornos (Cádiz)</li>
+                <li>• Embalse Arcos (Cádiz)</li>
+                <li>• Presa El Gergal (Sevilla)</li>
+                <li>• Embalse Melonares (Sevilla)</li>
+                <li>• Presa Alcalá del Río</li>
+                <li>• Iznajar (Córdoba)</li>
+              </ul>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow">
+              <h3 class="text-xl font-bold mb-4 text-blue-900">🏔️ Cuenca Sur (CHS)</h3>
+              <ul class="space-y-2 text-sm text-gray-600">
+                <li>• Embalse Charco Redondo (Cádiz)</li>
+                <li>• Presa de Guadarranque (Cádiz)</li>
+                <li>• Embalse Guadiaro (Málaga)</li>
+                <li>• Presa La Concepción (Málaga)</li>
+                <li>• Embalse Rules (Granada)</li>
+                <li>• Presa Bermejales (Granada)</li>
+                <li>• Benínar (Almería)</li>
+                <li>• Cuevas del Almanzora</li>
+              </ul>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow">
+              <h3 class="text-xl font-bold mb-4 text-green-900">🌊 Extremadura (CHG/Tajo)</h3>
+              <ul class="space-y-2 text-sm text-gray-600">
+                <li>• Embalse Alqueva (Portugal)</li>
+                <li>• Presa Orellana (Badajoz)</li>
+                <li>• Embalse Zújar (Badajoz)</li>
+                <li>• Presa García Sola</li>
+                <li>• Embalse Cijara (Badajoz)</li>
+                <li>• Alcántara (Cáceres)</li>
+                <li>• Gabriel y Galán (Cáceres)</li>
+                <li>• Valdecañas (Cáceres)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Specialized Equipment -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-12">
+            Equipamiento Especializado para Embalses
+          </h2>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h3 class="text-xl font-bold mb-4 text-cyan-900">🤿 Sistemas de Buceo</h3>
+              <ul class="space-y-2 text-gray-700">
+                <li>✓ <strong>Buceo en altitud:</strong> Equipos descompresión modificada</li>
+                <li>✓ <strong>Profundidad:</strong> Trabajos hasta 80m en embalses</li>
+                <li>✓ <strong>Agua dulce:</strong> Lastre y flotabilidad ajustada</li>
+                <li>✓ <strong>ROV inspección:</strong> Hasta 100m profundidad</li>
+                <li>✓ <strong>Sonar:</strong> Navegación en visibilidad cero</li>
+                <li>✓ <strong>Cámara descompresión:</strong> Móvil en obra</li>
+              </ul>
+            </div>
+
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h3 class="text-xl font-bold mb-4 text-blue-900">🛠️ Herramientas Hidráulicas</h3>
+              <ul class="space-y-2 text-gray-700">
+                <li>✓ <strong>Soldadura:</strong> <a href="/soldadura-electrodo-revestido" class="text-red-600 hover:underline">Equipos hiperbáricos 600A</a></li>
+                <li>✓ <strong>Corte:</strong> <a href="/corte-subacuatico" class="text-orange-600 hover:underline">Oxicorte y plasma submarino</a></li>
+                <li>✓ <strong>Hormigonado:</strong> Tremie 40m, bombeo</li>
+                <li>✓ <strong>Topografía:</strong> Estación total + batimetría</li>
+                <li>✓ <strong>Limpieza:</strong> Hidrolavado 500 bar</li>
+                <li>✓ <strong>Levantamiento:</strong> Pontona grúa 80 ton</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Compliance and Safety -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-12">
+            Seguridad y Normativa de Presas
+          </h2>
+
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-lg shadow">
+              <h3 class="text-lg font-bold mb-3 text-cyan-900">📋 Normativa Aplicable</h3>
+              <ul class="text-sm text-gray-600 space-y-1">
+                <li>• RD 9/2008 Reglamento Presas</li>
+                <li>• Norma Técnica Seguridad (2012)</li>
+                <li>• Directriz Básica PES</li>
+                <li>• Normas de explotación CHG</li>
+                <li>• Clasificación presas A/B/C</li>
+              </ul>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow">
+              <h3 class="text-lg font-bold mb-3 text-blue-900">🔒 Seguridad en Obra</h3>
+              <ul class="text-sm text-gray-600 space-y-1">
+                <li>• Plan seguridad específico</li>
+                <li>• Coordinador Seguridad obras</li>
+                <li>• Permisos Confederación</li>
+                <li>• Seguro RC 6M€ presas</li>
+                <li>• Procedimientos emergencia</li>
+              </ul>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow">
+              <h3 class="text-lg font-bold mb-3 text-green-900">✅ Certificaciones</h3>
+              <ul class="text-sm text-gray-600 space-y-1">
+                <li>• <a href="/certificaciones-navieras" class="text-green-600 hover:underline">Buzos certificados nivel 3A</a></li>
+                <li>• ISO 9001 calidad obras</li>
+                <li>• Homologación CHG/DGA/CHE</li>
+                <li>• Ingenieros caminos colegiados</li>
+                <li>• <a href="/control-end-submarino" class="text-blue-600 hover:underline">Técnicos END nivel II</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Emergency Response -->
+    <section class="py-16 bg-cyan-900 text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-12">
+            Protocolo de Emergencias en Embalses
+          </h2>
+
+          <div class="grid md:grid-cols-4 gap-6">
+            <div class="text-center">
+              <div class="text-5xl mb-4">🚨</div>
+              <h3 class="font-bold mb-2">1. Activación</h3>
+              <p class="text-sm text-cyan-200">Contacto CHG/gestor. Evaluación urgencia nivel 1/2/3</p>
+            </div>
+
+            <div class="text-center">
+              <div class="text-5xl mb-4">🚁</div>
+              <h3 class="font-bold mb-2">2. Movilización</h3>
+              <p class="text-sm text-cyan-200">Desplazamiento &lt; 6h. Helicóptero si crítico</p>
+            </div>
+
+            <div class="text-center">
+              <div class="text-5xl mb-4">🔍</div>
+              <h3 class="font-bold mb-2">3. Diagnóstico</h3>
+              <p class="text-sm text-cyan-200">Inspección ROV urgente. Informe preliminar 2h</p>
+            </div>
+
+            <div class="text-center">
+              <div class="text-5xl mb-4">⚙️</div>
+              <h3 class="font-bold mb-2">4. Intervención</h3>
+              <p class="text-sm text-cyan-200">Reparación emergencia. Trabajo continuo 24h</p>
+            </div>
+          </div>
+
+          <div class="mt-12 text-center">
+            <p class="text-xl mb-6">Casos atendidos: Filtraciones graves, compuertas bloqueadas, daños estructurales</p>
+            <CallToAction variant="emergency" size="xl" text="EMERGENCIA PRESA" subtext="Línea 24h CHG" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-cyan-900 to-cyan-700 text-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+          ¿Necesita Trabajos en su Embalse o Presa?
+        </h2>
+        <p class="text-xl text-cyan-100 mb-8 max-w-3xl mx-auto">
+          Presupuesto adaptado a normativa CHG. Inspecciones reglamentarias con descuento. Emergencias 24/7
+        </p>
+        <div class="flex flex-col md:flex-row gap-4 justify-center">
+          <CallToAction variant="emergency" size="xl" text="LLAMAR AHORA" subtext="Emergencias 24h" />
+          <a href="/contacto" class="bg-transparent border-2 border-white hover:bg-white hover:text-cyan-900 px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
+            Solicitar Inspección
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Links -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-12">
+            Servicios Relacionados
+          </h2>
+          <RelatedLinks currentPage="obras-pantanos-embalses" type="services" limit={8} />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

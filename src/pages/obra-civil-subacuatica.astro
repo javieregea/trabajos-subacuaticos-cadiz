@@ -1,0 +1,363 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import LocalSchema from '../components/LocalSchema.astro';
+import CallToAction from '../components/CallToAction.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
+---
+
+<Layout
+  title="Obra Civil Subacuática Cádiz | Construcción Submarina Urgente 24/7"
+  description="Especialistas en obra civil subacuática: cimentaciones submarinas, puentes, túneles, presas, hormigonado bajo agua. Empresa certificada para constructoras en Cádiz."
+  keywords="obra civil subacuática, construcción submarina, cimentaciones bajo agua, hormigonado subacuático, túneles submarinos, obra civil marítima Cádiz"
+>
+  <LocalSchema location="Cádiz y Andalucía" servicePage="Obra Civil Subacuática" />
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Obra Civil Subacuática y Construcción Submarina",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Trabajos Subacuáticos Cádiz"
+      },
+      "areaServed": {
+        "@type": "State",
+        "name": "Andalucía"
+      },
+      "description": "Servicios especializados en obra civil subacuática: cimentaciones, hormigonado submarino, construcción de estructuras sumergidas para empresas constructoras.",
+      "serviceType": "Obra Civil Subacuática"
+    }
+  </script>
+
+  <Header />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-amber-900 to-amber-700 text-white py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">
+            Obra Civil Subacuática para Empresas de Construcción Urgente
+          </h1>
+          <p class="text-xl md:text-2xl text-amber-100 mb-8">
+            Especialistas en cimentaciones submarinas, hormigonado bajo agua, pilotajes y estructuras sumergidas.
+            Partner técnico de constructoras en proyectos marítimos.
+          </p>
+          <div class="flex flex-col md:flex-row gap-4 justify-center">
+            <CallToAction variant="emergency" size="xl" text="PROYECTO URGENTE" subtext="Asesoría 24h" />
+            <a href="#servicios" class="bg-amber-600 hover:bg-amber-700 px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
+              Ver Servicios Especializados
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Services -->
+    <section id="servicios" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">
+            Servicios de Obra Civil Subacuática
+          </h2>
+          <p class="text-xl text-gray-600 text-center mb-12">
+            Soluciones técnicas para constructoras en proyectos de infraestructura marítima y fluvial
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <!-- Cimentaciones Submarinas -->
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h3 class="text-2xl font-bold mb-4 text-amber-900">🏗️ Cimentaciones Submarinas</h3>
+              <p class="text-gray-700 mb-4">
+                Ejecución de cimentaciones bajo agua para puentes, viaductos y estructuras marítimas.
+                Excavación, pilotaje y hormigonado subacuático certificado H-400.
+              </p>
+              <ul class="space-y-2 text-gray-600 mb-4">
+                <li>✓ Excavación submarina para zapatas</li>
+                <li>✓ Hinca de pilotes metálicos y hormigón</li>
+                <li>✓ Micropilotaje submarino</li>
+                <li>✓ Encepados bajo agua</li>
+                <li>✓ Anclajes al sustrato rocoso</li>
+                <li>✓ Mejora de terrenos sumergidos</li>
+              </ul>
+              <div class="bg-amber-50 p-4 rounded mt-4">
+                <p class="text-sm text-amber-900"><strong>📐 Profundidad:</strong> Trabajos hasta 40m. Certificación EHE-08</p>
+              </div>
+            </div>
+
+            <!-- Hormigonado Subacuático -->
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h3 class="text-2xl font-bold mb-4 text-blue-900">🚧 Hormigonado Subacuático</h3>
+              <p class="text-gray-700 mb-4">
+                Hormigonado bajo agua con técnicas especializadas: tremie, bombeo y colado directo.
+                Hormigones antilavado H-400 y H-500 certificados.
+              </p>
+              <ul class="space-y-2 text-gray-600 mb-4">
+                <li>✓ Método tremie hasta 30m profundidad</li>
+                <li>✓ Bombeo de hormigón submarino</li>
+                <li>✓ Hormigones autocompactantes SCC</li>
+                <li>✓ Aditivos antilavado certificados</li>
+                <li>✓ Control de fraguado bajo agua</li>
+                <li>✓ Ensayos UNE-EN 206 conformidad</li>
+              </ul>
+              <div class="bg-blue-50 p-4 rounded mt-4">
+                <p class="text-sm text-blue-900"><strong>🧪 Calidad:</strong> Laboratorio homologado. Certificados conformidad obra</p>
+              </div>
+            </div>
+
+            <!-- Estructuras de Puentes -->
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h3 class="text-2xl font-bold mb-4 text-green-900">🌉 Pilas y Estribos de Puentes</h3>
+              <p class="text-gray-700 mb-4">
+                Construcción de pilas y estribos en cauces fluviales y marítimos.
+                <a href="/soldadura-subacuatica" class="text-green-600 hover:underline">Soldadura estructural</a> y montaje de encofrados perdidos.
+              </p>
+              <ul class="space-y-2 text-gray-600 mb-4">
+                <li>✓ Pilas de puentes sobre ríos/mar</li>
+                <li>✓ Encofrados perdidos submarinos</li>
+                <li>✓ <a href="/soldadura-electrodo-revestido" class="text-blue-600 hover:underline">Armaduras soldadas bajo agua</a></li>
+                <li>✓ Montaje de dovelas prefabricadas</li>
+                <li>✓ Anclajes temporales y definitivos</li>
+                <li>✓ <a href="/inspeccion-visual-subacuatica" class="text-orange-600 hover:underline">Inspección durante ejecución</a></li>
+              </ul>
+              <div class="bg-green-50 p-4 rounded mt-4">
+                <p class="text-sm text-green-900"><strong>🔩 Referencias:</strong> Puente Bahía Cádiz, Viaducto Guadalete, A-381</p>
+              </div>
+            </div>
+
+            <!-- Túneles y Pasos Inferiores -->
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h3 class="text-2xl font-bold mb-4 text-purple-900">🚇 Túneles Sumergidos</h3>
+              <p class="text-gray-700 mb-4">
+                Trabajos submarinos en túneles sumergidos y pasos inferiores bajo cauces.
+                Impermeabilización, sellados y reparaciones estructurales.
+              </p>
+              <ul class="space-y-2 text-gray-600 mb-4">
+                <li>✓ Excavación de zanjas submarinas</li>
+                <li>✓ Colocación de dovelas prefabricadas</li>
+                <li>✓ Sellado de juntas bajo agua</li>
+                <li>✓ Inyecciones de impermeabilización</li>
+                <li>✓ Lastrado de tubos tunnel</li>
+                <li>✓ <a href="/corte-subacuatico" class="text-red-600 hover:underline">Corte de roca submarina</a></li>
+              </ul>
+              <div class="bg-purple-50 p-4 rounded mt-4">
+                <p class="text-sm text-purple-900"><strong>💧 Estanqueidad:</strong> Ensayos de presión. Garantía impermeabilidad</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Construction Types -->
+    <section class="py-16 bg-amber-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-12">
+            Tipos de Obras Civiles Submarinas
+          </h2>
+
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow">
+              <h3 class="text-xl font-bold mb-4 text-amber-900">🌊 Obras Marítimas</h3>
+              <ul class="space-y-2 text-gray-600">
+                <li>• <a href="/obras-portuarias" class="text-blue-600 hover:underline">Infraestructura portuaria</a></li>
+                <li>• Diques y rompeolas</li>
+                <li>• Espigones y escolleras</li>
+                <li>• Regeneración playas</li>
+                <li>• Conducciones submarinas</li>
+                <li>• Plataformas offshore</li>
+              </ul>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow">
+              <h3 class="text-xl font-bold mb-4 text-blue-900">🏞️ Obras Fluviales</h3>
+              <ul class="space-y-2 text-gray-600">
+                <li>• Puentes sobre ríos</li>
+                <li>• Presas y azudes</li>
+                <li>• Canales navegación</li>
+                <li>• Esclusas fluviales</li>
+                <li>• Estabilización cauces</li>
+                <li>• <a href="/obras-pantanos-embalses" class="text-green-600 hover:underline">Obras en embalses</a></li>
+              </ul>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow">
+              <h3 class="text-xl font-bold mb-4 text-green-900">🏗️ Obras Especiales</h3>
+              <ul class="space-y-2 text-gray-600">
+                <li>• Túneles sumergidos</li>
+                <li>• <a href="/emisarios-submarinos" class="text-purple-600 hover:underline">Emisarios y colectores</a></li>
+                <li>• Tomas de agua industrial</li>
+                <li>• Cámaras de carga</li>
+                <li>• Obras de dragado</li>
+                <li>• Rellenos hidráulicos</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Capabilities -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-12">
+            Por Qué Constructoras Confían en Nosotros
+          </h2>
+
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="text-center">
+              <div class="w-16 h-16 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold mb-3">Certificaciones Oficiales</h3>
+              <p class="text-gray-600">
+                ISO 9001, homologación Ministerio Fomento, registro contratistas obras públicas
+              </p>
+            </div>
+
+            <div class="text-center">
+              <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold mb-3">Equipo Especializado</h3>
+              <p class="text-gray-600">
+                Ingenieros civiles colegiados, buzos nivel 3A, técnicos hormigón certificados
+              </p>
+            </div>
+
+            <div class="text-center">
+              <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold mb-3">Seguro RC 6M€</h3>
+              <p class="text-gray-600">
+                Póliza responsabilidad civil obra 6.000.000€. Todo riesgo construcción marítima
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Equipment and Methods -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-12">
+            Equipamiento y Métodos Constructivos
+          </h2>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow">
+              <h3 class="text-xl font-bold mb-4">🚜 Maquinaria Especializada</h3>
+              <ul class="space-y-2 text-gray-700">
+                <li>✓ Pontona grúa 120 ton</li>
+                <li>✓ Martillo hidráulico 250kJ</li>
+                <li>✓ Bomba hormigón 90m³/h</li>
+                <li>✓ Tremie diámetro 300mm</li>
+                <li>✓ ROV trabajo clase III</li>
+                <li>✓ Planta hormigonado móvil</li>
+                <li>✓ Sistema buceo campana</li>
+                <li>✓ Mezcladora continua 60m³/h</li>
+              </ul>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow">
+              <h3 class="text-xl font-bold mb-4">🔬 Control de Calidad</h3>
+              <ul class="space-y-2 text-gray-700">
+                <li>✓ <a href="/control-end-submarino" class="text-green-600 hover:underline">Ensayos END submarinos</a></li>
+                <li>✓ Probetas hormigón testigo</li>
+                <li>✓ Esclerómetro resistencias</li>
+                <li>✓ Ultrasonidos espesores</li>
+                <li>✓ Topografía submarina</li>
+                <li>✓ Batimetría multihaz</li>
+                <li>✓ <a href="/informes-tecnicos-submarinos" class="text-blue-600 hover:underline">Informes certificados</a></li>
+                <li>✓ Trazabilidad completa</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Areas -->
+    <section class="py-16 bg-amber-900 text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-12">
+            Ámbito Geográfico de Actuación
+          </h2>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <h3 class="text-xl font-bold mb-4">🗺️ Andalucía</h3>
+              <ul class="space-y-2">
+                <li>✓ <strong>Cádiz:</strong> Base principal - Cobertura total provincia</li>
+                <li>✓ <strong>Sevilla:</strong> Guadalquivir, embalses Extremadura</li>
+                <li>✓ <strong>Huelva:</strong> Costa, río Odiel, ría Huelva</li>
+                <li>✓ <strong>Málaga:</strong> Costa del Sol, puertos deportivos</li>
+                <li>✓ <strong>Granada:</strong> Embalses Sierra Nevada, Motril</li>
+                <li>✓ <strong>Almería:</strong> Puertos, desaladoras</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="text-xl font-bold mb-4">🌍 Nacional</h3>
+              <ul class="space-y-2">
+                <li>✓ <strong>Extremadura:</strong> Embalses Alqueva, Alange, Orellana</li>
+                <li>✓ <strong>Portugal:</strong> Sur y Algarve bajo demanda</li>
+                <li>✓ <strong>Levante:</strong> Proyectos especiales</li>
+                <li>✓ <strong>Cantábrico:</strong> Bajo consulta</li>
+                <li>✓ <strong>Islas:</strong> Baleares, Canarias (grandes proyectos)</li>
+                <li>✓ <strong>Desplazamiento:</strong> Toda península según proyecto</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-amber-900 to-amber-700 text-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+          ¿Proyecto de Obra Civil Subacuática?
+        </h2>
+        <p class="text-xl text-amber-100 mb-8 max-w-3xl mx-auto">
+          Asesoramiento técnico gratuito. Presupuesto detallado en 48h. Soporte 24/7 durante ejecución de obra
+        </p>
+        <div class="flex flex-col md:flex-row gap-4 justify-center">
+          <CallToAction variant="emergency" size="xl" text="CONSULTA TÉCNICA" subtext="Ingenieros 24h" />
+          <a href="/contacto" class="bg-transparent border-2 border-white hover:bg-white hover:text-amber-900 px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
+            Solicitar Presupuesto
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Links -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-12">
+            Servicios Relacionados
+          </h2>
+          <RelatedLinks currentPage="obra-civil-subacuatica" type="services" limit={8} />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
