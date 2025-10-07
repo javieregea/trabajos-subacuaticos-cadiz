@@ -1,0 +1,442 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import LocalSchema from '../components/LocalSchema.astro';
+import CallToAction from '../components/CallToAction.astro';
+---
+
+<Layout
+  title="Mi Barco Hace Agua ¿Necesito Inspección Casco Urgente? | Cádiz 24h"
+  description="¿Tu embarcación hace agua, tiene agujero o grieta? Inspección casco urgente Cádiz. Detectamos vías agua con buzo certificado. Respuesta bajo 2h puerto."
+  keywords="barco hace agua Cádiz, casco agrietado reparar, inspección casco urgente, embarcación tiene agujero, detectar vía agua"
+>
+
+  <LocalSchema location="Puerto de Cádiz" servicePage="Inspección Casco Urgente" />
+
+  <!-- FAQ Schema - AEO Optimized Q&A Format -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Cómo saber si mi barco tiene vía de agua?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Síntomas vía agua: (1) Bomba achique funciona más frecuente de lo normal, (2) Agua acumulándose sentina sin lluvia/olas, (3) Embarcación más baja línea flotación que antes, (4) Ruido agua entrando cuando motor/olas paran, (5) Manchas humedad nuevas compartimentos secos, (6) Alarma bilge se activa sola. Si detectas 2+ síntomas → inspección urgente buzo certificado identifica entrada agua exacta."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto tiempo tengo antes que mi barco se hunda si hace agua?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depende tamaño vía agua y capacidad bomba achique: Grieta pequeña bajo 5mm + bomba funcionando = días/semanas antes problema grave. Agujero 2-5cm sin reparar = 6-24 horas hasta inundación crítica. Rotura grande sobre 10cm = 1-4 horas hasta hundimiento (depende eslora). Válvula fondo abierta completamente = 30min-2h hundimiento total. CRÍTICO: si bomba falla o batería muere, tiempo se reduce 80%. Inspección urgente previene pérdida total embarcación."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué hace un buzo en inspección casco de emergencia?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Protocolo inspección urgente: (1) Inmersión buzo certificado examina casco completo bajo agua (15-45min según eslora), (2) Localiza TODAS vías agua: agujeros, grietas, válvulas, pasamuros, timón, hélice, (3) Video HD + fotos zona dañada (evidencia para seguro/reparación), (4) Mide dimensiones exactas daño (tamaño, profundidad grieta, material afectado), (5) Evalúa urgencia reparación (crítico/moderado/leve), (6) Informe técnico inmediato con recomendación acción. Tiempo total servicio: 1-2 horas desde llegada."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto cuesta inspección casco urgente en Cádiz?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Precios inspección submarina urgente Cádiz: Embarcación bajo 10m (velero/lancha) = €180-€280 inspección completa. Yate 10-15m = €280-€450 (mayor superficie revisar). Barco 15-20m = €450-€750 (requiere más tiempo inmersión). Buque comercial sobre 20m = presupuesto personalizado según eslora/profundidad. INCLUYE: buzo certificado, video HD, informe técnico escrito, recomendaciones reparación. Emergencias 24/7: recargo +30% horario nocturno/festivos. Presupuesto telefónico gratuito en bajo 10min."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Puedo reparar vía agua yo mismo o necesito profesional?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depende gravedad: PUEDES hacer temporal: Grieta superficial bajo 3cm sobre línea flotación → parche epoxi bicomponente desde interior. Válvula fondo goteando → apretar prensaestopas o cambiar junta. Pasamuro suelto → sellador marino + abrazadera refuerzo. NECESITAS profesional: Cualquier daño BAJO línea flotación (requiere buzo + soldadura submarina o parche exterior). Grieta estructural sobre 5cm (riesgo colapso casco). Rotura cerca quilla/timón/hélice (zonas críticas). Aluminio/acero (requiere soldadura TIG/MIG certificada). Fibra delaminada extensa (reparación compleja resina). No arriesgues: inspección profesional €200-400 vs pérdida barco €50,000-200,000."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuándo es obligatoria inspección casco por normativa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Inspecciones obligatorias según normativa marítima española: (1) Cada 5 años embarcaciones recreo sobre 15m eslora, (2) Anual para buques comerciales/pesca (Capitanía Marítima), (3) Cada 2.5 años buques pasaje (inspección fondo + casco), (4) Tras varada/colisión/tormenta grave (antes volver navegar), (5) Cambio propietario embarcación usada sobre 12m (recomendado pre-compra), (6) Para renovar seguro casco embarcaciones sobre 20 años antigüedad. Inspección NO oficial (preventiva) recomendada: anual para cualquier embarcación uso intensivo (profesional/charter)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué diferencia hay entre inspección varado vs inspección submarina?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Inspección varado (en seco): Embarcación sale agua en varadero/rampa → inspector examina casco seco → visualiza mejor grietas finas, osmosis, delaminación → permite reparación inmediata sin equipos subacuáticos. COSTO: €400-800 inspección + €200-600 varada/botadura. TIEMPO: 1-2 días mínimo. Inspección submarina (a flote): Buzo examina casco bajo agua SIN sacar embarcación → más rápido (1-2h) → más económico (sin coste varada) → ideal emergencias/ubicación sin varadero cercano. LIMITACIÓN: visibilidad reducida agua turbia, reparaciones complejas requieren eventual varada. RECOMENDACIÓN: urgencias/preventivo = submarina; reparación mayor planificada = varado."
+          }
+        }
+      ]
+    }
+  </script>
+
+  <Header />
+
+  <main>
+    <!-- Hero Section - Problem-Focused -->
+    <section class="bg-gradient-to-r from-red-900 via-orange-900 to-amber-900 text-white py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto text-center">
+          <div class="inline-block bg-red-500/20 backdrop-blur-sm px-6 py-2 rounded-full mb-6">
+            <span class="text-red-300 font-semibold text-sm">🚨 PROBLEMA URGENTE · INSPECCIÓN INMEDIATA</span>
+          </div>
+          <h1 class="text-4xl md:text-6xl font-bold mb-6">
+            ¿Tu Barco Hace Agua?<br>Inspección Casco Urgente
+          </h1>
+          <p class="text-xl md:text-2xl text-orange-100 mb-8 max-w-4xl mx-auto leading-relaxed">
+            <strong>¿Embarcación hundiendo, grieta casco, agujero detectado?</strong>
+            Inspección submarina urgente con buzo certificado localiza TODAS las vías agua.
+            Video HD + informe técnico inmediato. Previene hundimiento total.
+            <span class="text-yellow-300 font-bold block mt-3">Respuesta &lt;2h Puerto Cádiz · Emergencias 24/7</span>
+          </p>
+          <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+            <CallToAction variant="emergency" size="xl" text="INSPECCIÓN YA" subtext="Buzo Certificado 24h" />
+            <a href="/contacto" class="bg-orange-600 hover:bg-orange-700 px-8 py-4 rounded-lg font-bold text-lg transition-all hover:scale-105">
+              Llamar Ahora
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Problem Recognition Section - Q&A Format -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">
+            Señales que tu Embarcación Necesita Inspección URGENTE
+          </h2>
+
+          <div class="space-y-8">
+            <!-- Signal 1 -->
+            <div class="bg-red-50 p-8 rounded-xl border-l-4 border-red-500">
+              <h3 class="text-2xl font-bold text-red-900 mb-4">🚨 Bomba Achique Funciona Constantemente</h3>
+              <p class="text-gray-800 mb-4 leading-relaxed">
+                <strong>Problema:</strong> Si tu bomba bilge se activa cada 10-30 minutos (antes era cada 2-3 horas), significa que <strong>agua entra más rápido</strong>.
+                La bomba está compensando vía agua que empeora progresivamente.
+              </p>
+              <div class="bg-white p-4 rounded-lg">
+                <div class="font-bold text-red-700 mb-2">⚠️ Por qué es grave:</div>
+                <ul class="text-gray-700 space-y-1 text-sm">
+                  <li>• Bomba funcionando 24/7 agotará batería en 6-12 horas</li>
+                  <li>• Cuando batería muere, embarcación se hunde en 1-3 horas</li>
+                  <li>• Vía agua pequeña hoy = agujero grande mañana (presión agua)</li>
+                  <li>• <strong>Inspección submarina identifica entrada EXACTA</strong></li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Signal 2 -->
+            <div class="bg-orange-50 p-8 rounded-xl border-l-4 border-orange-500">
+              <h3 class="text-2xl font-bold text-orange-900 mb-4">💧 Agua Acumulándose sin Lluvia ni Olas</h3>
+              <p class="text-gray-800 mb-4 leading-relaxed">
+                <strong>Problema:</strong> Abres tapa sentina y hay agua limpia (no sucia lluvia), embarcación amarrada sin olas.
+                Agua viene de ABAJO = grieta casco, válvula fondo, pasamuros sueltos.
+              </p>
+              <div class="bg-white p-4 rounded-lg">
+                <div class="font-bold text-orange-700 mb-2">🔍 Cómo diferenciarlo:</div>
+                <ul class="text-gray-700 space-y-1 text-sm">
+                  <li>• <strong>Agua salada limpia:</strong> vía agua casco bajo línea flotación</li>
+                  <li>• <strong>Agua dulce:</strong> tanque agua roto o lluvia (menos grave)</li>
+                  <li>• <strong>Agua aceitosa:</strong> fuga motor + vía agua (grave doble)</li>
+                  <li>• <strong>Buzo inspección ve origen exacto en 15-30min</strong></li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Signal 3 -->
+            <div class="bg-amber-50 p-8 rounded-xl border-l-4 border-amber-500">
+              <h3 class="text-2xl font-bold text-amber-900 mb-4">📉 Embarcación Más Baja en Línea Flotación</h3>
+              <p class="text-gray-800 mb-4 leading-relaxed">
+                <strong>Problema:</strong> Marca pintada casco antes estaba 10cm sobre agua, ahora está AL NIVEL o sumergida.
+                Embarcación pesa más = interior inundándose lentamente (agua compartimentos ocultos).
+              </p>
+              <div class="bg-white p-4 rounded-lg">
+                <div class="font-bold text-amber-700 mb-2">⏰ Tiempo antes hundimiento:</div>
+                <ul class="text-gray-700 space-y-1 text-sm">
+                  <li>• <strong>5-10cm más baja:</strong> 2-5 días antes hundimiento (SI bomba falla)</li>
+                  <li>• <strong>15-20cm más baja:</strong> 12-48 horas crítico</li>
+                  <li>• <strong>Sentina llena + bomba no da abasto:</strong> 2-6 horas</li>
+                  <li>• <strong>Inspección + reparación urgente previene pérdida total</strong></li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Signal 4 -->
+            <div class="bg-yellow-50 p-8 rounded-xl border-l-4 border-yellow-500">
+              <h3 class="text-2xl font-bold text-yellow-900 mb-4">🔊 Ruido Agua Entrando (Motor Parado)</h3>
+              <p class="text-gray-800 mb-4 leading-relaxed">
+                <strong>Problema:</strong> Cuando apagas motor y olas calman, escuchas "glup glup" o chorro agua entrando.
+                Significa vía agua ACTIVA con caudal alto (no solo humedad filtración).
+              </p>
+              <div class="bg-white p-4 rounded-lg">
+                <div class="font-bold text-yellow-700 mb-2">📍 Dónde buscar origen:</div>
+                <ul class="text-gray-700 space-y-1 text-sm">
+                  <li>• <strong>Popa cerca motor:</strong> eje hélice, timón, pasamuros escape</li>
+                  <li>• <strong>Proa:</strong> cadena ancla rozó casco, válvula fondo proa</li>
+                  <li>• <strong>Sentina centro:</strong> quilla, orza, through-hull sensores</li>
+                  <li>• <strong>Buzo localiza con <a href="/inspeccion-visual-subacuatica" class="text-blue-600 hover:underline">video HD submarino</a></strong></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Inspection Process - Step by Step Q&A -->
+    <section class="py-16 bg-gradient-to-br from-blue-50 to-cyan-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">
+            ¿Qué Incluye Inspección Casco Urgente?
+          </h2>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <!-- Step 1 -->
+            <div class="bg-white p-6 rounded-xl shadow-lg">
+              <div class="flex items-center mb-4">
+                <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">
+                  1
+                </div>
+                <h3 class="text-xl font-bold text-blue-900">Llamada Emergencia</h3>
+              </div>
+              <p class="text-gray-700 mb-4">
+                <strong>Qué necesitamos saber:</strong> Eslora embarcación, síntomas (bomba funciona mucho, agua visible, etc.),
+                ubicación exacta (amarre, coordenadas), urgencia (hundiendo ahora vs preventivo).
+              </p>
+              <div class="text-sm text-blue-600 font-semibold">
+                ⏱️ Presupuesto telefónico en bajo 10min
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="bg-white p-6 rounded-xl shadow-lg">
+              <div class="flex items-center mb-4">
+                <div class="w-12 h-12 bg-cyan-600 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">
+                  2
+                </div>
+                <h3 class="text-xl font-bold text-cyan-900">Llegada Buzo (bajo 2h)</h3>
+              </div>
+              <p class="text-gray-700 mb-4">
+                Buzo certificado llega puerto con equipo completo: traje buceo, cámara video HD sumergible,
+                linterna potente, medidor espesores, herramientas inspección.
+              </p>
+              <div class="text-sm text-cyan-600 font-semibold">
+                🚗 Puerto Cádiz: 30-60min | Bahía: 60-90min
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="bg-white p-6 rounded-xl shadow-lg">
+              <div class="flex items-center mb-4">
+                <div class="w-12 h-12 bg-teal-600 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">
+                  3
+                </div>
+                <h3 class="text-xl font-bold text-teal-900">Inmersión Inspección</h3>
+              </div>
+              <p class="text-gray-700 mb-4">
+                <strong>Duración:</strong> 15-45min según eslora. Buzo examina TODO casco bajo agua:
+                proa, popa, quilla, timón, hélice, válvulas fondo, pasamuros, zonas soldadura.
+              </p>
+              <div class="text-sm text-teal-600 font-semibold">
+                📹 Video HD completo para propietario/seguro
+              </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="bg-white p-6 rounded-xl shadow-lg">
+              <div class="flex items-center mb-4">
+                <div class="w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">
+                  4
+                </div>
+                <h3 class="text-xl font-bold text-indigo-900">Informe Técnico</h3>
+              </div>
+              <p class="text-gray-700 mb-4">
+                Documento escrito con: ubicación EXACTA daños, dimensiones (grieta 8cm x 2mm), causa probable,
+                urgencia reparación, presupuesto reparación orientativo, fotos/video adjuntos.
+              </p>
+              <div class="text-sm text-indigo-600 font-semibold">
+                📄 Válido para seguro náutico y autoridades
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-10 bg-gradient-to-r from-blue-500 to-cyan-600 text-white p-8 rounded-xl">
+            <h3 class="text-2xl font-bold mb-4 text-center">⏰ Tiempo Total Servicio Completo</h3>
+            <div class="grid md:grid-cols-3 gap-6 text-center">
+              <div>
+                <div class="text-4xl font-bold mb-2">1-2h</div>
+                <div class="text-blue-100">Embarcación bajo 10m</div>
+              </div>
+              <div>
+                <div class="text-4xl font-bold mb-2">2-3h</div>
+                <div class="text-blue-100">Yate 10-15m</div>
+              </div>
+              <div>
+                <div class="text-4xl font-bold mb-2">3-4h</div>
+                <div class="text-blue-100">Barco sobre 15m</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section - Transparent Q&A -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">
+            ¿Cuánto Cuesta vs Cuánto Pierdo si No Inspecciono?
+          </h2>
+
+          <div class="grid md:grid-cols-2 gap-8 mb-10">
+            <!-- Cost Inspection -->
+            <div class="bg-green-50 p-8 rounded-xl border-2 border-green-500">
+              <h3 class="text-2xl font-bold text-green-900 mb-6 text-center">💰 Costo Inspección</h3>
+              <div class="space-y-4">
+                <div class="bg-white p-4 rounded-lg">
+                  <div class="font-bold text-green-700 mb-2">Embarcación bajo 10m</div>
+                  <div class="text-3xl font-bold text-green-900">€180-280</div>
+                  <div class="text-sm text-gray-600">Veleros, lanchas, neumáticas</div>
+                </div>
+                <div class="bg-white p-4 rounded-lg">
+                  <div class="font-bold text-green-700 mb-2">Yate 10-15m</div>
+                  <div class="text-3xl font-bold text-green-900">€280-450</div>
+                  <div class="text-sm text-gray-600">Cruceros, catamaranes medianos</div>
+                </div>
+                <div class="bg-white p-4 rounded-lg">
+                  <div class="font-bold text-green-700 mb-2">Barco 15-20m</div>
+                  <div class="text-3xl font-bold text-green-900">€450-750</div>
+                  <div class="text-sm text-gray-600">Yates grandes, pesca profesional</div>
+                </div>
+              </div>
+              <div class="mt-6 text-center">
+                <div class="text-sm text-green-700 font-semibold">✅ Incluye: buzo + video HD + informe</div>
+              </div>
+            </div>
+
+            <!-- Cost NOT Inspecting -->
+            <div class="bg-red-50 p-8 rounded-xl border-2 border-red-500">
+              <h3 class="text-2xl font-bold text-red-900 mb-6 text-center">💸 Costo NO Inspeccionar</h3>
+              <div class="space-y-4">
+                <div class="bg-white p-4 rounded-lg">
+                  <div class="font-bold text-red-700 mb-2">Hundimiento Total</div>
+                  <div class="text-3xl font-bold text-red-900">€50k-200k</div>
+                  <div class="text-sm text-gray-600">Pérdida embarcación completa</div>
+                </div>
+                <div class="bg-white p-4 rounded-lg">
+                  <div class="font-bold text-red-700 mb-2">Reparación Tardía</div>
+                  <div class="text-3xl font-bold text-red-900">€2k-15k</div>
+                  <div class="text-sm text-gray-600">Daño extendido por esperar</div>
+                </div>
+                <div class="bg-white p-4 rounded-lg">
+                  <div class="font-bold text-red-700 mb-2"><a href="/reflotamiento-embarcaciones" class="hover:underline">Reflotamiento</a></div>
+                  <div class="text-3xl font-bold text-red-900">€4k-25k</div>
+                  <div class="text-sm text-gray-600">Si se hunde en puerto/amarre</div>
+                </div>
+              </div>
+              <div class="mt-6 text-center">
+                <div class="text-sm text-red-700 font-semibold">❌ Sin contar: daño equipos, tiempo perdido</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-r from-amber-100 to-orange-100 p-8 rounded-xl border-l-4 border-orange-500">
+            <h3 class="text-2xl font-bold text-orange-900 mb-4 text-center">🧮 ROI (Retorno Inversión) Inspección</h3>
+            <p class="text-gray-800 text-center text-lg leading-relaxed">
+              Inspección €280 detecta grieta temprana → <a href="/reparacion-cascos-bajo-agua" class="text-blue-600 hover:underline font-semibold">reparación</a> €600 con parche submarino.<br>
+              <strong class="text-orange-700">Total: €880</strong><br><br>
+              SIN inspección → grieta crece 6 meses → hundimiento amarre → reflotamiento €8,000 + reparación €4,500 + equipos dañados €3,000.<br>
+              <strong class="text-red-700">Total: €15,500</strong><br><br>
+              <span class="text-2xl font-bold text-green-700">Ahorro: €14,620 (ROI 5,223%)</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="py-16 bg-gradient-to-r from-red-900 via-orange-900 to-amber-900 text-white">
+      <div class="container mx-auto px-4 text-center">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">
+            ¿Tu Embarcación Hace Agua o Sospechas Vía Agua?
+          </h2>
+          <p class="text-xl text-orange-100 mb-8 leading-relaxed">
+            <strong>Inspección casco urgente</strong> con buzo certificado en Cádiz.
+            Localizamos TODAS las vías agua con video HD. Informe técnico inmediato válido seguro náutico.
+            Previene hundimiento total embarcación.
+            <span class="block mt-4 text-yellow-300 font-bold text-2xl">Respuesta &lt;2h Puerto Cádiz · 24/7/365</span>
+          </p>
+
+          <div class="grid md:grid-cols-4 gap-6 mb-10">
+            <div class="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
+              <div class="text-4xl font-bold text-yellow-400 mb-2">15min</div>
+              <div class="text-orange-200">Inspección Rápida</div>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
+              <div class="text-4xl font-bold text-yellow-400 mb-2">HD</div>
+              <div class="text-orange-200">Video Completo</div>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
+              <div class="text-4xl font-bold text-yellow-400 mb-2">24/7</div>
+              <div class="text-orange-200">Emergencias</div>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
+              <div class="text-4xl font-bold text-yellow-400 mb-2">€180</div>
+              <div class="text-orange-200">Desde</div>
+            </div>
+          </div>
+
+          <div class="flex flex-col md:flex-row gap-4 justify-center">
+            <CallToAction variant="emergency" size="xl" text="INSPECCIÓN URGENTE" subtext="Buzo Certificado Ya" />
+            <a href="/contacto" class="bg-white text-red-900 hover:bg-orange-100 px-10 py-5 rounded-lg font-bold text-xl transition-all hover:scale-105">
+              Llamar Ahora
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Services -->
+    <section class="py-12 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h3 class="text-2xl font-bold text-center mb-8 text-gray-900">Servicios Relacionados Inspección</h3>
+          <div class="grid md:grid-cols-4 gap-6">
+            <a href="/inspeccion-visual-subacuatica" class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow group">
+              <h4 class="font-bold text-blue-600 mb-3 group-hover:text-blue-700">Inspección Visual Submarina</h4>
+              <p class="text-gray-600 text-sm">Inspección completa preventiva con video HD para mantenimiento regular.</p>
+            </a>
+            <a href="/reparacion-cascos-bajo-agua" class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow group">
+              <h4 class="font-bold text-orange-600 mb-3 group-hover:text-orange-700">Reparación Cascos</h4>
+              <p class="text-gray-600 text-sm">Tras inspección: parches submarinos, soldadura, sellado vías agua a flote.</p>
+            </a>
+            <a href="/reflotamiento-embarcaciones" class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow group">
+              <h4 class="font-bold text-cyan-600 mb-3 group-hover:text-cyan-700">Reflotamiento Urgente</h4>
+              <p class="text-gray-600 text-sm">Si embarcación ya hundida: rescate profesional con flotadores + bombeo.</p>
+            </a>
+            <a href="/emergencias" class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow group border-2 border-red-500">
+              <h4 class="font-bold text-red-600 mb-3 group-hover:text-red-700">Emergencias Marinas 24/7</h4>
+              <p class="text-gray-600 text-sm">Cualquier emergencia submarina. Respuesta bajo 2h puerto Cádiz.</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
