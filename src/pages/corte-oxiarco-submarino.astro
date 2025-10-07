@@ -1,0 +1,491 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import LocalSchema from '../components/LocalSchema.astro';
+import CallToAction from '../components/CallToAction.astro';
+---
+
+<Layout
+  title="Corte Oxiarco Submarino Cádiz | Emergencias Salvamento 24/7"
+  description="Corte oxiarco bajo agua Cádiz. Tecnología arco-oxígeno para materiales complejos, salvamento, demolición estructuras. Respuesta urgente <2h puerto."
+  keywords="corte oxiarco submarino, corte arco oxígeno bajo agua, corte térmico salvamento, demolición estructuras marinas, corte emergencia Cádiz"
+>
+
+  <LocalSchema location="Puerto de Cádiz" servicePage="Corte Oxiarco Submarino" />
+
+  <!-- FAQ Schema - AEO Optimized -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Qué es el corte oxiarco submarino?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El corte oxiarco (arco-oxígeno) combina arco eléctrico para fundir metal + chorro oxígeno para oxidar y expulsar material fundido. Usa electrodo tubular hueco por donde fluye O2 a presión. Ventaja vs oxicorte tradicional: corta TODO (aceros, inox, fundición, hormigón armado, cerámica). Ideal salvamento y demolición bajo agua."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuándo usar oxiarco vs plasma submarino?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oxiarco: materiales complejos (hormigón armado, fundición, múltiples capas), demolición sin importar calidad corte, salvamento urgente todo tipo estructuras, espesores extremos >50mm. Plasma: metales conductores puros, corte precisión, bordes limpios para soldar, acero inoxidable sin oxidación. Oxiarco = fuerza bruta, Plasma = precisión."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Puede el oxiarco cortar hormigón armado bajo agua?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SÍ, el oxiarco es IDEAL para hormigón armado submarino. El arco eléctrico funde/descompone el hormigón, el O2 oxida y expulsa material. Corta armadura acero + hormigón simultáneamente sin cambiar técnica. Aplicaciones: demolición pilotes, muelles, cimentaciones marinas, estructuras portuarias antiguas."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué equipos se necesitan para corte oxiarco bajo agua?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Fuente soldadura CC 400-600A corriente continua. Electrodos tubulares huecos acero Ø6-10mm especiales oxiarco. Botellones oxígeno alta presión 200bar con regulador 5-8bar. Válvula control O2 en mango electrodo. Manguera doble: cable eléctrico + tubo O2. Consumo: 400-600A + 80-150 L/min O2 según espesor."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Es seguro el corte oxiarco en salvamento de emergencia?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SÍ, con protocolos correctos. Ventajas salvamento: corta TODO (cables acero, cadenas, hormigón, cascos multicapa), sin necesidad identificar material exacto, rápido en condiciones visibilidad cero. Seguridad: buzo controla O2 con gatillo, corriente CC estabilizada, electrodos aislados, respaldo compresor O2. Ideal emergencias sin tiempo analizar estructura."
+          }
+        }
+      ]
+    }
+  </script>
+
+  <Header />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-orange-900 via-red-900 to-amber-900 text-white py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto text-center">
+          <div class="inline-block bg-orange-500/20 backdrop-blur-sm px-6 py-2 rounded-full mb-6">
+            <span class="text-orange-300 font-semibold text-sm">🔥 CORTA TODO · SALVAMENTO · DEMOLICIÓN</span>
+          </div>
+          <h1 class="text-4xl md:text-6xl font-bold mb-6">
+            Corte Oxiarco Submarino
+          </h1>
+          <p class="text-xl md:text-2xl text-orange-100 mb-8 max-w-4xl mx-auto leading-relaxed">
+            Tecnología <strong>arco-oxígeno bajo agua</strong> para corte universal en Cádiz.
+            Corta acero, inox, fundición, hormigón armado, materiales compuestos. Ideal <a href="/trabajos-salvamento" class="text-yellow-300 hover:underline font-semibold">salvamento marino</a>, demolición estructuras complejas, emergencias sin identificar material.
+            <span class="text-yellow-300 font-bold block mt-3">Fuerza Bruta · Sin Límites · Emergencias 24/7</span>
+          </p>
+          <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+            <CallToAction variant="emergency" size="xl" text="SALVAMENTO 24H" subtext="Respuesta <2h Emergencias" />
+            <a href="/contacto" class="bg-orange-600 hover:bg-orange-700 px-8 py-4 rounded-lg font-bold text-lg transition-all hover:scale-105">
+              Solicitar Intervención
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technology Explanation - AEO Format -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              ¿Cómo Funciona el Corte Oxiarco Submarino?
+            </h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+              Arco eléctrico + oxígeno = tecnología universal que corta CUALQUIER material bajo agua
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-12 mb-12">
+            <!-- Technical Process -->
+            <div>
+              <h3 class="text-2xl font-bold text-orange-900 mb-6">⚡ Proceso Técnico Dual</h3>
+
+              <div class="bg-orange-50 p-6 rounded-lg border-l-4 border-orange-500 mb-6">
+                <h4 class="font-bold text-orange-800 mb-3 text-lg">1️⃣ Fase Arco Eléctrico (Fusión)</h4>
+                <p class="text-gray-800 leading-relaxed mb-3">
+                  Electrodo tubular hueco (acero) crea arco eléctrico 400-600A corriente continua → genera temperatura <strong>4,000-6,000°C</strong> que funde/descompone el material base (acero, hormigón, fundición, lo que sea).
+                </p>
+                <ul class="text-gray-700 space-y-2">
+                  <li>✓ Arco CC estabilizado bajo agua</li>
+                  <li>✓ Funde metales + descompone no-metales</li>
+                  <li>✓ Electrodo se consume (aporta acero)</li>
+                </ul>
+              </div>
+
+              <div class="bg-red-50 p-6 rounded-lg border-l-4 border-red-500">
+                <h4 class="font-bold text-red-800 mb-3 text-lg">2️⃣ Fase Oxígeno (Oxidación)</h4>
+                <p class="text-gray-800 leading-relaxed mb-3">
+                  Simultáneo al arco: <strong>chorro oxígeno alta presión (5-8bar, 80-150 L/min)</strong> fluye por el electrodo hueco → oxida metal fundido (reacción exotérmica genera MÁS calor) + expulsa escoria/material fundido fuera del corte.
+                </p>
+                <ul class="text-gray-700 space-y-2">
+                  <li>✓ O₂ oxida metales (calor extra)</li>
+                  <li>✓ Expulsa material fundido a presión</li>
+                  <li>✓ Limpia kerf permitiendo avance corte</li>
+                </ul>
+              </div>
+
+              <div class="bg-gradient-to-r from-orange-500 to-red-600 text-white p-6 rounded-lg mt-6">
+                <h4 class="font-bold text-xl mb-3">💪 Resultado: Fuerza Bruta Universal</h4>
+                <p class="leading-relaxed">
+                  La combinación arco (funde todo) + oxígeno (oxida + expulsa) = <strong>tecnología que NO depende del tipo material</strong>.
+                  Corta acero, inox, aluminio, fundición, hormigón, cerámica, multicapas... TODO.
+                </p>
+              </div>
+            </div>
+
+            <!-- Comparison Table -->
+            <div>
+              <h3 class="text-2xl font-bold text-blue-900 mb-6">📊 Oxiarco vs Otras Tecnologías</h3>
+
+              <div class="space-y-4">
+                <div class="bg-white p-5 rounded-lg shadow-lg border-l-4 border-orange-500">
+                  <div class="flex items-start justify-between mb-3">
+                    <h4 class="font-bold text-orange-800">Oxiarco (Arco-O₂)</h4>
+                    <span class="bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold">UNIVERSAL</span>
+                  </div>
+                  <ul class="text-gray-700 text-sm space-y-1">
+                    <li>✅ Corta TODO (metales, hormigón, fundición)</li>
+                    <li>✅ Espesores extremos sin límite</li>
+                    <li>✅ Materiales compuestos/multicapa</li>
+                    <li>✅ No requiere identificar material exacto</li>
+                    <li>⚠️ Calidad corte baja (bordes rugosos)</li>
+                    <li>⚠️ Gran ZAT (zona afectada térmica)</li>
+                  </ul>
+                </div>
+
+                <div class="bg-white p-5 rounded-lg shadow-lg border-l-4 border-cyan-500">
+                  <div class="flex items-start justify-between mb-3">
+                    <h4 class="font-bold text-cyan-800"><a href="/corte-plasma-submarino" class="hover:underline">Plasma N₂</a></h4>
+                    <span class="bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-bold">PRECISIÓN</span>
+                  </div>
+                  <ul class="text-gray-700 text-sm space-y-1">
+                    <li>✅ Alta precisión bordes limpios</li>
+                    <li>✅ Velocidad 3-5x vs oxicorte</li>
+                    <li>✅ Inox sin oxidación (con N₂)</li>
+                    <li>✅ ZAT mínima 2-4mm</li>
+                    <li>⚠️ Solo metales conductores</li>
+                    <li>⚠️ Límite espesor ~40mm práctico</li>
+                  </ul>
+                </div>
+
+                <div class="bg-white p-5 rounded-lg shadow-lg border-l-4 border-blue-500">
+                  <div class="flex items-start justify-between mb-3">
+                    <h4 class="font-bold text-blue-800"><a href="/corte-oxicorte-subacuatico" class="hover:underline">Oxicorte</a></h4>
+                    <span class="bg-amber-500 text-white px-3 py-1 rounded-full text-xs font-bold">ECONÓMICO</span>
+                  </div>
+                  <ul class="text-gray-700 text-sm space-y-1">
+                    <li>✅ Bajo costo operativo (solo gases)</li>
+                    <li>✅ Espesores grandes acero carbono</li>
+                    <li>✅ Equipos simples portátiles</li>
+                    <li>⚠️ SOLO aceros oxidables (carbono)</li>
+                    <li>❌ NO corta inox, aluminio, fundición</li>
+                    <li>⚠️ Velocidad moderada</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Applications Section -->
+    <section class="py-16 bg-gradient-to-br from-orange-50 to-red-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">
+            Aplicaciones Especializadas Oxiarco Submarino
+          </h2>
+
+          <div class="grid md:grid-cols-3 gap-8">
+            <!-- App 1: Hormigón -->
+            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow">
+              <div class="w-16 h-16 bg-gradient-to-r from-slate-600 to-gray-700 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span class="text-3xl">🏗️</span>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 mb-4 text-center">Demolición Hormigón Armado</h3>
+              <p class="text-gray-700 mb-4 leading-relaxed">
+                Corte <a href="/obras-portuarias" class="text-blue-600 hover:underline">estructuras hormigón armado</a> bajo agua: pilotes, muelles, cimentaciones, <a href="/obras-pantanos-embalses" class="text-cyan-600 hover:underline">tomas agua embalses</a>.
+                El oxiarco descompone hormigón + corta armadura simultáneamente sin cambiar técnica.
+              </p>
+              <ul class="text-gray-600 space-y-2 text-sm">
+                <li>• Pilotes hormigón Ø500-1500mm</li>
+                <li>• Demolición muelles antiguos</li>
+                <li>• Cimentaciones marinas complejas</li>
+                <li>• <a href="/obras-pantanos-embalses" class="text-blue-600 hover:underline">Tomas agua/compuertas CHG</a></li>
+                <li>• Estructuras hormigón + acero mixtas</li>
+              </ul>
+            </div>
+
+            <!-- App 2: Salvamento -->
+            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow border-2 border-red-500">
+              <div class="w-16 h-16 bg-gradient-to-r from-red-600 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span class="text-3xl">🚨</span>
+              </div>
+              <h3 class="text-xl font-bold text-red-900 mb-4 text-center">Salvamento Urgente 24/7</h3>
+              <p class="text-gray-700 mb-4 leading-relaxed">
+                <a href="/trabajos-salvamento" class="text-red-600 hover:underline font-semibold">Operaciones salvamento</a> donde NO hay tiempo identificar material exacto.
+                Embarcaciones hundidas multicapa (casco + mamparos + equipo), cadenas ancla Ø80mm, cables acero gruesos, estructuras colapsadas.
+              </p>
+              <ul class="text-red-600 space-y-2 text-sm font-medium">
+                <li>• ⚡ Cascos multicapa sin identificar</li>
+                <li>• ⚡ Cadenas ancla/fondeo Ø60-100mm</li>
+                <li>• ⚡ Cables acero gruesos enredados</li>
+                <li>• ⚡ Estructuras colapsadas mixtas</li>
+                <li>• ⚡ Visibilidad CERO (corte tacto)</li>
+              </ul>
+            </div>
+
+            <!-- App 3: Fundición -->
+            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow">
+              <div class="w-16 h-16 bg-gradient-to-r from-gray-700 to-slate-800 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span class="text-3xl">⚙️</span>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Fundición & Materiales Difíciles</h3>
+              <p class="text-gray-700 mb-4 leading-relaxed">
+                Corte fundición (gris/nodular) que ni <a href="/corte-oxicorte-subacuatico" class="text-blue-600 hover:underline">oxicorte</a> ni <a href="/corte-plasma-submarino" class="text-cyan-600 hover:underline">plasma</a> cortan bien.
+                Válvulas antiguas, tuberías fundición portuarias, componentes maquinaria pesada, estructuras época industrial.
+              </p>
+              <ul class="text-gray-600 space-y-2 text-sm">
+                <li>• Tuberías fundición Ø300-800mm</li>
+                <li>• Válvulas/bridas fundición antiguas</li>
+                <li>• Componentes maquinaria pesada</li>
+                <li>• Estructuras industriales históricas</li>
+                <li>• Materiales alta dureza/fragilidad</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Equipment Section -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">
+            Equipamiento Oxiarco Profesional
+          </h2>
+
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-gradient-to-br from-orange-50 to-red-50 p-6 rounded-xl shadow-lg">
+              <div class="text-4xl mb-4">⚡</div>
+              <h3 class="text-xl font-bold text-orange-900 mb-4">Fuente Soldadura 600A</h3>
+              <p class="text-gray-700 mb-4">
+                Generador corriente continua (CC) 400-600A estabilizada. Diseño submarino voltaje compensado profundidad.
+                Control digital amperaje según material/espesor. Backup grupo electrógeno emergencias.
+              </p>
+              <div class="bg-white p-4 rounded-lg">
+                <div class="text-sm text-gray-600">
+                  <strong class="text-orange-700">Specs:</strong><br>
+                  • 400-600A corriente continua<br>
+                  • Voltaje: 60-80V arco<br>
+                  • Ciclo trabajo: 100% (continuo)<br>
+                  • Consumo: 25-35 kW
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-orange-50 to-amber-50 p-6 rounded-xl shadow-lg">
+              <div class="text-4xl mb-4">🔧</div>
+              <h3 class="text-xl font-bold text-orange-900 mb-4">Electrodos Tubulares</h3>
+              <p class="text-gray-700 mb-4">
+                Electrodos huecos acero Ø6-10mm con canal central para flujo O₂. Revestimiento especial estabiliza arco bajo agua.
+                Se consumen durante corte (aportan acero fundido). Vida útil: 200-400mm corte por electrodo.
+              </p>
+              <div class="bg-white p-4 rounded-lg">
+                <div class="text-sm text-gray-600">
+                  <strong class="text-orange-700">Tipos:</strong><br>
+                  • Ø6mm: 300-400A (fino)<br>
+                  • Ø8mm: 400-500A (estándar)<br>
+                  • Ø10mm: 500-600A (heavy duty)<br>
+                  • Canal O₂: Ø2-3mm interno
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-red-50 to-orange-50 p-6 rounded-xl shadow-lg">
+              <div class="text-4xl mb-4">💨</div>
+              <h3 class="text-xl font-bold text-red-900 mb-4">Sistema Oxígeno</h3>
+              <p class="text-gray-700 mb-4">
+                Botellones O₂ alta presión 200bar conectados manifold. Regulador presión 5-8bar según espesor.
+                Válvula control manual en mango electrodo (buzo controla). Caudal 80-150 L/min según trabajo.
+              </p>
+              <div class="bg-white p-4 rounded-lg">
+                <div class="text-sm text-gray-600">
+                  <strong class="text-red-700">Consumo O₂:</strong><br>
+                  • 80 L/min: chapas &lt;15mm<br>
+                  • 120 L/min: 20-40mm std<br>
+                  • 150 L/min: &gt;50mm pesado<br>
+                  • Presión: 5-8 bar regulada
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-10 bg-gradient-to-r from-orange-100 to-red-100 p-8 rounded-xl border-l-4 border-orange-500">
+            <h3 class="text-2xl font-bold text-orange-900 mb-4">🛡️ Seguridad Operación Oxiarco</h3>
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <h4 class="font-bold text-gray-800 mb-3">Protocolos Buzo</h4>
+                <ul class="text-gray-700 space-y-2">
+                  <li>✓ Mango electrodo aislado térmicamente</li>
+                  <li>✓ Gatillo control O₂ (buzo decide cuándo)</li>
+                  <li>✓ Cable + manguera O₂ reforzados</li>
+                  <li>✓ Comunicación continua superficie</li>
+                  <li>✓ Backup compresor O₂ emergencia</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-bold text-gray-800 mb-3">Riesgos Controlados</h4>
+                <ul class="text-gray-700 space-y-2">
+                  <li>⚠️ Proyecciones metal fundido (protección)</li>
+                  <li>⚠️ Choque eléctrico (CC + aislamiento)</li>
+                  <li>⚠️ Enredo mangueras (organización)</li>
+                  <li>⚠️ Consumo O₂ alto (planificación)</li>
+                  <li>⚠️ Visibilidad cero humo (experiencia)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Real Cases Section - AEO Storytelling -->
+    <section class="py-16 bg-gradient-to-br from-slate-100 to-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">
+            Casos Reales: Cuando Solo Oxiarco Funciona
+          </h2>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-white p-8 rounded-xl shadow-lg">
+              <div class="flex items-center mb-4">
+                <span class="text-4xl mr-4">⚓</span>
+                <div>
+                  <h3 class="text-xl font-bold text-blue-900">Cadena Ancla Ø95mm Enredada</h3>
+                  <p class="text-sm text-gray-500">Puerto Algeciras · 2024</p>
+                </div>
+              </div>
+              <p class="text-gray-700 mb-4 leading-relaxed">
+                <strong>Situación:</strong> Buque portacontenedores cadena ancla Ø95mm acero forjado enredada con cadena fondeo muerto. Imposible desentrelazar bajo agua (tensión + peso).
+              </p>
+              <p class="text-gray-700 mb-4">
+                <strong>Solución Oxiarco:</strong> Corte cadena en 3 eslabones (6 puntos corte). Tiempo total: 45min bajo agua. Ni plasma (espesor extremo) ni oxicorte (acero aleado alta resistencia) habrían funcionado.
+              </p>
+              <div class="bg-orange-50 p-4 rounded-lg">
+                <p class="text-sm text-orange-800">
+                  <strong>Por qué oxiarco:</strong> Corta acero forjado alta dureza + espesor Ø95mm + posición incómoda (cadena tensa) = solo fuerza bruta arco-oxígeno funciona.
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-xl shadow-lg">
+              <div class="flex items-center mb-4">
+                <span class="text-4xl mr-4">🏗️</span>
+                <div>
+                  <h3 class="text-xl font-bold text-slate-900">Pilote Hormigón Ø1200mm</h3>
+                  <p class="text-sm text-gray-500">Demolición Muelle Cádiz · 2023</p>
+                </div>
+              </div>
+              <p class="text-gray-700 mb-4 leading-relaxed">
+                <strong>Situación:</strong> Demolición muelle antiguo requería eliminar 12 pilotes hormigón armado Ø1200mm sumergidos. Armadura: 16 barras Ø32mm + estribos Ø12mm.
+              </p>
+              <p class="text-gray-700 mb-4">
+                <strong>Solución Oxiarco:</strong> Corte perimetral cada pilote a -2m profundidad. Tiempo: 35-45min/pilote. Oxiarco corta hormigón + armadura en un solo pase sin cambiar técnica.
+              </p>
+              <div class="bg-red-50 p-4 rounded-lg">
+                <p class="text-sm text-red-800">
+                  <strong>Por qué oxiarco:</strong> Única tecnología que descompone hormigón + corta armadura acero simultáneamente. Alternativas (disco diamante, romper mecánico) imposibles bajo agua.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="py-16 bg-gradient-to-r from-orange-900 via-red-900 to-amber-900 text-white">
+      <div class="container mx-auto px-4 text-center">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">
+            ¿Necesita Corte Oxiarco Submarino?
+          </h2>
+          <p class="text-xl text-orange-100 mb-8 leading-relaxed">
+            Especialistas en <strong>corte oxiarco bajo agua</strong> para materiales complejos en Cádiz.
+            Hormigón armado, fundición, salvamento urgente, demolición estructuras. Cuando otras tecnologías fallan, oxiarco funciona.
+            <span class="block mt-4 text-yellow-300 font-bold text-2xl">Fuerza Bruta Universal · Respuesta <2h Emergencias</span>
+          </p>
+
+          <div class="grid md:grid-cols-4 gap-6 mb-10">
+            <div class="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
+              <div class="text-4xl font-bold text-yellow-400 mb-2">600A</div>
+              <div class="text-orange-200">Potencia Máxima</div>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
+              <div class="text-4xl font-bold text-yellow-400 mb-2">TODO</div>
+              <div class="text-orange-200">Materiales</div>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
+              <div class="text-4xl font-bold text-yellow-400 mb-2">24/7</div>
+              <div class="text-orange-200">Salvamento</div>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
+              <div class="text-4xl font-bold text-yellow-400 mb-2">∞</div>
+              <div class="text-orange-200">Espesor</div>
+            </div>
+          </div>
+
+          <div class="flex flex-col md:flex-row gap-4 justify-center">
+            <CallToAction variant="emergency" size="xl" text="LLAMAR AHORA" subtext="Salvamento Oxiarco 24h" />
+            <a href="/contacto" class="bg-white text-red-900 hover:bg-orange-100 px-10 py-5 rounded-lg font-bold text-xl transition-all hover:scale-105">
+              Solicitar Intervención
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Services -->
+    <section class="py-12 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h3 class="text-2xl font-bold text-center mb-8 text-gray-900">Tecnologías Corte Complementarias</h3>
+          <div class="grid md:grid-cols-4 gap-6">
+            <a href="/corte-plasma-submarino" class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow group">
+              <h4 class="font-bold text-cyan-600 mb-3 group-hover:text-cyan-700">Corte Plasma Submarino</h4>
+              <p class="text-gray-600 text-sm">Alta precisión metales conductores. Bordes limpios. Alternativa cuando calidad importa.</p>
+            </a>
+            <a href="/corte-oxicorte-subacuatico" class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow group">
+              <h4 class="font-bold text-blue-600 mb-3 group-hover:text-blue-700">Corte Oxicorte</h4>
+              <p class="text-gray-600 text-sm">Económico para acero carbono espesores grandes. Opción estándar sin complicaciones.</p>
+            </a>
+            <a href="/trabajos-salvamento" class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow group border-2 border-red-500">
+              <h4 class="font-bold text-red-600 mb-3 group-hover:text-red-700">Salvamento Marino 24/7</h4>
+              <p class="text-gray-600 text-sm">Operaciones salvamento urgentes con oxiarco. Respuesta <2h puerto Cádiz.</p>
+            </a>
+            <a href="/obras-portuarias" class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow group">
+              <h4 class="font-bold text-slate-600 mb-3 group-hover:text-slate-700">Demolición Obras Portuarias</h4>
+              <p class="text-gray-600 text-sm">Demolición pilotes hormigón, estructuras antiguas con tecnología oxiarco.</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

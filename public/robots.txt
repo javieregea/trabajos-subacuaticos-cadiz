@@ -1,6 +1,28 @@
 User-agent: *
 Allow: /
 
+# AI Crawlers - AEO (Answer Engine Optimization) 2025
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
 # Sitemap
 Sitemap: https://trabajos-subacuaticos-cadiz.vercel.app/sitemap.xml
 

@@ -1,0 +1,580 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import LocalSchema from '../components/LocalSchema.astro';
+import CallToAction from '../components/CallToAction.astro';
+---
+
+<Layout
+  title="Reflotamiento Embarcaciones Hundidas Cádiz | Emergencias 24/7"
+  description="Reflotamiento barcos hundidos Cádiz. Rescate embarcaciones varadas, salvamento marino urgente. Tecnología flotadores + corte submarino. Respuesta bajo 2h puerto."
+  keywords="reflotamiento embarcaciones Cádiz, rescate barcos hundidos, salvamento marino urgente, reflotamiento varadas, recuperación barcos puerto"
+>
+
+  <LocalSchema location="Puerto de Cádiz" servicePage="Reflotamiento Embarcaciones" />
+
+  <!-- FAQ Schema - AEO Optimized -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Cuánto cuesta reflotamiento de embarcación hundida en Cádiz?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El costo reflotamiento varía según: eslora/peso embarcación, profundidad hundimiento, causa (varada, colisión, inundación), daños estructurales, urgencia temporal. Rango orientativo Cádiz: €2,000-€8,000 embarcaciones bajo 12m, €8,000-€25,000 yates 12-20m, €25,000+ buques comerciales. Incluye: inspección submarina, taponamiento vías agua, bombeo, flotadores, izado/remolque. Presupuesto gratuito en bajo 2h emergencias."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto tiempo tarda reflotamiento barco hundido?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depende complejidad: Embarcación bajo 10m aguas someras (3-8m) sin daños graves → 6-12 horas desde llegada equipo. Yate 12-18m profundidad media (8-15m) con inundación → 1-2 días (inspección + preparación + reflotar). Buque comercial sobre 20m o daños estructurales graves → 3-7 días (requiere estudio previo + equipamiento pesado). Nuestro récord: velero 9m reflotado en 4h30min puerto Cádiz (2024)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué métodos usan para reflotamiento submarino?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Métodos según caso: 1) Flotadores neumáticos (lift bags): bolsas inflables 500kg-5ton fuerza ascensional, posicionadas estratégicamente. 2) Bombeo interno: sellar vías agua + bombas sumergibles extraen agua interior. 3) Grúa flotante/remolque: para buques grandes o profundidad excesiva. 4) Combinado: taponamiento + bombeo + flotadores simultáneos (más común). Técnica elegida tras inspección submarina inicial."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Se puede reflotamiento sin dañar más el barco?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SÍ, con técnica correcta minimizamos daños. Protocolo: 1) Inspección submarina completa identifica daños existentes. 2) Taponamiento profesional vías agua (parches, cemento rápido, cofferdam). 3) Flotadores posicionados puntos estructurales fuertes (no casco débil). 4) Ascenso controlado lento evita esfuerzos bruscos. 5) Bombeo gradual mantiene estabilidad. Experiencia 20+ años permite evaluar riesgos y ejecutar seguro."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Pueden reflotamiento barco si está sobre rocas o arena?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SÍ, son nuestros casos más frecuentes. Varada rocas: evaluamos daños casco con inspección submarina, si estructura permite usamos flotadores + esperar pleamar (marea alta añade flotabilidad natural) + remolque suave. Varada arena/barro: flotadores + chorro agua presión (excavamos arena bajo quilla) libera succión, luego reflotar. Si encallada grave: corte ancla/cadena atrapada con plasma/oxiarco + flotadores potentes. Experiencia costa Cádiz (mareas 3-4m) es ventaja clave."
+          }
+        }
+      ]
+    }
+  </script>
+
+  <Header />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-blue-900 via-cyan-900 to-teal-900 text-white py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto text-center">
+          <div class="inline-block bg-cyan-500/20 backdrop-blur-sm px-6 py-2 rounded-full mb-6">
+            <span class="text-cyan-300 font-semibold text-sm">⚓ RESCATE · REFLOTAMIENTO · SALVAMENTO MARINO</span>
+          </div>
+          <h1 class="text-4xl md:text-6xl font-bold mb-6">
+            Reflotamiento Embarcaciones Hundidas
+          </h1>
+          <p class="text-xl md:text-2xl text-cyan-100 mb-8 max-w-4xl mx-auto leading-relaxed">
+            <strong>Rescate profesional embarcaciones</strong> hundidas, varadas y semi-sumergidas en Cádiz.
+            Tecnología flotadores neumáticos + <a href="/corte-oxiarco-submarino" class="text-yellow-300 hover:underline font-semibold">corte submarino</a> + bombeo especializado.
+            Veleros, yates, barcos pesca, buques comerciales. Experiencia 20+ años bahía Cádiz.
+            <span class="text-yellow-300 font-bold block mt-3">Respuesta &lt;2h Emergencias · Disponibles 24/7/365</span>
+          </p>
+          <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+            <CallToAction variant="emergency" size="xl" text="EMERGENCIA 24H" subtext="Reflotamiento Urgente" />
+            <a href="/contacto" class="bg-cyan-600 hover:bg-cyan-700 px-8 py-4 rounded-lg font-bold text-lg transition-all hover:scale-105">
+              Solicitar Rescate
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section - AEO Step-by-Step -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Proceso Profesional Reflotamiento Embarcaciones
+            </h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+              Metodología probada 150+ reflotamientos exitosos costa Cádiz (2003-2024)
+            </p>
+          </div>
+
+          <div class="space-y-8">
+            <!-- Step 1 -->
+            <div class="bg-gradient-to-r from-cyan-50 to-blue-50 p-8 rounded-xl shadow-lg border-l-4 border-cyan-500">
+              <div class="flex items-start">
+                <div class="flex-shrink-0 w-16 h-16 bg-cyan-600 rounded-full flex items-center justify-center text-white font-bold text-2xl mr-6">
+                  1
+                </div>
+                <div class="flex-1">
+                  <h3 class="text-2xl font-bold text-cyan-900 mb-4">🔍 Inspección Submarina Urgente</h3>
+                  <p class="text-gray-800 mb-4 leading-relaxed">
+                    <strong>Objetivo:</strong> Evaluar daños reales, identificar vías agua, medir profundidad/posición, determinar viabilidad reflotamiento.
+                    Buzo certificado realiza <a href="/inspeccion-visual-subacuatica" class="text-blue-600 hover:underline">inspección visual completa</a> con video HD → informe técnico inmediato.
+                  </p>
+                  <div class="grid md:grid-cols-3 gap-4 text-sm">
+                    <div class="bg-white p-4 rounded-lg">
+                      <div class="font-bold text-cyan-700 mb-2">Evaluación Casco</div>
+                      <p class="text-gray-600">Grietas, roturas, abolladura profunda. Integridad estructural para soportar reflotamiento.</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg">
+                      <div class="font-bold text-cyan-700 mb-2">Vías Agua</div>
+                      <p class="text-gray-600">Localización exacta agujeros, grietas casco, válvulas abiertas. Tamaño/cantidad vías entrada agua.</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg">
+                      <div class="font-bold text-cyan-700 mb-2">Posición/Entorno</div>
+                      <p class="text-gray-600">Profundidad hundimiento, tipo fondo (arena/roca/barro), obstáculos, corrientes, mareas.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-8 rounded-xl shadow-lg border-l-4 border-blue-500">
+              <div class="flex items-start">
+                <div class="flex-shrink-0 w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-2xl mr-6">
+                  2
+                </div>
+                <div class="flex-1">
+                  <h3 class="text-2xl font-bold text-blue-900 mb-4">🔧 Taponamiento Vías Agua</h3>
+                  <p class="text-gray-800 mb-4 leading-relaxed">
+                    <strong>Objetivo:</strong> Sellar TODAS las entradas agua antes reflotamiento. Sin sellado efectivo, embarcación vuelve hundirse al elevar.
+                    Usamos parches submarinos, cemento rápido, cofferdam (cámaras inflables externas), <a href="/soldadura-subacuatica" class="text-blue-600 hover:underline">soldadura submarina</a> según caso.
+                  </p>
+                  <div class="grid md:grid-cols-4 gap-4 text-sm">
+                    <div class="bg-white p-4 rounded-lg">
+                      <div class="font-bold text-blue-700 mb-2">Parches Submarinos</div>
+                      <p class="text-gray-600">Neopreno reforzado + placas acero/aluminio atornilladas desde interior. Agujeros &lt;30cm.</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg">
+                      <div class="font-bold text-blue-700 mb-2">Cemento Rápido</div>
+                      <p class="text-gray-600">Mortero fraguado bajo agua 15min. Grietas finas, válvulas. Temporal pero efectivo.</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg">
+                      <div class="font-bold text-blue-700 mb-2">Cofferdam</div>
+                      <p class="text-gray-600">Cámara inflable externa cubre zona dañada. Crea espacio seco para reparación compleja.</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg">
+                      <div class="font-bold text-blue-700 mb-2">Soldadura</div>
+                      <p class="text-gray-600">Roturas estructurales graves. <a href="/soldadura-subacuatica" class="text-blue-600 hover:underline">Soldadura hiperbárica</a> permanente bajo agua.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="bg-gradient-to-r from-teal-50 to-cyan-50 p-8 rounded-xl shadow-lg border-l-4 border-teal-500">
+              <div class="flex items-start">
+                <div class="flex-shrink-0 w-16 h-16 bg-teal-600 rounded-full flex items-center justify-center text-white font-bold text-2xl mr-6">
+                  3
+                </div>
+                <div class="flex-1">
+                  <h3 class="text-2xl font-bold text-teal-900 mb-4">🎈 Posicionamiento Flotadores Neumáticos</h3>
+                  <p class="text-gray-800 mb-4 leading-relaxed">
+                    <strong>Objetivo:</strong> Generar fuerza ascensional controlada para elevar embarcación. Flotadores (lift bags) son bolsas reforzadas neopreno/PVC que inflamos aire comprimido bajo agua → flotabilidad positiva potente.
+                    Capacidad: 500kg - 5,000kg por flotador. Clave: posicionar en puntos estructurales fuertes (no casco débil).
+                  </p>
+                  <div class="bg-white p-6 rounded-lg">
+                    <h4 class="font-bold text-teal-800 mb-4">🎯 Estrategia Posicionamiento Flotadores</h4>
+                    <div class="grid md:grid-cols-2 gap-6">
+                      <div>
+                        <div class="font-bold text-gray-800 mb-2">Puntos Anclaje Correctos:</div>
+                        <ul class="text-gray-700 space-y-1 text-sm">
+                          <li>✓ Cuadernas (costillas estructura interna)</li>
+                          <li>✓ Mamparos reforzados</li>
+                          <li>✓ Eslinga bajo quilla (distribuye carga)</li>
+                          <li>✓ Winches/bitas cubierta (si resistentes)</li>
+                          <li>✓ Cadenas/cabos pasados bajo casco</li>
+                        </ul>
+                      </div>
+                      <div>
+                        <div class="font-bold text-gray-800 mb-2">❌ Evitar:</div>
+                        <ul class="text-red-600 space-y-1 text-sm">
+                          <li>✗ Barandillas/candeleros (arrancan)</li>
+                          <li>✗ Casco zona dañada (empeora rotura)</li>
+                          <li>✗ Superestructura débil (colapsa)</li>
+                          <li>✗ Flotadores asimétrricos (embarcación vuelca)</li>
+                          <li>✗ Sobreinflado brusco (rompe estructura)</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mt-4 bg-gradient-to-r from-teal-500 to-cyan-600 text-white p-5 rounded-lg">
+                    <div class="font-bold text-lg mb-2">📊 Cálculo Flotabilidad Necesaria</div>
+                    <p class="text-sm leading-relaxed">
+                      <strong>Fórmula:</strong> Flotabilidad (kg) = Peso embarcación seco + Peso agua interior + Margen seguridad 30%.<br>
+                      <strong>Ejemplo:</strong> Velero 8m (2,500kg) + agua interior estimada 1,800kg + margen 30% = <strong>5,600kg flotabilidad</strong> → Usamos 3x flotadores 2,000kg = 6,000kg total.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="bg-gradient-to-r from-indigo-50 to-purple-50 p-8 rounded-xl shadow-lg border-l-4 border-indigo-500">
+              <div class="flex items-start">
+                <div class="flex-shrink-0 w-16 h-16 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold text-2xl mr-6">
+                  4
+                </div>
+                <div class="flex-1">
+                  <h3 class="text-2xl font-bold text-indigo-900 mb-4">💨 Bombeo + Inflado Controlado</h3>
+                  <p class="text-gray-800 mb-4 leading-relaxed">
+                    <strong>Objetivo:</strong> Extraer agua interior + inflar flotadores = embarcación gana flotabilidad positiva → asciende controladamente.
+                    Usamos bombas sumergibles eléctricas dentro embarcación (extraen agua) + compresor aire superficie (infla flotadores). Proceso lento gradual evita esfuerzos bruscos estructura.
+                  </p>
+                  <div class="grid md:grid-cols-3 gap-4 text-sm">
+                    <div class="bg-white p-4 rounded-lg">
+                      <div class="font-bold text-indigo-700 mb-2">Bombas Sumergibles</div>
+                      <p class="text-gray-600 mb-3">Eléctricas 2-6 HP según eslora. Posicionadas punto más bajo sentina. Caudal 200-800 L/min.</p>
+                      <div class="text-xs text-indigo-600">
+                        <strong>Backup:</strong> siempre 2+ bombas (si una falla)
+                      </div>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg">
+                      <div class="font-bold text-indigo-700 mb-2">Compresor Aire</div>
+                      <p class="text-gray-600 mb-3">Diesel 10-20 HP superficie. Mangueras HP hasta flotadores. Presión controlada 0.5-1.5bar.</p>
+                      <div class="text-xs text-indigo-600">
+                        <strong>Seguridad:</strong> válvulas alivio evitan sobreinflado
+                      </div>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg">
+                      <div class="font-bold text-indigo-700 mb-2">Monitorización</div>
+                      <p class="text-gray-600 mb-3">Buzo sumergido observa ascenso. Comunicación continua superficie. Ajusta inflado si desequilibrio.</p>
+                      <div class="text-xs text-indigo-600">
+                        <strong>Clave:</strong> ascenso lento 1-2m cada 10-15min
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="bg-gradient-to-r from-green-50 to-emerald-50 p-8 rounded-xl shadow-lg border-l-4 border-green-500">
+              <div class="flex items-start">
+                <div class="flex-shrink-0 w-16 h-16 bg-green-600 rounded-full flex items-center justify-center text-white font-bold text-2xl mr-6">
+                  5
+                </div>
+                <div class="flex-1">
+                  <h3 class="text-2xl font-bold text-green-900 mb-4">🚤 Remolque a Lugar Seguro</h3>
+                  <p class="text-gray-800 mb-4 leading-relaxed">
+                    <strong>Objetivo:</strong> Una vez embarcación en superficie, remolcar inmediatamente a varadero/dique seco antes que vuelva inundarse.
+                    Mantenemos bombas funcionando durante remolque (siguen extrayendo agua filtraciones). Flotadores pueden quedar conectados como seguridad extra.
+                    Destino: astillero cercano con rampa/grúa para sacar agua definitivamente.
+                  </p>
+                  <div class="flex gap-4">
+                    <div class="flex-1 bg-white p-5 rounded-lg">
+                      <div class="font-bold text-green-700 mb-3">✅ Remolque Exitoso Incluye:</div>
+                      <ul class="text-gray-700 space-y-2 text-sm">
+                        <li>• Bombas operando durante tránsito</li>
+                        <li>• Velocidad lenta 2-3 nudos (evita esfuerzo)</li>
+                        <li>• Monitorización continua escoras/hundimiento</li>
+                        <li>• Buzo acompañamiento si mar agitado</li>
+                        <li>• Comunicación <a href="/trabajos-portuarios" class="text-blue-600 hover:underline">capitanía puerto</a> (permiso especial)</li>
+                      </ul>
+                    </div>
+                    <div class="flex-1 bg-white p-5 rounded-lg">
+                      <div class="font-bold text-green-700 mb-3">🎯 Destinos Habituales Cádiz:</div>
+                      <ul class="text-gray-700 space-y-2 text-sm">
+                        <li>• <strong>Astillero Puerto Sherry:</strong> rampa 30 ton</li>
+                        <li>• <strong>Varadero El Puerto:</strong> grúa 50 ton</li>
+                        <li>• <strong>Dique Seco Cádiz:</strong> buques grandes</li>
+                        <li>• <strong>Club Náutico Santa María:</strong> embarcaciones &lt;12m</li>
+                        <li>• <strong>Base Rota (militar):</strong> coordinación especial</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scenarios Section -->
+    <section class="py-16 bg-gradient-to-br from-slate-100 to-blue-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">
+            Tipos Reflotamiento Según Situación
+          </h2>
+
+          <div class="grid md:grid-cols-3 gap-8">
+            <!-- Scenario 1 -->
+            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow">
+              <div class="w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span class="text-3xl">⚓</span>
+              </div>
+              <h3 class="text-xl font-bold text-cyan-900 mb-4 text-center">Hundimiento Puerto/Amarre</h3>
+              <p class="text-gray-700 mb-4 leading-relaxed text-sm">
+                <strong>Causa típica:</strong> Válvulas fondo abiertas, mangueras rotas, tormenta inundación, fallo bomba achique.
+                <strong class="text-cyan-700 block mt-2">Complejidad: BAJA-MEDIA</strong>
+              </p>
+              <div class="bg-cyan-50 p-4 rounded-lg mb-4">
+                <div class="font-bold text-cyan-800 mb-2">Ventajas Situación:</div>
+                <ul class="text-gray-700 space-y-1 text-xs">
+                  <li>✓ Profundidad baja (2-6m)</li>
+                  <li>✓ Aguas calmas protegidas</li>
+                  <li>✓ Acceso fácil equipos</li>
+                  <li>✓ Sin corrientes fuertes</li>
+                </ul>
+              </div>
+              <div class="bg-white border-2 border-cyan-200 p-4 rounded-lg">
+                <div class="font-bold text-gray-800 mb-2 text-sm">Tiempo Típico:</div>
+                <div class="text-cyan-700 font-bold text-2xl">6-12h</div>
+                <div class="text-gray-600 text-xs mt-1">Desde llegada hasta a flote</div>
+              </div>
+            </div>
+
+            <!-- Scenario 2 -->
+            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow border-2 border-orange-500">
+              <div class="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span class="text-3xl">🏖️</span>
+              </div>
+              <h3 class="text-xl font-bold text-orange-900 mb-4 text-center">Varada Playa/Rocas</h3>
+              <p class="text-gray-700 mb-4 leading-relaxed text-sm">
+                <strong>Causa típica:</strong> Temporal empuja embarcación costa, error navegación, fallo motor zona baja, arrastre ancla.
+                <strong class="text-orange-700 block mt-2">Complejidad: MEDIA-ALTA</strong>
+              </p>
+              <div class="bg-orange-50 p-4 rounded-lg mb-4">
+                <div class="font-bold text-orange-800 mb-2">Desafíos Adicionales:</div>
+                <ul class="text-gray-700 space-y-1 text-xs">
+                  <li>⚠️ Casco sobre rocas (daños)</li>
+                  <li>⚠️ Oleaje dificulta trabajo</li>
+                  <li>⚠️ Esperar pleamar (marea alta)</li>
+                  <li>⚠️ <a href="/corte-oxiarco-submarino" class="text-blue-600 hover:underline">Corte ancla/cadena</a> si atrapada</li>
+                </ul>
+              </div>
+              <div class="bg-white border-2 border-orange-200 p-4 rounded-lg">
+                <div class="font-bold text-gray-800 mb-2 text-sm">Tiempo Típico:</div>
+                <div class="text-orange-700 font-bold text-2xl">1-3 días</div>
+                <div class="text-gray-600 text-xs mt-1">Depende mareas + daños casco</div>
+              </div>
+            </div>
+
+            <!-- Scenario 3 -->
+            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow">
+              <div class="w-16 h-16 bg-gradient-to-r from-blue-600 to-indigo-700 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span class="text-3xl">🌊</span>
+              </div>
+              <h3 class="text-xl font-bold text-blue-900 mb-4 text-center">Hundimiento Alta Mar</h3>
+              <p class="text-gray-700 mb-4 leading-relaxed text-sm">
+                <strong>Causa típica:</strong> Colisión, vía agua no detectada, tormenta grave, fallo estructura, explosión/incendio.
+                <strong class="text-blue-700 block mt-2">Complejidad: MUY ALTA</strong>
+              </p>
+              <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                <div class="font-bold text-blue-800 mb-2">Requiere Equipamiento:</div>
+                <ul class="text-gray-700 space-y-1 text-xs">
+                  <li>• Embarcación apoyo grande</li>
+                  <li>• Flotadores potentes 5+ ton</li>
+                  <li>• Buzo profundidad certificado</li>
+                  <li>• Grúa flotante (si &gt;20m prof.)</li>
+                </ul>
+              </div>
+              <div class="bg-white border-2 border-blue-200 p-4 rounded-lg">
+                <div class="font-bold text-gray-800 mb-2 text-sm">Tiempo Típico:</div>
+                <div class="text-blue-700 font-bold text-2xl">3-7 días</div>
+                <div class="text-gray-600 text-xs mt-1">Requiere planificación detallada</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Real Cases -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">
+            Casos Reales Reflotamiento Cádiz
+          </h2>
+
+          <div class="space-y-8">
+            <div class="bg-gradient-to-r from-cyan-50 to-blue-50 p-8 rounded-xl shadow-lg">
+              <div class="flex items-start gap-6">
+                <div class="flex-shrink-0">
+                  <div class="w-20 h-20 bg-cyan-600 rounded-full flex items-center justify-center text-white">
+                    <span class="text-3xl">⛵</span>
+                  </div>
+                </div>
+                <div class="flex-1">
+                  <div class="flex justify-between items-start mb-4">
+                    <div>
+                      <h3 class="text-2xl font-bold text-cyan-900">Velero Bavaria 40 - Puerto Sherry</h3>
+                      <p class="text-sm text-gray-500">Mayo 2024 · Hundimiento amarre</p>
+                    </div>
+                    <div class="bg-green-500 text-white px-4 py-2 rounded-full font-bold text-sm">
+                      ÉXITO
+                    </div>
+                  </div>
+                  <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <h4 class="font-bold text-gray-800 mb-2">📋 Situación Inicial:</h4>
+                      <ul class="text-gray-700 space-y-1 text-sm">
+                        <li>• Velero 12m hundido amarre (válvula fondo abierta)</li>
+                        <li>• Profundidad: 4.5m aguas calmas</li>
+                        <li>• Mástil 16m sobresalía 11m superficie</li>
+                        <li>• Interior completamente inundado</li>
+                        <li>• Propietario detectó hundimiento 6h después</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-gray-800 mb-2">⚙️ Intervención:</h4>
+                      <ul class="text-gray-700 space-y-1 text-sm">
+                        <li>• <strong>2h:</strong> Equipo en sitio + inspección buzo</li>
+                        <li>• <strong>1h:</strong> Taponamiento válvula + grieta sentina</li>
+                        <li>• <strong>3h:</strong> 2x flotadores 1,500kg + 3 bombas</li>
+                        <li>• <strong>1.5h:</strong> Inflado gradual + bombeo</li>
+                        <li>• <strong>30min:</strong> Remolque a rampa astillero</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="mt-6 bg-white p-4 rounded-lg border-l-4 border-green-500">
+                    <p class="text-gray-800">
+                      <strong class="text-green-700">Resultado:</strong> Velero reflotado en <strong class="text-green-700">8 horas totales</strong> desde llamada emergencia.
+                      Daños mínimos (electrónica + tapicería). Motor diesel recuperable. Coste reflotamiento: €4,200 vs valor embarcación €85,000.
+                      Propietario destacó: "Respuesta rapidísima, profesionalidad máxima, salvaron mi barco".
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-orange-50 to-red-50 p-8 rounded-xl shadow-lg">
+              <div class="flex items-start gap-6">
+                <div class="flex-shrink-0">
+                  <div class="w-20 h-20 bg-orange-600 rounded-full flex items-center justify-center text-white">
+                    <span class="text-3xl">🎣</span>
+                  </div>
+                </div>
+                <div class="flex-1">
+                  <div class="flex justify-between items-start mb-4">
+                    <div>
+                      <h3 class="text-2xl font-bold text-orange-900">Barco Pesca 15m - Varada Playa Valdelagrana</h3>
+                      <p class="text-sm text-gray-500">Enero 2023 · Temporal + varada rocas</p>
+                    </div>
+                    <div class="bg-green-500 text-white px-4 py-2 rounded-full font-bold text-sm">
+                      ÉXITO
+                    </div>
+                  </div>
+                  <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <h4 class="font-bold text-gray-800 mb-2">📋 Situación Inicial:</h4>
+                      <ul class="text-gray-700 space-y-1 text-sm">
+                        <li>• Pesquero 15m (25 ton) varado rocas playa</li>
+                        <li>• Temporal NW 45kt empujó contra costa</li>
+                        <li>• Casco apoyado sobre rocas (varios agujeros)</li>
+                        <li>• Ancla Ø50mm atrapada roca submarina</li>
+                        <li>• Oleaje 2-3m dificultaba acceso</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-gray-800 mb-2">⚙️ Intervención:</h4>
+                      <ul class="text-gray-700 space-y-1 text-sm">
+                        <li>• <strong>Día 1:</strong> Inspección + <a href="/corte-oxiarco-submarino" class="text-blue-600 hover:underline">corte cadena ancla oxiarco</a></li>
+                        <li>• <strong>Día 1:</strong> Taponamiento 3 vías agua con parches</li>
+                        <li>• <strong>Día 2:</strong> Espera pleamar (marea +3.8m)</li>
+                        <li>• <strong>Día 2:</strong> 4x flotadores 2,000kg + remolcador</li>
+                        <li>• <strong>Día 2:</strong> Flotadores + pleamar + remolque = liberado</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="mt-6 bg-white p-4 rounded-lg border-l-4 border-orange-500">
+                    <p class="text-gray-800">
+                      <strong class="text-orange-700">Resultado:</strong> Barco liberado en <strong class="text-orange-700">2 días</strong> (esperando condiciones marea óptimas).
+                      Aprovechamos pleamar máxima (coeficiente 95) + flotadores = 11 ton fuerza ascensional. Remolcador 150 HP tiró suavemente.
+                      Daños casco reparables astillero (€18,000). Propietario: "Sin vosotros habría perdido barco (pérdida total €120,000)".
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="py-16 bg-gradient-to-r from-cyan-900 via-blue-900 to-teal-900 text-white">
+      <div class="container mx-auto px-4 text-center">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">
+            ¿Necesita Reflotamiento Embarcación Urgente?
+          </h2>
+          <p class="text-xl text-cyan-100 mb-8 leading-relaxed">
+            Especialistas <strong>reflotamiento profesional</strong> con 20+ años experiencia bahía Cádiz.
+            Veleros, yates, barcos pesca, buques comerciales. Tecnología flotadores + bombeo + corte submarino.
+            150+ reflotamientos exitosos. Presupuesto gratuito en emergencias.
+            <span class="block mt-4 text-yellow-300 font-bold text-2xl">Respuesta &lt;2h Puerto Cádiz · Disponibles 24/7/365</span>
+          </p>
+
+          <div class="grid md:grid-cols-4 gap-6 mb-10">
+            <div class="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
+              <div class="text-4xl font-bold text-yellow-400 mb-2">150+</div>
+              <div class="text-cyan-200">Reflotamientos</div>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
+              <div class="text-4xl font-bold text-yellow-400 mb-2">20</div>
+              <div class="text-cyan-200">Años Experiencia</div>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
+              <div class="text-4xl font-bold text-yellow-400 mb-2">24/7</div>
+              <div class="text-cyan-200">Emergencias</div>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
+              <div class="text-4xl font-bold text-yellow-400 mb-2">5 ton</div>
+              <div class="text-cyan-200">Flotadores Máx</div>
+            </div>
+          </div>
+
+          <div class="flex flex-col md:flex-row gap-4 justify-center">
+            <CallToAction variant="emergency" size="xl" text="EMERGENCIA AHORA" subtext="Reflotamiento Urgente 24h" />
+            <a href="/contacto" class="bg-white text-blue-900 hover:bg-cyan-100 px-10 py-5 rounded-lg font-bold text-xl transition-all hover:scale-105">
+              Solicitar Rescate
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Services -->
+    <section class="py-12 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h3 class="text-2xl font-bold text-center mb-8 text-gray-900">Servicios Relacionados Salvamento</h3>
+          <div class="grid md:grid-cols-4 gap-6">
+            <a href="/trabajos-salvamento" class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow group">
+              <h4 class="font-bold text-cyan-600 mb-3 group-hover:text-cyan-700">Salvamento Marino General</h4>
+              <p class="text-gray-600 text-sm">Operaciones salvamento completas: reflotamiento, rescate, recuperación equipos.</p>
+            </a>
+            <a href="/corte-oxiarco-submarino" class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow group">
+              <h4 class="font-bold text-orange-600 mb-3 group-hover:text-orange-700">Corte Oxiarco Salvamento</h4>
+              <p class="text-gray-600 text-sm">Corte cadenas, cables, estructuras atrapadas durante reflotamiento urgente.</p>
+            </a>
+            <a href="/inspeccion-visual-subacuatica" class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow group">
+              <h4 class="font-bold text-blue-600 mb-3 group-hover:text-blue-700">Inspección Submarina</h4>
+              <p class="text-gray-600 text-sm">Evaluación daños pre-reflotamiento con video HD e informe técnico.</p>
+            </a>
+            <a href="/emergencias" class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow group border-2 border-red-500">
+              <h4 class="font-bold text-red-600 mb-3 group-hover:text-red-700">Emergencias Marinas 24/7</h4>
+              <p class="text-gray-600 text-sm">Respuesta urgente &lt;2h cualquier emergencia submarina puerto Cádiz.</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

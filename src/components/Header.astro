@@ -12,31 +12,31 @@ const headerClass = isHome
 ---
 
 <header class={headerClass} id="main-header">
-  <nav class="container mx-auto px-3 md:px-4 py-1 md:py-2">
+  <nav class="container mx-auto px-3 md:px-4 py-1">
     <div class="flex items-center justify-between">
       <!-- Logo -->
       <a href="/" class="flex items-center hover:opacity-90 transition-opacity flex-shrink-0">
-        <Logo size="small" className="header-logo w-24 sm:w-28 md:w-36 lg:w-40" />
+        <Logo size="small" className="header-logo w-20 sm:w-24 md:w-28 lg:w-32" />
       </a>
 
       <!-- Navigation -->
-      <div class="hidden md:flex space-x-4 lg:space-x-6 text-sm">
+      <div class="hidden md:flex space-x-3 lg:space-x-4 text-xs lg:text-sm">
         <a href="/" class="hover:text-blue-200 transition-colors">Inicio</a>
         <a href="/servicios" class="hover:text-blue-200 transition-colors">Servicios</a>
-        <a href="/soldadura-subacuatica" class="hover:text-blue-200 transition-colors hidden lg:inline">Soldadura Subacuática</a>
+        <a href="/soldadura-subacuatica" class="hover:text-blue-200 transition-colors hidden lg:inline">Soldadura</a>
         <a href="/blog" class="hover:text-blue-200 transition-colors">Blog</a>
         <a href="/emergencias" class="hover:text-blue-200 transition-colors">Emergencias</a>
         <a href="/contacto" class="hover:text-blue-200 transition-colors">Contacto</a>
       </div>
 
-      <!-- Emergency Contact -->
-      <a href="tel:+34614405061" class="hidden lg:flex items-center space-x-2 bg-red-700 hover:bg-red-800 px-3 py-2 rounded-lg transition-colors shadow-lg pulse-effect">
-        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+      <!-- Emergency Contact - Más compacto -->
+      <a href="tel:+34614405061" class="hidden lg:flex items-center space-x-1.5 bg-red-700 hover:bg-red-800 px-2.5 py-1.5 rounded-lg transition-colors shadow-lg pulse-effect">
+        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
           <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
         </svg>
-        <div class="text-xs">
-          <div class="font-semibold">Emergencia</div>
-          <div>614 405 061</div>
+        <div class="text-xs leading-tight">
+          <div class="font-semibold text-[10px]">Emergencia</div>
+          <div class="font-bold">614 405 061</div>
         </div>
       </a>
 
@@ -46,7 +46,7 @@ const headerClass = isHome
           <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
             <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
           </svg>
-          <span class="hidden xs:inline">Llamar</span>
+          <span class="hidden xs:inline">Llamar ahora</span>
         </a>
         <button class="p-1" onclick="toggleMobileMenu()">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -108,12 +108,12 @@ const headerClass = isHome
 
       if (scrollTop > 50) {
         header.classList.add('scrolled');
-        nav.classList.remove('py-2');
-        nav.classList.add('py-1');
+        nav.classList.remove('py-1');
+        nav.classList.add('py-0.5');
       } else {
         header.classList.remove('scrolled');
-        nav.classList.remove('py-1');
-        nav.classList.add('py-2');
+        nav.classList.remove('py-0.5');
+        nav.classList.add('py-1');
       }
 
       lastScrollTop = scrollTop;
@@ -170,20 +170,41 @@ const headerClass = isHome
     }
   }
 
-  /* Mobile responsive improvements */
-  @media (max-width: 768px) {
+  /* Desktop - Header más compacto */
+  @media (min-width: 769px) {
     #main-header nav {
-      padding-top: 0.375rem;
-      padding-bottom: 0.375rem;
-    }
-
-    #main-header.scrolled nav {
       padding-top: 0.25rem;
       padding-bottom: 0.25rem;
     }
 
+    #main-header.scrolled nav {
+      padding-top: 0.125rem;
+      padding-bottom: 0.125rem;
+    }
+
     .header-logo {
+      max-height: 36px;
+    }
+
+    #main-header.scrolled .header-logo {
       max-height: 32px;
+    }
+  }
+
+  /* Mobile responsive improvements */
+  @media (max-width: 768px) {
+    #main-header nav {
+      padding-top: 0.25rem;
+      padding-bottom: 0.25rem;
+    }
+
+    #main-header.scrolled nav {
+      padding-top: 0.125rem;
+      padding-bottom: 0.125rem;
+    }
+
+    .header-logo {
+      max-height: 28px;
     }
 
     /* Solo en páginas que NO son home: remover fixed y agregar padding al body */
@@ -193,7 +214,7 @@ const headerClass = isHome
 
     /* En home: header fixed, agregar padding al body */
     body:has(#main-header.home-header) {
-      padding-top: 60px;
+      padding-top: 50px;
     }
   }
 
@@ -204,11 +225,11 @@ const headerClass = isHome
     }
 
     .header-logo {
-      max-height: 28px;
+      max-height: 24px;
     }
 
     body:has(#main-header.home-header) {
-      padding-top: 56px;
+      padding-top: 48px;
     }
   }
 </style>
