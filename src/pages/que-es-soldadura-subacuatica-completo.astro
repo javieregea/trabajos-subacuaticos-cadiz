@@ -1,0 +1,310 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import FAQSection from '../components/FAQSection.astro';
+import CallToAction from '../components/CallToAction.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
+
+const faqs = [
+  {
+    question: "¿Qué es la soldadura subacuática?",
+    answer: "La soldadura subacuática es un proceso de unión de metales que se realiza bajo el agua, ya sea en ambientes marinos, embalses o estructuras sumergidas. Existen dos tipos principales: <strong>soldadura húmeda</strong> (directamente en contacto con el agua usando electrodos especiales) y <strong>soldadura seca hiperbárica</strong> (dentro de una cámara presurizada libre de agua). Se utiliza para reparar cascos de barcos, plataformas offshore, estructuras portuarias, presas y tuberías submarinas sin necesidad de sacar las estructuras del agua.",
+    category: "Definición"
+  },
+  {
+    question: "¿Cómo funciona la soldadura subacuática húmeda?",
+    answer: "La soldadura húmeda se realiza directamente en el agua usando <strong>electrodos especiales con revestimiento impermeable</strong>. El soldador buzo utiliza un porta-electrodos aislado conectado a una fuente de corriente continua (DC). Cuando el arco eléctrico se establece, genera temperaturas superiores a 3,500°C que vaporizan el agua circundante, creando una burbuja de gas protector temporal. Este proceso requiere electrodos específicos como E6013, E7014 o E7018 modificados para ambientes submarinos.",
+    category: "Proceso Técnico"
+  },
+  {
+    question: "¿Qué es la soldadura seca hiperbárica?",
+    answer: "La soldadura seca hiperbárica se realiza dentro de una <strong>cámara hiperbárica submarina</strong> que rodea la zona a soldar. La cámara se presuriza y se evacúa el agua, creando un ambiente seco a presión. Esto permite usar técnicas de soldadura convencionales (TIG, MIG, SMAW) con mayor calidad y control. Se usa en reparaciones críticas de plataformas offshore, cascos de buques comerciales y estructuras que requieren certificación Class o ABS. La calidad de soldadura seca es comparable a la soldadura en tierra.",
+    category: "Proceso Técnico"
+  },
+  {
+    question: "¿Qué diferencia hay entre soldadura húmeda y seca?",
+    answer: `<strong>Soldadura Húmeda:</strong> Más rápida, económica, ideal para reparaciones de emergencia y trabajos no críticos. Calidad inferior debido al enfriamiento rápido y contaminación del agua. Profundidad limitada a 30-40 metros.<br><br>
+    <strong>Soldadura Seca Hiperbárica:</strong> Mayor calidad, soldaduras certificables, control total del proceso. Más costosa y lenta por montaje de cámara. Ideal para estructuras críticas, reparaciones permanentes y trabajos que requieren homologación. Puede realizarse a mayores profundidades (hasta 300+ metros con equipos especializados).`,
+    category: "Comparación"
+  },
+  {
+    question: "¿A qué profundidad se puede soldar bajo el agua?",
+    answer: "La <strong>soldadura húmeda</strong> es efectiva hasta 30-40 metros de profundidad para la mayoría de aplicaciones comerciales. La <strong>soldadura seca hiperbárica</strong> puede realizarse a profundidades mucho mayores: plataformas offshore operan hasta 300 metros con equipos especializados. En Cádiz, la mayoría de trabajos son en profundidades de 0-30 metros (reparaciones navales, estructuras portuarias). La presión del agua afecta la calidad del arco eléctrico, por eso a mayor profundidad se requiere soldadura seca.",
+    category: "Profundidad"
+  },
+  {
+    question: "¿Qué materiales se pueden soldar bajo el agua?",
+    answer: `Los materiales más comunes para soldadura subacuática son:<br><br>
+    • <strong>Acero al carbono</strong>: El más frecuente, usado en cascos de barcos y estructuras portuarias<br>
+    • <strong>Acero inoxidable 316L</strong>: Hélices, ejes de timón, estructuras marinas de alta calidad<br>
+    • <strong>Aluminio marino (5083, 6061)</strong>: Embarcaciones recreativas y veleros modernos<br>
+    • <strong>Acero de alta resistencia</strong>: Estructuras offshore y plataformas petroleras<br>
+    • <strong>Hierro fundido</strong>: Reparación de bloques motor, hélices antiguas<br><br>
+    El aluminio requiere técnicas especiales (TIG subacuático en cámara seca) debido a su alta conductividad térmica.`,
+    category: "Materiales"
+  },
+  {
+    question: "¿Cuánto cuesta la soldadura subacuática en Cádiz?",
+    answer: `Los <strong>precios de soldadura subacuática en Cádiz 2025</strong> varían según técnica y complejidad:<br><br>
+    • <strong>Soldadura húmeda:</strong> 120-180 €/hora + desplazamiento<br>
+    • <strong>Soldadura seca hiperbárica:</strong> 250-400 €/hora + montaje de cámara (500-1,200 €)<br>
+    • <strong>Reparaciones emergencia 24h:</strong> Tarifa urgente +50% sobre precio base<br>
+    • <strong>Inspección pre-soldadura:</strong> 80-150 € (incluida si se contrata reparación)<br>
+    • <strong>Contratos mantenimiento flota:</strong> Descuentos 25-35% sobre tarifas estándar<br><br>
+    Presupuesto gratuito personalizado. Respuesta en menos de 2 horas.`,
+    category: "Precios"
+  },
+  {
+    question: "¿Cuánto tiempo dura una soldadura subacuática?",
+    answer: "La <strong>durabilidad de soldaduras subacuáticas</strong> depende del tipo y aplicación:<br><br><strong>Soldadura húmeda:</strong> 2-5 años en ambiente marino (reparación temporal). Suficiente para trabajos no críticos o hasta varada programada.<br><br><strong>Soldadura seca hiperbárica:</strong> 10-20+ años con mantenimiento adecuado. Calidad comparable a soldadura en seco, ideal para reparaciones permanentes.<br><br>La vida útil se reduce por corrosión marina, fatiga por oleaje y calidad del material base. Inspecciones periódicas (cada 12-24 meses) recomendadas.",
+    category: "Durabilidad"
+  },
+  {
+    question: "¿Qué certificaciones se necesitan para soldar bajo el agua?",
+    answer: `Los soldadores subacuáticos profesionales requieren:<br><br>
+    • <strong>AWS D3.6</strong>: American Welding Society - estándar internacional para soldadura subacuática<br>
+    • <strong>EN ISO 15618</strong>: Certificación europea para soldadores hiperbáricos<br>
+    • <strong>Certificación de buceo comercial</strong>: IMCA, ACDE o equivalente nacional<br>
+    • <strong>Homologaciones navieras</strong>: Lloyd's Register, DNV GL, ABS, Bureau Veritas (para trabajos en buques comerciales)<br>
+    • <strong>Curso de soldadura bajo presión</strong>: Específico para trabajos hiperbáricos<br><br>
+    En Cádiz, nuestro equipo cuenta con todas las certificaciones internacionales vigentes.`,
+    category: "Certificaciones"
+  },
+  {
+    question: "¿Es segura la soldadura subacuática?",
+    answer: "La soldadura subacuática es <strong>segura cuando la realizan profesionales certificados</strong> con equipos homologados. Los riesgos principales son:<br><br><strong>Riesgos eléctricos:</strong> Controlados con corriente DC, interruptores de seguridad y aislamiento total del porta-electrodos.<br><br><strong>Visibilidad limitada:</strong> Mitigada con linternas submarinas, cámaras y comunicación constante con superficie.<br><br><strong>Gases tóxicos:</strong> El arco produce hidrógeno y oxígeno; ventilación adecuada en soldadura seca.<br><br>Seguimos normativas IMCA, OSHA y regulaciones marítimas españolas. Ratio de accidentes < 0.1% en más de 20 años operando.",
+    category: "Seguridad"
+  },
+  {
+    question: "¿Cuándo es necesaria la soldadura subacuática en lugar de varar el barco?",
+    answer: `La soldadura subacuática es preferible cuando:<br><br>
+    • <strong>Urgencia operativa:</strong> Buques comerciales que no pueden parar operaciones (pérdidas 5,000-50,000 €/día)<br>
+    • <strong>Costo de varada prohibitivo:</strong> Astilleros cobran 2,000-15,000 € solo por varada y grúa<br>
+    • <strong>Reparación localizada:</strong> Grieta pequeña en casco, reparación hélice, refuerzo puntual<br>
+    • <strong>Acceso limitado a astillero:</strong> Lista de espera de 2-8 semanas en temporada alta<br>
+    • <strong>Barco de gran tonelaje:</strong> Varadero adecuado no disponible en la zona<br>
+    • <strong>Reparación temporal:</strong> Hasta próxima varada programada<br><br>
+    Ahorro típico: 40-70% vs. varada tradicional.`,
+    category: "Casos de Uso"
+  },
+  {
+    question: "¿Qué trabajos de soldadura subacuática se realizan más en Cádiz?",
+    answer: `Los trabajos más frecuentes en el <strong>puerto de Cádiz</strong> son:<br><br>
+    1. <strong>Reparación de cascos comerciales:</strong> Grietas, corrosión, impactos por atraque (35% de trabajos)<br>
+    2. <strong>Reparación de hélices:</strong> Palas dobladas, grietas por cavitación (25%)<br>
+    3. <strong>Estructuras portuarias:</strong> Pantalanes, duques de alba, pilotes metálicos (20%)<br>
+    4. <strong>Refuerzos estructurales:</strong> Quillas, mamparos, tanques de lastre (10%)<br>
+    5. <strong>Trabajos offshore:</strong> Plataformas eólicas marinas, tuberías submarinas (5%)<br>
+    6. <strong>Salvamento:</strong> Refuerzo de cascos para reflotamiento, taponamiento de vías de agua (5%)<br><br>
+    Zona de trabajo: Puerto de Cádiz, Bahía, Algeciras, Rota Base Naval.`,
+    category: "Aplicaciones Locales"
+  },
+  {
+    question: "¿Se puede soldar aluminio bajo el agua?",
+    answer: "Sí, pero <strong>solo con soldadura seca hiperbárica</strong> usando TIG (GTAW) o MIG especializado. El aluminio NO se puede soldar con técnicas húmedas por:<br><br>• Alta conductividad térmica (enfriamiento instantáneo)<br>• Óxido de aluminio refractario (punto fusión 2,072°C vs. 660°C del aluminio)<br>• Contaminación por hidrógeno del agua (porosidad)<br><br>En Cádiz, reparamos veleros y embarcaciones de aluminio marino (5083, 6061) montando cámara hiperbárica con atmósfera de argón. Calidad certificable según AWS D3.6 Annex III. Precio: 280-400 €/hora + montaje cámara.",
+    category: "Materiales Especiales"
+  },
+  {
+    question: "¿Cuánto tarda una reparación típica de soldadura subacuática?",
+    answer: `Tiempos estimados para trabajos comunes en Cádiz:<br><br>
+    • <strong>Grieta pequeña casco (< 20 cm):</strong> 2-4 horas (húmeda)<br>
+    • <strong>Reparación hélice (pala doblada):</strong> 3-6 horas (seca)<br>
+    • <strong>Refuerzo estructural puntual:</strong> 1-2 días (húmeda o seca según criticidad)<br>
+    • <strong>Taponamiento vía de agua emergencia:</strong> 1-3 horas (húmeda urgente)<br>
+    • <strong>Reparación casco comercial certificable:</strong> 3-7 días (seca hiperbárica + inspección)<br>
+    • <strong>Pilote portuario dañado:</strong> 2-5 días (seca + limpieza previa)<br><br>
+    Incluye: inspección previa, preparación superficie, soldadura, enfriamiento, inspección post-soldadura. Emergencias 24/7: respuesta < 2 horas.`,
+    category: "Tiempos"
+  },
+  {
+    question: "¿Qué ventajas tiene la soldadura subacuática frente a reparaciones tradicionales?",
+    answer: `<strong>Ventajas principales:</strong><br><br>
+    ✅ <strong>Sin varada:</strong> Ahorro 2,000-15,000 € en costes de grúa y astillero<br>
+    ✅ <strong>Rapidez:</strong> Reparación en horas vs. semanas de espera para varadero<br>
+    ✅ <strong>Continuidad operativa:</strong> Buque comercial no pierde días de trabajo<br>
+    ✅ <strong>Accesibilidad:</strong> Reparación en cualquier puerto o fondeadero<br>
+    ✅ <strong>Flexibilidad:</strong> Servicio 24/7 para emergencias<br>
+    ✅ <strong>Costo-efectividad:</strong> 40-70% más económico que varada para reparaciones localizadas<br>
+    ✅ <strong>Menor impacto logístico:</strong> No requiere mover el barco a astillero especializado<br><br>
+    Ideal para: flotas comerciales, agentes marítimos, emergencias, reparaciones temporales hasta varada programada.`,
+    category: "Ventajas"
+  }
+];
+---
+
+<Layout
+  title="¿Qué es la Soldadura Subacuática? Guía Completa 2025 | Cádiz"
+  description="Guía completa sobre soldadura subacuática: qué es, cómo funciona, tipos (húmeda vs seca), materiales, precios en Cádiz 2025, certificaciones y aplicaciones. Respuestas de expertos con +20 años experiencia."
+  keywords="qué es soldadura subacuática, soldadura húmeda, soldadura hiperbárica, soldadura bajo el agua, cómo funciona soldadura submarina, precios soldadura subacuática Cádiz, certificaciones AWS D3.6"
+>
+  <Header />
+
+  <main class="bg-gray-50">
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">
+            ¿Qué es la Soldadura Subacuática?
+          </h1>
+          <p class="text-xl md:text-2xl text-blue-100 mb-6">
+            Guía Completa 2025: Definición, Tipos, Técnicas, Precios y Aplicaciones
+          </p>
+          <p class="text-lg text-blue-200 max-w-3xl mx-auto">
+            Todo lo que necesitas saber sobre soldadura bajo el agua explicado por especialistas certificados con más de 20 años de experiencia en Cádiz
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Summary -->
+    <section class="py-12 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-lg">
+            <h2 class="text-2xl font-bold text-blue-900 mb-4">📌 Resumen Rápido</h2>
+            <p class="text-gray-800 leading-relaxed mb-4">
+              La <strong>soldadura subacuática</strong> es un proceso especializado de unión de metales bajo el agua. Se divide en dos tipos principales:
+            </p>
+            <div class="grid md:grid-cols-2 gap-4 mb-4">
+              <div class="bg-white p-4 rounded-lg shadow-sm">
+                <h3 class="font-bold text-blue-800 mb-2">🌊 Soldadura Húmeda</h3>
+                <p class="text-sm text-gray-700">Directamente en contacto con agua. Rápida, económica, ideal para emergencias. Profundidad: 0-30m.</p>
+              </div>
+              <div class="bg-white p-4 rounded-lg shadow-sm">
+                <h3 class="font-bold text-blue-800 mb-2">🏗️ Soldadura Seca (Hiperbárica)</h3>
+                <p class="text-sm text-gray-700">En cámara presurizada sin agua. Alta calidad, certificable, para trabajos críticos. Profundidad: hasta 300m+.</p>
+              </div>
+            </div>
+            <p class="text-gray-800">
+              <strong>Precio en Cádiz 2025:</strong> 120-180 €/h (húmeda) | 250-400 €/h (seca) + montaje cámara.
+              <strong>Aplicaciones:</strong> Reparación cascos, hélices, estructuras portuarias, plataformas offshore.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="py-12 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">
+            Comparación: Soldadura Húmeda vs Soldadura Seca Hiperbárica
+          </h2>
+
+          <div class="overflow-x-auto shadow-lg rounded-lg">
+            <table class="w-full bg-white">
+              <thead class="bg-blue-900 text-white">
+                <tr>
+                  <th class="px-6 py-4 text-left">Característica</th>
+                  <th class="px-6 py-4 text-left">Soldadura Húmeda</th>
+                  <th class="px-6 py-4 text-left">Soldadura Seca (Hiperbárica)</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200">
+                <tr>
+                  <td class="px-6 py-4 font-semibold text-gray-900">Entorno</td>
+                  <td class="px-6 py-4 text-gray-700">Contacto directo con agua</td>
+                  <td class="px-6 py-4 text-gray-700">Cámara presurizada seca</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="px-6 py-4 font-semibold text-gray-900">Profundidad máxima</td>
+                  <td class="px-6 py-4 text-gray-700">30-40 metros</td>
+                  <td class="px-6 py-4 text-gray-700">300+ metros (equipos especializados)</td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-4 font-semibold text-gray-900">Calidad soldadura</td>
+                  <td class="px-6 py-4 text-gray-700">Media-baja (enfriamiento rápido)</td>
+                  <td class="px-6 py-4 text-gray-700">Alta (comparable a tierra)</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="px-6 py-4 font-semibold text-gray-900">Velocidad</td>
+                  <td class="px-6 py-4 text-green-700 font-semibold">Rápida (2-6 horas típico)</td>
+                  <td class="px-6 py-4 text-orange-700">Lenta (montaje cámara + soldadura)</td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-4 font-semibold text-gray-900">Precio Cádiz 2025</td>
+                  <td class="px-6 py-4 text-green-700 font-semibold">120-180 €/hora</td>
+                  <td class="px-6 py-4 text-gray-700">250-400 €/h + 500-1,200 € cámara</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="px-6 py-4 font-semibold text-gray-900">Durabilidad</td>
+                  <td class="px-6 py-4 text-gray-700">2-5 años (temporal)</td>
+                  <td class="px-6 py-4 text-green-700 font-semibold">10-20+ años (permanente)</td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-4 font-semibold text-gray-900">Certificable</td>
+                  <td class="px-6 py-4 text-gray-700">No (inspección limitada)</td>
+                  <td class="px-6 py-4 text-green-700 font-semibold">Sí (Lloyd's, DNV GL, ABS)</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="px-6 py-4 font-semibold text-gray-900">Ideal para</td>
+                  <td class="px-6 py-4 text-gray-700">Emergencias, reparaciones temporales</td>
+                  <td class="px-6 py-4 text-gray-700">Trabajos críticos, offshore, permanentes</td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-4 font-semibold text-gray-900">Materiales</td>
+                  <td class="px-6 py-4 text-gray-700">Acero carbono, inox (limitado)</td>
+                  <td class="px-6 py-4 text-green-700">Todos (incluyendo aluminio marino)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="mt-6 bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded-r-lg">
+            <p class="text-sm text-yellow-900">
+              <strong>💡 Recomendación:</strong> Soldadura húmeda para emergencias y reparaciones no críticas. Soldadura seca hiperbárica para buques comerciales, estructuras offshore y cuando se requiera certificación naviera.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <FAQSection
+            title="15 Preguntas Frecuentes sobre Soldadura Subacuática (Respondidas por Expertos)"
+            {faqs}
+            includeSchema={true}
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-12 bg-gradient-to-r from-blue-900 to-blue-700 text-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold mb-4">
+          ¿Necesitas Soldadura Subacuática en Cádiz?
+        </h2>
+        <p class="text-xl text-blue-100 mb-6 max-w-2xl mx-auto">
+          Presupuesto gratuito en menos de 2 horas. Servicio de emergencia 24/7 en puerto de Cádiz.
+        </p>
+        <div class="flex flex-col md:flex-row gap-4 justify-center">
+          <CallToAction variant="emergency" size="xl" text="LLAMAR AHORA 24/7" />
+          <a href="/contacto" class="bg-white text-blue-900 hover:bg-blue-50 px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
+            Solicitar Presupuesto Gratis
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Links -->
+    <section class="py-12 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-2xl font-bold text-center text-gray-900 mb-8">
+            Más Información sobre Soldadura Subacuática
+          </h2>
+          <RelatedLinks currentPage="que-es-soldadura-subacuatica-completo" type="soldadura" limit={8} />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

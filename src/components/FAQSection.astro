@@ -1,0 +1,61 @@
+---
+interface FAQ {
+  question: string;
+  answer: string;
+  category?: string;
+}
+
+interface Props {
+  title?: string;
+  faqs: FAQ[];
+  includeSchema?: boolean;
+  className?: string;
+}
+
+const {
+  title = "Preguntas Frecuentes",
+  faqs,
+  includeSchema = true,
+  className = ""
+} = Astro.props;
+---
+
+{includeSchema && (
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  })} />
+)}
+
+<section class={`bg-white rounded-xl shadow-lg p-8 ${className}`}>
+  <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">
+    {title}
+  </h2>
+
+  <div class="space-y-6 max-w-4xl mx-auto">
+    {faqs.map((faq, index) => (
+      <div class="border-b border-gray-200 pb-6 last:border-b-0">
+        {faq.category && (
+          <span class="inline-block px-3 py-1 bg-blue-100 text-blue-700 text-xs font-semibold rounded-full mb-2">
+            {faq.category}
+          </span>
+        )}
+        <h3 class="text-xl font-bold text-gray-900 mb-3 flex items-start">
+          <span class="text-blue-600 mr-3 mt-1">Q{index + 1}.</span>
+          <span>{faq.question}</span>
+        </h3>
+        <div class="ml-9 prose prose-blue max-w-none">
+          <p class="text-gray-700 leading-relaxed" set:html={faq.answer} />
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

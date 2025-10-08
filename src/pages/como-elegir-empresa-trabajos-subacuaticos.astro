@@ -1,0 +1,394 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import FAQSection from '../components/FAQSection.astro';
+import CallToAction from '../components/CallToAction.astro';
+
+const comparisonFAQs = [
+  {
+    question: "¿Qué certificaciones debe tener una empresa de soldadura subacuática?",
+    answer: "Una empresa profesional de soldadura subacuática debe contar con:<br><br><strong>Certificaciones de soldadura:</strong><br>• <strong>AWS D3.6</strong>: American Welding Society - estándar internacional para soldadura submarina<br>• <strong>EN ISO 15618</strong>: Certificación europea para soldadores hiperbáricos<br><br><strong>Certificaciones de buceo:</strong><br>• <strong>IMCA</strong> (International Marine Contractors Association)<br>• <strong>ACDE</strong> (Association of Commercial Diving Educators)<br>• Certificación de buceo comercial nacional<br><br><strong>Homologaciones navieras:</strong><br>• Lloyd's Register, DNV GL, ABS, Bureau Veritas (para trabajos en buques comerciales)<br><br>⚠️ <strong>Señal de alarma:</strong> Si no pueden mostrar certificados vigentes, busca otra empresa.",
+    category: "Certificaciones"
+  },
+  {
+    question: "¿Cómo verificar la experiencia real de una empresa de trabajos subacuáticos?",
+    answer: "<strong>Indicadores de experiencia real:</strong><br><br>✅ <strong>Años en el mercado:</strong> Mínimo 5 años operando (las empresas serias sobreviven)<br>✅ <strong>Proyectos verificables:</strong> Pide referencias de trabajos similares (con datos de contacto del cliente)<br>✅ <strong>Presencia física:</strong> Base operativa real en puerto, no solo dirección postal<br>✅ <strong>Equipos propios:</strong> Cámara hiperbárica, compresores, sistemas de corte (no alquilados)<br>✅ <strong>Personal fijo:</strong> Equipo estable vs. subcontratistas ocasionales<br>✅ <strong>Registro mercantil:</strong> Empresa legalmente constituida (consultar en BORME)<br>✅ <strong>Seguro RC profesional:</strong> Cobertura mínima 1-3 millones € para trabajos comerciales<br><br>❌ <strong>Evitar:</strong> Empresas sin trayectoria verificable, autónomos sin seguro, promesas de precios 50% más bajos que la competencia.",
+    category: "Experiencia"
+  },
+  {
+    question: "¿Qué preguntas hacer antes de contratar soldadura subacuática?",
+    answer: "<strong>Checklist de preguntas clave:</strong><br><br>1. <strong>¿Qué técnica recomiendan para mi caso (húmeda vs. seca)?</strong> - Deben explicar por qué<br>2. <strong>¿Tienen certificaciones AWS D3.6 / EN ISO 15618 vigentes?</strong> - Pedir copia<br>3. <strong>¿Cuántos trabajos similares han hecho en los últimos 12 meses?</strong> - Con referencias<br>4. <strong>¿Qué incluye exactamente el presupuesto?</strong> - Desglose detallado, sin letra pequeña<br>5. <strong>¿Ofrecen garantía? ¿De cuánto tiempo?</strong> - Húmeda típicamente 6-12 meses, seca 2-5 años<br>6. <strong>¿Qué tipo de inspección post-soldadura incluyen?</strong> - Visual básica vs. END certificada<br>7. <strong>¿Tiempo estimado de ejecución?</strong> - Realista, no promesas imposibles<br>8. <strong>¿Tienen seguro de responsabilidad civil?</strong> - Cobertura y límites<br>9. <strong>¿Quién será el soldador asignado? ¿Certificaciones personales?</strong><br>10. <strong>¿Entregan informe técnico? ¿Con qué detalle?</strong>",
+    category: "Contratación"
+  },
+  {
+    question: "¿Cuánto debería costar la soldadura subacuática en Cádiz?",
+    answer: "<strong>Recomendaciones sobre precios Cádiz 2025:</strong><br><br>La soldadura húmeda es más económica que la soldadura seca hiperbárica. La técnica seca requiere montaje de cámara hiperbárica, lo que incrementa la inversión.<br><br>⚠️ <strong>Señales de alerta en precios:</strong><br><br>🔴 <strong>Demasiado barato:</strong><br>• Probable falta de certificaciones<br>• Equipos obsoletos o inadecuados<br>• Sin seguro RC profesional<br>• Calidad cuestionable<br><br>🔴 <strong>Demasiado caro:</strong><br>• Sobreprecios injustificados<br>• Buscar 2-3 presupuestos adicionales<br><br>✅ <strong>Precio justo:</strong> Presupuesto detallado transparente + certificaciones verificables + comparar varias ofertas.",
+    category: "Precios"
+  },
+  {
+    question: "¿Qué diferencia a una empresa profesional de soldadura subacuática de un autónomo?",
+    answer: "<strong>Comparación: Empresa Profesional vs. Autónomo</strong><br><br><strong>Empresa Profesional:</strong><br>✅ Equipo de múltiples soldadores/buzos (disponibilidad garantizada)<br>✅ Equipos propios certificados (cámara hiperbárica, compresores industriales)<br>✅ Seguro RC con cobertura adecuada + seguro de trabajadores<br>✅ Capacidad para proyectos grandes y complejos<br>✅ Respaldo legal y garantías formales<br>✅ Soporte de superficie (tender, supervisor)<br>✅ Respuesta 24/7 con equipo de guardia<br><br><strong>Autónomo/Freelance:</strong><br>⚠️ Dependencia de una sola persona (si está ocupado/enfermo, no hay servicio)<br>⚠️ Equipos limitados o alquilados<br>⚠️ Seguro RC típicamente menor<br>⚠️ Solo trabajos pequeños-medianos<br>⚠️ Garantías menos sólidas<br><br><strong>Recomendación:</strong> Autónomo OK para reparaciones pequeñas embarcaciones recreativas. Empresa profesional OBLIGATORIO para buques comerciales, certificaciones navieras, trabajos offshore.",
+    category: "Tipos de Proveedor"
+  },
+  {
+    question: "¿Qué garantías debería ofrecer una empresa de soldadura subacuática?",
+    answer: "<strong>Garantías estándar del sector 2025:</strong><br><br><strong>Soldadura húmeda:</strong><br>• <strong>Garantía mínima:</strong> 6-12 meses contra defectos de soldadura<br>• <strong>Cobertura:</strong> Refuerzo/reparación sin coste si falla la soldadura (no por nuevo impacto)<br>• <strong>Exclusiones:</strong> Daños por terceros, corrosión no relacionada, impactos posteriores<br><br><strong>Soldadura seca hiperbárica:</strong><br>• <strong>Garantía mínima:</strong> 2-3 años (hasta 5 años en trabajos certificados)<br>• <strong>Cobertura:</strong> Soldadura + inspección END<br>• <strong>Certificación:</strong> Homologación naviera válida durante toda la garantía<br><br><strong>Qué debe incluir por escrito:</strong><br>✅ Duración exacta (fechas claras)<br>✅ Qué cubre y qué NO cubre<br>✅ Procedimiento de reclamación<br>✅ Tiempo de respuesta ante reclamación (máximo 48-72h)<br>✅ Firma y sello empresa<br><br>🚨 <strong>Sin garantía escrita = No contratar</strong>",
+    category: "Garantías"
+  },
+  {
+    question: "¿Es mejor una empresa local de Cádiz o una de fuera?",
+    answer: "<strong>Ventajas empresa local Cádiz:</strong><br><br>✅ <strong>Respuesta rápida emergencias:</strong> Mucho más rápida que empresa foránea<br>✅ <strong>Sin costes desplazamiento:</strong> Ahorro significativo en traslado + dietas<br>✅ <strong>Conocimiento local:</strong> Condiciones bahía Cádiz, mareas, corrientes, fondeo<br>✅ <strong>Disponibilidad inmediata:</strong> Base permanente en puerto<br>✅ <strong>Seguimiento post-reparación:</strong> Inspección gratuita 1-3 meses después<br>✅ <strong>Relación continua:</strong> Contratos mantenimiento, descuentos fidelidad<br><br><strong>Empresa foránea puede ser opción si:</strong><br>• Trabajo muy especializado (plataformas offshore profundas > 100m)<br>• Certificación específica que locales no tienen<br>• Proyecto grande que justifica desplazamiento<br><br><strong>Para 90% trabajos en Cádiz:</strong> Empresa local es mejor opción (coste-beneficio + rapidez).",
+    category: "Ubicación"
+  },
+  {
+    question: "¿Cómo saber si necesito soldadura húmeda o seca?",
+    answer: "<strong>Guía de decisión: Húmeda vs. Seca</strong><br><br><strong>Soldadura HÚMEDA (más económica) es suficiente si:</strong><br>✅ Embarcación recreativa (velero, yate privado)<br>✅ Reparación temporal hasta próxima varada programada<br>✅ Urgencia alta (necesito navegar mañana)<br>✅ Presupuesto limitado<br>✅ Daño no crítico estructuralmente<br>✅ Material: acero al carbono simple<br><br><strong>Soldadura SECA HIPERBÁRICA (mayor inversión) es OBLIGATORIA si:</strong><br>🔴 Buque comercial que requiere certificación Class<br>🔴 Reparación permanente estructural crítica<br>🔴 Material: aluminio marino, acero inoxidable 316L, súper duplex<br>🔴 Plataforma offshore o infraestructura portuaria<br>🔴 Aseguradora exige certificación<br>🔴 Profundidad > 30 metros<br><br><strong>Si dudas:</strong> Pide evaluación gratuita. Empresas serias recomendarán la técnica adecuada (no siempre la más cara).",
+    category: "Técnica Adecuada"
+  },
+  {
+    question: "¿Qué equipos debe tener una empresa profesional de soldadura subacuática?",
+    answer: "<strong>Equipamiento esencial para trabajos profesionales:</strong><br><br><strong>Equipos de soldadura:</strong><br>• Transformadores DC 400-600A para soldadura húmeda<br>• Porta-electrodos submarinos aislados<br>• Cámara hiperbárica para soldadura seca (propia, no alquilada)<br>• Equipos TIG/MIG subacuáticos<br><br><strong>Equipos de buceo:</strong><br>• Compresores alta presión (mínimo 2 para redundancia)<br>• Equipos de buceo superficie (hookah, narguile)<br>• Trajes secos/húmedos profesionales<br>• Sistema de comunicaciones buzo-superficie (cable + radio backup)<br><br><strong>Inspección:</strong><br>• Cámaras submarinas HD<br>• Iluminación submarina profesional (> 3,000 lúmenes)<br>• Equipos END portátiles (ultrasonidos, líquidos penetrantes)<br><br><strong>Seguridad:</strong><br>• Sistema de rescate buzo<br>• Botiquín hiperbárico<br>• Oxígeno terapéutico<br><br>⚠️ Pide ver fotos equipos o visita base si es posible.",
+    category: "Equipamiento"
+  },
+  {
+    question: "¿Qué incluye un presupuesto completo de soldadura subacuática?",
+    answer: "<strong>Desglose presupuesto profesional (sin letra pequeña):</strong><br><br><strong>Servicios incluidos:</strong><br>✅ Inspección pre-soldadura (evaluación + fotos)<br>✅ Desplazamiento (radio 15-20 millas desde base)<br>✅ Limpieza y preparación superficie<br>✅ Proceso soldadura completo<br>✅ Consumibles estándar (electrodos, gases básicos)<br>✅ Enfriamiento controlado<br>✅ Verificación estanqueidad visual<br>✅ Informe fotográfico<br><br><strong>Servicios adicionales (deben aparecer separados):</strong><br>• Inspección END certificada: Coste adicional<br>• Informe técnico naviera/aseguradora: Coste adicional<br>• Desplazamiento fuera de radio base: Según distancia<br>• Montaje cámara hiperbárica: Coste adicional (seca)<br>• Gases especiales (argón puro aluminio): Coste adicional<br>• Trabajo nocturno/festivo: Incremento en tarifa<br><br><strong>Presupuesto debe indicar:</strong> Precio cerrado o estimación horas, validez (30 días típico), condiciones pago, garantía ofrecida.",
+    category: "Presupuesto"
+  }
+];
+---
+
+<Layout
+  title="Cómo Elegir Empresa de Trabajos Subacuáticos | Guía Completa 2025"
+  description="Guía completa para elegir empresa de soldadura subacuática: certificaciones clave (AWS D3.6, ISO 15618), precios justos Cádiz 2025, 10 preguntas esenciales, señales de alarma. Evita estafas."
+  keywords="cómo elegir empresa soldadura subacuática, mejores empresas trabajos subacuáticos Cádiz, certificaciones soldadura submarina, precios justos soldadura bajo agua, checklist contratar buzos industriales"
+>
+  <Header />
+
+  <main class="bg-gray-50">
+    <!-- Hero -->
+    <section class="bg-gradient-to-r from-purple-900 to-purple-700 text-white py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <div class="inline-block bg-yellow-500 text-purple-900 px-4 py-2 rounded-full font-bold text-sm mb-4">
+            📋 GUÍA DE CONTRATACIÓN 2025
+          </div>
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">
+            Cómo Elegir una Empresa de Trabajos Subacuáticos
+          </h1>
+          <p class="text-xl md:text-2xl text-purple-100 mb-6">
+            10 Criterios Clave para No Equivocarte | Evita Estafas y Trabajos Deficientes
+          </p>
+          <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 max-w-3xl mx-auto text-left">
+            <p class="text-purple-100 leading-relaxed">
+              Contratar soldadura subacuática es una decisión crítica que afecta la seguridad de tu embarcación y tu bolsillo. Esta guía te enseña qué verificar antes de contratar, basada en más de 20 años de experiencia en el sector.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Checklist -->
+    <section class="py-12 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">
+            ✅ Checklist Rápido: Qué Verificar en 5 Minutos
+          </h2>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <!-- Verificaciones Esenciales -->
+            <div class="bg-green-50 border-2 border-green-600 rounded-xl p-6">
+              <h3 class="text-xl font-bold text-green-800 mb-4 flex items-center">
+                <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                Verificaciones Obligatorias
+              </h3>
+              <ul class="space-y-3 text-sm text-gray-800">
+                <li class="flex items-start">
+                  <span class="text-green-600 font-bold mr-2">1.</span>
+                  <span><strong>Certificaciones AWS D3.6 / EN ISO 15618</strong> vigentes (pedir copia)</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-600 font-bold mr-2">2.</span>
+                  <span><strong>Empresa legalmente constituida</strong> (CIF, registro mercantil)</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-600 font-bold mr-2">3.</span>
+                  <span><strong>Seguro RC profesional</strong> con cobertura adecuada (pedir certificado vigencia)</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-600 font-bold mr-2">4.</span>
+                  <span><strong>Presupuesto por escrito</strong> detallado con desglose completo</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-600 font-bold mr-2">5.</span>
+                  <span><strong>Referencias verificables</strong> de trabajos similares (con contacto)</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-600 font-bold mr-2">6.</span>
+                  <span><strong>Base física en puerto</strong> (no solo móvil/email)</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-600 font-bold mr-2">7.</span>
+                  <span><strong>Garantía por escrito</strong> (mínimo 6 meses húmeda, 2 años seca)</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Señales de Alarma -->
+            <div class="bg-red-50 border-2 border-red-600 rounded-xl p-6">
+              <h3 class="text-xl font-bold text-red-800 mb-4 flex items-center">
+                <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+                </svg>
+                Señales de Alarma (🚨 No Contratar)
+              </h3>
+              <ul class="space-y-3 text-sm text-gray-800">
+                <li class="flex items-start">
+                  <span class="text-red-600 font-bold mr-2">🔴</span>
+                  <span><strong>No muestran certificaciones</strong> ("las tengo en casa", "te las envío luego")</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-red-600 font-bold mr-2">🔴</span>
+                  <span><strong>Precios sospechosamente más baratos</strong> que competencia</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-red-600 font-bold mr-2">🔴</span>
+                  <span><strong>Piden pago 100% adelantado</strong> antes de empezar (máximo razonable: 30-50%)</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-red-600 font-bold mr-2">🔴</span>
+                  <span><strong>Sin base física</strong> verificable (solo móvil, dirección genérica)</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-red-600 font-bold mr-2">🔴</span>
+                  <span><strong>Presupuesto verbal</strong> o muy vago (sin cifras concretas)</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-red-600 font-bold mr-2">🔴</span>
+                  <span><strong>Promesas irreales</strong> ("reparamos cualquier cosa", "garantía 10 años húmeda")</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-red-600 font-bold mr-2">🔴</span>
+                  <span><strong>Rechazan inspección pre-trabajo</strong> ("no es necesario", "confianza mutua")</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison Table: Professional vs Amateur -->
+    <section class="py-12 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">
+            Empresa Profesional vs. Proveedor No Cualificado
+          </h2>
+
+          <div class="overflow-x-auto shadow-xl rounded-lg">
+            <table class="w-full bg-white">
+              <thead class="bg-purple-900 text-white">
+                <tr>
+                  <th class="px-6 py-4 text-left">Criterio</th>
+                  <th class="px-6 py-4 text-left">✅ Empresa Profesional</th>
+                  <th class="px-6 py-4 text-left">❌ Proveedor No Cualificado</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200">
+                <tr>
+                  <td class="px-6 py-4 font-semibold text-gray-900">Certificaciones</td>
+                  <td class="px-6 py-4 text-green-700">AWS D3.6, ISO 15618, IMCA vigentes + copias disponibles</td>
+                  <td class="px-6 py-4 text-red-700">Sin certificaciones o caducadas. Evasivas al pedirlas</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="px-6 py-4 font-semibold text-gray-900">Experiencia</td>
+                  <td class="px-6 py-4 text-green-700">> 5 años, 100+ trabajos documentados, referencias verificables</td>
+                  <td class="px-6 py-4 text-red-700">< 2 años, pocas referencias o no verificables</td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-4 font-semibold text-gray-900">Precio Cádiz 2025</td>
+                  <td class="px-6 py-4 text-green-700">Presupuesto transparente y detallado</td>
+                  <td class="px-6 py-4 text-red-700">Precio sospechosamente bajo o sin desglose</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="px-6 py-4 font-semibold text-gray-900">Equipos</td>
+                  <td class="px-6 py-4 text-green-700">Propios, certificados, mantenidos. Cámara hiperbárica propia</td>
+                  <td class="px-6 py-4 text-red-700">Alquilados, obsoletos, sin certificados de mantenimiento</td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-4 font-semibold text-gray-900">Seguro RC</td>
+                  <td class="px-6 py-4 text-green-700">Cobertura adecuada + certificado vigencia mostrado</td>
+                  <td class="px-6 py-4 text-red-700">Sin seguro o cobertura insuficiente</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="px-6 py-4 font-semibold text-gray-900">Presupuesto</td>
+                  <td class="px-6 py-4 text-green-700">Escrito, detallado, desglosado, validez 30 días, firmado</td>
+                  <td class="px-6 py-4 text-red-700">Verbal, vago, "depende", sin firma ni CIF</td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-4 font-semibold text-gray-900">Garantía</td>
+                  <td class="px-6 py-4 text-green-700">Húmeda: 6-12 meses | Seca: 2-5 años (por escrito)</td>
+                  <td class="px-6 py-4 text-red-700">Sin garantía o verbal ("no te preocupes, si falla vuelvo")</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="px-6 py-4 font-semibold text-gray-900">Inspección Previa</td>
+                  <td class="px-6 py-4 text-green-700">Siempre incluida, con fotos/vídeo, informe escrito</td>
+                  <td class="px-6 py-4 text-red-700">"No hace falta", "Lo veo cuando baje", "Confía"</td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-4 font-semibold text-gray-900">Base Operativa</td>
+                  <td class="px-6 py-4 text-green-700">Oficina/taller en puerto, visitable, teléfono fijo + móvil</td>
+                  <td class="px-6 py-4 text-red-700">Solo móvil, dirección vaga, no visitable</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="px-6 py-4 font-semibold text-gray-900">Personal</td>
+                  <td class="px-6 py-4 text-green-700">Equipo fijo con certificaciones individuales verificables</td>
+                  <td class="px-6 py-4 text-red-700">Subcontratistas variables, sin certificaciones claras</td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-4 font-semibold text-gray-900">Informe Final</td>
+                  <td class="px-6 py-4 text-green-700">Fotográfico incluido, técnico disponible (coste adicional si aplica)</td>
+                  <td class="px-6 py-4 text-red-700">Sin informe o solo verbal ("Todo OK")</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="px-6 py-4 font-semibold text-gray-900">Facturación</td>
+                  <td class="px-6 py-4 text-green-700">Factura legal con IVA, CIF, datos completos</td>
+                  <td class="px-6 py-4 text-red-700">Solo recibo, "en negro más barato", sin IVA</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10 Questions to Ask -->
+    <section class="py-12 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">
+            Las 10 Preguntas Que Debes Hacer Antes de Contratar
+          </h2>
+
+          <div class="space-y-6">
+            {[
+              {
+                num: 1,
+                question: "¿Tienen certificaciones AWS D3.6 o EN ISO 15618 vigentes?",
+                why: "Estas son las certificaciones internacionales estándar para soldadura subacuática. Sin ellas, el trabajo no es profesional.",
+                answer: "Deben mostrar copias de certificados con fecha de vigencia. Si no pueden, descarta la empresa."
+              },
+              {
+                num: 2,
+                question: "¿Qué técnica recomiendan para mi caso: húmeda o seca?",
+                why: "Una empresa seria recomienda según necesidad real, no según lo más caro o rápido.",
+                answer: "Deben explicar ventajas/desventajas de cada técnica para tu caso específico."
+              },
+              {
+                num: 3,
+                question: "¿Cuántos trabajos similares han realizado en el último año?",
+                why: "Experiencia reciente en casos similares = mayor probabilidad de éxito.",
+                answer: "Pide 2-3 referencias con nombre cliente y contacto verificable."
+              },
+              {
+                num: 4,
+                question: "¿Qué incluye exactamente el presupuesto?",
+                why: "Evita sorpresas de costes ocultos (desplazamiento, inspección, materiales).",
+                answer: "Debe desglosar: horas soldadura, consumibles, inspección, desplazamiento, extras opcionales."
+              },
+              {
+                num: 5,
+                question: "¿Qué garantía ofrecen y qué cubre exactamente?",
+                why: "Garantía = respaldo ante defectos. Sin garantía escrita = riesgo total para ti.",
+                answer: "Mínimo 6 meses húmeda, 2 años seca. Debe especificar qué cubre (defectos soldadura) y qué NO (nuevos impactos)."
+              },
+              {
+                num: 6,
+                question: "¿Tienen seguro de responsabilidad civil? ¿De cuánto?",
+                why: "Si causan daños a tu barco o terceros, el seguro cubre. Sin seguro = tú pagas todo.",
+                answer: "Cobertura adecuada para el tipo de trabajo. Pedir certificado de vigencia."
+              },
+              {
+                num: 7,
+                question: "¿Quién será el soldador asignado? ¿Certificaciones personales?",
+                why: "La empresa puede estar certificada, pero necesitas saber quién hará el trabajo real.",
+                answer: "Nombre soldador + certificación personal AWS/ISO + años experiencia."
+              },
+              {
+                num: 8,
+                question: "¿Cuánto tiempo estimado tardará el trabajo completo?",
+                why: "Tiempo realista evita sorpresas en planificación y costes operativos.",
+                answer: "Rango realista (ej: 4-6 horas). Desconfía de promesas irrealistas ('en 1 hora lo tengo')."
+              },
+              {
+                num: 9,
+                question: "¿Qué tipo de inspección post-soldadura incluyen?",
+                why: "Inspección verifica calidad. Visual básica OK para recreativo, END certificada para comercial.",
+                answer: "Mínimo: inspección visual + fotos. Opcional: END ultrasonidos/líquidos penetrantes (coste adicional)."
+              },
+              {
+                num: 10,
+                question: "¿Pueden mostrarme su base de operaciones en el puerto?",
+                why: "Base física real = empresa establecida. Solo móvil/email = posible temporal o fraudulenta.",
+                answer: "Empresas serias tienen taller/oficina visitable. Si se niegan, señal de alarma."
+              }
+            ].map((item) => (
+              <div class="bg-purple-50 border-l-4 border-purple-600 rounded-r-lg p-6">
+                <h3 class="text-lg font-bold text-purple-900 mb-2">
+                  {item.num}. {item.question}
+                </h3>
+                <p class="text-sm text-gray-700 mb-2">
+                  <strong class="text-purple-700">Por qué importa:</strong> {item.why}
+                </p>
+                <p class="text-sm text-gray-800">
+                  <strong class="text-green-700">Respuesta esperada:</strong> {item.answer}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <FAQSection
+            title="10 Preguntas Frecuentes sobre Cómo Elegir Empresa de Trabajos Subacuáticos"
+            faqs={comparisonFAQs}
+            includeSchema={true}
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-12 bg-gradient-to-r from-purple-900 to-purple-700 text-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold mb-4">
+          Empresa Certificada en Cádiz con +20 Años Experiencia
+        </h2>
+        <p class="text-xl text-purple-100 mb-6 max-w-2xl mx-auto">
+          ✅ AWS D3.6 & ISO 15618 vigentes | ✅ Seguro RC completo | ✅ Base permanente puerto Cádiz | ✅ Garantía escrita
+        </p>
+        <div class="flex flex-col md:flex-row gap-4 justify-center">
+          <CallToAction variant="emergency" size="xl" text="SOLICITAR PRESUPUESTO GRATIS" />
+          <a href="/certificaciones-navieras" class="bg-white text-purple-900 hover:bg-purple-50 px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
+            Ver Certificaciones
+          </a>
+        </div>
+        <p class="text-sm text-purple-200 mt-4">
+          📄 Presupuesto detallado en 2 horas • 🛡️ Garantía por escrito • 📞 Visita nuestra base en puerto
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

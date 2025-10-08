@@ -1,0 +1,383 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import FAQSection from '../components/FAQSection.astro';
+import CallToAction from '../components/CallToAction.astro';
+
+const differencesFAQs = [
+  {
+    question: "¿Cuál es la principal diferencia entre soldadura húmeda y seca subacuática?",
+    answer: "La <strong>diferencia fundamental</strong> es el entorno de trabajo:<br><br><strong>Soldadura Húmeda:</strong><br>• El soldador trabaja <strong>directamente en contacto con el agua</strong><br>• Usa electrodos especiales impermeabilizados<br>• El arco eléctrico crea una burbuja de gas temporal<br>• Enfriamiento muy rápido por el agua circundante<br>• Proceso más rápido pero menor calidad<br><br><strong>Soldadura Seca (Hiperbárica):</strong><br>• Se monta una <strong>cámara presurizada alrededor de la zona</strong> a soldar<br>• Se evacúa el agua de la cámara<br>• Soldadura se realiza en ambiente seco (aire/gas inerte)<br>• Condiciones similares a soldar en tierra<br>• Proceso más lento (montaje cámara) pero alta calidad<br><br><strong>Analogía:</strong> Húmeda es como reparar un coche bajo la lluvia. Seca es como meterlo en un garaje antes de reparar.",
+    category: "Diferencia Principal"
+  },
+  {
+    question: "¿Cuándo usar soldadura húmeda y cuándo soldadura seca?",
+    answer: "<strong>USA SOLDADURA HÚMEDA cuando:</strong><br><br>✅ Es una <strong>emergencia</strong> (vía de agua, necesitas navegar YA)<br>✅ Reparación <strong>temporal</strong> hasta próxima varada programada<br>✅ Presupuesto <strong>ajustado</strong> (húmeda cuesta 40-60% menos)<br>✅ Material simple: <strong>acero al carbono</strong><br>✅ Embarcación <strong>recreativa</strong> sin certificación requerida<br>✅ Profundidad < 30 metros<br>✅ Daño <strong>no crítico</strong> estructuralmente<br><br><strong>USA SOLDADURA SECA cuando:</strong><br><br>✅ <strong>Buque comercial</strong> que requiere certificación Class<br>✅ Reparación <strong>permanente</strong> (10-20 años durabilidad)<br>✅ Material especial: <strong>aluminio marino, inox 316L, súper duplex</strong><br>✅ <strong>Plataforma offshore</strong> o infraestructura crítica<br>✅ Aseguradora exige <strong>certificación</strong><br>✅ Profundidad > 30 metros<br>✅ Trabajo <strong>estructural crítico</strong> (quilla, mamparos principales)<br><br><strong>Regla simple:</strong> Húmeda para rápido y económico. Seca para calidad y permanente.",
+    category: "Aplicaciones"
+  },
+  {
+    question: "¿Qué calidad de soldadura ofrece cada técnica?",
+    answer: "<strong>Comparación de calidad (escala 1-10):</strong><br><br><strong>Soldadura Húmeda: 5-6/10</strong><br>• Porosidad: <strong>Alta</strong> (burbujas hidrógeno del agua)<br>• Penetración: <strong>Media-baja</strong> (enfriamiento rápido)<br>• Fisuras: <strong>Riesgo moderado</strong> (enfriamiento desigual)<br>• Inspección: <strong>Limitada</strong> (visual bajo agua)<br>• Resistencia mecánica: <strong>70-80%</strong> de soldadura en tierra<br>• Certificable: <strong>NO</strong> para trabajos críticos<br><br><strong>Soldadura Seca Hiperbárica: 8-9/10</strong><br>• Porosidad: <strong>Baja</strong> (atmósfera controlada)<br>• Penetración: <strong>Alta</strong> (condiciones similares tierra)<br>• Fisuras: <strong>Riesgo bajo</strong> (enfriamiento controlado)<br>• Inspección: <strong>Completa</strong> (END ultrasonidos, radiografías)<br>• Resistencia mecánica: <strong>90-95%</strong> de soldadura en tierra<br>• Certificable: <strong>SÍ</strong> (Lloyd's, DNV GL, ABS)<br><br><strong>Soldadura en Tierra (referencia): 10/10</strong><br><br><strong>Conclusión:</strong> Seca hiperbárica logra 90% calidad de tierra. Húmeda 70% pero suficiente para muchas aplicaciones.",
+    category: "Calidad"
+  },
+  {
+    question: "¿Cuánto cuesta soldadura húmeda vs. seca en Cádiz 2025?",
+    answer: "<strong>Comparación precios Cádiz 2025:</strong><br><br><strong>Soldadura Húmeda:</strong><br>• Tarifa base: <strong>120-180 €/hora</strong><br>• Sin coste montaje (empieza inmediatamente)<br>• Ejemplo reparación típica: 3 horas × 150 €/h = <strong>450 € total</strong><br><br><strong>Soldadura Seca Hiperbárica:</strong><br>• Tarifa base: <strong>250-400 €/hora</strong><br>• Montaje cámara: <strong>500-1,200 €</strong> (una vez, al inicio)<br>• Ejemplo reparación típica: 800 € montaje + (4h × 320 €/h) = <strong>2,080 € total</strong><br><br><strong>Relación coste:</strong> Seca cuesta 2.5-4x más que húmeda<br><br><strong>¿Vale la pena pagar más?</strong><br><br>Para <strong>embarcación recreativa, reparación temporal:</strong><br>❌ Húmeda suficiente (450 € vs. 2,080 €) → Ahorro 1,630 €<br><br>Para <strong>buque comercial, reparación permanente:</strong><br>✅ Seca obligatoria<br>• Durabilidad: 15 años vs. 3 años húmeda<br>• Coste amortizado: 139 €/año vs. 150 €/año<br>• Certificable (requisito legal)<br>• Sin paradas por re-reparaciones<br><br><strong>ROI (Return on Investment):</strong> Seca se amortiza en 5-7 años para trabajos estructurales.",
+    category: "Precios"
+  },
+  {
+    question: "¿Cuánto duran las reparaciones húmedas vs. secas?",
+    answer: "<strong>Durabilidad según técnica y ambiente:</strong><br><br><strong>Soldadura Húmeda:</strong><br>• Ambiente marino (bahía Cádiz): <strong>2-5 años</strong><br>• Agua dulce (embalse): <strong>4-8 años</strong> (menor corrosión)<br>• Con protección catódica: <strong>+30-40%</strong> durabilidad<br>• Sin mantenimiento: <strong>2-3 años</strong><br><br><strong>Soldadura Seca Hiperbárica:</strong><br>• Ambiente marino: <strong>10-20 años</strong><br>• Agua dulce: <strong>15-25 años</strong><br>• Con protección catódica: <strong>+40-60%</strong> durabilidad<br>• Buques comerciales (mantenimiento profesional): <strong>20-30 años</strong><br><br><strong>Factores que reducen durabilidad:</strong><br>❌ Oleaje/corrientes fuertes (fatiga mecánica): -30%<br>❌ Agua muy salina (> 40 g/L): -20%<br>❌ Sin anodos sacrificio: -40%<br>❌ Temperatura alta (> 25°C agua): -15% (corrosión acelerada)<br><br><strong>Comparación práctica:</strong><br>• Húmeda: Reparar cada 3-4 años × 500 € = 1,500 € en 12 años<br>• Seca: Reparar 1 vez × 2,000 € = 2,000 € en 12 años + tranquilidad<br><br><strong>Para veleros/yates privados:</strong> Húmeda OK si haces varada anual (aprovechar para revisar)<br><strong>Para buques comerciales:</strong> Seca obligatorio (paradas cuestan 5k-50k €/día)",
+    category: "Durabilidad"
+  },
+  {
+    question: "¿Qué materiales se pueden soldar con cada técnica?",
+    answer: "<strong>Compatibilidad de materiales:</strong><br><br><strong>Soldadura Húmeda (limitada):</strong><br>✅ <strong>Acero al carbono:</strong> Material ideal, buena soldabilidad<br>✅ <strong>Acero bajo carbono:</strong> OK, precalentar si espesor > 20mm<br>⚠️ <strong>Acero inoxidable 304/316:</strong> Posible pero calidad baja (oxidación)<br>❌ <strong>Aluminio marino:</strong> IMPOSIBLE (reacción agua + alta conductividad)<br>❌ <strong>Titanio:</strong> NO viable (contaminación extrema)<br>❌ <strong>Súper duplex:</strong> NO (requiere atmósfera controlada)<br><br><strong>Soldadura Seca Hiperbárica (versátil):</strong><br>✅ <strong>Acero al carbono:</strong> Excelente, calidad 95% tierra<br>✅ <strong>Acero inoxidable 304/316/316L:</strong> Perfecto con TIG + argón<br>✅ <strong>Aluminio marino (5083, 6061):</strong> Solo posible con seca TIG<br>✅ <strong>Acero alta resistencia (HSLA):</strong> OK con procedimiento WPS certificado<br>✅ <strong>Súper duplex (2205, 2507):</strong> Viable con control temperatura<br>✅ <strong>Inconel, Monel (exóticos):</strong> Posible con equipos especializados<br>⚠️ <strong>Titanio:</strong> Viable pero requiere cámara con atmósfera argón puro (muy caro)<br><br><strong>Regla práctica:</strong><br>• Acero simple → Húmeda OK<br>• Aluminio, inoxidable, exóticos → Seca OBLIGATORIA",
+    category: "Materiales"
+  },
+  {
+    question: "¿Qué profundidad máxima alcanza cada técnica?",
+    answer: "<strong>Límites de profundidad operativa:</strong><br><br><strong>Soldadura Húmeda:</strong><br>• <strong>Profundidad óptima: 0-15 metros</strong> (mejor calidad arco)<br>• <strong>Profundidad máxima comercial: 30-40 metros</strong><br>• <strong>Límite técnico: 60 metros</strong> (equipos especiales, calidad muy reducida)<br>• Por cada 10m profundidad: -10-15% calidad soldadura<br><br>🔬 <strong>¿Por qué se limita?</strong><br>• Presión del agua afecta estabilidad del arco eléctrico<br>• Mayor presión = ionización gas más difícil<br>• Enfriamiento más agresivo a mayor profundidad<br><br><strong>Soldadura Seca Hiperbárica:</strong><br>• <strong>Profundidad comercial estándar: 0-100 metros</strong><br>• <strong>Plataformas offshore: 100-300 metros</strong> (equipos especializados)<br>• <strong>Récord técnico: 600+ metros</strong> (investigación, submarinos militares)<br>• Calidad se mantiene estable independiente profundidad<br><br>🔬 <strong>¿Por qué mayor alcance?</strong><br>• Cámara crea ambiente seco presurizado<br>• Arco eléctrico en condiciones controladas<br>• Solo limita capacidad buceo/ROV del operador<br><br><strong>En Cádiz (trabajos típicos):</strong><br>• 90% trabajos: 0-20 metros (puerto, bahía) → Ambas técnicas viables<br>• 8% trabajos: 20-40 metros (offshore cercano) → Preferible seca<br>• 2% trabajos: > 40 metros (plataformas especiales) → Solo seca",
+    category: "Profundidad"
+  },
+  {
+    question: "¿Qué equipos se necesitan para cada técnica?",
+    answer: "<strong>Equipamiento comparado:</strong><br><br><strong>Soldadura Húmeda (setup básico):</strong><br>• Transformador DC 400-600A (resistente agua salada)<br>• Porta-electrodos submarino aislado (doble aislamiento)<br>• Electrodos especiales impermeables (E6013, E7018 modificados)<br>• Cable umbilical soldadura (50-100m)<br>• Equipo buceo estándar (máscara, neopreno, comunicación)<br>• Cámara/linterna submarina<br>• Cepillo/amoladora submarina (preparación superficie)<br>• <strong>Inversión equipo: 8,000-15,000 €</strong><br><br><strong>Soldadura Seca Hiperbárica (setup avanzado):</strong><br>• Cámara hiperbárica transportable (habitat seco)<br>• Sistema presurización (compresor alta presión)<br>• Equipo soldadura convencional (TIG/MIG/SMAW)<br>• Sistema evacuación agua de cámara<br>• Control atmósfera (sensores O2, CO2, humedad)<br>• Ventilación forzada (extracción humos)<br>• Anclaje/posicionamiento cámara<br>• Sistema iluminación interno<br>• Comunicaciones buzo-superficie avanzadas<br>• <strong>Inversión equipo: 80,000-250,000 €</strong><br><br><strong>Personal requerido:</strong><br>• Húmeda: Soldador-buzo + tender superficie (2 personas)<br>• Seca: Soldador-buzo + supervisor hiperbárico + tender + operador compresores (4-5 personas)<br><br><strong>Por eso seca cuesta más:</strong> Equipos 10-15x más caros + más personal.",
+    category: "Equipamiento"
+  },
+  {
+    question: "¿Cuánto tiempo tarda montar cada sistema?",
+    answer: "<strong>Tiempos de setup + ejecución:</strong><br><br><strong>Soldadura Húmeda (rápida):</strong><br>• Setup equipo: <strong>15-30 minutos</strong> (conectar transformador, preparar)<br>• Inspección submarina: <strong>30-60 min</strong><br>• Limpieza zona: <strong>30-90 min</strong> (según corrosión)<br>• Soldadura (ej. grieta 30cm): <strong>2-4 horas</strong><br>• Enfriamiento + verificación: <strong>30-60 min</strong><br>• <strong>TOTAL: 4-8 horas desde llegada hasta fin</strong><br><br><strong>Soldadura Seca Hiperbárica (lenta):</strong><br>• Montaje cámara: <strong>2-6 horas</strong> (según tamaño/complejidad)<br>• Anclaje/posicionamiento: <strong>1-2 horas</strong><br>• Evacuación agua + presurización: <strong>1-2 horas</strong><br>• Inspección interior cámara: <strong>30-60 min</strong><br>• Limpieza zona: <strong>1-3 horas</strong> (mejor acceso que húmeda)<br>• Soldadura (ej. grieta 30cm): <strong>3-6 horas</strong> (más precisa)<br>• Enfriamiento controlado: <strong>2-4 horas</strong><br>• Inspección END: <strong>1-3 horas</strong><br>• Desmontaje cámara: <strong>2-4 horas</strong><br>• <strong>TOTAL: 13-30 horas (1.5-4 días) desde llegada hasta fin</strong><br><br><strong>Para emergencias (vía agua activa):</strong><br>• Húmeda: Empieza soldadura en < 1 hora ✅<br>• Seca: Mínimo 3-4 horas hasta empezar soldadura ❌<br><br><strong>Para trabajos planificados (buque comercial):</strong><br>• Húmeda: Rápido pero posible re-reparación en 3 años<br>• Seca: Lento pero permanente (20 años) → Ahorro tiempo largo plazo",
+    category: "Tiempos"
+  },
+  {
+    question: "¿Las certificaciones navieras aceptan soldadura húmeda?",
+    answer: "<strong>Aceptación por sociedades de clasificación:</strong><br><br><strong>Soldadura Húmeda:</strong><br><br>✅ <strong>Reparaciones TEMPORALES aceptadas:</strong><br>• Lloyd's Register: Acepta como reparación temporal clase (máx. 12-18 meses)<br>• DNV GL: Permite bajo 'Temporary Repair' con inspección follow-up<br>• ABS: Acepta para daños menores no estructurales<br>• Bureau Veritas: OK para reparaciones de emergencia<br><br>❌ <strong>Reparaciones PERMANENTES NO aceptadas:</strong><br>• Estructuras críticas (quilla, mamparos estancos)<br>• Buques pasaje (requisitos más estrictos)<br>• Renovación certificado clase (requiere seca)<br>• Zonas de alta tensión estructural<br><br>⚠️ <strong>Requisitos si aceptan húmeda:</strong><br>• Soldador certificado AWS D3.6 Clase A<br>• Informe técnico procedimiento (WPS)<br>• Inspección visual por inspector clase<br>• Compromiso reparación permanente en próxima varada<br><br><strong>Soldadura Seca Hiperbárica:</strong><br><br>✅ <strong>Reparaciones PERMANENTES aceptadas:</strong><br>• Lloyd's Register: Acepta como reparación permanente si cumple AWS D3.6 Anexo II<br>• DNV GL: Acepta con inspección END (ultrasonidos + radiografías)<br>• ABS: OK para cualquier zona con procedimiento WPS aprobado<br>• Bureau Veritas: Acepta con certificación completa soldador + END<br><br>✅ <strong>Aplicaciones certificables:</strong><br>• Renovación/mantenimiento certificado clase<br>• Reparaciones estructurales críticas<br>• Buques pasaje y carga peligrosa<br>• Cumplimiento SOLAS (Safety of Life at Sea)<br><br><strong>En la práctica (Cádiz 2025):</strong><br>• Buque recreativo: Húmeda OK (sin clase)<br>• Buque comercial carga: Seca recomendada (húmeda solo emergencia temporal)<br>• Buque pasaje: Seca OBLIGATORIA",
+    category: "Certificaciones"
+  }
+];
+---
+
+<Layout
+  title="Soldadura Húmeda vs Seca: Diferencias, Precios y Cuándo Usar Cada Una"
+  description="Comparación completa soldadura húmeda vs seca subacuática: diferencias técnicas, calidad, precios Cádiz 2025, durabilidad, materiales, profundidad, certificaciones. Guía experta para elegir."
+  keywords="soldadura húmeda vs seca, diferencias soldadura subacuática, soldadura hiperbárica ventajas, cuando usar soldadura seca, precio soldadura húmeda vs seca"
+>
+  <Header />
+
+  <main class="bg-gray-50">
+    <!-- Hero -->
+    <section class="bg-gradient-to-r from-blue-900 via-indigo-900 to-blue-900 text-white py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <div class="inline-block bg-yellow-400 text-blue-900 px-4 py-2 rounded-full font-bold text-sm mb-4">
+            ⚖️ COMPARACIÓN TÉCNICA 2025
+          </div>
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">
+            Soldadura Húmeda vs Seca Subacuática
+          </h1>
+          <p class="text-xl md:text-2xl text-blue-100 mb-6">
+            Diferencias Clave, Precios, Calidad y Cómo Elegir la Técnica Correcta
+          </p>
+          <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 max-w-3xl mx-auto">
+            <p class="text-blue-100 leading-relaxed">
+              <strong>Regla de oro:</strong> Húmeda = rápida y económica (2-5 años). Seca = lenta y cara pero permanente (10-20 años). Esta guía técnica te ayuda a decidir qué técnica necesitas.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Comparison Table -->
+    <section class="py-12 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">
+            Tabla Comparativa Completa: Húmeda vs Seca
+          </h2>
+
+          <div class="overflow-x-auto shadow-2xl rounded-lg">
+            <table class="w-full bg-white">
+              <thead class="bg-gradient-to-r from-blue-900 to-indigo-900 text-white">
+                <tr>
+                  <th class="px-6 py-4 text-left">Criterio</th>
+                  <th class="px-6 py-4 text-left">Soldadura Húmeda</th>
+                  <th class="px-6 py-4 text-left">Soldadura Seca Hiperbárica</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200">
+                <tr>
+                  <td class="px-6 py-4 font-semibold text-gray-900">Entorno trabajo</td>
+                  <td class="px-6 py-4 text-gray-700">Contacto directo con agua</td>
+                  <td class="px-6 py-4 text-gray-700">Cámara presurizada seca</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="px-6 py-4 font-semibold text-gray-900">Precio/hora Cádiz 2025</td>
+                  <td class="px-6 py-4 text-green-700 font-bold">120-180 €</td>
+                  <td class="px-6 py-4 text-blue-700 font-bold">250-400 € + 500-1,200 € cámara</td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-4 font-semibold text-gray-900">Tiempo setup</td>
+                  <td class="px-6 py-4 text-green-700 font-bold">15-30 minutos</td>
+                  <td class="px-6 py-4 text-orange-700">2-6 horas (montaje cámara)</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="px-6 py-4 font-semibold text-gray-900">Tiempo total trabajo</td>
+                  <td class="px-6 py-4 text-green-700 font-bold">4-8 horas (mismo día)</td>
+                  <td class="px-6 py-4 text-orange-700">13-30 horas (1.5-4 días)</td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-4 font-semibold text-gray-900">Calidad soldadura</td>
+                  <td class="px-6 py-4 text-orange-700">70-80% calidad tierra</td>
+                  <td class="px-6 py-4 text-green-700 font-bold">90-95% calidad tierra</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="px-6 py-4 font-semibold text-gray-900">Durabilidad ambiente marino</td>
+                  <td class="px-6 py-4 text-orange-700">2-5 años</td>
+                  <td class="px-6 py-4 text-green-700 font-bold">10-20 años</td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-4 font-semibold text-gray-900">Materiales soldables</td>
+                  <td class="px-6 py-4 text-orange-700">Acero carbono (aluminio NO)</td>
+                  <td class="px-6 py-4 text-green-700 font-bold">Todos (acero, inox, aluminio, titanio)</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="px-6 py-4 font-semibold text-gray-900">Profundidad máxima</td>
+                  <td class="px-6 py-4 text-orange-700">30-40 metros (comercial)</td>
+                  <td class="px-6 py-4 text-green-700 font-bold">300+ metros (equipos especiales)</td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-4 font-semibold text-gray-900">Certificable navieras</td>
+                  <td class="px-6 py-4 text-orange-700">Solo temporal (12-18 meses)</td>
+                  <td class="px-6 py-4 text-green-700 font-bold">Sí permanente (Lloyd's, DNV, ABS)</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="px-6 py-4 font-semibold text-gray-900">Inspección END</td>
+                  <td class="px-6 py-4 text-red-700">Limitada (solo visual)</td>
+                  <td class="px-6 py-4 text-green-700 font-bold">Completa (ultrasonidos, radiografías)</td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-4 font-semibold text-gray-900">Técnicas soldadura</td>
+                  <td class="px-6 py-4 text-gray-700">SMAW (electrodo revestido)</td>
+                  <td class="px-6 py-4 text-green-700 font-bold">SMAW, TIG, MIG, FCAW</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="px-6 py-4 font-semibold text-gray-900">Ideal para</td>
+                  <td class="px-6 py-4 text-gray-700">Emergencias, recreativos, temporal</td>
+                  <td class="px-6 py-4 text-gray-700">Comercial, offshore, permanente</td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-4 font-semibold text-gray-900">Personal necesario</td>
+                  <td class="px-6 py-4 text-green-700 font-bold">2 personas (buzo + tender)</td>
+                  <td class="px-6 py-4 text-orange-700">4-5 personas (buzo + equipo)</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="px-6 py-4 font-semibold text-gray-900">Inversión equipos</td>
+                  <td class="px-6 py-4 text-green-700 font-bold">8,000-15,000 €</td>
+                  <td class="px-6 py-4 text-orange-700">80,000-250,000 €</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visual Comparison -->
+    <section class="py-12 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">
+            Comparación Visual: Cómo Funciona Cada Técnica
+          </h2>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <!-- Wet Welding -->
+            <div class="bg-white rounded-2xl shadow-xl p-8 border-t-4 border-cyan-600">
+              <div class="text-center mb-6">
+                <div class="text-6xl mb-4">🌊</div>
+                <h3 class="text-2xl font-bold text-cyan-800 mb-2">Soldadura Húmeda</h3>
+                <p class="text-sm text-gray-600">Contacto directo con agua</p>
+              </div>
+
+              <div class="space-y-4 mb-6">
+                <div class="bg-cyan-50 p-4 rounded-lg">
+                  <h4 class="font-bold text-cyan-900 mb-2">🔧 Proceso:</h4>
+                  <ol class="text-sm text-gray-800 space-y-1 list-decimal ml-5">
+                    <li>Buzo desciende con porta-electrodos</li>
+                    <li>Limpia zona con cepillo submarino</li>
+                    <li>Establece arco eléctrico bajo agua</li>
+                    <li>Burbuja de gas protege arco temporalmente</li>
+                    <li>Enfriamiento rápido por agua circundante</li>
+                  </ol>
+                </div>
+
+                <div class="bg-green-50 p-4 rounded-lg">
+                  <h4 class="font-bold text-green-900 mb-2">✅ Ventajas:</h4>
+                  <ul class="text-sm text-gray-800 space-y-1">
+                    <li>• Setup inmediato (15-30 min)</li>
+                    <li>• Económica (120-180 €/h)</li>
+                    <li>• Ideal emergencias</li>
+                    <li>• Equipo portable sencillo</li>
+                  </ul>
+                </div>
+
+                <div class="bg-red-50 p-4 rounded-lg">
+                  <h4 class="font-bold text-red-900 mb-2">❌ Limitaciones:</h4>
+                  <ul class="text-sm text-gray-800 space-y-1">
+                    <li>• Calidad media (porosidad)</li>
+                    <li>• Durabilidad 2-5 años</li>
+                    <li>• Solo acero carbono</li>
+                    <li>• No certificable permanente</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Dry Welding -->
+            <div class="bg-white rounded-2xl shadow-xl p-8 border-t-4 border-blue-600">
+              <div class="text-center mb-6">
+                <div class="text-6xl mb-4">🏗️</div>
+                <h3 class="text-2xl font-bold text-blue-800 mb-2">Soldadura Seca Hiperbárica</h3>
+                <p class="text-sm text-gray-600">Cámara presurizada sin agua</p>
+              </div>
+
+              <div class="space-y-4 mb-6">
+                <div class="bg-blue-50 p-4 rounded-lg">
+                  <h4 class="font-bold text-blue-900 mb-2">🔧 Proceso:</h4>
+                  <ol class="text-sm text-gray-800 space-y-1 list-decimal ml-5">
+                    <li>Montar cámara alrededor zona (2-6h)</li>
+                    <li>Presurizar cámara y evacuar agua</li>
+                    <li>Buzo entra en ambiente seco</li>
+                    <li>Soldadura en condiciones tierra</li>
+                    <li>Enfriamiento controlado</li>
+                    <li>Inspección END completa</li>
+                  </ol>
+                </div>
+
+                <div class="bg-green-50 p-4 rounded-lg">
+                  <h4 class="font-bold text-green-900 mb-2">✅ Ventajas:</h4>
+                  <ul class="text-sm text-gray-800 space-y-1">
+                    <li>• Calidad alta (90-95% tierra)</li>
+                    <li>• Durabilidad 10-20 años</li>
+                    <li>• Todos materiales (aluminio OK)</li>
+                    <li>• Certificable Lloyd's/DNV/ABS</li>
+                  </ul>
+                </div>
+
+                <div class="bg-red-50 p-4 rounded-lg">
+                  <h4 class="font-bold text-red-900 mb-2">❌ Limitaciones:</h4>
+                  <ul class="text-sm text-gray-800 space-y-1">
+                    <li>• Setup lento (2-6 horas)</li>
+                    <li>• Cara (250-400 €/h + cámara)</li>
+                    <li>• Requiere más personal (4-5)</li>
+                    <li>• Equipos complejos</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <FAQSection
+            title="10 Preguntas Clave: Soldadura Húmeda vs Seca"
+            faqs={differencesFAQs}
+            includeSchema={true}
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Decision Helper -->
+    <section class="py-12 bg-gradient-to-r from-blue-900 to-indigo-900 text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-8">
+            🎯 Ayuda Decisión Rápida: ¿Qué Técnica Necesito?
+          </h2>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border-2 border-cyan-400">
+              <h3 class="text-xl font-bold text-cyan-300 mb-4">Elige HÚMEDA si:</h3>
+              <ul class="space-y-2 text-sm">
+                <li class="flex items-start gap-2">
+                  <span class="text-cyan-400 mt-1">✓</span>
+                  <span>Es <strong>emergencia</strong> (vía agua, necesitas navegar YA)</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-cyan-400 mt-1">✓</span>
+                  <span>Reparación <strong>temporal</strong> hasta varada programada</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-cyan-400 mt-1">✓</span>
+                  <span>Barco <strong>recreativo</strong> (velero, yate privado)</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-cyan-400 mt-1">✓</span>
+                  <span>Material <strong>acero al carbono</strong></span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-cyan-400 mt-1">✓</span>
+                  <span>Presupuesto <strong>ajustado</strong> (450-1,500 € típico)</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border-2 border-blue-400">
+              <h3 class="text-xl font-bold text-blue-300 mb-4">Elige SECA si:</h3>
+              <ul class="space-y-2 text-sm">
+                <li class="flex items-start gap-2">
+                  <span class="text-blue-400 mt-1">✓</span>
+                  <span><strong>Buque comercial</strong> (requiere certificación)</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-blue-400 mt-1">✓</span>
+                  <span>Reparación <strong>permanente</strong> (10-20 años)</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-blue-400 mt-1">✓</span>
+                  <span>Material <strong>aluminio, inox, exóticos</strong></span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-blue-400 mt-1">✓</span>
+                  <span>Aseguradora exige <strong>certificación</strong></span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-blue-400 mt-1">✓</span>
+                  <span>Estructura <strong>crítica</strong> (quilla, mamparos)</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-12 bg-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">
+          ¿No Estás Seguro Qué Técnica Necesitas?
+        </h2>
+        <p class="text-xl text-gray-600 mb-6 max-w-2xl mx-auto">
+          Evaluación técnica gratuita en < 2 horas. Te recomendamos la técnica óptima para tu caso.
+        </p>
+        <div class="flex flex-col md:flex-row gap-4 justify-center">
+          <CallToAction variant="emergency" size="xl" text="CONSULTA TÉCNICA GRATIS" />
+          <a href="/contacto" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
+            Más Información
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

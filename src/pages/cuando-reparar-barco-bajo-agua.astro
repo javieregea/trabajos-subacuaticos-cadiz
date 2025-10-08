@@ -1,0 +1,292 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import FAQSection from '../components/FAQSection.astro';
+import CallToAction from '../components/CallToAction.astro';
+
+const whenFAQs = [
+  {
+    question: "¿Cuándo es mejor reparar un barco bajo el agua en lugar de vararlo?",
+    answer: "La reparación bajo el agua (sin varada) es mejor opción cuando:<br><br>✅ <strong>Reparación localizada:</strong> Daño pequeño/mediano en zona específica (grieta casco < 1m, hélice dañada, timón)<br>✅ <strong>Urgencia operativa:</strong> Buque comercial no puede parar (pérdidas 5,000-50,000 €/día)<br>✅ <strong>Coste-efectividad:</strong> Varada cuesta 2,000-15,000 € solo en grúa + varadero, reparación subacuática 500-3,000 € típicamente<br>✅ <strong>Disponibilidad astillero:</strong> Lista de espera 2-8 semanas en temporada alta<br>✅ <strong>Temporalidad:</strong> Reparación temporal hasta próxima varada anual programada<br>✅ <strong>Accesibilidad:</strong> Barco en puerto sin grúa adecuada, dique seco ocupado<br><br><strong>Ahorro típico: 40-85%</strong> vs. varada tradicional para reparaciones puntuales.",
+    category: "Decisión Estratégica"
+  },
+  {
+    question: "¿Qué tipos de daños se pueden reparar bajo el agua?",
+    answer: "<strong>Reparaciones subacuáticas más comunes:</strong><br><br>🔧 <strong>Casco:</strong><br>• Grietas hasta 1 metro (húmeda/seca según criticidad)<br>• Corrosión localizada (zonas hasta 2-3 m²)<br>• Vías de agua por impacto (taponamiento + soldadura)<br>• Refuerzos estructurales puntuales<br><br>⚙️ <strong>Hélices y ejes:</strong><br>• Palas dobladas (enderezado mecánico)<br>• Grietas en palas (soldadura TIG seca)<br>• Cavitación (rellenado y refuerzo)<br><br>🚢 <strong>Timones y anexos:</strong><br>• Bisagras/cojinetes dañados<br>• Grietas en pala timón<br>• Anodos sacrificados (cambio)<br><br>❌ <strong>NO reparable bajo agua:</strong> Daños extensos > 50% casco, revisión completa obra viva, pintado antiincrustante completo.",
+    category: "Tipos de Reparación"
+  },
+  {
+    question: "¿Cuánto tiempo tarda una reparación bajo el agua vs. varar el barco?",
+    answer: "<strong>Comparación tiempos (ejemplo: grieta 30 cm casco acero)</strong><br><br><strong>Reparación bajo el agua:</strong><br>• Inspección: 1-2 horas<br>• Soldadura húmeda: 3-5 horas<br>• <strong>Total fuera servicio: 6-10 horas</strong><br>• Disponible mismo día/siguiente<br><br><strong>Varada tradicional:</strong><br>• Espera astillero: 1-6 semanas<br>• Varada + secado: 1 día<br>• Reparación: 1-2 días<br>• Pintado (obligatorio): 2-3 días<br>• Botadura: 1 día<br>• <strong>Total fuera servicio: 5-10 días + espera</strong><br><br><strong>Para buque comercial:</strong><br>• Reparación bajo agua: ~500 € pérdidas operativas<br>• Varada: 25,000-250,000 € pérdidas operativas (según buque)<br><br>La diferencia de tiempo es crítica para navieras y flotas comerciales.",
+    category: "Tiempos"
+  },
+  {
+    question: "¿Una reparación bajo el agua dura lo mismo que una reparación en seco?",
+    answer: "<strong>Durabilidad según técnica:</strong><br><br><strong>Soldadura húmeda (bajo agua):</strong><br>• Durabilidad: <strong>2-5 años</strong> en ambiente marino<br>• Ideal como reparación temporal<br>• Suficiente hasta próxima varada programada<br>• Calidad inferior por enfriamiento rápido y contaminación agua<br><br><strong>Soldadura seca hiperbárica (cámara bajo agua):</strong><br>• Durabilidad: <strong>10-20+ años</strong><br>• Calidad comparable a soldadura en tierra<br>• Certificable para buques comerciales<br>• Reparación permanente estructural<br><br><strong>Soldadura en varadero (tierra):</strong><br>• Durabilidad: <strong>15-25+ años</strong><br>• Máxima calidad por condiciones controladas<br>• Inspección visual completa posible<br><br><strong>Conclusión:</strong> Seca hiperbárica bajo agua ofrece durabilidad casi igual a varada (85-95% equivalente). Húmeda es temporal pero efectiva para ganar tiempo.",
+    category: "Durabilidad"
+  },
+  {
+    question: "¿Qué situaciones requieren reparación urgente bajo el agua?",
+    answer: "<strong>Emergencias que justifican reparación subacuática inmediata:</strong><br><br>🚨 <strong>Urgencia alta (< 6 horas):</strong><br>• Vía de agua activa (barco hace agua, riesgo hundimiento)<br>• Hélice dañada en zona sin grúa (barco no puede navegar)<br>• Grieta casco descubierta en navegación (necesita continuar ruta)<br>• Colisión con objeto que dejó daño visible<br><br>⚠️ <strong>Urgencia media (< 48 horas):</strong><br>• Corrosión avanzada detectada en inspección (antes de empeore)<br>• Avería mecánica externa que impide operación<br>• Buque comercial con carga/pasaje que no puede parar<br>• Inspección naviera próxima, fallo encontrado<br><br>💡 <strong>Planificada (< 2 semanas):</strong><br>• Mantenimiento preventivo detectado en inspección rutinaria<br>• Optimización de varada (hacer máximo posible bajo agua, mínimo en varadero)<br><br>En Cádiz: <strong>Respuesta emergencias < 2 horas</strong> bahía, < 4 horas Estrecho Gibraltar.",
+    category: "Urgencias"
+  },
+  {
+    question: "¿Los seguros náuticos cubren reparaciones bajo el agua?",
+    answer: "<strong>Cobertura de seguros para reparaciones subacuáticas:</strong><br><br>✅ <strong>Sí cubren (típicamente):</strong><br>• Daños por colisión, varada, temporal (póliza casco)<br>• Reparaciones de emergencia necesarias (cláusula salvamento)<br>• Soldadura subacuática si es técnicamente adecuada<br>• Informes técnicos y peritaje incluidos<br><br>⚠️ <strong>Requisitos aseguradoras:</strong><br>• Empresa certificada (AWS D3.6, ISO 15618 vigentes)<br>• Informe técnico detallado (150-400 € adicional)<br>• Presupuesto previo aprobado por perito<br>• Fotos antes/durante/después del trabajo<br>• Garantía por escrito del reparador<br><br>🔴 <strong>NO cubren:</strong><br>• Mantenimiento preventivo rutinario<br>• Desgaste normal/corrosión por uso<br>• Daños pre-existentes no declarados<br><br><strong>Proceso:</strong> 1) Contactar aseguradora, 2) Enviar presupuesto empresa certificada, 3) Aprobación perito (24-72h), 4) Ejecutar reparación, 5) Presentar informe + factura. <br><br><strong>Tip:</strong> Pide informe técnico certificado desde el inicio (incluye fotos, procedimiento, materiales) para facilitar tramitación seguro.",
+    category: "Seguros"
+  },
+  {
+    question: "¿Se puede reparar una grieta grande en el casco sin sacar el barco?",
+    answer: "<strong>Límites técnicos reparación de grietas sin varada:</strong><br><br><strong>Grietas REPARABLES bajo agua:</strong><br>• <strong>Pequeñas (< 20 cm):</strong> Soldadura húmeda, 2-4 horas, 250-500 € ✅<br>• <strong>Medianas (20-50 cm):</strong> Soldadura húmeda/seca, 4-8 horas, 600-1,500 € ✅<br>• <strong>Grandes (50-100 cm):</strong> Soldadura seca hiperbárica certificada, 8-16 horas, 2,000-4,000 € ✅<br>• <strong>Muy grandes (1-2 metros):</strong> Soldadura seca + refuerzos, 16-30 horas, 4,000-8,000 € ⚠️ (evaluación caso a caso)<br><br><strong>Grietas NO reparables bajo agua (requieren varada):</strong><br>❌ Longitud > 2 metros (acceso limitado, complejidad alta)<br>❌ Grietas en zonas de difícil acceso (quilla, proa muy sumergida)<br>❌ Daño estructural múltiple (> 3 grietas interconectadas)<br>❌ Material base comprometido (corrosión 70%+ espesor)<br>❌ Buques pasaje/carga donde certificación Class requiere inspección interior simultánea<br><br><strong>Factor clave:</strong> Profundidad de la grieta bajo línea flotación. Hasta 6 metros profundidad: viable con soldadura seca. > 10 metros: requiere equipos especializados hiperbáricos (coste +40%).",
+    category: "Limitaciones Técnicas"
+  },
+  {
+    question: "¿Qué documentación necesito para reparar mi barco bajo el agua?",
+    answer: "<strong>Documentación necesaria según tipo de barco:</strong><br><br><strong>Embarcación recreativa (velero, yate privado):</strong><br>📄 Documentación barco (matrícula, seguro vigente)<br>📄 Autorización capitanía puerto (si aplica)<br>📄 Nada más (proceso simple)<br><br><strong>Buque comercial (carga, pasaje, pesca profesional):</strong><br>📄 Certificado de clase vigente (Lloyd's, DNV, ABS, Bureau Veritas)<br>📄 Autorización sociedad clasificadora para reparación<br>📄 Presupuesto aprobado por armador/naviera<br>📄 Informe técnico pre-reparación<br>📄 Procedimiento de soldadura (WPS) aprobado<br>📄 Certificados soldadores (AWS D3.6, ISO 15618)<br>📄 Plan de trabajo y seguridad<br><br><strong>Para solicitar seguro:</strong><br>📄 Peritaje daños (aseguradora envía perito)<br>📄 Presupuesto detallado empresa certificada<br>📄 Fotos daño desde múltiples ángulos<br>📄 Informe técnico recomendando reparación<br><br><strong>Post-reparación (para buques comerciales):</strong><br>📄 Informe técnico final con procedimiento aplicado<br>📄 Certificados materiales (electrodos, consumibles)<br>📄 Inspección END si aplica (ultrasonidos, líquidos penetrantes)<br>📄 Garantía escrita reparador<br>📄 Renovación/anotación certificado clase<br><br>En Cádiz: Gestionamos toda la documentación técnica necesaria.",
+    category: "Documentación"
+  },
+  {
+    question: "¿Cómo sé si mi barco necesita reparación urgente o puede esperar?",
+    answer: "<strong>Evaluación rápida de urgencia (escala 1-5):</strong><br><br>🔴 <strong>NIVEL 5 - Emergencia inmediata (< 2 horas):</strong><br>• Barco hace agua activamente<br>• Riesgo hundimiento o escora<br>• Hélice/timón inoperativo en zona sin remolque disponible<br>• Fallo estructural visible en navegación<br>→ <strong>Acción: Llamar emergencia 24/7 YA</strong><br><br>🟠 <strong>NIVEL 4 - Urgente (< 24 horas):</strong><br>• Grieta recién descubierta (no hace agua aún pero puede empeorar)<br>• Corrosión severa nueva (> 50% espesor)<br>• Buque comercial con carga/pasaje que debe zarpar<br>• Inspección naviera en 48-72 horas<br>→ <strong>Acción: Contactar mismo día</strong><br><br>🟡 <strong>NIVEL 3 - Prioritario (< 1 semana):</strong><br>• Corrosión moderada progresiva<br>• Hélice dañada pero barco navegable a baja velocidad<br>• Anodos consumidos 80%+<br>• Planificación viaje próximo (2-4 semanas)<br>→ <strong>Acción: Programar en 3-7 días</strong><br><br>🟢 <strong>NIVEL 2 - Mantenimiento planificado (< 1 mes):</strong><br>• Corrosión leve detectada en inspección rutinaria<br>• Desgaste normal programado<br>• Optimización antes de varada anual<br>→ <strong>Acción: Incluir en mantenimiento trimestral</strong><br><br>⚪ <strong>NIVEL 1 - No urgente (puede esperar varada):</strong><br>• Desgaste estético<br>• Pintado antiincrustante preventivo<br>• Mejoras no críticas<br>→ <strong>Acción: Programar en próxima varada anual</strong><br><br><strong>¿Dudas?</strong> Inspección gratuita en menos de 2 horas (Cádiz). Te diremos nivel urgencia real.",
+    category: "Evaluación Urgencia"
+  },
+  {
+    question: "¿Qué pasa si no reparo a tiempo un daño en el casco?",
+    answer: "<strong>Consecuencias de NO reparar daños a tiempo:</strong><br><br><strong>Corto plazo (semanas-meses):</strong><br>⚠️ <strong>Progresión del daño:</strong> Grieta pequeña (5 cm) → grande (50 cm) en 2-6 meses por fatiga<br>⚠️ <strong>Corrosión acelerada:</strong> Agua salada + oxígeno = corrosión 3-5x más rápida en zona dañada<br>⚠️ <strong>Vía de agua:</strong> Grieta superficial → perforación completa (especialmente en temporal)<br>⚠️ <strong>Coste multiplicado:</strong> Reparación inicial 500 € → Reparación diferida 2,000-5,000 €<br><br><strong>Medio plazo (6-12 meses):</strong><br>🔴 <strong>Daño estructural:</strong> Compromiso resistencia casco, riesgo colapso en condiciones adversas<br>🔴 <strong>Pérdida certificación:</strong> Buques comerciales pierden clase (no pueden operar legalmente)<br>🔴 <strong>Seguro invalidado:</strong> Aseguradoras NO cubren daños por falta mantenimiento conocido<br>🔴 <strong>Devaluación barco:</strong> 15-40% menos valor de reventa<br><br><strong>Peor escenario:</strong><br>💀 <strong>Hundimiento parcial/total:</strong> En puerto (limpieza + reflotamiento 10,000-50,000 €)<br>💀 <strong>Accidente en mar:</strong> Riesgo vidas, rescate marítimo, pérdida total barco<br>💀 <strong>Responsabilidad civil:</strong> Daños a terceros (otros barcos, infraestructuras)<br>💀 <strong>Sanciones:</strong> Capitanía marítima puede multar por negligencia (3,000-60,000 €)<br><br><strong>Comparativa costes:</strong><br>• Reparar grieta 10 cm HOY: 300-600 €<br>• Reparar grieta 50 cm en 6 meses: 2,000-4,000 €<br>• Reflotamiento + reparación tras hundimiento: 15,000-80,000 €<br><br><strong>Regla de oro:</strong> Reparación pequeña a tiempo = ahorro 80-95% vs. reparación diferida/emergencia.",
+    category: "Riesgos"
+  }
+];
+---
+
+<Layout
+  title="¿Cuándo Reparar un Barco Bajo el Agua? Guía Completa 2025"
+  description="Guía completa: cuándo reparar barco bajo agua vs. varar, tipos de daños reparables, urgencias, tiempos, costes, seguros náuticos, documentación. Ahorra 40-85% vs varada."
+  keywords="cuándo reparar barco bajo agua, reparación sin varada, soldadura subacuática urgente, grieta casco reparar, seguro náutico reparaciones, cuando varar barco"
+>
+  <Header />
+
+  <main class="bg-gray-50">
+    <!-- Hero -->
+    <section class="bg-gradient-to-r from-teal-900 to-teal-700 text-white py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <div class="inline-block bg-yellow-400 text-teal-900 px-4 py-2 rounded-full font-bold text-sm mb-4">
+            🚢 GUÍA DE DECISIÓN 2025
+          </div>
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">
+            ¿Cuándo Reparar un Barco Bajo el Agua?
+          </h1>
+          <p class="text-xl md:text-2xl text-teal-100 mb-6">
+            Reparación Subacuática vs. Varada: Decisión Estratégica que Puede Ahorrarte 40-85%
+          </p>
+          <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 max-w-3xl mx-auto">
+            <p class="text-teal-100 leading-relaxed">
+              <strong>Regla de oro:</strong> Reparación localizada bajo agua ahorra tiempo y dinero. Varada solo para trabajos extensos o mantenimiento anual completo. Esta guía te ayuda a decidir correctamente.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Decision Matrix -->
+    <section class="py-12 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">
+            Matriz de Decisión: ¿Reparar Bajo Agua o Varar?
+          </h2>
+
+          <div class="overflow-x-auto shadow-xl rounded-lg">
+            <table class="w-full bg-white">
+              <thead class="bg-teal-900 text-white">
+                <tr>
+                  <th class="px-6 py-4 text-left">Situación</th>
+                  <th class="px-6 py-4 text-left">Reparación Bajo Agua</th>
+                  <th class="px-6 py-4 text-left">Varada Tradicional</th>
+                  <th class="px-6 py-4 text-left">Recomendación</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200">
+                <tr>
+                  <td class="px-6 py-4 font-semibold text-gray-900">Grieta casco < 50 cm</td>
+                  <td class="px-6 py-4 text-green-700">✅ 500-1,500 € / 6-10 horas</td>
+                  <td class="px-6 py-4 text-gray-700">3,000-8,000 € / 5-7 días</td>
+                  <td class="px-6 py-4 text-green-700 font-bold">Bajo agua (ahorro 75%)</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="px-6 py-4 font-semibold text-gray-900">Grieta casco > 1 metro</td>
+                  <td class="px-6 py-4 text-orange-700">⚠️ Posible (seca hiperbárica) 4k-8k €</td>
+                  <td class="px-6 py-4 text-green-700">✅ 3,000-6,000 € (mejor acceso)</td>
+                  <td class="px-6 py-4 text-orange-700 font-bold">Evaluar caso a caso</td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-4 font-semibold text-gray-900">Hélice dañada (1 pala)</td>
+                  <td class="px-6 py-4 text-green-700">✅ 350-850 € / 3-6 horas</td>
+                  <td class="px-6 py-4 text-gray-700">2,500-5,000 € / 3-5 días</td>
+                  <td class="px-6 py-4 text-green-700 font-bold">Bajo agua (ahorro 70%)</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="px-6 py-4 font-semibold text-gray-900">Corrosión localizada < 2m²</td>
+                  <td class="px-6 py-4 text-green-700">✅ 800-2,000 € / 8-12 horas</td>
+                  <td class="px-6 py-4 text-gray-700">3,500-7,000 € / 4-6 días</td>
+                  <td class="px-6 py-4 text-green-700 font-bold">Bajo agua (ahorro 65%)</td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-4 font-semibold text-gray-900">Vía de agua activa</td>
+                  <td class="px-6 py-4 text-green-700">✅ Emergencia < 2h / 600-1,500 €</td>
+                  <td class="px-6 py-4 text-red-700">❌ 2-6 semanas espera (inviable)</td>
+                  <td class="px-6 py-4 text-green-700 font-bold">Bajo agua URGENTE</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="px-6 py-4 font-semibold text-gray-900">Pintado antiincrustante completo</td>
+                  <td class="px-6 py-4 text-red-700">❌ No posible bajo agua</td>
+                  <td class="px-6 py-4 text-green-700">✅ 1,500-5,000 € (necesario varada)</td>
+                  <td class="px-6 py-4 text-blue-700 font-bold">Varada obligatoria</td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-4 font-semibold text-gray-900">Buque comercial con carga</td>
+                  <td class="px-6 py-4 text-green-700">✅ Continúa operando / 0 € pérdidas</td>
+                  <td class="px-6 py-4 text-red-700">5,000-50,000 €/día pérdidas operativas</td>
+                  <td class="px-6 py-4 text-green-700 font-bold">Bajo agua (crítico)</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="px-6 py-4 font-semibold text-gray-900">Mantenimiento anual completo</td>
+                  <td class="px-6 py-4 text-orange-700">⚠️ Reparaciones puntuales OK</td>
+                  <td class="px-6 py-4 text-green-700">✅ Inspección completa + pintado</td>
+                  <td class="px-6 py-4 text-blue-700 font-bold">Varada recomendada</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Urgency Scale -->
+    <section class="py-12 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">
+            Escala de Urgencia: ¿Cuánto Tiempo Tengo?
+          </h2>
+
+          <div class="space-y-4">
+            <!-- Level 5 -->
+            <div class="bg-red-50 border-l-4 border-red-600 rounded-r-xl p-6">
+              <div class="flex items-start gap-4">
+                <div class="text-4xl">🚨</div>
+                <div class="flex-1">
+                  <h3 class="text-xl font-bold text-red-900 mb-2">NIVEL 5 - Emergencia Inmediata (< 2 horas)</h3>
+                  <ul class="text-sm text-gray-800 space-y-1 mb-3">
+                    <li>• Barco hace agua activamente</li>
+                    <li>• Riesgo hundimiento o escora peligrosa</li>
+                    <li>• Hélice/timón inoperativo sin remolque disponible</li>
+                  </ul>
+                  <p class="text-sm font-semibold text-red-700">→ ACCIÓN: Llamar emergencia 24/7 AHORA - 614-405-061</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Level 4 -->
+            <div class="bg-orange-50 border-l-4 border-orange-600 rounded-r-xl p-6">
+              <div class="flex items-start gap-4">
+                <div class="text-4xl">⚠️</div>
+                <div class="flex-1">
+                  <h3 class="text-xl font-bold text-orange-900 mb-2">NIVEL 4 - Urgente (< 24 horas)</h3>
+                  <ul class="text-sm text-gray-800 space-y-1 mb-3">
+                    <li>• Grieta descubierta (no hace agua aún pero puede empeorar)</li>
+                    <li>• Buque comercial debe zarpar con carga/pasaje</li>
+                    <li>• Inspección naviera en 48-72 horas</li>
+                  </ul>
+                  <p class="text-sm font-semibold text-orange-700">→ ACCIÓN: Contactar mismo día para programar</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Level 3 -->
+            <div class="bg-yellow-50 border-l-4 border-yellow-600 rounded-r-xl p-6">
+              <div class="flex items-start gap-4">
+                <div class="text-4xl">🔔</div>
+                <div class="flex-1">
+                  <h3 class="text-xl font-bold text-yellow-900 mb-2">NIVEL 3 - Prioritario (< 1 semana)</h3>
+                  <ul class="text-sm text-gray-800 space-y-1 mb-3">
+                    <li>• Corrosión moderada progresiva</li>
+                    <li>• Hélice dañada (navegable a baja velocidad)</li>
+                    <li>• Viaje planificado en 2-4 semanas</li>
+                  </ul>
+                  <p class="text-sm font-semibold text-yellow-700">→ ACCIÓN: Programar en 3-7 días</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Level 2 -->
+            <div class="bg-blue-50 border-l-4 border-blue-600 rounded-r-xl p-6">
+              <div class="flex items-start gap-4">
+                <div class="text-4xl">📅</div>
+                <div class="flex-1">
+                  <h3 class="text-xl font-bold text-blue-900 mb-2">NIVEL 2 - Planificado (< 1 mes)</h3>
+                  <ul class="text-sm text-gray-800 space-y-1 mb-3">
+                    <li>• Corrosión leve detectada en inspección rutinaria</li>
+                    <li>• Mantenimiento preventivo programado</li>
+                    <li>• Optimización antes varada anual</li>
+                  </ul>
+                  <p class="text-sm font-semibold text-blue-700">→ ACCIÓN: Incluir en mantenimiento trimestral</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Level 1 -->
+            <div class="bg-green-50 border-l-4 border-green-600 rounded-r-xl p-6">
+              <div class="flex items-start gap-4">
+                <div class="text-4xl">✅</div>
+                <div class="flex-1">
+                  <h3 class="text-xl font-bold text-green-900 mb-2">NIVEL 1 - No Urgente (puede esperar varada)</h3>
+                  <ul class="text-sm text-gray-800 space-y-1 mb-3">
+                    <li>• Desgaste estético sin consecuencias estructurales</li>
+                    <li>• Pintado antiincrustante preventivo</li>
+                    <li>• Mejoras no críticas</li>
+                  </ul>
+                  <p class="text-sm font-semibold text-green-700">→ ACCIÓN: Programar en próxima varada anual</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <FAQSection
+            title="10 Preguntas Frecuentes: Cuándo Reparar Barco Bajo Agua"
+            faqs={whenFAQs}
+            includeSchema={true}
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-12 bg-gradient-to-r from-teal-900 to-teal-700 text-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold mb-4">
+          ¿Dudas sobre tu Caso Específico?
+        </h2>
+        <p class="text-xl text-teal-100 mb-6 max-w-2xl mx-auto">
+          Inspección gratuita en < 2 horas. Te diremos si es mejor reparar bajo agua o varar. Sin compromiso.
+        </p>
+        <div class="flex flex-col md:flex-row gap-4 justify-center">
+          <CallToAction variant="emergency" size="xl" text="INSPECCIÓN GRATIS 24/7" />
+          <a href="/contacto" class="bg-white text-teal-900 hover:bg-teal-50 px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
+            Más Información
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
