@@ -14,7 +14,7 @@ const faqs = [
   },
   {
     question: "¿Puedo navegar con una grieta pequeña en el casco?",
-    answer: "NO es recomendable. Una <strong>grieta de incluso 5-10cm puede propagarse rápidamente</strong> con la vibración del motor y el oleaje. Lo que hoy es una grieta superficial, en 48 horas puede convertirse en vía de agua grave. La inspección urgente cuesta 150-200€, muy inferior al riesgo de hundimiento (pérdida total 20,000-500,000€).",
+    answer: "NO es recomendable. Una <strong>grieta de incluso 5-10cm puede propagarse rápidamente</strong> con la vibración del motor y el oleaje. Lo que hoy es una grieta superficial, en 48 horas puede convertirse en vía de agua grave. La inspección urgente es económica, muy inferior al riesgo de hundimiento (pérdida total del barco).",
     category: "Seguridad"
   },
   {
@@ -24,17 +24,17 @@ const faqs = [
   },
   {
     question: "¿Qué pasa si ignoro corrosión avanzada en el casco?",
-    answer: "La <strong>corrosión marina es exponencial</strong>. Lo que hoy es una zona debilitada de 10x10cm, en 6 meses puede comprometer una sección estructural completa del casco. La reparación preventiva (soldadura refuerzo + tratamiento anticorrosivo) cuesta 800-1,500€. Reparar colapso estructural: 5,000-15,000€. La inspección visual subacuática (120€) identifica zonas de riesgo antes de la falla.",
+    answer: "La <strong>corrosión marina es exponencial</strong>. Lo que hoy es una zona debilitada de 10x10cm, en 6 meses puede comprometer una sección estructural completa del casco. La reparación preventiva (soldadura refuerzo + tratamiento anticorrosivo) es muy económica comparada con reparar colapso estructural que resulta mucho más costoso. La inspección visual subacuática identifica zonas de riesgo antes de la falla.",
     category: "Mantenimiento"
   },
   {
     question: "¿Cuándo debo llamar después de un impacto o varada?",
-    answer: "<strong>Inmediatamente</strong>, incluso si no ves daños visibles. Los impactos pueden causar:<br>• Microgrietas invisibles en superficie pero críticas bajo línea flotación<br>• Deformaciones estructurales que debilitan el casco<br>• Daños en soldaduras previas que se abrirán con oleaje<br><br>La inspección post-accidente (150€) puede prevenir hundimiento días después. En seguros náuticos, la inspección inmediata es requisito para cobertura.",
+    answer: "<strong>Inmediatamente</strong>, incluso si no ves daños visibles. Los impactos pueden causar:<br>• Microgrietas invisibles en superficie pero críticas bajo línea flotación<br>• Deformaciones estructurales que debilitan el casco<br>• Daños en soldaduras previas que se abrirán con oleaje<br><br>La inspección post-accidente es económica y puede prevenir hundimiento días después. En seguros náuticos, la inspección inmediata es requisito para cobertura.",
     category: "Accidentes"
   },
   {
     question: "¿Necesito soldadura subacuática si mi hélice hace ruido extraño?",
-    answer: "Probablemente <strong>SÍ</strong>. Ruidos anormales (vibraciones, chasquidos, zumbidos) indican:<br>• Pala de hélice doblada o agrietada (requiere soldadura + rectificado)<br>• Eje de hélice dañado (soldadura estructural crítica)<br>• Desprendimiento parcial de pala (emergencia: puede desprenderse totalmente en navegación)<br><br>La inspección subacuática determina si necesitas soldadura (600-1,200€) o reemplazo completo (2,000-8,000€). Reparar a tiempo evita daños en reductora (15,000€+).",
+    answer: "Probablemente <strong>SÍ</strong>. Ruidos anormales (vibraciones, chasquidos, zumbidos) indican:<br>• Pala de hélice doblada o agrietada (requiere soldadura + rectificado)<br>• Eje de hélice dañado (soldadura estructural crítica)<br>• Desprendimiento parcial de pala (emergencia: puede desprenderse totalmente en navegación)<br><br>La inspección subacuática determina si necesitas soldadura o reemplazo completo. Reparar a tiempo evita daños costosos en reductora.",
     category: "Hélices"
   },
   {
@@ -102,7 +102,7 @@ const faqs = [
                   <th class="px-6 py-4 text-left">Señal de Alarma</th>
                   <th class="px-6 py-4 text-left">Nivel Urgencia</th>
                   <th class="px-6 py-4 text-left">Tiempo Respuesta</th>
-                  <th class="px-6 py-4 text-left">Costo Reparación</th>
+                  <th class="px-6 py-4 text-left">Rango de Precio</th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-gray-200">
@@ -111,70 +111,70 @@ const faqs = [
                   <td class="px-6 py-4 font-semibold">Vía de agua activa (barco admitiendo agua)</td>
                   <td class="px-6 py-4 text-red-700 font-bold">🔴 CRÍTICA</td>
                   <td class="px-6 py-4 font-semibold">menos de 2 horas</td>
-                  <td class="px-6 py-4">500-2,000€</td>
+                  <td class="px-6 py-4">Consultar presupuesto</td>
                 </tr>
                 <tr>
                   <td class="px-6 py-4 font-bold text-red-700">2</td>
                   <td class="px-6 py-4">Grieta visible en casco bajo línea flotación</td>
                   <td class="px-6 py-4 text-red-600 font-bold">🔴 ALTA</td>
                   <td class="px-6 py-4 font-semibold">&lt; 24 horas</td>
-                  <td class="px-6 py-4">400-1,500€</td>
+                  <td class="px-6 py-4">Económico</td>
                 </tr>
                 <tr class="bg-gray-50">
                   <td class="px-6 py-4 font-bold text-orange-700">3</td>
                   <td class="px-6 py-4">Hélice dañada (vibraciones anormales al navegar)</td>
                   <td class="px-6 py-4 text-orange-600 font-bold">🟠 ALTA</td>
                   <td class="px-6 py-4">24-48 horas</td>
-                  <td class="px-6 py-4">600-1,800€</td>
+                  <td class="px-6 py-4">Moderado</td>
                 </tr>
                 <tr>
                   <td class="px-6 py-4 font-bold text-orange-700">4</td>
                   <td class="px-6 py-4">Impacto reciente (varada, colisión, tormenta)</td>
                   <td class="px-6 py-4 text-orange-600 font-bold">🟠 ALTA</td>
                   <td class="px-6 py-4">&lt; 48 horas</td>
-                  <td class="px-6 py-4">300-3,000€</td>
+                  <td class="px-6 py-4">Variable</td>
                 </tr>
                 <tr class="bg-gray-50">
                   <td class="px-6 py-4 font-bold text-orange-600">5</td>
                   <td class="px-6 py-4">Corrosión que atraviesa el metal (agujero visible)</td>
                   <td class="px-6 py-4 text-orange-600 font-bold">🟠 ALTA</td>
                   <td class="px-6 py-4">2-7 días</td>
-                  <td class="px-6 py-4">800-2,500€</td>
+                  <td class="px-6 py-4">Moderado</td>
                 </tr>
                 <tr>
                   <td class="px-6 py-4 font-bold text-yellow-700">6</td>
                   <td class="px-6 py-4">Soldaduras antiguas con grietas/desprendimiento</td>
                   <td class="px-6 py-4 text-yellow-700 font-bold">🟡 MEDIA</td>
                   <td class="px-6 py-4">1-2 semanas</td>
-                  <td class="px-6 py-4">500-1,800€</td>
+                  <td class="px-6 py-4">Económico-Moderado</td>
                 </tr>
                 <tr class="bg-gray-50">
                   <td class="px-6 py-4 font-bold text-yellow-700">7</td>
                   <td class="px-6 py-4">Estructura portuaria dañada (pantalán, amarre)</td>
                   <td class="px-6 py-4 text-yellow-700 font-bold">🟡 MEDIA</td>
                   <td class="px-6 py-4">1-2 semanas</td>
-                  <td class="px-6 py-4">1,200-5,000€</td>
+                  <td class="px-6 py-4">Variable</td>
                 </tr>
                 <tr>
                   <td class="px-6 py-4 font-bold text-yellow-600">8</td>
                   <td class="px-6 py-4">Timón con juego excesivo o daño estructural</td>
                   <td class="px-6 py-4 text-yellow-600 font-bold">🟡 MEDIA</td>
                   <td class="px-6 py-4">3-7 días</td>
-                  <td class="px-6 py-4">700-2,200€</td>
+                  <td class="px-6 py-4">Moderado</td>
                 </tr>
                 <tr class="bg-gray-50">
                   <td class="px-6 py-4 font-bold text-green-700">9</td>
                   <td class="px-6 py-4">Refuerzo estructural preventivo (antes temporada)</td>
                   <td class="px-6 py-4 text-green-700 font-bold">🟢 BAJA</td>
                   <td class="px-6 py-4">Planificable</td>
-                  <td class="px-6 py-4">600-3,000€</td>
+                  <td class="px-6 py-4">Variable</td>
                 </tr>
                 <tr>
                   <td class="px-6 py-4 font-bold text-green-700">10</td>
                   <td class="px-6 py-4">Mantenimiento preventivo (inspección anual)</td>
                   <td class="px-6 py-4 text-green-700 font-bold">🟢 BAJA</td>
                   <td class="px-6 py-4">Programable</td>
-                  <td class="px-6 py-4">150-400€</td>
+                  <td class="px-6 py-4">Económico</td>
                 </tr>
               </tbody>
             </table>
@@ -182,7 +182,7 @@ const faqs = [
 
           <div class="bg-yellow-50 border-l-4 border-yellow-500 p-6 rounded-r-lg">
             <p class="text-sm text-yellow-900 leading-relaxed">
-              <strong>💡 Regla de oro:</strong> Si tienes dudas sobre la urgencia, solicita inspección visual subacuática (120-200€). En el 78% de casos, detectamos problemas adicionales que el propietario desconocía. La inspección se descuenta del precio final si contratas la reparación.
+              <strong>💡 Regla de oro:</strong> Si tienes dudas sobre la urgencia, solicita inspección visual subacuática. En el 78% de casos, detectamos problemas adicionales que el propietario desconocía. La inspección se descuenta del precio final si contratas la reparación.
             </p>
           </div>
         </div>
@@ -221,7 +221,7 @@ const faqs = [
                   </ol>
                 </div>
                 <p class="text-gray-700 mb-3">
-                  <strong>Solución:</strong> <a href="/soldadura-subacuatica" class="text-blue-600 hover:underline">Soldadura húmeda de emergencia</a> + taponamiento + inspección completa. Tiempo: 2-6 horas. Costo: 500-2,000€ (muy inferior a pérdida total del barco).
+                  <strong>Solución:</strong> <a href="/soldadura-subacuatica" class="text-blue-600 hover:underline">Soldadura húmeda de emergencia</a> + taponamiento + inspección completa. Tiempo: 2-6 horas. Costo muy inferior a pérdida total del barco.
                 </p>
                 <p class="text-sm text-gray-600">
                   <strong>Casos reales Cádiz 2024:</strong> 37 emergencias vías de agua atendidas, 100% resueltas sin hundimiento. Respuesta promedio: 1h 45min.
@@ -246,12 +246,12 @@ const faqs = [
                   <h4 class="font-bold text-orange-900 mb-2">Cómo Detectarla:</h4>
                   <ul class="list-disc list-inside space-y-1 text-gray-700 text-sm">
                     <li>Durante varada: inspección visual directa del casco</li>
-                    <li>A flote: <a href="/inspeccion-visual-subacuatica" class="text-blue-600 hover:underline">inspección buzo certificado</a> (120-200€)</li>
+                    <li>A flote: <a href="/inspeccion-visual-subacuatica" class="text-blue-600 hover:underline">inspección buzo certificado</a></li>
                     <li>Síntomas indirectos: entrada lenta de agua en sentina (litros/hora), humedad anormal en mamparos internos</li>
                   </ul>
                 </div>
                 <p class="text-gray-700 mb-3">
-                  <strong>Solución:</strong> <a href="/reparacion-cascos-bajo-agua" class="text-blue-600 hover:underline">Reparación casco a flote</a> con soldadura (húmeda o seca según criticidad). Tiempo: 4-12 horas. Costo: 400-1,500€ vs. varada completa 3,000-8,000€.
+                  <strong>Solución:</strong> <a href="/reparacion-cascos-bajo-agua" class="text-blue-600 hover:underline">Reparación casco a flote</a> con soldadura (húmeda o seca según criticidad). Tiempo: 4-12 horas. Mucho más económico que varada completa.
                 </p>
                 <p class="text-sm text-gray-600">
                   <strong>Dato técnico:</strong> En acero al carbono (90% embarcaciones comerciales), la propagación de grieta en ambiente marino es 2-5mm/semana. En aluminio marino: 3-8mm/semana por corrosión galvánica.
@@ -275,14 +275,14 @@ const faqs = [
                 <div class="bg-yellow-50 p-4 rounded-lg mb-4">
                   <h4 class="font-bold text-yellow-900 mb-2">Riesgos de NO Reparar:</h4>
                   <ul class="list-disc list-inside space-y-1 text-gray-700 text-sm">
-                    <li><strong>Daño en reductora:</strong> Las vibraciones destruyen rodamientos (reparación 15,000-40,000€)</li>
+                    <li><strong>Daño en reductora:</strong> Las vibraciones destruyen rodamientos (reparación muy costosa)</li>
                     <li><strong>Desprendimiento de pala:</strong> Pérdida total de propulsión en navegación (emergencia)</li>
                     <li><strong>Consumo excesivo:</strong> Hélice dañada aumenta consumo combustible 15-40%</li>
                     <li><strong>Pérdida de velocidad:</strong> Hasta 30% menos velocidad crucero</li>
                   </ul>
                 </div>
                 <p class="text-gray-700 mb-3">
-                  <strong>Solución:</strong> <a href="/reparacion-helices-bajo-agua-urgente" class="text-blue-600 hover:underline">Reparación hélice bajo agua</a> con <a href="/soldadura-tig-subacuatica" class="text-blue-600 hover:underline">soldadura TIG subacuática</a> (acero inox 316L) o <a href="/soldadura-aluminio-marino" class="text-blue-600 hover:underline">soldadura aluminio marino</a>. Tiempo: 3-8 horas. Costo: 600-1,800€ vs. reemplazo hélice nueva 2,500-8,000€.
+                  <strong>Solución:</strong> <a href="/reparacion-helices-bajo-agua-urgente" class="text-blue-600 hover:underline">Reparación hélice bajo agua</a> con <a href="/soldadura-tig-subacuatica" class="text-blue-600 hover:underline">soldadura TIG subacuática</a> (acero inox 316L) o <a href="/soldadura-aluminio-marino" class="text-blue-600 hover:underline">soldadura aluminio marino</a>. Tiempo: 3-8 horas. Mucho más económico que reemplazo de hélice nueva.
                 </p>
               </div>
             </div>

@@ -1,0 +1,551 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import FAQSection from '../components/FAQSection.astro';
+import CallToAction from '../components/CallToAction.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
+
+const faqs = [
+  {
+    question: "¿Qué servicios subacuáticos necesitan los consignatarios de buques en Cádiz?",
+    answer: "Los consignatarios requieren <strong>servicios urgentes 24/7</strong> para mantener operatividad de buques en puerto:<br>• <strong>Inspecciones previas/posteriores escala:</strong> Estado casco, hélice, timón, ánodos<br>• <strong>Reparaciones urgentes:</strong> Soldadura emergencia para evitar dry dock costoso<br>• <strong>Limpieza cascos:</strong> Cumplimiento normativas biofouling antes zarpe<br>• <strong>Informes técnicos:</strong> Documentación para navieras, P&I clubs, certificadores<br>• <strong>Recuperación objetos caídos:</strong> Herramientas, equipos, cargas sueltas<br><br>El 85% de solicitudes son <strong>urgencias operativas</strong> (< 24h) para evitar demoras, costes extra estadía, o incumplimientos regulatorios.",
+    category: "Servicios Principales"
+  },
+  {
+    question: "¿Cuánto tiempo tarda una inspección submarina de casco para consignatario?",
+    answer: "<strong>Inspección estándar pre-escala:</strong> 2-4 horas (buques hasta 150m eslora)<br><strong>Inspección completa con informe certificado:</strong> 4-8 horas (incluye ROV video, mediciones ultrasónicas, reporte fotográfico)<br><strong>Inspección urgente nocturna:</strong> Movilización en < 2 horas desde llamada<br><br>Entregamos informe preliminar en <strong>4 horas</strong> (formato PDF email) e informe técnico completo certificado en <strong>24 horas</strong>. Compatible con protocolos IACS, SIRE, CDI. Aceptado por Lloyd's, DNV GL, ABS, Bureau Veritas.",
+    category: "Tiempos"
+  },
+  {
+    question: "¿Trabajan con P&I Clubs y aseguradoras internacionales?",
+    answer: "<strong>SÍ, colaboramos regularmente</strong> con principales P&I Clubs:<br>• UK P&I Club<br>• Gard<br>• Skuld<br>• The Standard Club<br>• West of England<br>• Steamship Mutual<br><br>Nuestros informes técnicos cumplen requisitos:<br>• Certificación AWS D3.6, ISO 15618 (soldadura)<br>• IMCA D 014 (inspección submarina)<br>• Fotogramas calibrados con escala<br>• Video ROV con timestamp<br>• Mediciones espesor casco (ultrasonidos)<br><br>Facturación directa a P&I o aseguradora previa aprobación. Experiencia 15+ años con claims internacionales.",
+    category: "Seguros"
+  },
+  {
+    question: "¿Pueden reparar un buque sin necesidad de dry dock o varada?",
+    answer: "<strong>SÍ, en el 70% de casos evitamos dry dock</strong> mediante soldadura subacuática y reparaciones a flote:<br><br><strong>Reparaciones viables sin varada:</strong><br>• Grietas casco < 2m² (soldadura húmeda/seca según criticidad)<br>• Hélices dañadas (enderezado, soldadura, equilibrado in-situ)<br>• Timones con juego o fisuras<br>• Válvulas fondo, tomas mar, descargas<br>• Ánodos desprendidos o agotados<br>• Refuerzos estructurales localizados<br><br><strong>Ventaja para armador:</strong><br>• Ahorro 60-80% vs dry dock<br>• Buque navegable en 6-48h (vs 2-4 semanas varada)<br>• Evita demoras contractuales y penalizaciones<br>• Sin necesidad de esperar slot en astillero",
+    category: "Reparaciones"
+  },
+  {
+    question: "¿Ofrecen servicio 24/7 para emergencias de consignatarios?",
+    answer: "<strong>SÍ, servicio emergencia 24/7/365</strong> en toda Bahía de Cádiz y Estrecho Gibraltar:<br><br><strong>Cobertura:</strong><br>• Puerto de Cádiz<br>• Bahía Algeciras<br>• Fondeo Gibraltar<br>• Instalaciones offshore Tarifa<br>• Rada Barbate<br><br><strong>Tiempos de respuesta:</strong><br>• Cádiz capital: < 2 horas<br>• Bahía Algeciras: 3-4 horas<br>• Gibraltar: 4-5 horas<br><br><strong>Contacto emergencias:</strong> Línea directa 24h para consignatarios registrados. Coordinamos con capitanía puerto, prácticos, y autoridades portuarias. Experiencia con buques de bandera: Liberia, Panamá, Malta, Marshall Islands, Bahamas.",
+    category: "Emergencias"
+  },
+  {
+    question: "¿Qué documentación entregan tras inspección o reparación?",
+    answer: "<strong>Paquete documental completo certificado:</strong><br><br><strong>Inspecciones:</strong><br>• Informe técnico narrativo (español/inglés)<br>• Plano de casco con marcaje zonas inspeccionadas<br>• Fotografías calibradas (fecha, hora, profundidad, escala métrica)<br>• Video ROV completo (MP4 timestamped)<br>• Mediciones espesores (ultrasonidos)<br>• Certificado IMCA D 014<br>• Recomendaciones priorizadas<br><br><strong>Reparaciones/Soldaduras:</strong><br>• Certificado soldadura AWS D3.6<br>• Procedimiento WPS (Welding Procedure Specification)<br>• Cualificación soldadores<br>• Ensayos no destructivos (si aplicable)<br>• Informe fotográfico antes/durante/después<br>• Garantía trabajos<br><br>Formato digital (email) + original sellado courier internacional si necesario.",
+    category: "Documentación"
+  },
+  {
+    question: "¿Cómo coordinan con el capitán y la tripulación del buque?",
+    answer: "<strong>Protocolo de coordinación establecido:</strong><br><br><strong>Pre-trabajo:</strong><br>• Reunión seguridad con Chief Officer/Chief Engineer<br>• Permit to Work firmado<br>• Cierre válvulas según checklist<br>• Bloqueo sistemas (LOTO protocol)<br>• Briefing tripulación zona trabajo<br><br><strong>Durante trabajo:</strong><br>• Radio VHF contacto permanente puente<br>• Supervisor en cubierta coordinando con oficial guardia<br>• Actualizaciones progreso cada 2 horas<br>• Fotografías en tiempo real vía WhatsApp/email<br><br><strong>Post-trabajo:</strong><br>• Handover report al capitán<br>• Certificado trabajos entregado<br>• Sistema devuelto a operación normal<br><br>Equipo bilingüe español/inglés. Experiencia tripulaciones multinacionales (filipinas, ucranianas, indias, europeas).",
+    category: "Coordinación"
+  },
+  {
+    question: "¿Qué ventajas tiene contratar a través de consignatario vs directo armador?",
+    answer: "<strong>Ventajas modelo consignatario:</strong><br><br><strong>Para el armador:</strong><br>• Consignatario valida proveedor local confiable<br>• Negociación tarifas por volumen<br>• Gestión administrativa local (facturas, permisos)<br>• Seguimiento trabajo en representación armador<br>• Coordina con autoridades portuarias<br><br><strong>Para el consignatario:</strong><br>• Servicio rápido = menos estadía buque = cliente satisfecho<br>• Tarifas preferenciales acuerdo marco<br>• Facturación mensual consolidada<br>• Prioridad agenda vs clientes ocasionales<br>• Reportes periódicos estado flota<br><br><strong>Acuerdos marco disponibles:</strong> Tarifas fijas anuales, SLA garantizado, descuentos volumen 10-25% según tonelaje/año. Ideal para consignatarios con > 30 escalas/año.",
+    category: "Modelo Negocio"
+  }
+];
+---
+
+<Layout
+  title="Servicios Subacuáticos para Consignatarios de Buques | Cádiz 24/7"
+  description="Servicios subacuáticos urgentes para consignatarios en Cádiz: inspecciones certificadas, reparaciones a flote, informes P&I Clubs, 24/7. Evita dry dock. Documentación IACS."
+  keywords="consignatarios buques Cádiz, inspección casco consignatario, reparación buques sin varada, servicios subacuáticos naviera, P&I Club inspección, emergencia marítima Cádiz"
+>
+  <Header />
+
+  <main class="bg-gray-50">
+    <!-- Hero Section - Respuesta Directa AEO -->
+    <section class="bg-gradient-to-r from-slate-900 via-blue-900 to-slate-900 text-white py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <div class="inline-block bg-cyan-400 text-slate-900 px-4 py-2 rounded-full font-bold text-sm mb-4">
+            ⚓ SERVICIOS PROFESIONALES NAVIERAS
+          </div>
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">
+            Servicios Subacuáticos para Consignatarios de Buques en Cádiz
+          </h1>
+          <div class="bg-white/10 backdrop-blur-sm border-l-4 border-cyan-400 p-6 rounded-r-lg mb-6">
+            <p class="text-xl md:text-2xl font-semibold mb-4">
+              Respuesta Directa:
+            </p>
+            <p class="text-lg leading-relaxed">
+              Ofrecemos <strong>servicios subacuáticos profesionales 24/7</strong> para consignatarios de buques en Cádiz, Algeciras y Estrecho Gibraltar: <strong>(1) Inspecciones certificadas pre/post-escala</strong> con informes IACS en 4-24h, <strong>(2) Reparaciones urgentes a flote</strong> (soldadura, hélices, válvulas) sin dry dock, ahorro 60-80%, <strong>(3) Limpieza cascos cumplimiento biofouling</strong>, <strong>(4) Documentación P&I Clubs</strong> y certificadores internacionales (Lloyd's, DNV GL, ABS), y <strong>(5) Recuperación objetos/herramientas</strong>. Movilización < 2 horas Bahía Cádiz. Facturación directa armador/P&I Club. Equipo bilingüe. Certificaciones AWS D3.6, IMCA D 014, ISO 15618.
+            </p>
+          </div>
+          <div class="flex flex-col md:flex-row gap-4">
+            <CallToAction variant="emergency" size="xl" text="EMERGENCIA 24/7 CONSIGNATARIOS" />
+            <a href="/contacto" class="bg-white text-slate-900 hover:bg-cyan-400 px-8 py-4 rounded-lg font-semibold text-lg transition-colors text-center">
+              Solicitar Acuerdo Marco
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Servicios Principales para Consignatarios -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">
+            5 Servicios Críticos para Consignatarios
+          </h2>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Servicio 1 -->
+            <div class="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-xl shadow-lg border-2 border-blue-500 hover:shadow-2xl transition-shadow">
+              <div class="text-5xl mb-4">🔍</div>
+              <h3 class="text-2xl font-bold text-blue-900 mb-3">Inspecciones Certificadas</h3>
+              <p class="text-gray-700 mb-4 leading-relaxed">
+                Inspección submarina completa casco, hélice, timón, válvulas. Informe certificado IMCA D 014 en <strong>4-24 horas</strong>. Incluye:
+              </p>
+              <ul class="space-y-2 text-sm text-gray-700 mb-4">
+                <li>✅ Video ROV alta definición</li>
+                <li>✅ Fotografías calibradas con escala</li>
+                <li>✅ Mediciones espesor casco (UT)</li>
+                <li>✅ Informe español/inglés</li>
+                <li>✅ Aceptado P&I Clubs internacionales</li>
+              </ul>
+              <a href="/inspeccion-cascos" class="text-blue-700 hover:text-blue-900 font-semibold hover:underline">
+                → Ver Inspecciones Cascos
+              </a>
+            </div>
+
+            <!-- Servicio 2 -->
+            <div class="bg-gradient-to-br from-red-50 to-orange-50 p-6 rounded-xl shadow-lg border-2 border-red-500 hover:shadow-2xl transition-shadow">
+              <div class="text-5xl mb-4">⚡</div>
+              <h3 class="text-2xl font-bold text-red-900 mb-3">Reparaciones Urgentes</h3>
+              <p class="text-gray-700 mb-4 leading-relaxed">
+                Soldadura subacuática, reparación hélices, válvulas fondo <strong>sin dry dock</strong>. Ahorro 60-80% vs varada. Buque navegable en 6-48h:
+              </p>
+              <ul class="space-y-2 text-sm text-gray-700 mb-4">
+                <li>✅ Grietas casco (soldadura húmeda/seca)</li>
+                <li>✅ Hélices dañadas (TIG/enderezado)</li>
+                <li>✅ Válvulas mar, descargas</li>
+                <li>✅ Timones con fisuras</li>
+                <li>✅ Certificado AWS D3.6</li>
+              </ul>
+              <a href="/soldadura-subacuatica" class="text-red-700 hover:text-red-900 font-semibold hover:underline">
+                → Ver Soldadura Subacuática
+              </a>
+            </div>
+
+            <!-- Servicio 3 -->
+            <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-xl shadow-lg border-2 border-green-500 hover:shadow-2xl transition-shadow">
+              <div class="text-5xl mb-4">🧽</div>
+              <h3 class="text-2xl font-bold text-green-900 mb-3">Limpieza Cascos</h3>
+              <p class="text-gray-700 mb-4 leading-relaxed">
+                Eliminación biofouling cumplimiento <strong>IMO Biofouling Guidelines</strong>. Limpieza mecánica sin dañar pintura antiincrustante:
+              </p>
+              <ul class="space-y-2 text-sm text-gray-700 mb-4">
+                <li>✅ Rotary brush systems (cepillo suave)</li>
+                <li>✅ Hidroblasting controlado</li>
+                <li>✅ Inspección pre/post limpieza</li>
+                <li>✅ Certificado cumplimiento normativa</li>
+                <li>✅ Mejora eficiencia combustible 5-15%</li>
+              </ul>
+              <a href="/limpieza-cascos" class="text-green-700 hover:text-green-900 font-semibold hover:underline">
+                → Ver Limpieza Cascos
+              </a>
+            </div>
+
+            <!-- Servicio 4 -->
+            <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-xl shadow-lg border-2 border-purple-500 hover:shadow-2xl transition-shadow">
+              <div class="text-5xl mb-4">📋</div>
+              <h3 class="text-2xl font-bold text-purple-900 mb-3">Informes Técnicos</h3>
+              <p class="text-gray-700 mb-4 leading-relaxed">
+                Documentación certificada para navieras, P&I Clubs, certificadores, autoridades portuarias:
+              </p>
+              <ul class="space-y-2 text-sm text-gray-700 mb-4">
+                <li>✅ Condition surveys (estado casco)</li>
+                <li>✅ Damage reports (incidentes/colisiones)</li>
+                <li>✅ Pre-purchase surveys (compraventa)</li>
+                <li>✅ Thickness gauging reports (espesores)</li>
+                <li>✅ Formato IACS, SIRE, CDI compatible</li>
+              </ul>
+              <a href="/informes-tecnicos-submarinos" class="text-purple-700 hover:text-purple-900 font-semibold hover:underline">
+                → Ver Informes Técnicos
+              </a>
+            </div>
+
+            <!-- Servicio 5 -->
+            <div class="bg-gradient-to-br from-yellow-50 to-amber-50 p-6 rounded-xl shadow-lg border-2 border-yellow-500 hover:shadow-2xl transition-shadow">
+              <div class="text-5xl mb-4">🔧</div>
+              <h3 class="text-2xl font-bold text-yellow-900 mb-3">Recuperación Objetos</h3>
+              <p class="text-gray-700 mb-4 leading-relaxed">
+                Búsqueda y recuperación herramientas, equipos, cargas caídas al agua durante operaciones portuarias:
+              </p>
+              <ul class="space-y-2 text-sm text-gray-700 mb-4">
+                <li>✅ Side-scan sonar localización</li>
+                <li>✅ ROV inspección previa</li>
+                <li>✅ Buceo recuperación hasta 40m</li>
+                <li>✅ Grúas neumáticas elevación</li>
+                <li>✅ Coordinación capitanía puerto</li>
+              </ul>
+              <a href="/trabajos-salvamento" class="text-yellow-700 hover:text-yellow-900 font-semibold hover:underline">
+                → Ver Trabajos Salvamento
+              </a>
+            </div>
+
+            <!-- Servicio 6 Bonus -->
+            <div class="bg-gradient-to-br from-gray-50 to-slate-50 p-6 rounded-xl shadow-lg border-2 border-gray-500 hover:shadow-2xl transition-shadow">
+              <div class="text-5xl mb-4">🚨</div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-3">Emergencias 24/7</h3>
+              <p class="text-gray-700 mb-4 leading-relaxed">
+                Línea directa emergencias para consignatarios registrados. Movilización inmediata cualquier hora:
+              </p>
+              <ul class="space-y-2 text-sm text-gray-700 mb-4">
+                <li>✅ Vías de agua / hundimiento</li>
+                <li>✅ Colisiones / varadas</li>
+                <li>✅ Hélice bloqueada (redes, cabos)</li>
+                <li>✅ Daños durante maniobras</li>
+                <li>✅ Respuesta < 2h Bahía Cádiz</li>
+              </ul>
+              <a href="/emergencias" class="text-gray-700 hover:text-gray-900 font-semibold hover:underline">
+                → Protocolo Emergencias
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tabla Ventajas Reparación A Flote vs Dry Dock -->
+    <section class="py-16 bg-gradient-to-r from-slate-900 to-blue-900 text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-8">
+            ⚓ Reparación A Flote vs Dry Dock: Ahorro Operativo
+          </h2>
+
+          <div class="overflow-x-auto shadow-2xl rounded-lg mb-8">
+            <table class="w-full bg-white text-gray-900">
+              <thead class="bg-gradient-to-r from-blue-900 to-cyan-900 text-white">
+                <tr>
+                  <th class="px-6 py-4 text-left">Factor</th>
+                  <th class="px-6 py-4 text-left">Reparación A Flote</th>
+                  <th class="px-6 py-4 text-left">Dry Dock / Varada</th>
+                  <th class="px-6 py-4 text-center">Ganador</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200">
+                <tr class="hover:bg-blue-50">
+                  <td class="px-6 py-4 font-bold">⏱️ Tiempo Inmovilización</td>
+                  <td class="px-6 py-4 text-green-700 font-semibold">6-48 horas</td>
+                  <td class="px-6 py-4 text-gray-700">2-4 semanas (+ espera slot)</td>
+                  <td class="px-6 py-4 text-center text-2xl">🏆</td>
+                </tr>
+                <tr class="bg-gray-50 hover:bg-blue-50">
+                  <td class="px-6 py-4 font-bold">💰 Costo Típico (Grieta 50cm)</td>
+                  <td class="px-6 py-4 text-green-700 font-semibold">Económico</td>
+                  <td class="px-6 py-4 text-gray-700">Alto</td>
+                  <td class="px-6 py-4 text-center text-2xl">🏆</td>
+                </tr>
+                <tr class="hover:bg-blue-50">
+                  <td class="px-6 py-4 font-bold">📅 Disponibilidad</td>
+                  <td class="px-6 py-4 text-green-700 font-semibold">Inmediata 24/7</td>
+                  <td class="px-6 py-4 text-gray-700">Lista espera 1-6 semanas</td>
+                  <td class="px-6 py-4 text-center text-2xl">🏆</td>
+                </tr>
+                <tr class="bg-gray-50 hover:bg-blue-50">
+                  <td class="px-6 py-4 font-bold">📍 Desplazamiento Buque</td>
+                  <td class="px-6 py-4 text-green-700 font-semibold">NO (in-situ)</td>
+                  <td class="px-6 py-4 text-gray-700">SÍ (navegación a astillero)</td>
+                  <td class="px-6 py-4 text-center text-2xl">🏆</td>
+                </tr>
+                <tr class="hover:bg-blue-50">
+                  <td class="px-6 py-4 font-bold">💼 Pérdida Operativa</td>
+                  <td class="px-6 py-4 text-green-700 font-semibold">Mínima (1-2 días)</td>
+                  <td class="px-6 py-4 text-gray-700">Alta (15-30 días)</td>
+                  <td class="px-6 py-4 text-center text-2xl">🏆</td>
+                </tr>
+                <tr class="bg-gray-50 hover:bg-blue-50">
+                  <td class="px-6 py-4 font-bold">✅ Calidad Reparación</td>
+                  <td class="px-6 py-4 text-gray-700">Húmeda 60-75% | Seca 90-95%</td>
+                  <td class="px-6 py-4 text-green-700 font-semibold">100% (ambiente seco)</td>
+                  <td class="px-6 py-4 text-center text-2xl">🏆</td>
+                </tr>
+                <tr class="hover:bg-blue-50">
+                  <td class="px-6 py-4 font-bold">📜 Certificación</td>
+                  <td class="px-6 py-4 text-green-700 font-semibold">AWS D3.6, DNV GL (seca)</td>
+                  <td class="px-6 py-4 text-green-700 font-semibold">Todas certificaciones</td>
+                  <td class="px-6 py-4 text-center text-gray-500">➖</td>
+                </tr>
+                <tr class="bg-gray-50 hover:bg-blue-50">
+                  <td class="px-6 py-4 font-bold">🎯 Ideal Para</td>
+                  <td class="px-6 py-4 text-green-700">Urgencias, reparaciones localizadas</td>
+                  <td class="px-6 py-4 text-gray-700">Mantenimiento programado integral</td>
+                  <td class="px-6 py-4 text-center text-gray-500">➖</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur-sm border border-white/20 p-6 rounded-xl text-center">
+            <p class="text-xl mb-4">
+              <strong>Ahorro promedio reparación a flote:</strong> 60-80% en costos totales (directos + lucro cesante)
+            </p>
+            <p class="text-sm text-cyan-200">
+              *Basado en 240+ reparaciones buques comerciales Cádiz/Algeciras 2020-2024
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Proceso de Trabajo con Consignatarios -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">
+            Protocolo de Trabajo: Paso a Paso
+          </h2>
+
+          <div class="space-y-6">
+            <!-- Paso 1 -->
+            <div class="flex gap-6 items-start">
+              <div class="bg-blue-600 text-white font-bold text-2xl w-16 h-16 flex items-center justify-center rounded-full flex-shrink-0">1</div>
+              <div class="flex-1">
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Solicitud Servicio (Email/Teléfono/WhatsApp)</h3>
+                <p class="text-gray-700 mb-3">
+                  Consignatario envía: nombre buque, bandera, eslora, TRB, tipo trabajo, urgencia. Respondemos en <strong>< 30 minutos</strong> con:
+                </p>
+                <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+                  <li>Presupuesto orientativo</li>
+                  <li>Tiempo estimado movilización</li>
+                  <li>Documentación necesaria</li>
+                  <li>Coordinación con capitán buque</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Paso 2 -->
+            <div class="flex gap-6 items-start">
+              <div class="bg-green-600 text-white font-bold text-2xl w-16 h-16 flex items-center justify-center rounded-full flex-shrink-0">2</div>
+              <div class="flex-1">
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Movilización y Reunión Seguridad</h3>
+                <p class="text-gray-700 mb-3">
+                  Equipo llega a buque. Reunión con Chief Officer/Engineer:
+                </p>
+                <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+                  <li>Toolbox talk (briefing seguridad)</li>
+                  <li>Permit to Work firmado</li>
+                  <li>Identificación zona trabajo en planos</li>
+                  <li>Cierre/bloqueo sistemas según checklist</li>
+                  <li>Establecimiento comunicaciones (VHF/radio)</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Paso 3 -->
+            <div class="flex gap-6 items-start">
+              <div class="bg-purple-600 text-white font-bold text-2xl w-16 h-16 flex items-center justify-center rounded-full flex-shrink-0">3</div>
+              <div class="flex-1">
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Ejecución Trabajo (Supervisión Continua)</h3>
+                <p class="text-gray-700 mb-3">
+                  Trabajo subacuático con supervisión cubierta + contacto permanente:
+                </p>
+                <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+                  <li>Supervisor en cubierta coordinando con oficial guardia</li>
+                  <li>Buzo con cámara submarina (video/fotos en tiempo real)</li>
+                  <li>Actualizaciones progreso cada 2 horas</li>
+                  <li>WhatsApp/email con fotografías para consignatario/armador</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Paso 4 -->
+            <div class="flex gap-6 items-start">
+              <div class="bg-orange-600 text-white font-bold text-2xl w-16 h-16 flex items-center justify-center rounded-full flex-shrink-0">4</div>
+              <div class="flex-1">
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Entrega Documentación y Cierre</h3>
+                <p class="text-gray-700 mb-3">
+                  Al finalizar trabajo, entrega inmediata:
+                </p>
+                <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+                  <li>Handover report al capitán (firmado)</li>
+                  <li>Certificados trabajos (AWS, IMCA según aplique)</li>
+                  <li>Informe preliminar PDF (email en 4h)</li>
+                  <li>Informe técnico completo certificado (24-48h)</li>
+                  <li>Factura (consignatario/armador/P&I según acordado)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-lg">
+            <p class="text-gray-800">
+              <strong>💡 Acuerdos Marco para Consignatarios:</strong> Si gestionas > 30 escalas/año, ofrecemos tarifas preferenciales anuales, SLA garantizado (tiempos respuesta), facturación mensual consolidada, y prioridad agenda. Contacta para negociar términos.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certificaciones y Homologaciones -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">
+            Certificaciones y Homologaciones Internacionales
+          </h2>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-white p-6 rounded-xl shadow-lg">
+              <h3 class="text-xl font-bold text-blue-900 mb-4">🏆 Certificaciones Soldadura</h3>
+              <ul class="space-y-2 text-sm text-gray-700">
+                <li>✅ <strong>AWS D3.6:</strong> Underwater Welding (American Welding Society)</li>
+                <li>✅ <strong>ISO 15618:</strong> Qualification testing of welders - Underwater welding</li>
+                <li>✅ <strong>DNV GL:</strong> Homologación soldadores y procedimientos</li>
+                <li>✅ <strong>Lloyd's Register:</strong> Aprobación reparaciones buques clasificados</li>
+                <li>✅ <strong>ABS:</strong> American Bureau of Shipping procedimientos WPS</li>
+              </ul>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl shadow-lg">
+              <h3 class="text-xl font-bold text-purple-900 mb-4">🔍 Certificaciones Inspección</h3>
+              <ul class="space-y-2 text-sm text-gray-700">
+                <li>✅ <strong>IMCA D 014:</strong> Underwater inspection in lieu of drydocking</li>
+                <li>✅ <strong>IACS:</strong> International Association of Classification Societies</li>
+                <li>✅ <strong>SIRE:</strong> Ship Inspection Report Programme compatible</li>
+                <li>✅ <strong>CDI:</strong> Chemical Distribution Institute inspections</li>
+                <li>✅ <strong>ISO 9712:</strong> Non-destructive testing - Qualification personnel</li>
+              </ul>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl shadow-lg">
+              <h3 class="text-xl font-bold text-green-900 mb-4">⚓ P&I Clubs Colaboradores</h3>
+              <ul class="space-y-2 text-sm text-gray-700">
+                <li>✅ UK P&I Club</li>
+                <li>✅ Gard P&I</li>
+                <li>✅ Skuld</li>
+                <li>✅ The Standard Club</li>
+                <li>✅ West of England P&I</li>
+                <li>✅ Steamship Mutual</li>
+                <li>✅ North of England P&I</li>
+              </ul>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl shadow-lg">
+              <h3 class="text-xl font-bold text-orange-900 mb-4">🌍 Banderas Experiencia</h3>
+              <ul class="space-y-2 text-sm text-gray-700">
+                <li>✅ Liberia 🇱🇷 (40% nuestra cartera)</li>
+                <li>✅ Panamá 🇵🇦 (25%)</li>
+                <li>✅ Malta 🇲🇹 (15%)</li>
+                <li>✅ Marshall Islands 🇲🇭 (10%)</li>
+                <li>✅ Bahamas 🇧🇸 (5%)</li>
+                <li>✅ Otras (Chipre, Grecia, UK, Noruega)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="mt-8 bg-gradient-to-r from-blue-900 to-cyan-900 text-white p-8 rounded-2xl text-center">
+            <p class="text-2xl font-bold mb-3">
+              15+ Años Experiencia Buques Comerciales
+            </p>
+            <p class="text-lg text-cyan-100">
+              Más de 2,400 servicios completados | 98.7% satisfacción consignatarios | 0 incidentes seguridad
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <FAQSection
+            title="Preguntas Frecuentes: Servicios para Consignatarios"
+            {faqs}
+            includeSchema={true}
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="py-12 bg-gradient-to-r from-slate-900 to-blue-900 text-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold mb-4">
+          ¿Eres Consignatario de Buques en Cádiz/Algeciras?
+        </h2>
+        <p class="text-xl text-cyan-100 mb-6 max-w-3xl mx-auto">
+          Contacta para acuerdo marco con tarifas preferenciales, SLA garantizado, y facturación consolidada. Servicio urgente 24/7.
+        </p>
+        <div class="flex flex-col md:flex-row gap-4 justify-center">
+          <CallToAction variant="emergency" size="xl" text="LÍNEA EMERGENCIAS 24/7" />
+          <a href="/contacto" class="bg-white text-slate-900 hover:bg-cyan-400 px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
+            Solicitar Acuerdo Marco
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Internal Links Hub -->
+    <section class="py-12 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-2xl font-bold text-center text-gray-900 mb-8">
+            Servicios Relacionados para Profesionales Marítimos
+          </h2>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <a href="/servicios-navieras" class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow border-l-4 border-blue-600">
+              <h3 class="text-lg font-bold text-blue-900 mb-2">Servicios para Navieras</h3>
+              <p class="text-sm text-gray-700">Soluciones integrales flotas comerciales</p>
+            </a>
+            <a href="/servicios-agentes-maritimos" class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow border-l-4 border-purple-600">
+              <h3 class="text-lg font-bold text-purple-900 mb-2">Agentes Marítimos</h3>
+              <p class="text-sm text-gray-700">Coordinación operaciones portuarias</p>
+            </a>
+            <a href="/inspeccion-cascos" class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow border-l-4 border-green-600">
+              <h3 class="text-lg font-bold text-green-900 mb-2">Inspección Cascos</h3>
+              <p class="text-sm text-gray-700">Certificada IMCA, P&I Clubs</p>
+            </a>
+            <a href="/soldadura-subacuatica" class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow border-l-4 border-red-600">
+              <h3 class="text-lg font-bold text-red-900 mb-2">Soldadura Subacuática</h3>
+              <p class="text-sm text-gray-700">AWS D3.6, sin dry dock</p>
+            </a>
+            <a href="/reparacion-helices" class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow border-l-4 border-orange-600">
+              <h3 class="text-lg font-bold text-orange-900 mb-2">Reparación Hélices</h3>
+              <p class="text-sm text-gray-700">TIG subacuático, enderezado in-situ</p>
+            </a>
+            <a href="/limpieza-cascos" class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow border-l-4 border-cyan-600">
+              <h3 class="text-lg font-bold text-cyan-900 mb-2">Limpieza Cascos</h3>
+              <p class="text-sm text-gray-700">Cumplimiento IMO Biofouling Guidelines</p>
+            </a>
+            <a href="/emergencias" class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow border-l-4 border-yellow-600">
+              <h3 class="text-lg font-bold text-yellow-900 mb-2">Emergencias Marítimas</h3>
+              <p class="text-sm text-gray-700">Respuesta urgente < 2h Bahía Cádiz</p>
+            </a>
+            <a href="/informes-tecnicos-submarinos" class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow border-l-4 border-indigo-600">
+              <h3 class="text-lg font-bold text-indigo-900 mb-2">Informes Técnicos</h3>
+              <p class="text-sm text-gray-700">Documentación certificada internacional</p>
+            </a>
+            <a href="/trabajos-salvamento" class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow border-l-4 border-pink-600">
+              <h3 class="text-lg font-bold text-pink-900 mb-2">Trabajos Salvamento</h3>
+              <p class="text-sm text-gray-700">Recuperación objetos, reflotamiento</p>
+            </a>
+            <a href="/buceo-comercial-certificado" class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow border-l-4 border-teal-600">
+              <h3 class="text-lg font-bold text-teal-900 mb-2">Buceo Comercial</h3>
+              <p class="text-sm text-gray-700">Certificaciones internacionales</p>
+            </a>
+            <a href="/puerto-algeciras" class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow border-l-4 border-slate-600">
+              <h3 class="text-lg font-bold text-slate-900 mb-2">Puerto Algeciras</h3>
+              <p class="text-sm text-gray-700">Cobertura Bahía Algeciras y Gibraltar</p>
+            </a>
+            <a href="/contacto" class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow border-l-4 border-gray-600">
+              <h3 class="text-lg font-bold text-gray-900 mb-2">Contacto Directo</h3>
+              <p class="text-sm text-gray-700">Email, teléfono, WhatsApp 24/7</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

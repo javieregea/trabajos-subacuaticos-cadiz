@@ -9,22 +9,22 @@ import RelatedLinks from '../components/RelatedLinks.astro';
 const faqs = [
   {
     question: "¿Cuál es el tipo de soldadura subacuática más común en Cádiz?",
-    answer: "La <strong>soldadura húmeda con electrodo revestido (SMAW)</strong> representa el 65% de trabajos en puerto de Cádiz. Razones:<br>• Rápida movilización (equipo portátil)<br>• Económica (120-180€/hora)<br>• Ideal para emergencias navales<br>• Suficiente para reparaciones no críticas<br><br>Para buques comerciales que requieren certificación Class, usamos <strong>soldadura seca hiperbárica TIG/MIG</strong> (35% de trabajos).",
+    answer: "La <strong>soldadura húmeda con electrodo revestido (SMAW)</strong> representa el 65% de trabajos en puerto de Cádiz. Razones:<br>• Rápida movilización (equipo portátil)<br>• Económica<br>• Ideal para emergencias navales<br>• Suficiente para reparaciones no críticas<br><br>Para buques comerciales que requieren certificación Class, usamos <strong>soldadura seca hiperbárica TIG/MIG</strong> (35% de trabajos).",
     category: "Uso Común"
   },
   {
     question: "¿Qué diferencia hay entre soldadura húmeda y soldadura seca hiperbárica?",
-    answer: "<strong>Soldadura Húmeda:</strong><br>• Directamente en contacto con agua<br>• Electrodos especiales impermeables<br>• Calidad 60-75% vs tierra<br>• Rápida (2-6 horas)<br>• Económica (120-180€/h)<br>• Durabilidad: 2-5 años<br><br><strong>Soldadura Seca Hiperbárica:</strong><br>• Dentro de cámara presurizada sin agua<br>• Técnicas convencionales (TIG, MIG, SMAW)<br>• Calidad 90-95% vs tierra<br>• Lenta (montaje cámara 3-6h + soldadura)<br>• Costosa (250-400€/h + 500-1,200€ cámara)<br>• Durabilidad: 10-20+ años",
+    answer: "<strong>Soldadura Húmeda:</strong><br>• Directamente en contacto con agua<br>• Electrodos especiales impermeables<br>• Calidad 60-75% vs tierra<br>• Rápida (2-6 horas)<br>• Económica<br>• Durabilidad: 2-5 años<br><br><strong>Soldadura Seca Hiperbárica:</strong><br>• Dentro de cámara presurizada sin agua<br>• Técnicas convencionales (TIG, MIG, SMAW)<br>• Calidad 90-95% vs tierra<br>• Lenta (montaje cámara 3-6h + soldadura)<br>• Más costosa<br>• Durabilidad: 10-20+ años",
     category: "Comparación"
   },
   {
     question: "¿Se puede soldar aluminio bajo el agua?",
-    answer: "<strong>SÍ, pero SOLO con soldadura seca hiperbárica</strong> usando TIG (GTAW) con argón puro. El aluminio marino (5083, 6061, 6082) NO se puede soldar con técnica húmeda porque:<br>• Alta conductividad térmica → enfriamiento instantáneo<br>• Óxido de aluminio (Al2O3) punto fusión 2,072°C vs 660°C del aluminio<br>• Contaminación hidrógeno del agua → porosidad crítica<br><br>En Cádiz reparamos veleros y yates de aluminio montando cámara hiperbárica con atmósfera 100% argón. Certificable según AWS D3.6 Annex III. Precio: 280-400€/h + montaje.",
+    answer: "<strong>SÍ, pero SOLO con soldadura seca hiperbárica</strong> usando TIG (GTAW) con argón puro. El aluminio marino (5083, 6061, 6082) NO se puede soldar con técnica húmeda porque:<br>• Alta conductividad térmica → enfriamiento instantáneo<br>• Óxido de aluminio (Al2O3) punto fusión 2,072°C vs 660°C del aluminio<br>• Contaminación hidrógeno del agua → porosidad crítica<br><br>En Cádiz reparamos veleros y yates de aluminio montando cámara hiperbárica con atmósfera 100% argón. Certificable según AWS D3.6 Annex III.",
     category: "Materiales"
   },
   {
     question: "¿Qué es la soldadura por fricción-agitación subacuática?",
-    answer: "La <strong>soldadura FSW (Friction Stir Welding) subacuática</strong> es una técnica revolucionaria de estado sólido (sin fusión). Una herramienta rotativa genera calor por fricción y mezcla los metales mecánicamente.<br><br><strong>Ventajas:</strong><br>• Sin arco eléctrico (más seguro)<br>• Excelente para aluminio y aleaciones difíciles<br>• Menor distorsión térmica<br>• Calidad superior<br><br><strong>Desventajas:</strong><br>• Requiere equipamiento robótico especializado (> 500,000€)<br>• Solo para aplicaciones industriales (offshore, astilleros grandes)<br>• NO disponible para reparaciones emergencia<br><br>En Cádiz NO ofrecemos FSW (solo grandes astilleros europeos). Usamos TIG/MIG hiperbárico para aluminio.",
+    answer: "La <strong>soldadura FSW (Friction Stir Welding) subacuática</strong> es una técnica revolucionaria de estado sólido (sin fusión). Una herramienta rotativa genera calor por fricción y mezcla los metales mecánicamente.<br><br><strong>Ventajas:</strong><br>• Sin arco eléctrico (más seguro)<br>• Excelente para aluminio y aleaciones difíciles<br>• Menor distorsión térmica<br>• Calidad superior<br><br><strong>Desventajas:</strong><br>• Requiere equipamiento robótico especializado muy costoso<br>• Solo para aplicaciones industriales (offshore, astilleros grandes)<br>• NO disponible para reparaciones emergencia<br><br>En Cádiz NO ofrecemos FSW (solo grandes astilleros europeos). Usamos TIG/MIG hiperbárico para aluminio.",
     category: "Tecnologías Avanzadas"
   },
   {
@@ -39,12 +39,12 @@ const faqs = [
   },
   {
     question: "¿Existe soldadura láser subacuática?",
-    answer: "<strong>SÍ, pero es tecnología experimental</strong> en fase de investigación (2024-2026). Centros como JAEA (Japón) y universidades europeas desarrollan soldadura láser Nd:YAG submarina para:<br>• Reactores nucleares sumergidos<br>• Reparaciones Fukushima<br>• Aplicaciones offshore profundas (> 500m)<br><br><strong>Estado actual:</strong><br>• Prototipos funcionales en laboratorio<br>• NO disponible comercialmente<br>• Costo equipamiento > 2 millones €<br>• Requiere ROVs especializados<br><br>Para el 99.9% de aplicaciones navales, TIG/MIG/SMAW convencionales son suficientes y probados.",
+    answer: "<strong>SÍ, pero es tecnología experimental</strong> en fase de investigación (2024-2026). Centros como JAEA (Japón) y universidades europeas desarrollan soldadura láser Nd:YAG submarina para:<br>• Reactores nucleares sumergidos<br>• Reparaciones Fukushima<br>• Aplicaciones offshore profundas (> 500m)<br><br><strong>Estado actual:</strong><br>• Prototipos funcionales en laboratorio<br>• NO disponible comercialmente<br>• Costo equipamiento extremadamente alto<br>• Requiere ROVs especializados<br><br>Para el 99.9% de aplicaciones navales, TIG/MIG/SMAW convencionales son suficientes y probados.",
     category: "Futuro"
   },
   {
     question: "¿Se puede soldar acero inoxidable 316L bajo el agua?",
-    answer: "<strong>SÍ, perfectamente.</strong> El acero inoxidable marino 316L es uno de los materiales más soldables bajo agua:<br><br><strong>Soldadura húmeda:</strong><br>• Electrodos E309L-16 o E312-16<br>• Calidad aceptable para hélices, ejes, timones<br>• Precio: 140-200€/hora<br><br><strong>Soldadura seca TIG:</strong><br>• Argón puro 99.99%<br>• Calidad certificable Lloyd's Register<br>• Ideal para estructuras críticas offshore<br>• Precio: 280-380€/hora + cámara<br><br>El 316L resiste corrosión marina excelentemente, soldaduras duran 15-25 años. Usado en: hélices premium, ejes de timón, estructuras plataformas offshore.",
+    answer: "<strong>SÍ, perfectamente.</strong> El acero inoxidable marino 316L es uno de los materiales más soldables bajo agua:<br><br><strong>Soldadura húmeda:</strong><br>• Electrodos E309L-16 o E312-16<br>• Calidad aceptable para hélices, ejes, timones<br>• Económico<br><br><strong>Soldadura seca TIG:</strong><br>• Argón puro 99.99%<br>• Calidad certificable Lloyd's Register<br>• Ideal para estructuras críticas offshore<br>• Precio más elevado<br><br>El 316L resiste corrosión marina excelentemente, soldaduras duran 15-25 años. Usado en: hélices premium, ejes de timón, estructuras plataformas offshore.",
     category: "Materiales"
   }
 ];
@@ -195,7 +195,7 @@ const faqs = [
                   <td class="px-4 py-3">Acero carbono, inox</td>
                   <td class="px-4 py-3">30-40m</td>
                   <td class="px-4 py-3 text-orange-600">60-75%</td>
-                  <td class="px-4 py-3 text-green-700 font-semibold">120-180€/h</td>
+                  <td class="px-4 py-3 text-green-700 font-semibold">Económico</td>
                   <td class="px-4 py-3">Emergencias, reparaciones temporales</td>
                 </tr>
                 <tr class="bg-gray-50 hover:bg-blue-50">
@@ -204,7 +204,7 @@ const faqs = [
                   <td class="px-4 py-3">Acero carbono</td>
                   <td class="px-4 py-3">25-35m</td>
                   <td class="px-4 py-3 text-orange-600">65-80%</td>
-                  <td class="px-4 py-3 text-green-700">150-220€/h</td>
+                  <td class="px-4 py-3 text-green-700">Moderado</td>
                   <td class="px-4 py-3">Producción rápida offshore</td>
                 </tr>
                 <tr class="hover:bg-blue-50">
@@ -213,7 +213,7 @@ const faqs = [
                   <td class="px-4 py-3">Inox, aluminio, titanio</td>
                   <td class="px-4 py-3">300m+</td>
                   <td class="px-4 py-3 text-green-700 font-semibold">90-95%</td>
-                  <td class="px-4 py-3 text-gray-700">280-400€/h + cámara</td>
+                  <td class="px-4 py-3 text-gray-700">Alto</td>
                   <td class="px-4 py-3">Calidad máxima, certificaciones</td>
                 </tr>
                 <tr class="bg-gray-50 hover:bg-blue-50">
@@ -222,7 +222,7 @@ const faqs = [
                   <td class="px-4 py-3">Acero carbono, inox</td>
                   <td class="px-4 py-3">300m+</td>
                   <td class="px-4 py-3 text-green-700 font-semibold">85-92%</td>
-                  <td class="px-4 py-3 text-gray-700">250-380€/h + cámara</td>
+                  <td class="px-4 py-3 text-gray-700">Moderado-Alto</td>
                   <td class="px-4 py-3">Producción, buques comerciales</td>
                 </tr>
                 <tr class="hover:bg-blue-50">
@@ -231,7 +231,7 @@ const faqs = [
                   <td class="px-4 py-3">Todos los aceros</td>
                   <td class="px-4 py-3">300m+</td>
                   <td class="px-4 py-3 text-green-700">88-93%</td>
-                  <td class="px-4 py-3 text-gray-700">220-350€/h + cámara</td>
+                  <td class="px-4 py-3 text-gray-700">Moderado</td>
                   <td class="px-4 py-3">Versatilidad, bajo costo relativo</td>
                 </tr>
                 <tr class="bg-gray-50 hover:bg-blue-50">
@@ -250,7 +250,7 @@ const faqs = [
           <div class="grid md:grid-cols-3 gap-4">
             <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg">
               <p class="text-sm font-bold text-blue-900 mb-1">💰 Más Económico</p>
-              <p class="text-xs text-gray-700">Húmeda SMAW: 120-180€/h · Sin cámara</p>
+              <p class="text-xs text-gray-700">Húmeda SMAW · Sin cámara</p>
             </div>
             <div class="bg-purple-50 border-l-4 border-purple-500 p-4 rounded-r-lg">
               <p class="text-sm font-bold text-purple-900 mb-1">🏆 Máxima Calidad</p>
@@ -309,7 +309,7 @@ const faqs = [
                     <p><strong>Materiales:</strong> Acero carbono, inox 304/316</p>
                     <p><strong>Velocidad:</strong> 15-25 cm/min</p>
                     <p><strong>Durabilidad:</strong> 2-5 años</p>
-                    <p><strong>Precio Cádiz:</strong> 120-180€/hora</p>
+                    <p><strong>Precio:</strong> Económico</p>
                   </div>
                   <p class="text-xs text-gray-600 mt-3">
                     <strong>Casos reales:</strong> 820 reparaciones emergencia 2020-2024 puerto Cádiz. Tiempo promedio: 4.2 horas.
@@ -359,7 +359,7 @@ const faqs = [
                     <p><strong>Materiales:</strong> Inox, aluminio, titanio, níquel</p>
                     <p><strong>Velocidad:</strong> 8-15 cm/min (preciso)</p>
                     <p><strong>Durabilidad:</strong> 15-25 años</p>
-                    <p><strong>Precio Cádiz:</strong> 280-400€/h + 800-1,500€ cámara</p>
+                    <p><strong>Precio:</strong> Alto (incluye cámara)</p>
                   </div>
                   <p class="text-xs text-gray-600 mt-3">
                     <strong>Certificaciones:</strong> AWS D3.6, ISO 15618, DNV GL homologado.
@@ -409,7 +409,7 @@ const faqs = [
                     <p><strong>Materiales:</strong> Acero carbono, inox (NO aluminio)</p>
                     <p><strong>Velocidad:</strong> 25-40 cm/min (2x SMAW)</p>
                     <p><strong>Durabilidad:</strong> 12-20 años</p>
-                    <p><strong>Precio Cádiz:</strong> 250-380€/h + 700-1,300€ cámara</p>
+                    <p><strong>Precio:</strong> Moderado-Alto (incluye cámara)</p>
                   </div>
                 </div>
               </div>
@@ -437,7 +437,7 @@ const faqs = [
                 <div class="bg-white p-4 rounded-lg shadow">
                   <h4 class="font-bold text-gray-900 mb-2">Soldadura Láser Experimental</h4>
                   <p class="text-gray-700 mb-2">Nd:YAG láser submarina. Fukushima, reactores nucleares. Investigación 2024-2026.</p>
-                  <p class="text-xs text-gray-600"><strong>Estado:</strong> No comercial · Costo > 2M€</p>
+                  <p class="text-xs text-gray-600"><strong>Estado:</strong> No comercial · Costo extremadamente alto</p>
                 </div>
                 <div class="bg-white p-4 rounded-lg shadow">
                   <h4 class="font-bold text-gray-900 mb-2">Plasma Arc Welding (PAW)</h4>
