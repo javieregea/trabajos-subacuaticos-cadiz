@@ -1,0 +1,558 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import FAQSection from '../components/FAQSection.astro';
+import CallToAction from '../components/CallToAction.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
+
+const faqs = [
+  {
+    question: "¿Cuál es el tipo de soldadura subacuática más común en Cádiz?",
+    answer: "La <strong>soldadura húmeda con electrodo revestido (SMAW)</strong> representa el 65% de trabajos en puerto de Cádiz. Razones:<br>• Rápida movilización (equipo portátil)<br>• Económica (120-180€/hora)<br>• Ideal para emergencias navales<br>• Suficiente para reparaciones no críticas<br><br>Para buques comerciales que requieren certificación Class, usamos <strong>soldadura seca hiperbárica TIG/MIG</strong> (35% de trabajos).",
+    category: "Uso Común"
+  },
+  {
+    question: "¿Qué diferencia hay entre soldadura húmeda y soldadura seca hiperbárica?",
+    answer: "<strong>Soldadura Húmeda:</strong><br>• Directamente en contacto con agua<br>• Electrodos especiales impermeables<br>• Calidad 60-75% vs tierra<br>• Rápida (2-6 horas)<br>• Económica (120-180€/h)<br>• Durabilidad: 2-5 años<br><br><strong>Soldadura Seca Hiperbárica:</strong><br>• Dentro de cámara presurizada sin agua<br>• Técnicas convencionales (TIG, MIG, SMAW)<br>• Calidad 90-95% vs tierra<br>• Lenta (montaje cámara 3-6h + soldadura)<br>• Costosa (250-400€/h + 500-1,200€ cámara)<br>• Durabilidad: 10-20+ años",
+    category: "Comparación"
+  },
+  {
+    question: "¿Se puede soldar aluminio bajo el agua?",
+    answer: "<strong>SÍ, pero SOLO con soldadura seca hiperbárica</strong> usando TIG (GTAW) con argón puro. El aluminio marino (5083, 6061, 6082) NO se puede soldar con técnica húmeda porque:<br>• Alta conductividad térmica → enfriamiento instantáneo<br>• Óxido de aluminio (Al2O3) punto fusión 2,072°C vs 660°C del aluminio<br>• Contaminación hidrógeno del agua → porosidad crítica<br><br>En Cádiz reparamos veleros y yates de aluminio montando cámara hiperbárica con atmósfera 100% argón. Certificable según AWS D3.6 Annex III. Precio: 280-400€/h + montaje.",
+    category: "Materiales"
+  },
+  {
+    question: "¿Qué es la soldadura por fricción-agitación subacuática?",
+    answer: "La <strong>soldadura FSW (Friction Stir Welding) subacuática</strong> es una técnica revolucionaria de estado sólido (sin fusión). Una herramienta rotativa genera calor por fricción y mezcla los metales mecánicamente.<br><br><strong>Ventajas:</strong><br>• Sin arco eléctrico (más seguro)<br>• Excelente para aluminio y aleaciones difíciles<br>• Menor distorsión térmica<br>• Calidad superior<br><br><strong>Desventajas:</strong><br>• Requiere equipamiento robótico especializado (> 500,000€)<br>• Solo para aplicaciones industriales (offshore, astilleros grandes)<br>• NO disponible para reparaciones emergencia<br><br>En Cádiz NO ofrecemos FSW (solo grandes astilleros europeos). Usamos TIG/MIG hiperbárico para aluminio.",
+    category: "Tecnologías Avanzadas"
+  },
+  {
+    question: "¿Cuál es el mejor tipo de soldadura para reparar un casco de acero?",
+    answer: "<strong>Depende de la criticidad:</strong><br><br><strong>Emergencia (vía de agua activa):</strong><br>→ Soldadura húmeda SMAW (electrodo revestido). Rápida, navegable en 4h, dura 2-5 años hasta varada programada.<br><br><strong>Reparación permanente no crítica:</strong><br>→ Soldadura seca SMAW. Calidad superior, dura 10-15 años, certificable.<br><br><strong>Reparación estructural crítica (buque comercial):</strong><br>→ Soldadura seca TIG o MIG. Máxima calidad, homologable Lloyd's/DNV GL/ABS, dura 15-20+ años.<br><br>El 80% de cascos comerciales en Cádiz son acero al carbono A36 o AH36 naval, reparables con cualquier método.",
+    category: "Aplicaciones"
+  },
+  {
+    question: "¿Qué electrodos se usan para soldadura húmeda subacuática?",
+    answer: "Los electrodos para soldadura húmeda tienen <strong>revestimiento impermeable especial</strong>:<br><br><strong>Más comunes (acero carbono):</strong><br>• <strong>E6013 modificado:</strong> Uso general, penetración media, fácil manejo<br>• <strong>E7014 waterproof:</strong> Mayor penetración, soldaduras estructurales<br>• <strong>E7018 submarino:</strong> Bajo hidrógeno, aplicaciones críticas<br><br><strong>Acero inoxidable:</strong><br>• <strong>E309L-16:</strong> Inox 304/316, hélices, ejes<br>• <strong>E312-16:</strong> Relleno, reparaciones generales<br><br>Los electrodos deben almacenarse en estufa 70-100°C y usarse en &lt; 2h tras sacar. Electrodos húmedos = porosidad + fisuras.",
+    category: "Materiales Técnicos"
+  },
+  {
+    question: "¿Existe soldadura láser subacuática?",
+    answer: "<strong>SÍ, pero es tecnología experimental</strong> en fase de investigación (2024-2026). Centros como JAEA (Japón) y universidades europeas desarrollan soldadura láser Nd:YAG submarina para:<br>• Reactores nucleares sumergidos<br>• Reparaciones Fukushima<br>• Aplicaciones offshore profundas (> 500m)<br><br><strong>Estado actual:</strong><br>• Prototipos funcionales en laboratorio<br>• NO disponible comercialmente<br>• Costo equipamiento > 2 millones €<br>• Requiere ROVs especializados<br><br>Para el 99.9% de aplicaciones navales, TIG/MIG/SMAW convencionales son suficientes y probados.",
+    category: "Futuro"
+  },
+  {
+    question: "¿Se puede soldar acero inoxidable 316L bajo el agua?",
+    answer: "<strong>SÍ, perfectamente.</strong> El acero inoxidable marino 316L es uno de los materiales más soldables bajo agua:<br><br><strong>Soldadura húmeda:</strong><br>• Electrodos E309L-16 o E312-16<br>• Calidad aceptable para hélices, ejes, timones<br>• Precio: 140-200€/hora<br><br><strong>Soldadura seca TIG:</strong><br>• Argón puro 99.99%<br>• Calidad certificable Lloyd's Register<br>• Ideal para estructuras críticas offshore<br>• Precio: 280-380€/hora + cámara<br><br>El 316L resiste corrosión marina excelentemente, soldaduras duran 15-25 años. Usado en: hélices premium, ejes de timón, estructuras plataformas offshore.",
+    category: "Materiales"
+  }
+];
+---
+
+<Layout
+  title="Tipos de Soldadura Subacuática: Guía Completa 2026 | Húmeda, Seca, TIG, MIG"
+  description="Guía completa 2026 sobre tipos de soldadura subacuática: húmeda vs seca, SMAW, TIG, MIG, electrodo, materiales, profundidad, precios. Tabla comparativa técnica. Cádiz."
+  keywords="tipos soldadura subacuática, soldadura húmeda seca, soldadura TIG submarina, soldadura MIG bajo agua, electrodo subacuático, soldadura hiperbárica tipos"
+>
+  <Header />
+
+  <main class="bg-gray-50">
+    <!-- Hero Section - Respuesta Directa AEO -->
+    <section class="bg-gradient-to-r from-indigo-900 via-purple-900 to-indigo-900 text-white py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <div class="inline-block bg-yellow-400 text-indigo-900 px-4 py-2 rounded-full font-bold text-sm mb-4">
+            📚 GUÍA TÉCNICA DEFINITIVA 2026
+          </div>
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">
+            Tipos de Soldadura Subacuática: Guía Completa 2026
+          </h1>
+          <div class="bg-white/10 backdrop-blur-sm border-l-4 border-yellow-400 p-6 rounded-r-lg mb-6">
+            <p class="text-xl md:text-2xl font-semibold mb-4">
+              Respuesta Directa:
+            </p>
+            <p class="text-lg leading-relaxed">
+              Existen <strong>2 categorías principales</strong> de soldadura subacuática: <strong>(1) Soldadura Húmeda</strong> (directamente en agua con electrodos especiales, rápida, económica 120-180€/h, durabilidad 2-5 años) y <strong>(2) Soldadura Seca Hiperbárica</strong> (en cámara presurizada sin agua, alta calidad, costosa 250-400€/h, durabilidad 10-20+ años). Dentro de cada categoría hay métodos: SMAW (electrodo revestido 70% de trabajos), TIG/GTAW (acero inox y aluminio), MIG/GMAW (producción rápida), y métodos avanzados (FSW, láser experimental). La elección depende de: urgencia, presupuesto, material, certificación requerida, y profundidad.
+            </p>
+          </div>
+          <div class="flex flex-col md:flex-row gap-4">
+            <CallToAction variant="light" size="xl" text="CONSULTA TÉCNICA GRATIS" />
+            <a href="/soldadura-subacuatica" class="bg-transparent border-2 border-white hover:bg-white hover:text-indigo-900 px-8 py-4 rounded-lg font-semibold text-lg transition-colors text-center">
+              Ver Servicios Soldadura
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Diagrama Clasificación -->
+    <section class="py-12 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">
+            Clasificación Completa: Tipos de Soldadura Subacuática
+          </h2>
+
+          <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-8 rounded-2xl shadow-xl mb-8">
+            <div class="text-center mb-6">
+              <div class="inline-block bg-indigo-900 text-white px-6 py-3 rounded-xl font-bold text-xl">
+                SOLDADURA SUBACUÁTICA
+              </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+              <!-- Húmeda -->
+              <div class="bg-white p-6 rounded-xl shadow-lg border-2 border-blue-500">
+                <div class="text-center mb-4">
+                  <div class="inline-block bg-blue-500 text-white px-4 py-2 rounded-lg font-bold">
+                    1️⃣ SOLDADURA HÚMEDA
+                  </div>
+                </div>
+                <p class="text-sm text-gray-600 mb-4 text-center">Directamente en contacto con agua</p>
+                <div class="space-y-3">
+                  <div class="bg-blue-50 p-3 rounded-lg">
+                    <h4 class="font-bold text-blue-900 mb-1">SMAW (Electrodo Revestido)</h4>
+                    <p class="text-xs text-gray-700">70% de trabajos · E6013, E7014, E7018 modificados</p>
+                  </div>
+                  <div class="bg-blue-50 p-3 rounded-lg">
+                    <h4 class="font-bold text-blue-900 mb-1">FCAW (Alambre Tubular)</h4>
+                    <p class="text-xs text-gray-700">15% · Producción rápida · Offshore</p>
+                  </div>
+                  <div class="bg-blue-50 p-3 rounded-lg">
+                    <h4 class="font-bold text-blue-900 mb-1">Soldadura por Fricción (FSW)</h4>
+                    <p class="text-xs text-gray-700">&lt; 1% · Robótica · Aluminio</p>
+                  </div>
+                </div>
+                <div class="mt-4 pt-4 border-t border-blue-200">
+                  <p class="text-sm text-blue-900"><strong>Ventajas:</strong> Rápida, económica, móvil</p>
+                  <p class="text-sm text-blue-900"><strong>Desventajas:</strong> Calidad inferior, temporal</p>
+                </div>
+              </div>
+
+              <!-- Seca -->
+              <div class="bg-white p-6 rounded-xl shadow-lg border-2 border-purple-500">
+                <div class="text-center mb-4">
+                  <div class="inline-block bg-purple-500 text-white px-4 py-2 rounded-lg font-bold">
+                    2️⃣ SOLDADURA SECA (Hiperbárica)
+                  </div>
+                </div>
+                <p class="text-sm text-gray-600 mb-4 text-center">En cámara presurizada libre de agua</p>
+                <div class="space-y-3">
+                  <div class="bg-purple-50 p-3 rounded-lg">
+                    <h4 class="font-bold text-purple-900 mb-1">TIG / GTAW (Tungsteno Inerte)</h4>
+                    <p class="text-xs text-gray-700">40% trabajos seca · Inox, aluminio · Calidad máxima</p>
+                  </div>
+                  <div class="bg-purple-50 p-3 rounded-lg">
+                    <h4 class="font-bold text-purple-900 mb-1">MIG / GMAW (Metal Inerte Gas)</h4>
+                    <p class="text-xs text-gray-700">35% · Acero carbono · Producción</p>
+                  </div>
+                  <div class="bg-purple-50 p-3 rounded-lg">
+                    <h4 class="font-bold text-purple-900 mb-1">SMAW (Electrodo en Seco)</h4>
+                    <p class="text-xs text-gray-700">20% · Versatilidad · Bajo costo</p>
+                  </div>
+                  <div class="bg-purple-50 p-3 rounded-lg">
+                    <h4 class="font-bold text-purple-900 mb-1">Soldadura Láser (Experimental)</h4>
+                    <p class="text-xs text-gray-700">&lt; 0.1% · Investigación · Offshore profundo</p>
+                  </div>
+                </div>
+                <div class="mt-4 pt-4 border-t border-purple-200">
+                  <p class="text-sm text-purple-900"><strong>Ventajas:</strong> Alta calidad, certificable, duradera</p>
+                  <p class="text-sm text-purple-900"><strong>Desventajas:</strong> Lenta, costosa, equipamiento pesado</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tabla Comparativa Técnica -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">
+            Tabla Comparativa: 6 Tipos Principales
+          </h2>
+
+          <div class="overflow-x-auto shadow-2xl rounded-lg mb-8">
+            <table class="w-full bg-white text-sm">
+              <thead class="bg-gradient-to-r from-indigo-900 to-purple-900 text-white">
+                <tr>
+                  <th class="px-4 py-3 text-left">Tipo</th>
+                  <th class="px-4 py-3 text-left">Método</th>
+                  <th class="px-4 py-3 text-left">Materiales</th>
+                  <th class="px-4 py-3 text-left">Profundidad Max</th>
+                  <th class="px-4 py-3 text-left">Calidad</th>
+                  <th class="px-4 py-3 text-left">Precio Cádiz</th>
+                  <th class="px-4 py-3 text-left">Uso Principal</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200">
+                <tr class="hover:bg-blue-50">
+                  <td class="px-4 py-3 font-bold text-blue-700">Húmeda SMAW</td>
+                  <td class="px-4 py-3">Electrodo revestido impermeable</td>
+                  <td class="px-4 py-3">Acero carbono, inox</td>
+                  <td class="px-4 py-3">30-40m</td>
+                  <td class="px-4 py-3 text-orange-600">60-75%</td>
+                  <td class="px-4 py-3 text-green-700 font-semibold">120-180€/h</td>
+                  <td class="px-4 py-3">Emergencias, reparaciones temporales</td>
+                </tr>
+                <tr class="bg-gray-50 hover:bg-blue-50">
+                  <td class="px-4 py-3 font-bold text-blue-700">Húmeda FCAW</td>
+                  <td class="px-4 py-3">Alambre tubular flux-cored</td>
+                  <td class="px-4 py-3">Acero carbono</td>
+                  <td class="px-4 py-3">25-35m</td>
+                  <td class="px-4 py-3 text-orange-600">65-80%</td>
+                  <td class="px-4 py-3 text-green-700">150-220€/h</td>
+                  <td class="px-4 py-3">Producción rápida offshore</td>
+                </tr>
+                <tr class="hover:bg-blue-50">
+                  <td class="px-4 py-3 font-bold text-purple-700">Seca TIG</td>
+                  <td class="px-4 py-3">Tungsteno + gas inerte (Ar)</td>
+                  <td class="px-4 py-3">Inox, aluminio, titanio</td>
+                  <td class="px-4 py-3">300m+</td>
+                  <td class="px-4 py-3 text-green-700 font-semibold">90-95%</td>
+                  <td class="px-4 py-3 text-gray-700">280-400€/h + cámara</td>
+                  <td class="px-4 py-3">Calidad máxima, certificaciones</td>
+                </tr>
+                <tr class="bg-gray-50 hover:bg-blue-50">
+                  <td class="px-4 py-3 font-bold text-purple-700">Seca MIG</td>
+                  <td class="px-4 py-3">Metal inert gas (Ar/CO2)</td>
+                  <td class="px-4 py-3">Acero carbono, inox</td>
+                  <td class="px-4 py-3">300m+</td>
+                  <td class="px-4 py-3 text-green-700 font-semibold">85-92%</td>
+                  <td class="px-4 py-3 text-gray-700">250-380€/h + cámara</td>
+                  <td class="px-4 py-3">Producción, buques comerciales</td>
+                </tr>
+                <tr class="hover:bg-blue-50">
+                  <td class="px-4 py-3 font-bold text-purple-700">Seca SMAW</td>
+                  <td class="px-4 py-3">Electrodo en ambiente seco</td>
+                  <td class="px-4 py-3">Todos los aceros</td>
+                  <td class="px-4 py-3">300m+</td>
+                  <td class="px-4 py-3 text-green-700">88-93%</td>
+                  <td class="px-4 py-3 text-gray-700">220-350€/h + cámara</td>
+                  <td class="px-4 py-3">Versatilidad, bajo costo relativo</td>
+                </tr>
+                <tr class="bg-gray-50 hover:bg-blue-50">
+                  <td class="px-4 py-3 font-bold text-gray-700">FSW Robótico</td>
+                  <td class="px-4 py-3">Fricción-agitación (sin fusión)</td>
+                  <td class="px-4 py-3">Aluminio, aleaciones ligeras</td>
+                  <td class="px-4 py-3">100m+</td>
+                  <td class="px-4 py-3 text-green-700 font-semibold">95-98%</td>
+                  <td class="px-4 py-3 text-red-700">No disponible Cádiz</td>
+                  <td class="px-4 py-3">Offshore avanzado, astilleros grandes</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-4">
+            <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg">
+              <p class="text-sm font-bold text-blue-900 mb-1">💰 Más Económico</p>
+              <p class="text-xs text-gray-700">Húmeda SMAW: 120-180€/h · Sin cámara</p>
+            </div>
+            <div class="bg-purple-50 border-l-4 border-purple-500 p-4 rounded-r-lg">
+              <p class="text-sm font-bold text-purple-900 mb-1">🏆 Máxima Calidad</p>
+              <p class="text-xs text-gray-700">Seca TIG: 90-95% · Certificable Lloyd's/DNV</p>
+            </div>
+            <div class="bg-green-50 border-l-4 border-green-500 p-4 rounded-r-lg">
+              <p class="text-sm font-bold text-green-900 mb-1">⚡ Más Rápido</p>
+              <p class="text-xs text-gray-700">Húmeda FCAW: 2-4 horas típico</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Detalles por Tipo -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl font-bold text-gray-900 mb-8">
+            Análisis Detallado: Cada Tipo Explicado
+          </h2>
+
+          <div class="space-y-8">
+            <!-- SMAW Húmeda -->
+            <div class="bg-gradient-to-r from-blue-50 to-cyan-50 p-8 rounded-2xl shadow-lg border-l-4 border-blue-600">
+              <div class="flex items-start gap-4 mb-4">
+                <div class="bg-blue-600 text-white font-bold text-3xl w-16 h-16 flex items-center justify-center rounded-full flex-shrink-0">1</div>
+                <div>
+                  <h3 class="text-2xl font-bold text-blue-900 mb-2">Soldadura Húmeda SMAW (Electrodo Revestido)</h3>
+                  <span class="inline-block bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">⚡ MÁS USADA (70% trabajos Cádiz)</span>
+                </div>
+              </div>
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h4 class="font-bold text-blue-900 mb-3">Cómo Funciona:</h4>
+                  <ul class="space-y-2 text-sm text-gray-700">
+                    <li>• Electrodo especial con <strong>revestimiento impermeable</strong></li>
+                    <li>• Arco eléctrico bajo agua genera 3,500°C</li>
+                    <li>• Burbuja de gas protege momentáneamente</li>
+                    <li>• Enfriamiento rápido por agua circundante</li>
+                  </ul>
+                  <h4 class="font-bold text-blue-900 mb-2 mt-4">Cuándo Usar:</h4>
+                  <ul class="space-y-1 text-sm text-gray-700">
+                    <li>✅ Emergencias navales (vías agua)</li>
+                    <li>✅ Reparaciones temporales hasta varada</li>
+                    <li>✅ Presupuesto limitado</li>
+                    <li>✅ Acceso difícil (no cabe cámara hiperbárica)</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-bold text-blue-900 mb-3">Especificaciones Técnicas:</h4>
+                  <div class="bg-white p-4 rounded-lg shadow text-xs space-y-1">
+                    <p><strong>Electrodos:</strong> E6013, E7014, E7018-WP</p>
+                    <p><strong>Corriente:</strong> DC+ 150-300A</p>
+                    <p><strong>Profundidad:</strong> 0-40m (límite comercial)</p>
+                    <p><strong>Materiales:</strong> Acero carbono, inox 304/316</p>
+                    <p><strong>Velocidad:</strong> 15-25 cm/min</p>
+                    <p><strong>Durabilidad:</strong> 2-5 años</p>
+                    <p><strong>Precio Cádiz:</strong> 120-180€/hora</p>
+                  </div>
+                  <p class="text-xs text-gray-600 mt-3">
+                    <strong>Casos reales:</strong> 820 reparaciones emergencia 2020-2024 puerto Cádiz. Tiempo promedio: 4.2 horas.
+                  </p>
+                </div>
+              </div>
+              <div class="mt-4">
+                <a href="/soldadura-electrodo-revestido" class="text-blue-700 hover:text-blue-900 font-semibold text-sm hover:underline">
+                  → Ver más sobre soldadura electrodo revestido
+                </a>
+              </div>
+            </div>
+
+            <!-- TIG Seca -->
+            <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-8 rounded-2xl shadow-lg border-l-4 border-purple-600">
+              <div class="flex items-start gap-4 mb-4">
+                <div class="bg-purple-600 text-white font-bold text-3xl w-16 h-16 flex items-center justify-center rounded-full flex-shrink-0">2</div>
+                <div>
+                  <h3 class="text-2xl font-bold text-purple-900 mb-2">Soldadura Seca TIG / GTAW (Tungsteno Inerte)</h3>
+                  <span class="inline-block bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm font-semibold">🏆 MÁXIMA CALIDAD</span>
+                </div>
+              </div>
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h4 class="font-bold text-purple-900 mb-3">Cómo Funciona:</h4>
+                  <ul class="space-y-2 text-sm text-gray-700">
+                    <li>• Cámara hiperbárica sella zona de trabajo</li>
+                    <li>• Evacúa agua, presuriza con argón puro</li>
+                    <li>• Electrodo tungsteno no consumible</li>
+                    <li>• Aporte manual de varilla si necesario</li>
+                    <li>• Control total temperatura y penetración</li>
+                  </ul>
+                  <h4 class="font-bold text-purple-900 mb-2 mt-4">Cuándo Usar:</h4>
+                  <ul class="space-y-1 text-sm text-gray-700">
+                    <li>✅ Acero inoxidable 316L (hélices premium)</li>
+                    <li>✅ Aluminio marino (veleros, yates)</li>
+                    <li>✅ Certificación Lloyd's/DNV GL obligatoria</li>
+                    <li>✅ Reparación permanente estructural</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-bold text-purple-900 mb-3">Especificaciones Técnicas:</h4>
+                  <div class="bg-white p-4 rounded-lg shadow text-xs space-y-1">
+                    <p><strong>Gas:</strong> Argón 99.99% puro</p>
+                    <p><strong>Corriente:</strong> DC 80-250A (inox/acero) | AC (aluminio)</p>
+                    <p><strong>Profundidad:</strong> Hasta 300m+ con equipos especiales</p>
+                    <p><strong>Materiales:</strong> Inox, aluminio, titanio, níquel</p>
+                    <p><strong>Velocidad:</strong> 8-15 cm/min (preciso)</p>
+                    <p><strong>Durabilidad:</strong> 15-25 años</p>
+                    <p><strong>Precio Cádiz:</strong> 280-400€/h + 800-1,500€ cámara</p>
+                  </div>
+                  <p class="text-xs text-gray-600 mt-3">
+                    <strong>Certificaciones:</strong> AWS D3.6, ISO 15618, DNV GL homologado.
+                  </p>
+                </div>
+              </div>
+              <div class="mt-4">
+                <a href="/soldadura-tig-subacuatica" class="text-purple-700 hover:text-purple-900 font-semibold text-sm hover:underline">
+                  → Ver más sobre soldadura TIG subacuática
+                </a>
+              </div>
+            </div>
+
+            <!-- MIG Seca -->
+            <div class="bg-gradient-to-r from-green-50 to-emerald-50 p-8 rounded-2xl shadow-lg border-l-4 border-green-600">
+              <div class="flex items-start gap-4 mb-4">
+                <div class="bg-green-600 text-white font-bold text-3xl w-16 h-16 flex items-center justify-center rounded-full flex-shrink-0">3</div>
+                <div>
+                  <h3 class="text-2xl font-bold text-green-900 mb-2">Soldadura Seca MIG / GMAW (Metal Inert Gas)</h3>
+                  <span class="inline-block bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold">⚡ PRODUCCIÓN RÁPIDA</span>
+                </div>
+              </div>
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h4 class="font-bold text-green-900 mb-3">Cómo Funciona:</h4>
+                  <ul class="space-y-2 text-sm text-gray-700">
+                    <li>• Cámara hiperbárica presurizada</li>
+                    <li>• Alambre continuo consumible</li>
+                    <li>• Gas protector Ar/CO2 (75/25 o 98/2)</li>
+                    <li>• Alimentación automática alambre</li>
+                    <li>• Deposición rápida de material</li>
+                  </ul>
+                  <h4 class="font-bold text-green-900 mb-2 mt-4">Cuándo Usar:</h4>
+                  <ul class="space-y-1 text-sm text-gray-700">
+                    <li>✅ Buques comerciales acero carbono</li>
+                    <li>✅ Reparaciones extensas (metros lineales)</li>
+                    <li>✅ Estructuras offshore (plataformas)</li>
+                    <li>✅ Producción (múltiples soldaduras similares)</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-bold text-green-900 mb-3">Especificaciones Técnicas:</h4>
+                  <div class="bg-white p-4 rounded-lg shadow text-xs space-y-1">
+                    <p><strong>Alambre:</strong> ER70S-6, ER308L (inox)</p>
+                    <p><strong>Corriente:</strong> DC+ 180-350A</p>
+                    <p><strong>Profundidad:</strong> Hasta 300m+</p>
+                    <p><strong>Materiales:</strong> Acero carbono, inox (NO aluminio)</p>
+                    <p><strong>Velocidad:</strong> 25-40 cm/min (2x SMAW)</p>
+                    <p><strong>Durabilidad:</strong> 12-20 años</p>
+                    <p><strong>Precio Cádiz:</strong> 250-380€/h + 700-1,300€ cámara</p>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-4">
+                <a href="/soldadura-mig-submarina" class="text-green-700 hover:text-green-900 font-semibold text-sm hover:underline">
+                  → Ver más sobre soldadura MIG submarina
+                </a>
+              </div>
+            </div>
+
+            <!-- Resumen otros tipos -->
+            <div class="bg-gray-100 p-6 rounded-xl">
+              <h3 class="text-xl font-bold text-gray-900 mb-4">Otros Tipos (Menos Comunes)</h3>
+              <div class="grid md:grid-cols-2 gap-4 text-sm">
+                <div class="bg-white p-4 rounded-lg shadow">
+                  <h4 class="font-bold text-gray-900 mb-2">FCAW Húmeda (Alambre Tubular)</h4>
+                  <p class="text-gray-700 mb-2">Alambre con flux interno, autoprotegido. Uso offshore para producción rápida.</p>
+                  <p class="text-xs text-gray-600"><strong>Ventaja:</strong> 2x velocidad SMAW · <strong>Desventaja:</strong> Más salpicaduras</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow">
+                  <h4 class="font-bold text-gray-900 mb-2">FSW (Fricción-Agitación)</h4>
+                  <p class="text-gray-700 mb-2">Estado sólido sin fusión. Requiere ROV robótico. Calidad excepcional aluminio.</p>
+                  <p class="text-xs text-gray-600"><strong>Limitación:</strong> No disponible Cádiz (solo grandes astilleros EU)</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow">
+                  <h4 class="font-bold text-gray-900 mb-2">Soldadura Láser Experimental</h4>
+                  <p class="text-gray-700 mb-2">Nd:YAG láser submarina. Fukushima, reactores nucleares. Investigación 2024-2026.</p>
+                  <p class="text-xs text-gray-600"><strong>Estado:</strong> No comercial · Costo > 2M€</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow">
+                  <h4 class="font-bold text-gray-900 mb-2">Plasma Arc Welding (PAW)</h4>
+                  <p class="text-gray-700 mb-2">Similar TIG pero arco constreñido. Penetración profunda, precisión extrema.</p>
+                  <p class="text-xs text-gray-600"><strong>Uso:</strong> Tuberías offshore alta presión · Raro en España</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Matriz de Decisión -->
+    <section class="py-16 bg-gradient-to-r from-slate-900 to-gray-900 text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-8">
+            🎯 Matriz de Decisión: ¿Qué Tipo Necesitas?
+          </h2>
+
+          <div class="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20">
+            <div class="space-y-6">
+              <div class="grid md:grid-cols-3 gap-4">
+                <div class="bg-red-500/20 border border-red-400 p-4 rounded-lg">
+                  <h3 class="font-bold text-red-300 mb-2">🚨 EMERGENCIA (&lt; 24h)</h3>
+                  <p class="text-sm text-white mb-3">Vía agua, hundimiento inminente, navegación urgente</p>
+                  <div class="bg-red-600 text-white p-2 rounded text-center font-bold">
+                    → Húmeda SMAW
+                  </div>
+                </div>
+                <div class="bg-blue-500/20 border border-blue-400 p-4 rounded-lg">
+                  <h3 class="font-bold text-blue-300 mb-2">⚙️ ACERO CARBONO</h3>
+                  <p class="text-sm text-white mb-3">Cascos comerciales, estructuras portuarias, pilotes</p>
+                  <div class="bg-blue-600 text-white p-2 rounded text-center font-bold">
+                    → Húmeda SMAW o Seca MIG
+                  </div>
+                </div>
+                <div class="bg-purple-500/20 border border-purple-400 p-4 rounded-lg">
+                  <h3 class="font-bold text-purple-300 mb-2">✨ ACERO INOXIDABLE</h3>
+                  <p class="text-sm text-white mb-3">Hélices premium, ejes timón 316L, offshore</p>
+                  <div class="bg-purple-600 text-white p-2 rounded text-center font-bold">
+                    → Seca TIG
+                  </div>
+                </div>
+                <div class="bg-yellow-500/20 border border-yellow-400 p-4 rounded-lg">
+                  <h3 class="font-bold text-yellow-300 mb-2">🛥️ ALUMINIO MARINO</h3>
+                  <p class="text-sm text-white mb-3">Veleros, yates, embarcaciones recreativas 5083/6061</p>
+                  <div class="bg-yellow-600 text-gray-900 p-2 rounded text-center font-bold">
+                    → Seca TIG (ÚNICO)</div>
+                </div>
+                <div class="bg-green-500/20 border border-green-400 p-4 rounded-lg">
+                  <h3 class="font-bold text-green-300 mb-2">📜 CERTIFICACIÓN CLASS</h3>
+                  <p class="text-sm text-white mb-3">Lloyd's, DNV GL, ABS homologación obligatoria</p>
+                  <div class="bg-green-600 text-white p-2 rounded text-center font-bold">
+                    → Seca TIG o MIG
+                  </div>
+                </div>
+                <div class="bg-orange-500/20 border border-orange-400 p-4 rounded-lg">
+                  <h3 class="font-bold text-orange-300 mb-2">💰 PRESUPUESTO LIMITADO</h3>
+                  <p class="text-sm text-white mb-3">Máximo 2,000€ total, reparación temporal aceptable</p>
+                  <div class="bg-orange-600 text-white p-2 rounded text-center font-bold">
+                    → Húmeda SMAW
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <FAQSection
+            title="Preguntas Frecuentes: Tipos de Soldadura Subacuática"
+            {faqs}
+            includeSchema={true}
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="py-12 bg-gradient-to-r from-indigo-900 to-purple-900 text-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold mb-4">
+          ¿No Sabes Qué Tipo de Soldadura Necesitas?
+        </h2>
+        <p class="text-xl text-indigo-100 mb-6 max-w-3xl mx-auto">
+          Consulta técnica gratuita. Analizamos tu caso y recomendamos el método óptimo (calidad/precio/tiempo).
+        </p>
+        <div class="flex flex-col md:flex-row gap-4 justify-center">
+          <CallToAction variant="emergency" size="xl" text="CONSULTA TÉCNICA GRATIS 24/7" />
+          <a href="/soldadura-subacuatica" class="bg-white text-indigo-900 hover:bg-indigo-50 px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
+            Ver Todos los Servicios
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Internal Links Hub -->
+    <section class="py-12 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-2xl font-bold text-center text-gray-900 mb-8">
+            Guías Relacionadas sobre Soldadura Subacuática
+          </h2>
+          <RelatedLinks currentPage="tipos-soldadura-subacuatica-completa" type="soldadura" limit={12} />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

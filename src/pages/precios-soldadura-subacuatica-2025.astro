@@ -13,7 +13,7 @@ const pricingFAQs = [
   },
   {
     question: "¿Cuánto cuesta reparar una grieta en el casco con soldadura subacuática?",
-    answer: "<strong>Precio reparación grieta casco 2025:</strong><br><br>• Grieta pequeña (< 20 cm): 250-450 € total (soldadura húmeda, 2-3 horas)<br>• Grieta mediana (20-50 cm): 500-900 € (húmeda o seca según criticidad)<br>• Grieta grande (> 50 cm): 1,200-3,500 € (soldadura seca hiperbárica certificable)<br>• Grieta estructural crítica: 2,500-6,000 € (seca + refuerzo + inspección END)<br><br>Incluye: inspección, limpieza zona, soldadura, enfriamiento, verificación estanqueidad. Buques comerciales requieren soldadura seca certificada (+30% precio).",
+    answer: "<strong>Precio reparación grieta casco 2025:</strong><br><br>• Grieta pequeña (&lt; 20 cm): 250-450 € total (soldadura húmeda, 2-3 horas)<br>• Grieta mediana (20-50 cm): 500-900 € (húmeda o seca según criticidad)<br>• Grieta grande (> 50 cm): 1,200-3,500 € (soldadura seca hiperbárica certificable)<br>• Grieta estructural crítica: 2,500-6,000 € (seca + refuerzo + inspección END)<br><br>Incluye: inspección, limpieza zona, soldadura, enfriamiento, verificación estanqueidad. Buques comerciales requieren soldadura seca certificada (+30% precio).",
     category: "Reparaciones Específicas"
   },
   {
@@ -38,7 +38,7 @@ const pricingFAQs = [
   },
   {
     question: "¿Cuánto cuesta el servicio de emergencia 24/7?",
-    answer: "<strong>Tarifas emergencias marítimas Cádiz 24/7:</strong><br><br>• <strong>Horario normal</strong> (8h-18h, L-V): Tarifa estándar (sin recargo)<br>• <strong>Horario extendido</strong> (18h-22h, L-V): +25% sobre tarifa base<br>• <strong>Nocturno</strong> (22h-8h): +50% sobre tarifa base<br>• <strong>Fines de semana</strong> (Sá-Do): +35% sobre tarifa base<br>• <strong>Festivos nacionales:</strong> +60% sobre tarifa base<br><br><strong>Respuesta garantizada:</strong> < 2 horas en bahía de Cádiz, < 4 horas Estrecho Gibraltar.<br><br>Ejemplo: Reparación urgente grieta casco domingo 23h = 400 € (base) × 1.85 (nocturno+finde) = 740 € total. Barcos comerciales priorizan rapidez sobre coste (+5,000-50,000 € pérdidas/día parado).",
+    answer: "<strong>Tarifas emergencias marítimas Cádiz 24/7:</strong><br><br>• <strong>Horario normal</strong> (8h-18h, L-V): Tarifa estándar (sin recargo)<br>• <strong>Horario extendido</strong> (18h-22h, L-V): +25% sobre tarifa base<br>• <strong>Nocturno</strong> (22h-8h): +50% sobre tarifa base<br>• <strong>Fines de semana</strong> (Sá-Do): +35% sobre tarifa base<br>• <strong>Festivos nacionales:</strong> +60% sobre tarifa base<br><br><strong>Respuesta garantizada:</strong> menos de 2 horas en bahía de Cádiz, &lt; 4 horas Estrecho Gibraltar.<br><br>Ejemplo: Reparación urgente grieta casco domingo 23h = 400 € (base) × 1.85 (nocturno+finde) = 740 € total. Barcos comerciales priorizan rapidez sobre coste (+5,000-50,000 € pérdidas/día parado).",
     category: "Emergencias"
   },
   {
@@ -53,7 +53,7 @@ const pricingFAQs = [
   },
   {
     question: "¿Qué factores aumentan el precio de la soldadura subacuática?",
-    answer: "<strong>Factores que incrementan el coste:</strong><br><br>1. <strong>Profundidad:</strong> Cada 10m adicionales = +15-25% precio (mayor tiempo descompresión)<br>2. <strong>Visibilidad:</strong> Agua turbia/nula visibilidad = +20-40% (trabajo más lento)<br>3. <strong>Corrientes fuertes:</strong> > 1 nudo corriente = +25-50% (requiere anclaje/posicionamiento)<br>4. <strong>Material exótico:</strong> Titanio, Inconel, súper duplex = +60-100% (electrodos especiales)<br>5. <strong>Certificación naviera:</strong> Lloyd's/DNV/ABS = +30-50% (inspección externa + documentación)<br>6. <strong>Acceso difícil:</strong> Zona confinada, estructuras complejas = +20-40%<br>7. <strong>Urgencia extrema:</strong> Respuesta < 1 hora = +80-120% tarifa<br>8. <strong>Ubicación remota:</strong> Fuera bahía Cádiz = +2-6 €/milla náutica desplazamiento",
+    answer: "<strong>Factores que incrementan el coste:</strong><br><br>1. <strong>Profundidad:</strong> Cada 10m adicionales = +15-25% precio (mayor tiempo descompresión)<br>2. <strong>Visibilidad:</strong> Agua turbia/nula visibilidad = +20-40% (trabajo más lento)<br>3. <strong>Corrientes fuertes:</strong> > 1 nudo corriente = +25-50% (requiere anclaje/posicionamiento)<br>4. <strong>Material exótico:</strong> Titanio, Inconel, súper duplex = +60-100% (electrodos especiales)<br>5. <strong>Certificación naviera:</strong> Lloyd's/DNV/ABS = +30-50% (inspección externa + documentación)<br>6. <strong>Acceso difícil:</strong> Zona confinada, estructuras complejas = +20-40%<br>7. <strong>Urgencia extrema:</strong> Respuesta &lt; 1 hora = +80-120% tarifa<br>8. <strong>Ubicación remota:</strong> Fuera bahía Cádiz = +2-6 €/milla náutica desplazamiento",
     category: "Factores Precio"
   },
   {
@@ -183,7 +183,7 @@ const pricingFAQs = [
                   <td class="px-6 py-4 font-semibold text-red-900">Emergencia 24/7</td>
                   <td class="px-6 py-4 text-red-700">Urgente nocturno</td>
                   <td class="px-6 py-4 text-red-700 font-bold">+50% tarifa base</td>
-                  <td class="px-6 py-4 text-red-600">Respuesta < 2h</td>
+                  <td class="px-6 py-4 text-red-600">Respuesta &lt; 2h</td>
                 </tr>
                 <tr class="bg-blue-50 border-2 border-blue-300">
                   <td class="px-6 py-4 font-semibold text-blue-900">Contrato Anual Flota</td>
@@ -198,7 +198,7 @@ const pricingFAQs = [
           <div class="mt-6 grid md:grid-cols-3 gap-4">
             <div class="bg-green-50 border-l-4 border-green-600 p-4 rounded-r-lg">
               <p class="text-sm text-green-900">
-                <strong>✅ Incluido:</strong> Inspección, limpieza, soldadura, verificación, informe fotográfico, desplazamiento < 15 millas.
+                <strong>✅ Incluido:</strong> Inspección, limpieza, soldadura, verificación, informe fotográfico, desplazamiento &lt; 15 millas.
               </p>
             </div>
             <div class="bg-yellow-50 border-l-4 border-yellow-600 p-4 rounded-r-lg">
