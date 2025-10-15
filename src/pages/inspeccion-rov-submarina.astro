@@ -1,0 +1,719 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const faqs = [
+  {
+    question: "¿Qué es un ROV y qué ventajas tiene vs buzo tradicional?",
+    answer: "<strong>ROV (Remotely Operated Vehicle)</strong> es un robot submarino controlado desde superficie mediante cable umbilical. <strong>Ventajas clave:</strong> <ul><li><strong>Profundidad ilimitada:</strong> opera hasta 300m+ vs 50m máximo de buzo</li><li><strong>Tiempo ilimitado:</strong> sin límites de descompresión, inspecciones de 4-8 horas continuas</li><li><strong>Seguridad:</strong> cero riesgo humano en entornos peligrosos (tanques, túneles, corrientes)</li><li><strong>Documentación superior:</strong> video 4K, mediciones precisas con sonar, grabación completa</li><li><strong>Repetibilidad:</strong> mismas rutas de inspección para comparativas anuales</li></ul> Ideal para inspecciones técnicas certificadas.",
+    category: "Tecnología"
+  },
+  {
+    question: "¿Qué inspecciones se pueden hacer con ROV en Cádiz?",
+    answer: "<strong>8 tipos de inspección ROV:</strong> <ul><li><strong>Cascos de buques:</strong> inspección pre-compra, post-colisión, seguimiento de reparaciones</li><li><strong>Muelles y estructuras portuarias:</strong> pilotes, vigas, corrosión de acero</li><li><strong>Tuberías submarinas:</strong> emisarios, tomas de agua, oleoductos</li><li><strong>Fondeos y cadenas:</strong> verificación estado de anclas, cadenas, muertos</li><li><strong>Plataformas offshore:</strong> inspección de patas, anodos, estructuras sumergidas</li><li><strong>Tanques y espacios confinados:</strong> inspección sin entrada humana</li><li><strong>Pecios y arqueología:</strong> documentación sin alterar sitio</li><li><strong>Hélices y timones:</strong> medición desgaste, daños por impacto</li></ul>",
+    category: "Aplicaciones"
+  },
+  {
+    question: "¿Qué incluye un informe técnico de inspección ROV?",
+    answer: "<strong>Informe completo certificado incluye:</strong> <ul><li><strong>Video 4K editado:</strong> secuencia completa con timestamps y anotaciones técnicas</li><li><strong>Fotografías georeferenciadas:</strong> imágenes de alta resolución de cada área inspeccionada</li><li><strong>Mapeo 3D con sonar:</strong> nube de puntos para mediciones precisas de espesores, distorsiones</li><li><strong>Tabla de hallazgos:</strong> clasificación de defectos por severidad (crítico/moderado/leve)</li><li><strong>Recomendaciones técnicas:</strong> priorización de reparaciones, estimación de costes</li><li><strong>Certificación IMCA D 014:</strong> cumplimiento normativa internacional de inspección</li><li><strong>Anexos:</strong> especificaciones técnicas del ROV, calibraciones, condiciones ambientales</li></ul> Válido para sociedades de clasificación, P&I Clubs, aseguradoras.",
+    category: "Documentación"
+  },
+  {
+    question: "¿Cuánto cuesta inspección ROV vs inspección con buzo?",
+    answer: "<strong>Comparativa económica:</strong> Inspección ROV tiene inversión inicial superior (movilización equipo, técnicos especializados) pero es <strong>más económica en inspecciones extensas</strong>. <strong>Punto de equilibrio:</strong> <ul><li><strong>Inspecciones cortas (&lt;2 horas):</strong> buzo más económico</li><li><strong>Inspecciones medias (2-4 horas):</strong> ROV similar coste pero mejor documentación</li><li><strong>Inspecciones extensas (&gt;4 horas):</strong> ROV 30-50% más económico (sin rotación de buzos, sin descompresión)</li><li><strong>Gran profundidad (&gt;30m):</strong> ROV única opción viable técnicamente</li></ul> ROV siempre superior en calidad documental y seguridad.",
+    category: "Económico"
+  },
+  {
+    question: "¿ROV puede sustituir completamente al buzo en inspecciones?",
+    answer: "No, <strong>ROV y buzo son complementarios</strong>, no sustitutivos. <strong>ROV es mejor para:</strong> inspecciones extensas, documentación video, gran profundidad, entornos peligrosos, mediciones precisas con sonar. <strong>Buzo es mejor para:</strong> limpieza simultánea a inspección, pruebas táctiles (golpeo para detectar laminaciones), instalación de sensores, reparaciones urgentes in situ. <strong>Solución óptima:</strong> inspección ROV inicial para localizar problemas + buzo para intervención en zonas críticas. Combinamos ambas tecnologías según necesidad del cliente.",
+    category: "Comparativa"
+  },
+  {
+    question: "¿Qué profundidad alcanza el ROV y en qué condiciones opera?",
+    answer: "<strong>Especificaciones técnicas ROV:</strong> <ul><li><strong>Profundidad máxima:</strong> 300 metros (modelos estándar), 1000m+ (ROV trabajo pesado)</li><li><strong>Corrientes:</strong> opera hasta 2-3 nudos, se ancla con lastres en corrientes superiores</li><li><strong>Visibilidad:</strong> cámaras 4K + iluminación LED de 10000 lúmenes compensan turbidez, funciona con visibilidad &lt;1 metro usando sonar</li><li><strong>Temperatura:</strong> opera en aguas tropicales y árticas (-2°C a +40°C)</li><li><strong>Autonomía:</strong> ilimitada (conectado por cable umbilical), misiones de 8-12 horas continuas</li></ul> Apto para casi todas las condiciones marinas y portuarias de Cádiz, Algeciras, Estrecho de Gibraltar.",
+    category: "Especificaciones Técnicas"
+  },
+  {
+    question: "¿Qué certificaciones tienen los pilotos ROV y el equipo?",
+    answer: "<strong>Certificaciones profesionales:</strong> <ul><li><strong>Pilotos ROV:</strong> IMCA ROV Pilot/Technician certificate, formación específica en modelo de ROV utilizado</li><li><strong>Supervisores:</strong> IMCA Offshore Survey qualification, experiencia &gt;1000 horas operacionales</li><li><strong>Equipos:</strong> ROV certificados por fabricante, mantenimiento según schedule del fabricante, calibración anual de instrumentos (sonar, altímetro, compás)</li><li><strong>Procedimientos:</strong> IMCA D 014 para inspecciones submarinas, IMCA R 004 para operaciones ROV</li><li><strong>Seguros:</strong> responsabilidad civil 2M€, equipos totalmente asegurados</li></ul> Cumplimiento total normativa internacional offshore.",
+    category: "Certificaciones"
+  },
+  {
+    question: "¿Cuánto tiempo tarda una inspección ROV y cuándo recibo informe?",
+    answer: "<strong>Plazos típicos:</strong> <ul><li><strong>Movilización:</strong> 24-48 horas desde confirmación (zona Cádiz/Algeciras)</li><li><strong>Inspección en agua:</strong> 2-8 horas según complejidad (casco 30m: 2-3h, muelle 100m: 4-6h)</li><li><strong>Desmontaje y limpieza:</strong> 2-3 horas</li><li><strong>Procesado de video:</strong> 24-48 horas (edición, anotaciones, compresión)</li><li><strong>Informe técnico final:</strong> 3-5 días laborables desde finalización de inspección</li><li><strong>Informe preliminar:</strong> disponible en 24h para urgencias (sin post-procesado completo)</li></ul> Para inspecciones urgentes post-colisión o siniestros, movilización express en 12 horas y informe preliminar en 24 horas.",
+    category: "Plazos"
+  }
+];
+---
+
+<Layout
+  title="Inspección ROV Submarina Certificada Cádiz | Video 4K + Sonar 24/7"
+  description="Inspección submarina con ROV certificada IMCA en Cádiz: cascos, muelles, tuberías, estructuras offshore. Video 4K, sonar 3D, informes técnicos P&I Clubs..."
+  keywords="inspección ROV submarina, ROV Cádiz, inspección casco ROV, robot submarino inspección, video submarino 4K, inspección estructuras portuarias"
+>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 text-white py-20 relative overflow-hidden">
+    <div class="absolute inset-0 bg-black opacity-20"></div>
+    <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%23ffffff\" fill-opacity=\"0.05\"%3E%3Cpath d=\"M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="inline-block bg-yellow-400 text-gray-900 px-6 py-2 rounded-full font-bold mb-6 text-sm uppercase tracking-wide">
+          🤖 Tecnología ROV Avanzada
+        </div>
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
+          Inspección Submarina con <span class="text-yellow-400">ROV Certificado</span>
+        </h1>
+        <p class="text-xl md:text-2xl mb-8 text-purple-100 leading-relaxed">
+          <strong>Video 4K + Sonar 3D + Informes IMCA D 014.</strong> Inspecciones de cascos, muelles, tuberías, estructuras offshore hasta 300m de profundidad. Documentación certificada para P&I Clubs y sociedades de clasificación.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="tel:+34123456789" class="inline-block bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-4 px-8 rounded-lg text-lg transition-all transform hover:scale-105 shadow-xl">
+            📞 Solicitar Inspección ROV
+          </a>
+          <a href="#aplicaciones" class="inline-block bg-white hover:bg-gray-100 text-indigo-900 font-bold py-4 px-8 rounded-lg text-lg transition-all transform hover:scale-105 shadow-xl">
+            🔍 Ver Aplicaciones
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ventajas ROV -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900">
+        🤖 Por Qué Elegir <span class="text-cyan-600">Inspección ROV</span>
+      </h2>
+      <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto text-lg">
+        La tecnología ROV (robot submarino) supera las limitaciones humanas: profundidad ilimitada, tiempo ilimitado, documentación superior, cero riesgo.
+      </p>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <!-- Ventaja 1 -->
+        <div class="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-lg shadow-lg border-t-4 border-blue-500 hover:shadow-xl transition-all">
+          <div class="text-5xl mb-4 text-center">🌊</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">Profundidad Ilimitada</h3>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            <strong>ROV opera hasta 300m+</strong> vs máximo 50m de buzo profesional. Inspecciona estructuras offshore profundas, emisarios, fondeos en alta mar. Sin límites de descompresión ni riesgo de enfermedad de buzo.
+          </p>
+          <div class="bg-blue-100 p-3 rounded border-l-4 border-blue-600">
+            <p class="text-sm text-blue-800 font-semibold">⚙️ Modelos trabajo pesado: hasta 1000m profundidad</p>
+          </div>
+        </div>
+
+        <!-- Ventaja 2 -->
+        <div class="bg-gradient-to-br from-green-50 to-teal-50 p-6 rounded-lg shadow-lg border-t-4 border-green-500 hover:shadow-xl transition-all">
+          <div class="text-5xl mb-4 text-center">⏱️</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">Tiempo Ilimitado</h3>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            <strong>Inspecciones de 4-8 horas continuas</strong> sin rotación. Buzo limitado a 30-60 min por inmersión + descompresión. ROV recorre estructuras extensas (muelles 200m, cascos grandes) en una sola sesión sin interrupciones.
+          </p>
+          <div class="bg-green-100 p-3 rounded border-l-4 border-green-600">
+            <p class="text-sm text-green-800 font-semibold">📊 Eficiencia 300-400% superior en inspecciones extensas</p>
+          </div>
+        </div>
+
+        <!-- Ventaja 3 -->
+        <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-lg shadow-lg border-t-4 border-purple-500 hover:shadow-xl transition-all">
+          <div class="text-5xl mb-4 text-center">🎥</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">Documentación 4K Total</h3>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            <strong>Video 4K completo grabado</strong> de toda la inspección. Buzo solo puede llevar cámara auxiliar. ROV incluye iluminación LED 10000 lúmenes, zoom óptico 10x, cámaras múltiples (frontal, lateral, cenital).
+          </p>
+          <div class="bg-purple-100 p-3 rounded border-l-4 border-purple-600">
+            <p class="text-sm text-purple-800 font-semibold">📹 Archivo permanente para comparativas anuales</p>
+          </div>
+        </div>
+
+        <!-- Ventaja 4 -->
+        <div class="bg-gradient-to-br from-yellow-50 to-orange-50 p-6 rounded-lg shadow-lg border-t-4 border-yellow-500 hover:shadow-xl transition-all">
+          <div class="text-5xl mb-4 text-center">📐</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">Mediciones Precisas Sonar</h3>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            <strong>Sonar multihaz 3D</strong> genera nube de puntos con precisión submilimétrica. Mide espesores de corrosión, deformaciones estructurales, distancias exactas. Buzo solo puede medir manualmente con cinta métrica.
+          </p>
+          <div class="bg-yellow-100 p-3 rounded border-l-4 border-yellow-600">
+            <p class="text-sm text-yellow-800 font-semibold">🔬 Detección temprana de fatiga estructural</p>
+          </div>
+        </div>
+
+        <!-- Ventaja 5 -->
+        <div class="bg-gradient-to-br from-red-50 to-orange-50 p-6 rounded-lg shadow-lg border-t-4 border-red-500 hover:shadow-xl transition-all">
+          <div class="text-5xl mb-4 text-center">🛡️</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">Cero Riesgo Humano</h3>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            <strong>Seguridad total</strong> en entornos peligrosos: tanques con gases, túneles con corrientes fuertes, zonas con tráfico marítimo, aguas contaminadas. ROV inspecciona sin poner vidas en riesgo.
+          </p>
+          <div class="bg-red-100 p-3 rounded border-l-4 border-red-600">
+            <p class="text-sm text-red-800 font-semibold">✅ Cumplimiento normativa prevención riesgos laborales</p>
+          </div>
+        </div>
+
+        <!-- Ventaja 6 -->
+        <div class="bg-gradient-to-br from-indigo-50 to-blue-50 p-6 rounded-lg shadow-lg border-t-4 border-indigo-500 hover:shadow-xl transition-all">
+          <div class="text-5xl mb-4 text-center">🔄</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">Repetibilidad Exacta</h3>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            <strong>Rutas de inspección programables</strong> permiten inspecciones anuales comparativas exactas. GPS submarino marca waypoints, se repite misma ruta año tras año para detectar evolución de daños.
+          </p>
+          <div class="bg-indigo-100 p-3 rounded border-l-4 border-indigo-600">
+            <p class="text-sm text-indigo-800 font-semibold">📈 Análisis predictivo de mantenimiento</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Aplicaciones ROV -->
+  <section id="aplicaciones" class="py-16 bg-gradient-to-br from-gray-50 to-blue-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900">
+        🔍 Aplicaciones de <span class="text-cyan-600">Inspección ROV</span>
+      </h2>
+      <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto text-lg">
+        Desde cascos de yates hasta plataformas offshore. ROV inspecciona cualquier estructura submarina con documentación certificada.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <!-- Aplicación 1 -->
+        <div class="bg-white p-8 rounded-lg shadow-xl hover:shadow-2xl transition-all">
+          <div class="flex items-start">
+            <div class="text-5xl mr-6 flex-shrink-0">⚓</div>
+            <div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-3">Cascos de Buques</h3>
+              <ul class="space-y-2 text-gray-700 mb-4">
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span><strong>Pre-compra:</strong> inspección completa del casco antes de adquisición, detección corrosión oculta, estado de ánodos</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span><strong>Post-colisión:</strong> evaluación daños estructurales bajo línea de flotación, informes urgentes para seguros</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span><strong>Seguimiento reparaciones:</strong> verificar calidad de soldaduras, pinturas, parches instalados</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span><strong>Certificación periódica:</strong> inspecciones anuales para sociedades de clasificación</span>
+                </li>
+              </ul>
+              <a href="/inspeccion-cascos-buceo" class="text-cyan-600 hover:text-cyan-800 font-semibold underline">Ver más sobre inspección de cascos →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Aplicación 2 -->
+        <div class="bg-white p-8 rounded-lg shadow-xl hover:shadow-2xl transition-all">
+          <div class="flex items-start">
+            <div class="text-5xl mr-6 flex-shrink-0">🏗️</div>
+            <div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-3">Muelles y Estructuras Portuarias</h3>
+              <ul class="space-y-2 text-gray-700 mb-4">
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span><strong>Pilotes y vigas:</strong> corrosión de acero estructural, pérdida de sección, grietas en hormigón</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span><strong>Defensas y atraques:</strong> estado de anclajes submarinos, desgaste de cauchos</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span><strong>Dragados:</strong> batimetría con sonar, detección de sedimentos, control de profundidades</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span><strong>Espigones y rompeolas:</strong> evaluación post-temporal, estabilidad de bloques</span>
+                </li>
+              </ul>
+              <div class="bg-blue-50 p-3 rounded border-l-4 border-blue-600 mt-4">
+                <p class="text-sm text-blue-800"><strong>Principales puertos:</strong> Cádiz, Algeciras, Tarifa, Barbate, inspecciones autoridad portuaria</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Aplicación 3 -->
+        <div class="bg-white p-8 rounded-lg shadow-xl hover:shadow-2xl transition-all">
+          <div class="flex items-start">
+            <div class="text-5xl mr-6 flex-shrink-0">🚰</div>
+            <div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-3">Tuberías y Emisarios Submarinos</h3>
+              <ul class="space-y-2 text-gray-700 mb-4">
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span><strong>Emisarios municipales:</strong> inspección exterior, detección de roturas, fugas, incrustaciones</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span><strong>Tomas de agua:</strong> desaladoras, centrales térmicas, refrigeración industrial</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span><strong>Oleoductos y gasoductos:</strong> corrosión externa, protección catódica, enterramiento adecuado</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span><strong>Cables submarinos:</strong> comunicaciones, eléctricos, inspección de rutas</span>
+                </li>
+              </ul>
+              <div class="bg-green-50 p-3 rounded border-l-4 border-green-600 mt-4">
+                <p class="text-sm text-green-800"><strong>Sonar penetración suelo:</strong> detecta tuberías enterradas hasta 3m profundidad</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Aplicación 4 -->
+        <div class="bg-white p-8 rounded-lg shadow-xl hover:shadow-2xl transition-all">
+          <div class="flex items-start">
+            <div class="text-5xl mr-6 flex-shrink-0">⚙️</div>
+            <div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-3">Hélices, Timones y Sistemas de Propulsión</h3>
+              <ul class="space-y-2 text-gray-700 mb-4">
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span><strong>Medición de desgaste:</strong> palas de hélice, espesor remanente, cavitación</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span><strong>Daños por impacto:</strong> grietas, deformaciones, objetos enredados (redes, cabos)</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span><strong>Timones:</strong> holguras en pivotes, corrosión en herrajes, estado de pintura</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span><strong>Bow thrusters:</strong> inspección de hélices transversales, rejillas protectoras</span>
+                </li>
+              </ul>
+              <a href="/reparacion-helices-timones" class="text-cyan-600 hover:text-cyan-800 font-semibold underline">Ver reparación hélices →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Aplicación 5 -->
+        <div class="bg-white p-8 rounded-lg shadow-xl hover:shadow-2xl transition-all">
+          <div class="flex items-start">
+            <div class="text-5xl mr-6 flex-shrink-0">⛓️</div>
+            <div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-3">Fondeos, Anclas y Muertos</h3>
+              <ul class="space-y-2 text-gray-700 mb-4">
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span><strong>Cadenas de fondeo:</strong> corrosión de eslabones, desgaste en grilletes, estado de galvanizado</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span><strong>Anclas y muertos:</strong> verificación posición, enterramiento, capacidad de agarre</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span><strong>Boyas de amarre:</strong> inspección de cadenas, swivels, anclajes submarinos</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span><strong>Plataformas flotantes:</strong> sistemas de amarre de pontones, pantalanes flotantes</span>
+                </li>
+              </ul>
+              <div class="bg-yellow-50 p-3 rounded border-l-4 border-yellow-600 mt-4">
+                <p class="text-sm text-yellow-800"><strong>Crítico para seguros:</strong> muchas pólizas exigen inspección cada 3-5 años</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Aplicación 6 -->
+        <div class="bg-white p-8 rounded-lg shadow-xl hover:shadow-2xl transition-all">
+          <div class="flex items-start">
+            <div class="text-5xl mr-6 flex-shrink-0">🏭</div>
+            <div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-3">Plataformas Offshore y Estructuras</h3>
+              <ul class="space-y-2 text-gray-700 mb-4">
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span><strong>Jacket structures:</strong> patas metálicas, uniones soldadas, corrosión marina</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span><strong>Ánodos de sacrificio:</strong> medición de desgaste, programación de reemplazo</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span><strong>Risers y J-tubes:</strong> tuberías verticales, protecciones mecánicas</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span><strong>Parques eólicos marinos:</strong> cimentaciones de aerogeneradores, cables inter-array</span>
+                </li>
+              </ul>
+              <div class="bg-purple-50 p-3 rounded border-l-4 border-purple-600 mt-4">
+                <p class="text-sm text-purple-800"><strong>Normativa offshore:</strong> IMCA D 014, IOGP, DNV standards</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Aplicación 7 -->
+        <div class="bg-white p-8 rounded-lg shadow-xl hover:shadow-2xl transition-all">
+          <div class="flex items-start">
+            <div class="text-5xl mr-6 flex-shrink-0">🏺</div>
+            <div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-3">Tanques y Espacios Confinados</h3>
+              <ul class="space-y-2 text-gray-700 mb-4">
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span><strong>Tanques de lastre:</strong> inspección interior sin vaciado, corrosión de mamparos</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span><strong>Tanques de carga:</strong> petroleros, químicos, inspección sin entrada humana</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span><strong>Diques secos:</strong> inspección de compuertas, válvulas de inundación</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span><strong>Túneles submarinos:</strong> inspección sin cortar tráfico, seguridad total</span>
+                </li>
+              </ul>
+              <div class="bg-red-50 p-3 rounded border-l-4 border-red-600 mt-4">
+                <p class="text-sm text-red-800"><strong>Seguridad crítica:</strong> evita entrada humana en atmósferas peligrosas (gases, falta O₂)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Aplicación 8 -->
+        <div class="bg-white p-8 rounded-lg shadow-xl hover:shadow-2xl transition-all">
+          <div class="flex items-start">
+            <div class="text-5xl mr-6 flex-shrink-0">🗿</div>
+            <div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-3">Arqueología y Pecios</h3>
+              <ul class="space-y-2 text-gray-700 mb-4">
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span><strong>Documentación de pecios:</strong> fotogrametría 3D, mapeo completo sin alterar sitio</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span><strong>Hallazgos arqueológicos:</strong> inspección preliminar antes de buceo científico</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span><strong>Monitoreo conservación:</strong> seguimiento anual de estado de pecios protegidos</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-cyan-600 mr-2">✓</span>
+                  <span><strong>Búsqueda y localización:</strong> rastreo con sonar de objetivos perdidos</span>
+                </li>
+              </ul>
+              <div class="bg-indigo-50 p-3 rounded border-l-4 border-indigo-600 mt-4">
+                <p class="text-sm text-indigo-800"><strong>Estrecho de Gibraltar:</strong> zona rica en patrimonio submarino, pecios históricos</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparativa ROV vs Buzo -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900">
+        ⚖️ <span class="text-cyan-600">ROV vs Buzo:</span> ¿Cuándo Usar Cada Uno?
+      </h2>
+      <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto text-lg">
+        ROV y buzo son tecnologías complementarias. Cada una tiene sus ventajas según tipo de inspección, profundidad, tiempo y objetivo.
+      </p>
+
+      <div class="overflow-x-auto">
+        <table class="w-full bg-white shadow-lg rounded-lg overflow-hidden">
+          <thead class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
+            <tr>
+              <th class="px-6 py-4 text-left font-bold">Factor</th>
+              <th class="px-6 py-4 text-center font-bold">ROV (Robot)</th>
+              <th class="px-6 py-4 text-center font-bold">Buzo Profesional</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200">
+            <tr class="hover:bg-indigo-50">
+              <td class="px-6 py-4 font-semibold text-gray-800">🌊 Profundidad Máxima</td>
+              <td class="px-6 py-4 text-center text-green-700 font-bold">300m+ (ilimitada)</td>
+              <td class="px-6 py-4 text-center text-orange-700 font-bold">50m (técnico especializado)</td>
+            </tr>
+            <tr class="hover:bg-indigo-50 bg-gray-50">
+              <td class="px-6 py-4 font-semibold text-gray-800">⏱️ Tiempo de Inspección</td>
+              <td class="px-6 py-4 text-center text-green-700">4-8 horas continuas</td>
+              <td class="px-6 py-4 text-center text-orange-700">30-60 min + descompresión</td>
+            </tr>
+            <tr class="hover:bg-indigo-50">
+              <td class="px-6 py-4 font-semibold text-gray-800">📹 Documentación</td>
+              <td class="px-6 py-4 text-center text-green-700 font-semibold">Video 4K completo, sonar 3D</td>
+              <td class="px-6 py-4 text-center text-orange-700">Cámara auxiliar, notas manuales</td>
+            </tr>
+            <tr class="hover:bg-indigo-50 bg-gray-50">
+              <td class="px-6 py-4 font-semibold text-gray-800">🔧 Intervención Física</td>
+              <td class="px-6 py-4 text-center text-orange-700">Limitada (manipuladores robóticos)</td>
+              <td class="px-6 py-4 text-center text-green-700 font-bold">Total (limpieza, reparaciones)</td>
+            </tr>
+            <tr class="hover:bg-indigo-50">
+              <td class="px-6 py-4 font-semibold text-gray-800">🛡️ Seguridad</td>
+              <td class="px-6 py-4 text-center text-green-700 font-bold">Cero riesgo humano</td>
+              <td class="px-6 py-4 text-center text-orange-700">Riesgo moderado (controlado)</td>
+            </tr>
+            <tr class="hover:bg-indigo-50 bg-gray-50">
+              <td class="px-6 py-4 font-semibold text-gray-800">💰 Coste Inspección Corta (&lt;2h)</td>
+              <td class="px-6 py-4 text-center text-orange-700">Moderado-Alto</td>
+              <td class="px-6 py-4 text-center text-green-700 font-semibold">Económico</td>
+            </tr>
+            <tr class="hover:bg-indigo-50">
+              <td class="px-6 py-4 font-semibold text-gray-800">💰 Coste Inspección Extensa (&gt;4h)</td>
+              <td class="px-6 py-4 text-center text-green-700 font-bold">Económico (sin rotación)</td>
+              <td class="px-6 py-4 text-center text-orange-700">Alto (múltiples buzos, descompresión)</td>
+            </tr>
+            <tr class="hover:bg-indigo-50 bg-gray-50">
+              <td class="px-6 py-4 font-semibold text-gray-800">📊 Precisión Mediciones</td>
+              <td class="px-6 py-4 text-center text-green-700 font-bold">Submilimétrica (sonar)</td>
+              <td class="px-6 py-4 text-center text-orange-700">Centimétrica (cinta métrica)</td>
+            </tr>
+            <tr class="hover:bg-indigo-50">
+              <td class="px-6 py-4 font-semibold text-gray-800">🎯 Ideal Para</td>
+              <td class="px-6 py-4 text-center">Inspecciones extensas, gran profundidad, documentación certificada</td>
+              <td class="px-6 py-4 text-center">Reparaciones, limpieza, inspecciones cortas, pruebas táctiles</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="mt-8 p-6 bg-gradient-to-r from-indigo-50 to-purple-50 border-l-4 border-indigo-600 rounded-r-lg">
+        <p class="text-gray-800 text-lg leading-relaxed">
+          <strong>💡 Solución híbrida recomendada:</strong> Inspección ROV inicial (mapeo completo, localización de problemas) + intervención de buzo en zonas críticas (limpieza, reparaciones urgentes). Combinamos ambas tecnologías para máxima eficiencia. <a href="/inspeccion-cascos-buceo" class="text-indigo-600 hover:text-indigo-800 font-semibold underline">Ver inspección con buzo →</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section class="py-16 bg-gradient-to-br from-gray-50 to-indigo-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900">
+        ❓ Preguntas Frecuentes sobre <span class="text-cyan-600">Inspección ROV</span>
+      </h2>
+      <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto text-lg">
+        Respuestas de pilotos ROV certificados IMCA con experiencia en proyectos offshore y portuarios.
+      </p>
+
+      <div class="max-w-4xl mx-auto space-y-4">
+        {faqs.map((faq, index) => (
+          <details class="bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:border-indigo-400 transition-all group">
+            <summary class="cursor-pointer text-lg font-bold text-gray-900 flex justify-between items-center group-hover:text-indigo-600">
+              <span class="flex items-center">
+                <span class="text-indigo-600 mr-3 text-xl">{index + 1}.</span>
+                {faq.question}
+              </span>
+              <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="mt-4 text-gray-700 leading-relaxed border-t pt-4" set:html={faq.answer}></div>
+            <div class="mt-3 inline-block bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-semibold">
+              {faq.category}
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Informe Técnico -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900">
+        📋 Informe Técnico <span class="text-cyan-600">Certificado IMCA D 014</span>
+      </h2>
+      <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto text-lg">
+        Cada inspección ROV incluye informe técnico completo con documentación visual, mediciones precisas y recomendaciones. Válido para P&I Clubs, sociedades de clasificación y aseguradoras.
+      </p>
+
+      <div class="max-w-5xl mx-auto bg-gradient-to-br from-indigo-50 to-blue-50 p-8 rounded-lg shadow-xl">
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h3 class="text-xl font-bold text-gray-900 mb-4">📹 Contenido Visual</h3>
+            <ul class="space-y-3 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-indigo-600 mr-2 text-xl">✓</span>
+                <span><strong>Video 4K editado:</strong> secuencia cronológica con timestamps, anotaciones técnicas, zoom en áreas críticas</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-indigo-600 mr-2 text-xl">✓</span>
+                <span><strong>Fotografías alta resolución:</strong> cada defecto documentado con 3+ ángulos, reglas de escala incluidas</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-indigo-600 mr-2 text-xl">✓</span>
+                <span><strong>Mapeo 3D con sonar:</strong> nube de puntos exportable a CAD, mediciones precisas de espesores y distancias</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-indigo-600 mr-2 text-xl">✓</span>
+                <span><strong>Geolocalización GPS:</strong> waypoints submarinos, coordenadas exactas de cada hallazgo</span>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold text-gray-900 mb-4">📊 Análisis Técnico</h3>
+            <ul class="space-y-3 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-indigo-600 mr-2 text-xl">✓</span>
+                <span><strong>Tabla de hallazgos:</strong> clasificación crítico/moderado/leve, priorización de reparaciones</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-indigo-600 mr-2 text-xl">✓</span>
+                <span><strong>Mediciones cuantitativas:</strong> espesores de corrosión, pérdida de sección, deformaciones estructurales</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-indigo-600 mr-2 text-xl">✓</span>
+                <span><strong>Recomendaciones:</strong> acciones correctivas, métodos de reparación, estimación de costes orientativa</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-indigo-600 mr-2 text-xl">✓</span>
+                <span><strong>Comparativa histórica:</strong> si hay inspecciones previas, análisis de evolución de daños</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mt-8 grid md:grid-cols-3 gap-6">
+          <div class="bg-white p-6 rounded-lg shadow-md text-center">
+            <div class="text-4xl mb-2">📜</div>
+            <h4 class="font-bold text-gray-900 mb-2">Certificación IMCA</h4>
+            <p class="text-sm text-gray-600">Procedimientos IMCA D 014, reconocimiento internacional offshore</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md text-center">
+            <div class="text-4xl mb-2">⚓</div>
+            <h4 class="font-bold text-gray-900 mb-2">Válido P&I Clubs</h4>
+            <p class="text-sm text-gray-600">Aceptado por Lloyd's, DNV GL, ABS, Bureau Veritas, principales aseguradoras</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md text-center">
+            <div class="text-4xl mb-2">⏱️</div>
+            <h4 class="font-bold text-gray-900 mb-2">Entrega 3-5 Días</h4>
+            <p class="text-sm text-gray-600">Informe preliminar en 24h para urgencias, informe completo 3-5 días laborables</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="py-16 bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 text-white relative overflow-hidden">
+    <div class="absolute inset-0 bg-black opacity-30"></div>
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl md:text-5xl font-extrabold mb-6">
+          ¿Necesitas Inspección ROV <span class="text-yellow-400">Certificada</span>?
+        </h2>
+        <p class="text-xl md:text-2xl mb-8 text-purple-100 leading-relaxed">
+          Pilotos ROV certificados IMCA. Equipos con video 4K, sonar 3D, hasta 300m profundidad. Informes técnicos aceptados por P&I Clubs y sociedades de clasificación. Servicio en Cádiz, Algeciras, Estrecho de Gibraltar.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+          <a href="tel:+34123456789" class="inline-block bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-4 px-8 rounded-lg text-lg transition-all transform hover:scale-105 shadow-xl">
+            📞 Solicitar Inspección ROV
+          </a>
+          <a href="/inspeccion-cascos-buceo" class="inline-block bg-white hover:bg-gray-100 text-indigo-900 font-bold py-4 px-8 rounded-lg text-lg transition-all transform hover:scale-105 shadow-xl">
+            🤿 Ver Inspección con Buzo
+          </a>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6 text-center">
+          <div>
+            <div class="text-4xl font-bold text-yellow-400 mb-2">300m+</div>
+            <p class="text-purple-100">Profundidad máxima operativa ROV estándar</p>
+          </div>
+          <div>
+            <div class="text-4xl font-bold text-yellow-400 mb-2">4K</div>
+            <p class="text-purple-100">Video ultra alta definición con iluminación LED 10000 lúmenes</p>
+          </div>
+          <div>
+            <div class="text-4xl font-bold text-yellow-400 mb-2">24-48h</div>
+            <p class="text-purple-100">Movilización equipo zona Cádiz/Algeciras</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Internal Linking -->
+  <section class="py-12 bg-gray-100">
+    <div class="container mx-auto px-4">
+      <h3 class="text-2xl font-bold text-center mb-8 text-gray-900">🔧 Más Servicios de Inspección</h3>
+      <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
+        <a href="/inspeccion-cascos-buceo" class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow text-center border-2 border-transparent hover:border-indigo-400">
+          <div class="text-3xl mb-2">🤿</div>
+          <p class="font-semibold text-gray-800 text-sm">Inspección Cascos Buceo</p>
+        </a>
+        <a href="/limpieza-cascos-submarinos" class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow text-center border-2 border-transparent hover:border-indigo-400">
+          <div class="text-3xl mb-2">🧽</div>
+          <p class="font-semibold text-gray-800 text-sm">Limpieza Cascos</p>
+        </a>
+        <a href="/reparacion-helices-timones" class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow text-center border-2 border-transparent hover:border-indigo-400">
+          <div class="text-3xl mb-2">⚙️</div>
+          <p class="font-semibold text-gray-800 text-sm">Reparación Hélices</p>
+        </a>
+        <a href="/reparacion-valvulas-fondo-barco" class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow text-center border-2 border-transparent hover:border-indigo-400">
+          <div class="text-3xl mb-2">🔧</div>
+          <p class="font-semibold text-gray-800 text-sm">Reparación Válvulas Fondo</p>
+        </a>
+        <a href="/soldadura-subacuatica-emergencias" class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow text-center border-2 border-transparent hover:border-indigo-400">
+          <div class="text-3xl mb-2">⚡</div>
+          <p class="font-semibold text-gray-800 text-sm">Soldadura Emergencias</p>
+        </a>
+        <a href="/servicios-consignatarios" class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow text-center border-2 border-transparent hover:border-indigo-400">
+          <div class="text-3xl mb-2">📋</div>
+          <p class="font-semibold text-gray-800 text-sm">Servicios Consignatarios</p>
+        </a>
+        <a href="/trabajos-salvamento" class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow text-center border-2 border-transparent hover:border-indigo-400">
+          <div class="text-3xl mb-2">🚢</div>
+          <p class="font-semibold text-gray-800 text-sm">Trabajos Salvamento</p>
+        </a>
+        <a href="/instalacion-anodos-proteccion-catodica" class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow text-center border-2 border-transparent hover:border-indigo-400">
+          <div class="text-3xl mb-2">⚡</div>
+          <p class="font-semibold text-gray-800 text-sm">Instalación Ánodos</p>
+        </a>
+        <a href="/cuanto-dura-soldadura-subacuatica" class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow text-center border-2 border-transparent hover:border-indigo-400">
+          <div class="text-3xl mb-2">⏱️</div>
+          <p class="font-semibold text-gray-800 text-sm">Durabilidad Soldadura</p>
+        </a>
+        <a href="/tipos-soldadura-subacuatica-completa" class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow text-center border-2 border-transparent hover:border-indigo-400">
+          <div class="text-3xl mb-2">🔧</div>
+          <p class="font-semibold text-gray-800 text-sm">Tipos Soldadura</p>
+        </a>
+        <a href="/corte-plasma-submarino" class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow text-center border-2 border-transparent hover:border-indigo-400">
+          <div class="text-3xl mb-2">✂️</div>
+          <p class="font-semibold text-gray-800 text-sm">Corte Plasma</p>
+        </a>
+        <a href="/emergencias-maritimas-24-7" class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow text-center border-2 border-transparent hover:border-indigo-400">
+          <div class="text-3xl mb-2">🚨</div>
+          <p class="font-semibold text-gray-800 text-sm">Emergencias 24/7</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer.replace(/<[^>]*>/g, '')
+      }
+    }))
+  })} />
+</Layout>

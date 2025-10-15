@@ -1,0 +1,700 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const faqs = [
+  {
+    question: "¿Qué son las válvulas de fondo (sea valves) y por qué fallan?",
+    answer: "Las <strong>válvulas de fondo o sea valves</strong> son válvulas instaladas en el casco por debajo de la línea de flotación que controlan el flujo de agua hacia sistemas críticos: refrigeración de motores, sanitarios, sentinas, tomas de mar. <strong>Causas de fallo:</strong> corrosión galvánica por contacto bronce-acero, incrustaciones marinas que bloquean el mecanismo, desgaste de sellos y juntas, impactos con objetos submarinos. Una válvula defectuosa puede causar inundación del barco.",
+    category: "Fundamentos"
+  },
+  {
+    question: "¿Cuándo reparar válvulas a flote vs en varada?",
+    answer: "<strong>Reparación a flote (soldadura subacuática):</strong> urgencias con riesgo de hundimiento, imposibilidad logística de varada, barcos comerciales que no pueden detener operaciones, ahorro de tiempo y dinero. <strong>Varada en astillero:</strong> revisión completa de múltiples válvulas, reemplazo total del sistema, barcos pequeños con acceso fácil a dique seco. <strong>Recomendación:</strong> 80% de reparaciones urgentes se resuelven a flote en menos de 4 horas.",
+    category: "Decisiones Operativas"
+  },
+  {
+    question: "¿Qué incluye un servicio profesional de reparación de válvulas subacuático?",
+    answer: "<strong>Proceso completo de 6 pasos:</strong> <ul><li><strong>Inspección inicial:</strong> identificación del tipo de válvula (bola, compuerta, mariposa), material (bronce, acero inoxidable), estado de corrosión</li><li><strong>Diagnóstico del problema:</strong> fuga en sello, bloqueo mecánico, corrosión de cuerpo, rotura de eje</li><li><strong>Taponamiento temporal:</strong> si hay fuga activa, instalación de tapón de emergencia</li><li><strong>Reparación estructural:</strong> soldadura de grietas, reemplazo de pernos, limpieza de incrustaciones</li><li><strong>Prueba de estanqueidad:</strong> verificación bajo presión de operación</li><li><strong>Documentación fotográfica:</strong> antes/después para seguros e informes</li></ul>",
+    category: "Proceso Técnico"
+  },
+  {
+    question: "¿Qué hacer en emergencia por válvula rota con agua entrando?",
+    answer: "<strong>Protocolo de emergencia inmediata:</strong> <ol><li><strong>Minuto 1:</strong> cerrar válvula interna si existe, activar bombas de achique</li><li><strong>Minuto 2-5:</strong> llamar a servicio de emergencia subacuática 24/7, proporcionar ubicación exacta y tipo de barco</li><li><strong>Llegada del equipo (60-120 min):</strong> buzo instala tapón de emergencia desde exterior del casco</li><li><strong>Reparación provisional (2-4 horas):</strong> soldadura subacuática o brida de refuerzo</li><li><strong>Reparación definitiva (planificada):</strong> reemplazo completo de válvula o soldadura hiperbárica certificada</li></ol> <strong>Tiempo crítico: primeras 2 horas son vitales para evitar hundimiento.</strong>",
+    category: "Emergencias"
+  },
+  {
+    question: "¿Cuánto dura una reparación de válvula subacuática?",
+    answer: "<strong>Vida útil según tipo de reparación:</strong> <ul><li><strong>Soldadura húmeda + refuerzo:</strong> 2-4 años (reparación temporal)</li><li><strong>Soldadura hiperbárica certificada:</strong> 8-15 años (comparable a astillero)</li><li><strong>Reemplazo completo de válvula a flote:</strong> 10-20 años (válvula nueva certificada)</li><li><strong>Tapón permanente (si válvula no es crítica):</strong> vida útil del barco</li></ul> Con mantenimiento preventivo (inspección anual, protección catódica), una reparación profesional dura significativamente más.",
+    category: "Durabilidad"
+  },
+  {
+    question: "¿Se puede reemplazar una válvula completa sin entrar a dique seco?",
+    answer: "Sí, es posible mediante <strong>técnica de cofferdam (cajón estanco)</strong>. <strong>Proceso:</strong> <ol><li>Buzo instala cajón metálico soldado alrededor de la válvula desde el exterior del casco</li><li>Se achica el agua del interior del cofferdam, creando área de trabajo en seco</li><li>Se desmonta válvula defectuosa desde interior del barco</li><li>Se instala válvula nueva con juntas y selladores marinos</li><li>Se prueba estanqueidad antes de retirar cofferdam</li></ol> <strong>Ventajas:</strong> barco permanece a flote y operativo, sin costes de varada. <strong>Limitaciones:</strong> profundidad máxima 8-10m, requiere acceso interior al casco.",
+    category: "Técnicas Avanzadas"
+  },
+  {
+    question: "¿Qué certificaciones se requieren para reparación profesional de válvulas?",
+    answer: "<strong>Certificaciones clave:</strong> <ul><li><strong>Soldadores:</strong> AWS D3.6 para soldadura submarina estructural, ISO 15618 para cualificación internacional</li><li><strong>Inspección:</strong> IMCA D 014 para ensayos no destructivos post-reparación</li><li><strong>Válvulas:</strong> certificadas ISO 9001, Lloyd's Register, DNV GL para uso marino</li><li><strong>Documentación:</strong> informe técnico con fotografías, especificaciones WPS/PQR, certificado de estanqueidad</li></ul> Para buques comerciales y seguros P&I Clubs, certificación por sociedad de clasificación es obligatoria.",
+    category: "Certificaciones"
+  },
+  {
+    question: "¿Cómo prevenir fallos futuros en válvulas de fondo después de la reparación?",
+    answer: "<strong>5 estrategias de mantenimiento preventivo:</strong> <ul><li><strong>Inspecciones anuales:</strong> revisión visual y mecánica de todas las sea valves, detectar corrosión temprana</li><li><strong>Protección catódica:</strong> instalar ánodos de zinc cerca de válvulas de bronce para evitar corrosión galvánica</li><li><strong>Ejercicio periódico:</strong> abrir y cerrar válvulas cada 3-6 meses para evitar agarrotamiento</li><li><strong>Limpieza de incrustaciones:</strong> servicio de limpieza submarina anual elimina mejillones y algas</li><li><strong>Reemplazo preventivo:</strong> válvulas con más de 15-20 años considerar sustitución planificada antes de fallo</li></ul> <a href='/limpieza-cascos-submarinos' class='text-cyan-600 hover:text-cyan-800 font-semibold underline'>Limpieza cascos submarinos →</a>",
+    category: "Mantenimiento Preventivo"
+  }
+];
+---
+
+<Layout
+  title="Reparación Válvulas Fondo Barco 24/7 | Sea Valves Urgente Cádiz"
+  description="Reparación urgente válvulas de fondo (sea valves) sin varada en Cádiz. Emergencias 24/7, tapones submarinos, soldadura certificada, reemplazo a flote..."
+  keywords="reparación válvulas fondo barco, sea valves reparación, válvulas submarinas emergencia, tapón válvula fondo, reparación válvula sin varada"
+>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-red-900 via-orange-800 to-red-900 text-white py-20 relative overflow-hidden">
+    <div class="absolute inset-0 bg-black opacity-20"></div>
+    <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%23ffffff\" fill-opacity=\"0.05\"%3E%3Cpath d=\"M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="inline-block bg-yellow-400 text-gray-900 px-6 py-2 rounded-full font-bold mb-6 text-sm uppercase tracking-wide">
+          🚨 Emergencias 24/7 - Respuesta menos 2h
+        </div>
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
+          Reparación Válvulas de Fondo <span class="text-yellow-400">Sin Varada</span>
+        </h1>
+        <p class="text-xl md:text-2xl mb-8 text-orange-100 leading-relaxed">
+          <strong>Sea valves con fuga? Válvula bloqueada? Agua entrando?</strong> Reparación profesional a flote en menos de 4 horas. Tapones de emergencia, soldadura certificada, reemplazo completo sin dique seco.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="tel:+34123456789" class="inline-block bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-4 px-8 rounded-lg text-lg transition-all transform hover:scale-105 shadow-xl">
+            🆘 Emergencia Inmediata
+          </a>
+          <a href="#proceso" class="inline-block bg-white hover:bg-gray-100 text-red-900 font-bold py-4 px-8 rounded-lg text-lg transition-all transform hover:scale-105 shadow-xl">
+            🔧 Ver Proceso Reparación
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios Principales -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900">
+        🔧 Servicios de <span class="text-cyan-600">Reparación de Válvulas</span>
+      </h2>
+      <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto text-lg">
+        Soluciones completas para válvulas de fondo (sea valves), tomas de mar, válvulas de sentina y sistemas de refrigeración. Servicio a flote sin interrumpir operaciones.
+      </p>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <!-- Servicio 1 -->
+        <div class="bg-gradient-to-br from-red-50 to-orange-50 p-6 rounded-lg shadow-lg border-t-4 border-red-500 hover:shadow-xl transition-all">
+          <div class="text-5xl mb-4 text-center">🚨</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">Emergencias 24/7</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li class="flex items-start">
+              <span class="text-red-600 mr-2 font-bold">✓</span>
+              <span>Válvula rota con entrada de agua activa</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-red-600 mr-2 font-bold">✓</span>
+              <span>Instalación tapón de emergencia (60-120 min)</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-red-600 mr-2 font-bold">✓</span>
+              <span>Reparación provisional inmediata</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-red-600 mr-2 font-bold">✓</span>
+              <span>Evita hundimiento y pérdidas totales</span>
+            </li>
+          </ul>
+          <div class="mt-4 p-3 bg-red-100 rounded border-l-4 border-red-600">
+            <p class="text-sm text-red-800 font-semibold">⏱️ Respuesta en menos de 2 horas zona Cádiz/Algeciras</p>
+          </div>
+        </div>
+
+        <!-- Servicio 2 -->
+        <div class="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-lg shadow-lg border-t-4 border-blue-500 hover:shadow-xl transition-all">
+          <div class="text-5xl mb-4 text-center">🔩</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">Reparación Estructural</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li class="flex items-start">
+              <span class="text-blue-600 mr-2 font-bold">✓</span>
+              <span>Soldadura de grietas en cuerpo de válvula</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-blue-600 mr-2 font-bold">✓</span>
+              <span>Refuerzo con bridas metálicas submarinas</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-blue-600 mr-2 font-bold">✓</span>
+              <span>Limpieza incrustaciones y corrosión</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-blue-600 mr-2 font-bold">✓</span>
+              <span>Prueba de estanqueidad certificada</span>
+            </li>
+          </ul>
+          <div class="mt-4 p-3 bg-blue-100 rounded border-l-4 border-blue-600">
+            <p class="text-sm text-blue-800 font-semibold">🏆 Soldadores certificados AWS D3.6</p>
+          </div>
+        </div>
+
+        <!-- Servicio 3 -->
+        <div class="bg-gradient-to-br from-green-50 to-teal-50 p-6 rounded-lg shadow-lg border-t-4 border-green-500 hover:shadow-xl transition-all">
+          <div class="text-5xl mb-4 text-center">🔄</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">Reemplazo Completo a Flote</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li class="flex items-start">
+              <span class="text-green-600 mr-2 font-bold">✓</span>
+              <span>Técnica de cofferdam (cajón estanco)</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-600 mr-2 font-bold">✓</span>
+              <span>Instalación de válvula nueva certificada</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-600 mr-2 font-bold">✓</span>
+              <span>Sin necesidad de dique seco o varada</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-600 mr-2 font-bold">✓</span>
+              <span>Garantía 10-20 años (válvula nueva)</span>
+            </li>
+          </ul>
+          <div class="mt-4 p-3 bg-green-100 rounded border-l-4 border-green-600">
+            <p class="text-sm text-green-800 font-semibold">💰 Ahorro 60-80% vs astillero</p>
+          </div>
+        </div>
+
+        <!-- Servicio 4 -->
+        <div class="bg-gradient-to-br from-yellow-50 to-orange-50 p-6 rounded-lg shadow-lg border-t-4 border-yellow-500 hover:shadow-xl transition-all">
+          <div class="text-5xl mb-4 text-center">🔍</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">Inspección y Diagnóstico</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li class="flex items-start">
+              <span class="text-yellow-600 mr-2 font-bold">✓</span>
+              <span>Identificación tipo y estado de válvulas</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-yellow-600 mr-2 font-bold">✓</span>
+              <span>Detección corrosión galvánica temprana</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-yellow-600 mr-2 font-bold">✓</span>
+              <span>Pruebas de operatividad y estanqueidad</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-yellow-600 mr-2 font-bold">✓</span>
+              <span>Informe fotográfico completo + recomendaciones</span>
+            </li>
+          </ul>
+          <div class="mt-4 p-3 bg-yellow-100 rounded border-l-4 border-yellow-600">
+            <p class="text-sm text-yellow-800 font-semibold">📋 Válido para P&I Clubs y aseguradoras</p>
+          </div>
+        </div>
+
+        <!-- Servicio 5 -->
+        <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-lg shadow-lg border-t-4 border-purple-500 hover:shadow-xl transition-all">
+          <div class="text-5xl mb-4 text-center">🛡️</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">Protección Preventiva</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li class="flex items-start">
+              <span class="text-purple-600 mr-2 font-bold">✓</span>
+              <span>Instalación ánodos de zinc anti-corrosión</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-purple-600 mr-2 font-bold">✓</span>
+              <span>Recubrimientos epóxicos marinos</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-purple-600 mr-2 font-bold">✓</span>
+              <span>Plan mantenimiento preventivo anual</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-purple-600 mr-2 font-bold">✓</span>
+              <span>Ejercicio periódico de válvulas</span>
+            </li>
+          </ul>
+          <div class="mt-4 p-3 bg-purple-100 rounded border-l-4 border-purple-600">
+            <p class="text-sm text-purple-800 font-semibold">📈 Aumenta vida útil 40-60%</p>
+          </div>
+        </div>
+
+        <!-- Servicio 6 -->
+        <div class="bg-gradient-to-br from-indigo-50 to-blue-50 p-6 rounded-lg shadow-lg border-t-4 border-indigo-500 hover:shadow-xl transition-all">
+          <div class="text-5xl mb-4 text-center">📜</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">Certificación Oficial</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li class="flex items-start">
+              <span class="text-indigo-600 mr-2 font-bold">✓</span>
+              <span>Informes técnicos para sociedades de clasificación</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-indigo-600 mr-2 font-bold">✓</span>
+              <span>Certificados Lloyd's, DNV GL, ABS, Bureau Veritas</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-indigo-600 mr-2 font-bold">✓</span>
+              <span>Documentación WPS/PQR de soldaduras</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-indigo-600 mr-2 font-bold">✓</span>
+              <span>Válido para seguros P&I Clubs</span>
+            </li>
+          </ul>
+          <div class="mt-4 p-3 bg-indigo-100 rounded border-l-4 border-indigo-600">
+            <p class="text-sm text-indigo-800 font-semibold">🏅 Cumplimiento normativa internacional</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Protocolo de Emergencia -->
+  <section id="proceso" class="py-16 bg-gradient-to-br from-gray-50 to-red-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900">
+        🚨 Protocolo de <span class="text-red-600">Emergencia por Válvula Rota</span>
+      </h2>
+      <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto text-lg">
+        Si tu válvula de fondo está rota y entra agua, cada minuto cuenta. Sigue este protocolo mientras llega el equipo de emergencia.
+      </p>
+
+      <div class="max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Paso 1-2 -->
+          <div class="bg-white p-8 rounded-lg shadow-xl border-l-8 border-red-600">
+            <div class="flex items-start mb-4">
+              <div class="bg-red-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl mr-4 flex-shrink-0">1</div>
+              <div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">MINUTOS 1-5: Contención Inmediata</h3>
+                <ul class="space-y-2 text-gray-700">
+                  <li class="flex items-start">
+                    <span class="text-red-600 mr-2">🔴</span>
+                    <span><strong>Cerrar válvula interior</strong> si existe (zona seca del barco)</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-red-600 mr-2">🔴</span>
+                    <span><strong>Activar bombas de achique</strong> automáticas y manuales</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-red-600 mr-2">🔴</span>
+                    <span><strong>Intentar taponamiento temporal</strong> con trapo + madera + abrazadera (desde interior)</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-red-600 mr-2">🔴</span>
+                    <span><strong>Llamar inmediatamente</strong> a servicio emergencia subacuática 24/7</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-8 rounded-lg shadow-xl border-l-8 border-orange-600">
+            <div class="flex items-start mb-4">
+              <div class="bg-orange-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl mr-4 flex-shrink-0">2</div>
+              <div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">MINUTOS 5-60: Espera Segura</h3>
+                <ul class="space-y-2 text-gray-700">
+                  <li class="flex items-start">
+                    <span class="text-orange-600 mr-2">🟠</span>
+                    <span><strong>Monitorear nivel de agua</strong> en sentina constantemente</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-orange-600 mr-2">🟠</span>
+                    <span><strong>Preparar información:</strong> eslora, tipo de barco, ubicación exacta, profundidad</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-orange-600 mr-2">🟠</span>
+                    <span><strong>Facilitar acceso:</strong> retirar defensas, escalera de embarque lista</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-orange-600 mr-2">🟠</span>
+                    <span><strong>Alertar autoridad portuaria</strong> si riesgo de hundimiento es alto</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Paso 3-4 -->
+          <div class="bg-white p-8 rounded-lg shadow-xl border-l-8 border-yellow-600">
+            <div class="flex items-start mb-4">
+              <div class="bg-yellow-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl mr-4 flex-shrink-0">3</div>
+              <div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">60-120 MIN: Llegada del Equipo</h3>
+                <ul class="space-y-2 text-gray-700">
+                  <li class="flex items-start">
+                    <span class="text-yellow-600 mr-2">🟡</span>
+                    <span><strong>Buzo localiza válvula</strong> desde exterior del casco</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-yellow-600 mr-2">🟡</span>
+                    <span><strong>Instalación tapón de emergencia:</strong> tapón cónico expansivo o placa metálica soldada</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-yellow-600 mr-2">🟡</span>
+                    <span><strong>Verificación estanqueidad:</strong> detener entrada de agua completamente</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-yellow-600 mr-2">🟡</span>
+                    <span><strong>Evaluación daños:</strong> determinar si reparación provisional es suficiente</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-8 rounded-lg shadow-xl border-l-8 border-green-600">
+            <div class="flex items-start mb-4">
+              <div class="bg-green-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl mr-4 flex-shrink-0">4</div>
+              <div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">2-4 HORAS: Reparación Definitiva</h3>
+                <ul class="space-y-2 text-gray-700">
+                  <li class="flex items-start">
+                    <span class="text-green-600 mr-2">🟢</span>
+                    <span><strong>Soldadura subacuática:</strong> refuerzo estructural del cuerpo de válvula</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-green-600 mr-2">🟢</span>
+                    <span><strong>Brida metálica:</strong> instalación de brida de refuerzo con pernos inoxidables</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-green-600 mr-2">🟢</span>
+                    <span><strong>Prueba bajo presión:</strong> verificar que soporta operación normal</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-green-600 mr-2">🟢</span>
+                    <span><strong>Documentación fotográfica:</strong> informe completo para seguro</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 bg-gradient-to-r from-red-600 to-orange-600 p-8 rounded-lg shadow-xl text-white text-center">
+          <h3 class="text-2xl font-bold mb-4">⏱️ TIEMPO CRÍTICO: Primeras 2 Horas son Vitales</h3>
+          <p class="text-lg mb-6 text-orange-100">
+            Una válvula de 1 pulgada puede inundar un barco de 10 metros en 4-6 horas. No esperes. <strong>Actuación rápida evita hundimiento y pérdida total.</strong>
+          </p>
+          <a href="tel:+34123456789" class="inline-block bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-4 px-8 rounded-lg text-lg transition-all transform hover:scale-105 shadow-xl">
+            🆘 LLAMAR EMERGENCIA AHORA
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparativa: A Flote vs Varada -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900">
+        ⚖️ Reparación <span class="text-cyan-600">A Flote vs Varada en Astillero</span>
+      </h2>
+      <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto text-lg">
+        El 80% de reparaciones de válvulas se resuelven más rápido y económico a flote. Comparativa técnica y económica.
+      </p>
+
+      <div class="overflow-x-auto">
+        <table class="w-full bg-white shadow-lg rounded-lg overflow-hidden">
+          <thead class="bg-gradient-to-r from-cyan-600 to-blue-600 text-white">
+            <tr>
+              <th class="px-6 py-4 text-left font-bold">Factor</th>
+              <th class="px-6 py-4 text-center font-bold">Reparación A Flote</th>
+              <th class="px-6 py-4 text-center font-bold">Varada en Astillero</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200">
+            <tr class="hover:bg-cyan-50">
+              <td class="px-6 py-4 font-semibold text-gray-800">⏱️ Tiempo Total</td>
+              <td class="px-6 py-4 text-center text-green-700 font-bold">2-6 horas</td>
+              <td class="px-6 py-4 text-center text-orange-700 font-bold">5-10 días</td>
+            </tr>
+            <tr class="hover:bg-cyan-50 bg-gray-50">
+              <td class="px-6 py-4 font-semibold text-gray-800">💰 Coste Aproximado</td>
+              <td class="px-6 py-4 text-center text-green-700 font-semibold">Moderado</td>
+              <td class="px-6 py-4 text-center text-red-700 font-semibold">Alto (varada + grúa + astillero)</td>
+            </tr>
+            <tr class="hover:bg-cyan-50">
+              <td class="px-6 py-4 font-semibold text-gray-800">🚢 Interrupción Operaciones</td>
+              <td class="px-6 py-4 text-center text-green-700">Mínima (2-6 horas)</td>
+              <td class="px-6 py-4 text-center text-red-700">Total (5-10 días parado)</td>
+            </tr>
+            <tr class="hover:bg-cyan-50 bg-gray-50">
+              <td class="px-6 py-4 font-semibold text-gray-800">🔧 Tipo Reparaciones Posibles</td>
+              <td class="px-6 py-4 text-center">Soldadura, refuerzos, tapones, reemplazo con cofferdam</td>
+              <td class="px-6 py-4 text-center">Todas (acceso completo)</td>
+            </tr>
+            <tr class="hover:bg-cyan-50">
+              <td class="px-6 py-4 font-semibold text-gray-800">📋 Certificaciones</td>
+              <td class="px-6 py-4 text-center">AWS D3.6, ISO 15618, IMCA D 014</td>
+              <td class="px-6 py-4 text-center">Todas las certificaciones</td>
+            </tr>
+            <tr class="hover:bg-cyan-50 bg-gray-50">
+              <td class="px-6 py-4 font-semibold text-gray-800">⚡ Disponibilidad Urgencias</td>
+              <td class="px-6 py-4 text-center text-green-700 font-bold">24/7 - menos de 2h</td>
+              <td class="px-6 py-4 text-center text-orange-700">Días/semanas de espera</td>
+            </tr>
+            <tr class="hover:bg-cyan-50">
+              <td class="px-6 py-4 font-semibold text-gray-800">🎯 Ideal Para</td>
+              <td class="px-6 py-4 text-center">Emergencias, 1-2 válvulas, barcos comerciales</td>
+              <td class="px-6 py-4 text-center">Revisión completa, múltiples válvulas</td>
+            </tr>
+            <tr class="hover:bg-cyan-50 bg-gray-50">
+              <td class="px-6 py-4 font-semibold text-gray-800">📊 Ahorro Económico</td>
+              <td class="px-6 py-4 text-center text-green-700 font-bold">60-80% vs varada</td>
+              <td class="px-6 py-4 text-center">-</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="mt-8 p-6 bg-gradient-to-r from-cyan-50 to-blue-50 border-l-4 border-cyan-600 rounded-r-lg">
+        <p class="text-gray-800 text-lg leading-relaxed">
+          <strong>💡 Recomendación profesional:</strong> Para válvulas individuales con fallo urgente, reparación a flote es 5-10x más rápida y 60-80% más económica. Para revisión completa de múltiples válvulas + mantenimiento general del casco, varada es más eficiente. <a href="/soldadura-subacuatica-vs-varada-astillero" class="text-cyan-600 hover:text-cyan-800 font-semibold underline">Comparativa completa soldadura vs varada →</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section class="py-16 bg-gradient-to-br from-gray-50 to-cyan-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900">
+        ❓ Preguntas Frecuentes sobre <span class="text-cyan-600">Válvulas de Fondo</span>
+      </h2>
+      <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto text-lg">
+        Respuestas de técnicos certificados en reparación de válvulas marinas y sistemas de a bordo.
+      </p>
+
+      <div class="max-w-4xl mx-auto space-y-4">
+        {faqs.map((faq, index) => (
+          <details class="bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:border-cyan-400 transition-all group">
+            <summary class="cursor-pointer text-lg font-bold text-gray-900 flex justify-between items-center group-hover:text-cyan-600">
+              <span class="flex items-center">
+                <span class="text-cyan-600 mr-3 text-xl">{index + 1}.</span>
+                {faq.question}
+              </span>
+              <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="mt-4 text-gray-700 leading-relaxed border-t pt-4" set:html={faq.answer}></div>
+            <div class="mt-3 inline-block bg-cyan-100 text-cyan-800 px-3 py-1 rounded-full text-sm font-semibold">
+              {faq.category}
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Mantenimiento Preventivo -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900">
+        🛡️ Mantenimiento Preventivo de <span class="text-cyan-600">Válvulas</span>
+      </h2>
+      <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto text-lg">
+        Evita emergencias costosas con inspecciones periódicas. Plan de mantenimiento que aumenta vida útil 40-60%.
+      </p>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <!-- Mantenimiento 1 -->
+        <div class="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-lg shadow-md border-2 border-blue-200 hover:border-blue-400 transition-all">
+          <div class="text-5xl mb-3 text-center">🔍</div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2 text-center">Inspección Anual</h3>
+          <p class="text-gray-700 text-sm leading-relaxed mb-3">
+            Revisión visual y mecánica de todas las sea valves. Detección temprana de corrosión, incrustaciones y desgaste de sellos.
+          </p>
+          <div class="bg-blue-100 p-2 rounded text-xs text-blue-800">
+            <strong>Incluye:</strong> fotografía submarina, informe escrito, recomendaciones
+          </div>
+        </div>
+
+        <!-- Mantenimiento 2 -->
+        <div class="bg-gradient-to-br from-green-50 to-teal-50 p-6 rounded-lg shadow-md border-2 border-green-200 hover:border-green-400 transition-all">
+          <div class="text-5xl mb-3 text-center">⚡</div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2 text-center">Protección Catódica</h3>
+          <p class="text-gray-700 text-sm leading-relaxed mb-3">
+            Instalación de ánodos de zinc cerca de válvulas de bronce. Previene corrosión galvánica que causa el 60% de fallos.
+          </p>
+          <div class="bg-green-100 p-2 rounded text-xs text-green-800">
+            <strong>Renovación:</strong> cada 18-24 meses según desgaste
+          </div>
+        </div>
+
+        <!-- Mantenimiento 3 -->
+        <div class="bg-gradient-to-br from-yellow-50 to-orange-50 p-6 rounded-lg shadow-md border-2 border-yellow-200 hover:border-yellow-400 transition-all">
+          <div class="text-5xl mb-3 text-center">🔄</div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2 text-center">Ejercicio Periódico</h3>
+          <p class="text-gray-700 text-sm leading-relaxed mb-3">
+            Abrir y cerrar válvulas cada 3-6 meses evita agarrotamiento por incrustaciones. Especialmente crítico en válvulas poco usadas.
+          </p>
+          <div class="bg-yellow-100 p-2 rounded text-xs text-yellow-800">
+            <strong>Resultado:</strong> operatividad garantizada en emergencias
+          </div>
+        </div>
+
+        <!-- Mantenimiento 4 -->
+        <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-lg shadow-md border-2 border-purple-200 hover:border-purple-400 transition-all">
+          <div class="text-5xl mb-3 text-center">🧽</div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2 text-center">Limpieza Incrustaciones</h3>
+          <p class="text-gray-700 text-sm leading-relaxed mb-3">
+            Servicio anual de limpieza submarina elimina mejillones, algas y barnacles que bloquean válvulas y aceleran corrosión.
+          </p>
+          <div class="bg-purple-100 p-2 rounded text-xs text-purple-800">
+            <strong>Combina con:</strong> limpieza completa del casco
+          </div>
+        </div>
+
+        <!-- Mantenimiento 5 -->
+        <div class="bg-gradient-to-br from-red-50 to-orange-50 p-6 rounded-lg shadow-md border-2 border-red-200 hover:border-red-400 transition-all">
+          <div class="text-5xl mb-3 text-center">🎨</div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2 text-center">Recubrimientos Protectores</h3>
+          <p class="text-gray-700 text-sm leading-relaxed mb-3">
+            Aplicación de pintura marina epóxica de 2 componentes sobre válvulas y pasacascos. Barrera contra salinidad.
+          </p>
+          <div class="bg-red-100 p-2 rounded text-xs text-red-800">
+            <strong>Durabilidad:</strong> 3-5 años según marca y aplicación
+          </div>
+        </div>
+
+        <!-- Mantenimiento 6 -->
+        <div class="bg-gradient-to-br from-indigo-50 to-blue-50 p-6 rounded-lg shadow-md border-2 border-indigo-200 hover:border-indigo-400 transition-all">
+          <div class="text-5xl mb-3 text-center">📅</div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2 text-center">Reemplazo Preventivo</h3>
+          <p class="text-gray-700 text-sm leading-relaxed mb-3">
+            Válvulas con 15-20 años considerar sustitución planificada antes de fallo. Evita emergencias en momentos críticos.
+          </p>
+          <div class="bg-indigo-100 p-2 rounded text-xs text-indigo-800">
+            <strong>Planificado:</strong> sin urgencias, menor coste
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-12 text-center max-w-3xl mx-auto bg-gradient-to-r from-cyan-600 to-blue-700 p-8 rounded-lg shadow-xl text-white">
+        <h3 class="text-2xl font-bold mb-4">📋 Plan de Mantenimiento Anual</h3>
+        <p class="text-lg mb-6 text-cyan-100">
+          Contrato de mantenimiento preventivo incluye: inspección anual completa, limpieza de válvulas, verificación de ánodos, ejercicio mecánico, informe fotográfico. <strong>Aumenta vida útil 40-60% y evita emergencias costosas.</strong>
+        </p>
+        <a href="tel:+34123456789" class="inline-block bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-3 px-6 rounded-lg transition-all transform hover:scale-105">
+          📞 Solicitar Plan Mantenimiento
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="py-16 bg-gradient-to-br from-red-900 via-orange-800 to-red-900 text-white relative overflow-hidden">
+    <div class="absolute inset-0 bg-black opacity-30"></div>
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl md:text-5xl font-extrabold mb-6">
+          ¿Válvula de Fondo con <span class="text-yellow-400">Fuga o Bloqueada</span>?
+        </h2>
+        <p class="text-xl md:text-2xl mb-8 text-orange-100 leading-relaxed">
+          Respuesta en menos de 2 horas zona Cádiz/Algeciras. Tapones de emergencia, soldadura certificada AWS D3.6, reemplazo completo a flote. Servicio 24/7 todos los días del año.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+          <a href="tel:+34123456789" class="inline-block bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-4 px-8 rounded-lg text-lg transition-all transform hover:scale-105 shadow-xl">
+            🆘 Emergencia Inmediata
+          </a>
+          <a href="/inspeccion-cascos-buceo" class="inline-block bg-white hover:bg-gray-100 text-red-900 font-bold py-4 px-8 rounded-lg text-lg transition-all transform hover:scale-105 shadow-xl">
+            🔍 Inspección Preventiva
+          </a>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6 text-center">
+          <div>
+            <div class="text-4xl font-bold text-yellow-400 mb-2">menos 2h</div>
+            <p class="text-orange-100">Tiempo de respuesta emergencias Cádiz/Algeciras</p>
+          </div>
+          <div>
+            <div class="text-4xl font-bold text-yellow-400 mb-2">60-80%</div>
+            <p class="text-orange-100">Ahorro económico vs varada en astillero</p>
+          </div>
+          <div>
+            <div class="text-4xl font-bold text-yellow-400 mb-2">24/7</div>
+            <p class="text-orange-100">Disponibilidad todos los días del año</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Internal Linking -->
+  <section class="py-12 bg-gray-100">
+    <div class="container mx-auto px-4">
+      <h3 class="text-2xl font-bold text-center mb-8 text-gray-900">🔧 Más Servicios Subacuáticos</h3>
+      <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
+        <a href="/soldadura-subacuatica-emergencias" class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow text-center border-2 border-transparent hover:border-cyan-400">
+          <div class="text-3xl mb-2">⚡</div>
+          <p class="font-semibold text-gray-800 text-sm">Soldadura Emergencias</p>
+        </a>
+        <a href="/inspeccion-cascos-buceo" class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow text-center border-2 border-transparent hover:border-cyan-400">
+          <div class="text-3xl mb-2">🔍</div>
+          <p class="font-semibold text-gray-800 text-sm">Inspección Cascos</p>
+        </a>
+        <a href="/limpieza-cascos-submarinos" class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow text-center border-2 border-transparent hover:border-cyan-400">
+          <div class="text-3xl mb-2">🧽</div>
+          <p class="font-semibold text-gray-800 text-sm">Limpieza Cascos</p>
+        </a>
+        <a href="/reparacion-helices-timones" class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow text-center border-2 border-transparent hover:border-cyan-400">
+          <div class="text-3xl mb-2">⚙️</div>
+          <p class="font-semibold text-gray-800 text-sm">Reparación Hélices</p>
+        </a>
+        <a href="/instalacion-anodos-proteccion-catodica" class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow text-center border-2 border-transparent hover:border-cyan-400">
+          <div class="text-3xl mb-2">⚡</div>
+          <p class="font-semibold text-gray-800 text-sm">Instalación Ánodos</p>
+        </a>
+        <a href="/trabajos-salvamento" class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow text-center border-2 border-transparent hover:border-cyan-400">
+          <div class="text-3xl mb-2">🚢</div>
+          <p class="font-semibold text-gray-800 text-sm">Trabajos Salvamento</p>
+        </a>
+        <a href="/servicios-consignatarios" class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow text-center border-2 border-transparent hover:border-cyan-400">
+          <div class="text-3xl mb-2">📋</div>
+          <p class="font-semibold text-gray-800 text-sm">Servicios Consignatarios</p>
+        </a>
+        <a href="/emergencias-maritimas-24-7" class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow text-center border-2 border-transparent hover:border-cyan-400">
+          <div class="text-3xl mb-2">🚨</div>
+          <p class="font-semibold text-gray-800 text-sm">Emergencias 24/7</p>
+        </a>
+        <a href="/soldadura-subacuatica-vs-varada-astillero" class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow text-center border-2 border-transparent hover:border-cyan-400">
+          <div class="text-3xl mb-2">⚖️</div>
+          <p class="font-semibold text-gray-800 text-sm">Soldadura vs Varada</p>
+        </a>
+        <a href="/cuanto-dura-soldadura-subacuatica" class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow text-center border-2 border-transparent hover:border-cyan-400">
+          <div class="text-3xl mb-2">⏱️</div>
+          <p class="font-semibold text-gray-800 text-sm">¿Cuánto Dura Soldadura?</p>
+        </a>
+        <a href="/tipos-soldadura-subacuatica-completa" class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow text-center border-2 border-transparent hover:border-cyan-400">
+          <div class="text-3xl mb-2">🔧</div>
+          <p class="font-semibold text-gray-800 text-sm">Tipos Soldadura Completa</p>
+        </a>
+        <a href="/corte-plasma-submarino" class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow text-center border-2 border-transparent hover:border-cyan-400">
+          <div class="text-3xl mb-2">✂️</div>
+          <p class="font-semibold text-gray-800 text-sm">Corte Plasma Submarino</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer.replace(/<[^>]*>/g, '')
+      }
+    }))
+  })} />
+</Layout>

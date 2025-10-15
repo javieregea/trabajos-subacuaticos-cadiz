@@ -1,0 +1,581 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const faqs = [
+  {
+    question: "¿Cuánto dura una soldadura subacuática húmeda?",
+    answer: "La <strong>soldadura subacuática húmeda</strong> tiene una vida útil de <strong>2 a 5 años</strong> en condiciones normales. Su durabilidad depende de factores como la calidad de ejecución, profundidad de trabajo, tipo de material soldado y condiciones ambientales (salinidad, corrientes, temperatura). Para reparaciones temporales o urgencias es ideal, pero para estructuras permanentes se recomienda soldadura hiperbárica.",
+    category: "Durabilidad Técnica"
+  },
+  {
+    question: "¿Cuánto dura una soldadura subacuática seca (hiperbárica)?",
+    answer: "La <strong>soldadura hiperbárica o seca</strong> puede durar <strong>10 a 20 años o más</strong>, comparable a soldaduras convencionales en seco. Se realiza dentro de una cámara hiperbárica que elimina el agua, permitiendo control total de temperatura, atmósfera y enfriamiento. Certificaciones AWS D3.6 clase A garantizan calidad equivalente a astillero. Ideal para reparaciones permanentes en cascos, estructuras offshore y componentes críticos.",
+    category: "Durabilidad Técnica"
+  },
+  {
+    question: "¿Qué factores reducen la vida útil de soldadura subacuática?",
+    answer: "<strong>5 factores críticos que reducen durabilidad:</strong> <ul><li><strong>Corrosión galvánica:</strong> contacto entre metales diferentes acelera oxidación</li><li><strong>Fatiga cíclica:</strong> movimiento constante del barco genera microfisuras</li><li><strong>Porosidad excesiva:</strong> burbujas de hidrógeno debilitan el cordón</li><li><strong>Temperatura del agua:</strong> aguas frías (&lt;10°C) dificultan fusión completa</li><li><strong>Falta de protección catódica:</strong> sin ánodos de sacrificio la corrosión es 3x más rápida</li></ul>",
+    category: "Factores de Degradación"
+  },
+  {
+    question: "¿Cómo extender la vida útil de una reparación subacuática?",
+    answer: "<strong>5 técnicas para maximizar durabilidad:</strong> <ul><li><strong>Post-tratamiento térmico:</strong> calentamiento controlado reduce tensiones residuales</li><li><strong>Recubrimientos epóxicos:</strong> pintura marina de 2 componentes sobre la soldadura</li><li><strong>Protección catódica:</strong> instalar ánodos de zinc cerca de la reparación</li><li><strong>Inspecciones periódicas:</strong> revisión ultrasónica cada 6-12 meses</li><li><strong>Soldadura mixta:</strong> combinar húmeda inicial + refuerzo hiperbárico posterior</li></ul>",
+    category: "Mantenimiento"
+  },
+  {
+    question: "¿Cuándo elegir soldadura húmeda vs seca según durabilidad necesaria?",
+    answer: "<strong>Soldadura húmeda (2-5 años):</strong> reparaciones de emergencia, parches temporales, pre-varada, zonas no críticas, barcos que entrarán a dique seco próximamente. <strong>Soldadura seca (10-20 años):</strong> estructuras permanentes, cascos de buques comerciales, plataformas offshore, componentes bajo presión, certificaciones Lloyd's o DNV GL requeridas, cuando varada es imposible logísticamente.",
+    category: "Decisiones Operativas"
+  },
+  {
+    question: "¿La profundidad afecta la durabilidad de la soldadura?",
+    answer: "Sí, la <strong>profundidad impacta directamente</strong>. A mayor profundidad aumenta presión hidrostática, dificultando control del arco eléctrico y generando más porosidad. <strong>Rangos de durabilidad:</strong> <ul><li><strong>0-10m:</strong> durabilidad estándar (2-5 años húmeda)</li><li><strong>10-30m:</strong> reducción 20-30% por mayor porosidad</li><li><strong>&gt;30m:</strong> requiere técnicas especializadas y electrodos específicos para profundidad</li></ul> Soldadura hiperbárica elimina este problema al trabajar en seco.",
+    category: "Profundidad"
+  },
+  {
+    question: "¿Qué certificaciones garantizan durabilidad en soldadura subacuática?",
+    answer: "<strong>Certificaciones clave para durabilidad garantizada:</strong> <ul><li><strong>AWS D3.6 Clase A:</strong> estándar oro, pruebas radiográficas y mecánicas, soldadura hiperbárica</li><li><strong>ISO 15618:</strong> cualificación internacional de soldadores subacuáticos</li><li><strong>IMCA D 014:</strong> procedimientos de inspección post-soldadura</li><li><strong>ABS/Lloyd's/DNV GL:</strong> certificados por sociedades de clasificación para buques comerciales</li></ul> Soldadores certificados documentan procedimientos WPS/PQR.",
+    category: "Certificaciones"
+  },
+  {
+    question: "¿Cuánto dura soldadura subacuática en acero inoxidable vs acero al carbono?",
+    answer: "<strong>Acero inoxidable:</strong> excelente resistencia a corrosión marina, durabilidad 30-40% superior (3-7 años húmeda, 15-25 años seca). Requiere electrodos especiales Inconel o 316L. <strong>Acero al carbono:</strong> durabilidad estándar pero más económico y común. <strong>Aluminio marino:</strong> soldadura compleja, vida útil 2-4 años, sensible a corrosión galvánica. La elección depende del presupuesto y requisitos estructurales del cliente.",
+    category: "Materiales"
+  }
+];
+---
+
+<Layout
+  title="¿Cuánto Dura una Soldadura Subacuática? | Vida Útil Real 2025"
+  description="Descubre cuánto dura realmente soldadura subacuática: húmeda 2-5 años, seca 10-20 años. Factores que afectan durabilidad, técnicas para extender vida útil, certificaciones..."
+  keywords="cuanto dura soldadura subacuática, vida útil soldadura submarina, durabilidad soldadura húmeda, soldadura hiperbárica durabilidad, factores corrosión soldadura"
+>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-blue-900 via-cyan-800 to-teal-900 text-white py-20 relative overflow-hidden">
+    <div class="absolute inset-0 bg-black opacity-20"></div>
+    <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%23ffffff\" fill-opacity=\"0.05\"%3E%3Cpath d=\"M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="inline-block bg-yellow-400 text-gray-900 px-6 py-2 rounded-full font-bold mb-6 text-sm uppercase tracking-wide">
+          📊 Guía Técnica 2025
+        </div>
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
+          ¿Cuánto Dura una Soldadura <span class="text-yellow-400">Subacuática</span>?
+        </h1>
+        <p class="text-xl md:text-2xl mb-8 text-cyan-100 leading-relaxed">
+          Vida útil real: <strong>húmeda 2-5 años</strong>, <strong>seca 10-20 años</strong>. Descubre factores que afectan durabilidad y cómo extender la vida útil de tu reparación submarina.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="tel:+34123456789" class="inline-block bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-4 px-8 rounded-lg text-lg transition-all transform hover:scale-105 shadow-xl">
+            📞 Consulta Gratis 24/7
+          </a>
+          <a href="/que-es-soldadura-subacuatica" class="inline-block bg-white hover:bg-gray-100 text-cyan-900 font-bold py-4 px-8 rounded-lg text-lg transition-all transform hover:scale-105 shadow-xl">
+            📚 ¿Qué es Soldadura Subacuática?
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparativa Durabilidad -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900">
+        ⏱️ Durabilidad Real: <span class="text-cyan-600">Húmeda vs Seca</span>
+      </h2>
+      <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto text-lg">
+        La vida útil depende del método utilizado. Comparativa técnica de los dos tipos principales de soldadura subacuática y su durabilidad esperada.
+      </p>
+
+      <div class="overflow-x-auto">
+        <table class="w-full bg-white shadow-lg rounded-lg overflow-hidden">
+          <thead class="bg-gradient-to-r from-cyan-600 to-blue-600 text-white">
+            <tr>
+              <th class="px-6 py-4 text-left font-bold">Factor</th>
+              <th class="px-6 py-4 text-center font-bold">Soldadura Húmeda</th>
+              <th class="px-6 py-4 text-center font-bold">Soldadura Seca (Hiperbárica)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200">
+            <tr class="hover:bg-cyan-50">
+              <td class="px-6 py-4 font-semibold text-gray-800">⏱️ Vida Útil Típica</td>
+              <td class="px-6 py-4 text-center text-orange-700 font-bold">2-5 años</td>
+              <td class="px-6 py-4 text-center text-green-700 font-bold">10-20 años</td>
+            </tr>
+            <tr class="hover:bg-cyan-50 bg-gray-50">
+              <td class="px-6 py-4 font-semibold text-gray-800">🎯 Uso Recomendado</td>
+              <td class="px-6 py-4 text-center">Reparaciones temporales, emergencias</td>
+              <td class="px-6 py-4 text-center">Estructuras permanentes, críticas</td>
+            </tr>
+            <tr class="hover:bg-cyan-50">
+              <td class="px-6 py-4 font-semibold text-gray-800">🔬 Calidad de Soldadura</td>
+              <td class="px-6 py-4 text-center">Moderada (porosidad 5-15%)</td>
+              <td class="px-6 py-4 text-center">Excelente (comparable a seco)</td>
+            </tr>
+            <tr class="hover:bg-cyan-50 bg-gray-50">
+              <td class="px-6 py-4 font-semibold text-gray-800">📜 Certificaciones</td>
+              <td class="px-6 py-4 text-center">ISO 15618, inspecciones básicas</td>
+              <td class="px-6 py-4 text-center">AWS D3.6 Clase A, Lloyd's, DNV GL</td>
+            </tr>
+            <tr class="hover:bg-cyan-50">
+              <td class="px-6 py-4 font-semibold text-gray-800">⚡ Velocidad Ejecución</td>
+              <td class="px-6 py-4 text-center text-green-700 font-semibold">Rápida (2-6 horas)</td>
+              <td class="px-6 py-4 text-center text-orange-700 font-semibold">Lenta (1-3 días con cámara)</td>
+            </tr>
+            <tr class="hover:bg-cyan-50 bg-gray-50">
+              <td class="px-6 py-4 font-semibold text-gray-800">🌊 Resistencia Corrosión</td>
+              <td class="px-6 py-4 text-center">Moderada (requiere mantenimiento)</td>
+              <td class="px-6 py-4 text-center">Alta (similar a astillero)</td>
+            </tr>
+            <tr class="hover:bg-cyan-50">
+              <td class="px-6 py-4 font-semibold text-gray-800">🔧 Mantenimiento Post-Soldadura</td>
+              <td class="px-6 py-4 text-center">Inspecciones cada 6-12 meses</td>
+              <td class="px-6 py-4 text-center">Inspecciones cada 2-5 años</td>
+            </tr>
+            <tr class="hover:bg-cyan-50 bg-gray-50">
+              <td class="px-6 py-4 font-semibold text-gray-800">💰 Inversión Inicial</td>
+              <td class="px-6 py-4 text-center text-green-700 font-semibold">Económica</td>
+              <td class="px-6 py-4 text-center text-orange-700 font-semibold">Alta</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="mt-8 p-6 bg-gradient-to-r from-cyan-50 to-blue-50 border-l-4 border-cyan-600 rounded-r-lg">
+        <p class="text-gray-800 text-lg leading-relaxed">
+          <strong>💡 Recomendación profesional:</strong> Para reparaciones de emergencia o pre-varada, soldadura húmeda es ideal por su rapidez. Para estructuras permanentes en buques comerciales o plataformas offshore, soldadura hiperbárica garantiza durabilidad comparable a astillero. <a href="/tipos-soldadura-subacuatica-completa" class="text-cyan-600 hover:text-cyan-800 font-semibold underline">Ver tipos completos de soldadura →</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Factores que Afectan Durabilidad -->
+  <section class="py-16 bg-gradient-to-br from-gray-50 to-cyan-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900">
+        🔍 7 Factores Críticos que <span class="text-cyan-600">Afectan la Durabilidad</span>
+      </h2>
+      <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto text-lg">
+        La vida útil de una soldadura subacuática no depende solo del método. Estos factores ambientales y técnicos determinan si tu reparación durará 2 o 20 años.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <!-- Factor 1 -->
+        <div class="bg-white p-8 rounded-lg shadow-lg border-t-4 border-red-500 hover:shadow-xl transition-shadow">
+          <div class="flex items-start mb-4">
+            <div class="text-4xl mr-4">⚡</div>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">1. Corrosión Galvánica</h3>
+              <p class="text-gray-700 leading-relaxed">
+                <strong>Impacto: reduce vida útil hasta 60%.</strong> Cuando se sueldan metales diferentes (ej: acero al carbono + acero inoxidable), se crea una célula galvánica que acelera oxidación. <strong>Solución:</strong> usar electrodos compatibles y aplicar protección catódica inmediata.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Factor 2 -->
+        <div class="bg-white p-8 rounded-lg shadow-lg border-t-4 border-orange-500 hover:shadow-xl transition-shadow">
+          <div class="flex items-start mb-4">
+            <div class="text-4xl mr-4">🌡️</div>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">2. Temperatura del Agua</h3>
+              <p class="text-gray-700 leading-relaxed">
+                <strong>Aguas frías (&lt;10°C):</strong> enfriamiento rápido genera fragilidad y microfisuras. <strong>Aguas cálidas (&gt;20°C):</strong> mejores condiciones de fusión. <strong>Solución:</strong> precalentamiento con soplete submarino en aguas frías, ajuste de amperaje según temperatura.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Factor 3 -->
+        <div class="bg-white p-8 rounded-lg shadow-lg border-t-4 border-yellow-500 hover:shadow-xl transition-shadow">
+          <div class="flex items-start mb-4">
+            <div class="text-4xl mr-4">🫧</div>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">3. Porosidad Excesiva</h3>
+              <p class="text-gray-700 leading-relaxed">
+                <strong>Burbujas de hidrógeno y oxígeno</strong> quedan atrapadas en el cordón de soldadura, debilitando la estructura. Porosidad &gt;15% es inaceptable. <strong>Solución:</strong> electrodos especiales rutílicos, técnica de oscilación correcta, inspección ultrasónica post-soldadura.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Factor 4 -->
+        <div class="bg-white p-8 rounded-lg shadow-lg border-t-4 border-green-500 hover:shadow-xl transition-shadow">
+          <div class="flex items-start mb-4">
+            <div class="text-4xl mr-4">🌊</div>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">4. Salinidad y Contaminantes</h3>
+              <p class="text-gray-700 leading-relaxed">
+                <strong>Agua marina:</strong> alta salinidad acelera corrosión 3-5x más que agua dulce. <strong>Contaminantes:</strong> hidrocarburos, algas, sedimentos interfieren con fusión. <strong>Solución:</strong> limpieza exhaustiva previa (cepillado metálico, chorro de arena submarino), recubrimientos epóxicos post-soldadura.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Factor 5 -->
+        <div class="bg-white p-8 rounded-lg shadow-lg border-t-4 border-blue-500 hover:shadow-xl transition-shadow">
+          <div class="flex items-start mb-4">
+            <div class="text-4xl mr-4">📏</div>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">5. Profundidad de Trabajo</h3>
+              <p class="text-gray-700 leading-relaxed">
+                <strong>0-10m:</strong> condiciones óptimas. <strong>10-30m:</strong> presión hidrostática dificulta control del arco, incrementa porosidad 20-30%. <strong>&gt;30m:</strong> requiere electrodos especiales y equipo hiperbárico. <a href="/trabajos-profundidad-alta" class="text-cyan-600 hover:text-cyan-800 font-semibold underline">Trabajos en profundidad →</a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Factor 6 -->
+        <div class="bg-white p-8 rounded-lg shadow-lg border-t-4 border-purple-500 hover:shadow-xl transition-shadow">
+          <div class="flex items-start mb-4">
+            <div class="text-4xl mr-4">💪</div>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">6. Fatiga Cíclica</h3>
+              <p class="text-gray-700 leading-relaxed">
+                <strong>Movimiento constante del barco</strong> (oleaje, vibraciones del motor) genera estrés cíclico en la soldadura. Zonas críticas: proa, popa, línea de flotación. <strong>Solución:</strong> diseño de juntas con factor de seguridad 2-3x, refuerzos estructurales, inspecciones periódicas cada 6 meses.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Factor 7 -->
+        <div class="bg-white p-8 rounded-lg shadow-lg border-t-4 border-pink-500 hover:shadow-xl transition-shadow">
+          <div class="flex items-start mb-4">
+            <div class="text-4xl mr-4">⚙️</div>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">7. Calidad de Ejecución</h3>
+              <p class="text-gray-700 leading-relaxed">
+                <strong>Soldador certificado AWS D3.6</strong> vs no certificado: diferencia de durabilidad 40-60%. Factores: amperaje correcto, ángulo de electrodo, velocidad de avance, secuencia de pasadas. <strong>Solución:</strong> contratar solo soldadores certificados ISO 15618 con experiencia demostrable.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA Card -->
+        <div class="bg-gradient-to-br from-cyan-600 to-blue-700 p-8 rounded-lg shadow-lg text-white hover:shadow-xl transition-shadow">
+          <div class="flex items-start mb-4">
+            <div class="text-4xl mr-4">🔧</div>
+            <div>
+              <h3 class="text-2xl font-bold mb-2">¿Tu Soldadura Necesita Durar 10+ Años?</h3>
+              <p class="mb-4 text-cyan-100 leading-relaxed">
+                Evaluamos todos estos factores para garantizar máxima durabilidad. Soldadores certificados AWS D3.6, equipos hiperbáricos disponibles, inspección ultrasónica incluida.
+              </p>
+              <a href="tel:+34123456789" class="inline-block bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-3 px-6 rounded-lg transition-all transform hover:scale-105">
+                📞 Llama 24/7 Urgencias
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Técnicas para Extender Vida Útil -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900">
+        🛠️ 6 Técnicas Profesionales para <span class="text-cyan-600">Extender la Durabilidad</span>
+      </h2>
+      <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto text-lg">
+        Con estas técnicas post-soldadura puedes aumentar la vida útil de tu reparación subacuática entre 30% y 80%. Métodos utilizados por empresas certificadas.
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <!-- Técnica 1 -->
+        <div class="bg-gradient-to-br from-cyan-50 to-blue-50 p-6 rounded-lg shadow-md border-2 border-cyan-200 hover:border-cyan-400 transition-all">
+          <div class="text-5xl mb-4 text-center">🔥</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">Post-Tratamiento Térmico</h3>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            Calentamiento controlado de la zona soldada para aliviar tensiones residuales. Se aplica con soplete submarino o mantas eléctricas resistentes al agua. <strong>Resultado: +25% durabilidad.</strong>
+          </p>
+          <div class="bg-white p-3 rounded border-l-4 border-cyan-600">
+            <p class="text-sm text-gray-600"><strong>Aplicación:</strong> soldaduras en acero de alta resistencia, zonas de alta tensión estructural</p>
+          </div>
+        </div>
+
+        <!-- Técnica 2 -->
+        <div class="bg-gradient-to-br from-green-50 to-teal-50 p-6 rounded-lg shadow-md border-2 border-green-200 hover:border-green-400 transition-all">
+          <div class="text-5xl mb-4 text-center">🎨</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">Recubrimientos Epóxicos Marinos</h3>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            Pintura marina de 2 componentes aplicada sobre la soldadura. Crea barrera impermeable contra salinidad y oxígeno. <strong>Marcas recomendadas: International, Hempel, Jotun.</strong>
+          </p>
+          <div class="bg-white p-3 rounded border-l-4 border-green-600">
+            <p class="text-sm text-gray-600"><strong>Aplicación:</strong> después de inspección ultrasónica, en aguas tranquilas, capas de 250-300 micras</p>
+          </div>
+        </div>
+
+        <!-- Técnica 3 -->
+        <div class="bg-gradient-to-br from-yellow-50 to-orange-50 p-6 rounded-lg shadow-md border-2 border-yellow-200 hover:border-yellow-400 transition-all">
+          <div class="text-5xl mb-4 text-center">⚡</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">Protección Catódica Localizada</h3>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            Instalación de ánodos de sacrificio (zinc, aluminio, magnesio) cerca de la soldadura. Protege contra corrosión galvánica. <strong>Resultado: +50% durabilidad en acero al carbono.</strong>
+          </p>
+          <div class="bg-white p-3 rounded border-l-4 border-yellow-600">
+            <p class="text-sm text-gray-600"><strong>Aplicación:</strong> obligatorio cuando se sueldan metales diferentes, renovar ánodos cada 18-24 meses</p>
+          </div>
+        </div>
+
+        <!-- Técnica 4 -->
+        <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-lg shadow-md border-2 border-purple-200 hover:border-purple-400 transition-all">
+          <div class="text-5xl mb-4 text-center">🔬</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">Inspecciones Ultrasónicas Periódicas</h3>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            Ensayos no destructivos (NDT) cada 6-12 meses detectan microfisuras antes de que se propaguen. <strong>Técnicas: ultrasonido, partículas magnéticas, líquidos penetrantes.</strong>
+          </p>
+          <div class="bg-white p-3 rounded border-l-4 border-purple-600">
+            <p class="text-sm text-gray-600"><strong>Aplicación:</strong> documentación fotográfica, comparativa con baseline inicial, certificados IMCA D 014</p>
+          </div>
+        </div>
+
+        <!-- Técnica 5 -->
+        <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-lg shadow-md border-2 border-blue-200 hover:border-blue-400 transition-all">
+          <div class="text-5xl mb-4 text-center">🔧</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">Soldadura Mixta (Híbrida)</h3>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            Combinar soldadura húmeda inicial (rapidez) + refuerzo hiperbárico posterior (durabilidad). <strong>Ideal para emergencias que luego requieren permanencia.</strong>
+          </p>
+          <div class="bg-white p-3 rounded border-l-4 border-blue-600">
+            <p class="text-sm text-gray-600"><strong>Aplicación:</strong> reparaciones de emergencia que se convierten en definitivas, evita varada posterior</p>
+          </div>
+        </div>
+
+        <!-- Técnica 6 -->
+        <div class="bg-gradient-to-br from-red-50 to-orange-50 p-6 rounded-lg shadow-md border-2 border-red-200 hover:border-red-400 transition-all">
+          <div class="text-5xl mb-4 text-center">📋</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">Documentación WPS/PQR Completa</h3>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            Procedimiento de soldadura (WPS) y registro de calificación (PQR) documentan parámetros exactos: amperaje, voltaje, velocidad, secuencia de pasadas. <strong>Permite replicación exacta en futuras reparaciones.</strong>
+          </p>
+          <div class="bg-white p-3 rounded border-l-4 border-red-600">
+            <p class="text-sm text-gray-600"><strong>Aplicación:</strong> obligatorio para certificaciones AWS D3.6, Lloyd's, ABS, DNV GL</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-12 max-w-4xl mx-auto bg-gradient-to-r from-cyan-600 to-blue-700 p-8 rounded-lg shadow-xl text-white">
+        <h3 class="text-2xl font-bold mb-4 text-center">🏆 Garantía de Durabilidad Extendida</h3>
+        <p class="text-lg text-center mb-6 text-cyan-100">
+          Aplicamos estas 6 técnicas en todas nuestras reparaciones certificadas. Inspecciones post-soldadura incluidas, documentación WPS/PQR completa, seguimiento a 6 y 12 meses sin coste adicional.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="tel:+34123456789" class="inline-block bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-3 px-6 rounded-lg text-center transition-all transform hover:scale-105">
+            📞 Consulta Técnica Gratis
+          </a>
+          <a href="/cuando-necesito-soldadura-subacuatica" class="inline-block bg-white hover:bg-gray-100 text-cyan-900 font-bold py-3 px-6 rounded-lg text-center transition-all transform hover:scale-105">
+            ⚡ ¿Cuándo Necesito Soldadura? →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs Avanzados -->
+  <section class="py-16 bg-gradient-to-br from-gray-50 to-cyan-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900">
+        ❓ Preguntas Frecuentes sobre <span class="text-cyan-600">Durabilidad</span>
+      </h2>
+      <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto text-lg">
+        Respuestas técnicas de soldadores certificados AWS D3.6 con experiencia en proyectos offshore y comerciales.
+      </p>
+
+      <div class="max-w-4xl mx-auto space-y-4">
+        {faqs.map((faq, index) => (
+          <details class="bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:border-cyan-400 transition-all group">
+            <summary class="cursor-pointer text-lg font-bold text-gray-900 flex justify-between items-center group-hover:text-cyan-600">
+              <span class="flex items-center">
+                <span class="text-cyan-600 mr-3 text-xl">{index + 1}.</span>
+                {faq.question}
+              </span>
+              <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="mt-4 text-gray-700 leading-relaxed border-t pt-4" set:html={faq.answer}></div>
+            <div class="mt-3 inline-block bg-cyan-100 text-cyan-800 px-3 py-1 rounded-full text-sm font-semibold">
+              {faq.category}
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Certificaciones y Garantías -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900">
+        🏅 Certificaciones que <span class="text-cyan-600">Garantizan Durabilidad</span>
+      </h2>
+      <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto text-lg">
+        No todas las soldaduras subacuáticas son iguales. Estas certificaciones internacionales garantizan estándares de calidad y durabilidad.
+      </p>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        <!-- Certificación 1 -->
+        <div class="bg-gradient-to-br from-yellow-50 to-orange-50 p-6 rounded-lg shadow-lg border-t-4 border-yellow-500 text-center hover:shadow-xl transition-all">
+          <div class="text-5xl mb-3">🏆</div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">AWS D3.6 Clase A</h3>
+          <p class="text-gray-700 text-sm leading-relaxed">
+            <strong>Estándar oro internacional.</strong> Soldadura hiperbárica con pruebas radiográficas y mecánicas. Durabilidad garantizada 10-20 años.
+          </p>
+        </div>
+
+        <!-- Certificación 2 -->
+        <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-lg shadow-lg border-t-4 border-blue-500 text-center hover:shadow-xl transition-all">
+          <div class="text-5xl mb-3">📜</div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">ISO 15618</h3>
+          <p class="text-gray-700 text-sm leading-relaxed">
+            <strong>Cualificación de soldadores.</strong> Certifica competencia técnica en soldadura húmeda y seca. Reconocimiento internacional.
+          </p>
+        </div>
+
+        <!-- Certificación 3 -->
+        <div class="bg-gradient-to-br from-green-50 to-teal-50 p-6 rounded-lg shadow-lg border-t-4 border-green-500 text-center hover:shadow-xl transition-all">
+          <div class="text-5xl mb-3">🔍</div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">IMCA D 014</h3>
+          <p class="text-gray-700 text-sm leading-relaxed">
+            <strong>Inspección post-soldadura.</strong> Procedimientos de ensayos no destructivos (NDT) para verificar calidad y detectar defectos.
+          </p>
+        </div>
+
+        <!-- Certificación 4 -->
+        <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-lg shadow-lg border-t-4 border-purple-500 text-center hover:shadow-xl transition-all">
+          <div class="text-5xl mb-3">⚓</div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Lloyd's / DNV GL / ABS</h3>
+          <p class="text-gray-700 text-sm leading-relaxed">
+            <strong>Sociedades de clasificación.</strong> Certifican reparaciones en buques comerciales. Requisito para seguros P&I Clubs.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-12 text-center max-w-3xl mx-auto">
+        <p class="text-gray-700 text-lg leading-relaxed mb-6">
+          Todos nuestros soldadores poseen certificaciones <strong>AWS D3.6</strong> e <strong>ISO 15618</strong>. Trabajamos con procedimientos <strong>IMCA D 014</strong> y emitimos certificados aceptados por <strong>Lloyd's Register, DNV GL, ABS, Bureau Veritas</strong> y principales <strong>P&I Clubs internacionales</strong>.
+        </p>
+        <a href="/certificaciones-soldadura-subacuatica" class="inline-block bg-cyan-600 hover:bg-cyan-700 text-white font-bold py-3 px-8 rounded-lg transition-all transform hover:scale-105 shadow-lg">
+          📄 Ver Certificaciones Completas →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="py-16 bg-gradient-to-br from-cyan-900 via-blue-900 to-indigo-900 text-white relative overflow-hidden">
+    <div class="absolute inset-0 bg-black opacity-30"></div>
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl md:text-5xl font-extrabold mb-6">
+          ¿Necesitas una Soldadura que Dure <span class="text-yellow-400">10+ Años</span>?
+        </h2>
+        <p class="text-xl md:text-2xl mb-8 text-cyan-100 leading-relaxed">
+          Soldadores certificados AWS D3.6. Equipos hiperbáricos disponibles. Inspección ultrasónica incluida. Garantía extendida de durabilidad. Servicio 24/7 en Cádiz y Algeciras.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+          <a href="tel:+34123456789" class="inline-block bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-4 px-8 rounded-lg text-lg transition-all transform hover:scale-105 shadow-xl">
+            📞 Llamar Ahora 24/7
+          </a>
+          <a href="/presupuesto-soldadura-subacuatica" class="inline-block bg-white hover:bg-gray-100 text-cyan-900 font-bold py-4 px-8 rounded-lg text-lg transition-all transform hover:scale-105 shadow-xl">
+            📋 Solicitar Presupuesto
+          </a>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6 text-center">
+          <div>
+            <div class="text-4xl font-bold text-yellow-400 mb-2">10-20 años</div>
+            <p class="text-cyan-100">Durabilidad soldadura seca certificada AWS D3.6</p>
+          </div>
+          <div>
+            <div class="text-4xl font-bold text-yellow-400 mb-2">24/7</div>
+            <p class="text-cyan-100">Emergencias atendidas en menos de 2 horas</p>
+          </div>
+          <div>
+            <div class="text-4xl font-bold text-yellow-400 mb-2">100%</div>
+            <p class="text-cyan-100">Soldadores certificados ISO 15618</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Internal Linking -->
+  <section class="py-12 bg-gray-100">
+    <div class="container mx-auto px-4">
+      <h3 class="text-2xl font-bold text-center mb-8 text-gray-900">📚 Más Información sobre Soldadura Subacuática</h3>
+      <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
+        <a href="/que-es-soldadura-subacuatica" class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow text-center border-2 border-transparent hover:border-cyan-400">
+          <div class="text-3xl mb-2">🤿</div>
+          <p class="font-semibold text-gray-800 text-sm">¿Qué es Soldadura Subacuática?</p>
+        </a>
+        <a href="/tipos-soldadura-subacuatica-completa" class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow text-center border-2 border-transparent hover:border-cyan-400">
+          <div class="text-3xl mb-2">🔧</div>
+          <p class="font-semibold text-gray-800 text-sm">Tipos de Soldadura Completa</p>
+        </a>
+        <a href="/cuando-necesito-soldadura-subacuatica" class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow text-center border-2 border-transparent hover:border-cyan-400">
+          <div class="text-3xl mb-2">⚡</div>
+          <p class="font-semibold text-gray-800 text-sm">¿Cuándo Necesito Soldadura?</p>
+        </a>
+        <a href="/soldadura-subacuatica-vs-varada-astillero" class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow text-center border-2 border-transparent hover:border-cyan-400">
+          <div class="text-3xl mb-2">⚖️</div>
+          <p class="font-semibold text-gray-800 text-sm">Soldadura vs Varada Astillero</p>
+        </a>
+        <a href="/como-elegir-soldador-subacuatico-profesional" class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow text-center border-2 border-transparent hover:border-cyan-400">
+          <div class="text-3xl mb-2">👨‍🔧</div>
+          <p class="font-semibold text-gray-800 text-sm">Cómo Elegir Soldador Profesional</p>
+        </a>
+        <a href="/corte-plasma-submarino" class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow text-center border-2 border-transparent hover:border-cyan-400">
+          <div class="text-3xl mb-2">✂️</div>
+          <p class="font-semibold text-gray-800 text-sm">Corte Plasma Submarino</p>
+        </a>
+        <a href="/corte-termico-bajo-agua" class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow text-center border-2 border-transparent hover:border-cyan-400">
+          <div class="text-3xl mb-2">🔥</div>
+          <p class="font-semibold text-gray-800 text-sm">Corte Térmico Bajo Agua</p>
+        </a>
+        <a href="/trabajos-salvamento" class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow text-center border-2 border-transparent hover:border-cyan-400">
+          <div class="text-3xl mb-2">🚢</div>
+          <p class="font-semibold text-gray-800 text-sm">Trabajos de Salvamento</p>
+        </a>
+        <a href="/servicios-consignatarios" class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow text-center border-2 border-transparent hover:border-cyan-400">
+          <div class="text-3xl mb-2">📋</div>
+          <p class="font-semibold text-gray-800 text-sm">Servicios para Consignatarios</p>
+        </a>
+        <a href="/inspeccion-cascos-buceo" class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow text-center border-2 border-transparent hover:border-cyan-400">
+          <div class="text-3xl mb-2">🔍</div>
+          <p class="font-semibold text-gray-800 text-sm">Inspección Cascos Buceo</p>
+        </a>
+        <a href="/limpieza-cascos-submarinos" class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow text-center border-2 border-transparent hover:border-cyan-400">
+          <div class="text-3xl mb-2">🧽</div>
+          <p class="font-semibold text-gray-800 text-sm">Limpieza Cascos Submarinos</p>
+        </a>
+        <a href="/reparacion-helices-timones" class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow text-center border-2 border-transparent hover:border-cyan-400">
+          <div class="text-3xl mb-2">⚙️</div>
+          <p class="font-semibold text-gray-800 text-sm">Reparación Hélices y Timones</p>
+        </a>
+        <a href="/instalacion-anodos-proteccion-catodica" class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow text-center border-2 border-transparent hover:border-cyan-400">
+          <div class="text-3xl mb-2">⚡</div>
+          <p class="font-semibold text-gray-800 text-sm">Instalación Ánodos Protección</p>
+        </a>
+        <a href="/emergencias-maritimas-24-7" class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow text-center border-2 border-transparent hover:border-cyan-400">
+          <div class="text-3xl mb-2">🚨</div>
+          <p class="font-semibold text-gray-800 text-sm">Emergencias Marítimas 24/7</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer.replace(/<[^>]*>/g, '')
+      }
+    }))
+  })} />
+</Layout>
