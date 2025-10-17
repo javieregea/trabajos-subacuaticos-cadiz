@@ -25,6 +25,64 @@ import Footer from '../components/Footer.astro';
     }
   </script>
 
+  <!-- FAQPage Schema -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Cada cuánto tiempo debo limpiar el casco de mi embarcación?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La frecuencia óptima depende del uso y condiciones de fondeadeo: Embarcaciones uso intensivo (profesionales, charters): cada 1-3 meses para mantener máxima eficiencia. Embarcaciones recreo uso regular: cada 3-6 meses según antifouling y aguas. Embarcaciones fondeo permanente: cada 6-12 meses mínimo según normativa. Aguas cálidas (Cádiz, Mediterráneo) incrementan velocidad biofouling 30-40% vs aguas frías. Señales limpieza necesaria: incremento consumo combustible > 10%, reducción velocidad crucero > 1 nudo, vibración anormal eje hélice. Normativa IMO MEPC.207(62): Navíos internacionales requieren plan gestión biofouling documentado. Recomendación profesional: limpieza cada 3-4 meses maximiza ROI (ahorro combustible vs coste limpieza)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto cuesta la limpieza de casco bajo agua en Cádiz?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Precios según eslora: Embarcaciones 8-12m (veleros/motoras): €400-€600 (1.5-2.5h trabajo). Embarcaciones 12-15m: €600-€900 (2-3h). Embarcaciones 15-20m: €900-€1,500 (3-5h). Embarcaciones 20-30m: €1,500-€3,000 según fouling. Incluye: inspección visual pre/post, limpieza completa (obra viva + hélice + timón + ánodos + pasacascos), documentación fotográfica HD, informe técnico certificado. Comparativa varada: Dique seco 12m: €2,500-€4,000 (grúa + varada + limpieza + pintura). Ahorro limpieza bajo agua: 70-80%. ROI combustible: Embarcación 15m (200L/mes): ahorra €500-€800/año → ROI < 6 meses."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿La limpieza bajo agua daña el antifouling del casco?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, si se realiza correctamente con técnicas profesionales. Nuestro método: (1) Evaluación antifouling: Identificamos tipo pintura (ablativa, dura, SPC) y antigüedad antes de intervenir. (2) Parámetros controlados: Hidrolavado 50-80 bar (vs 150+ bar inadecuado), cepillos rotativo velocidad ajustada según fouling, presión manual calibrada. (3) Preservación pintura: Técnica no agresiva elimina fouling respetando antifouling → prolonga vida útil 20-30% vs varada con lijado/pintado. (4) Ventaja adicional: Inspección simultánea detecta degradación antifouling temprana. Experiencia 15+ años: 3,000+ limpiezas, cero reclamaciones daño antifouling."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Puedo limpiar el casco yo mismo o debo contratar profesionales?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Limpieza DIY posible pero con limitaciones importantes: Fouling blando (limo/algas): Puedes limpiarlo con cepillo suave snorkel/buceo. Fouling duro (percebes/mejillones): Requiere equipamiento profesional (hidrolavadora submarina 80-150 bar, cepillos rotativo eléctrico). Riesgos limpieza amateur: daño antifouling por presión excesiva, limpieza incompleta zonas críticas, detección cero problemas estructurales, incumplimiento normativa biofouling profesional. Ventajas servicio profesional: Eficiencia 3-5x superior, inspección certificada incluida, documentación IMO compliance, garantía trabajo. Recomendación: DIY válido fouling blando mantenimiento frecuente. Profesional obligatorio fouling medio/duro, embarcaciones > 12m, navíos comerciales."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto tiempo tarda la limpieza de casco bajo agua?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tiempo según eslora y nivel fouling: Veleros 8-12m (fouling blando/medio): 1.5-2.5 horas. Veleros 12-15m: 2-3 horas. Motoras 10-15m: 2-3.5 horas. Embarcaciones 15-20m: 3-5 horas según fouling. Yates/buques 20-30m: 5-8 horas (requiere múltiples buzos). Disponibilidad Cádiz: Servicio 24/7 incluyendo festivos. Urgencias: Respuesta < 2 horas. Ventaja vs varada: Dique seco: 3-7 días inmovilización total. Bajo agua: 2-4h, embarcación operativa inmediatamente."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿La limpieza de casco cumple con la normativa medioambiental?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí, cumplimiento total normativa medioambiental y biofouling: (1) IMO Resolución MEPC.207(62): Directrices gestión biofouling para minimizar transferencia especies acuáticas invasoras. (2) Directiva Marco UE Agua 2000/60/CE: Protección aguas superficiales y marinas. Método: hidrolavado sin productos químicos, mecánico sin aditivos tóxicos, residuos biológicos biodegradables. (3) Real Decreto 1311/2012 Especies Invasoras: Prevención dispersión flora/fauna exótica. (4) Convenio Antifouling AFS/2001: Prohibición compuestos organoestánicos (TBT). Certificación ISO 14001: Gestión medioambiental buques comerciales. Documentación compliance incluida cada servicio."
+          }
+        }
+      ]
+    }
+  </script>
+
   <Header />
 
   <main>
@@ -46,6 +104,37 @@ import Footer from '../components/Footer.astro';
               </svg>
               <span>LLAMAR AHORA +34 614 405 061</span>
             </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AEO Direct Answer -->
+    <section class="py-12 bg-gradient-to-br from-emerald-900 via-green-800 to-teal-900 text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <div class="bg-white/10 backdrop-blur-sm border-l-4 border-yellow-400 p-6 rounded-r-lg mb-6">
+            <p class="text-xl md:text-2xl font-semibold mb-4">
+              📋 Respuesta Directa: ¿Qué es la limpieza de cascos bajo agua?
+            </p>
+            <p class="text-lg leading-relaxed">
+              La <strong>limpieza de cascos bajo agua</strong> es la eliminación profesional del <strong>biofouling marino</strong> (percebes, mejillones, algas, limo) adherido al casco de embarcaciones <strong>sin necesidad de varada</strong>. Utiliza <strong>(1) Cepillado mecánico rotativo</strong> (fouling duro, velocidad/presión controlada, preserva antifouling), <strong>(2) Hidrolavado alta presión</strong> (50-150 bar, fouling blando, acabado superior), <strong>(3) Método combinado</strong> (máxima eficiencia zonas mixtas). <strong>Beneficios:</strong> Reduce consumo combustible <strong>15-25%</strong> (ROI < 6 meses), aumenta velocidad <strong>10-20%</strong>, ahorra <strong>70-80% vs varada</strong> (€400-€1,200 limpieza vs €2,500-€5,000 dique seco), cumple normativa IMO biofouling. <strong>Tiempo:</strong> 2-4 horas según eslora (8-20m). <strong>Incluye:</strong> Inspección visual pre/post, documentación fotográfica, informe técnico. <strong>Cádiz:</strong> Servicio 24/7, respuesta < 2h emergencias, 15+ años experiencia 3,000+ limpiezas.
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-6 text-sm">
+            <div class="bg-white/5 backdrop-blur-sm border border-white/20 rounded-lg p-4">
+              <h3 class="font-bold text-cyan-300 mb-2">💰 ROI Inmediato</h3>
+              <p>Reducción 15-25% consumo combustible. Embarcación 15m que consume 200L/mes ahorra <strong>€500-€800/año</strong>. ROI < 6 meses.</p>
+            </div>
+            <div class="bg-white/5 backdrop-blur-sm border border-white/20 rounded-lg p-4">
+              <h3 class="font-bold text-green-300 mb-2">⚡ Velocidad +10-20%</h3>
+              <p>Casco limpio recupera velocidad máxima. <strong>Reducción resistencia hidrodinámica 30-40%</strong>. Mejor maniobrabilidad.</p>
+            </div>
+            <div class="bg-white/5 backdrop-blur-sm border border-white/20 rounded-lg p-4">
+              <h3 class="font-bold text-purple-300 mb-2">✅ Sin Varada (80% Ahorro)</h3>
+              <p>Limpieza: €400-€1,200 vs dique €2,500-€5,000. <strong>Sin grúa, sin inmovilización</strong>, barco operativo.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -330,6 +419,121 @@ import Footer from '../components/Footer.astro';
             </svg>
             <span>LLAMAR AHORA +34 614 405 061</span>
           </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-12">Preguntas Frecuentes: Limpieza de Cascos</h2>
+
+          <div class="space-y-6">
+            <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-emerald-600">
+              <h3 class="text-xl font-bold text-emerald-900 mb-3">¿Cada cuánto tiempo debo limpiar el casco de mi embarcación?</h3>
+              <p class="text-gray-700">
+                La frecuencia óptima depende del uso y condiciones de fondeadeo: <strong>Embarcaciones uso intensivo (profesionales, charters):</strong> cada 1-3 meses para mantener máxima eficiencia. <strong>Embarcaciones recreo uso regular:</strong> cada 3-6 meses según antifouling y aguas. <strong>Embarcaciones fondeo permanente:</strong> cada 6-12 meses mínimo según normativa. Aguas cálidas (Cádiz, Mediterráneo) incrementan velocidad biofouling 30-40% vs aguas frías. <strong>Señales limpieza necesaria:</strong> incremento consumo combustible > 10%, reducción velocidad crucero > 1 nudo, vibración anormal eje hélice. <strong>Normativa IMO MEPC.207(62):</strong> Navíos internacionales requieren plan gestión biofouling documentado. Recomendación profesional: limpieza cada 3-4 meses maximiza ROI (ahorro combustible vs coste limpieza).
+              </p>
+            </div>
+
+            <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-green-600">
+              <h3 class="text-xl font-bold text-green-900 mb-3">¿Cuánto cuesta la limpieza de casco bajo agua en Cádiz?</h3>
+              <p class="text-gray-700">
+                Precios según eslora: <strong>Embarcaciones 8-12m (veleros/motoras):</strong> €400-€600 (1.5-2.5h trabajo). <strong>Embarcaciones 12-15m:</strong> €600-€900 (2-3h). <strong>Embarcaciones 15-20m:</strong> €900-€1,500 (3-5h). <strong>Embarcaciones 20-30m:</strong> €1,500-€3,000 según fouling. Incluye: inspección visual pre/post, limpieza completa (obra viva + hélice + timón + ánodos + pasacascos), documentación fotográfica HD, informe técnico certificado. <strong>Comparativa varada:</strong> Dique seco 12m: €2,500-€4,000 (grúa + varada + limpieza + pintura). Ahorro limpieza bajo agua: <strong>70-80%</strong>. <strong>ROI combustible:</strong> Embarcación 15m (200L/mes): ahorra €500-€800/año → ROI < 6 meses. Presupuesto sin compromiso 24/7: <a href="tel:+34614405061" class="text-blue-600 hover:underline font-semibold">+34 614 405 061</a>.
+              </p>
+            </div>
+
+            <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-teal-600">
+              <h3 class="text-xl font-bold text-teal-900 mb-3">¿La limpieza bajo agua daña el antifouling del casco?</h3>
+              <p class="text-gray-700">
+                <strong>No, si se realiza correctamente con técnicas profesionales.</strong> Nuestro método: <strong>(1) Evaluación antifouling:</strong> Identificamos tipo pintura (ablativa, dura, SPC) y antigüedad antes de intervenir. <strong>(2) Parámetros controlados:</strong> Hidrolavado 50-80 bar (vs 150+ bar inadecuado), cepillos rotativo velocidad ajustada según fouling, presión manual calibrada. <strong>(3) Preservación pintura:</strong> Técnica no agresiva elimina fouling respetando antifouling → <strong>prolonga vida útil 20-30%</strong> vs varada con lijado/pintado. <strong>(4) Ventaja adicional:</strong> Inspección simultánea detecta degradación antifouling temprana (burbujas, desprendimientos, lixiviación prematura). <strong>Comparativa varada:</strong> Dique seco requiere lijado mecánico + repintado completo cada varada (daño 100% capa). Limpieza bajo agua: daño < 5-10% efectividad antifouling si técnica correcta. <strong>Experiencia 15+ años:</strong> 3,000+ limpiezas, cero reclamaciones daño antifouling.
+              </p>
+            </div>
+
+            <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-blue-600">
+              <h3 class="text-xl font-bold text-blue-900 mb-3">¿Puedo limpiar el casco yo mismo o debo contratar profesionales?</h3>
+              <p class="text-gray-700">
+                <strong>Limpieza DIY posible pero con limitaciones importantes:</strong> <strong>Fouling blando (limo/algas):</strong> Puedes limpiarlo con cepillo suave snorkel/buceo. <strong>Fouling duro (percebes/mejillones):</strong> Requiere equipamiento profesional (hidrolavadora submarina 80-150 bar, cepillos rotativo eléctrico). <strong>Riesgos limpieza amateur:</strong> (1) Daño antifouling por presión/fuerza excesiva → degradación prematura pintura, (2) Limpieza incompleta zonas críticas (hélice, timón, pasacascos) → beneficio reducido, (3) Detección cero problemas estructurales (grietas, corrosión, ósmosis) → reparaciones costosas futuras, (4) Incumplimiento normativa biofouling profesional (flotas comerciales). <strong>Ventajas servicio profesional:</strong> <strong>Eficiencia 3-5x superior</strong> (equipamiento especializado), inspección certificada incluida, documentación IMO compliance, garantía trabajo, seguro responsabilidad civil. <strong>Recomendación:</strong> DIY válido fouling blando mantenimiento frecuente. Profesional obligatorio fouling medio/duro, embarcaciones > 12m, navíos comerciales.
+              </p>
+            </div>
+
+            <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-cyan-600">
+              <h3 class="text-xl font-bold text-cyan-900 mb-3">¿Cuánto tiempo tarda la limpieza de casco bajo agua?</h3>
+              <p class="text-gray-700">
+                Tiempo según eslora y nivel fouling: <strong>Veleros 8-12m (fouling blando/medio):</strong> 1.5-2.5 horas. <strong>Veleros 12-15m:</strong> 2-3 horas. <strong>Motoras 10-15m:</strong> 2-3.5 horas (obra viva mayor). <strong>Embarcaciones 15-20m:</strong> 3-5 horas según fouling. <strong>Yates/buques 20-30m:</strong> 5-8 horas (requiere múltiples buzos). <strong>Factores que incrementan tiempo:</strong> Fouling duro severo (percebes/mejillones abundantes) +30-50%, antifouling degradado o múltiples capas pintura antiguas +20%, geometría casco compleja (quillas aletas, timones compensados, bulbos) +15-25%, detección problemas estructurales requiriendo inspección detallada. <strong>Disponibilidad Cádiz:</strong> Servicio 24/7 incluyendo festivos. <strong>Urgencias:</strong> Respuesta < 2 horas, limpieza exprés disponible (surcharge +30%). <strong>Ventaja vs varada:</strong> Dique seco: 3-7 días inmovilización total (grúa + varada + secado + limpieza + pintado + botadura). Bajo agua: 2-4h, embarcación operativa inmediatamente.
+              </p>
+            </div>
+
+            <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-purple-600">
+              <h3 class="text-xl font-bold text-purple-900 mb-3">¿La limpieza de casco cumple con la normativa medioambiental?</h3>
+              <p class="text-gray-700">
+                <strong>Sí, cumplimiento total normativa medioambiental y biofouling:</strong> <strong>(1) IMO Resolución MEPC.207(62):</strong> Directrices gestión biofouling para minimizar transferencia especies acuáticas invasoras. Aplicamos: limpieza in situ sin reubicación embarcación, técnicas no dispersivas (contenención residuos), registro intervenciones plan gestión biofouling. <strong>(2) Directiva Marco UE Agua 2000/60/CE:</strong> Protección aguas superficiales y marinas. Método: hidrolavado sin productos químicos, mecánico sin aditivos tóxicos, residuos biológicos biodegradables. <strong>(3) Real Decreto 1311/2012 Especies Invasoras:</strong> Prevención dispersión flora/fauna exótica. Protocolo: limpieza puerto origen antes navegación nuevas zonas, certificado limpieza disponible autoridades portuarias. <strong>(4) Convenio Antifouling AFS/2001:</strong> Prohibición compuestos organoestánicos (TBT). Verificamos: tipo antifouling conforme (libre TBT), técnica preserva pintura ecológica aplicada. <strong>Certificación ISO 14001:</strong> Gestión medioambiental buques comerciales. <strong>Documentación compliance:</strong> Incluida cada servicio.
+              </p>
+            </div>
+          </div>
+
+          <div class="text-center mt-12">
+            <a href="tel:+34614405061" class="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors inline-flex items-center space-x-2">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+              </svg>
+              <span>Presupuesto Sin Compromiso 24/7</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- B2B Internal Links Hub -->
+    <section class="py-12 bg-gradient-to-r from-slate-900 to-slate-800 text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-2xl font-bold text-center mb-2">
+            Limpieza de Cascos B2B: Flotas Profesionales & Navieras
+          </h2>
+          <p class="text-center text-slate-300 mb-8 max-w-3xl mx-auto text-sm">
+            Contratos mantenimiento preventivo para consignatarios, agentes marítimos, navieras y gestores flotas. Reducción costes operativos 15-25%, cumplimiento IMO biofouling, disponibilidad 24/7 en puertos Cádiz y Bahía.
+          </p>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <a href="/servicios-consignatarios" class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-6 hover:bg-white/20 transition-all group">
+              <div class="text-3xl mb-3">🚢</div>
+              <h3 class="font-bold text-lg mb-2 group-hover:text-emerald-300 transition-colors">Consignatarios de Buques</h3>
+              <p class="text-slate-300 text-sm mb-3">Limpieza cascos flotas consignadas. Contratos marco anuales, respuesta < 2h, cumplimiento IMO/ISM. <strong>Descuento 15-20% volumen.</strong></p>
+              <div class="text-emerald-400 text-xs font-semibold">Keywords: limpieza flotas consignatarios, mantenimiento buques consignación, antifouling sin varada</div>
+            </a>
+
+            <a href="/servicios-navieras" class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-6 hover:bg-white/20 transition-all group">
+              <div class="text-3xl mb-3">🛳️</div>
+              <h3 class="font-bold text-lg mb-2 group-hover:text-emerald-300 transition-colors">Navieras & Armadores</h3>
+              <p class="text-slate-300 text-sm mb-3">Planes mantenimiento predictivo flota. <strong>ROI < 6 meses:</strong> reducción consumo 15-25%, incremento velocidad, extensión drydock. Dashboard digital control limpieza.</p>
+              <div class="text-emerald-400 text-xs font-semibold">Keywords: mantenimiento cascos navieras, limpieza flotas armadores, reducción consumo combustible buques</div>
+            </a>
+
+            <a href="/servicios-agentes-maritimos" class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-6 hover:bg-white/20 transition-all group">
+              <div class="text-3xl mb-3">⚓</div>
+              <h3 class="font-bold text-lg mb-2 group-hover:text-emerald-300 transition-colors">Agentes Marítimos</h3>
+              <p class="text-slate-300 text-sm mb-3">Servicio limpieza urgente buques tránsito Cádiz. Coordinación escalas técnicas, limpieza durante operaciones carga/descarga. <strong>Certificado IMO en 24h.</strong></p>
+              <div class="text-emerald-400 text-xs font-semibold">Keywords: limpieza urgente buques Cádiz, servicio cascos agentes marítimos, biofouling compliance IMO</div>
+            </a>
+
+            <a href="/reparacion-naval" class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-6 hover:bg-white/20 transition-all group">
+              <div class="text-3xl mb-3">🔧</div>
+              <h3 class="font-bold text-lg mb-2 group-hover:text-emerald-300 transition-colors">Reparación Naval Integral</h3>
+              <p class="text-slate-300 text-sm mb-3">Limpieza + inspección + reparación simultánea. Detectamos: grietas casco, corrosión, ósmosis, daños hélice. <strong>Solución completa sin varada.</strong></p>
+              <div class="text-emerald-400 text-xs font-semibold">Keywords: limpieza y reparación cascos, mantenimiento naval integral Cádiz, inspección certificada IMO</div>
+            </a>
+          </div>
+
+          <div class="mt-8 text-center">
+            <p class="text-slate-300 text-sm mb-4">
+              <strong>Contratos Anuales Disponibles:</strong> Descuento 15-20% flotas, SLA respuesta garantizado, dashboard monitorización, cumplimiento ISO/IMO certificado.
+            </p>
+            <a href="tel:+34614405061" class="bg-emerald-600 hover:bg-emerald-700 px-8 py-3 rounded-lg font-bold transition-colors inline-flex items-center space-x-2">
+              <span>📞 Contacto B2B: +34 614 405 061</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
