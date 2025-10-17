@@ -2,9 +2,52 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import LocalSchema from '../components/LocalSchema.astro';
+import FAQSection from '../components/FAQSection.astro';
 import CallToAction from '../components/CallToAction.astro';
 import RelatedLinks from '../components/RelatedLinks.astro';
+
+const faqs = [
+  {
+    question: "¿Qué servicios de obras portuarias submarinas ofrecen en Cádiz?",
+    answer: "Servicios integrales para <strong>Autoridades Portuarias, concesionarios, y empresas constructoras</strong>:<br>• <strong>Construcción muelles y pantalanes:</strong> Hinca pilotes metálicos (HEB, tubulares Ø1200mm), tablestacas, vigas coronación, defensas, bolardos<br>• <strong>Reparación estructuras:</strong> Pilotes corroídos, grietas, refuerzos encamisado metálico, soldadura bajo agua<br>• <strong>Mantenimiento preventivo ROM 0.0-01:</strong> Inspecciones reglamentarias, END (ultrasonidos, líquidos penetrantes), protección catódica<br>• <strong>Dragados localizados:</strong> Excavación cimentaciones, nivelación lecho, extracción escombros<br>• <strong>Instalaciones submarinas:</strong> Emisarios, conducciones, tomas agua, cables eléctricos<br>• <strong>Demolición controlada:</strong> Corte oxiarco/plasma, disgregación, retirada elementos obsoletos<br><br>Proyectos desde €5,000 (inspección simple) hasta €800,000+ (construcción muelle completo). Experiencia con Autoridad Portuaria Bahía Cádiz, Puertos del Estado, Junta Andalucía.",
+    category: "Servicios Principales"
+  },
+  {
+    question: "¿Cuánto cuesta construir un muelle o pantalán submarino?",
+    answer: "<strong>Precios orientativos obras portuarias (2025):</strong><br><br><strong>Construcción Nueva:</strong><br>• Muelle comercial 50m lineales (6 pilotes Ø800mm): €180,000-250,000<br>• Pantalán deportivo 30m (pilotes + fingers): €90,000-140,000<br>• Duque de Alba (3 pilotes + plataforma): €45,000-70,000<br>• Prolongación muelle existente 20m: €110,000-160,000<br><br><strong>Reparaciones:</strong><br>• Reparación 1 pilote corroído (encamisado): €8,000-15,000<br>• Sustitución defensa grande: €3,500-6,500<br>• Refuerzo viga coronación 10m: €12,000-18,000<br>• Soldadura grieta estructura < 2m: €4,000-8,000<br><br><strong>Mantenimiento Anual Típico:</strong><br>• Muelle pequeño (< 100m): €15,000-25,000/año<br>• Muelle medio (100-300m): €40,000-80,000/año<br>• Terminal grande (> 300m): A medida, contrato marco<br><br>Variables: profundidad, tipo suelo, accesibilidad, condiciones mar, ventanas trabajo. Presupuesto detallado tras visita técnica.",
+    category: "Costes"
+  },
+  {
+    question: "¿Tienen experiencia con Autoridades Portuarias y Puertos del Estado?",
+    answer: "<strong>SÍ, trabajamos regularmente con sector público portuario:</strong><br><br><strong>Clientes institucionales:</strong><br>• Autoridad Portuaria Bahía de Cádiz<br>• Autoridad Portuaria Bahía Algeciras<br>• Puertos de Andalucía (Junta)<br>• Ayuntamientos titulares puertos deportivos<br>• Concesionarios administrativos puertos<br><br><strong>Proyectos ejecutados 2019-2024:</strong><br>• Reparación Muelle Reina Victoria Cádiz (2023): Refuerzo 18 pilotes, €280,000<br>• Ampliación Pantalán Puerto Sherry (2022): 40m nuevos, €190,000<br>• Inspección estructural Puerto Algeciras (2021-cont): Contrato marco anual<br>• Demolición Muelle Viejo Sanlúcar (2020): Corte 120 pilotes, €95,000<br><br><strong>Cumplimiento normativo:</strong><br>• ROM 0.0-01 (General procedimientos constructivos)<br>• ROM 0.5-05 (Obras de dragado)<br>• ROM 5.1-99 (Calidad obras marítimas)<br>• Inscritos RGLCAP (licitaciones públicas)<br>• Certificaciones ISO 9001/14001/45001 vigentes",
+    category: "Referencias"
+  },
+  {
+    question: "¿Qué normativa ROM aplican en obras portuarias?",
+    answer: "<strong>Cumplimiento normativas Puertos del Estado:</strong><br><br><strong>ROM (Recomendaciones Obras Marítimas) aplicables:</strong><br>• <strong>ROM 0.0-01:</strong> Procedimientos generales, sistemas calidad obra marítima<br>• <strong>ROM 0.2-90:</strong> Acciones en proyecto obras marítimas<br>• <strong>ROM 0.5-05:</strong> Recomendaciones geotécnicas, obras marítimas<br>• <strong>ROM 5.1-99:</strong> Calidad materiales obras marítimo-portuarias<br>• <strong>ROM 2.0-11:</strong> Margen extenso sobre obras atraque y amarre<br><br><strong>Inspecciones estructurales (ROM 0.0-01 Anexo XI):</strong><br>• Inspecciones visuales anuales<br>• Inspecciones principales cada 5 años<br>• Inspecciones especiales tras eventos (tormentas, colisiones)<br>• Ensayos no destructivos (END) según criticidad<br><br><strong>Otras normativas aplicables:</strong><br>• EHE-08 (hormigonado subacuático)<br>• AWS D3.6 (soldadura submarina estructural)<br>• ISO 9001/14001/45001 (gestión obra)<br>• Ley Puertos 48/2003 y modificaciones<br><br>Nuestros informes incluyen referencias normativas específicas para cada actuación.",
+    category: "Normativa"
+  },
+  {
+    question: "¿Pueden hacer inspecciones reglamentarias ROM para Autoridades Portuarias?",
+    answer: "<strong>SÍ, inspecciones estructurales según ROM 0.0-01:</strong><br><br><strong>Tipos inspección ofrecidos:</strong><br>• <strong>Inspección visual anual (Nivel 1):</strong> Buzo recorre estructura, identifica daños visibles, fotografías calibradas, informe básico estado. Coste: €2,500-6,000 según longitud muelle<br>• <strong>Inspección principal quinquenal (Nivel 2):</strong> Incluye END (ultrasonidos espesores, líquidos penetrantes), mediciones precisas, ROV video completo, informe detallado con recomendaciones priorizadas. Coste: €12,000-35,000<br>• <strong>Inspección especial post-evento (Nivel 3):</strong> Tras tormenta/colisión/sismo. Urgente, evaluación estructural criticidad, dictamen seguridad operativa. Movilización < 12h<br><br><strong>Contenido informes:</strong><br>1. Memoria descriptiva estructura inspeccionada<br>2. Fotogramas calibrados (escala métrica, georeferenciados)<br>3. Planos estado actual (CAD/PDF)<br>4. Video ROV completo (MP4 timestamped)<br>5. Fichas elemento por elemento (pilote, viga, defensa)<br>6. Catalogación daños según ROM (gravedad 0-4)<br>7. Recomendaciones actuación priorizadas<br>8. Presupuesto orientativo reparaciones<br><br>Informes aceptados por Puertos del Estado, clasificadoras, aseguradoras. Firma ingeniero civil colegiado (cuando requerido).",
+    category: "Inspecciones"
+  },
+  {
+    question: "¿Qué plazo necesitan para ejecutar obra portuaria?",
+    answer: "<strong>Plazos ejecución según tipo obra:</strong><br><br><strong>Construcción Nueva:</strong><br>• Muelle pequeño (< 50m, 6-8 pilotes): 6-10 semanas<br>• Muelle medio (50-150m, 15-25 pilotes): 4-7 meses<br>• Prolongación muelle existente: 3-5 meses (según longitud)<br>• Pantalán deportivo flotante: 4-8 semanas<br>• Duque de Alba (3 pilotes): 3-5 semanas<br><br><strong>Reparaciones:</strong><br>• Reparación 1-3 pilotes: 2-4 semanas<br>• Refuerzo estructural localizado: 1-3 semanas<br>• Sustitución defensas/bolardos: 1-2 semanas<br>• Soldadura emergencia: 24-72 horas<br><br><strong>Inspecciones:</strong><br>• Visual básica: 1-3 días en puerto<br>• Principal completa (ROM): 1-2 semanas + 2 semanas informe<br>• Especial urgente: 24-48h movilización + informe preliminar 48h<br><br><strong>Factores afectan plazo:</strong><br>• Ventanas meteorológicas (viento, oleaje, marea)<br>• Disponibilidad grúa/pontona (alquiler externo)<br>• Permisos Capitanía Marítima/Demarcación Costas<br>• Compatibilidad con operativa puerto (tráfico buques)<br>• Suministros especiales (pilotes, defensas grandes)<br><br>Para obras programadas, contactar con <strong>8-12 semanas antelación</strong> (alta demanda primavera-otoño).",
+    category: "Plazos"
+  },
+  {
+    question: "¿Trabajan con ventanas operativas para no parar el tráfico portuario?",
+    answer: "<strong>SÍ, coordinación estricta con operativa puerto:</strong><br><br><strong>Planificación ventanas trabajo:</strong><br>• <strong>Horarios nocturnos:</strong> Trabajos 22:00-07:00 en muelles con tráfico diurno<br>• <strong>Días específicos:</strong> Domingos/festivos en puertos comerciales activos<br>• <strong>Entre escalas:</strong> Ventanas 4-8h entre atraques buques<br>• <strong>Mareas:</strong> Aprovechamiento bajamar (mayor accesibilidad pilotes)<br>• <strong>Meteorología:</strong> Seguimiento previsión (oleaje < 1m, viento < 15 kn ideales)<br><br><strong>Coordinación institucional:</strong><br>• Solicitud autorizaciones Capitanía Marítima previas<br>• Comunicación diaria con Jefe Operaciones puerto<br>• Señalización marítima zona trabajo (boyas, luces)<br>• Canal VHF exclusivo coordinación<br>• Seguro RC específico interferencias tráfico<br><br><strong>Estrategias minimizar impacto:</strong><br>• Pre-fabricación máxima en tierra/pontona<br>• Montaje acelerado en ventanas cortas<br>• Equipos turnos rotatorios (continuidad 24h cuando necesario)<br>• Procedimientos trabajo optimizados (experiencia)<br><br><strong>Casos urgentes:</strong> En emergencias estructurales (riesgo colapso), coordinamos cierre temporal zona afectada con Autoridad Portuaria. Nunca trabajamos sin autorizaciones.",
+    category: "Coordinación"
+  },
+  {
+    question: "¿Qué garantías ofrecen en obras portuarias?",
+    answer: "<strong>Garantías contractuales obras marítimas:</strong><br><br><strong>Garantía Ejecución:</strong><br>• <strong>Construcción nueva:</strong> 5 años garantía estructural (pilotes, vigas, soldaduras)<br>• <strong>Reparaciones:</strong> 2-3 años según tipo trabajo<br>• <strong>Soldadura certificada AWS:</strong> 3 años garantía específica<br>• <strong>Protección catódica:</strong> 1 año funcionamiento anodos<br>• <strong>Instalaciones:</strong> 2 años estanqueidad/funcionalidad<br><br><strong>Seguros contratados:</strong><br>• <strong>RC Profesional:</strong> €3M cobertura daños terceros<br>• <strong>Todo Riesgo Construcción (TRC):</strong> Según valor obra (obligatorio > €200k)<br>• <strong>RC Medioambiental:</strong> Vertidos accidentales, contaminación<br>• <strong>Accidentes Trabajo:</strong> Plantilla + subcontratas<br><br><strong>Control Calidad:</strong><br>• Procedimientos trabajo documentados (PT)<br>• Inspecciones internas diarias<br>• Ensayos laboratorio acreditado ENAC<br>• Trazabilidad materiales (certificados fabricante)<br>• Certificado final obra firmado ingeniero<br><br><strong>Mantenimiento Post-Obra:</strong><br>• Ofrecemos contratos mantenimiento preventivo anuales<br>• Descuento 20% reparaciones dentro garantía<br>• Inspecciones semestrales primer año (sin coste extra)<br>• Línea directa técnica para consultas post-entrega<br><br>Garantías según modelo contractual: llave en mano (garantía total), administración (garantía ejecución propia), o colaboración constructora principal (según acuerdo).",
+    category: "Garantías"
+  }
+];
 ---
 
 <Layout
@@ -35,22 +78,29 @@ import RelatedLinks from '../components/RelatedLinks.astro';
 
   <Header />
 
-  <main>
-    <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-slate-900 to-slate-700 text-white py-20">
+  <main class="bg-gray-50">
+    <!-- Hero Section - Respuesta Directa AEO -->
+    <section class="bg-gradient-to-r from-slate-900 via-blue-900 to-slate-900 text-white py-16">
       <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto text-center">
+        <div class="max-w-5xl mx-auto">
+          <div class="inline-block bg-cyan-400 text-slate-900 px-4 py-2 rounded-full font-bold text-sm mb-4">
+            ⚓ OBRAS PORTUARIAS SUBMARINAS
+          </div>
           <h1 class="text-4xl md:text-5xl font-bold mb-6">
-            Obras Portuarias Submarinas y Construcción de Muelles Urgente
+            Obras Portuarias Submarinas en Cádiz: Construcción y Mantenimiento Muelles
           </h1>
-          <p class="text-xl md:text-2xl text-slate-100 mb-8">
-            Especialistas en construcción, reparación y mantenimiento de infraestructuras portuarias submarinas.
-            Pilotes, pantalanes, muelles y defensas. Servicio 24/7.
-          </p>
-          <div class="flex flex-col md:flex-row gap-4 justify-center">
-            <CallToAction variant="emergency" size="xl" text="OBRAS URGENTES" subtext="Equipo 24/7" />
-            <a href="#servicios" class="bg-slate-600 hover:bg-slate-700 px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
-              Ver Servicios Portuarios
+          <div class="bg-white/10 backdrop-blur-sm border-l-4 border-cyan-400 p-6 rounded-r-lg mb-6">
+            <p class="text-xl md:text-2xl font-semibold mb-4">
+              Respuesta Directa:
+            </p>
+            <p class="text-lg leading-relaxed">
+              Servicios especializados <strong>obras portuarias submarinas para Autoridades Portuarias, concesionarios y constructoras</strong> en Cádiz: <strong>(1) Construcción muelles/pantalanes</strong> (hinca pilotes HEB/tubulares Ø1200mm, tablestacas, vigas, defensas, bolardos), <strong>(2) Reparación estructuras</strong> (pilotes corroídos, encamisado metálico, soldadura AWS D3.6 bajo agua), <strong>(3) Inspecciones reglamentarias ROM 0.0-01</strong> (visual anual, principal quinquenal, END, informes Puertos del Estado), <strong>(4) Mantenimiento preventivo</strong> (contratos anuales, protección catódica, limpieza biofouling), <strong>(5) Dragados localizados</strong> (excavación cimentaciones, nivelación lecho), y <strong>(6) Instalaciones submarinas</strong> (emisarios, tomas agua, cables). Certificaciones ISO 9001/14001/45001, inscritos RGLCAP, cumplimiento ROM. Experiencia Autoridad Portuaria Bahía Cádiz/Algeciras. Presupuestos desde €5,000 (inspección) hasta €800,000+ (muelle completo). Movilización 24-72h.
+            </p>
+          </div>
+          <div class="flex flex-col md:flex-row gap-4">
+            <CallToAction variant="emergency" size="xl" text="EMERGENCIA PORTUARIA 24/7" />
+            <a href="/contacto" class="bg-white text-slate-900 hover:bg-cyan-400 px-8 py-4 rounded-lg font-semibold text-lg transition-colors text-center">
+              Solicitar Presupuesto Obra
             </a>
           </div>
         </div>
@@ -308,20 +358,63 @@ import RelatedLinks from '../components/RelatedLinks.astro';
       </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <FAQSection
+            title="Preguntas Frecuentes: Obras Portuarias Submarinas"
+            {faqs}
+            includeSchema={true}
+          />
+        </div>
+      </div>
+    </section>
+
     <!-- CTA Section -->
-    <section class="py-16 bg-gradient-to-r from-slate-900 to-slate-700 text-white">
+    <section class="py-12 bg-gradient-to-r from-slate-900 to-blue-900 text-white">
       <div class="container mx-auto px-4 text-center">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">
-          ¿Necesita Obras Portuarias Submarinas?
+        <h2 class="text-3xl font-bold mb-4">
+          ¿Necesita Obras Portuarias Submarinas o Inspección ROM?
         </h2>
-        <p class="text-xl text-slate-200 mb-8 max-w-3xl mx-auto">
-          Presupuesto sin compromiso en 24h. Servicio de emergencia disponible 24/7 para reparaciones urgentes
+        <p class="text-xl text-cyan-100 mb-6 max-w-3xl mx-auto">
+          Presupuesto detallado en 24-48h. Servicio emergencia 24/7 para reparaciones urgentes estructurales.
         </p>
         <div class="flex flex-col md:flex-row gap-4 justify-center">
-          <CallToAction variant="emergency" size="xl" text="EMERGENCIA PORTUARIA" subtext="Respuesta 24/7" />
-          <a href="/contacto" class="bg-transparent border-2 border-white hover:bg-white hover:text-slate-900 px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
-            Solicitar Presupuesto
+          <CallToAction variant="emergency" size="xl" text="EMERGENCIA PORTUARIA 24/7" />
+          <a href="/contacto" class="bg-white text-slate-900 hover:bg-cyan-400 px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
+            Solicitar Presupuesto Obra
           </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- B2B Internal Links Hub -->
+    <section class="py-12 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-2xl font-bold text-center text-gray-900 mb-2">
+            Servicios Especializados para Sector Construcción e Infraestructuras
+          </h2>
+          <p class="text-center text-gray-600 mb-8">Soluciones completas para empresas constructoras, obra civil y gestión hidráulica</p>
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <a href="/servicios-empresas-construccion" class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow border-l-4 border-orange-600">
+              <h3 class="text-lg font-bold text-orange-900 mb-2">Empresas Construcción</h3>
+              <p class="text-sm text-gray-700">Subcontrata especializada: pilotaje, hormigonado tremie, obra bolsa</p>
+            </a>
+            <a href="/obra-civil-subacuatica" class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow border-l-4 border-purple-600">
+              <h3 class="text-lg font-bold text-purple-900 mb-2">Obra Civil Subacuática</h3>
+              <p class="text-sm text-gray-700">Puentes, cimentaciones, hormigón tremie EHE-08</p>
+            </a>
+            <a href="/emisarios-submarinos" class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow border-l-4 border-green-600">
+              <h3 class="text-lg font-bold text-green-900 mb-2">Emisarios EDAR</h3>
+              <p class="text-sm text-gray-700">Inspección, limpieza difusores, mantenimiento WWTP</p>
+            </a>
+            <a href="/obras-pantanos-embalses" class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow border-l-4 border-cyan-600">
+              <h3 class="text-lg font-bold text-cyan-900 mb-2">Presas & Embalses</h3>
+              <p class="text-sm text-gray-700">Inspecciones CHG, compuertas, tomas agua, batimetría</p>
+            </a>
+          </div>
         </div>
       </div>
     </section>

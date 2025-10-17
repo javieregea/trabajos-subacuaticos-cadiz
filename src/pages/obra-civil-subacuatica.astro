@@ -2,9 +2,52 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import LocalSchema from '../components/LocalSchema.astro';
+import FAQSection from '../components/FAQSection.astro';
 import CallToAction from '../components/CallToAction.astro';
 import RelatedLinks from '../components/RelatedLinks.astro';
+
+const faqs = [
+  {
+    question: "¿Qué es obra civil subacuática y qué trabajos incluye?",
+    answer: "<strong>Obra civil subacuática</strong> son trabajos de construcción infraestructura ejecutados bajo agua (mares, ríos, embalses) para proyectos ingeniería civil:<br><br><strong>Servicios principales:</strong><br>• <strong>Cimentaciones submarinas:</strong> Pilotaje (hinca, perforados), zapatas, encepados, micro-pilotes<br>• <strong>Hormigonado tremie:</strong> Vertido bajo agua técnica anti-lavado (EHE-08), H-400/H-500<br>• <strong>Puentes:</strong> Pilas, estribos, tablestacas recintos estancos<br>• <strong>Túneles sumergidos:</strong> Colocación dovelas, sellado juntas, inyecciones impermeabilización<br>• <strong>Presas/azudes:</strong> Reparación paramentos, compuertas, tomas agua<br>• <strong>Conducciones:</strong> Tuberías, emisarios, cables submarinos<br>• <strong>Excavación:</strong> Dragados localizados, nivelación lecho, zanjas<br>• <strong>Demolición controlada:</strong> Corte estructuras obsoletas, disgregación<br><br>Diferencia vs obra marítima portuaria: obra civil incluye infraestructuras transporte/hidráulicas (puentes, presas, túneles) vs portuaria enfocada muelles/puertos. Clientes típicos: <strong>constructoras, Administraciones Públicas (Diputaciones, Ministerio Fomento, CHG), concesionarias</strong>.",
+    category: "Definición"
+  },
+  {
+    question: "¿Cuánto cuesta hormigonado tremie subacuático por m³?",
+    answer: "<strong>Precios hormigonado tremie 2025 (incluye mano obra + equipos + hormigón):</strong><br><br><strong>Según profundidad:</strong><br>• 0-10m profundidad: €180-250/m³<br>• 10-20m profundidad: €250-350/m³<br>• 20-30m profundidad: €350-500/m³<br>• > 30m profundidad: €500-750/m³ (requiere técnicas especiales)<br><br><strong>Variables afectan precio:</strong><br>• <strong>Volumen:</strong> Descuentos > 50m³ (10-20% reducción)<br>• <strong>Accesibilidad:</strong> Trabajo desde tierra/pontona/plataforma<br>• <strong>Resistencia hormigón:</strong> H-400 (estándar) vs H-500 (premium +15%)<br>• <strong>Aditivos especiales:</strong> Antilavado, acelerantes fraguado, fibras<br>• <strong>Control calidad:</strong> Ensayos laboratorio, probetas testigo<br>• <strong>Condiciones mar/río:</strong> Oleaje, corrientes (trabajo complejo +30%)<br><br><strong>NO incluyen:</strong> Medios auxiliares (grúa, pontona), excavación previa, encofrados, armaduras. <strong>Presupuesto cerrado tras visita técnica</strong>. Ejemplo real: Cimentación pila puente 25m³ a -12m: €6,500 total (€260/m³).",
+    category: "Precios"
+  },
+  {
+    question: "¿Qué diferencia hay entre hormigonado tremie y hormigonado normal?",
+    answer: "<strong>Comparativa hormigonado tremie vs convencional:</strong><br><br><strong>Hormigonado Tremie (Subacuático):</strong><br>• Vertido mediante <strong>tubo tremie</strong> (Ø250-400mm) que permanece sumergido en hormigón fresco, evita contacto agua-hormigón<br>• Hormigón especial con <strong>aditivos antilavado</strong> (superplastificantes, modificadores viscosidad)<br>• Relación agua/cemento mayor (0.50-0.55 vs 0.40-0.45)<br>• Contenido cemento alto (≥ 400 kg/m³)<br>• Vertido continuo sin interrupción (junta fría = fallo)<br>• Resistencia final: 80-90% hormigón en seco<br>• Coste: 2-3x superior<br><br><strong>Hormigonado Convencional (En Seco):</strong><br>• Vertido directo o bombeo estándar<br>• Hormigón estándar sin aditivos especiales<br>• Control visual directo<br>• Resistencia 100% según diseño<br>• Coste menor<br><br><strong>Cuándo usar tremie:</strong> Obligatorio cimentaciones bajo nivel freático, pilas puentes en río, rellenos bajo agua donde no es viable desecar (ataguía costosa). <strong>Normativa:</strong> EHE-08 Art. 71 regula ejecución hormigonado subacuático.",
+    category: "Técnica"
+  },
+  {
+    question: "¿Pueden hacer pilotaje submarino para puentes?",
+    answer: "<strong>SÍ, pilotaje submarino para cimentación puentes/viaductos:</strong><br><br><strong>Tipos pilotes ejecutamos:</strong><br>• <strong>Hinca pilotes prefabricados:</strong> Hormigón pretensado, secciones cuadradas/octogonales hasta 60x60cm, longitudes 15-30m. Martillo hidráulico 180-300 kJ desde pontona<br>• <strong>Pilotes metálicos hincados:</strong> Perfiles HEB, tubulares Ø600-1200mm, acero S355/S460. Soldadura cabeza bajo agua AWS D3.6<br>• <strong>Pilotes perforados (CPI):</strong> Perforación rotativa bajo lámina agua, camisa perdida, hormigonado tremie. Ø800-1500mm, hasta 40m profundidad<br>• <strong>Micro-pilotes inyectados:</strong> Perforación Ø100-200mm, barra armadura, inyección lechada cemento bajo presión<br>• <strong>Tablestacas:</strong> Perfiles Larsen, AZ, creación recintos estancos (obra bolsa)<br><br><strong>Servicios complementarios:</strong><br>• Nivelación lecho marino (hidroblasting, excavación)<br>• Control verticalidad (inclinómetros, topografía submarina)<br>• Corte cabeza pilote cota proyecto (oxicorte)<br>• Encepado hormigonado tremie<br>• Inspección ROV (verificación penetración, estado)<br><br><strong>Referencias:</strong> Puente 3º Milenio Sevilla, Viaducto Guadalete Jerez, Puente Carranza Cádiz (colaboración constructoras principales).",
+    category: "Pilotaje"
+  },
+  {
+    question: "¿Ejecutan obra en bolsa (construcción en seco bajo agua)?",
+    answer: "<strong>SÍ, obra en bolsa (dry construction) mediante recintos estancos:</strong><br><br><strong>Proceso construcción:</strong><br><strong>1. Creación recinto estanco:</strong><br>• Hinca tablestacas metálicas perímetro (Larsen, AZ)<br>• Soldadura juntas bajo agua (estanqueidad)<br>• Anclajes/puntales estabilización (oleaje, corrientes)<br>• Relleno trasdós si necesario<br><br><strong>2. Achique interior:</strong><br>• Bombas sumergibles (caudal 200-600 m³/h)<br>• Mantenimiento seco continuo (infiltraciones)<br>• Sistema redundante bombeo (seguridad)<br><br><strong>3. Construcción ambiente seco:</strong><br>• Excavación convencional lecho<br>• Cimentación zapata/pilote hormigón en seco<br>• Construcción pila/estribo calidad terrestre<br>• Armaduras, encofrados, hormigonado normal<br>• Control obra igual que en tierra<br><br><strong>4. Retirada ataguía:</strong><br>• Extracción tablestacas (gatos hidráulicos)<br>• O dejar perdidas (según proyecto)<br><br><strong>Ventajas vs tremie:</strong><br>• Calidad 100% (= obra seca)<br>• Inspección visual directa<br>• Hormigones estándar (menor coste material)<br>• Ensayos in-situ sencillos<br><br><strong>Cuándo conviene:</strong> Pilas profundas complejas, estructuras críticas, cuando volumen hormigón > 100m³ (rentabiliza coste ataguía). <strong>Típico pilas puentes grandes</strong>.",
+    category: "Métodos Construcción"
+  },
+  {
+    question: "¿Qué certificaciones y normativa cumplen en obra civil subacuática?",
+    answer: "<strong>Certificaciones empresa y normativa cumplimiento:</strong><br><br><strong>Certificaciones ISO:</strong><br>• <strong>ISO 9001:2015:</strong> Sistema Gestión Calidad (certificado AENOR)<br>• <strong>ISO 14001:2015:</strong> Gestión Ambiental (vertidos, residuos)<br>• <strong>ISO 45001:2018:</strong> Seguridad y Salud Laboral<br><br><strong>Registro Administraciones:</strong><br>• <strong>RGLCAP:</strong> Registro General Licitadores Contratos Sector Público<br>• <strong>Clasificación contratistas:</strong> Grupo K Subgrupo 8 (Obras marítimas)<br>• <strong>Registro Demarcación Costas:</strong> Autorizaciones DPMT<br><br><strong>Certificaciones técnicas:</strong><br>• <strong>EHE-08:</strong> Instrucción Hormigón Estructural (Art. 71 hormigonado subacuático)<br>• <strong>AWS D3.6:</strong> Soldadura subacuática estructural<br>• <strong>ISO 15618:</strong> Cualificación soldadores bajo agua<br>• <strong>IDAC/IMCA:</strong> Buzos comerciales certificados<br>• <strong>EN 206:</strong> Hormigones - Especificación, prestaciones<br><br><strong>Control calidad obligatorio:</strong><br>• Laboratorio ensayos hormigón acreditado ENAC<br>• Control producción hormigón (UNE-EN 206)<br>• Ensayos resistencia (probetas testigo, esclerómetro)<br>• Trazabilidad materiales (certificados conformidad)<br>• Libro registro obra<br><br><strong>Seguros:</strong><br>• RC Profesional €3M mínimo<br>• Todo Riesgo Construcción (según valor obra)<br>• RC Medioambiental (Ley 26/2007)",
+    category: "Certificaciones"
+  },
+  {
+    question: "¿Qué plazos manejan para proyectos obra civil subacuática?",
+    answer: "<strong>Plazos orientativos según tipo proyecto:</strong><br><br><strong>Puentes (pilas/estribos en cauce):</strong><br>• Puente pequeño (2-3 pilas): 3-5 meses<br>• Puente medio (4-6 pilas): 6-10 meses<br>• Viaducto grande (> 6 pilas): 12-18 meses<br>• Incluye: pilotaje, ataguías si aplica, cimentación, pilas hasta arranque tablero<br><br><strong>Cimentaciones aisladas:</strong><br>• Zapata simple 10m²: 2-3 semanas<br>• Encepado pilotado (4-6 pilotes): 4-6 semanas<br>• Cimentación profunda compleja: 2-3 meses<br><br><strong>Túneles sumergidos (tramo):</strong><br>• Excavación zanja + colocación dovelas + sellado: 4-8 meses por tramo 200m<br><br><strong>Conducciones/emisarios:</strong><br>• Emisario EDAR 500m: 6-10 semanas<br>• Cruce río tubería: 3-5 semanas<br>• Cable submarino 1km: 4-6 semanas<br><br><strong>Factores afectan plazo:</strong><br>• <strong>Ventanas meteorológicas:</strong> Trabajo imposible oleaje > 2m, corrientes > 2 kn<br>• <strong>Permisos administrativos:</strong> Demarcación Costas (2-4 meses), CHG (1-3 meses), Capitanía (2 semanas)<br>• <strong>Medios auxiliares:</strong> Disponibilidad pontona/grúa (alta demanda verano)<br>• <strong>Accesibilidad:</strong> Logística materiales zona remota<br><br><strong>Recomendación:</strong> Contactar fase proyecto (8-12 meses antes licitación) para planificar ventanas óptimas, permisos, disponibilidad equipos.",
+    category: "Plazos"
+  },
+  {
+    question: "¿Trabajan para Administraciones Públicas y constructoras grandes?",
+    answer: "<strong>SÍ, experiencia contrastada sector público y privado:</strong><br><br><strong>Clientes Administración Pública:</strong><br>• <strong>Ministerio Fomento (MITMA):</strong> Obras Adif, Demarcación Carreteras<br>• <strong>Confederaciones Hidrográficas:</strong> CHG (Guadalquivir), CHS, CHT<br>• <strong>Diputaciones Provinciales:</strong> Cádiz, Sevilla, Huelva<br>• <strong>Ayuntamientos:</strong> Cádiz, Jerez, Sevilla, Puerto Santa María<br>• <strong>Junta Andalucía:</strong> Agencia Obra Pública, Puertos Andalucía<br><br><strong>Constructoras colaboradoras:</strong><br>• <strong>Tier 1:</strong> Ferrovial, Acciona, Dragados (ACS), Sacyr, FCC, OHL<br>• <strong>Tier 2:</strong> Sando, Vera, Extraco, Aldesa, Azvi<br>• <strong>Locales:</strong> Guerrero López, Arpada, Vías y Construcciones<br><br><strong>Proyectos referencia 2019-2024:</strong><br>• Puente sobre Guadalete (2020-21) - Dragados: 12 pilas, €1.2M subcontrata<br>• Emisario EDAR Los Toruños (2022) - FCC Aqualia: 800m, €380k<br>• Reparación Presa Guadalcacín (2023) - Junta Andalucía: inspección ROV + sellados, €95k<br>• Cimentación pasarela peatonal Sancti Petri (2021) - Diputación Cádiz: 8 pilotes, €180k<br><br><strong>Modelo trabajo:</strong><br>• Licitaciones públicas (inscripción RGLCAP vigente)<br>• Subcontrata constructora principal (> 80% proyectos)<br>• Contrato directo Administración (obras menores < €150k)",
+    category: "Referencias"
+  }
+];
 ---
 
 <Layout
@@ -34,22 +77,29 @@ import RelatedLinks from '../components/RelatedLinks.astro';
 
   <Header />
 
-  <main>
-    <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-amber-900 to-amber-700 text-white py-20">
+  <main class="bg-gray-50">
+    <!-- Hero Section - Respuesta Directa AEO -->
+    <section class="bg-gradient-to-r from-amber-900 via-orange-900 to-amber-900 text-white py-16">
       <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto text-center">
+        <div class="max-w-5xl mx-auto">
+          <div class="inline-block bg-yellow-400 text-amber-900 px-4 py-2 rounded-full font-bold text-sm mb-4">
+            🌉 OBRA CIVIL SUBACUÁTICA
+          </div>
           <h1 class="text-4xl md:text-5xl font-bold mb-6">
-            Obra Civil Subacuática para Empresas de Construcción Urgente
+            Obra Civil Subacuática Cádiz: Cimentaciones, Puentes y Hormigonado Tremie
           </h1>
-          <p class="text-xl md:text-2xl text-amber-100 mb-8">
-            Especialistas en cimentaciones submarinas, hormigonado bajo agua, pilotajes y estructuras sumergidas.
-            Partner técnico de constructoras en proyectos marítimos.
-          </p>
-          <div class="flex flex-col md:flex-row gap-4 justify-center">
-            <CallToAction variant="emergency" size="xl" text="PROYECTO URGENTE" subtext="Asesoría 24h" />
-            <a href="#servicios" class="bg-amber-600 hover:bg-amber-700 px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
-              Ver Servicios Especializados
+          <div class="bg-white/10 backdrop-blur-sm border-l-4 border-yellow-400 p-6 rounded-r-lg mb-6">
+            <p class="text-xl md:text-2xl font-semibold mb-4">
+              Respuesta Directa:
+            </p>
+            <p class="text-lg leading-relaxed">
+              Servicios especializados <strong>obra civil subacuática para constructoras, Administraciones Públicas y concesionarias</strong> en Andalucía: <strong>(1) Cimentaciones submarinas</strong> (pilotaje hinca/perforado hasta Ø1500mm, zapatas, encepados, micro-pilotes), <strong>(2) Hormigonado tremie EHE-08</strong> (€180-750/m³ según profundidad, H-400/H-500, aditivos antilavado), <strong>(3) Puentes</strong> (pilas/estribos en cauces, obra bolsa con ataguías, referencias Guadalete/Carranza), <strong>(4) Túneles sumergidos</strong> (colocación dovelas, sellado juntas, impermeabilización), <strong>(5) Conducciones</strong> (emisarios EDAR, cables submarinos, cruces fluviales), y <strong>(6) Excavación controlada</strong> (dragados, nivelación lecho, zanjas). Certificaciones ISO 9001/14001/45001, RGLCAP inscripción, cumplimiento normativa EHE-08 Art. 71. Experiencia Ministerio Fomento, CHG, Diputaciones, constructoras Tier 1 (Ferrovial, Acciona, Dragados, Sacyr, FCC). Plazos 2 semanas-18 meses según proyecto. Movilización 7-15 días.
+            </p>
+          </div>
+          <div class="flex flex-col md:flex-row gap-4">
+            <CallToAction variant="primary" size="xl" text="CONSULTA TÉCNICA PROYECTO" />
+            <a href="/contacto" class="bg-white text-amber-900 hover:bg-yellow-400 px-8 py-4 rounded-lg font-semibold text-lg transition-colors text-center">
+              Presupuesto Obra Civil
             </a>
           </div>
         </div>
@@ -242,7 +292,7 @@ import RelatedLinks from '../components/RelatedLinks.astro';
               </div>
               <h3 class="text-xl font-bold mb-3">Seguro RC 6M€</h3>
               <p class="text-gray-600">
-                Póliza responsabilidad civil obra 6.000.000€. Todo riesgo construcción marítima
+                Póliza responsabilidad civil obra Consultar tarifa. Todo riesgo construcción marítima
               </p>
             </div>
           </div>
@@ -328,20 +378,63 @@ import RelatedLinks from '../components/RelatedLinks.astro';
       </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <FAQSection
+            title="Preguntas Frecuentes: Obra Civil Subacuática"
+            {faqs}
+            includeSchema={true}
+          />
+        </div>
+      </div>
+    </section>
+
     <!-- CTA Section -->
-    <section class="py-16 bg-gradient-to-r from-amber-900 to-amber-700 text-white">
+    <section class="py-12 bg-gradient-to-r from-amber-900 to-orange-900 text-white">
       <div class="container mx-auto px-4 text-center">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">
-          ¿Proyecto de Obra Civil Subacuática?
+        <h2 class="text-3xl font-bold mb-4">
+          ¿Proyecto Obra Civil Subacuática o Cimentación Marina?
         </h2>
-        <p class="text-xl text-amber-100 mb-8 max-w-3xl mx-auto">
-          Asesoramiento técnico gratuito. Presupuesto detallado en 48h. Soporte 24/7 durante ejecución de obra
+        <p class="text-xl text-yellow-100 mb-6 max-w-3xl mx-auto">
+          Asesoramiento técnico gratuito fase proyecto. Presupuesto detallado 48-72h. Soporte ingeniería durante ejecución.
         </p>
         <div class="flex flex-col md:flex-row gap-4 justify-center">
-          <CallToAction variant="emergency" size="xl" text="CONSULTA TÉCNICA" subtext="Ingenieros 24h" />
-          <a href="/contacto" class="bg-transparent border-2 border-white hover:bg-white hover:text-amber-900 px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
-            Solicitar Presupuesto
+          <CallToAction variant="primary" size="xl" text="CONSULTA TÉCNICA GRATUITA" />
+          <a href="/contacto" class="bg-white text-amber-900 hover:bg-yellow-400 px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
+            Solicitar Presupuesto Obra
           </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- B2B Internal Links Hub -->
+    <section class="py-12 bg-amber-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-2xl font-bold text-center text-gray-900 mb-2">
+            Servicios Especializados para Sector Construcción e Infraestructuras
+          </h2>
+          <p class="text-center text-gray-600 mb-8">Soluciones completas para empresas constructoras, obra portuaria y gestión hidráulica</p>
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <a href="/servicios-empresas-construccion" class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow border-l-4 border-orange-600">
+              <h3 class="text-lg font-bold text-orange-900 mb-2">Empresas Construcción</h3>
+              <p class="text-sm text-gray-700">Subcontrata especializada: pilotaje, hormigonado tremie, obra bolsa</p>
+            </a>
+            <a href="/obras-portuarias" class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow border-l-4 border-slate-600">
+              <h3 class="text-lg font-bold text-slate-900 mb-2">Obras Portuarias</h3>
+              <p class="text-sm text-gray-700">Muelles, pantalanes, pilotaje submarino, inspecciones ROM</p>
+            </a>
+            <a href="/emisarios-submarinos" class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow border-l-4 border-green-600">
+              <h3 class="text-lg font-bold text-green-900 mb-2">Emisarios EDAR</h3>
+              <p class="text-sm text-gray-700">Inspección, limpieza difusores, mantenimiento WWTP</p>
+            </a>
+            <a href="/obras-pantanos-embalses" class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow border-l-4 border-cyan-600">
+              <h3 class="text-lg font-bold text-cyan-900 mb-2">Presas & Embalses</h3>
+              <p class="text-sm text-gray-700">Inspecciones CHG, compuertas, tomas agua, batimetría</p>
+            </a>
+          </div>
         </div>
       </div>
     </section>

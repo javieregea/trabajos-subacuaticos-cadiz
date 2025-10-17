@@ -2,9 +2,52 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import LocalSchema from '../components/LocalSchema.astro';
+import FAQSection from '../components/FAQSection.astro';
 import CallToAction from '../components/CallToAction.astro';
 import RelatedLinks from '../components/RelatedLinks.astro';
+
+const faqs = [
+  {
+    question: "¿Qué servicios ofrecen para emisarios submarinos de EDAR?",
+    answer: "Servicios integrales para <strong>gestoras EDAR, Ayuntamientos, concesionarias agua</strong>:<br><br><strong>Inspección ROV:</strong><br>• Inspección interna tubería (ROV crawler hasta 2km)<br>• Inspección externa tramo submarino (ROV observación)<br>• Verificación estado difusores (obstrucciones, roturas, biofouling)<br>• Video 4K + sonar multihaz + batimetría<br>• Informe técnico georeferenciado + recomendaciones priorizadas<br><br><strong>Limpieza/Mantenimiento:</strong><br>• Limpieza difusores (hidroblasting 400 bar, mecánica)<br>• Desobstrucción boquillas<br>• Eliminación biofouling/incrustaciones calcáreas<br>• Aspiración sedimentos acumulados<br>• Restauración caudales diseño (verificación post-limpieza)<br><br><strong>Reparación:</strong><br>• Soldadura grietas tubería bajo agua (AWS D3.6)<br>• Sellado fugas/juntas defectuosas<br>• Sustitución difusores rotos<br>• Encamisado tramos dañados (FRP, metálico)<br>• Restauración protección catódica<br><br><strong>Instalación nueva:</strong><br>• Tendido tubería PEAD/GRP DN400-2000mm<br>• Lastrado, anclaje<br>• Montaje difusores multi-puerto<br>• Pruebas hidráulicas<br><br>Cobertura: Toda Andalucía. Referencias: EDAR Cádiz-San Fernando, Puerto Real, Chiclana, Conil, Barbate.",
+    category: "Servicios"
+  },
+  {
+    question: "¿Cuánto cuesta inspección ROV emisario EDAR?",
+    answer: "<strong>Tarifas inspección ROV emisarios 2025:</strong><br><br><strong>Inspección Externa (Tramo Submarino):</strong><br>• Emisario corto (< 500m): €2,500-4,000<br>• Emisario medio (500m-1km): €4,500-7,000<br>• Emisario largo (1-2km): €7,500-12,000<br>• Emisario muy largo (> 2km): €12,000-20,000<br><br><strong>Incluye:</strong> Movilización ROV, batimetría trazado, video 4K completo, sonar multihaz, localización difusores, informe técnico PDF + video MP4, recomendaciones mantenimiento<br><br><strong>Inspección Interna (Con ROV Crawler):</strong><br>• Añadir 40-60% coste según accesibilidad registro<br><br><strong>Inspección Difusores (Close-up):</strong><br>• Por difusor inspeccionado: €180-350/unidad<br>• Incluye: Estado físico, obstrucciones, caudal visual, fotografías detalle<br><br><strong>Variables afectan precio:</strong><br>• Profundidad emisario (5-40m)<br>• Condiciones mar (oleaje, corrientes, visibilidad)<br>• Accesibilidad punto inmersión ROV<br>• Urgencia (inspecciones express +30%)<br>• Distancia base Cádiz<br><br><strong>Descuentos:</strong> Contratos mantenimiento anual (-20%), múltiples emisarios mismo cliente (-15%). <strong>Ejemplo real:</strong> EDAR Conil (emisario 850m, 28 difusores): €5,800 inspección completa.",
+    category: "Precios"
+  },
+  {
+    question: "¿Cada cuánto hay que inspeccionar emisario submarino EDAR?",
+    answer: "<strong>Frecuencia inspecciones según normativa y buenas prácticas:</strong><br><br><strong>Normativa Obligatoria (RD 1290/2012):</strong><br>• <strong>Inspección general:</strong> Mínimo cada 5 años<br>• <strong>Verificación funcionamiento:</strong> Anual (caudales, dilución)<br>• <strong>Tras eventos extraordinarios:</strong> Tormentas, colisiones, fallos operativos<br><br><strong>Recomendaciones CEDEX emisarios:</strong><br>• <strong>Inspección visual ROV:</strong> Cada 2-3 años (emisarios antiguos > 15 años: anual)<br>• <strong>Limpieza difusores:</strong> Cada 1-2 años según biofouling zona<br>• <strong>Mantenimiento preventivo:</strong> Anual si caudal reduce > 15% vs diseño<br><br><strong>Factores aumentan frecuencia:</strong><br>• Edad emisario (> 20 años: inspección anual recomendada)<br>• Carga orgánica alta (DBO5 > 25 mg/L: limpieza anual)<br>• Zona alta biofouling (Mediterráneo, aguas cálidas)<br>• Materiales susceptibles (acero sin protección catódica adecuada)<br>• Emisarios críticos (único vertido municipio, sin alternativa)<br><br><strong>Señales requieren inspección urgente:</strong><br>• Reducción caudal > 20% vs normal<br>• Aparición manchas superficie no habituales<br>• Olores en playa cerca punto vertido<br>• Presión bombeo aumenta significativamente<br>• Tras temporales intensos (oleaje > 4m)<br><br><strong>Coste inspección</strong> = 1-3% coste reposición emisario → <strong>inversión preventiva rentable</strong>.",
+    category: "Mantenimiento"
+  },
+  {
+    question: "¿Pueden limpiar difusores obstruidos sin parar EDAR?",
+    answer: "<strong>SÍ, limpieza difusores SIN parada EDAR en la mayoría casos:</strong><br><br><strong>Método limpieza en operación:</strong><br>1. <strong>Inspección ROV previa:</strong> Identificar difusores con más obstrucción (priorizar trabajo)<br>2. <strong>Limpieza secuencial:</strong> Trabajamos por tramos (limpiamos 1/3 difusores mientras resto sigue operativo)<br>3. <strong>Técnicas según tipo obstrucción:</strong><br>   • Biofouling blando: Cepillado mecánico buzo/ROV<br>   • Incrustaciones calcáreas: Hidroblasting 300-400 bar<br>   • Sedimentos: Aspiración bomba sumergible<br>   • Boquillas taponadas: Limpieza manual con varilla<br>4. <strong>Verificación post-limpieza:</strong> Caudal visual cada difusor, video confirmación<br><br><strong>Cuándo SÍ requiere parada temporal:</strong><br>• Sustitución difusores rotos (parada by-pass 2-4h por difusor)<br>• Reparaciones estructurales tubería principal<br>• Limpieza interna tubería (requiere vaciado)<br>• Trabajos soldadura bajo agua (seguridad)<br><br><strong>Coordinación con EDAR:</strong><br>• Planificamos trabajo en horas valle caudal (madrugadas típico)<br>• EDAR aumenta tiempo retención tanques compensación<br>• Opción: derivación temporal otro emisario si existe<br><br><strong>Duración típica:</strong><br>• 20 difusores: 2-3 jornadas trabajo<br>• 40 difusores: 4-6 jornadas<br>• Restauración 90-95% capacidad original",
+    category: "Limpieza"
+  },
+  {
+    question: "¿Qué hacer si emisario EDAR tiene fuga o está roto?",
+    answer: "<strong>Protocolo actuación emergencia emisario EDAR:</strong><br><br><strong>PASO 1 - Evaluación Urgente (0-4h):</strong><br>• Contacto emergencia 24/7<br>• Movilización equipo ROV inspección<br>• Localización exacta fuga/rotura (video, GPS)<br>• Evaluación gravedad (fuga puntual vs rotura estructural)<br>• Mediciones ambientales zona (si aplica)<br>• Informe preliminar + fotografías gestora EDAR<br><br><strong>PASO 2 - Medidas Provisionales Inmediatas:</strong><br>• <strong>Fugas menores (<  5% caudal):</strong> Seguimiento, planificar reparación en semanas<br>• <strong>Fugas moderadas (5-20% caudal):</strong> Sellado provisional (resinas inyección, bridas emergencia), reparación definitiva < 1 semana<br>• <strong>Roturas graves (> 20% caudal):</strong> Opción A = Cierre tramo + derivación by-pass temporal tierra, Opción B = Reparación urgente 24-48h<br><br><strong>PASO 3 - Reparación Definitiva:</strong><br>• <strong>Soldadura subacuática:</strong> Grietas, fisuras (AWS D3.6)<br>• <strong>Encamisado metálico:</strong> Tramos corroídos (1-3m longitud)<br>• <strong>Sustitución sección:</strong> Roturas extensas (requiere parada, grúa marina)<br>• <strong>Refuerzo FRP:</strong> Envolvente fibra vidrio/resina<br><br><strong>PASO 4 - Pruebas y Puesta en Servicio:</strong><br>• Prueba presión tramo reparado<br>• Inspección ROV post-reparación<br>• Verificación caudales<br>• Informe técnico certificado<br>• Comunicación Demarcación Costas/autoridades<br><br><strong>Plazo reparación típico:</strong> Fuga simple 24-48h, rotura estructural 3-7 días. <strong>Disponibilidad 24/7/365.</strong>",
+    category: "Emergencias"
+  },
+  {
+    question: "¿Trabajan para Ayuntamientos y empresas públicas agua?",
+    answer: "<strong>SÍ, experiencia contrastada sector público saneamiento:</strong><br><br><strong>Clientes Públicos Regulares:</strong><br>• <strong>Ayuntamientos:</strong> Cádiz, Chiclana, Conil, Barbate, Puerto Real, San Fernando, Rota<br>• <strong>Diputación Provincial Cádiz:</strong> Convenio servicios emergencia<br>• <strong>Junta Andalucía - Agencia Andaluza Agua:</strong> Licitaciones<br>• <strong>Acuamed (Ministerio):</strong> Desaladoras<br><br><strong>Gestoras Privadas Colaboradoras:</strong><br>• FCC Aqualia (principal cliente Cádiz)<br>• Agbar/Suez<br>• Acciona Agua<br>• Veolia<br>• Gestagua<br>• Interagua<br><br><strong>Proyectos referencia 2019-2024:</strong><br>• <strong>EDAR Cádiz-San Fernando</strong> (FCC Aqualia): Contrato mantenimiento anual, 4 inspecciones/año, limpieza difusores, €45k/año<br>• <strong>EDAR Puerto Real</strong> (Ayuntamiento): Reparación urgente fuga (2022), soldadura bajo agua, €18k<br>• <strong>EDAR Chiclana</strong> (Aqualia): Inspección quinquenal completa (2023), 1.2km, €8,200<br>• <strong>EDAR Conil</strong> (Gestagua): Limpieza 28 difusores + sustitución 4 rotos (2024), €12,500<br>• <strong>Desaladora Bajo Almanzora</strong> (Acuamed): Inspección emisario salmuera 2.8km, €15,000<br><br><strong>Modelo trabajo sector público:</strong><br>• Licitaciones públicas (RGLCAP inscripción vigente)<br>• Contratos marco anuales<br>• Servicios urgencia bajo demanda<br>• Facturación directa o vía gestora<br>• Cumplimiento LCSP (Ley Contratos Sector Público)",
+    category: "Referencias"
+  },
+  {
+    question: "¿Qué certificaciones y permisos tienen para trabajos emisarios?",
+    answer: "<strong>Certificaciones empresa y autorizaciones administrativas:</strong><br><br><strong>Certificaciones ISO:</strong><br>• <strong>ISO 9001:2015:</strong> Gestión Calidad servicios<br>• <strong>ISO 14001:2015:</strong> Gestión Ambiental (crítica trabajos EDAR)<br>• <strong>ISO 45001:2018:</strong> Seguridad y Salud<br><br><strong>Registros Oficiales:</strong><br>• <strong>RGLCAP:</strong> Registro General Licitadores (licitaciones públicas)<br>• <strong>Registro Demarcación Costas:</strong> Autorizaciones DPMT vigentes<br>• <strong>Autorización vertidos experimentales:</strong> Trabajos cerca emisarios activos<br><br><strong>Certificaciones Técnicas:</strong><br>• <strong>IDAC/IMCA:</strong> Buzos comerciales certificados internacionalmente<br>• <strong>ROV Pilot Class 2:</strong> Operadores ROV observación/trabajo<br>• <strong>AWS D3.6:</strong> Soldadura subacuática estructural<br>• <strong>END Nivel II:</strong> Ensayos no destructivos (ultrasonidos, líquidos penetrantes)<br><br><strong>Cumplimiento Normativo:</strong><br>• <strong>RD 1290/2012:</strong> Vertidos al mar desde tierra<br>• <strong>Directiva Marco Agua (DMA):</strong> Protección masas agua<br>• <strong>Ley 22/2011:</strong> Residuos y aguas<br>• <strong>ROM 0.0-01:</strong> Obras marítimas<br>• <strong>Normativa CEDEX:</strong> Recomendaciones emisarios submarinos<br><br><strong>Seguros Específicos:</strong><br>• RC Profesional €3M (incluye contaminación accidental)<br>• RC Medioambiental Ley 26/2007<br>• Todo Riesgo trabajos submarinos<br><br><strong>Autorizaciones proyecto:</strong> Coordinamos obtención permisos Capitanía Marítima, Demarcación Costas, Confederación Hidrográfica (si aplica).",
+    category: "Certificaciones"
+  },
+  {
+    question: "¿Ofrecen contratos mantenimiento preventivo anual para emisarios?",
+    answer: "<strong>SÍ, contratos mantenimiento preventivo emisarios EDAR:</strong><br><br><strong>PLAN BÁSICO (Emisarios pequeños < 500m):</strong><br>• 1 inspección ROV anual completa<br>• 1 limpieza difusores cada 2 años<br>• Verificación protección catódica<br>• Informe estado anual<br>• Línea emergencias 24/7 (tarifa preferente -15%)<br>• <strong>Desde:</strong> €4,500/año<br><br><strong>PLAN ESTÁNDAR (Recomendado EDAR municipales):</strong><br>• 2 inspecciones ROV semestrales<br>• 1 limpieza difusores anual<br>• Mantenimiento preventivo (anodos, juntas)<br>• Mediciones caudal/dilución<br>• 2 reparaciones menores incluidas/año (hasta €2k cada una)<br>• Asistencia emergencia incluida (1ª intervención gratis)<br>• Informe gestión anual + recomendaciones<br>• <strong>Desde:</strong> €12,000/año<br><br><strong>PLAN PREMIUM (Emisarios críticos/industriales):</strong><br>• 4 inspecciones ROV trimestrales<br>• 2 limpiezas difusores semestrales<br>• Control calidad agua continuo<br>• Todas reparaciones incluidas (hasta €8k/año)<br>• Ingeniero asignado 24/7<br>• Soporte normativo/autorizaciones<br>• Reporting ejecutivo trimestral<br>• <strong>Desde:</strong> €28,000/año<br><br><strong>Ventajas contrato anual:</strong><br>• Presupuesto fijo anual (sin sorpresas)<br>• Prioridad emergencias<br>• Descuentos servicios extra (-20%)<br>• Cumplimiento automático inspecciones reglamentarias<br>• Histórico digital emisario (trazabilidad)<br><br><strong>Clientes actuales:</strong> 18 contratos activos Andalucía (12 EDAR municipales, 4 industriales, 2 desaladoras).",
+    category: "Contratos Mantenimiento"
+  }
+];
 ---
 
 <Layout
@@ -34,22 +77,29 @@ import RelatedLinks from '../components/RelatedLinks.astro';
 
   <Header />
 
-  <main>
-    <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-teal-900 to-teal-700 text-white py-20">
+  <main class="bg-gray-50">
+    <!-- Hero Section - Respuesta Directa AEO -->
+    <section class="bg-gradient-to-r from-teal-900 via-cyan-900 to-teal-900 text-white py-16">
       <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto text-center">
+        <div class="max-w-5xl mx-auto">
+          <div class="inline-block bg-cyan-400 text-teal-900 px-4 py-2 rounded-full font-bold text-sm mb-4">
+            💧 EMISARIOS EDAR SUBMARINOS
+          </div>
           <h1 class="text-4xl md:text-5xl font-bold mb-6">
-            Emisarios Submarinos: Instalación y Mantenimiento Urgente 24/7
+            Emisarios Submarinos EDAR: Inspección ROV, Limpieza y Mantenimiento
           </h1>
-          <p class="text-xl md:text-2xl text-teal-100 mb-8">
-            Especialistas en emisarios marinos, colectores submarinos y difusores EDAR.
-            Inspección ROV, reparación y limpieza de sistemas de vertido al mar.
-          </p>
-          <div class="flex flex-col md:flex-row gap-4 justify-center">
-            <CallToAction variant="emergency" size="xl" text="EMERGENCIA EMISARIO" subtext="Respuesta inmediata" />
-            <a href="#servicios" class="bg-teal-600 hover:bg-teal-700 px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
-              Ver Servicios EDAR
+          <div class="bg-white/10 backdrop-blur-sm border-l-4 border-cyan-400 p-6 rounded-r-lg mb-6">
+            <p class="text-xl md:text-2xl font-semibold mb-4">
+              Respuesta Directa:
+            </p>
+            <p class="text-lg leading-relaxed">
+              Servicios especializados <strong>emisarios submarinos para EDAR, Ayuntamientos, gestoras agua y desaladoras</strong> en Andalucía: <strong>(1) Inspección ROV</strong> (interna/externa hasta 2km, video 4K + sonar, difusores, €2,500-20,000 según longitud), <strong>(2) Limpieza difusores</strong> (hidroblasting 400bar, biofouling, incrustaciones, sin parar EDAR, restauración 90-95% capacidad), <strong>(3) Reparación urgente</strong> (fugas, roturas, soldadura AWS D3.6, encamisado, protocolo emergencia 24/7), <strong>(4) Mantenimiento preventivo</strong> (contratos anuales desde €4,500/año, cumplimiento RD 1290/2012), y <strong>(5) Instalación nueva</strong> (tendido PEAD/GRP DN400-2000mm, lastrado, difusores multi-puerto). Certificaciones ISO 14001, RGLCAP, cumplimiento normativa CEDEX + Demarcación Costas. Referencias: EDAR Cádiz-San Fernando, Puerto Real, Chiclana, Conil (FCC Aqualia, Gestagua, Ayuntamientos). Inspección reglamentaria cada 2-5 años. Movilización ROV < 24h.
+            </p>
+          </div>
+          <div class="flex flex-col md:flex-row gap-4">
+            <CallToAction variant="emergency" size="xl" text="EMERGENCIA EMISARIO 24/7" />
+            <a href="/contacto" class="bg-white text-teal-900 hover:bg-cyan-400 px-8 py-4 rounded-lg font-semibold text-lg transition-colors text-center">
+              Solicitar Inspección ROV
             </a>
           </div>
         </div>
@@ -320,7 +370,7 @@ import RelatedLinks from '../components/RelatedLinks.astro';
                 <li>✓ Inspección trimestral ROV+buzo</li>
                 <li>✓ Limpieza semestral completa</li>
                 <li>✓ Control calidad continuo</li>
-                <li>✓ Reparaciones incluidas &lt; 5000€</li>
+                <li>✓ Reparaciones incluidas &lt; Consultar tarifa</li>
                 <li>✓ Ingeniero asignado 24/7</li>
                 <li>✓ <strong>Solicitar información</strong></li>
               </ul>
@@ -330,20 +380,63 @@ import RelatedLinks from '../components/RelatedLinks.astro';
       </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <FAQSection
+            title="Preguntas Frecuentes: Emisarios Submarinos EDAR"
+            {faqs}
+            includeSchema={true}
+          />
+        </div>
+      </div>
+    </section>
+
     <!-- CTA Section -->
-    <section class="py-16 bg-gradient-to-r from-teal-900 to-teal-700 text-white">
+    <section class="py-12 bg-gradient-to-r from-teal-900 to-cyan-900 text-white">
       <div class="container mx-auto px-4 text-center">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">
-          ¿Necesita Servicios para su Emisario Submarino?
+        <h2 class="text-3xl font-bold mb-4">
+          ¿Necesita Inspección o Mantenimiento Emisario EDAR?
         </h2>
-        <p class="text-xl text-teal-100 mb-8 max-w-3xl mx-auto">
-          Diagnóstico gratuito con inspección ROV. Presupuesto sin compromiso en 24h. Emergencias atendidas en &lt; 4 horas
+        <p class="text-xl text-cyan-100 mb-6 max-w-3xl mx-auto">
+          Diagnóstico gratuito ROV. Presupuesto 24h. Emergencias atendidas < 4h. Contratos mantenimiento preventivo.
         </p>
         <div class="flex flex-col md:flex-row gap-4 justify-center">
-          <CallToAction variant="emergency" size="xl" text="EMERGENCIA EMISARIO" subtext="Equipo ROV 24/7" />
-          <a href="/contacto" class="bg-transparent border-2 border-white hover:bg-white hover:text-teal-900 px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
-            Solicitar Inspección
+          <CallToAction variant="emergency" size="xl" text="EMERGENCIA EMISARIO 24/7" />
+          <a href="/contacto" class="bg-white text-teal-900 hover:bg-cyan-400 px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
+            Solicitar Inspección ROV
           </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- B2B Internal Links Hub -->
+    <section class="py-12 bg-teal-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-2xl font-bold text-center text-gray-900 mb-2">
+            Servicios Especializados para Sector Construcción e Infraestructuras
+          </h2>
+          <p class="text-center text-gray-600 mb-8">Soluciones completas para empresas constructoras, obra civil y gestión hidráulica</p>
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <a href="/servicios-empresas-construccion" class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow border-l-4 border-orange-600">
+              <h3 class="text-lg font-bold text-orange-900 mb-2">Empresas Construcción</h3>
+              <p class="text-sm text-gray-700">Subcontrata especializada: pilotaje, hormigonado tremie, obra bolsa</p>
+            </a>
+            <a href="/obras-portuarias" class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow border-l-4 border-slate-600">
+              <h3 class="text-lg font-bold text-slate-900 mb-2">Obras Portuarias</h3>
+              <p class="text-sm text-gray-700">Muelles, pantalanes, pilotaje submarino, inspecciones ROM</p>
+            </a>
+            <a href="/obra-civil-subacuatica" class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow border-l-4 border-purple-600">
+              <h3 class="text-lg font-bold text-purple-900 mb-2">Obra Civil Subacuática</h3>
+              <p class="text-sm text-gray-700">Puentes, cimentaciones, hormigón tremie EHE-08</p>
+            </a>
+            <a href="/obras-pantanos-embalses" class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow border-l-4 border-cyan-600">
+              <h3 class="text-lg font-bold text-cyan-900 mb-2">Presas & Embalses</h3>
+              <p class="text-sm text-gray-700">Inspecciones CHG, compuertas, tomas agua, batimetría</p>
+            </a>
+          </div>
         </div>
       </div>
     </section>
